@@ -4,30 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="data:," />
-    <title>react-all.esm.js</title>
+    <title>react-all.min.js</title>
     <script type="importmap">
       {
         "imports": {
-          "react": "../dist/react-all.esm.js",
-          "react-dom/client": "../dist/react-all.esm.js",
-          "react-all": "../dist/react-all.esm.js"
+          "react": "../dist/react-all.min.js",
+          "react-dom/client": "../dist/react-all.min.js",
+          "react-all": "../dist/react-all.min.js"
         }
       }
     </script>
     <script src="./vendor/tailwindcss-browser.js"></script>
     <script src="./vendor/babel.min.js"></script>
     <script type="text/babel" data-type="module">
-      import React, {
-        Children,
-        cloneElement,
-        isValidElement,
-        useEffect,
-        useId,
-        useState,
-        version
-      } from "react";
+      import React, { Children, cloneElement, isValidElement, useEffect, useId, useState, version } from "react";
       import { createRoot } from "react-dom/client";
       import ReactAll from "react-all";
+			
+      createRoot(document.getElementById("app")).render(<App />);
 
       function DecoratedLabel({ children }) {
         const child = Children.only(children);
@@ -52,7 +46,7 @@
         return (
           <main className="mx-auto mt-8 max-w-2xl rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
             <div className="mb-6 flex items-center justify-between gap-4">
-              <h1 className="text-2xl font-semibold tracking-tight text-slate-900">react-all.esm.js</h1>
+              <h1 className="text-2xl font-semibold tracking-tight text-slate-900">react-all.min.js</h1>
               <span className="rounded-full bg-sky-100 px-3 py-1 text-sm font-medium text-sky-700">
                 Tailwind enabled
               </span>
@@ -77,8 +71,6 @@
           </main>
         );
       }
-
-      createRoot(document.getElementById("app")).render(<App />);
     </script>
   </head>
   <body>

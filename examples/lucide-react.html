@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="data:," />
-    <title>lucide-react.esm.js</title>
+    <title>lucide-react.min.js</title>
     <script type="importmap">
       {
         "imports": {
-          "react": "../dist/react-all.esm.js",
-          "react-dom/client": "../dist/react-all.esm.js",
-          "lucide-react": "../dist/lucide-react.esm.js"
+          "react": "../dist/react-all.min.js",
+          "react-dom/client": "../dist/react-all.min.js",
+          "lucide-react": "../dist/lucide-react.min.js"
         }
       }
     </script>
@@ -20,15 +20,10 @@
       import React, { useState } from "react";
       import { createRoot } from "react-dom/client";
       import {
-        ArrowUpRight,
-        Bell,
-        Boxes,
-        ChartColumn,
-        Cloud,
-        FolderKanban,
-        ShieldCheck,
-        Sparkles
+        ArrowUpRight, Bell, Boxes, ChartColumn, Cloud, FolderKanban, ShieldCheck, Sparkles
       } from "lucide-react";
+			
+      createRoot(document.getElementById("app")).render(<App />);
 
       const cards = [
         {
@@ -96,7 +91,7 @@
                         Icon Bundle
                       </p>
                       <h1 className="mt-2 text-4xl font-semibold tracking-tight text-slate-900">
-                        lucide-react.esm.js
+                        lucide-react.min.js
                       </h1>
                     </div>
                     <div className="rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-medium text-sky-800">
@@ -192,8 +187,6 @@
           </main>
         );
       }
-
-      createRoot(document.getElementById("app")).render(<App />);
     </script>
   </head>
   <body class="bg-slate-100">

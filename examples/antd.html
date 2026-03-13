@@ -4,14 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="data:," />
-    <title>antd.esm.js</title>
+    <title>antd.min.js</title>
     <script type="importmap">
       {
         "imports": {
-          "react": "../dist/react-all.esm.js",
-          "react-dom": "../dist/react-all.esm.js",
-          "react-dom/client": "../dist/react-all.esm.js",
-          "antd": "../dist/antd.esm.js"
+          "react": "../dist/react-all.min.js",
+          "react-dom": "../dist/react-all.min.js",
+          "react-dom/client": "../dist/react-all.min.js",
+          "antd": "../dist/antd.min.js"
         }
       }
     </script>
@@ -21,20 +21,11 @@
       import React, { useState } from "react";
       import { createRoot } from "react-dom/client";
       import {
-        Alert,
-        Button,
-        Card,
-        Col,
-        ConfigProvider,
-        Divider,
-        Progress,
-        Row,
-        Space,
-        Statistic,
-        Tag,
-        Typography,
-        version as antdVersion
+        Alert, Button, Card, Col, ConfigProvider, Divider, Progress, Row, Space, Statistic, Tag,
+        Typography, version as antdVersion
       } from "antd";
+			
+      createRoot(document.getElementById("app")).render(<App />);
 
       function App() {
         const [count, setCount] = useState(0);
@@ -61,7 +52,7 @@
                       ESM Bundle Showcase
                     </p>
                     <h1 className="mt-2 text-4xl font-semibold tracking-tight text-slate-900">
-                      antd.esm.js
+                      antd.min.js
                     </h1>
                     <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
                       单文件 bundle 直接在浏览器里提供 Ant Design 组件能力，React 相关依赖通过
@@ -80,7 +71,7 @@
                         <Alert
                           type="success"
                           title="bundle loaded"
-                          description="Ant Design 组件已经从 dist/antd.esm.js 正常加载。"
+                          description="Ant Design 组件已经从 dist/antd.min.js 正常加载。"
                           showIcon
                         />
 
@@ -162,8 +153,6 @@
           </ConfigProvider>
         );
       }
-
-      createRoot(document.getElementById("app")).render(<App />);
     </script>
   </head>
   <body class="bg-slate-100">

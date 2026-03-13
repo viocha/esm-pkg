@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { build } from "esbuild";
+import { buildShadcnBundle } from "./build-shadcn.mjs";
 
 const projectRoot = process.cwd();
 const configPath = path.resolve(projectRoot, "esm-pkg.config.mjs");
@@ -54,10 +55,6 @@ function expandExternals(externals) {
 }
 
 function getMinifiedOutFile(outFile) {
-  if (outFile.endsWith(".esm.js")) {
-    return `${outFile.slice(0, -".js".length)}.min.js`;
-  }
-
   const ext = path.extname(outFile);
   if (!ext) {
     return `${outFile}.min`;
@@ -192,7 +189,7 @@ async function generateExamplesData(results) {
     const minifiedStat = await fs.stat(path.resolve(projectRoot, result.minifiedOutFile));
 
     bundles.push({
-      name: path.basename(result.outFile).replace(/\.esm\.js$/, ""),
+      name: path.basename(result.outFile).replace(/\.js$/, ""),
       esm: {
         file: `../${result.outFile.replace(/\\/g, "/")}`,
         size: normalStat.size,
@@ -307,6 +304,8 @@ async function main() {
     const result = await buildBundle(bundleConfig);
     results.push(result);
   }
+
+  results.push(await buildShadcnBundle(projectRoot));
 
   await generateExamplesData(results);
 

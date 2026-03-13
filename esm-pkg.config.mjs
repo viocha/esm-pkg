@@ -2,31 +2,31 @@ export default [
   {
     modules: ["react", "react-dom"],
     exclude: [],
-    outFile: "dist/react-all.esm.js"
+    outFile: "dist/react-all.js"
   },
   {
     modules: ["antd"],
     exclude: ["react", "react-dom"],
-    outFile: "dist/antd.esm.js"
+    outFile: "dist/antd.js"
   },
   {
     modules: ["@ant-design/icons"],
     exclude: ["react", "react-dom"],
-    outFile: "dist/ant-design-icons.esm.js"
+    outFile: "dist/ant-design-icons.js"
   },
   {
     modules: ["clsx"],
     exclude: [],
-    outFile: "dist/clsx.esm.js"
+    outFile: "dist/clsx.js"
   },
   {
     modules: ["lucide-react"],
     exclude: ["react"],
-    outFile: "dist/lucide-react.esm.js"
+    outFile: "dist/lucide-react.js"
   },
   {
     modules: ["htm"],
     exclude: [],
-    outFile: "dist/htm.esm.js"
+    outFile: "dist/htm.js"
   }
 ];

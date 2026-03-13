@@ -1,11 +1,13 @@
 {
   "name": "esm-pkg",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "private": true,
+  "packageManager": "pnpm@10.18.0",
   "type": "module",
   "scripts": {
     "build": "node ./scripts/build-all.mjs",
-    "test:e2e": "npm run build && playwright test"
+    "build:shadcn": "node ./scripts/build-shadcn.mjs",
+    "test:e2e": "pnpm run build && playwright test"
   },
   "engines": {
     "node": ">=18.18.0"

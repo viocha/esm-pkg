@@ -4,12 +4,13 @@
 
 适合这类场景：
 
-- 把 `react`、`react-dom` 合并成一个 `react-all.esm.js`
+- 把 `react`、`react-dom` 合并成一个 `react-all.js`
 - 把 `antd` 打成单文件，但把 `react` 相关依赖外部化
 - 把 `@ant-design/icons` 打成单文件，但把 `react` 相关依赖外部化
 - 把 `clsx` 打成单文件，并直接在浏览器里用默认导入
 - 把 `lucide-react` 打成单文件，并在静态页面中渲染 React 图标组件
 - 把 `htm` 打成单文件，并用于不依赖 Babel 的 React 示例
+- 单独下载并聚合 `shadcn/ui` 全部源码组件与 `cn`
 - 在静态 HTML 里直接通过 `type="module"` 和 `importmap` 使用产物
 
 ## 特性
@@ -27,21 +28,21 @@
 ## 安装
 
 ```bash
-npm install
+pnpm install
 ```
 
 ## 构建
 
 ```bash
-npm run build
+pnpm build
 ```
 
 构建后会生成：
 
-- `dist/*.esm.js`
-- `dist/*.esm.min.js`
-- `dist/*.esm.js.map`
-- `dist/*.esm.min.js.map`
+- `dist/*.js`
+- `dist/*.min.js`
+- `dist/*.js.map`
+- `dist/*.min.js.map`
 - `examples/index.generated.js`
 
 ## 配置
@@ -55,32 +56,32 @@ export default [
   {
     modules: ["react", "react-dom"],
     exclude: [],
-    outFile: "dist/react-all.esm.js"
+    outFile: "dist/react-all.js"
   },
   {
     modules: ["antd"],
     exclude: ["react", "react-dom"],
-    outFile: "dist/antd.esm.js"
+    outFile: "dist/antd.js"
   },
   {
     modules: ["@ant-design/icons"],
     exclude: ["react", "react-dom"],
-    outFile: "dist/ant-design-icons.esm.js"
+    outFile: "dist/ant-design-icons.js"
   },
   {
     modules: ["clsx"],
     exclude: [],
-    outFile: "dist/clsx.esm.js"
+    outFile: "dist/clsx.js"
   },
   {
     modules: ["lucide-react"],
     exclude: ["react"],
-    outFile: "dist/lucide-react.esm.js"
+    outFile: "dist/lucide-react.js"
   },
   {
     modules: ["htm"],
     exclude: [],
-    outFile: "dist/htm.esm.js"
+    outFile: "dist/htm.js"
   }
 ];
 ```
@@ -102,7 +103,7 @@ export default [
 例如 `htm` 仍然可以直接这样使用：
 
 ```js
-import htm from "./dist/htm.esm.js";
+import htm from "./dist/htm.js";
 
 const html = htm.bind(React.createElement);
 ```
@@ -110,7 +111,7 @@ const html = htm.bind(React.createElement);
 例如：
 
 ```js
-import ReactAll, { createElement, createRoot, jsx } from "./dist/react-all.esm.js";
+import ReactAll, { createElement, createRoot, jsx } from "./dist/react-all.js";
 ```
 
 其中：
@@ -128,11 +129,11 @@ import ReactAll, { createElement, createRoot, jsx } from "./dist/react-all.esm.j
 {
   modules: ["antd"],
   exclude: ["react", "react-dom"],
-  outFile: "dist/antd.esm.js"
+  outFile: "dist/antd.js"
 }
 ```
 
-这会让 `antd.esm.js` 依赖外部的：
+这会让 `antd.js` 依赖外部的：
 
 - `react`
 - `react-dom`
@@ -152,7 +153,7 @@ import ReactAll, { createElement, createRoot, jsx } from "./dist/react-all.esm.j
     createElement,
     createRoot,
     useState
-  } from "../dist/react-all.esm.js";
+  } from "../dist/react-all.js";
 
   console.log(ReactAll, createElement, createRoot, useState);
 </script>
@@ -160,17 +161,17 @@ import ReactAll, { createElement, createRoot, jsx } from "./dist/react-all.esm.j
 
 ### Antd 聚合包
 
-因为 `antd.esm.js` 外部化了 React 相关依赖，所以浏览器里通常要配 `importmap`：
+因为 `antd.js` 外部化了 React 相关依赖，所以浏览器里通常要配 `importmap`：
 
 ```html
 <script type="importmap">
   {
     "imports": {
-      "react": "../dist/react-all.esm.js",
-      "react-dom": "../dist/react-all.esm.js",
-      "react-dom/client": "../dist/react-all.esm.js",
-      "react/jsx-runtime": "../dist/react-all.esm.js",
-      "react/jsx-dev-runtime": "../dist/react-all.esm.js"
+      "react": "../dist/react-all.js",
+      "react-dom": "../dist/react-all.js",
+      "react-dom/client": "../dist/react-all.js",
+      "react/jsx-runtime": "../dist/react-all.js",
+      "react/jsx-dev-runtime": "../dist/react-all.js"
     }
   }
 </script>
@@ -180,8 +181,8 @@ import ReactAll, { createElement, createRoot, jsx } from "./dist/react-all.esm.j
 
 ```html
 <script type="module">
-  import { Button } from "../dist/antd.esm.js";
-  import { createElement, createRoot } from "../dist/react-all.esm.js";
+  import { Button } from "../dist/antd.js";
+  import { createElement, createRoot } from "../dist/react-all.js";
 
   console.log(Button, createElement, createRoot);
 </script>
@@ -212,8 +213,10 @@ import ReactAll, { createElement, createRoot, jsx } from "./dist/react-all.esm.j
 所以新增示例页后，只需要重新执行：
 
 ```bash
-npm run build
+pnpm build
 ```
+
+另外，`shadcn/ui` 不走根配置文件。构建脚本会在首次构建时单独创建一个临时工作目录，下载官方 CLI 生成的全部组件源码，检查运行时导出名是否冲突，再额外产出 `dist/shadcn.js` 和 `dist/shadcn.min.js`。
 
 ## 本地查看示例
 

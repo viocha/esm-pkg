@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="data:," />
-    <title>ant-design-icons.esm.js</title>
+    <title>ant-design-icons.min.js</title>
     <script type="importmap">
       {
         "imports": {
-          "react": "../dist/react-all.esm.js",
-          "react-dom/client": "../dist/react-all.esm.js",
-          "@ant-design/icons": "../dist/ant-design-icons.esm.js"
+          "react": "../dist/react-all.min.js",
+          "react-dom/client": "../dist/react-all.min.js",
+          "@ant-design/icons": "../dist/ant-design-icons.min.js"
         }
       }
     </script>
@@ -18,12 +18,9 @@
     <script type="text/babel" data-type="module">
       import React from "react";
       import { createRoot } from "react-dom/client";
-      import {
-        CheckCircleOutlined,
-        HeartFilled,
-        LoadingOutlined,
-        SmileOutlined
-      } from "@ant-design/icons";
+      import { CheckCircleOutlined, HeartFilled, LoadingOutlined, SmileOutlined } from "@ant-design/icons";
+    
+			createRoot(document.getElementById("app")).render(<App />);
 
       const icons = [
         ["SmileOutlined", SmileOutlined],
@@ -43,7 +40,7 @@
               maxWidth: "560px"
             }}
           >
-            <h1>ant-design-icons.esm.js</h1>
+            <h1>ant-design-icons.min.js</h1>
             <div
               style={{
                 color: "#1677ff",
@@ -78,8 +75,6 @@
           </main>
         );
       }
-
-      createRoot(document.getElementById("app")).render(<App />);
     </script>
   </head>
   <body>
