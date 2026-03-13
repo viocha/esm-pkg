@@ -22006,12 +22006,14 @@ var __defaultMerged = Object.assign(
   ...__defaults.filter((value) => value !== void 0 && value !== null && (typeof value === "object" || typeof value === "function"))
 );
 var __merged = Object.assign({}, __defaultMerged, __namedMerged);
+var __singleDefault = __defaults[0];
 if (__default0 !== void 0) __merged.reactDefault = __default0;
 if (__default1 !== void 0) __merged.reactDomDefault = __default1;
 if (__default2 !== void 0) __merged.reactDomClientDefault = __default2;
 if (__default3 !== void 0) __merged.reactJsxRuntimeDefault = __default3;
 if (__default4 !== void 0) __merged.reactJsxDevRuntimeDefault = __default4;
-var distReactAllEsmJs_entry_default = __merged;
+var __defaultExport = __merged;
+var distReactAllEsmJs_entry_default = __defaultExport;
 var __CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE2 = __mod0["__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE"];
 var __COMPILER_RUNTIME2 = __mod0["__COMPILER_RUNTIME"];
 var __DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE2 = __mod1["__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE"];

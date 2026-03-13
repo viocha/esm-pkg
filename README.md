@@ -7,6 +7,7 @@
 - 把 `react`、`react-dom` 合并成一个 `react-all.esm.js`
 - 把 `antd` 打成单文件，但把 `react` 相关依赖外部化
 - 把 `@ant-design/icons` 打成单文件，但把 `react` 相关依赖外部化
+- 把 `htm` 打成单文件，并用于不依赖 Babel 的 React 示例
 - 在静态 HTML 里直接通过 `type="module"` 和 `importmap` 使用产物
 
 ## 特性
@@ -14,6 +15,7 @@
 - 根路径使用声明式配置
 - 一次命令构建全部 bundle
 - 多个库会合并默认导出和命名导出
+- 单模块 bundle 会保留原包的默认导出形态
 - `exclude` 会转成 external，不打进当前产物
 - 自动生成 `examples/index.html` 使用的数据文件
 - 对 React 相关包做了两条自动补入规则：
@@ -62,6 +64,11 @@ export default [
     modules: ["@ant-design/icons"],
     exclude: ["react", "react-dom"],
     outFile: "dist/ant-design-icons.esm.js"
+  },
+  {
+    modules: ["htm"],
+    exclude: [],
+    outFile: "dist/htm.esm.js"
   }
 ];
 ```
@@ -78,6 +85,15 @@ export default [
 
 - 默认导出：把各个库的默认导出按对象方式合并成一个默认导出对象
 - 命名导出：把所有库的命名导出平铺导出
+
+如果 bundle 里只声明了一个库，则默认导出保持和原包一致。
+例如 `htm` 仍然可以直接这样使用：
+
+```js
+import htm from "./dist/htm.esm.js";
+
+const html = htm.bind(React.createElement);
+```
 
 例如：
 
@@ -168,6 +184,7 @@ import ReactAll, { createElement, createRoot, jsx } from "./dist/react-all.esm.j
 - `examples/react-all.html`
 - `examples/antd.html`
 - `examples/ant-design-icons.html`
+- `examples/htm-react.html`
 - `examples/index.html`
 
 其中 `examples/index.html` 本身不写死页面路径，它会导入 `examples/index.generated.js` 来渲染列表。
@@ -206,6 +223,7 @@ python -m http.server 4173
 |-- examples/
 |   |-- ant-design-icons.html
 |   |-- antd.html
+|   |-- htm-react.html
 |   |-- index.generated.js
 |   |-- index.html
 |   `-- react-all.html

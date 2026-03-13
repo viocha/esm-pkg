@@ -28,10 +28,6 @@ function isValidIdentifier(input) {
   return /^[A-Za-z_$][A-Za-z0-9_$]*$/.test(input);
 }
 
-function isObjectLike(value) {
-  return value !== null && (typeof value === "object" || typeof value === "function");
-}
-
 function expandModules(modules) {
   const expanded = [...modules];
 
@@ -76,6 +72,7 @@ function buildEntrySource(specifiers, exportMap, defaultAliases) {
     .join("\n");
 
   const moduleRefs = specifiers.map((_, index) => `__mod${index}`);
+  const hasSingleModule = specifiers.length === 1;
   const defaultKeyLine = 'const __defaultKey = "default";';
   const defaultRefs = specifiers
     .map(
@@ -114,12 +111,21 @@ const __defaultMerged = Object.assign(
 );
 
 const __merged = Object.assign({}, __defaultMerged, __namedMerged);
+const __singleDefault = __defaults[0];
 
 ${defaultAliases
   .map(({ exportName, ref }) => `if (${ref} !== undefined) __merged.${exportName} = ${ref};`)
   .join("\n")}
 
-export default __merged;
+const __defaultExport = ${
+  hasSingleModule
+    ? `(__singleDefault !== undefined && __singleDefault !== null && (typeof __singleDefault === "object" || typeof __singleDefault === "function"))
+  ? Object.assign(__singleDefault, __namedMerged)
+  : (__singleDefault !== undefined ? __singleDefault : __merged)`
+    : "__merged"
+};
+
+export default __defaultExport;
 ${namedExports}
 `;
 }

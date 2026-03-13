@@ -29538,8 +29538,10 @@ var __defaultMerged = Object.assign(
   ...__defaults.filter((value) => value !== void 0 && value !== null && (typeof value === "object" || typeof value === "function"))
 );
 var __merged = Object.assign({}, __defaultMerged, __namedMerged);
+var __singleDefault = __defaults[0];
 if (__default0 !== void 0) __merged.antDesignIconsDefault = __default0;
-var distAntDesignIconsEsmJs_entry_default = __merged;
+var __defaultExport = __singleDefault !== void 0 && __singleDefault !== null && (typeof __singleDefault === "object" || typeof __singleDefault === "function") ? Object.assign(__singleDefault, __namedMerged) : __singleDefault !== void 0 ? __singleDefault : __merged;
+var distAntDesignIconsEsmJs_entry_default = __defaultExport;
 var AccountBookFilled3 = AccountBookFilled_default2;
 var AccountBookOutlined3 = AccountBookOutlined_default2;
 var AccountBookTwoTone3 = AccountBookTwoTone_default2;

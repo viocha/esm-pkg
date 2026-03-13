@@ -13,5 +13,10 @@ export default [
     modules: ["@ant-design/icons"],
     exclude: ["react", "react-dom"],
     outFile: "dist/ant-design-icons.esm.js"
+  },
+  {
+    modules: ["htm"],
+    exclude: [],
+    outFile: "dist/htm.esm.js"
   }
 ];

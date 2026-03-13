@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>htm + react without babel</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "../dist/react-all.esm.js",
+          "react-dom/client": "../dist/react-all.esm.js",
+          "htm": "../dist/htm.esm.js"
+        }
+      }
+    </script>
+    <script src="./vendor/tailwindcss-browser.js"></script>
+    <script type="module">
+      import React, { useEffect, useId, useState } from "react";
+      import { createRoot } from "react-dom/client";
+      import htm from "htm";
+
+      const html = htm.bind(React.createElement);
+
+      function Token({ children }) {
+        return html`<span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-700">${children}</span>`;
+      }
+
+      function App() {
+        const [count, setCount] = useState(0);
+        const id = useId();
+
+        useEffect(() => {
+          document.body.dataset.htmReady = "true";
+        }, []);
+
+        return html`
+          <main className="mx-auto mt-8 max-w-2xl rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+            <div className="mb-6 flex items-center justify-between gap-4">
+              <h1 className="text-2xl font-semibold tracking-tight text-slate-900">htm + React</h1>
+              <${Token}>No Babel<//>
+            </div>
+            <p className="text-sm text-slate-600">使用 <code>htm.bind(React.createElement)</code> 直接写模板字符串。</p>
+            <p id=${id} className="mt-2 text-sm text-slate-600">计数器 id: ${id}</p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <${Token}>htm.esm.js<//>
+              <${Token}>react-all.esm.js<//>
+              <${Token}>type="module"<//>
+            </div>
+            <div className="mt-6">
+              <button
+                className="rounded-xl bg-emerald-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-emerald-500"
+                onClick=${() => setCount((value) => value + 1)}
+              >
+                点击次数: ${count}
+              </button>
+            </div>
+          </main>
+        `;
+      }
+
+      createRoot(document.getElementById("app")).render(html`<${App} />`);
+    </script>
+  </head>
+  <body class="bg-slate-100 text-slate-900">
+    <div id="app"></div>
+  </body>
+  </html>
