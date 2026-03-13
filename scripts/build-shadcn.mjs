@@ -393,6 +393,7 @@ export async function buildShadcnBundle(projectRoot) {
 		entryPoints: [sourceFile],
 		external: ["react", "react-dom"],
 		format: "esm",
+		jsx: "automatic",
 		legalComments: "none",
 		platform: "browser",
 		plugins: [createReactShimPlugin(reactShimFile)],

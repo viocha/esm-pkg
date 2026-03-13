@@ -47,13 +47,13 @@ var shadcn_react_shim_exports = {};
 __export(shadcn_react_shim_exports, {
   default: () => shadcn_react_shim_default
 });
-import React2 from "react";
+import React from "react";
 import * as react_star from "react";
 var shadcn_react_shim_default;
 var init_shadcn_react_shim = __esm({
   "../../.esm-pkg/shadcn.react-shim.mjs"() {
     __reExport(shadcn_react_shim_exports, react_star);
-    shadcn_react_shim_default = React2;
+    shadcn_react_shim_default = React;
   }
 });
 
@@ -66,7 +66,7 @@ var require_use_sync_external_store_shim_development = __commonJS({
         return x2 === y && (0 !== x2 || 1 / x2 === 1 / y) || x2 !== x2 && y !== y;
       }
       function useSyncExternalStore$2(subscribe2, getSnapshot) {
-        didWarnOld18Alpha || void 0 === React3.startTransition || (didWarnOld18Alpha = true, console.error(
+        didWarnOld18Alpha || void 0 === React2.startTransition || (didWarnOld18Alpha = true, console.error(
           "You are using an outdated, pre-release alpha of React 18 that does not support useSyncExternalStore. The use-sync-external-store shim will not work correctly. Upgrade to a newer pre-release."
         ));
         var value = getSnapshot();
@@ -114,8 +114,8 @@ var require_use_sync_external_store_shim_development = __commonJS({
         return getSnapshot();
       }
       "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-      var React3 = (init_shadcn_react_shim(), __toCommonJS(shadcn_react_shim_exports)), objectIs = "function" === typeof Object.is ? Object.is : is, useState55 = React3.useState, useEffect61 = React3.useEffect, useLayoutEffect10 = React3.useLayoutEffect, useDebugValue2 = React3.useDebugValue, didWarnOld18Alpha = false, didWarnUncachedGetSnapshot = false, shim = "undefined" === typeof window || "undefined" === typeof window.document || "undefined" === typeof window.document.createElement ? useSyncExternalStore$1 : useSyncExternalStore$2;
-      exports.useSyncExternalStore = void 0 !== React3.useSyncExternalStore ? React3.useSyncExternalStore : shim;
+      var React2 = (init_shadcn_react_shim(), __toCommonJS(shadcn_react_shim_exports)), objectIs = "function" === typeof Object.is ? Object.is : is, useState55 = React2.useState, useEffect61 = React2.useEffect, useLayoutEffect10 = React2.useLayoutEffect, useDebugValue2 = React2.useDebugValue, didWarnOld18Alpha = false, didWarnUncachedGetSnapshot = false, shim = "undefined" === typeof window || "undefined" === typeof window.document || "undefined" === typeof window.document.createElement ? useSyncExternalStore$1 : useSyncExternalStore$2;
+      exports.useSyncExternalStore = void 0 !== React2.useSyncExternalStore ? React2.useSyncExternalStore : shim;
       "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
     })();
   }
@@ -3264,7 +3264,7 @@ var require_with_selector_development = __commonJS({
         return x2 === y && (0 !== x2 || 1 / x2 === 1 / y) || x2 !== x2 && y !== y;
       }
       "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-      var React3 = (init_shadcn_react_shim(), __toCommonJS(shadcn_react_shim_exports)), shim = require_shim(), objectIs = "function" === typeof Object.is ? Object.is : is, useSyncExternalStore4 = shim.useSyncExternalStore, useRef66 = React3.useRef, useEffect61 = React3.useEffect, useMemo47 = React3.useMemo, useDebugValue2 = React3.useDebugValue;
+      var React2 = (init_shadcn_react_shim(), __toCommonJS(shadcn_react_shim_exports)), shim = require_shim(), objectIs = "function" === typeof Object.is ? Object.is : is, useSyncExternalStore4 = shim.useSyncExternalStore, useRef66 = React2.useRef, useEffect61 = React2.useEffect, useMemo47 = React2.useMemo, useDebugValue2 = React2.useDebugValue;
       exports.useSyncExternalStoreWithSelector = function(subscribe2, getSnapshot, getServerSnapshot, selector, isEqual) {
         var instRef = useRef66(null);
         if (null === instRef.current) {
@@ -13118,6 +13118,7 @@ function useIsMobile() {
 
 // src/components/theme-provider.tsx
 init_shadcn_react_shim();
+import { jsx } from "react/jsx-runtime";
 var COLOR_SCHEME_QUERY = "(prefers-color-scheme: dark)";
 var THEME_VALUES = ["dark", "light", "system"];
 var ThemeProviderContext = shadcn_react_shim_exports.createContext(void 0);
@@ -13264,7 +13265,7 @@ function ThemeProvider({
     }),
     [theme, setTheme]
   );
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(ThemeProviderContext.Provider, { ...props, value }, children);
+  return /* @__PURE__ */ jsx(ThemeProviderContext.Provider, { ...props, value, children });
 }
 var useTheme = () => {
   const context = shadcn_react_shim_exports.useContext(ThemeProviderContext);
@@ -13273,9 +13274,6 @@ var useTheme = () => {
   }
   return context;
 };
-
-// src/components/ui/accordion.tsx
-init_shadcn_react_shim();
 
 // node_modules/.pnpm/@radix-ui+react-visually-hi_fa89646d7248b32d1762bf88948f6339/node_modules/@radix-ui/react-visually-hidden/dist/index.mjs
 init_shadcn_react_shim();
@@ -13333,7 +13331,7 @@ function useComposedRefs(...refs) {
 }
 
 // node_modules/.pnpm/@radix-ui+react-slot@1.2.3_@types+react@19.2.14_react@19.2.4/node_modules/@radix-ui/react-slot/dist/index.mjs
-import { Fragment as Fragment2, jsx } from "react/jsx-runtime";
+import { Fragment as Fragment2, jsx as jsx2 } from "react/jsx-runtime";
 // @__NO_SIDE_EFFECTS__
 function createSlot(ownerName) {
   const SlotClone = /* @__PURE__ */ createSlotClone(ownerName);
@@ -13351,9 +13349,9 @@ function createSlot(ownerName) {
           return child;
         }
       });
-      return /* @__PURE__ */ jsx(SlotClone, { ...slotProps, ref: forwardedRef, children: shadcn_react_shim_exports.isValidElement(newElement) ? shadcn_react_shim_exports.cloneElement(newElement, void 0, newChildren) : null });
+      return /* @__PURE__ */ jsx2(SlotClone, { ...slotProps, ref: forwardedRef, children: shadcn_react_shim_exports.isValidElement(newElement) ? shadcn_react_shim_exports.cloneElement(newElement, void 0, newChildren) : null });
     }
-    return /* @__PURE__ */ jsx(SlotClone, { ...slotProps, ref: forwardedRef, children });
+    return /* @__PURE__ */ jsx2(SlotClone, { ...slotProps, ref: forwardedRef, children });
   });
   Slot22.displayName = `${ownerName}.Slot`;
   return Slot22;
@@ -13380,7 +13378,7 @@ var SLOTTABLE_IDENTIFIER = /* @__PURE__ */ Symbol("radix.slottable");
 // @__NO_SIDE_EFFECTS__
 function createSlottable(ownerName) {
   const Slottable22 = ({ children }) => {
-    return /* @__PURE__ */ jsx(Fragment2, { children });
+    return /* @__PURE__ */ jsx2(Fragment2, { children });
   };
   Slottable22.displayName = `${ownerName}.Slottable`;
   Slottable22.__radixId = SLOTTABLE_IDENTIFIER;
@@ -13429,7 +13427,7 @@ function getElementRef(element) {
 }
 
 // node_modules/.pnpm/@radix-ui+react-primitive@2_1181ea5061ec9212248424669240e4ec/node_modules/@radix-ui/react-primitive/dist/index.mjs
-import { jsx as jsx2 } from "react/jsx-runtime";
+import { jsx as jsx3 } from "react/jsx-runtime";
 var NODES = [
   "a",
   "button",
@@ -13457,7 +13455,7 @@ var Primitive = NODES.reduce((primitive, node) => {
     if (typeof window !== "undefined") {
       window[/* @__PURE__ */ Symbol.for("radix-ui")] = true;
     }
-    return /* @__PURE__ */ jsx2(Comp, { ...primitiveProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx3(Comp, { ...primitiveProps, ref: forwardedRef });
   });
   Node2.displayName = `Primitive.${node}`;
   return { ...primitive, [node]: Node2 };
@@ -13467,7 +13465,7 @@ function dispatchDiscreteCustomEvent(target, event) {
 }
 
 // node_modules/.pnpm/@radix-ui+react-visually-hi_fa89646d7248b32d1762bf88948f6339/node_modules/@radix-ui/react-visually-hidden/dist/index.mjs
-import { jsx as jsx3 } from "react/jsx-runtime";
+import { jsx as jsx4 } from "react/jsx-runtime";
 var VISUALLY_HIDDEN_STYLES = Object.freeze({
   // See: https://github.com/twbs/bootstrap/blob/main/scss/mixins/_visually-hidden.scss
   position: "absolute",
@@ -13484,7 +13482,7 @@ var VISUALLY_HIDDEN_STYLES = Object.freeze({
 var NAME = "VisuallyHidden";
 var VisuallyHidden = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
-    return /* @__PURE__ */ jsx3(
+    return /* @__PURE__ */ jsx4(
       Primitive.span,
       {
         ...props,
@@ -13516,13 +13514,13 @@ init_shadcn_react_shim();
 
 // node_modules/.pnpm/@radix-ui+react-context@1.1_9d20477d12b5887e0da6102ab9f6f0ba/node_modules/@radix-ui/react-context/dist/index.mjs
 init_shadcn_react_shim();
-import { jsx as jsx4 } from "react/jsx-runtime";
+import { jsx as jsx5 } from "react/jsx-runtime";
 function createContext22(rootComponentName, defaultContext) {
   const Context = shadcn_react_shim_exports.createContext(defaultContext);
   const Provider3 = (props) => {
     const { children, ...context } = props;
     const value = shadcn_react_shim_exports.useMemo(() => context, Object.values(context));
-    return /* @__PURE__ */ jsx4(Context.Provider, { value, children });
+    return /* @__PURE__ */ jsx5(Context.Provider, { value, children });
   };
   Provider3.displayName = rootComponentName + "Provider";
   function useContext210(consumerName) {
@@ -13543,7 +13541,7 @@ function createContextScope(scopeName, createContextScopeDeps = []) {
       const { scope, children, ...context } = props;
       const Context = scope?.[scopeName]?.[index2] || BaseContext;
       const value = shadcn_react_shim_exports.useMemo(() => context, Object.values(context));
-      return /* @__PURE__ */ jsx4(Context.Provider, { value, children });
+      return /* @__PURE__ */ jsx5(Context.Provider, { value, children });
     };
     Provider3.displayName = rootComponentName + "Provider";
     function useContext210(consumerName, scope) {
@@ -13594,7 +13592,7 @@ function composeContextScopes(...scopes) {
 // node_modules/.pnpm/@radix-ui+react-collection@_161926fa2509d0b7370b60b8bb4eb8b0/node_modules/@radix-ui/react-collection/dist/index.mjs
 init_shadcn_react_shim();
 init_shadcn_react_shim();
-import { jsx as jsx5 } from "react/jsx-runtime";
+import { jsx as jsx6 } from "react/jsx-runtime";
 import { jsx as jsx22 } from "react/jsx-runtime";
 function createCollection(name) {
   const PROVIDER_NAME2 = name + "CollectionProvider";
@@ -13607,7 +13605,7 @@ function createCollection(name) {
     const { scope, children } = props;
     const ref = shadcn_react_shim_default.useRef(null);
     const itemMap = shadcn_react_shim_default.useRef(/* @__PURE__ */ new Map()).current;
-    return /* @__PURE__ */ jsx5(CollectionProviderImpl, { scope, itemMap, collectionRef: ref, children });
+    return /* @__PURE__ */ jsx6(CollectionProviderImpl, { scope, itemMap, collectionRef: ref, children });
   };
   CollectionProvider.displayName = PROVIDER_NAME2;
   const COLLECTION_SLOT_NAME = name + "CollectionSlot";
@@ -13617,7 +13615,7 @@ function createCollection(name) {
       const { scope, children } = props;
       const context = useCollectionContext(COLLECTION_SLOT_NAME, scope);
       const composedRefs = useComposedRefs(forwardedRef, context.collectionRef);
-      return /* @__PURE__ */ jsx5(CollectionSlotImpl, { ref: composedRefs, children });
+      return /* @__PURE__ */ jsx6(CollectionSlotImpl, { ref: composedRefs, children });
     }
   );
   CollectionSlot.displayName = COLLECTION_SLOT_NAME;
@@ -13634,7 +13632,7 @@ function createCollection(name) {
         context.itemMap.set(ref, { ref, ...itemData });
         return () => void context.itemMap.delete(ref);
       });
-      return /* @__PURE__ */ jsx5(CollectionItemSlotImpl, { ...{ [ITEM_DATA_ATTR]: "" }, ref: composedRefs, children });
+      return /* @__PURE__ */ jsx6(CollectionItemSlotImpl, { ...{ [ITEM_DATA_ATTR]: "" }, ref: composedRefs, children });
     }
   );
   CollectionItemSlot.displayName = ITEM_SLOT_NAME;
@@ -13897,7 +13895,7 @@ function useId(deterministicId) {
 }
 
 // node_modules/.pnpm/@radix-ui+react-collapsible_10a2c6d0ac3bcc7422bd3020fe61e076/node_modules/@radix-ui/react-collapsible/dist/index.mjs
-import { jsx as jsx6 } from "react/jsx-runtime";
+import { jsx as jsx7 } from "react/jsx-runtime";
 var COLLAPSIBLE_NAME = "Collapsible";
 var [createCollapsibleContext, createCollapsibleScope] = createContextScope(COLLAPSIBLE_NAME);
 var [CollapsibleProvider, useCollapsibleContext] = createCollapsibleContext(COLLAPSIBLE_NAME);
@@ -13917,7 +13915,7 @@ var Collapsible = shadcn_react_shim_exports.forwardRef(
       onChange: onOpenChange,
       caller: COLLAPSIBLE_NAME
     });
-    return /* @__PURE__ */ jsx6(
+    return /* @__PURE__ */ jsx7(
       CollapsibleProvider,
       {
         scope: __scopeCollapsible,
@@ -13925,7 +13923,7 @@ var Collapsible = shadcn_react_shim_exports.forwardRef(
         contentId: useId(),
         open,
         onOpenToggle: shadcn_react_shim_exports.useCallback(() => setOpen((prevOpen) => !prevOpen), [setOpen]),
-        children: /* @__PURE__ */ jsx6(
+        children: /* @__PURE__ */ jsx7(
           Primitive.div,
           {
             "data-state": getState(open),
@@ -13944,7 +13942,7 @@ var CollapsibleTrigger = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeCollapsible, ...triggerProps } = props;
     const context = useCollapsibleContext(TRIGGER_NAME, __scopeCollapsible);
-    return /* @__PURE__ */ jsx6(
+    return /* @__PURE__ */ jsx7(
       Primitive.button,
       {
         type: "button",
@@ -13966,7 +13964,7 @@ var CollapsibleContent = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { forceMount, ...contentProps } = props;
     const context = useCollapsibleContext(CONTENT_NAME, props.__scopeCollapsible);
-    return /* @__PURE__ */ jsx6(Presence, { present: forceMount || context.open, children: ({ present }) => /* @__PURE__ */ jsx6(CollapsibleContentImpl, { ...contentProps, ref: forwardedRef, present }) });
+    return /* @__PURE__ */ jsx7(Presence, { present: forceMount || context.open, children: ({ present }) => /* @__PURE__ */ jsx7(CollapsibleContentImpl, { ...contentProps, ref: forwardedRef, present }) });
   }
 );
 CollapsibleContent.displayName = CONTENT_NAME;
@@ -14006,7 +14004,7 @@ var CollapsibleContentImpl = shadcn_react_shim_exports.forwardRef((props, forwar
       setIsPresent(present);
     }
   }, [context.open, present]);
-  return /* @__PURE__ */ jsx6(
+  return /* @__PURE__ */ jsx7(
     Primitive.div,
     {
       "data-state": getState(context.open),
@@ -14039,11 +14037,11 @@ __export(dist_exports3, {
   useDirection: () => useDirection
 });
 init_shadcn_react_shim();
-import { jsx as jsx7 } from "react/jsx-runtime";
+import { jsx as jsx8 } from "react/jsx-runtime";
 var DirectionContext = shadcn_react_shim_exports.createContext(void 0);
 var DirectionProvider = (props) => {
   const { dir, children } = props;
-  return /* @__PURE__ */ jsx7(DirectionContext.Provider, { value: dir, children });
+  return /* @__PURE__ */ jsx8(DirectionContext.Provider, { value: dir, children });
 };
 function useDirection(localDir) {
   const globalDir = shadcn_react_shim_exports.useContext(DirectionContext);
@@ -14052,7 +14050,7 @@ function useDirection(localDir) {
 var Provider = DirectionProvider;
 
 // node_modules/.pnpm/@radix-ui+react-accordion@1_8b3df72274e0fa0cff1629993ef7cc33/node_modules/@radix-ui/react-accordion/dist/index.mjs
-import { jsx as jsx8 } from "react/jsx-runtime";
+import { jsx as jsx9 } from "react/jsx-runtime";
 var ACCORDION_NAME = "Accordion";
 var ACCORDION_KEYS = ["Home", "End", "ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight"];
 var [Collection, useCollection, createCollectionScope] = createCollection(ACCORDION_NAME);
@@ -14066,7 +14064,7 @@ var Accordion = shadcn_react_shim_default.forwardRef(
     const { type, ...accordionProps } = props;
     const singleProps = accordionProps;
     const multipleProps = accordionProps;
-    return /* @__PURE__ */ jsx8(Collection.Provider, { scope: props.__scopeAccordion, children: type === "multiple" ? /* @__PURE__ */ jsx8(AccordionImplMultiple, { ...multipleProps, ref: forwardedRef }) : /* @__PURE__ */ jsx8(AccordionImplSingle, { ...singleProps, ref: forwardedRef }) });
+    return /* @__PURE__ */ jsx9(Collection.Provider, { scope: props.__scopeAccordion, children: type === "multiple" ? /* @__PURE__ */ jsx9(AccordionImplMultiple, { ...multipleProps, ref: forwardedRef }) : /* @__PURE__ */ jsx9(AccordionImplSingle, { ...singleProps, ref: forwardedRef }) });
   }
 );
 Accordion.displayName = ACCORDION_NAME;
@@ -14091,14 +14089,14 @@ var AccordionImplSingle = shadcn_react_shim_default.forwardRef(
       onChange: onValueChange,
       caller: ACCORDION_NAME
     });
-    return /* @__PURE__ */ jsx8(
+    return /* @__PURE__ */ jsx9(
       AccordionValueProvider,
       {
         scope: props.__scopeAccordion,
         value: shadcn_react_shim_default.useMemo(() => value ? [value] : [], [value]),
         onItemOpen: setValue,
         onItemClose: shadcn_react_shim_default.useCallback(() => collapsible && setValue(""), [collapsible, setValue]),
-        children: /* @__PURE__ */ jsx8(AccordionCollapsibleProvider, { scope: props.__scopeAccordion, collapsible, children: /* @__PURE__ */ jsx8(AccordionImpl, { ...accordionSingleProps, ref: forwardedRef }) })
+        children: /* @__PURE__ */ jsx9(AccordionCollapsibleProvider, { scope: props.__scopeAccordion, collapsible, children: /* @__PURE__ */ jsx9(AccordionImpl, { ...accordionSingleProps, ref: forwardedRef }) })
       }
     );
   }
@@ -14125,14 +14123,14 @@ var AccordionImplMultiple = shadcn_react_shim_default.forwardRef((props, forward
     (itemValue) => setValue((prevValue = []) => prevValue.filter((value2) => value2 !== itemValue)),
     [setValue]
   );
-  return /* @__PURE__ */ jsx8(
+  return /* @__PURE__ */ jsx9(
     AccordionValueProvider,
     {
       scope: props.__scopeAccordion,
       value,
       onItemOpen: handleItemOpen,
       onItemClose: handleItemClose,
-      children: /* @__PURE__ */ jsx8(AccordionCollapsibleProvider, { scope: props.__scopeAccordion, collapsible: true, children: /* @__PURE__ */ jsx8(AccordionImpl, { ...accordionMultipleProps, ref: forwardedRef }) })
+      children: /* @__PURE__ */ jsx9(AccordionCollapsibleProvider, { scope: props.__scopeAccordion, collapsible: true, children: /* @__PURE__ */ jsx9(AccordionImpl, { ...accordionMultipleProps, ref: forwardedRef }) })
     }
   );
 });
@@ -14207,14 +14205,14 @@ var AccordionImpl = shadcn_react_shim_default.forwardRef(
       const clampedIndex = nextIndex % triggerCount;
       triggerCollection[clampedIndex].ref.current?.focus();
     });
-    return /* @__PURE__ */ jsx8(
+    return /* @__PURE__ */ jsx9(
       AccordionImplProvider,
       {
         scope: __scopeAccordion,
         disabled: disabled2,
         direction: dir,
         orientation,
-        children: /* @__PURE__ */ jsx8(Collection.Slot, { scope: __scopeAccordion, children: /* @__PURE__ */ jsx8(
+        children: /* @__PURE__ */ jsx9(Collection.Slot, { scope: __scopeAccordion, children: /* @__PURE__ */ jsx9(
           Primitive.div,
           {
             ...accordionProps,
@@ -14238,14 +14236,14 @@ var AccordionItem = shadcn_react_shim_default.forwardRef(
     const triggerId = useId();
     const open = value && valueContext.value.includes(value) || false;
     const disabled2 = accordionContext.disabled || props.disabled;
-    return /* @__PURE__ */ jsx8(
+    return /* @__PURE__ */ jsx9(
       AccordionItemProvider,
       {
         scope: __scopeAccordion,
         open,
         disabled: disabled2,
         triggerId,
-        children: /* @__PURE__ */ jsx8(
+        children: /* @__PURE__ */ jsx9(
           Root2,
           {
             "data-orientation": accordionContext.orientation,
@@ -14275,7 +14273,7 @@ var AccordionHeader = shadcn_react_shim_default.forwardRef(
     const { __scopeAccordion, ...headerProps } = props;
     const accordionContext = useAccordionContext(ACCORDION_NAME, __scopeAccordion);
     const itemContext = useAccordionItemContext(HEADER_NAME, __scopeAccordion);
-    return /* @__PURE__ */ jsx8(
+    return /* @__PURE__ */ jsx9(
       Primitive.h3,
       {
         "data-orientation": accordionContext.orientation,
@@ -14296,7 +14294,7 @@ var AccordionTrigger = shadcn_react_shim_default.forwardRef(
     const itemContext = useAccordionItemContext(TRIGGER_NAME2, __scopeAccordion);
     const collapsibleContext = useAccordionCollapsibleContext(TRIGGER_NAME2, __scopeAccordion);
     const collapsibleScope = useCollapsibleScope(__scopeAccordion);
-    return /* @__PURE__ */ jsx8(Collection.ItemSlot, { scope: __scopeAccordion, children: /* @__PURE__ */ jsx8(
+    return /* @__PURE__ */ jsx9(Collection.ItemSlot, { scope: __scopeAccordion, children: /* @__PURE__ */ jsx9(
       Trigger,
       {
         "aria-disabled": itemContext.open && !collapsibleContext.collapsible || void 0,
@@ -14317,7 +14315,7 @@ var AccordionContent = shadcn_react_shim_default.forwardRef(
     const accordionContext = useAccordionContext(ACCORDION_NAME, __scopeAccordion);
     const itemContext = useAccordionItemContext(CONTENT_NAME2, __scopeAccordion);
     const collapsibleScope = useCollapsibleScope(__scopeAccordion);
-    return /* @__PURE__ */ jsx8(
+    return /* @__PURE__ */ jsx9(
       Content,
       {
         role: "region",
@@ -14423,7 +14421,7 @@ function useEscapeKeydown(onEscapeKeyDownProp, ownerDocument2 = globalThis?.docu
 }
 
 // node_modules/.pnpm/@radix-ui+react-dismissable_3d3960154a4c07d09bb90cb341135fc5/node_modules/@radix-ui/react-dismissable-layer/dist/index.mjs
-import { jsx as jsx9 } from "react/jsx-runtime";
+import { jsx as jsx10 } from "react/jsx-runtime";
 var DISMISSABLE_LAYER_NAME = "DismissableLayer";
 var CONTEXT_UPDATE = "dismissableLayer.update";
 var POINTER_DOWN_OUTSIDE = "dismissableLayer.pointerDownOutside";
@@ -14511,7 +14509,7 @@ var DismissableLayer = shadcn_react_shim_exports.forwardRef(
       document.addEventListener(CONTEXT_UPDATE, handleUpdate);
       return () => document.removeEventListener(CONTEXT_UPDATE, handleUpdate);
     }, []);
-    return /* @__PURE__ */ jsx9(
+    return /* @__PURE__ */ jsx10(
       Primitive.div,
       {
         ...layerProps,
@@ -14545,7 +14543,7 @@ var DismissableLayerBranch = shadcn_react_shim_exports.forwardRef((props, forwar
       };
     }
   }, [context.branches]);
-  return /* @__PURE__ */ jsx9(Primitive.div, { ...props, ref: composedRefs });
+  return /* @__PURE__ */ jsx10(Primitive.div, { ...props, ref: composedRefs });
 });
 DismissableLayerBranch.displayName = BRANCH_NAME;
 function usePointerDownOutside(onPointerDownOutside, ownerDocument2 = globalThis?.document) {
@@ -14629,7 +14627,7 @@ function handleAndDispatchCustomEvent(name, handler, detail, { discrete }) {
 
 // node_modules/.pnpm/@radix-ui+react-focus-scope_f62f3af4ca2ba305a7aecf04c8534604/node_modules/@radix-ui/react-focus-scope/dist/index.mjs
 init_shadcn_react_shim();
-import { jsx as jsx10 } from "react/jsx-runtime";
+import { jsx as jsx11 } from "react/jsx-runtime";
 var AUTOFOCUS_ON_MOUNT = "focusScope.autoFocusOnMount";
 var AUTOFOCUS_ON_UNMOUNT = "focusScope.autoFocusOnUnmount";
 var EVENT_OPTIONS = { bubbles: false, cancelable: true };
@@ -14748,7 +14746,7 @@ var FocusScope = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
     },
     [loop, trapped, focusScope.paused]
   );
-  return /* @__PURE__ */ jsx10(Primitive.div, { tabIndex: -1, ...scopeProps, ref: composedRefs, onKeyDown: handleKeyDown });
+  return /* @__PURE__ */ jsx11(Primitive.div, { tabIndex: -1, ...scopeProps, ref: composedRefs, onKeyDown: handleKeyDown });
 });
 FocusScope.displayName = FOCUS_SCOPE_NAME;
 function focusFirst(candidates, { select = false } = {}) {
@@ -14834,14 +14832,14 @@ function removeLinks(items) {
 // node_modules/.pnpm/@radix-ui+react-portal@1.1._7668895bec2444446faa4e0f4eb5244b/node_modules/@radix-ui/react-portal/dist/index.mjs
 init_shadcn_react_shim();
 import ReactDOM2 from "react-dom";
-import { jsx as jsx11 } from "react/jsx-runtime";
+import { jsx as jsx12 } from "react/jsx-runtime";
 var PORTAL_NAME = "Portal";
 var Portal = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { container: containerProp, ...portalProps } = props;
   const [mounted, setMounted] = shadcn_react_shim_exports.useState(false);
   useLayoutEffect2(() => setMounted(true), []);
   const container = containerProp || mounted && globalThis?.document?.body;
-  return container ? ReactDOM2.createPortal(/* @__PURE__ */ jsx11(Primitive.div, { ...portalProps, ref: forwardedRef }), container) : null;
+  return container ? ReactDOM2.createPortal(/* @__PURE__ */ jsx12(Primitive.div, { ...portalProps, ref: forwardedRef }), container) : null;
 });
 Portal.displayName = PORTAL_NAME;
 
@@ -15715,7 +15713,7 @@ var hideOthers = function(originalTarget, parentNode, markerName2) {
 };
 
 // node_modules/.pnpm/@radix-ui+react-dialog@1.1._779045218dc2799d336e7197abef9d38/node_modules/@radix-ui/react-dialog/dist/index.mjs
-import { Fragment as Fragment5, jsx as jsx12, jsxs } from "react/jsx-runtime";
+import { Fragment as Fragment5, jsx as jsx13, jsxs } from "react/jsx-runtime";
 var DIALOG_NAME = "Dialog";
 var [createDialogContext, createDialogScope] = createContextScope(DIALOG_NAME);
 var [DialogProvider, useDialogContext] = createDialogContext(DIALOG_NAME);
@@ -15736,7 +15734,7 @@ var Dialog = (props) => {
     onChange: onOpenChange,
     caller: DIALOG_NAME
   });
-  return /* @__PURE__ */ jsx12(
+  return /* @__PURE__ */ jsx13(
     DialogProvider,
     {
       scope: __scopeDialog,
@@ -15760,7 +15758,7 @@ var DialogTrigger = shadcn_react_shim_exports.forwardRef(
     const { __scopeDialog, ...triggerProps } = props;
     const context = useDialogContext(TRIGGER_NAME3, __scopeDialog);
     const composedTriggerRef = useComposedRefs(forwardedRef, context.triggerRef);
-    return /* @__PURE__ */ jsx12(
+    return /* @__PURE__ */ jsx13(
       Primitive.button,
       {
         type: "button",
@@ -15783,7 +15781,7 @@ var [PortalProvider, usePortalContext] = createDialogContext(PORTAL_NAME2, {
 var DialogPortal = (props) => {
   const { __scopeDialog, forceMount, children, container } = props;
   const context = useDialogContext(PORTAL_NAME2, __scopeDialog);
-  return /* @__PURE__ */ jsx12(PortalProvider, { scope: __scopeDialog, forceMount, children: shadcn_react_shim_exports.Children.map(children, (child) => /* @__PURE__ */ jsx12(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx12(Portal, { asChild: true, container, children: child }) })) });
+  return /* @__PURE__ */ jsx13(PortalProvider, { scope: __scopeDialog, forceMount, children: shadcn_react_shim_exports.Children.map(children, (child) => /* @__PURE__ */ jsx13(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx13(Portal, { asChild: true, container, children: child }) })) });
 };
 DialogPortal.displayName = PORTAL_NAME2;
 var OVERLAY_NAME = "DialogOverlay";
@@ -15792,7 +15790,7 @@ var DialogOverlay = shadcn_react_shim_exports.forwardRef(
     const portalContext = usePortalContext(OVERLAY_NAME, props.__scopeDialog);
     const { forceMount = portalContext.forceMount, ...overlayProps } = props;
     const context = useDialogContext(OVERLAY_NAME, props.__scopeDialog);
-    return context.modal ? /* @__PURE__ */ jsx12(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx12(DialogOverlayImpl, { ...overlayProps, ref: forwardedRef }) }) : null;
+    return context.modal ? /* @__PURE__ */ jsx13(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx13(DialogOverlayImpl, { ...overlayProps, ref: forwardedRef }) }) : null;
   }
 );
 DialogOverlay.displayName = OVERLAY_NAME;
@@ -15804,7 +15802,7 @@ var DialogOverlayImpl = shadcn_react_shim_exports.forwardRef(
     return (
       // Make sure `Content` is scrollable even when it doesn't live inside `RemoveScroll`
       // ie. when `Overlay` and `Content` are siblings
-      /* @__PURE__ */ jsx12(Combination_default, { as: Slot2, allowPinchZoom: true, shards: [context.contentRef], children: /* @__PURE__ */ jsx12(
+      /* @__PURE__ */ jsx13(Combination_default, { as: Slot2, allowPinchZoom: true, shards: [context.contentRef], children: /* @__PURE__ */ jsx13(
         Primitive.div,
         {
           "data-state": getState3(context.open),
@@ -15822,7 +15820,7 @@ var DialogContent = shadcn_react_shim_exports.forwardRef(
     const portalContext = usePortalContext(CONTENT_NAME3, props.__scopeDialog);
     const { forceMount = portalContext.forceMount, ...contentProps } = props;
     const context = useDialogContext(CONTENT_NAME3, props.__scopeDialog);
-    return /* @__PURE__ */ jsx12(Presence, { present: forceMount || context.open, children: context.modal ? /* @__PURE__ */ jsx12(DialogContentModal, { ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ jsx12(DialogContentNonModal, { ...contentProps, ref: forwardedRef }) });
+    return /* @__PURE__ */ jsx13(Presence, { present: forceMount || context.open, children: context.modal ? /* @__PURE__ */ jsx13(DialogContentModal, { ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ jsx13(DialogContentNonModal, { ...contentProps, ref: forwardedRef }) });
   }
 );
 DialogContent.displayName = CONTENT_NAME3;
@@ -15835,7 +15833,7 @@ var DialogContentModal = shadcn_react_shim_exports.forwardRef(
       const content = contentRef.current;
       if (content) return hideOthers(content);
     }, []);
-    return /* @__PURE__ */ jsx12(
+    return /* @__PURE__ */ jsx13(
       DialogContentImpl,
       {
         ...props,
@@ -15865,7 +15863,7 @@ var DialogContentNonModal = shadcn_react_shim_exports.forwardRef(
     const context = useDialogContext(CONTENT_NAME3, props.__scopeDialog);
     const hasInteractedOutsideRef = shadcn_react_shim_exports.useRef(false);
     const hasPointerDownOutsideRef = shadcn_react_shim_exports.useRef(false);
-    return /* @__PURE__ */ jsx12(
+    return /* @__PURE__ */ jsx13(
       DialogContentImpl,
       {
         ...props,
@@ -15908,7 +15906,7 @@ var DialogContentImpl = shadcn_react_shim_exports.forwardRef(
     const composedRefs = useComposedRefs(forwardedRef, contentRef);
     useFocusGuards();
     return /* @__PURE__ */ jsxs(Fragment5, { children: [
-      /* @__PURE__ */ jsx12(
+      /* @__PURE__ */ jsx13(
         FocusScope,
         {
           asChild: true,
@@ -15916,7 +15914,7 @@ var DialogContentImpl = shadcn_react_shim_exports.forwardRef(
           trapped: trapFocus,
           onMountAutoFocus: onOpenAutoFocus,
           onUnmountAutoFocus: onCloseAutoFocus,
-          children: /* @__PURE__ */ jsx12(
+          children: /* @__PURE__ */ jsx13(
             DismissableLayer,
             {
               role: "dialog",
@@ -15932,8 +15930,8 @@ var DialogContentImpl = shadcn_react_shim_exports.forwardRef(
         }
       ),
       /* @__PURE__ */ jsxs(Fragment5, { children: [
-        /* @__PURE__ */ jsx12(TitleWarning, { titleId: context.titleId }),
-        /* @__PURE__ */ jsx12(DescriptionWarning, { contentRef, descriptionId: context.descriptionId })
+        /* @__PURE__ */ jsx13(TitleWarning, { titleId: context.titleId }),
+        /* @__PURE__ */ jsx13(DescriptionWarning, { contentRef, descriptionId: context.descriptionId })
       ] })
     ] });
   }
@@ -15943,7 +15941,7 @@ var DialogTitle = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDialog, ...titleProps } = props;
     const context = useDialogContext(TITLE_NAME, __scopeDialog);
-    return /* @__PURE__ */ jsx12(Primitive.h2, { id: context.titleId, ...titleProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx13(Primitive.h2, { id: context.titleId, ...titleProps, ref: forwardedRef });
   }
 );
 DialogTitle.displayName = TITLE_NAME;
@@ -15952,7 +15950,7 @@ var DialogDescription = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDialog, ...descriptionProps } = props;
     const context = useDialogContext(DESCRIPTION_NAME, __scopeDialog);
-    return /* @__PURE__ */ jsx12(Primitive.p, { id: context.descriptionId, ...descriptionProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx13(Primitive.p, { id: context.descriptionId, ...descriptionProps, ref: forwardedRef });
   }
 );
 DialogDescription.displayName = DESCRIPTION_NAME;
@@ -15961,7 +15959,7 @@ var DialogClose = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDialog, ...closeProps } = props;
     const context = useDialogContext(CLOSE_NAME, __scopeDialog);
-    return /* @__PURE__ */ jsx12(
+    return /* @__PURE__ */ jsx13(
       Primitive.button,
       {
         type: "button",
@@ -16020,7 +16018,7 @@ var Description = DialogDescription;
 var Close = DialogClose;
 
 // node_modules/.pnpm/@radix-ui+react-alert-dialo_d492cfbed6c88f7a3980b921a627d48d/node_modules/@radix-ui/react-alert-dialog/dist/index.mjs
-import { jsx as jsx13, jsxs as jsxs2 } from "react/jsx-runtime";
+import { jsx as jsx14, jsxs as jsxs2 } from "react/jsx-runtime";
 var ROOT_NAME = "AlertDialog";
 var [createAlertDialogContext, createAlertDialogScope] = createContextScope(ROOT_NAME, [
   createDialogScope
@@ -16029,7 +16027,7 @@ var useDialogScope = createDialogScope();
 var AlertDialog = (props) => {
   const { __scopeAlertDialog, ...alertDialogProps } = props;
   const dialogScope = useDialogScope(__scopeAlertDialog);
-  return /* @__PURE__ */ jsx13(Root3, { ...dialogScope, ...alertDialogProps, modal: true });
+  return /* @__PURE__ */ jsx14(Root3, { ...dialogScope, ...alertDialogProps, modal: true });
 };
 AlertDialog.displayName = ROOT_NAME;
 var TRIGGER_NAME4 = "AlertDialogTrigger";
@@ -16037,7 +16035,7 @@ var AlertDialogTrigger = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeAlertDialog, ...triggerProps } = props;
     const dialogScope = useDialogScope(__scopeAlertDialog);
-    return /* @__PURE__ */ jsx13(Trigger3, { ...dialogScope, ...triggerProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx14(Trigger3, { ...dialogScope, ...triggerProps, ref: forwardedRef });
   }
 );
 AlertDialogTrigger.displayName = TRIGGER_NAME4;
@@ -16045,7 +16043,7 @@ var PORTAL_NAME3 = "AlertDialogPortal";
 var AlertDialogPortal = (props) => {
   const { __scopeAlertDialog, ...portalProps } = props;
   const dialogScope = useDialogScope(__scopeAlertDialog);
-  return /* @__PURE__ */ jsx13(Portal2, { ...dialogScope, ...portalProps });
+  return /* @__PURE__ */ jsx14(Portal2, { ...dialogScope, ...portalProps });
 };
 AlertDialogPortal.displayName = PORTAL_NAME3;
 var OVERLAY_NAME2 = "AlertDialogOverlay";
@@ -16053,7 +16051,7 @@ var AlertDialogOverlay = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeAlertDialog, ...overlayProps } = props;
     const dialogScope = useDialogScope(__scopeAlertDialog);
-    return /* @__PURE__ */ jsx13(Overlay, { ...dialogScope, ...overlayProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx14(Overlay, { ...dialogScope, ...overlayProps, ref: forwardedRef });
   }
 );
 AlertDialogOverlay.displayName = OVERLAY_NAME2;
@@ -16067,13 +16065,13 @@ var AlertDialogContent = shadcn_react_shim_exports.forwardRef(
     const contentRef = shadcn_react_shim_exports.useRef(null);
     const composedRefs = useComposedRefs(forwardedRef, contentRef);
     const cancelRef = shadcn_react_shim_exports.useRef(null);
-    return /* @__PURE__ */ jsx13(
+    return /* @__PURE__ */ jsx14(
       WarningProvider,
       {
         contentName: CONTENT_NAME4,
         titleName: TITLE_NAME2,
         docsSlug: "alert-dialog",
-        children: /* @__PURE__ */ jsx13(AlertDialogContentProvider, { scope: __scopeAlertDialog, cancelRef, children: /* @__PURE__ */ jsxs2(
+        children: /* @__PURE__ */ jsx14(AlertDialogContentProvider, { scope: __scopeAlertDialog, cancelRef, children: /* @__PURE__ */ jsxs2(
           Content3,
           {
             role: "alertdialog",
@@ -16087,8 +16085,8 @@ var AlertDialogContent = shadcn_react_shim_exports.forwardRef(
             onPointerDownOutside: (event) => event.preventDefault(),
             onInteractOutside: (event) => event.preventDefault(),
             children: [
-              /* @__PURE__ */ jsx13(Slottable2, { children }),
-              /* @__PURE__ */ jsx13(DescriptionWarning2, { contentRef })
+              /* @__PURE__ */ jsx14(Slottable2, { children }),
+              /* @__PURE__ */ jsx14(DescriptionWarning2, { contentRef })
             ]
           }
         ) })
@@ -16102,7 +16100,7 @@ var AlertDialogTitle = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeAlertDialog, ...titleProps } = props;
     const dialogScope = useDialogScope(__scopeAlertDialog);
-    return /* @__PURE__ */ jsx13(Title, { ...dialogScope, ...titleProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx14(Title, { ...dialogScope, ...titleProps, ref: forwardedRef });
   }
 );
 AlertDialogTitle.displayName = TITLE_NAME2;
@@ -16110,7 +16108,7 @@ var DESCRIPTION_NAME2 = "AlertDialogDescription";
 var AlertDialogDescription = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeAlertDialog, ...descriptionProps } = props;
   const dialogScope = useDialogScope(__scopeAlertDialog);
-  return /* @__PURE__ */ jsx13(Description, { ...dialogScope, ...descriptionProps, ref: forwardedRef });
+  return /* @__PURE__ */ jsx14(Description, { ...dialogScope, ...descriptionProps, ref: forwardedRef });
 });
 AlertDialogDescription.displayName = DESCRIPTION_NAME2;
 var ACTION_NAME = "AlertDialogAction";
@@ -16118,7 +16116,7 @@ var AlertDialogAction = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeAlertDialog, ...actionProps } = props;
     const dialogScope = useDialogScope(__scopeAlertDialog);
-    return /* @__PURE__ */ jsx13(Close, { ...dialogScope, ...actionProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx14(Close, { ...dialogScope, ...actionProps, ref: forwardedRef });
   }
 );
 AlertDialogAction.displayName = ACTION_NAME;
@@ -16129,7 +16127,7 @@ var AlertDialogCancel = shadcn_react_shim_exports.forwardRef(
     const { cancelRef } = useAlertDialogContentContext(CANCEL_NAME, __scopeAlertDialog);
     const dialogScope = useDialogScope(__scopeAlertDialog);
     const ref = useComposedRefs(forwardedRef, cancelRef);
-    return /* @__PURE__ */ jsx13(Close, { ...dialogScope, ...cancelProps, ref });
+    return /* @__PURE__ */ jsx14(Close, { ...dialogScope, ...cancelProps, ref });
   }
 );
 AlertDialogCancel.displayName = CANCEL_NAME;
@@ -16166,12 +16164,12 @@ __export(dist_exports7, {
   Root: () => Root4
 });
 init_shadcn_react_shim();
-import { jsx as jsx14 } from "react/jsx-runtime";
+import { jsx as jsx15 } from "react/jsx-runtime";
 var NAME2 = "AspectRatio";
 var AspectRatio = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { ratio = 1 / 1, style, ...aspectRatioProps } = props;
-    return /* @__PURE__ */ jsx14(
+    return /* @__PURE__ */ jsx15(
       "div",
       {
         style: {
@@ -16182,7 +16180,7 @@ var AspectRatio = shadcn_react_shim_exports.forwardRef(
           paddingBottom: `${100 / ratio}%`
         },
         "data-radix-aspect-ratio-wrapper": "",
-        children: /* @__PURE__ */ jsx14(
+        children: /* @__PURE__ */ jsx15(
           Primitive.div,
           {
             ...aspectRatioProps,
@@ -16233,7 +16231,7 @@ function subscribe() {
 }
 
 // node_modules/.pnpm/@radix-ui+react-avatar@1.1._06c5a164da4523571d3e9cd55d04eddf/node_modules/@radix-ui/react-avatar/dist/index.mjs
-import { jsx as jsx15 } from "react/jsx-runtime";
+import { jsx as jsx16 } from "react/jsx-runtime";
 var AVATAR_NAME = "Avatar";
 var [createAvatarContext, createAvatarScope] = createContextScope(AVATAR_NAME);
 var [AvatarProvider, useAvatarContext] = createAvatarContext(AVATAR_NAME);
@@ -16241,13 +16239,13 @@ var Avatar = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeAvatar, ...avatarProps } = props;
     const [imageLoadingStatus, setImageLoadingStatus] = shadcn_react_shim_exports.useState("idle");
-    return /* @__PURE__ */ jsx15(
+    return /* @__PURE__ */ jsx16(
       AvatarProvider,
       {
         scope: __scopeAvatar,
         imageLoadingStatus,
         onImageLoadingStatusChange: setImageLoadingStatus,
-        children: /* @__PURE__ */ jsx15(Primitive.span, { ...avatarProps, ref: forwardedRef })
+        children: /* @__PURE__ */ jsx16(Primitive.span, { ...avatarProps, ref: forwardedRef })
       }
     );
   }
@@ -16269,7 +16267,7 @@ var AvatarImage = shadcn_react_shim_exports.forwardRef(
         handleLoadingStatusChange(imageLoadingStatus);
       }
     }, [imageLoadingStatus, handleLoadingStatusChange]);
-    return imageLoadingStatus === "loaded" ? /* @__PURE__ */ jsx15(Primitive.img, { ...imageProps, ref: forwardedRef, src }) : null;
+    return imageLoadingStatus === "loaded" ? /* @__PURE__ */ jsx16(Primitive.img, { ...imageProps, ref: forwardedRef, src }) : null;
   }
 );
 AvatarImage.displayName = IMAGE_NAME;
@@ -16285,7 +16283,7 @@ var AvatarFallback = shadcn_react_shim_exports.forwardRef(
         return () => window.clearTimeout(timerId);
       }
     }, [delayMs]);
-    return canRender && context.imageLoadingStatus !== "loaded" ? /* @__PURE__ */ jsx15(Primitive.span, { ...fallbackProps, ref: forwardedRef }) : null;
+    return canRender && context.imageLoadingStatus !== "loaded" ? /* @__PURE__ */ jsx16(Primitive.span, { ...fallbackProps, ref: forwardedRef }) : null;
   }
 );
 AvatarFallback.displayName = FALLBACK_NAME;
@@ -16411,7 +16409,7 @@ function useSize(element) {
 }
 
 // node_modules/.pnpm/@radix-ui+react-checkbox@1._a9bfe74df417688e01ae6068318bf0dd/node_modules/@radix-ui/react-checkbox/dist/index.mjs
-import { Fragment as Fragment6, jsx as jsx16, jsxs as jsxs3 } from "react/jsx-runtime";
+import { Fragment as Fragment6, jsx as jsx17, jsxs as jsxs3 } from "react/jsx-runtime";
 var CHECKBOX_NAME = "Checkbox";
 var [createCheckboxContext, createCheckboxScope] = createContextScope(CHECKBOX_NAME);
 var [CheckboxProviderImpl, useCheckboxContext] = createCheckboxContext(CHECKBOX_NAME);
@@ -16459,7 +16457,7 @@ function CheckboxProvider(props) {
     bubbleInput,
     setBubbleInput
   };
-  return /* @__PURE__ */ jsx16(
+  return /* @__PURE__ */ jsx17(
     CheckboxProviderImpl,
     {
       scope: __scopeCheckbox,
@@ -16493,7 +16491,7 @@ var CheckboxTrigger = shadcn_react_shim_exports.forwardRef(
         return () => form.removeEventListener("reset", reset2);
       }
     }, [control, setChecked]);
-    return /* @__PURE__ */ jsx16(
+    return /* @__PURE__ */ jsx17(
       Primitive.button,
       {
         type: "button",
@@ -16535,7 +16533,7 @@ var Checkbox = shadcn_react_shim_exports.forwardRef(
       form,
       ...checkboxProps
     } = props;
-    return /* @__PURE__ */ jsx16(
+    return /* @__PURE__ */ jsx17(
       CheckboxProvider,
       {
         __scopeCheckbox,
@@ -16548,7 +16546,7 @@ var Checkbox = shadcn_react_shim_exports.forwardRef(
         form,
         value,
         internal_do_not_use_render: ({ isFormControl }) => /* @__PURE__ */ jsxs3(Fragment6, { children: [
-          /* @__PURE__ */ jsx16(
+          /* @__PURE__ */ jsx17(
             CheckboxTrigger,
             {
               ...checkboxProps,
@@ -16556,7 +16554,7 @@ var Checkbox = shadcn_react_shim_exports.forwardRef(
               __scopeCheckbox
             }
           ),
-          isFormControl && /* @__PURE__ */ jsx16(
+          isFormControl && /* @__PURE__ */ jsx17(
             CheckboxBubbleInput,
             {
               __scopeCheckbox
@@ -16573,11 +16571,11 @@ var CheckboxIndicator = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeCheckbox, forceMount, ...indicatorProps } = props;
     const context = useCheckboxContext(INDICATOR_NAME, __scopeCheckbox);
-    return /* @__PURE__ */ jsx16(
+    return /* @__PURE__ */ jsx17(
       Presence,
       {
         present: forceMount || isIndeterminate(context.checked) || context.checked === true,
-        children: /* @__PURE__ */ jsx16(
+        children: /* @__PURE__ */ jsx17(
           Primitive.span,
           {
             "data-state": getState4(context.checked),
@@ -16629,7 +16627,7 @@ var CheckboxBubbleInput = shadcn_react_shim_exports.forwardRef(
       }
     }, [bubbleInput, prevChecked, checked, hasConsumerStoppedPropagationRef]);
     const defaultCheckedRef = shadcn_react_shim_exports.useRef(isIndeterminate(checked) ? false : checked);
-    return /* @__PURE__ */ jsx16(
+    return /* @__PURE__ */ jsx17(
       Primitive.input,
       {
         type: "checkbox",
@@ -18645,11 +18643,11 @@ var arrow3 = (options, deps) => {
 
 // node_modules/.pnpm/@radix-ui+react-arrow@1.1.7_e05f2c19a58a99fddf374207b5e3778c/node_modules/@radix-ui/react-arrow/dist/index.mjs
 init_shadcn_react_shim();
-import { jsx as jsx17 } from "react/jsx-runtime";
+import { jsx as jsx18 } from "react/jsx-runtime";
 var NAME3 = "Arrow";
 var Arrow = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { children, width = 10, height = 5, ...arrowProps } = props;
-  return /* @__PURE__ */ jsx17(
+  return /* @__PURE__ */ jsx18(
     Primitive.svg,
     {
       ...arrowProps,
@@ -18658,7 +18656,7 @@ var Arrow = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
       height,
       viewBox: "0 0 30 10",
       preserveAspectRatio: "none",
-      children: props.asChild ? children : /* @__PURE__ */ jsx17("polygon", { points: "0,0 30,0 15,10" })
+      children: props.asChild ? children : /* @__PURE__ */ jsx18("polygon", { points: "0,0 30,0 15,10" })
     }
   );
 });
@@ -18666,14 +18664,14 @@ Arrow.displayName = NAME3;
 var Root6 = Arrow;
 
 // node_modules/.pnpm/@radix-ui+react-popper@1.2._13e0521d8aea7ebfbfb8bee1fb615c05/node_modules/@radix-ui/react-popper/dist/index.mjs
-import { jsx as jsx18 } from "react/jsx-runtime";
+import { jsx as jsx19 } from "react/jsx-runtime";
 var POPPER_NAME = "Popper";
 var [createPopperContext, createPopperScope] = createContextScope(POPPER_NAME);
 var [PopperProvider, usePopperContext] = createPopperContext(POPPER_NAME);
 var Popper = (props) => {
   const { __scopePopper, children } = props;
   const [anchor, setAnchor] = shadcn_react_shim_exports.useState(null);
-  return /* @__PURE__ */ jsx18(PopperProvider, { scope: __scopePopper, anchor, onAnchorChange: setAnchor, children });
+  return /* @__PURE__ */ jsx19(PopperProvider, { scope: __scopePopper, anchor, onAnchorChange: setAnchor, children });
 };
 Popper.displayName = POPPER_NAME;
 var ANCHOR_NAME = "PopperAnchor";
@@ -18691,7 +18689,7 @@ var PopperAnchor = shadcn_react_shim_exports.forwardRef(
         context.onAnchorChange(anchorRef.current);
       }
     });
-    return virtualRef ? null : /* @__PURE__ */ jsx18(Primitive.div, { ...anchorProps, ref: composedRefs });
+    return virtualRef ? null : /* @__PURE__ */ jsx19(Primitive.div, { ...anchorProps, ref: composedRefs });
   }
 );
 PopperAnchor.displayName = ANCHOR_NAME;
@@ -18784,7 +18782,7 @@ var PopperContent = shadcn_react_shim_exports.forwardRef(
     useLayoutEffect2(() => {
       if (content) setContentZIndex(window.getComputedStyle(content).zIndex);
     }, [content]);
-    return /* @__PURE__ */ jsx18(
+    return /* @__PURE__ */ jsx19(
       "div",
       {
         ref: refs.setFloating,
@@ -18808,7 +18806,7 @@ var PopperContent = shadcn_react_shim_exports.forwardRef(
           }
         },
         dir: props.dir,
-        children: /* @__PURE__ */ jsx18(
+        children: /* @__PURE__ */ jsx19(
           PopperContentProvider,
           {
             scope: __scopePopper,
@@ -18817,7 +18815,7 @@ var PopperContent = shadcn_react_shim_exports.forwardRef(
             arrowX,
             arrowY,
             shouldHideArrow: cannotCenterArrow,
-            children: /* @__PURE__ */ jsx18(
+            children: /* @__PURE__ */ jsx19(
               Primitive.div,
               {
                 "data-side": placedSide,
@@ -18854,7 +18852,7 @@ var PopperArrow = shadcn_react_shim_exports.forwardRef(function PopperArrow2(pro
     // we have to use an extra wrapper because `ResizeObserver` (used by `useSize`)
     // doesn't report size as we'd expect on SVG elements.
     // it reports their bounding box which is effectively the largest path inside the SVG.
-    /* @__PURE__ */ jsx18(
+    /* @__PURE__ */ jsx19(
       "span",
       {
         ref: contentContext.onArrowChange,
@@ -18877,7 +18875,7 @@ var PopperArrow = shadcn_react_shim_exports.forwardRef(function PopperArrow2(pro
           }[contentContext.placedSide],
           visibility: contentContext.shouldHideArrow ? "hidden" : void 0
         },
-        children: /* @__PURE__ */ jsx18(
+        children: /* @__PURE__ */ jsx19(
           Root6,
           {
             ...arrowProps,
@@ -18939,7 +18937,7 @@ var Arrow2 = PopperArrow;
 
 // node_modules/.pnpm/@radix-ui+react-roving-focu_4eeb29c998b846c35358e2f929e7490e/node_modules/@radix-ui/react-roving-focus/dist/index.mjs
 init_shadcn_react_shim();
-import { jsx as jsx19 } from "react/jsx-runtime";
+import { jsx as jsx20 } from "react/jsx-runtime";
 var ENTRY_FOCUS = "rovingFocusGroup.onEntryFocus";
 var EVENT_OPTIONS2 = { bubbles: false, cancelable: true };
 var GROUP_NAME = "RovingFocusGroup";
@@ -18951,7 +18949,7 @@ var [createRovingFocusGroupContext, createRovingFocusGroupScope] = createContext
 var [RovingFocusProvider, useRovingFocusContext] = createRovingFocusGroupContext(GROUP_NAME);
 var RovingFocusGroup = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
-    return /* @__PURE__ */ jsx19(Collection2.Provider, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsx19(Collection2.Slot, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsx19(RovingFocusGroupImpl, { ...props, ref: forwardedRef }) }) });
+    return /* @__PURE__ */ jsx20(Collection2.Provider, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsx20(Collection2.Slot, { scope: props.__scopeRovingFocusGroup, children: /* @__PURE__ */ jsx20(RovingFocusGroupImpl, { ...props, ref: forwardedRef }) }) });
   }
 );
 RovingFocusGroup.displayName = GROUP_NAME;
@@ -18989,7 +18987,7 @@ var RovingFocusGroupImpl = shadcn_react_shim_exports.forwardRef((props, forwarde
       return () => node.removeEventListener(ENTRY_FOCUS, handleEntryFocus);
     }
   }, [handleEntryFocus]);
-  return /* @__PURE__ */ jsx19(
+  return /* @__PURE__ */ jsx20(
     RovingFocusProvider,
     {
       scope: __scopeRovingFocusGroup,
@@ -19010,7 +19008,7 @@ var RovingFocusGroupImpl = shadcn_react_shim_exports.forwardRef((props, forwarde
         () => setFocusableItemsCount((prevCount) => prevCount - 1),
         []
       ),
-      children: /* @__PURE__ */ jsx19(
+      children: /* @__PURE__ */ jsx20(
         Primitive.div,
         {
           tabIndex: isTabbingBackOut || focusableItemsCount === 0 ? -1 : 0,
@@ -19068,14 +19066,14 @@ var RovingFocusGroupItem = shadcn_react_shim_exports.forwardRef(
         return () => onFocusableItemRemove();
       }
     }, [focusable3, onFocusableItemAdd, onFocusableItemRemove]);
-    return /* @__PURE__ */ jsx19(
+    return /* @__PURE__ */ jsx20(
       Collection2.ItemSlot,
       {
         scope: __scopeRovingFocusGroup,
         id,
         focusable: focusable3,
         active,
-        children: /* @__PURE__ */ jsx19(
+        children: /* @__PURE__ */ jsx20(
           Primitive.span,
           {
             tabIndex: isCurrentTabStop ? 0 : -1,
@@ -19151,7 +19149,7 @@ var Root7 = RovingFocusGroup;
 var Item2 = RovingFocusGroupItem;
 
 // node_modules/.pnpm/@radix-ui+react-menu@2.1.16_73ff7391b7be14d4dbff03af4dbac090/node_modules/@radix-ui/react-menu/dist/index.mjs
-import { jsx as jsx20 } from "react/jsx-runtime";
+import { jsx as jsx21 } from "react/jsx-runtime";
 var SELECTION_KEYS = ["Enter", " "];
 var FIRST_KEYS = ["ArrowDown", "PageUp", "Home"];
 var LAST_KEYS = ["ArrowUp", "PageDown", "End"];
@@ -19196,7 +19194,7 @@ var Menu = (props) => {
       document.removeEventListener("pointermove", handlePointer, { capture: true });
     };
   }, []);
-  return /* @__PURE__ */ jsx20(Root24, { ...popperScope, children: /* @__PURE__ */ jsx20(
+  return /* @__PURE__ */ jsx21(Root24, { ...popperScope, children: /* @__PURE__ */ jsx21(
     MenuProvider,
     {
       scope: __scopeMenu,
@@ -19204,7 +19202,7 @@ var Menu = (props) => {
       onOpenChange: handleOpenChange,
       content,
       onContentChange: setContent,
-      children: /* @__PURE__ */ jsx20(
+      children: /* @__PURE__ */ jsx21(
         MenuRootProvider,
         {
           scope: __scopeMenu,
@@ -19224,7 +19222,7 @@ var MenuAnchor = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenu, ...anchorProps } = props;
     const popperScope = usePopperScope(__scopeMenu);
-    return /* @__PURE__ */ jsx20(Anchor, { ...popperScope, ...anchorProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx21(Anchor, { ...popperScope, ...anchorProps, ref: forwardedRef });
   }
 );
 MenuAnchor.displayName = ANCHOR_NAME2;
@@ -19235,7 +19233,7 @@ var [PortalProvider2, usePortalContext2] = createMenuContext(PORTAL_NAME4, {
 var MenuPortal = (props) => {
   const { __scopeMenu, forceMount, children, container } = props;
   const context = useMenuContext(PORTAL_NAME4, __scopeMenu);
-  return /* @__PURE__ */ jsx20(PortalProvider2, { scope: __scopeMenu, forceMount, children: /* @__PURE__ */ jsx20(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx20(Portal, { asChild: true, container, children }) }) });
+  return /* @__PURE__ */ jsx21(PortalProvider2, { scope: __scopeMenu, forceMount, children: /* @__PURE__ */ jsx21(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx21(Portal, { asChild: true, container, children }) }) });
 };
 MenuPortal.displayName = PORTAL_NAME4;
 var CONTENT_NAME6 = "MenuContent";
@@ -19246,7 +19244,7 @@ var MenuContent = shadcn_react_shim_exports.forwardRef(
     const { forceMount = portalContext.forceMount, ...contentProps } = props;
     const context = useMenuContext(CONTENT_NAME6, props.__scopeMenu);
     const rootContext = useMenuRootContext(CONTENT_NAME6, props.__scopeMenu);
-    return /* @__PURE__ */ jsx20(Collection3.Provider, { scope: props.__scopeMenu, children: /* @__PURE__ */ jsx20(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx20(Collection3.Slot, { scope: props.__scopeMenu, children: rootContext.modal ? /* @__PURE__ */ jsx20(MenuRootContentModal, { ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ jsx20(MenuRootContentNonModal, { ...contentProps, ref: forwardedRef }) }) }) });
+    return /* @__PURE__ */ jsx21(Collection3.Provider, { scope: props.__scopeMenu, children: /* @__PURE__ */ jsx21(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx21(Collection3.Slot, { scope: props.__scopeMenu, children: rootContext.modal ? /* @__PURE__ */ jsx21(MenuRootContentModal, { ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ jsx21(MenuRootContentNonModal, { ...contentProps, ref: forwardedRef }) }) }) });
   }
 );
 var MenuRootContentModal = shadcn_react_shim_exports.forwardRef(
@@ -19258,7 +19256,7 @@ var MenuRootContentModal = shadcn_react_shim_exports.forwardRef(
       const content = ref.current;
       if (content) return hideOthers(content);
     }, []);
-    return /* @__PURE__ */ jsx20(
+    return /* @__PURE__ */ jsx21(
       MenuContentImpl,
       {
         ...props,
@@ -19278,7 +19276,7 @@ var MenuRootContentModal = shadcn_react_shim_exports.forwardRef(
 );
 var MenuRootContentNonModal = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const context = useMenuContext(CONTENT_NAME6, props.__scopeMenu);
-  return /* @__PURE__ */ jsx20(
+  return /* @__PURE__ */ jsx21(
     MenuContentImpl,
     {
       ...props,
@@ -19350,7 +19348,7 @@ var MenuContentImpl = shadcn_react_shim_exports.forwardRef(
       const isMovingTowards = pointerDirRef.current === pointerGraceIntentRef.current?.side;
       return isMovingTowards && isPointerInGraceArea(event, pointerGraceIntentRef.current?.area);
     }, []);
-    return /* @__PURE__ */ jsx20(
+    return /* @__PURE__ */ jsx21(
       MenuContentProvider,
       {
         scope: __scopeMenu,
@@ -19379,7 +19377,7 @@ var MenuContentImpl = shadcn_react_shim_exports.forwardRef(
         onPointerGraceIntentChange: shadcn_react_shim_exports.useCallback((intent) => {
           pointerGraceIntentRef.current = intent;
         }, []),
-        children: /* @__PURE__ */ jsx20(ScrollLockWrapper, { ...scrollLockWrapperProps, children: /* @__PURE__ */ jsx20(
+        children: /* @__PURE__ */ jsx21(ScrollLockWrapper, { ...scrollLockWrapperProps, children: /* @__PURE__ */ jsx21(
           FocusScope,
           {
             asChild: true,
@@ -19389,7 +19387,7 @@ var MenuContentImpl = shadcn_react_shim_exports.forwardRef(
               contentRef.current?.focus({ preventScroll: true });
             }),
             onUnmountAutoFocus: onCloseAutoFocus,
-            children: /* @__PURE__ */ jsx20(
+            children: /* @__PURE__ */ jsx21(
               DismissableLayer,
               {
                 asChild: true,
@@ -19399,7 +19397,7 @@ var MenuContentImpl = shadcn_react_shim_exports.forwardRef(
                 onFocusOutside,
                 onInteractOutside,
                 onDismiss,
-                children: /* @__PURE__ */ jsx20(
+                children: /* @__PURE__ */ jsx21(
                   Root7,
                   {
                     asChild: true,
@@ -19413,7 +19411,7 @@ var MenuContentImpl = shadcn_react_shim_exports.forwardRef(
                       if (!rootContext.isUsingKeyboardRef.current) event.preventDefault();
                     }),
                     preventScrollOnEntryFocus: true,
-                    children: /* @__PURE__ */ jsx20(
+                    children: /* @__PURE__ */ jsx21(
                       Content4,
                       {
                         role: "menu",
@@ -19478,7 +19476,7 @@ var GROUP_NAME2 = "MenuGroup";
 var MenuGroup = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenu, ...groupProps } = props;
-    return /* @__PURE__ */ jsx20(Primitive.div, { role: "group", ...groupProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx21(Primitive.div, { role: "group", ...groupProps, ref: forwardedRef });
   }
 );
 MenuGroup.displayName = GROUP_NAME2;
@@ -19486,7 +19484,7 @@ var LABEL_NAME = "MenuLabel";
 var MenuLabel = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenu, ...labelProps } = props;
-    return /* @__PURE__ */ jsx20(Primitive.div, { ...labelProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx21(Primitive.div, { ...labelProps, ref: forwardedRef });
   }
 );
 MenuLabel.displayName = LABEL_NAME;
@@ -19513,7 +19511,7 @@ var MenuItem = shadcn_react_shim_exports.forwardRef(
         }
       }
     };
-    return /* @__PURE__ */ jsx20(
+    return /* @__PURE__ */ jsx21(
       MenuItemImpl,
       {
         ...itemProps,
@@ -19555,13 +19553,13 @@ var MenuItemImpl = shadcn_react_shim_exports.forwardRef(
         setTextContent((menuItem.textContent ?? "").trim());
       }
     }, [itemProps.children]);
-    return /* @__PURE__ */ jsx20(
+    return /* @__PURE__ */ jsx21(
       Collection3.ItemSlot,
       {
         scope: __scopeMenu,
         disabled: disabled2,
         textValue: textValue ?? textContent,
-        children: /* @__PURE__ */ jsx20(Item2, { asChild: true, ...rovingFocusGroupScope, focusable: !disabled2, children: /* @__PURE__ */ jsx20(
+        children: /* @__PURE__ */ jsx21(Item2, { asChild: true, ...rovingFocusGroupScope, focusable: !disabled2, children: /* @__PURE__ */ jsx21(
           Primitive.div,
           {
             role: "menuitem",
@@ -19600,7 +19598,7 @@ var CHECKBOX_ITEM_NAME = "MenuCheckboxItem";
 var MenuCheckboxItem = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { checked = false, onCheckedChange, ...checkboxItemProps } = props;
-    return /* @__PURE__ */ jsx20(ItemIndicatorProvider, { scope: props.__scopeMenu, checked, children: /* @__PURE__ */ jsx20(
+    return /* @__PURE__ */ jsx21(ItemIndicatorProvider, { scope: props.__scopeMenu, checked, children: /* @__PURE__ */ jsx21(
       MenuItem,
       {
         role: "menuitemcheckbox",
@@ -19628,7 +19626,7 @@ var MenuRadioGroup = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { value, onValueChange, ...groupProps } = props;
     const handleValueChange = useCallbackRef(onValueChange);
-    return /* @__PURE__ */ jsx20(RadioGroupProvider, { scope: props.__scopeMenu, value, onValueChange: handleValueChange, children: /* @__PURE__ */ jsx20(MenuGroup, { ...groupProps, ref: forwardedRef }) });
+    return /* @__PURE__ */ jsx21(RadioGroupProvider, { scope: props.__scopeMenu, value, onValueChange: handleValueChange, children: /* @__PURE__ */ jsx21(MenuGroup, { ...groupProps, ref: forwardedRef }) });
   }
 );
 MenuRadioGroup.displayName = RADIO_GROUP_NAME;
@@ -19638,7 +19636,7 @@ var MenuRadioItem = shadcn_react_shim_exports.forwardRef(
     const { value, ...radioItemProps } = props;
     const context = useRadioGroupContext(RADIO_ITEM_NAME, props.__scopeMenu);
     const checked = value === context.value;
-    return /* @__PURE__ */ jsx20(ItemIndicatorProvider, { scope: props.__scopeMenu, checked, children: /* @__PURE__ */ jsx20(
+    return /* @__PURE__ */ jsx21(ItemIndicatorProvider, { scope: props.__scopeMenu, checked, children: /* @__PURE__ */ jsx21(
       MenuItem,
       {
         role: "menuitemradio",
@@ -19665,11 +19663,11 @@ var MenuItemIndicator = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenu, forceMount, ...itemIndicatorProps } = props;
     const indicatorContext = useItemIndicatorContext(ITEM_INDICATOR_NAME, __scopeMenu);
-    return /* @__PURE__ */ jsx20(
+    return /* @__PURE__ */ jsx21(
       Presence,
       {
         present: forceMount || isIndeterminate2(indicatorContext.checked) || indicatorContext.checked === true,
-        children: /* @__PURE__ */ jsx20(
+        children: /* @__PURE__ */ jsx21(
           Primitive.span,
           {
             ...itemIndicatorProps,
@@ -19686,7 +19684,7 @@ var SEPARATOR_NAME = "MenuSeparator";
 var MenuSeparator = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenu, ...separatorProps } = props;
-    return /* @__PURE__ */ jsx20(
+    return /* @__PURE__ */ jsx21(
       Primitive.div,
       {
         role: "separator",
@@ -19703,7 +19701,7 @@ var MenuArrow = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenu, ...arrowProps } = props;
     const popperScope = usePopperScope(__scopeMenu);
-    return /* @__PURE__ */ jsx20(Arrow2, { ...popperScope, ...arrowProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx21(Arrow2, { ...popperScope, ...arrowProps, ref: forwardedRef });
   }
 );
 MenuArrow.displayName = ARROW_NAME2;
@@ -19720,7 +19718,7 @@ var MenuSub = (props) => {
     if (parentMenuContext.open === false) handleOpenChange(false);
     return () => handleOpenChange(false);
   }, [parentMenuContext.open, handleOpenChange]);
-  return /* @__PURE__ */ jsx20(Root24, { ...popperScope, children: /* @__PURE__ */ jsx20(
+  return /* @__PURE__ */ jsx21(Root24, { ...popperScope, children: /* @__PURE__ */ jsx21(
     MenuProvider,
     {
       scope: __scopeMenu,
@@ -19728,7 +19726,7 @@ var MenuSub = (props) => {
       onOpenChange: handleOpenChange,
       content,
       onContentChange: setContent,
-      children: /* @__PURE__ */ jsx20(
+      children: /* @__PURE__ */ jsx21(
         MenuSubProvider,
         {
           scope: __scopeMenu,
@@ -19765,7 +19763,7 @@ var MenuSubTrigger = shadcn_react_shim_exports.forwardRef(
         onPointerGraceIntentChange(null);
       };
     }, [pointerGraceTimerRef, onPointerGraceIntentChange]);
-    return /* @__PURE__ */ jsx20(MenuAnchor, { asChild: true, ...scope, children: /* @__PURE__ */ jsx20(
+    return /* @__PURE__ */ jsx21(MenuAnchor, { asChild: true, ...scope, children: /* @__PURE__ */ jsx21(
       MenuItemImpl,
       {
         id: subContext.triggerId,
@@ -19854,7 +19852,7 @@ var MenuSubContent = shadcn_react_shim_exports.forwardRef(
     const subContext = useMenuSubContext(SUB_CONTENT_NAME, props.__scopeMenu);
     const ref = shadcn_react_shim_exports.useRef(null);
     const composedRefs = useComposedRefs(forwardedRef, ref);
-    return /* @__PURE__ */ jsx20(Collection3.Provider, { scope: props.__scopeMenu, children: /* @__PURE__ */ jsx20(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx20(Collection3.Slot, { scope: props.__scopeMenu, children: /* @__PURE__ */ jsx20(
+    return /* @__PURE__ */ jsx21(Collection3.Provider, { scope: props.__scopeMenu, children: /* @__PURE__ */ jsx21(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx21(Collection3.Slot, { scope: props.__scopeMenu, children: /* @__PURE__ */ jsx21(
       MenuContentImpl,
       {
         id: subContext.contentId,
@@ -19965,7 +19963,7 @@ var SubTrigger = MenuSubTrigger;
 var SubContent = MenuSubContent;
 
 // node_modules/.pnpm/@radix-ui+react-context-men_7ddebea395c65d3c4d3683b445765102/node_modules/@radix-ui/react-context-menu/dist/index.mjs
-import { Fragment as Fragment8, jsx as jsx21, jsxs as jsxs4 } from "react/jsx-runtime";
+import { Fragment as Fragment8, jsx as jsx23, jsxs as jsxs4 } from "react/jsx-runtime";
 var CONTEXT_MENU_NAME = "ContextMenu";
 var [createContextMenuContext, createContextMenuScope] = createContextScope(CONTEXT_MENU_NAME, [
   createMenuScope
@@ -19984,14 +19982,14 @@ var ContextMenu = (props) => {
     },
     [handleOpenChangeProp]
   );
-  return /* @__PURE__ */ jsx21(
+  return /* @__PURE__ */ jsx23(
     ContextMenuProvider,
     {
       scope: __scopeContextMenu,
       open,
       onOpenChange: handleOpenChange,
       modal,
-      children: /* @__PURE__ */ jsx21(
+      children: /* @__PURE__ */ jsx23(
         Root32,
         {
           ...menuScope,
@@ -20028,8 +20026,8 @@ var ContextMenuTrigger = shadcn_react_shim_exports.forwardRef(
     shadcn_react_shim_exports.useEffect(() => clearLongPress, [clearLongPress]);
     shadcn_react_shim_exports.useEffect(() => void (disabled2 && clearLongPress()), [disabled2, clearLongPress]);
     return /* @__PURE__ */ jsxs4(Fragment8, { children: [
-      /* @__PURE__ */ jsx21(Anchor2, { ...menuScope, virtualRef }),
-      /* @__PURE__ */ jsx21(
+      /* @__PURE__ */ jsx23(Anchor2, { ...menuScope, virtualRef }),
+      /* @__PURE__ */ jsx23(
         Primitive.span,
         {
           "data-state": context.open ? "open" : "closed",
@@ -20062,7 +20060,7 @@ var PORTAL_NAME5 = "ContextMenuPortal";
 var ContextMenuPortal = (props) => {
   const { __scopeContextMenu, ...portalProps } = props;
   const menuScope = useMenuScope(__scopeContextMenu);
-  return /* @__PURE__ */ jsx21(Portal3, { ...menuScope, ...portalProps });
+  return /* @__PURE__ */ jsx23(Portal3, { ...menuScope, ...portalProps });
 };
 ContextMenuPortal.displayName = PORTAL_NAME5;
 var CONTENT_NAME7 = "ContextMenuContent";
@@ -20072,7 +20070,7 @@ var ContextMenuContent = shadcn_react_shim_exports.forwardRef(
     const context = useContextMenuContext(CONTENT_NAME7, __scopeContextMenu);
     const menuScope = useMenuScope(__scopeContextMenu);
     const hasInteractedOutsideRef = shadcn_react_shim_exports.useRef(false);
-    return /* @__PURE__ */ jsx21(
+    return /* @__PURE__ */ jsx23(
       Content23,
       {
         ...menuScope,
@@ -20113,7 +20111,7 @@ var ContextMenuGroup = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeContextMenu, ...groupProps } = props;
     const menuScope = useMenuScope(__scopeContextMenu);
-    return /* @__PURE__ */ jsx21(Group, { ...menuScope, ...groupProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx23(Group, { ...menuScope, ...groupProps, ref: forwardedRef });
   }
 );
 ContextMenuGroup.displayName = GROUP_NAME3;
@@ -20122,7 +20120,7 @@ var ContextMenuLabel = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeContextMenu, ...labelProps } = props;
     const menuScope = useMenuScope(__scopeContextMenu);
-    return /* @__PURE__ */ jsx21(Label, { ...menuScope, ...labelProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx23(Label, { ...menuScope, ...labelProps, ref: forwardedRef });
   }
 );
 ContextMenuLabel.displayName = LABEL_NAME2;
@@ -20131,7 +20129,7 @@ var ContextMenuItem = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeContextMenu, ...itemProps } = props;
     const menuScope = useMenuScope(__scopeContextMenu);
-    return /* @__PURE__ */ jsx21(Item22, { ...menuScope, ...itemProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx23(Item22, { ...menuScope, ...itemProps, ref: forwardedRef });
   }
 );
 ContextMenuItem.displayName = ITEM_NAME4;
@@ -20139,35 +20137,35 @@ var CHECKBOX_ITEM_NAME2 = "ContextMenuCheckboxItem";
 var ContextMenuCheckboxItem = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeContextMenu, ...checkboxItemProps } = props;
   const menuScope = useMenuScope(__scopeContextMenu);
-  return /* @__PURE__ */ jsx21(CheckboxItem, { ...menuScope, ...checkboxItemProps, ref: forwardedRef });
+  return /* @__PURE__ */ jsx23(CheckboxItem, { ...menuScope, ...checkboxItemProps, ref: forwardedRef });
 });
 ContextMenuCheckboxItem.displayName = CHECKBOX_ITEM_NAME2;
 var RADIO_GROUP_NAME2 = "ContextMenuRadioGroup";
 var ContextMenuRadioGroup = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeContextMenu, ...radioGroupProps } = props;
   const menuScope = useMenuScope(__scopeContextMenu);
-  return /* @__PURE__ */ jsx21(RadioGroup, { ...menuScope, ...radioGroupProps, ref: forwardedRef });
+  return /* @__PURE__ */ jsx23(RadioGroup, { ...menuScope, ...radioGroupProps, ref: forwardedRef });
 });
 ContextMenuRadioGroup.displayName = RADIO_GROUP_NAME2;
 var RADIO_ITEM_NAME2 = "ContextMenuRadioItem";
 var ContextMenuRadioItem = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeContextMenu, ...radioItemProps } = props;
   const menuScope = useMenuScope(__scopeContextMenu);
-  return /* @__PURE__ */ jsx21(RadioItem, { ...menuScope, ...radioItemProps, ref: forwardedRef });
+  return /* @__PURE__ */ jsx23(RadioItem, { ...menuScope, ...radioItemProps, ref: forwardedRef });
 });
 ContextMenuRadioItem.displayName = RADIO_ITEM_NAME2;
 var INDICATOR_NAME2 = "ContextMenuItemIndicator";
 var ContextMenuItemIndicator = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeContextMenu, ...itemIndicatorProps } = props;
   const menuScope = useMenuScope(__scopeContextMenu);
-  return /* @__PURE__ */ jsx21(ItemIndicator, { ...menuScope, ...itemIndicatorProps, ref: forwardedRef });
+  return /* @__PURE__ */ jsx23(ItemIndicator, { ...menuScope, ...itemIndicatorProps, ref: forwardedRef });
 });
 ContextMenuItemIndicator.displayName = INDICATOR_NAME2;
 var SEPARATOR_NAME2 = "ContextMenuSeparator";
 var ContextMenuSeparator = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeContextMenu, ...separatorProps } = props;
   const menuScope = useMenuScope(__scopeContextMenu);
-  return /* @__PURE__ */ jsx21(Separator, { ...menuScope, ...separatorProps, ref: forwardedRef });
+  return /* @__PURE__ */ jsx23(Separator, { ...menuScope, ...separatorProps, ref: forwardedRef });
 });
 ContextMenuSeparator.displayName = SEPARATOR_NAME2;
 var ARROW_NAME3 = "ContextMenuArrow";
@@ -20175,7 +20173,7 @@ var ContextMenuArrow = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeContextMenu, ...arrowProps } = props;
     const menuScope = useMenuScope(__scopeContextMenu);
-    return /* @__PURE__ */ jsx21(Arrow22, { ...menuScope, ...arrowProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx23(Arrow22, { ...menuScope, ...arrowProps, ref: forwardedRef });
   }
 );
 ContextMenuArrow.displayName = ARROW_NAME3;
@@ -20189,21 +20187,21 @@ var ContextMenuSub = (props) => {
     onChange: onOpenChange,
     caller: SUB_NAME2
   });
-  return /* @__PURE__ */ jsx21(Sub, { ...menuScope, open, onOpenChange: setOpen, children });
+  return /* @__PURE__ */ jsx23(Sub, { ...menuScope, open, onOpenChange: setOpen, children });
 };
 ContextMenuSub.displayName = SUB_NAME2;
 var SUB_TRIGGER_NAME2 = "ContextMenuSubTrigger";
 var ContextMenuSubTrigger = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeContextMenu, ...triggerItemProps } = props;
   const menuScope = useMenuScope(__scopeContextMenu);
-  return /* @__PURE__ */ jsx21(SubTrigger, { ...menuScope, ...triggerItemProps, ref: forwardedRef });
+  return /* @__PURE__ */ jsx23(SubTrigger, { ...menuScope, ...triggerItemProps, ref: forwardedRef });
 });
 ContextMenuSubTrigger.displayName = SUB_TRIGGER_NAME2;
 var SUB_CONTENT_NAME2 = "ContextMenuSubContent";
 var ContextMenuSubContent = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeContextMenu, ...subContentProps } = props;
   const menuScope = useMenuScope(__scopeContextMenu);
-  return /* @__PURE__ */ jsx21(
+  return /* @__PURE__ */ jsx23(
     SubContent,
     {
       ...menuScope,
@@ -20282,7 +20280,7 @@ __export(dist_exports15, {
   createDropdownMenuScope: () => createDropdownMenuScope
 });
 init_shadcn_react_shim();
-import { jsx as jsx23 } from "react/jsx-runtime";
+import { jsx as jsx24 } from "react/jsx-runtime";
 var DROPDOWN_MENU_NAME = "DropdownMenu";
 var [createDropdownMenuContext, createDropdownMenuScope] = createContextScope(
   DROPDOWN_MENU_NAME,
@@ -20308,7 +20306,7 @@ var DropdownMenu = (props) => {
     onChange: onOpenChange,
     caller: DROPDOWN_MENU_NAME
   });
-  return /* @__PURE__ */ jsx23(
+  return /* @__PURE__ */ jsx24(
     DropdownMenuProvider,
     {
       scope: __scopeDropdownMenu,
@@ -20319,7 +20317,7 @@ var DropdownMenu = (props) => {
       onOpenChange: setOpen,
       onOpenToggle: shadcn_react_shim_exports.useCallback(() => setOpen((prevOpen) => !prevOpen), [setOpen]),
       modal,
-      children: /* @__PURE__ */ jsx23(Root32, { ...menuScope, open, onOpenChange: setOpen, dir, modal, children })
+      children: /* @__PURE__ */ jsx24(Root32, { ...menuScope, open, onOpenChange: setOpen, dir, modal, children })
     }
   );
 };
@@ -20330,7 +20328,7 @@ var DropdownMenuTrigger = shadcn_react_shim_exports.forwardRef(
     const { __scopeDropdownMenu, disabled: disabled2 = false, ...triggerProps } = props;
     const context = useDropdownMenuContext(TRIGGER_NAME7, __scopeDropdownMenu);
     const menuScope = useMenuScope2(__scopeDropdownMenu);
-    return /* @__PURE__ */ jsx23(Anchor2, { asChild: true, ...menuScope, children: /* @__PURE__ */ jsx23(
+    return /* @__PURE__ */ jsx24(Anchor2, { asChild: true, ...menuScope, children: /* @__PURE__ */ jsx24(
       Primitive.button,
       {
         type: "button",
@@ -20364,7 +20362,7 @@ var PORTAL_NAME6 = "DropdownMenuPortal";
 var DropdownMenuPortal = (props) => {
   const { __scopeDropdownMenu, ...portalProps } = props;
   const menuScope = useMenuScope2(__scopeDropdownMenu);
-  return /* @__PURE__ */ jsx23(Portal3, { ...menuScope, ...portalProps });
+  return /* @__PURE__ */ jsx24(Portal3, { ...menuScope, ...portalProps });
 };
 DropdownMenuPortal.displayName = PORTAL_NAME6;
 var CONTENT_NAME8 = "DropdownMenuContent";
@@ -20374,7 +20372,7 @@ var DropdownMenuContent = shadcn_react_shim_exports.forwardRef(
     const context = useDropdownMenuContext(CONTENT_NAME8, __scopeDropdownMenu);
     const menuScope = useMenuScope2(__scopeDropdownMenu);
     const hasInteractedOutsideRef = shadcn_react_shim_exports.useRef(false);
-    return /* @__PURE__ */ jsx23(
+    return /* @__PURE__ */ jsx24(
       Content23,
       {
         id: context.contentId,
@@ -20414,7 +20412,7 @@ var DropdownMenuGroup = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDropdownMenu, ...groupProps } = props;
     const menuScope = useMenuScope2(__scopeDropdownMenu);
-    return /* @__PURE__ */ jsx23(Group, { ...menuScope, ...groupProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx24(Group, { ...menuScope, ...groupProps, ref: forwardedRef });
   }
 );
 DropdownMenuGroup.displayName = GROUP_NAME4;
@@ -20423,7 +20421,7 @@ var DropdownMenuLabel = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDropdownMenu, ...labelProps } = props;
     const menuScope = useMenuScope2(__scopeDropdownMenu);
-    return /* @__PURE__ */ jsx23(Label, { ...menuScope, ...labelProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx24(Label, { ...menuScope, ...labelProps, ref: forwardedRef });
   }
 );
 DropdownMenuLabel.displayName = LABEL_NAME3;
@@ -20432,7 +20430,7 @@ var DropdownMenuItem = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDropdownMenu, ...itemProps } = props;
     const menuScope = useMenuScope2(__scopeDropdownMenu);
-    return /* @__PURE__ */ jsx23(Item22, { ...menuScope, ...itemProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx24(Item22, { ...menuScope, ...itemProps, ref: forwardedRef });
   }
 );
 DropdownMenuItem.displayName = ITEM_NAME5;
@@ -20440,35 +20438,35 @@ var CHECKBOX_ITEM_NAME3 = "DropdownMenuCheckboxItem";
 var DropdownMenuCheckboxItem = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeDropdownMenu, ...checkboxItemProps } = props;
   const menuScope = useMenuScope2(__scopeDropdownMenu);
-  return /* @__PURE__ */ jsx23(CheckboxItem, { ...menuScope, ...checkboxItemProps, ref: forwardedRef });
+  return /* @__PURE__ */ jsx24(CheckboxItem, { ...menuScope, ...checkboxItemProps, ref: forwardedRef });
 });
 DropdownMenuCheckboxItem.displayName = CHECKBOX_ITEM_NAME3;
 var RADIO_GROUP_NAME3 = "DropdownMenuRadioGroup";
 var DropdownMenuRadioGroup = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeDropdownMenu, ...radioGroupProps } = props;
   const menuScope = useMenuScope2(__scopeDropdownMenu);
-  return /* @__PURE__ */ jsx23(RadioGroup, { ...menuScope, ...radioGroupProps, ref: forwardedRef });
+  return /* @__PURE__ */ jsx24(RadioGroup, { ...menuScope, ...radioGroupProps, ref: forwardedRef });
 });
 DropdownMenuRadioGroup.displayName = RADIO_GROUP_NAME3;
 var RADIO_ITEM_NAME3 = "DropdownMenuRadioItem";
 var DropdownMenuRadioItem = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeDropdownMenu, ...radioItemProps } = props;
   const menuScope = useMenuScope2(__scopeDropdownMenu);
-  return /* @__PURE__ */ jsx23(RadioItem, { ...menuScope, ...radioItemProps, ref: forwardedRef });
+  return /* @__PURE__ */ jsx24(RadioItem, { ...menuScope, ...radioItemProps, ref: forwardedRef });
 });
 DropdownMenuRadioItem.displayName = RADIO_ITEM_NAME3;
 var INDICATOR_NAME3 = "DropdownMenuItemIndicator";
 var DropdownMenuItemIndicator = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeDropdownMenu, ...itemIndicatorProps } = props;
   const menuScope = useMenuScope2(__scopeDropdownMenu);
-  return /* @__PURE__ */ jsx23(ItemIndicator, { ...menuScope, ...itemIndicatorProps, ref: forwardedRef });
+  return /* @__PURE__ */ jsx24(ItemIndicator, { ...menuScope, ...itemIndicatorProps, ref: forwardedRef });
 });
 DropdownMenuItemIndicator.displayName = INDICATOR_NAME3;
 var SEPARATOR_NAME3 = "DropdownMenuSeparator";
 var DropdownMenuSeparator = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeDropdownMenu, ...separatorProps } = props;
   const menuScope = useMenuScope2(__scopeDropdownMenu);
-  return /* @__PURE__ */ jsx23(Separator, { ...menuScope, ...separatorProps, ref: forwardedRef });
+  return /* @__PURE__ */ jsx24(Separator, { ...menuScope, ...separatorProps, ref: forwardedRef });
 });
 DropdownMenuSeparator.displayName = SEPARATOR_NAME3;
 var ARROW_NAME4 = "DropdownMenuArrow";
@@ -20476,7 +20474,7 @@ var DropdownMenuArrow = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeDropdownMenu, ...arrowProps } = props;
     const menuScope = useMenuScope2(__scopeDropdownMenu);
-    return /* @__PURE__ */ jsx23(Arrow22, { ...menuScope, ...arrowProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx24(Arrow22, { ...menuScope, ...arrowProps, ref: forwardedRef });
   }
 );
 DropdownMenuArrow.displayName = ARROW_NAME4;
@@ -20489,20 +20487,20 @@ var DropdownMenuSub = (props) => {
     onChange: onOpenChange,
     caller: "DropdownMenuSub"
   });
-  return /* @__PURE__ */ jsx23(Sub, { ...menuScope, open, onOpenChange: setOpen, children });
+  return /* @__PURE__ */ jsx24(Sub, { ...menuScope, open, onOpenChange: setOpen, children });
 };
 var SUB_TRIGGER_NAME3 = "DropdownMenuSubTrigger";
 var DropdownMenuSubTrigger = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeDropdownMenu, ...subTriggerProps } = props;
   const menuScope = useMenuScope2(__scopeDropdownMenu);
-  return /* @__PURE__ */ jsx23(SubTrigger, { ...menuScope, ...subTriggerProps, ref: forwardedRef });
+  return /* @__PURE__ */ jsx24(SubTrigger, { ...menuScope, ...subTriggerProps, ref: forwardedRef });
 });
 DropdownMenuSubTrigger.displayName = SUB_TRIGGER_NAME3;
 var SUB_CONTENT_NAME3 = "DropdownMenuSubContent";
 var DropdownMenuSubContent = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeDropdownMenu, ...subContentProps } = props;
   const menuScope = useMenuScope2(__scopeDropdownMenu);
-  return /* @__PURE__ */ jsx23(
+  return /* @__PURE__ */ jsx24(
     SubContent,
     {
       ...menuScope,
@@ -20547,10 +20545,10 @@ __export(dist_exports16, {
   Root: () => Root8
 });
 init_shadcn_react_shim();
-import { jsx as jsx24 } from "react/jsx-runtime";
+import { jsx as jsx25 } from "react/jsx-runtime";
 var NAME4 = "Label";
 var Label3 = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
-  return /* @__PURE__ */ jsx24(
+  return /* @__PURE__ */ jsx25(
     Primitive.label,
     {
       ...props,
@@ -20583,7 +20581,7 @@ __export(dist_exports17, {
   createHoverCardScope: () => createHoverCardScope
 });
 init_shadcn_react_shim();
-import { jsx as jsx25 } from "react/jsx-runtime";
+import { jsx as jsx26 } from "react/jsx-runtime";
 var originalBodyUserSelect;
 var HOVERCARD_NAME = "HoverCard";
 var [createHoverCardContext, createHoverCardScope] = createContextScope(HOVERCARD_NAME, [
@@ -20629,7 +20627,7 @@ var HoverCard = (props) => {
       clearTimeout(closeTimerRef.current);
     };
   }, []);
-  return /* @__PURE__ */ jsx25(
+  return /* @__PURE__ */ jsx26(
     HoverCardProvider,
     {
       scope: __scopeHoverCard,
@@ -20640,7 +20638,7 @@ var HoverCard = (props) => {
       onDismiss: handleDismiss,
       hasSelectionRef,
       isPointerDownOnContentRef,
-      children: /* @__PURE__ */ jsx25(Root24, { ...popperScope, children })
+      children: /* @__PURE__ */ jsx26(Root24, { ...popperScope, children })
     }
   );
 };
@@ -20651,7 +20649,7 @@ var HoverCardTrigger = shadcn_react_shim_exports.forwardRef(
     const { __scopeHoverCard, ...triggerProps } = props;
     const context = useHoverCardContext(TRIGGER_NAME8, __scopeHoverCard);
     const popperScope = usePopperScope2(__scopeHoverCard);
-    return /* @__PURE__ */ jsx25(Anchor, { asChild: true, ...popperScope, children: /* @__PURE__ */ jsx25(
+    return /* @__PURE__ */ jsx26(Anchor, { asChild: true, ...popperScope, children: /* @__PURE__ */ jsx26(
       Primitive.a,
       {
         "data-state": context.open ? "open" : "closed",
@@ -20674,7 +20672,7 @@ var [PortalProvider3, usePortalContext3] = createHoverCardContext(PORTAL_NAME7, 
 var HoverCardPortal = (props) => {
   const { __scopeHoverCard, forceMount, children, container } = props;
   const context = useHoverCardContext(PORTAL_NAME7, __scopeHoverCard);
-  return /* @__PURE__ */ jsx25(PortalProvider3, { scope: __scopeHoverCard, forceMount, children: /* @__PURE__ */ jsx25(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx25(Portal, { asChild: true, container, children }) }) });
+  return /* @__PURE__ */ jsx26(PortalProvider3, { scope: __scopeHoverCard, forceMount, children: /* @__PURE__ */ jsx26(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx26(Portal, { asChild: true, container, children }) }) });
 };
 HoverCardPortal.displayName = PORTAL_NAME7;
 var CONTENT_NAME9 = "HoverCardContent";
@@ -20683,7 +20681,7 @@ var HoverCardContent = shadcn_react_shim_exports.forwardRef(
     const portalContext = usePortalContext3(CONTENT_NAME9, props.__scopeHoverCard);
     const { forceMount = portalContext.forceMount, ...contentProps } = props;
     const context = useHoverCardContext(CONTENT_NAME9, props.__scopeHoverCard);
-    return /* @__PURE__ */ jsx25(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx25(
+    return /* @__PURE__ */ jsx26(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx26(
       HoverCardContentImpl,
       {
         "data-state": context.open ? "open" : "closed",
@@ -20746,7 +20744,7 @@ var HoverCardContentImpl = shadcn_react_shim_exports.forwardRef((props, forwarde
       tabbables.forEach((tabbable3) => tabbable3.setAttribute("tabindex", "-1"));
     }
   });
-  return /* @__PURE__ */ jsx25(
+  return /* @__PURE__ */ jsx26(
     DismissableLayer,
     {
       asChild: true,
@@ -20758,7 +20756,7 @@ var HoverCardContentImpl = shadcn_react_shim_exports.forwardRef((props, forwarde
         event.preventDefault();
       }),
       onDismiss: context.onDismiss,
-      children: /* @__PURE__ */ jsx25(
+      children: /* @__PURE__ */ jsx26(
         Content4,
         {
           ...popperScope,
@@ -20795,7 +20793,7 @@ var HoverCardArrow = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeHoverCard, ...arrowProps } = props;
     const popperScope = usePopperScope2(__scopeHoverCard);
-    return /* @__PURE__ */ jsx25(Arrow2, { ...popperScope, ...arrowProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx26(Arrow2, { ...popperScope, ...arrowProps, ref: forwardedRef });
   }
 );
 HoverCardArrow.displayName = ARROW_NAME5;
@@ -20858,7 +20856,7 @@ __export(dist_exports18, {
   createMenubarScope: () => createMenubarScope
 });
 init_shadcn_react_shim();
-import { jsx as jsx26 } from "react/jsx-runtime";
+import { jsx as jsx27 } from "react/jsx-runtime";
 var MENUBAR_NAME = "Menubar";
 var [Collection4, useCollection4, createCollectionScope4] = createCollection(MENUBAR_NAME);
 var [createMenubarContext, createMenubarScope] = createContextScope(MENUBAR_NAME, [
@@ -20888,7 +20886,7 @@ var Menubar = shadcn_react_shim_exports.forwardRef(
       caller: MENUBAR_NAME
     });
     const [currentTabStopId, setCurrentTabStopId] = shadcn_react_shim_exports.useState(null);
-    return /* @__PURE__ */ jsx26(
+    return /* @__PURE__ */ jsx27(
       MenubarContextProvider,
       {
         scope: __scopeMenubar,
@@ -20910,7 +20908,7 @@ var Menubar = shadcn_react_shim_exports.forwardRef(
         ),
         dir: direction,
         loop,
-        children: /* @__PURE__ */ jsx26(Collection4.Provider, { scope: __scopeMenubar, children: /* @__PURE__ */ jsx26(Collection4.Slot, { scope: __scopeMenubar, children: /* @__PURE__ */ jsx26(
+        children: /* @__PURE__ */ jsx27(Collection4.Provider, { scope: __scopeMenubar, children: /* @__PURE__ */ jsx27(Collection4.Slot, { scope: __scopeMenubar, children: /* @__PURE__ */ jsx27(
           Root7,
           {
             asChild: true,
@@ -20920,7 +20918,7 @@ var Menubar = shadcn_react_shim_exports.forwardRef(
             dir: direction,
             currentTabStopId,
             onCurrentTabStopIdChange: setCurrentTabStopId,
-            children: /* @__PURE__ */ jsx26(Primitive.div, { role: "menubar", ...menubarProps, ref: forwardedRef })
+            children: /* @__PURE__ */ jsx27(Primitive.div, { role: "menubar", ...menubarProps, ref: forwardedRef })
           }
         ) }) })
       }
@@ -20942,7 +20940,7 @@ var MenubarMenu = (props) => {
   shadcn_react_shim_exports.useEffect(() => {
     if (!open) wasKeyboardTriggerOpenRef.current = false;
   }, [open]);
-  return /* @__PURE__ */ jsx26(
+  return /* @__PURE__ */ jsx27(
     MenubarMenuProvider,
     {
       scope: __scopeMenubar,
@@ -20951,7 +20949,7 @@ var MenubarMenu = (props) => {
       triggerRef,
       contentId: useId(),
       wasKeyboardTriggerOpenRef,
-      children: /* @__PURE__ */ jsx26(
+      children: /* @__PURE__ */ jsx27(
         Root32,
         {
           ...menuScope,
@@ -20980,14 +20978,14 @@ var MenubarTrigger = shadcn_react_shim_exports.forwardRef(
     const composedRefs = useComposedRefs(forwardedRef, ref, menuContext.triggerRef);
     const [isFocused, setIsFocused] = shadcn_react_shim_exports.useState(false);
     const open = context.value === menuContext.value;
-    return /* @__PURE__ */ jsx26(Collection4.ItemSlot, { scope: __scopeMenubar, value: menuContext.value, disabled: disabled2, children: /* @__PURE__ */ jsx26(
+    return /* @__PURE__ */ jsx27(Collection4.ItemSlot, { scope: __scopeMenubar, value: menuContext.value, disabled: disabled2, children: /* @__PURE__ */ jsx27(
       Item2,
       {
         asChild: true,
         ...rovingFocusGroupScope,
         focusable: !disabled2,
         tabStopId: menuContext.value,
-        children: /* @__PURE__ */ jsx26(Anchor2, { asChild: true, ...menuScope, children: /* @__PURE__ */ jsx26(
+        children: /* @__PURE__ */ jsx27(Anchor2, { asChild: true, ...menuScope, children: /* @__PURE__ */ jsx27(
           Primitive.button,
           {
             type: "button",
@@ -21037,7 +21035,7 @@ var PORTAL_NAME8 = "MenubarPortal";
 var MenubarPortal = (props) => {
   const { __scopeMenubar, ...portalProps } = props;
   const menuScope = useMenuScope3(__scopeMenubar);
-  return /* @__PURE__ */ jsx26(Portal3, { ...menuScope, ...portalProps });
+  return /* @__PURE__ */ jsx27(Portal3, { ...menuScope, ...portalProps });
 };
 MenubarPortal.displayName = PORTAL_NAME8;
 var CONTENT_NAME10 = "MenubarContent";
@@ -21049,7 +21047,7 @@ var MenubarContent = shadcn_react_shim_exports.forwardRef(
     const menuContext = useMenubarMenuContext(CONTENT_NAME10, __scopeMenubar);
     const getItems = useCollection4(__scopeMenubar);
     const hasInteractedOutsideRef = shadcn_react_shim_exports.useRef(false);
-    return /* @__PURE__ */ jsx26(
+    return /* @__PURE__ */ jsx27(
       Content23,
       {
         id: menuContext.contentId,
@@ -21122,7 +21120,7 @@ var MenubarGroup = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenubar, ...groupProps } = props;
     const menuScope = useMenuScope3(__scopeMenubar);
-    return /* @__PURE__ */ jsx26(Group, { ...menuScope, ...groupProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx27(Group, { ...menuScope, ...groupProps, ref: forwardedRef });
   }
 );
 MenubarGroup.displayName = GROUP_NAME5;
@@ -21131,7 +21129,7 @@ var MenubarLabel = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenubar, ...labelProps } = props;
     const menuScope = useMenuScope3(__scopeMenubar);
-    return /* @__PURE__ */ jsx26(Label, { ...menuScope, ...labelProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx27(Label, { ...menuScope, ...labelProps, ref: forwardedRef });
   }
 );
 MenubarLabel.displayName = LABEL_NAME4;
@@ -21140,7 +21138,7 @@ var MenubarItem = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenubar, ...itemProps } = props;
     const menuScope = useMenuScope3(__scopeMenubar);
-    return /* @__PURE__ */ jsx26(Item22, { ...menuScope, ...itemProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx27(Item22, { ...menuScope, ...itemProps, ref: forwardedRef });
   }
 );
 MenubarItem.displayName = ITEM_NAME6;
@@ -21149,7 +21147,7 @@ var MenubarCheckboxItem = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenubar, ...checkboxItemProps } = props;
     const menuScope = useMenuScope3(__scopeMenubar);
-    return /* @__PURE__ */ jsx26(CheckboxItem, { ...menuScope, ...checkboxItemProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx27(CheckboxItem, { ...menuScope, ...checkboxItemProps, ref: forwardedRef });
   }
 );
 MenubarCheckboxItem.displayName = CHECKBOX_ITEM_NAME4;
@@ -21158,7 +21156,7 @@ var MenubarRadioGroup = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenubar, ...radioGroupProps } = props;
     const menuScope = useMenuScope3(__scopeMenubar);
-    return /* @__PURE__ */ jsx26(RadioGroup, { ...menuScope, ...radioGroupProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx27(RadioGroup, { ...menuScope, ...radioGroupProps, ref: forwardedRef });
   }
 );
 MenubarRadioGroup.displayName = RADIO_GROUP_NAME4;
@@ -21167,7 +21165,7 @@ var MenubarRadioItem = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenubar, ...radioItemProps } = props;
     const menuScope = useMenuScope3(__scopeMenubar);
-    return /* @__PURE__ */ jsx26(RadioItem, { ...menuScope, ...radioItemProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx27(RadioItem, { ...menuScope, ...radioItemProps, ref: forwardedRef });
   }
 );
 MenubarRadioItem.displayName = RADIO_ITEM_NAME4;
@@ -21175,7 +21173,7 @@ var INDICATOR_NAME4 = "MenubarItemIndicator";
 var MenubarItemIndicator = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { __scopeMenubar, ...itemIndicatorProps } = props;
   const menuScope = useMenuScope3(__scopeMenubar);
-  return /* @__PURE__ */ jsx26(ItemIndicator, { ...menuScope, ...itemIndicatorProps, ref: forwardedRef });
+  return /* @__PURE__ */ jsx27(ItemIndicator, { ...menuScope, ...itemIndicatorProps, ref: forwardedRef });
 });
 MenubarItemIndicator.displayName = INDICATOR_NAME4;
 var SEPARATOR_NAME4 = "MenubarSeparator";
@@ -21183,7 +21181,7 @@ var MenubarSeparator = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenubar, ...separatorProps } = props;
     const menuScope = useMenuScope3(__scopeMenubar);
-    return /* @__PURE__ */ jsx26(Separator, { ...menuScope, ...separatorProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx27(Separator, { ...menuScope, ...separatorProps, ref: forwardedRef });
   }
 );
 MenubarSeparator.displayName = SEPARATOR_NAME4;
@@ -21192,7 +21190,7 @@ var MenubarArrow = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenubar, ...arrowProps } = props;
     const menuScope = useMenuScope3(__scopeMenubar);
-    return /* @__PURE__ */ jsx26(Arrow22, { ...menuScope, ...arrowProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx27(Arrow22, { ...menuScope, ...arrowProps, ref: forwardedRef });
   }
 );
 MenubarArrow.displayName = ARROW_NAME6;
@@ -21206,7 +21204,7 @@ var MenubarSub = (props) => {
     onChange: onOpenChange,
     caller: SUB_NAME3
   });
-  return /* @__PURE__ */ jsx26(Sub, { ...menuScope, open, onOpenChange: setOpen, children });
+  return /* @__PURE__ */ jsx27(Sub, { ...menuScope, open, onOpenChange: setOpen, children });
 };
 MenubarSub.displayName = SUB_NAME3;
 var SUB_TRIGGER_NAME4 = "MenubarSubTrigger";
@@ -21214,7 +21212,7 @@ var MenubarSubTrigger = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenubar, ...subTriggerProps } = props;
     const menuScope = useMenuScope3(__scopeMenubar);
-    return /* @__PURE__ */ jsx26(
+    return /* @__PURE__ */ jsx27(
       SubTrigger,
       {
         "data-radix-menubar-subtrigger": "",
@@ -21231,7 +21229,7 @@ var MenubarSubContent = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeMenubar, ...subContentProps } = props;
     const menuScope = useMenuScope3(__scopeMenubar);
-    return /* @__PURE__ */ jsx26(
+    return /* @__PURE__ */ jsx27(
       SubContent,
       {
         ...menuScope,
@@ -21300,7 +21298,7 @@ __export(dist_exports19, {
 });
 init_shadcn_react_shim();
 import ReactDOM4 from "react-dom";
-import { Fragment as Fragment9, jsx as jsx27, jsxs as jsxs5 } from "react/jsx-runtime";
+import { Fragment as Fragment9, jsx as jsx28, jsxs as jsxs5 } from "react/jsx-runtime";
 var NAVIGATION_MENU_NAME = "NavigationMenu";
 var [Collection5, useCollection5, createCollectionScope5] = createCollection(NAVIGATION_MENU_NAME);
 var [FocusGroupCollection, useFocusGroupCollection, createFocusGroupCollectionScope] = createCollection(NAVIGATION_MENU_NAME);
@@ -21382,7 +21380,7 @@ var NavigationMenu = shadcn_react_shim_exports.forwardRef(
         window.clearTimeout(skipDelayTimerRef.current);
       };
     }, []);
-    return /* @__PURE__ */ jsx27(
+    return /* @__PURE__ */ jsx28(
       NavigationMenuProvider,
       {
         scope: __scopeNavigationMenu,
@@ -21406,7 +21404,7 @@ var NavigationMenu = shadcn_react_shim_exports.forwardRef(
           setValue((prevValue) => prevValue === itemValue ? "" : itemValue);
         },
         onItemDismiss: () => setValue(""),
-        children: /* @__PURE__ */ jsx27(
+        children: /* @__PURE__ */ jsx28(
           Primitive.nav,
           {
             "aria-label": "Main",
@@ -21439,7 +21437,7 @@ var NavigationMenuSub = shadcn_react_shim_exports.forwardRef(
       defaultProp: defaultValue ?? "",
       caller: SUB_NAME4
     });
-    return /* @__PURE__ */ jsx27(
+    return /* @__PURE__ */ jsx28(
       NavigationMenuProvider,
       {
         scope: __scopeNavigationMenu,
@@ -21451,7 +21449,7 @@ var NavigationMenuSub = shadcn_react_shim_exports.forwardRef(
         onTriggerEnter: (itemValue) => setValue(itemValue),
         onItemSelect: (itemValue) => setValue(itemValue),
         onItemDismiss: () => setValue(""),
-        children: /* @__PURE__ */ jsx27(Primitive.div, { "data-orientation": orientation, ...subProps, ref: forwardedRef })
+        children: /* @__PURE__ */ jsx28(Primitive.div, { "data-orientation": orientation, ...subProps, ref: forwardedRef })
       }
     );
   }
@@ -21476,7 +21474,7 @@ var NavigationMenuProvider = (props) => {
   const [viewport, setViewport] = shadcn_react_shim_exports.useState(null);
   const [viewportContent, setViewportContent] = shadcn_react_shim_exports.useState(/* @__PURE__ */ new Map());
   const [indicatorTrack, setIndicatorTrack] = shadcn_react_shim_exports.useState(null);
-  return /* @__PURE__ */ jsx27(
+  return /* @__PURE__ */ jsx28(
     NavigationMenuProviderImpl,
     {
       scope,
@@ -21510,7 +21508,7 @@ var NavigationMenuProvider = (props) => {
           return new Map(prevContent);
         });
       }, []),
-      children: /* @__PURE__ */ jsx27(Collection5.Provider, { scope, children: /* @__PURE__ */ jsx27(ViewportContentProvider, { scope, items: viewportContent, children }) })
+      children: /* @__PURE__ */ jsx28(Collection5.Provider, { scope, children: /* @__PURE__ */ jsx28(ViewportContentProvider, { scope, items: viewportContent, children }) })
     }
   );
 };
@@ -21519,8 +21517,8 @@ var NavigationMenuList = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeNavigationMenu, ...listProps } = props;
     const context = useNavigationMenuContext(LIST_NAME, __scopeNavigationMenu);
-    const list = /* @__PURE__ */ jsx27(Primitive.ul, { "data-orientation": context.orientation, ...listProps, ref: forwardedRef });
-    return /* @__PURE__ */ jsx27(Primitive.div, { style: { position: "relative" }, ref: context.onIndicatorTrackChange, children: /* @__PURE__ */ jsx27(Collection5.Slot, { scope: __scopeNavigationMenu, children: context.isRootMenu ? /* @__PURE__ */ jsx27(FocusGroup, { asChild: true, children: list }) : list }) });
+    const list = /* @__PURE__ */ jsx28(Primitive.ul, { "data-orientation": context.orientation, ...listProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx28(Primitive.div, { style: { position: "relative" }, ref: context.onIndicatorTrackChange, children: /* @__PURE__ */ jsx28(Collection5.Slot, { scope: __scopeNavigationMenu, children: context.isRootMenu ? /* @__PURE__ */ jsx28(FocusGroup, { asChild: true, children: list }) : list }) });
   }
 );
 NavigationMenuList.displayName = LIST_NAME;
@@ -21550,7 +21548,7 @@ var NavigationMenuItem = shadcn_react_shim_exports.forwardRef(
         if (candidates.length) restoreContentTabOrderRef.current = removeFromTabOrder(candidates);
       }
     }, []);
-    return /* @__PURE__ */ jsx27(
+    return /* @__PURE__ */ jsx28(
       NavigationMenuItemContextProvider,
       {
         scope: __scopeNavigationMenu,
@@ -21563,7 +21561,7 @@ var NavigationMenuItem = shadcn_react_shim_exports.forwardRef(
         onFocusProxyEnter: handleContentEntry,
         onRootContentClose: handleContentExit,
         onContentFocusOutside: handleContentExit,
-        children: /* @__PURE__ */ jsx27(Primitive.li, { ...itemProps, ref: forwardedRef })
+        children: /* @__PURE__ */ jsx28(Primitive.li, { ...itemProps, ref: forwardedRef })
       }
     );
   }
@@ -21582,7 +21580,7 @@ var NavigationMenuTrigger = shadcn_react_shim_exports.forwardRef((props, forward
   const wasClickCloseRef = shadcn_react_shim_exports.useRef(false);
   const open = itemContext.value === context.value;
   return /* @__PURE__ */ jsxs5(Fragment9, { children: [
-    /* @__PURE__ */ jsx27(Collection5.ItemSlot, { scope: __scopeNavigationMenu, value: itemContext.value, children: /* @__PURE__ */ jsx27(FocusGroupItem, { asChild: true, children: /* @__PURE__ */ jsx27(
+    /* @__PURE__ */ jsx28(Collection5.ItemSlot, { scope: __scopeNavigationMenu, value: itemContext.value, children: /* @__PURE__ */ jsx28(FocusGroupItem, { asChild: true, children: /* @__PURE__ */ jsx28(
       Primitive.button,
       {
         id: triggerId,
@@ -21629,7 +21627,7 @@ var NavigationMenuTrigger = shadcn_react_shim_exports.forwardRef((props, forward
       }
     ) }) }),
     open && /* @__PURE__ */ jsxs5(Fragment9, { children: [
-      /* @__PURE__ */ jsx27(
+      /* @__PURE__ */ jsx28(
         Root,
         {
           "aria-hidden": true,
@@ -21646,7 +21644,7 @@ var NavigationMenuTrigger = shadcn_react_shim_exports.forwardRef((props, forward
           }
         }
       ),
-      context.viewport && /* @__PURE__ */ jsx27("span", { "aria-owns": contentId })
+      context.viewport && /* @__PURE__ */ jsx28("span", { "aria-owns": contentId })
     ] })
   ] });
 });
@@ -21656,7 +21654,7 @@ var LINK_SELECT = "navigationMenu.linkSelect";
 var NavigationMenuLink = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeNavigationMenu, active, onSelect, ...linkProps } = props;
-    return /* @__PURE__ */ jsx27(FocusGroupItem, { asChild: true, children: /* @__PURE__ */ jsx27(
+    return /* @__PURE__ */ jsx28(FocusGroupItem, { asChild: true, children: /* @__PURE__ */ jsx28(
       Primitive.a,
       {
         "data-active": active ? "" : void 0,
@@ -21694,7 +21692,7 @@ var NavigationMenuIndicator = shadcn_react_shim_exports.forwardRef((props, forwa
   const context = useNavigationMenuContext(INDICATOR_NAME5, props.__scopeNavigationMenu);
   const isVisible = Boolean(context.value);
   return context.indicatorTrack ? ReactDOM4.createPortal(
-    /* @__PURE__ */ jsx27(Presence, { present: forceMount || isVisible, children: /* @__PURE__ */ jsx27(NavigationMenuIndicatorImpl, { ...indicatorProps, ref: forwardedRef }) }),
+    /* @__PURE__ */ jsx28(Presence, { present: forceMount || isVisible, children: /* @__PURE__ */ jsx28(NavigationMenuIndicatorImpl, { ...indicatorProps, ref: forwardedRef }) }),
     context.indicatorTrack
   ) : null;
 });
@@ -21724,7 +21722,7 @@ var NavigationMenuIndicatorImpl = shadcn_react_shim_exports.forwardRef((props, f
   };
   useResizeObserver(activeTrigger, handlePositionChange);
   useResizeObserver(context.indicatorTrack, handlePositionChange);
-  return position ? /* @__PURE__ */ jsx27(
+  return position ? /* @__PURE__ */ jsx28(
     Primitive.div,
     {
       "aria-hidden": true,
@@ -21764,7 +21762,7 @@ var NavigationMenuContent = shadcn_react_shim_exports.forwardRef((props, forward
     onRootContentClose: itemContext.onRootContentClose,
     ...contentProps
   };
-  return !context.viewport ? /* @__PURE__ */ jsx27(Presence, { present: forceMount || open, children: /* @__PURE__ */ jsx27(
+  return !context.viewport ? /* @__PURE__ */ jsx28(Presence, { present: forceMount || open, children: /* @__PURE__ */ jsx28(
     NavigationMenuContentImpl,
     {
       "data-state": getOpenState2(open),
@@ -21781,7 +21779,7 @@ var NavigationMenuContent = shadcn_react_shim_exports.forwardRef((props, forward
         ...commonProps.style
       }
     }
-  ) }) : /* @__PURE__ */ jsx27(ViewportContentMounter, { forceMount, ...commonProps, ref: composedRefs });
+  ) }) : /* @__PURE__ */ jsx28(ViewportContentMounter, { forceMount, ...commonProps, ref: composedRefs });
 });
 NavigationMenuContent.displayName = CONTENT_NAME11;
 var ViewportContentMounter = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
@@ -21849,7 +21847,7 @@ var NavigationMenuContentImpl = shadcn_react_shim_exports.forwardRef((props, for
     prevMotionAttributeRef.current = attribute;
     return attribute;
   }, [context.previousValue, context.value, context.dir, getItems, value]);
-  return /* @__PURE__ */ jsx27(FocusGroup, { asChild: true, children: /* @__PURE__ */ jsx27(
+  return /* @__PURE__ */ jsx28(FocusGroup, { asChild: true, children: /* @__PURE__ */ jsx28(
     DismissableLayer,
     {
       id: contentId,
@@ -21904,7 +21902,7 @@ var NavigationMenuViewport = shadcn_react_shim_exports.forwardRef((props, forwar
   const { forceMount, ...viewportProps } = props;
   const context = useNavigationMenuContext(VIEWPORT_NAME, props.__scopeNavigationMenu);
   const open = Boolean(context.value);
-  return /* @__PURE__ */ jsx27(Presence, { present: forceMount || open, children: /* @__PURE__ */ jsx27(NavigationMenuViewportImpl, { ...viewportProps, ref: forwardedRef }) });
+  return /* @__PURE__ */ jsx28(Presence, { present: forceMount || open, children: /* @__PURE__ */ jsx28(NavigationMenuViewportImpl, { ...viewportProps, ref: forwardedRef }) });
 });
 NavigationMenuViewport.displayName = VIEWPORT_NAME;
 var NavigationMenuViewportImpl = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
@@ -21925,7 +21923,7 @@ var NavigationMenuViewportImpl = shadcn_react_shim_exports.forwardRef((props, fo
     if (content) setSize({ width: content.offsetWidth, height: content.offsetHeight });
   };
   useResizeObserver(content, handleSizeChange);
-  return /* @__PURE__ */ jsx27(
+  return /* @__PURE__ */ jsx28(
     Primitive.div,
     {
       "data-state": getOpenState2(open),
@@ -21943,7 +21941,7 @@ var NavigationMenuViewportImpl = shadcn_react_shim_exports.forwardRef((props, fo
       onPointerLeave: composeEventHandlers(props.onPointerLeave, whenMouse2(context.onContentLeave)),
       children: Array.from(viewportContentContext.items).map(([value, { ref, forceMount, ...props2 }]) => {
         const isActive = activeContentValue === value;
-        return /* @__PURE__ */ jsx27(Presence, { present: forceMount || isActive, children: /* @__PURE__ */ jsx27(
+        return /* @__PURE__ */ jsx28(Presence, { present: forceMount || isActive, children: /* @__PURE__ */ jsx28(
           NavigationMenuContentImpl,
           {
             ...props2,
@@ -21961,7 +21959,7 @@ var FocusGroup = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeNavigationMenu, ...groupProps } = props;
     const context = useNavigationMenuContext(FOCUS_GROUP_NAME, __scopeNavigationMenu);
-    return /* @__PURE__ */ jsx27(FocusGroupCollection.Provider, { scope: __scopeNavigationMenu, children: /* @__PURE__ */ jsx27(FocusGroupCollection.Slot, { scope: __scopeNavigationMenu, children: /* @__PURE__ */ jsx27(Primitive.div, { dir: context.dir, ...groupProps, ref: forwardedRef }) }) });
+    return /* @__PURE__ */ jsx28(FocusGroupCollection.Provider, { scope: __scopeNavigationMenu, children: /* @__PURE__ */ jsx28(FocusGroupCollection.Slot, { scope: __scopeNavigationMenu, children: /* @__PURE__ */ jsx28(Primitive.div, { dir: context.dir, ...groupProps, ref: forwardedRef }) }) });
   }
 );
 var ARROW_KEYS = ["ArrowRight", "ArrowLeft", "ArrowUp", "ArrowDown"];
@@ -21971,7 +21969,7 @@ var FocusGroupItem = shadcn_react_shim_exports.forwardRef(
     const { __scopeNavigationMenu, ...groupProps } = props;
     const getItems = useFocusGroupCollection(__scopeNavigationMenu);
     const context = useNavigationMenuContext(FOCUS_GROUP_ITEM_NAME, __scopeNavigationMenu);
-    return /* @__PURE__ */ jsx27(FocusGroupCollection.ItemSlot, { scope: __scopeNavigationMenu, children: /* @__PURE__ */ jsx27(
+    return /* @__PURE__ */ jsx28(FocusGroupCollection.ItemSlot, { scope: __scopeNavigationMenu, children: /* @__PURE__ */ jsx28(
       Primitive.button,
       {
         ...groupProps,
@@ -22091,7 +22089,7 @@ __export(dist_exports21, {
   createPopoverScope: () => createPopoverScope
 });
 init_shadcn_react_shim();
-import { jsx as jsx28 } from "react/jsx-runtime";
+import { jsx as jsx29 } from "react/jsx-runtime";
 var POPOVER_NAME = "Popover";
 var [createPopoverContext, createPopoverScope] = createContextScope(POPOVER_NAME, [
   createPopperScope
@@ -22116,7 +22114,7 @@ var Popover = (props) => {
     onChange: onOpenChange,
     caller: POPOVER_NAME
   });
-  return /* @__PURE__ */ jsx28(Root24, { ...popperScope, children: /* @__PURE__ */ jsx28(
+  return /* @__PURE__ */ jsx29(Root24, { ...popperScope, children: /* @__PURE__ */ jsx29(
     PopoverProvider,
     {
       scope: __scopePopover,
@@ -22145,7 +22143,7 @@ var PopoverAnchor = shadcn_react_shim_exports.forwardRef(
       onCustomAnchorAdd();
       return () => onCustomAnchorRemove();
     }, [onCustomAnchorAdd, onCustomAnchorRemove]);
-    return /* @__PURE__ */ jsx28(Anchor, { ...popperScope, ...anchorProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx29(Anchor, { ...popperScope, ...anchorProps, ref: forwardedRef });
   }
 );
 PopoverAnchor.displayName = ANCHOR_NAME3;
@@ -22156,7 +22154,7 @@ var PopoverTrigger = shadcn_react_shim_exports.forwardRef(
     const context = usePopoverContext(TRIGGER_NAME11, __scopePopover);
     const popperScope = usePopperScope3(__scopePopover);
     const composedTriggerRef = useComposedRefs(forwardedRef, context.triggerRef);
-    const trigger = /* @__PURE__ */ jsx28(
+    const trigger = /* @__PURE__ */ jsx29(
       Primitive.button,
       {
         type: "button",
@@ -22169,7 +22167,7 @@ var PopoverTrigger = shadcn_react_shim_exports.forwardRef(
         onClick: composeEventHandlers(props.onClick, context.onOpenToggle)
       }
     );
-    return context.hasCustomAnchor ? trigger : /* @__PURE__ */ jsx28(Anchor, { asChild: true, ...popperScope, children: trigger });
+    return context.hasCustomAnchor ? trigger : /* @__PURE__ */ jsx29(Anchor, { asChild: true, ...popperScope, children: trigger });
   }
 );
 PopoverTrigger.displayName = TRIGGER_NAME11;
@@ -22180,7 +22178,7 @@ var [PortalProvider4, usePortalContext4] = createPopoverContext(PORTAL_NAME9, {
 var PopoverPortal = (props) => {
   const { __scopePopover, forceMount, children, container } = props;
   const context = usePopoverContext(PORTAL_NAME9, __scopePopover);
-  return /* @__PURE__ */ jsx28(PortalProvider4, { scope: __scopePopover, forceMount, children: /* @__PURE__ */ jsx28(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx28(Portal, { asChild: true, container, children }) }) });
+  return /* @__PURE__ */ jsx29(PortalProvider4, { scope: __scopePopover, forceMount, children: /* @__PURE__ */ jsx29(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx29(Portal, { asChild: true, container, children }) }) });
 };
 PopoverPortal.displayName = PORTAL_NAME9;
 var CONTENT_NAME12 = "PopoverContent";
@@ -22189,7 +22187,7 @@ var PopoverContent = shadcn_react_shim_exports.forwardRef(
     const portalContext = usePortalContext4(CONTENT_NAME12, props.__scopePopover);
     const { forceMount = portalContext.forceMount, ...contentProps } = props;
     const context = usePopoverContext(CONTENT_NAME12, props.__scopePopover);
-    return /* @__PURE__ */ jsx28(Presence, { present: forceMount || context.open, children: context.modal ? /* @__PURE__ */ jsx28(PopoverContentModal, { ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ jsx28(PopoverContentNonModal, { ...contentProps, ref: forwardedRef }) });
+    return /* @__PURE__ */ jsx29(Presence, { present: forceMount || context.open, children: context.modal ? /* @__PURE__ */ jsx29(PopoverContentModal, { ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ jsx29(PopoverContentNonModal, { ...contentProps, ref: forwardedRef }) });
   }
 );
 PopoverContent.displayName = CONTENT_NAME12;
@@ -22204,7 +22202,7 @@ var PopoverContentModal = shadcn_react_shim_exports.forwardRef(
       const content = contentRef.current;
       if (content) return hideOthers(content);
     }, []);
-    return /* @__PURE__ */ jsx28(Combination_default, { as: Slot4, allowPinchZoom: true, children: /* @__PURE__ */ jsx28(
+    return /* @__PURE__ */ jsx29(Combination_default, { as: Slot4, allowPinchZoom: true, children: /* @__PURE__ */ jsx29(
       PopoverContentImpl,
       {
         ...props,
@@ -22239,7 +22237,7 @@ var PopoverContentNonModal = shadcn_react_shim_exports.forwardRef(
     const context = usePopoverContext(CONTENT_NAME12, props.__scopePopover);
     const hasInteractedOutsideRef = shadcn_react_shim_exports.useRef(false);
     const hasPointerDownOutsideRef = shadcn_react_shim_exports.useRef(false);
-    return /* @__PURE__ */ jsx28(
+    return /* @__PURE__ */ jsx29(
       PopoverContentImpl,
       {
         ...props,
@@ -22291,7 +22289,7 @@ var PopoverContentImpl = shadcn_react_shim_exports.forwardRef(
     const context = usePopoverContext(CONTENT_NAME12, __scopePopover);
     const popperScope = usePopperScope3(__scopePopover);
     useFocusGuards();
-    return /* @__PURE__ */ jsx28(
+    return /* @__PURE__ */ jsx29(
       FocusScope,
       {
         asChild: true,
@@ -22299,7 +22297,7 @@ var PopoverContentImpl = shadcn_react_shim_exports.forwardRef(
         trapped: trapFocus,
         onMountAutoFocus: onOpenAutoFocus,
         onUnmountAutoFocus: onCloseAutoFocus,
-        children: /* @__PURE__ */ jsx28(
+        children: /* @__PURE__ */ jsx29(
           DismissableLayer,
           {
             asChild: true,
@@ -22309,7 +22307,7 @@ var PopoverContentImpl = shadcn_react_shim_exports.forwardRef(
             onPointerDownOutside,
             onFocusOutside,
             onDismiss: () => context.onOpenChange(false),
-            children: /* @__PURE__ */ jsx28(
+            children: /* @__PURE__ */ jsx29(
               Content4,
               {
                 "data-state": getState5(context.open),
@@ -22342,7 +22340,7 @@ var PopoverClose = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopePopover, ...closeProps } = props;
     const context = usePopoverContext(CLOSE_NAME2, __scopePopover);
-    return /* @__PURE__ */ jsx28(
+    return /* @__PURE__ */ jsx29(
       Primitive.button,
       {
         type: "button",
@@ -22359,7 +22357,7 @@ var PopoverArrow = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopePopover, ...arrowProps } = props;
     const popperScope = usePopperScope3(__scopePopover);
-    return /* @__PURE__ */ jsx28(Arrow2, { ...popperScope, ...arrowProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx29(Arrow2, { ...popperScope, ...arrowProps, ref: forwardedRef });
   }
 );
 PopoverArrow.displayName = ARROW_NAME7;
@@ -22384,7 +22382,7 @@ __export(dist_exports22, {
   createProgressScope: () => createProgressScope
 });
 init_shadcn_react_shim();
-import { jsx as jsx29 } from "react/jsx-runtime";
+import { jsx as jsx30 } from "react/jsx-runtime";
 var PROGRESS_NAME = "Progress";
 var DEFAULT_MAX = 100;
 var [createProgressContext, createProgressScope] = createContextScope(PROGRESS_NAME);
@@ -22407,7 +22405,7 @@ var Progress = shadcn_react_shim_exports.forwardRef(
     }
     const value = isValidValueNumber(valueProp, max3) ? valueProp : null;
     const valueLabel = isNumber2(value) ? getValueLabel(value, max3) : void 0;
-    return /* @__PURE__ */ jsx29(ProgressProvider, { scope: __scopeProgress, value, max: max3, children: /* @__PURE__ */ jsx29(
+    return /* @__PURE__ */ jsx30(ProgressProvider, { scope: __scopeProgress, value, max: max3, children: /* @__PURE__ */ jsx30(
       Primitive.div,
       {
         "aria-valuemax": max3,
@@ -22430,7 +22428,7 @@ var ProgressIndicator = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeProgress, ...indicatorProps } = props;
     const context = useProgressContext(INDICATOR_NAME6, __scopeProgress);
-    return /* @__PURE__ */ jsx29(
+    return /* @__PURE__ */ jsx30(
       Primitive.div,
       {
         "data-state": getProgressState(context.value, context.max),
@@ -22485,7 +22483,7 @@ __export(dist_exports23, {
 });
 init_shadcn_react_shim();
 init_shadcn_react_shim();
-import { jsx as jsx30, jsxs as jsxs6 } from "react/jsx-runtime";
+import { jsx as jsx31, jsxs as jsxs6 } from "react/jsx-runtime";
 import { jsx as jsx210 } from "react/jsx-runtime";
 var RADIO_NAME = "Radio";
 var [createRadioContext, createRadioScope] = createContextScope(RADIO_NAME);
@@ -22508,7 +22506,7 @@ var Radio = shadcn_react_shim_exports.forwardRef(
     const hasConsumerStoppedPropagationRef = shadcn_react_shim_exports.useRef(false);
     const isFormControl = button ? form || !!button.closest("form") : true;
     return /* @__PURE__ */ jsxs6(RadioProvider, { scope: __scopeRadio, checked, disabled: disabled2, children: [
-      /* @__PURE__ */ jsx30(
+      /* @__PURE__ */ jsx31(
         Primitive.button,
         {
           type: "button",
@@ -22529,7 +22527,7 @@ var Radio = shadcn_react_shim_exports.forwardRef(
           })
         }
       ),
-      isFormControl && /* @__PURE__ */ jsx30(
+      isFormControl && /* @__PURE__ */ jsx31(
         RadioBubbleInput,
         {
           control: button,
@@ -22552,7 +22550,7 @@ var RadioIndicator = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeRadio, forceMount, ...indicatorProps } = props;
     const context = useRadioContext(INDICATOR_NAME7, __scopeRadio);
-    return /* @__PURE__ */ jsx30(Presence, { present: forceMount || context.checked, children: /* @__PURE__ */ jsx30(
+    return /* @__PURE__ */ jsx31(Presence, { present: forceMount || context.checked, children: /* @__PURE__ */ jsx31(
       Primitive.span,
       {
         "data-state": getState6(context.checked),
@@ -22592,7 +22590,7 @@ var RadioBubbleInput = shadcn_react_shim_exports.forwardRef(
         input.dispatchEvent(event);
       }
     }, [prevChecked, checked, bubbles]);
-    return /* @__PURE__ */ jsx30(
+    return /* @__PURE__ */ jsx31(
       Primitive.input,
       {
         type: "radio",
@@ -22772,7 +22770,7 @@ __export(dist_exports24, {
 });
 init_shadcn_react_shim();
 init_shadcn_react_shim();
-import { Fragment as Fragment10, jsx as jsx31, jsxs as jsxs7 } from "react/jsx-runtime";
+import { Fragment as Fragment10, jsx as jsx32, jsxs as jsxs7 } from "react/jsx-runtime";
 function useStateMachine2(initialState, machine) {
   return shadcn_react_shim_exports.useReducer((state, event) => {
     const nextState = machine[state][event];
@@ -22802,7 +22800,7 @@ var ScrollArea = shadcn_react_shim_exports.forwardRef(
     const [scrollbarYEnabled, setScrollbarYEnabled] = shadcn_react_shim_exports.useState(false);
     const composedRefs = useComposedRefs(forwardedRef, (node) => setScrollArea(node));
     const direction = useDirection(dir);
-    return /* @__PURE__ */ jsx31(
+    return /* @__PURE__ */ jsx32(
       ScrollAreaProvider,
       {
         scope: __scopeScrollArea,
@@ -22824,7 +22822,7 @@ var ScrollArea = shadcn_react_shim_exports.forwardRef(
         onScrollbarYEnabledChange: setScrollbarYEnabled,
         onCornerWidthChange: setCornerWidth,
         onCornerHeightChange: setCornerHeight,
-        children: /* @__PURE__ */ jsx31(
+        children: /* @__PURE__ */ jsx32(
           Primitive.div,
           {
             dir: direction,
@@ -22852,7 +22850,7 @@ var ScrollAreaViewport = shadcn_react_shim_exports.forwardRef(
     const ref = shadcn_react_shim_exports.useRef(null);
     const composedRefs = useComposedRefs(forwardedRef, ref, context.onViewportChange);
     return /* @__PURE__ */ jsxs7(Fragment10, { children: [
-      /* @__PURE__ */ jsx31(
+      /* @__PURE__ */ jsx32(
         "style",
         {
           dangerouslySetInnerHTML: {
@@ -22861,7 +22859,7 @@ var ScrollAreaViewport = shadcn_react_shim_exports.forwardRef(
           nonce
         }
       ),
-      /* @__PURE__ */ jsx31(
+      /* @__PURE__ */ jsx32(
         Primitive.div,
         {
           "data-radix-scroll-area-viewport": "",
@@ -22883,7 +22881,7 @@ var ScrollAreaViewport = shadcn_react_shim_exports.forwardRef(
             overflowY: context.scrollbarYEnabled ? "scroll" : "hidden",
             ...props.style
           },
-          children: /* @__PURE__ */ jsx31("div", { ref: context.onContentChange, style: { minWidth: "100%", display: "table" }, children })
+          children: /* @__PURE__ */ jsx32("div", { ref: context.onContentChange, style: { minWidth: "100%", display: "table" }, children })
         }
       )
     ] });
@@ -22903,7 +22901,7 @@ var ScrollAreaScrollbar = shadcn_react_shim_exports.forwardRef(
         isHorizontal ? onScrollbarXEnabledChange(false) : onScrollbarYEnabledChange(false);
       };
     }, [isHorizontal, onScrollbarXEnabledChange, onScrollbarYEnabledChange]);
-    return context.type === "hover" ? /* @__PURE__ */ jsx31(ScrollAreaScrollbarHover, { ...scrollbarProps, ref: forwardedRef, forceMount }) : context.type === "scroll" ? /* @__PURE__ */ jsx31(ScrollAreaScrollbarScroll, { ...scrollbarProps, ref: forwardedRef, forceMount }) : context.type === "auto" ? /* @__PURE__ */ jsx31(ScrollAreaScrollbarAuto, { ...scrollbarProps, ref: forwardedRef, forceMount }) : context.type === "always" ? /* @__PURE__ */ jsx31(ScrollAreaScrollbarVisible, { ...scrollbarProps, ref: forwardedRef }) : null;
+    return context.type === "hover" ? /* @__PURE__ */ jsx32(ScrollAreaScrollbarHover, { ...scrollbarProps, ref: forwardedRef, forceMount }) : context.type === "scroll" ? /* @__PURE__ */ jsx32(ScrollAreaScrollbarScroll, { ...scrollbarProps, ref: forwardedRef, forceMount }) : context.type === "auto" ? /* @__PURE__ */ jsx32(ScrollAreaScrollbarAuto, { ...scrollbarProps, ref: forwardedRef, forceMount }) : context.type === "always" ? /* @__PURE__ */ jsx32(ScrollAreaScrollbarVisible, { ...scrollbarProps, ref: forwardedRef }) : null;
   }
 );
 ScrollAreaScrollbar.displayName = SCROLLBAR_NAME;
@@ -22931,7 +22929,7 @@ var ScrollAreaScrollbarHover = shadcn_react_shim_exports.forwardRef((props, forw
       };
     }
   }, [context.scrollArea, context.scrollHideDelay]);
-  return /* @__PURE__ */ jsx31(Presence, { present: forceMount || visible, children: /* @__PURE__ */ jsx31(
+  return /* @__PURE__ */ jsx32(Presence, { present: forceMount || visible, children: /* @__PURE__ */ jsx32(
     ScrollAreaScrollbarAuto,
     {
       "data-state": visible ? "visible" : "hidden",
@@ -22987,7 +22985,7 @@ var ScrollAreaScrollbarScroll = shadcn_react_shim_exports.forwardRef((props, for
       return () => viewport.removeEventListener("scroll", handleScroll2);
     }
   }, [context.viewport, isHorizontal, send, debounceScrollEnd]);
-  return /* @__PURE__ */ jsx31(Presence, { present: forceMount || state !== "hidden", children: /* @__PURE__ */ jsx31(
+  return /* @__PURE__ */ jsx32(Presence, { present: forceMount || state !== "hidden", children: /* @__PURE__ */ jsx32(
     ScrollAreaScrollbarVisible,
     {
       "data-state": state === "hidden" ? "hidden" : "visible",
@@ -23012,7 +23010,7 @@ var ScrollAreaScrollbarAuto = shadcn_react_shim_exports.forwardRef((props, forwa
   }, 10);
   useResizeObserver2(context.viewport, handleResize);
   useResizeObserver2(context.content, handleResize);
-  return /* @__PURE__ */ jsx31(Presence, { present: forceMount || visible, children: /* @__PURE__ */ jsx31(
+  return /* @__PURE__ */ jsx32(Presence, { present: forceMount || visible, children: /* @__PURE__ */ jsx32(
     ScrollAreaScrollbarVisible,
     {
       "data-state": visible ? "visible" : "hidden",
@@ -23045,7 +23043,7 @@ var ScrollAreaScrollbarVisible = shadcn_react_shim_exports.forwardRef((props, fo
     return getScrollPositionFromPointer(pointerPos, pointerOffsetRef.current, sizes, dir);
   }
   if (orientation === "horizontal") {
-    return /* @__PURE__ */ jsx31(
+    return /* @__PURE__ */ jsx32(
       ScrollAreaScrollbarX,
       {
         ...commonProps,
@@ -23069,7 +23067,7 @@ var ScrollAreaScrollbarVisible = shadcn_react_shim_exports.forwardRef((props, fo
     );
   }
   if (orientation === "vertical") {
-    return /* @__PURE__ */ jsx31(
+    return /* @__PURE__ */ jsx32(
       ScrollAreaScrollbarY,
       {
         ...commonProps,
@@ -23101,7 +23099,7 @@ var ScrollAreaScrollbarX = shadcn_react_shim_exports.forwardRef((props, forwarde
   shadcn_react_shim_exports.useEffect(() => {
     if (ref.current) setComputedStyle(getComputedStyle(ref.current));
   }, [ref]);
-  return /* @__PURE__ */ jsx31(
+  return /* @__PURE__ */ jsx32(
     ScrollAreaScrollbarImpl,
     {
       "data-orientation": "horizontal",
@@ -23151,7 +23149,7 @@ var ScrollAreaScrollbarY = shadcn_react_shim_exports.forwardRef((props, forwarde
   shadcn_react_shim_exports.useEffect(() => {
     if (ref.current) setComputedStyle(getComputedStyle(ref.current));
   }, [ref]);
-  return /* @__PURE__ */ jsx31(
+  return /* @__PURE__ */ jsx32(
     ScrollAreaScrollbarImpl,
     {
       "data-orientation": "vertical",
@@ -23237,7 +23235,7 @@ var ScrollAreaScrollbarImpl = shadcn_react_shim_exports.forwardRef((props, forwa
   shadcn_react_shim_exports.useEffect(handleThumbPositionChange, [sizes, handleThumbPositionChange]);
   useResizeObserver2(scrollbar, handleResize);
   useResizeObserver2(context.content, handleResize);
-  return /* @__PURE__ */ jsx31(
+  return /* @__PURE__ */ jsx32(
     ScrollbarProvider,
     {
       scope: __scopeScrollArea,
@@ -23247,7 +23245,7 @@ var ScrollAreaScrollbarImpl = shadcn_react_shim_exports.forwardRef((props, forwa
       onThumbPointerUp: useCallbackRef(onThumbPointerUp),
       onThumbPositionChange: handleThumbPositionChange,
       onThumbPointerDown: useCallbackRef(onThumbPointerDown),
-      children: /* @__PURE__ */ jsx31(
+      children: /* @__PURE__ */ jsx32(
         Primitive.div,
         {
           ...scrollbarProps,
@@ -23285,7 +23283,7 @@ var ScrollAreaThumb = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { forceMount, ...thumbProps } = props;
     const scrollbarContext = useScrollbarContext(THUMB_NAME, props.__scopeScrollArea);
-    return /* @__PURE__ */ jsx31(Presence, { present: forceMount || scrollbarContext.hasThumb, children: /* @__PURE__ */ jsx31(ScrollAreaThumbImpl, { ref: forwardedRef, ...thumbProps }) });
+    return /* @__PURE__ */ jsx32(Presence, { present: forceMount || scrollbarContext.hasThumb, children: /* @__PURE__ */ jsx32(ScrollAreaThumbImpl, { ref: forwardedRef, ...thumbProps }) });
   }
 );
 var ScrollAreaThumbImpl = shadcn_react_shim_exports.forwardRef(
@@ -23321,7 +23319,7 @@ var ScrollAreaThumbImpl = shadcn_react_shim_exports.forwardRef(
         return () => viewport.removeEventListener("scroll", handleScroll2);
       }
     }, [scrollAreaContext.viewport, debounceScrollEnd, onThumbPositionChange]);
-    return /* @__PURE__ */ jsx31(
+    return /* @__PURE__ */ jsx32(
       Primitive.div,
       {
         "data-state": scrollbarContext.hasThumb ? "visible" : "hidden",
@@ -23351,7 +23349,7 @@ var ScrollAreaCorner = shadcn_react_shim_exports.forwardRef(
     const context = useScrollAreaContext(CORNER_NAME, props.__scopeScrollArea);
     const hasBothScrollbarsVisible = Boolean(context.scrollbarX && context.scrollbarY);
     const hasCorner = context.type !== "scroll" && hasBothScrollbarsVisible;
-    return hasCorner ? /* @__PURE__ */ jsx31(ScrollAreaCornerImpl, { ...props, ref: forwardedRef }) : null;
+    return hasCorner ? /* @__PURE__ */ jsx32(ScrollAreaCornerImpl, { ...props, ref: forwardedRef }) : null;
   }
 );
 ScrollAreaCorner.displayName = CORNER_NAME;
@@ -23371,7 +23369,7 @@ var ScrollAreaCornerImpl = shadcn_react_shim_exports.forwardRef((props, forwarde
     context.onCornerWidthChange(width2);
     setWidth(width2);
   });
-  return hasSize ? /* @__PURE__ */ jsx31(
+  return hasSize ? /* @__PURE__ */ jsx32(
     Primitive.div,
     {
       ...cornerProps,
@@ -23519,7 +23517,7 @@ __export(dist_exports25, {
 });
 init_shadcn_react_shim();
 import * as ReactDOM5 from "react-dom";
-import { Fragment as Fragment11, jsx as jsx32, jsxs as jsxs8 } from "react/jsx-runtime";
+import { Fragment as Fragment11, jsx as jsx33, jsxs as jsxs8 } from "react/jsx-runtime";
 var OPEN_KEYS = [" ", "Enter", "ArrowUp", "ArrowDown"];
 var SELECTION_KEYS2 = [" ", "Enter"];
 var SELECT_NAME = "Select";
@@ -23569,7 +23567,7 @@ var Select = (props) => {
   const isFormControl = trigger ? form || !!trigger.closest("form") : true;
   const [nativeOptionsSet, setNativeOptionsSet] = shadcn_react_shim_exports.useState(/* @__PURE__ */ new Set());
   const nativeSelectKey = Array.from(nativeOptionsSet).map((option) => option.props.value).join(";");
-  return /* @__PURE__ */ jsx32(Root24, { ...popperScope, children: /* @__PURE__ */ jsxs8(
+  return /* @__PURE__ */ jsx33(Root24, { ...popperScope, children: /* @__PURE__ */ jsxs8(
     SelectProvider,
     {
       required,
@@ -23589,7 +23587,7 @@ var Select = (props) => {
       triggerPointerDownPosRef,
       disabled: disabled2,
       children: [
-        /* @__PURE__ */ jsx32(Collection6.Provider, { scope: __scopeSelect, children: /* @__PURE__ */ jsx32(
+        /* @__PURE__ */ jsx33(Collection6.Provider, { scope: __scopeSelect, children: /* @__PURE__ */ jsx33(
           SelectNativeOptionsProvider,
           {
             scope: props.__scopeSelect,
@@ -23619,7 +23617,7 @@ var Select = (props) => {
             disabled: disabled2,
             form,
             children: [
-              value === void 0 ? /* @__PURE__ */ jsx32("option", { value: "" }) : null,
+              value === void 0 ? /* @__PURE__ */ jsx33("option", { value: "" }) : null,
               Array.from(nativeOptionsSet)
             ]
           },
@@ -23660,7 +23658,7 @@ var SelectTrigger = shadcn_react_shim_exports.forwardRef(
         };
       }
     };
-    return /* @__PURE__ */ jsx32(Anchor, { asChild: true, ...popperScope, children: /* @__PURE__ */ jsx32(
+    return /* @__PURE__ */ jsx33(Anchor, { asChild: true, ...popperScope, children: /* @__PURE__ */ jsx33(
       Primitive.button,
       {
         type: "button",
@@ -23719,13 +23717,13 @@ var SelectValue = shadcn_react_shim_exports.forwardRef(
     useLayoutEffect2(() => {
       onValueNodeHasChildrenChange(hasChildren);
     }, [onValueNodeHasChildrenChange, hasChildren]);
-    return /* @__PURE__ */ jsx32(
+    return /* @__PURE__ */ jsx33(
       Primitive.span,
       {
         ...valueProps,
         ref: composedRefs,
         style: { pointerEvents: "none" },
-        children: shouldShowPlaceholder(context.value) ? /* @__PURE__ */ jsx32(Fragment11, { children: placeholder }) : children
+        children: shouldShowPlaceholder(context.value) ? /* @__PURE__ */ jsx33(Fragment11, { children: placeholder }) : children
       }
     );
   }
@@ -23735,13 +23733,13 @@ var ICON_NAME = "SelectIcon";
 var SelectIcon = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeSelect, children, ...iconProps } = props;
-    return /* @__PURE__ */ jsx32(Primitive.span, { "aria-hidden": true, ...iconProps, ref: forwardedRef, children: children || "\u25BC" });
+    return /* @__PURE__ */ jsx33(Primitive.span, { "aria-hidden": true, ...iconProps, ref: forwardedRef, children: children || "\u25BC" });
   }
 );
 SelectIcon.displayName = ICON_NAME;
 var PORTAL_NAME10 = "SelectPortal";
 var SelectPortal = (props) => {
-  return /* @__PURE__ */ jsx32(Portal, { asChild: true, ...props });
+  return /* @__PURE__ */ jsx33(Portal, { asChild: true, ...props });
 };
 SelectPortal.displayName = PORTAL_NAME10;
 var CONTENT_NAME13 = "SelectContent";
@@ -23755,11 +23753,11 @@ var SelectContent = shadcn_react_shim_exports.forwardRef(
     if (!context.open) {
       const frag = fragment;
       return frag ? ReactDOM5.createPortal(
-        /* @__PURE__ */ jsx32(SelectContentProvider, { scope: props.__scopeSelect, children: /* @__PURE__ */ jsx32(Collection6.Slot, { scope: props.__scopeSelect, children: /* @__PURE__ */ jsx32("div", { children: props.children }) }) }),
+        /* @__PURE__ */ jsx33(SelectContentProvider, { scope: props.__scopeSelect, children: /* @__PURE__ */ jsx33(Collection6.Slot, { scope: props.__scopeSelect, children: /* @__PURE__ */ jsx33("div", { children: props.children }) }) }),
         frag
       ) : null;
     }
-    return /* @__PURE__ */ jsx32(SelectContentImpl, { ...props, ref: forwardedRef });
+    return /* @__PURE__ */ jsx33(SelectContentImpl, { ...props, ref: forwardedRef });
   }
 );
 SelectContent.displayName = CONTENT_NAME13;
@@ -23913,7 +23911,7 @@ var SelectContentImpl = shadcn_react_shim_exports.forwardRef(
       hideWhenDetached,
       avoidCollisions
     } : {};
-    return /* @__PURE__ */ jsx32(
+    return /* @__PURE__ */ jsx33(
       SelectContentProvider,
       {
         scope: __scopeSelect,
@@ -23929,7 +23927,7 @@ var SelectContentImpl = shadcn_react_shim_exports.forwardRef(
         position,
         isPositioned,
         searchRef,
-        children: /* @__PURE__ */ jsx32(Combination_default, { as: Slot5, allowPinchZoom: true, children: /* @__PURE__ */ jsx32(
+        children: /* @__PURE__ */ jsx33(Combination_default, { as: Slot5, allowPinchZoom: true, children: /* @__PURE__ */ jsx33(
           FocusScope,
           {
             asChild: true,
@@ -23941,7 +23939,7 @@ var SelectContentImpl = shadcn_react_shim_exports.forwardRef(
               context.trigger?.focus({ preventScroll: true });
               event.preventDefault();
             }),
-            children: /* @__PURE__ */ jsx32(
+            children: /* @__PURE__ */ jsx33(
               DismissableLayer,
               {
                 asChild: true,
@@ -23950,7 +23948,7 @@ var SelectContentImpl = shadcn_react_shim_exports.forwardRef(
                 onPointerDownOutside,
                 onFocusOutside: (event) => event.preventDefault(),
                 onDismiss: () => context.onOpenChange(false),
-                children: /* @__PURE__ */ jsx32(
+                children: /* @__PURE__ */ jsx33(
                   SelectPosition,
                   {
                     role: "listbox",
@@ -24126,14 +24124,14 @@ var SelectItemAlignedPosition = shadcn_react_shim_exports.forwardRef((props, for
     },
     [position, focusSelectedItem]
   );
-  return /* @__PURE__ */ jsx32(
+  return /* @__PURE__ */ jsx33(
     SelectViewportProvider,
     {
       scope: __scopeSelect,
       contentWrapper,
       shouldExpandOnScrollRef,
       onScrollButtonChange: handleScrollButtonChange,
-      children: /* @__PURE__ */ jsx32(
+      children: /* @__PURE__ */ jsx33(
         "div",
         {
           ref: setContentWrapper,
@@ -24143,7 +24141,7 @@ var SelectItemAlignedPosition = shadcn_react_shim_exports.forwardRef((props, for
             position: "fixed",
             zIndex: contentZIndex
           },
-          children: /* @__PURE__ */ jsx32(
+          children: /* @__PURE__ */ jsx33(
             Primitive.div,
             {
               ...popperProps,
@@ -24173,7 +24171,7 @@ var SelectPopperPosition = shadcn_react_shim_exports.forwardRef((props, forwarde
     ...popperProps
   } = props;
   const popperScope = usePopperScope4(__scopeSelect);
-  return /* @__PURE__ */ jsx32(
+  return /* @__PURE__ */ jsx33(
     Content4,
     {
       ...popperScope,
@@ -24208,7 +24206,7 @@ var SelectViewport = shadcn_react_shim_exports.forwardRef(
     const composedRefs = useComposedRefs(forwardedRef, contentContext.onViewportChange);
     const prevScrollTopRef = shadcn_react_shim_exports.useRef(0);
     return /* @__PURE__ */ jsxs8(Fragment11, { children: [
-      /* @__PURE__ */ jsx32(
+      /* @__PURE__ */ jsx33(
         "style",
         {
           dangerouslySetInnerHTML: {
@@ -24217,7 +24215,7 @@ var SelectViewport = shadcn_react_shim_exports.forwardRef(
           nonce
         }
       ),
-      /* @__PURE__ */ jsx32(Collection6.Slot, { scope: __scopeSelect, children: /* @__PURE__ */ jsx32(
+      /* @__PURE__ */ jsx33(Collection6.Slot, { scope: __scopeSelect, children: /* @__PURE__ */ jsx33(
         Primitive.div,
         {
           "data-radix-select-viewport": "",
@@ -24273,7 +24271,7 @@ var SelectGroup = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeSelect, ...groupProps } = props;
     const groupId = useId();
-    return /* @__PURE__ */ jsx32(SelectGroupContextProvider, { scope: __scopeSelect, id: groupId, children: /* @__PURE__ */ jsx32(Primitive.div, { role: "group", "aria-labelledby": groupId, ...groupProps, ref: forwardedRef }) });
+    return /* @__PURE__ */ jsx33(SelectGroupContextProvider, { scope: __scopeSelect, id: groupId, children: /* @__PURE__ */ jsx33(Primitive.div, { role: "group", "aria-labelledby": groupId, ...groupProps, ref: forwardedRef }) });
   }
 );
 SelectGroup.displayName = GROUP_NAME6;
@@ -24282,7 +24280,7 @@ var SelectLabel = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeSelect, ...labelProps } = props;
     const groupContext = useSelectGroupContext(LABEL_NAME5, __scopeSelect);
-    return /* @__PURE__ */ jsx32(Primitive.div, { id: groupContext.id, ...labelProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx33(Primitive.div, { id: groupContext.id, ...labelProps, ref: forwardedRef });
   }
 );
 SelectLabel.displayName = LABEL_NAME5;
@@ -24319,7 +24317,7 @@ var SelectItem = shadcn_react_shim_exports.forwardRef(
         "A <Select.Item /> must have a value prop that is not an empty string. This is because the Select value can be set to an empty string to clear the selection and show the placeholder."
       );
     }
-    return /* @__PURE__ */ jsx32(
+    return /* @__PURE__ */ jsx33(
       SelectItemContextProvider,
       {
         scope: __scopeSelect,
@@ -24330,14 +24328,14 @@ var SelectItem = shadcn_react_shim_exports.forwardRef(
         onItemTextChange: shadcn_react_shim_exports.useCallback((node) => {
           setTextValue((prevTextValue) => prevTextValue || (node?.textContent ?? "").trim());
         }, []),
-        children: /* @__PURE__ */ jsx32(
+        children: /* @__PURE__ */ jsx33(
           Collection6.ItemSlot,
           {
             scope: __scopeSelect,
             value,
             disabled: disabled2,
             textValue,
-            children: /* @__PURE__ */ jsx32(
+            children: /* @__PURE__ */ jsx33(
               Primitive.div,
               {
                 role: "option",
@@ -24406,7 +24404,7 @@ var SelectItemText = shadcn_react_shim_exports.forwardRef(
     );
     const textContent = itemTextNode?.textContent;
     const nativeOption = shadcn_react_shim_exports.useMemo(
-      () => /* @__PURE__ */ jsx32("option", { value: itemContext.value, disabled: itemContext.disabled, children: textContent }, itemContext.value),
+      () => /* @__PURE__ */ jsx33("option", { value: itemContext.value, disabled: itemContext.disabled, children: textContent }, itemContext.value),
       [itemContext.disabled, itemContext.value, textContent]
     );
     const { onNativeOptionAdd, onNativeOptionRemove } = nativeOptionsContext;
@@ -24415,7 +24413,7 @@ var SelectItemText = shadcn_react_shim_exports.forwardRef(
       return () => onNativeOptionRemove(nativeOption);
     }, [onNativeOptionAdd, onNativeOptionRemove, nativeOption]);
     return /* @__PURE__ */ jsxs8(Fragment11, { children: [
-      /* @__PURE__ */ jsx32(Primitive.span, { id: itemContext.textId, ...itemTextProps, ref: composedRefs }),
+      /* @__PURE__ */ jsx33(Primitive.span, { id: itemContext.textId, ...itemTextProps, ref: composedRefs }),
       itemContext.isSelected && context.valueNode && !context.valueNodeHasChildren ? ReactDOM5.createPortal(itemTextProps.children, context.valueNode) : null
     ] });
   }
@@ -24426,7 +24424,7 @@ var SelectItemIndicator = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeSelect, ...itemIndicatorProps } = props;
     const itemContext = useSelectItemContext(ITEM_INDICATOR_NAME2, __scopeSelect);
-    return itemContext.isSelected ? /* @__PURE__ */ jsx32(Primitive.span, { "aria-hidden": true, ...itemIndicatorProps, ref: forwardedRef }) : null;
+    return itemContext.isSelected ? /* @__PURE__ */ jsx33(Primitive.span, { "aria-hidden": true, ...itemIndicatorProps, ref: forwardedRef }) : null;
   }
 );
 SelectItemIndicator.displayName = ITEM_INDICATOR_NAME2;
@@ -24449,7 +24447,7 @@ var SelectScrollUpButton = shadcn_react_shim_exports.forwardRef((props, forwarde
       return () => viewport.removeEventListener("scroll", handleScroll22);
     }
   }, [contentContext.viewport, contentContext.isPositioned]);
-  return canScrollUp ? /* @__PURE__ */ jsx32(
+  return canScrollUp ? /* @__PURE__ */ jsx33(
     SelectScrollButtonImpl,
     {
       ...props,
@@ -24484,7 +24482,7 @@ var SelectScrollDownButton = shadcn_react_shim_exports.forwardRef((props, forwar
       return () => viewport.removeEventListener("scroll", handleScroll22);
     }
   }, [contentContext.viewport, contentContext.isPositioned]);
-  return canScrollDown ? /* @__PURE__ */ jsx32(
+  return canScrollDown ? /* @__PURE__ */ jsx33(
     SelectScrollButtonImpl,
     {
       ...props,
@@ -24517,7 +24515,7 @@ var SelectScrollButtonImpl = shadcn_react_shim_exports.forwardRef((props, forwar
     const activeItem = getItems().find((item) => item.ref.current === document.activeElement);
     activeItem?.ref.current?.scrollIntoView({ block: "nearest" });
   }, [getItems]);
-  return /* @__PURE__ */ jsx32(
+  return /* @__PURE__ */ jsx33(
     Primitive.div,
     {
       "aria-hidden": true,
@@ -24545,7 +24543,7 @@ var SEPARATOR_NAME5 = "SelectSeparator";
 var SelectSeparator = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeSelect, ...separatorProps } = props;
-    return /* @__PURE__ */ jsx32(Primitive.div, { "aria-hidden": true, ...separatorProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx33(Primitive.div, { "aria-hidden": true, ...separatorProps, ref: forwardedRef });
   }
 );
 SelectSeparator.displayName = SEPARATOR_NAME5;
@@ -24556,7 +24554,7 @@ var SelectArrow = shadcn_react_shim_exports.forwardRef(
     const popperScope = usePopperScope4(__scopeSelect);
     const context = useSelectContext(ARROW_NAME8, __scopeSelect);
     const contentContext = useSelectContentContext(ARROW_NAME8, __scopeSelect);
-    return context.open && contentContext.position === "popper" ? /* @__PURE__ */ jsx32(Arrow2, { ...popperScope, ...arrowProps, ref: forwardedRef }) : null;
+    return context.open && contentContext.position === "popper" ? /* @__PURE__ */ jsx33(Arrow2, { ...popperScope, ...arrowProps, ref: forwardedRef }) : null;
   }
 );
 SelectArrow.displayName = ARROW_NAME8;
@@ -24581,7 +24579,7 @@ var SelectBubbleInput = shadcn_react_shim_exports.forwardRef(
         select.dispatchEvent(event);
       }
     }, [prevValue, value]);
-    return /* @__PURE__ */ jsx32(
+    return /* @__PURE__ */ jsx33(
       Primitive.select,
       {
         ...props,
@@ -24660,7 +24658,7 @@ __export(dist_exports26, {
   Separator: () => Separator4
 });
 init_shadcn_react_shim();
-import { jsx as jsx33 } from "react/jsx-runtime";
+import { jsx as jsx34 } from "react/jsx-runtime";
 var NAME5 = "Separator";
 var DEFAULT_ORIENTATION = "horizontal";
 var ORIENTATIONS = ["horizontal", "vertical"];
@@ -24669,7 +24667,7 @@ var Separator4 = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const orientation = isValidOrientation(orientationProp) ? orientationProp : DEFAULT_ORIENTATION;
   const ariaOrientation = orientation === "vertical" ? orientation : void 0;
   const semanticProps = decorative ? { role: "none" } : { "aria-orientation": ariaOrientation, role: "separator" };
-  return /* @__PURE__ */ jsx33(
+  return /* @__PURE__ */ jsx34(
     Primitive.div,
     {
       "data-orientation": orientation,
@@ -24699,7 +24697,7 @@ __export(dist_exports27, {
   createSliderScope: () => createSliderScope
 });
 init_shadcn_react_shim();
-import { jsx as jsx34, jsxs as jsxs9 } from "react/jsx-runtime";
+import { jsx as jsx35, jsxs as jsxs9 } from "react/jsx-runtime";
 var PAGE_KEYS = ["PageUp", "PageDown"];
 var ARROW_KEYS3 = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
 var BACK_KEYS = {
@@ -24777,7 +24775,7 @@ var Slider = shadcn_react_shim_exports.forwardRef(
         }
       });
     }
-    return /* @__PURE__ */ jsx34(
+    return /* @__PURE__ */ jsx35(
       SliderProvider,
       {
         scope: props.__scopeSlider,
@@ -24790,7 +24788,7 @@ var Slider = shadcn_react_shim_exports.forwardRef(
         values,
         orientation,
         form,
-        children: /* @__PURE__ */ jsx34(Collection7.Provider, { scope: props.__scopeSlider, children: /* @__PURE__ */ jsx34(Collection7.Slot, { scope: props.__scopeSlider, children: /* @__PURE__ */ jsx34(
+        children: /* @__PURE__ */ jsx35(Collection7.Provider, { scope: props.__scopeSlider, children: /* @__PURE__ */ jsx35(Collection7.Slot, { scope: props.__scopeSlider, children: /* @__PURE__ */ jsx35(
           SliderOrientation,
           {
             "aria-disabled": disabled2,
@@ -24859,7 +24857,7 @@ var SliderHorizontal = shadcn_react_shim_exports.forwardRef(
       rectRef.current = rect;
       return value(pointerPosition - rect.left);
     }
-    return /* @__PURE__ */ jsx34(
+    return /* @__PURE__ */ jsx35(
       SliderOrientationProvider,
       {
         scope: props.__scopeSlider,
@@ -24867,7 +24865,7 @@ var SliderHorizontal = shadcn_react_shim_exports.forwardRef(
         endEdge: isSlidingFromLeft ? "right" : "left",
         direction: isSlidingFromLeft ? 1 : -1,
         size: "width",
-        children: /* @__PURE__ */ jsx34(
+        children: /* @__PURE__ */ jsx35(
           SliderImpl,
           {
             dir: direction,
@@ -24925,7 +24923,7 @@ var SliderVertical = shadcn_react_shim_exports.forwardRef(
       rectRef.current = rect;
       return value(pointerPosition - rect.top);
     }
-    return /* @__PURE__ */ jsx34(
+    return /* @__PURE__ */ jsx35(
       SliderOrientationProvider,
       {
         scope: props.__scopeSlider,
@@ -24933,7 +24931,7 @@ var SliderVertical = shadcn_react_shim_exports.forwardRef(
         endEdge: isSlidingFromBottom ? "top" : "bottom",
         size: "height",
         direction: isSlidingFromBottom ? 1 : -1,
-        children: /* @__PURE__ */ jsx34(
+        children: /* @__PURE__ */ jsx35(
           SliderImpl,
           {
             "data-orientation": "vertical",
@@ -24979,7 +24977,7 @@ var SliderImpl = shadcn_react_shim_exports.forwardRef(
       ...sliderProps
     } = props;
     const context = useSliderContext(SLIDER_NAME, __scopeSlider);
-    return /* @__PURE__ */ jsx34(
+    return /* @__PURE__ */ jsx35(
       Primitive.span,
       {
         ...sliderProps,
@@ -25026,7 +25024,7 @@ var SliderTrack = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeSlider, ...trackProps } = props;
     const context = useSliderContext(TRACK_NAME, __scopeSlider);
-    return /* @__PURE__ */ jsx34(
+    return /* @__PURE__ */ jsx35(
       Primitive.span,
       {
         "data-disabled": context.disabled ? "" : void 0,
@@ -25052,7 +25050,7 @@ var SliderRange = shadcn_react_shim_exports.forwardRef(
     );
     const offsetStart = valuesCount > 1 ? Math.min(...percentages) : 0;
     const offsetEnd = 100 - Math.max(...percentages);
-    return /* @__PURE__ */ jsx34(
+    return /* @__PURE__ */ jsx35(
       Primitive.span,
       {
         "data-orientation": context.orientation,
@@ -25079,7 +25077,7 @@ var SliderThumb = shadcn_react_shim_exports.forwardRef(
       () => thumb ? getItems().findIndex((item) => item.ref.current === thumb) : -1,
       [getItems, thumb]
     );
-    return /* @__PURE__ */ jsx34(SliderThumbImpl, { ...props, ref: composedRefs, index: index2 });
+    return /* @__PURE__ */ jsx35(SliderThumbImpl, { ...props, ref: composedRefs, index: index2 });
   }
 );
 var SliderThumbImpl = shadcn_react_shim_exports.forwardRef(
@@ -25113,7 +25111,7 @@ var SliderThumbImpl = shadcn_react_shim_exports.forwardRef(
           [orientation.startEdge]: `calc(${percent}% + ${thumbInBoundsOffset}px)`
         },
         children: [
-          /* @__PURE__ */ jsx34(Collection7.ItemSlot, { scope: props.__scopeSlider, children: /* @__PURE__ */ jsx34(
+          /* @__PURE__ */ jsx35(Collection7.ItemSlot, { scope: props.__scopeSlider, children: /* @__PURE__ */ jsx35(
             Primitive.span,
             {
               role: "slider",
@@ -25133,7 +25131,7 @@ var SliderThumbImpl = shadcn_react_shim_exports.forwardRef(
               })
             }
           ) }),
-          isFormControl && /* @__PURE__ */ jsx34(
+          isFormControl && /* @__PURE__ */ jsx35(
             SliderBubbleInput,
             {
               name: name ?? (context.name ? context.name + (context.values.length > 1 ? "[]" : "") : void 0),
@@ -25166,7 +25164,7 @@ var SliderBubbleInput = shadcn_react_shim_exports.forwardRef(
         input.dispatchEvent(event);
       }
     }, [prevValue, value]);
-    return /* @__PURE__ */ jsx34(
+    return /* @__PURE__ */ jsx35(
       Primitive.input,
       {
         style: { display: "none" },
@@ -25250,7 +25248,7 @@ __export(dist_exports28, {
   createSwitchScope: () => createSwitchScope
 });
 init_shadcn_react_shim();
-import { jsx as jsx35, jsxs as jsxs10 } from "react/jsx-runtime";
+import { jsx as jsx36, jsxs as jsxs10 } from "react/jsx-runtime";
 var SWITCH_NAME = "Switch";
 var [createSwitchContext, createSwitchScope] = createContextScope(SWITCH_NAME);
 var [SwitchProvider, useSwitchContext] = createSwitchContext(SWITCH_NAME);
@@ -25279,7 +25277,7 @@ var Switch = shadcn_react_shim_exports.forwardRef(
       caller: SWITCH_NAME
     });
     return /* @__PURE__ */ jsxs10(SwitchProvider, { scope: __scopeSwitch, checked, disabled: disabled2, children: [
-      /* @__PURE__ */ jsx35(
+      /* @__PURE__ */ jsx36(
         Primitive.button,
         {
           type: "button",
@@ -25301,7 +25299,7 @@ var Switch = shadcn_react_shim_exports.forwardRef(
           })
         }
       ),
-      isFormControl && /* @__PURE__ */ jsx35(
+      isFormControl && /* @__PURE__ */ jsx36(
         SwitchBubbleInput,
         {
           control: button,
@@ -25324,7 +25322,7 @@ var SwitchThumb = shadcn_react_shim_exports.forwardRef(
   (props, forwardedRef) => {
     const { __scopeSwitch, ...thumbProps } = props;
     const context = useSwitchContext(THUMB_NAME3, __scopeSwitch);
-    return /* @__PURE__ */ jsx35(
+    return /* @__PURE__ */ jsx36(
       Primitive.span,
       {
         "data-state": getState7(context.checked),
@@ -25364,7 +25362,7 @@ var SwitchBubbleInput = shadcn_react_shim_exports.forwardRef(
         input.dispatchEvent(event);
       }
     }, [prevChecked, checked, bubbles]);
-    return /* @__PURE__ */ jsx35(
+    return /* @__PURE__ */ jsx36(
       "input",
       {
         type: "checkbox",
@@ -25406,7 +25404,7 @@ __export(dist_exports29, {
   createTabsScope: () => createTabsScope
 });
 init_shadcn_react_shim();
-import { jsx as jsx36 } from "react/jsx-runtime";
+import { jsx as jsx37 } from "react/jsx-runtime";
 var TABS_NAME = "Tabs";
 var [createTabsContext, createTabsScope] = createContextScope(TABS_NAME, [
   createRovingFocusGroupScope
@@ -25432,7 +25430,7 @@ var Tabs = shadcn_react_shim_exports.forwardRef(
       defaultProp: defaultValue ?? "",
       caller: TABS_NAME
     });
-    return /* @__PURE__ */ jsx36(
+    return /* @__PURE__ */ jsx37(
       TabsProvider,
       {
         scope: __scopeTabs,
@@ -25442,7 +25440,7 @@ var Tabs = shadcn_react_shim_exports.forwardRef(
         orientation,
         dir: direction,
         activationMode,
-        children: /* @__PURE__ */ jsx36(
+        children: /* @__PURE__ */ jsx37(
           Primitive.div,
           {
             dir: direction,
@@ -25462,7 +25460,7 @@ var TabsList = shadcn_react_shim_exports.forwardRef(
     const { __scopeTabs, loop = true, ...listProps } = props;
     const context = useTabsContext(TAB_LIST_NAME, __scopeTabs);
     const rovingFocusGroupScope = useRovingFocusGroupScope4(__scopeTabs);
-    return /* @__PURE__ */ jsx36(
+    return /* @__PURE__ */ jsx37(
       Root7,
       {
         asChild: true,
@@ -25470,7 +25468,7 @@ var TabsList = shadcn_react_shim_exports.forwardRef(
         orientation: context.orientation,
         dir: context.dir,
         loop,
-        children: /* @__PURE__ */ jsx36(
+        children: /* @__PURE__ */ jsx37(
           Primitive.div,
           {
             role: "tablist",
@@ -25493,14 +25491,14 @@ var TabsTrigger = shadcn_react_shim_exports.forwardRef(
     const triggerId = makeTriggerId2(context.baseId, value);
     const contentId = makeContentId2(context.baseId, value);
     const isSelected = value === context.value;
-    return /* @__PURE__ */ jsx36(
+    return /* @__PURE__ */ jsx37(
       Item2,
       {
         asChild: true,
         ...rovingFocusGroupScope,
         focusable: !disabled2,
         active: isSelected,
-        children: /* @__PURE__ */ jsx36(
+        children: /* @__PURE__ */ jsx37(
           Primitive.button,
           {
             type: "button",
@@ -25549,7 +25547,7 @@ var TabsContent = shadcn_react_shim_exports.forwardRef(
       const rAF = requestAnimationFrame(() => isMountAnimationPreventedRef.current = false);
       return () => cancelAnimationFrame(rAF);
     }, []);
-    return /* @__PURE__ */ jsx36(Presence, { present: forceMount || isSelected, children: ({ present }) => /* @__PURE__ */ jsx36(
+    return /* @__PURE__ */ jsx37(Presence, { present: forceMount || isSelected, children: ({ present }) => /* @__PURE__ */ jsx37(
       Primitive.div,
       {
         "data-state": isSelected ? "active" : "inactive",
@@ -25589,7 +25587,7 @@ __export(dist_exports30, {
   Toggle: () => Toggle
 });
 init_shadcn_react_shim();
-import { jsx as jsx37 } from "react/jsx-runtime";
+import { jsx as jsx38 } from "react/jsx-runtime";
 var NAME6 = "Toggle";
 var Toggle = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
   const { pressed: pressedProp, defaultPressed, onPressedChange, ...buttonProps } = props;
@@ -25599,7 +25597,7 @@ var Toggle = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
     defaultProp: defaultPressed ?? false,
     caller: NAME6
   });
-  return /* @__PURE__ */ jsx37(
+  return /* @__PURE__ */ jsx38(
     Primitive.button,
     {
       type: "button",
@@ -25629,7 +25627,7 @@ __export(dist_exports31, {
   createToggleGroupScope: () => createToggleGroupScope
 });
 init_shadcn_react_shim();
-import { jsx as jsx38 } from "react/jsx-runtime";
+import { jsx as jsx39 } from "react/jsx-runtime";
 var TOGGLE_GROUP_NAME = "ToggleGroup";
 var [createToggleGroupContext, createToggleGroupScope] = createContextScope(TOGGLE_GROUP_NAME, [
   createRovingFocusGroupScope
@@ -25639,11 +25637,11 @@ var ToggleGroup = shadcn_react_shim_default.forwardRef((props, forwardedRef) => 
   const { type, ...toggleGroupProps } = props;
   if (type === "single") {
     const singleProps = toggleGroupProps;
-    return /* @__PURE__ */ jsx38(ToggleGroupImplSingle, { ...singleProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx39(ToggleGroupImplSingle, { ...singleProps, ref: forwardedRef });
   }
   if (type === "multiple") {
     const multipleProps = toggleGroupProps;
-    return /* @__PURE__ */ jsx38(ToggleGroupImplMultiple, { ...multipleProps, ref: forwardedRef });
+    return /* @__PURE__ */ jsx39(ToggleGroupImplMultiple, { ...multipleProps, ref: forwardedRef });
   }
   throw new Error(`Missing prop \`type\` expected on \`${TOGGLE_GROUP_NAME}\``);
 });
@@ -25663,7 +25661,7 @@ var ToggleGroupImplSingle = shadcn_react_shim_default.forwardRef((props, forward
     onChange: onValueChange,
     caller: TOGGLE_GROUP_NAME
   });
-  return /* @__PURE__ */ jsx38(
+  return /* @__PURE__ */ jsx39(
     ToggleGroupValueProvider,
     {
       scope: props.__scopeToggleGroup,
@@ -25671,7 +25669,7 @@ var ToggleGroupImplSingle = shadcn_react_shim_default.forwardRef((props, forward
       value: shadcn_react_shim_default.useMemo(() => value ? [value] : [], [value]),
       onItemActivate: setValue,
       onItemDeactivate: shadcn_react_shim_default.useCallback(() => setValue(""), [setValue]),
-      children: /* @__PURE__ */ jsx38(ToggleGroupImpl, { ...toggleGroupSingleProps, ref: forwardedRef })
+      children: /* @__PURE__ */ jsx39(ToggleGroupImpl, { ...toggleGroupSingleProps, ref: forwardedRef })
     }
   );
 });
@@ -25697,7 +25695,7 @@ var ToggleGroupImplMultiple = shadcn_react_shim_default.forwardRef((props, forwa
     (itemValue) => setValue((prevValue = []) => prevValue.filter((value2) => value2 !== itemValue)),
     [setValue]
   );
-  return /* @__PURE__ */ jsx38(
+  return /* @__PURE__ */ jsx39(
     ToggleGroupValueProvider,
     {
       scope: props.__scopeToggleGroup,
@@ -25705,7 +25703,7 @@ var ToggleGroupImplMultiple = shadcn_react_shim_default.forwardRef((props, forwa
       value,
       onItemActivate: handleButtonActivate,
       onItemDeactivate: handleButtonDeactivate,
-      children: /* @__PURE__ */ jsx38(ToggleGroupImpl, { ...toggleGroupMultipleProps, ref: forwardedRef })
+      children: /* @__PURE__ */ jsx39(ToggleGroupImpl, { ...toggleGroupMultipleProps, ref: forwardedRef })
     }
   );
 });
@@ -25725,7 +25723,7 @@ var ToggleGroupImpl = shadcn_react_shim_default.forwardRef(
     const rovingFocusGroupScope = useRovingFocusGroupScope5(__scopeToggleGroup);
     const direction = useDirection(dir);
     const commonProps = { role: "group", dir: direction, ...toggleGroupProps };
-    return /* @__PURE__ */ jsx38(ToggleGroupContext, { scope: __scopeToggleGroup, rovingFocus, disabled: disabled2, children: rovingFocus ? /* @__PURE__ */ jsx38(
+    return /* @__PURE__ */ jsx39(ToggleGroupContext, { scope: __scopeToggleGroup, rovingFocus, disabled: disabled2, children: rovingFocus ? /* @__PURE__ */ jsx39(
       Root7,
       {
         asChild: true,
@@ -25733,9 +25731,9 @@ var ToggleGroupImpl = shadcn_react_shim_default.forwardRef(
         orientation,
         dir: direction,
         loop,
-        children: /* @__PURE__ */ jsx38(Primitive.div, { ...commonProps, ref: forwardedRef })
+        children: /* @__PURE__ */ jsx39(Primitive.div, { ...commonProps, ref: forwardedRef })
       }
-    ) : /* @__PURE__ */ jsx38(Primitive.div, { ...commonProps, ref: forwardedRef }) });
+    ) : /* @__PURE__ */ jsx39(Primitive.div, { ...commonProps, ref: forwardedRef }) });
   }
 );
 var ITEM_NAME10 = "ToggleGroupItem";
@@ -25748,7 +25746,7 @@ var ToggleGroupItem = shadcn_react_shim_default.forwardRef(
     const disabled2 = context.disabled || props.disabled;
     const commonProps = { ...props, pressed, disabled: disabled2 };
     const ref = shadcn_react_shim_default.useRef(null);
-    return context.rovingFocus ? /* @__PURE__ */ jsx38(
+    return context.rovingFocus ? /* @__PURE__ */ jsx39(
       Item2,
       {
         asChild: true,
@@ -25756,9 +25754,9 @@ var ToggleGroupItem = shadcn_react_shim_default.forwardRef(
         focusable: !disabled2,
         active: pressed,
         ref,
-        children: /* @__PURE__ */ jsx38(ToggleGroupItemImpl, { ...commonProps, ref: forwardedRef })
+        children: /* @__PURE__ */ jsx39(ToggleGroupItemImpl, { ...commonProps, ref: forwardedRef })
       }
-    ) : /* @__PURE__ */ jsx38(ToggleGroupItemImpl, { ...commonProps, ref: forwardedRef });
+    ) : /* @__PURE__ */ jsx39(ToggleGroupItemImpl, { ...commonProps, ref: forwardedRef });
   }
 );
 ToggleGroupItem.displayName = ITEM_NAME10;
@@ -25768,7 +25766,7 @@ var ToggleGroupItemImpl = shadcn_react_shim_default.forwardRef(
     const valueContext = useToggleGroupValueContext(ITEM_NAME10, __scopeToggleGroup);
     const singleProps = { role: "radio", "aria-checked": props.pressed, "aria-pressed": void 0 };
     const typeProps = valueContext.type === "single" ? singleProps : void 0;
-    return /* @__PURE__ */ jsx38(
+    return /* @__PURE__ */ jsx39(
       Toggle,
       {
         ...typeProps,
@@ -25806,7 +25804,7 @@ __export(dist_exports32, {
   createTooltipScope: () => createTooltipScope
 });
 init_shadcn_react_shim();
-import { jsx as jsx39, jsxs as jsxs11 } from "react/jsx-runtime";
+import { jsx as jsx40, jsxs as jsxs11 } from "react/jsx-runtime";
 var [createTooltipContext, createTooltipScope] = createContextScope("Tooltip", [
   createPopperScope
 ]);
@@ -25830,7 +25828,7 @@ var TooltipProvider = (props) => {
     const skipDelayTimer = skipDelayTimerRef.current;
     return () => window.clearTimeout(skipDelayTimer);
   }, []);
-  return /* @__PURE__ */ jsx39(
+  return /* @__PURE__ */ jsx40(
     TooltipProviderContextProvider,
     {
       scope: __scopeTooltip,
@@ -25921,7 +25919,7 @@ var Tooltip = (props) => {
       }
     };
   }, []);
-  return /* @__PURE__ */ jsx39(Root24, { ...popperScope, children: /* @__PURE__ */ jsx39(
+  return /* @__PURE__ */ jsx40(Root24, { ...popperScope, children: /* @__PURE__ */ jsx40(
     TooltipContextProvider,
     {
       scope: __scopeTooltip,
@@ -25965,7 +25963,7 @@ var TooltipTrigger = shadcn_react_shim_exports.forwardRef(
     shadcn_react_shim_exports.useEffect(() => {
       return () => document.removeEventListener("pointerup", handlePointerUp);
     }, [handlePointerUp]);
-    return /* @__PURE__ */ jsx39(Anchor, { asChild: true, ...popperScope, children: /* @__PURE__ */ jsx39(
+    return /* @__PURE__ */ jsx40(Anchor, { asChild: true, ...popperScope, children: /* @__PURE__ */ jsx40(
       Primitive.button,
       {
         "aria-describedby": context.open ? context.contentId : void 0,
@@ -26007,7 +26005,7 @@ var [PortalProvider5, usePortalContext5] = createTooltipContext(PORTAL_NAME11, {
 var TooltipPortal = (props) => {
   const { __scopeTooltip, forceMount, children, container } = props;
   const context = useTooltipContext(PORTAL_NAME11, __scopeTooltip);
-  return /* @__PURE__ */ jsx39(PortalProvider5, { scope: __scopeTooltip, forceMount, children: /* @__PURE__ */ jsx39(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx39(Portal, { asChild: true, container, children }) }) });
+  return /* @__PURE__ */ jsx40(PortalProvider5, { scope: __scopeTooltip, forceMount, children: /* @__PURE__ */ jsx40(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ jsx40(Portal, { asChild: true, container, children }) }) });
 };
 TooltipPortal.displayName = PORTAL_NAME11;
 var CONTENT_NAME15 = "TooltipContent";
@@ -26016,7 +26014,7 @@ var TooltipContent = shadcn_react_shim_exports.forwardRef(
     const portalContext = usePortalContext5(CONTENT_NAME15, props.__scopeTooltip);
     const { forceMount = portalContext.forceMount, side = "top", ...contentProps } = props;
     const context = useTooltipContext(CONTENT_NAME15, props.__scopeTooltip);
-    return /* @__PURE__ */ jsx39(Presence, { present: forceMount || context.open, children: context.disableHoverableContent ? /* @__PURE__ */ jsx39(TooltipContentImpl, { side, ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ jsx39(TooltipContentHoverable, { side, ...contentProps, ref: forwardedRef }) });
+    return /* @__PURE__ */ jsx40(Presence, { present: forceMount || context.open, children: context.disableHoverableContent ? /* @__PURE__ */ jsx40(TooltipContentImpl, { side, ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ jsx40(TooltipContentHoverable, { side, ...contentProps, ref: forwardedRef }) });
   }
 );
 var TooltipContentHoverable = shadcn_react_shim_exports.forwardRef((props, forwardedRef) => {
@@ -26078,7 +26076,7 @@ var TooltipContentHoverable = shadcn_react_shim_exports.forwardRef((props, forwa
       return () => document.removeEventListener("pointermove", handleTrackPointerGrace);
     }
   }, [trigger, content, pointerGraceArea, onClose, handleRemoveGraceArea]);
-  return /* @__PURE__ */ jsx39(TooltipContentImpl, { ...props, ref: composedRefs });
+  return /* @__PURE__ */ jsx40(TooltipContentImpl, { ...props, ref: composedRefs });
 });
 var [VisuallyHiddenContentContextProvider, useVisuallyHiddenContentContext] = createTooltipContext(TOOLTIP_NAME, { isInside: false });
 var Slottable3 = createSlottable("TooltipContent");
@@ -26109,7 +26107,7 @@ var TooltipContentImpl = shadcn_react_shim_exports.forwardRef(
         return () => window.removeEventListener("scroll", handleScroll2, { capture: true });
       }
     }, [context.trigger, onClose]);
-    return /* @__PURE__ */ jsx39(
+    return /* @__PURE__ */ jsx40(
       DismissableLayer,
       {
         asChild: true,
@@ -26137,8 +26135,8 @@ var TooltipContentImpl = shadcn_react_shim_exports.forwardRef(
               }
             },
             children: [
-              /* @__PURE__ */ jsx39(Slottable3, { children }),
-              /* @__PURE__ */ jsx39(VisuallyHiddenContentContextProvider, { scope: __scopeTooltip, isInside: true, children: /* @__PURE__ */ jsx39(Root, { id: context.contentId, role: "tooltip", children: ariaLabel || children }) })
+              /* @__PURE__ */ jsx40(Slottable3, { children }),
+              /* @__PURE__ */ jsx40(VisuallyHiddenContentContextProvider, { scope: __scopeTooltip, isInside: true, children: /* @__PURE__ */ jsx40(Root, { id: context.contentId, role: "tooltip", children: ariaLabel || children }) })
             ]
           }
         )
@@ -26156,7 +26154,7 @@ var TooltipArrow = shadcn_react_shim_exports.forwardRef(
       ARROW_NAME9,
       __scopeTooltip
     );
-    return visuallyHiddenContentContext.isInside ? null : /* @__PURE__ */ jsx39(Arrow2, { ...popperScope, ...arrowProps, ref: forwardedRef });
+    return visuallyHiddenContentContext.isInside ? null : /* @__PURE__ */ jsx40(Arrow2, { ...popperScope, ...arrowProps, ref: forwardedRef });
   }
 );
 TooltipArrow.displayName = ARROW_NAME9;
@@ -26481,11 +26479,12 @@ var __iconNode15 = [
 var X = createLucideIcon("x", __iconNode15);
 
 // src/components/ui/accordion.tsx
+import { jsx as jsx41, jsxs as jsxs12 } from "react/jsx-runtime";
 function Accordion2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx41(
     dist_exports4.Root,
     {
       "data-slot": "accordion",
@@ -26498,7 +26497,7 @@ function AccordionItem2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx41(
     dist_exports4.Item,
     {
       "data-slot": "accordion-item",
@@ -26512,7 +26511,7 @@ function AccordionTrigger2({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports4.Header, { className: "flex" }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx41(dist_exports4.Header, { className: "flex", children: /* @__PURE__ */ jsxs12(
     dist_exports4.Trigger,
     {
       "data-slot": "accordion-trigger",
@@ -26520,43 +26519,39 @@ function AccordionTrigger2({
         "group/accordion-trigger relative flex flex-1 items-start justify-between rounded-lg border border-transparent py-2.5 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:after:border-ring disabled:pointer-events-none disabled:opacity-50 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-4 **:data-[slot=accordion-trigger-icon]:text-muted-foreground",
         className
       ),
-      ...props
-    },
-    children,
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronDown, { "data-slot": "accordion-trigger-icon", className: "pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden" }),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronUp, { "data-slot": "accordion-trigger-icon", className: "pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline" })
-  ));
+      ...props,
+      children: [
+        children,
+        /* @__PURE__ */ jsx41(ChevronDown, { "data-slot": "accordion-trigger-icon", className: "pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden" }),
+        /* @__PURE__ */ jsx41(ChevronUp, { "data-slot": "accordion-trigger-icon", className: "pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline" })
+      ]
+    }
+  ) });
 }
 function AccordionContent2({
   className,
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx41(
     dist_exports4.Content,
     {
       "data-slot": "accordion-content",
       className: "overflow-hidden text-sm data-open:animate-accordion-down data-closed:animate-accordion-up",
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      "div",
-      {
-        className: cn(
-          "h-(--radix-accordion-content-height) pt-0 pb-2.5 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4",
-          className
-        )
-      },
-      children
-    )
+      ...props,
+      children: /* @__PURE__ */ jsx41(
+        "div",
+        {
+          className: cn(
+            "h-(--radix-accordion-content-height) pt-0 pb-2.5 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-4",
+            className
+          ),
+          children
+        }
+      )
+    }
   );
 }
-
-// src/components/ui/alert-dialog.tsx
-init_shadcn_react_shim();
-
-// src/components/ui/button.tsx
-init_shadcn_react_shim();
 
 // node_modules/.pnpm/class-variance-authority@0.7.1/node_modules/class-variance-authority/dist/index.mjs
 var falsyToString = (value) => typeof value === "boolean" ? `${value}` : value === 0 ? "0" : value;
@@ -26601,6 +26596,7 @@ var cva = (base, config) => (props) => {
 };
 
 // src/components/ui/button.tsx
+import { jsx as jsx42 } from "react/jsx-runtime";
 var buttonVariants = cva(
   "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
@@ -26638,7 +26634,7 @@ function Button({
   ...props
 }) {
   const Comp = asChild ? dist_exports.Root : "button";
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx42(
     Comp,
     {
       "data-slot": "button",
@@ -26651,26 +26647,27 @@ function Button({
 }
 
 // src/components/ui/alert-dialog.tsx
+import { jsx as jsx43, jsxs as jsxs13 } from "react/jsx-runtime";
 function AlertDialog2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports6.Root, { "data-slot": "alert-dialog", ...props });
+  return /* @__PURE__ */ jsx43(dist_exports6.Root, { "data-slot": "alert-dialog", ...props });
 }
 function AlertDialogTrigger2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports6.Trigger, { "data-slot": "alert-dialog-trigger", ...props });
+  return /* @__PURE__ */ jsx43(dist_exports6.Trigger, { "data-slot": "alert-dialog-trigger", ...props });
 }
 function AlertDialogPortal2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports6.Portal, { "data-slot": "alert-dialog-portal", ...props });
+  return /* @__PURE__ */ jsx43(dist_exports6.Portal, { "data-slot": "alert-dialog-portal", ...props });
 }
 function AlertDialogOverlay2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx43(
     dist_exports6.Overlay,
     {
       "data-slot": "alert-dialog-overlay",
@@ -26687,24 +26684,27 @@ function AlertDialogContent2({
   size: size4 = "default",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(AlertDialogPortal2, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(AlertDialogOverlay2, null), /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-    dist_exports6.Content,
-    {
-      "data-slot": "alert-dialog-content",
-      "data-size": size4,
-      className: cn(
-        "group/alert-dialog-content fixed top-1/2 left-1/2 z-50 grid w-full -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl bg-background p-4 ring-1 ring-foreground/10 duration-100 outline-none data-[size=default]:max-w-xs data-[size=sm]:max-w-xs data-[size=default]:sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
-        className
-      ),
-      ...props
-    }
-  ));
+  return /* @__PURE__ */ jsxs13(AlertDialogPortal2, { children: [
+    /* @__PURE__ */ jsx43(AlertDialogOverlay2, {}),
+    /* @__PURE__ */ jsx43(
+      dist_exports6.Content,
+      {
+        "data-slot": "alert-dialog-content",
+        "data-size": size4,
+        className: cn(
+          "group/alert-dialog-content fixed top-1/2 left-1/2 z-50 grid w-full -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl bg-background p-4 ring-1 ring-foreground/10 duration-100 outline-none data-[size=default]:max-w-xs data-[size=sm]:max-w-xs data-[size=default]:sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+          className
+        ),
+        ...props
+      }
+    )
+  ] });
 }
 function AlertDialogHeader({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx43(
     "div",
     {
       "data-slot": "alert-dialog-header",
@@ -26720,7 +26720,7 @@ function AlertDialogFooter({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx43(
     "div",
     {
       "data-slot": "alert-dialog-footer",
@@ -26736,7 +26736,7 @@ function AlertDialogMedia({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx43(
     "div",
     {
       "data-slot": "alert-dialog-media",
@@ -26752,7 +26752,7 @@ function AlertDialogTitle2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx43(
     dist_exports6.Title,
     {
       "data-slot": "alert-dialog-title",
@@ -26768,7 +26768,7 @@ function AlertDialogDescription2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx43(
     dist_exports6.Description,
     {
       "data-slot": "alert-dialog-description",
@@ -26786,14 +26786,14 @@ function AlertDialogAction2({
   size: size4 = "default",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(Button, { variant, size: size4, asChild: true }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx43(Button, { variant, size: size4, asChild: true, children: /* @__PURE__ */ jsx43(
     dist_exports6.Action,
     {
       "data-slot": "alert-dialog-action",
       className: cn(className),
       ...props
     }
-  ));
+  ) });
 }
 function AlertDialogCancel2({
   className,
@@ -26801,18 +26801,18 @@ function AlertDialogCancel2({
   size: size4 = "default",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(Button, { variant, size: size4, asChild: true }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx43(Button, { variant, size: size4, asChild: true, children: /* @__PURE__ */ jsx43(
     dist_exports6.Cancel,
     {
       "data-slot": "alert-dialog-cancel",
       className: cn(className),
       ...props
     }
-  ));
+  ) });
 }
 
 // src/components/ui/alert.tsx
-init_shadcn_react_shim();
+import { jsx as jsx44 } from "react/jsx-runtime";
 var alertVariants = cva(
   "group/alert relative grid w-full gap-0.5 rounded-lg border px-2.5 py-2 text-left text-sm has-data-[slot=alert-action]:relative has-data-[slot=alert-action]:pr-18 has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4",
   {
@@ -26832,7 +26832,7 @@ function Alert({
   variant,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx44(
     "div",
     {
       "data-slot": "alert",
@@ -26843,7 +26843,7 @@ function Alert({
   );
 }
 function AlertTitle({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx44(
     "div",
     {
       "data-slot": "alert-title",
@@ -26859,7 +26859,7 @@ function AlertDescription({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx44(
     "div",
     {
       "data-slot": "alert-description",
@@ -26872,7 +26872,7 @@ function AlertDescription({
   );
 }
 function AlertAction({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx44(
     "div",
     {
       "data-slot": "alert-action",
@@ -26883,20 +26883,21 @@ function AlertAction({ className, ...props }) {
 }
 
 // src/components/ui/aspect-ratio.tsx
+import { jsx as jsx45 } from "react/jsx-runtime";
 function AspectRatio2({
   ...props
 }) {
-  return /* @__PURE__ */ React.createElement(dist_exports7.Root, { "data-slot": "aspect-ratio", ...props });
+  return /* @__PURE__ */ jsx45(dist_exports7.Root, { "data-slot": "aspect-ratio", ...props });
 }
 
 // src/components/ui/avatar.tsx
-init_shadcn_react_shim();
+import { jsx as jsx46 } from "react/jsx-runtime";
 function Avatar2({
   className,
   size: size4 = "default",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx46(
     dist_exports8.Root,
     {
       "data-slot": "avatar",
@@ -26913,7 +26914,7 @@ function AvatarImage2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx46(
     dist_exports8.Image,
     {
       "data-slot": "avatar-image",
@@ -26929,7 +26930,7 @@ function AvatarFallback2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx46(
     dist_exports8.Fallback,
     {
       "data-slot": "avatar-fallback",
@@ -26942,7 +26943,7 @@ function AvatarFallback2({
   );
 }
 function AvatarBadge({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx46(
     "span",
     {
       "data-slot": "avatar-badge",
@@ -26958,7 +26959,7 @@ function AvatarBadge({ className, ...props }) {
   );
 }
 function AvatarGroup({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx46(
     "div",
     {
       "data-slot": "avatar-group",
@@ -26974,7 +26975,7 @@ function AvatarGroupCount({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx46(
     "div",
     {
       "data-slot": "avatar-group-count",
@@ -26988,7 +26989,7 @@ function AvatarGroupCount({
 }
 
 // src/components/ui/badge.tsx
-init_shadcn_react_shim();
+import { jsx as jsx47 } from "react/jsx-runtime";
 var badgeVariants = cva(
   "group/badge inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-4xl border border-transparent px-2 py-0.5 text-xs font-medium whitespace-nowrap transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3!",
   {
@@ -27014,7 +27015,7 @@ function Badge({
   ...props
 }) {
   const Comp = asChild ? dist_exports.Root : "span";
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx47(
     Comp,
     {
       "data-slot": "badge",
@@ -27026,9 +27027,9 @@ function Badge({
 }
 
 // src/components/ui/breadcrumb.tsx
-init_shadcn_react_shim();
+import { jsx as jsx48, jsxs as jsxs14 } from "react/jsx-runtime";
 function Breadcrumb({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx48(
     "nav",
     {
       "aria-label": "breadcrumb",
@@ -27039,7 +27040,7 @@ function Breadcrumb({ className, ...props }) {
   );
 }
 function BreadcrumbList({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx48(
     "ol",
     {
       "data-slot": "breadcrumb-list",
@@ -27052,7 +27053,7 @@ function BreadcrumbList({ className, ...props }) {
   );
 }
 function BreadcrumbItem({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx48(
     "li",
     {
       "data-slot": "breadcrumb-item",
@@ -27067,7 +27068,7 @@ function BreadcrumbLink({
   ...props
 }) {
   const Comp = asChild ? dist_exports.Root : "a";
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx48(
     Comp,
     {
       "data-slot": "breadcrumb-link",
@@ -27077,7 +27078,7 @@ function BreadcrumbLink({
   );
 }
 function BreadcrumbPage({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx48(
     "span",
     {
       "data-slot": "breadcrumb-page",
@@ -27094,23 +27095,23 @@ function BreadcrumbSeparator({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx48(
     "li",
     {
       "data-slot": "breadcrumb-separator",
       role: "presentation",
       "aria-hidden": "true",
       className: cn("[&>svg]:size-3.5", className),
-      ...props
-    },
-    children ?? /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronRight, null)
+      ...props,
+      children: children ?? /* @__PURE__ */ jsx48(ChevronRight, {})
+    }
   );
 }
 function BreadcrumbEllipsis({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs14(
     "span",
     {
       "data-slot": "breadcrumb-ellipsis",
@@ -27120,25 +27121,27 @@ function BreadcrumbEllipsis({
         "flex size-5 items-center justify-center [&>svg]:size-4",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      Ellipsis,
-      null
-    ),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "sr-only" }, "More")
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx48(
+          Ellipsis,
+          {}
+        ),
+        /* @__PURE__ */ jsx48("span", { className: "sr-only", children: "More" })
+      ]
+    }
   );
 }
 
 // src/components/ui/separator.tsx
-init_shadcn_react_shim();
+import { jsx as jsx49 } from "react/jsx-runtime";
 function Separator5({
   className,
   orientation = "horizontal",
   decorative = true,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx49(
     dist_exports26.Root,
     {
       "data-slot": "separator",
@@ -27154,6 +27157,7 @@ function Separator5({
 }
 
 // src/components/ui/button-group.tsx
+import { jsx as jsx50 } from "react/jsx-runtime";
 var buttonGroupVariants = cva(
   "flex w-fit items-stretch *:focus-visible:relative *:focus-visible:z-10 has-[>[data-slot=button-group]]:gap-2 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-lg [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1",
   {
@@ -27173,7 +27177,7 @@ function ButtonGroup({
   orientation,
   ...props
 }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx50(
     "div",
     {
       role: "group",
@@ -27190,7 +27194,7 @@ function ButtonGroupText({
   ...props
 }) {
   const Comp = asChild ? dist_exports.Root : "div";
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx50(
     Comp,
     {
       className: cn(
@@ -27206,7 +27210,7 @@ function ButtonGroupSeparator({
   orientation = "vertical",
   ...props
 }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx50(
     Separator5,
     {
       "data-slot": "button-group-separator",
@@ -31725,6 +31729,7 @@ function DayPicker(initialProps) {
 }
 
 // src/components/ui/calendar.tsx
+import { jsx as jsx51 } from "react/jsx-runtime";
 function Calendar({
   className,
   classNames,
@@ -31737,7 +31742,7 @@ function Calendar({
   ...props
 }) {
   const defaultClassNames = getDefaultClassNames();
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx51(
     DayPicker,
     {
       showOutsideDays,
@@ -31841,7 +31846,7 @@ function Calendar({
       },
       components: {
         Root: ({ className: className2, rootRef, ...props2 }) => {
-          return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+          return /* @__PURE__ */ jsx51(
             "div",
             {
               "data-slot": "calendar",
@@ -31853,16 +31858,16 @@ function Calendar({
         },
         Chevron: ({ className: className2, orientation, ...props2 }) => {
           if (orientation === "left") {
-            return /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronLeft, { className: cn("size-4", className2), ...props2 });
+            return /* @__PURE__ */ jsx51(ChevronLeft, { className: cn("size-4", className2), ...props2 });
           }
           if (orientation === "right") {
-            return /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronRight, { className: cn("size-4", className2), ...props2 });
+            return /* @__PURE__ */ jsx51(ChevronRight, { className: cn("size-4", className2), ...props2 });
           }
-          return /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronDown, { className: cn("size-4", className2), ...props2 });
+          return /* @__PURE__ */ jsx51(ChevronDown, { className: cn("size-4", className2), ...props2 });
         },
-        DayButton: ({ ...props2 }) => /* @__PURE__ */ shadcn_react_shim_exports.createElement(CalendarDayButton, { locale, ...props2 }),
+        DayButton: ({ ...props2 }) => /* @__PURE__ */ jsx51(CalendarDayButton, { locale, ...props2 }),
         WeekNumber: ({ children, ...props2 }) => {
-          return /* @__PURE__ */ shadcn_react_shim_exports.createElement("td", { ...props2 }, /* @__PURE__ */ shadcn_react_shim_exports.createElement("div", { className: "flex size-(--cell-size) items-center justify-center text-center" }, children));
+          return /* @__PURE__ */ jsx51("td", { ...props2, children: /* @__PURE__ */ jsx51("div", { className: "flex size-(--cell-size) items-center justify-center text-center", children }) });
         },
         ...components
       },
@@ -31882,7 +31887,7 @@ function CalendarDayButton({
   shadcn_react_shim_exports.useEffect(() => {
     if (modifiers.focused) ref.current?.focus();
   }, [modifiers.focused]);
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx51(
     Button,
     {
       ref,
@@ -31904,13 +31909,13 @@ function CalendarDayButton({
 }
 
 // src/components/ui/card.tsx
-init_shadcn_react_shim();
+import { jsx as jsx52 } from "react/jsx-runtime";
 function Card({
   className,
   size: size4 = "default",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx52(
     "div",
     {
       "data-slot": "card",
@@ -31924,7 +31929,7 @@ function Card({
   );
 }
 function CardHeader({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx52(
     "div",
     {
       "data-slot": "card-header",
@@ -31937,7 +31942,7 @@ function CardHeader({ className, ...props }) {
   );
 }
 function CardTitle({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx52(
     "div",
     {
       "data-slot": "card-title",
@@ -31950,7 +31955,7 @@ function CardTitle({ className, ...props }) {
   );
 }
 function CardDescription({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx52(
     "div",
     {
       "data-slot": "card-description",
@@ -31960,7 +31965,7 @@ function CardDescription({ className, ...props }) {
   );
 }
 function CardAction({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx52(
     "div",
     {
       "data-slot": "card-action",
@@ -31973,7 +31978,7 @@ function CardAction({ className, ...props }) {
   );
 }
 function CardContent({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx52(
     "div",
     {
       "data-slot": "card-content",
@@ -31983,7 +31988,7 @@ function CardContent({ className, ...props }) {
   );
 }
 function CardFooter({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx52(
     "div",
     {
       "data-slot": "card-footer",
@@ -33702,6 +33707,7 @@ function useEmblaCarousel(options = {}, plugins = []) {
 useEmblaCarousel.globalOptions = void 0;
 
 // src/components/ui/carousel.tsx
+import { jsx as jsx53, jsxs as jsxs15 } from "react/jsx-runtime";
 var CarouselContext = shadcn_react_shim_exports.createContext(null);
 function useCarousel() {
   const context = shadcn_react_shim_exports.useContext(CarouselContext);
@@ -33764,7 +33770,7 @@ function Carousel({
       api?.off("select", onSelect);
     };
   }, [api, onSelect]);
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx53(
     CarouselContext.Provider,
     {
       value: {
@@ -33776,47 +33782,47 @@ function Carousel({
         scrollNext,
         canScrollPrev,
         canScrollNext
-      }
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      "div",
-      {
-        onKeyDownCapture: handleKeyDown,
-        className: cn("relative", className),
-        role: "region",
-        "aria-roledescription": "carousel",
-        "data-slot": "carousel",
-        ...props
       },
-      children
-    )
+      children: /* @__PURE__ */ jsx53(
+        "div",
+        {
+          onKeyDownCapture: handleKeyDown,
+          className: cn("relative", className),
+          role: "region",
+          "aria-roledescription": "carousel",
+          "data-slot": "carousel",
+          ...props,
+          children
+        }
+      )
+    }
   );
 }
 function CarouselContent({ className, ...props }) {
   const { carouselRef, orientation } = useCarousel();
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx53(
     "div",
     {
       ref: carouselRef,
       className: "overflow-hidden",
-      "data-slot": "carousel-content"
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      "div",
-      {
-        className: cn(
-          "flex",
-          orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
-          className
-        ),
-        ...props
-      }
-    )
+      "data-slot": "carousel-content",
+      children: /* @__PURE__ */ jsx53(
+        "div",
+        {
+          className: cn(
+            "flex",
+            orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
+            className
+          ),
+          ...props
+        }
+      )
+    }
   );
 }
 function CarouselItem({ className, ...props }) {
   const { orientation } = useCarousel();
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx53(
     "div",
     {
       role: "group",
@@ -33838,7 +33844,7 @@ function CarouselPrevious({
   ...props
 }) {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel();
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs15(
     Button,
     {
       "data-slot": "carousel-previous",
@@ -33851,10 +33857,12 @@ function CarouselPrevious({
       ),
       disabled: !canScrollPrev,
       onClick: scrollPrev,
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronLeft, null),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "sr-only" }, "Previous slide")
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx53(ChevronLeft, {}),
+        /* @__PURE__ */ jsx53("span", { className: "sr-only", children: "Previous slide" })
+      ]
+    }
   );
 }
 function CarouselNext({
@@ -33864,7 +33872,7 @@ function CarouselNext({
   ...props
 }) {
   const { orientation, scrollNext, canScrollNext } = useCarousel();
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs15(
     Button,
     {
       "data-slot": "carousel-next",
@@ -33877,10 +33885,12 @@ function CarouselNext({
       ),
       disabled: !canScrollNext,
       onClick: scrollNext,
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronRight, null),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "sr-only" }, "Next slide")
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx53(ChevronRight, {}),
+        /* @__PURE__ */ jsx53("span", { className: "sr-only", children: "Next slide" })
+      ]
+    }
   );
 }
 
@@ -36427,6 +36437,7 @@ var ResponsiveContainer = /* @__PURE__ */ (0, shadcn_react_shim_exports.forwardR
 });
 
 // src/components/ui/chart.tsx
+import { Fragment as Fragment12, jsx as jsx54, jsxs as jsxs16 } from "react/jsx-runtime";
 var THEMES = { light: "", dark: ".dark" };
 var ChartContext = shadcn_react_shim_exports.createContext(null);
 function useChart() {
@@ -36445,7 +36456,7 @@ function ChartContainer({
 }) {
   const uniqueId = shadcn_react_shim_exports.useId();
   const chartId = `chart-${id || uniqueId.replace(/:/g, "")}`;
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChartContext.Provider, { value: { config } }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx54(ChartContext.Provider, { value: { config }, children: /* @__PURE__ */ jsxs16(
     "div",
     {
       "data-slot": "chart",
@@ -36454,11 +36465,13 @@ function ChartContainer({
         "flex aspect-video justify-center text-xs [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-hidden [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector]:outline-hidden [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-surface]:outline-hidden",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChartStyle, { id: chartId, config }),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ResponsiveContainer, null, children)
-  ));
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx54(ChartStyle, { id: chartId, config }),
+        /* @__PURE__ */ jsx54(ResponsiveContainer, { children })
+      ]
+    }
+  ) });
 }
 var ChartStyle = ({ id, config }) => {
   const colorConfig = Object.entries(config).filter(
@@ -36467,7 +36480,7 @@ var ChartStyle = ({ id, config }) => {
   if (!colorConfig.length) {
     return null;
   }
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx54(
     "style",
     {
       dangerouslySetInnerHTML: {
@@ -36511,12 +36524,12 @@ function ChartTooltipContent({
     const itemConfig = getPayloadConfigFromPayload(config, item, key);
     const value = !labelKey && typeof label === "string" ? config[label]?.label || label : itemConfig?.label;
     if (labelFormatter) {
-      return /* @__PURE__ */ shadcn_react_shim_exports.createElement("div", { className: cn("font-medium", labelClassName) }, labelFormatter(value, payload));
+      return /* @__PURE__ */ jsx54("div", { className: cn("font-medium", labelClassName), children: labelFormatter(value, payload) });
     }
     if (!value) {
       return null;
     }
-    return /* @__PURE__ */ shadcn_react_shim_exports.createElement("div", { className: cn("font-medium", labelClassName) }, value);
+    return /* @__PURE__ */ jsx54("div", { className: cn("font-medium", labelClassName), children: value });
   }, [
     label,
     labelFormatter,
@@ -36530,58 +36543,68 @@ function ChartTooltipContent({
     return null;
   }
   const nestLabel = payload.length === 1 && indicator !== "dot";
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs16(
     "div",
     {
       className: cn(
         "grid min-w-32 items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl",
         className
-      )
-    },
-    !nestLabel ? tooltipLabel : null,
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement("div", { className: "grid gap-1.5" }, payload.filter((item) => item.type !== "none").map((item, index2) => {
-      const key = `${nameKey || item.name || item.dataKey || "value"}`;
-      const itemConfig = getPayloadConfigFromPayload(config, item, key);
-      const indicatorColor = color || item.payload.fill || item.color;
-      return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-        "div",
-        {
-          key: item.dataKey,
-          className: cn(
-            "flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground",
-            indicator === "dot" && "items-center"
-          )
-        },
-        formatter && item?.value !== void 0 && item.name ? formatter(item.value, item.name, item, index2, item.payload) : /* @__PURE__ */ shadcn_react_shim_exports.createElement(shadcn_react_shim_exports.Fragment, null, itemConfig?.icon ? /* @__PURE__ */ shadcn_react_shim_exports.createElement(itemConfig.icon, null) : !hideIndicator && /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-          "div",
-          {
-            className: cn(
-              "shrink-0 rounded-[2px] border-(--color-border) bg-(--color-bg)",
-              {
-                "h-2.5 w-2.5": indicator === "dot",
-                "w-1": indicator === "line",
-                "w-0 border-[1.5px] border-dashed bg-transparent": indicator === "dashed",
-                "my-0.5": nestLabel && indicator === "dashed"
-              }
-            ),
-            style: {
-              "--color-bg": indicatorColor,
-              "--color-border": indicatorColor
-            }
-          }
-        ), /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-          "div",
-          {
-            className: cn(
-              "flex flex-1 justify-between leading-none",
-              nestLabel ? "items-end" : "items-center"
-            )
-          },
-          /* @__PURE__ */ shadcn_react_shim_exports.createElement("div", { className: "grid gap-1.5" }, nestLabel ? tooltipLabel : null, /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "text-muted-foreground" }, itemConfig?.label || item.name)),
-          item.value && /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "font-mono font-medium text-foreground tabular-nums" }, item.value.toLocaleString())
-        ))
-      );
-    }))
+      ),
+      children: [
+        !nestLabel ? tooltipLabel : null,
+        /* @__PURE__ */ jsx54("div", { className: "grid gap-1.5", children: payload.filter((item) => item.type !== "none").map((item, index2) => {
+          const key = `${nameKey || item.name || item.dataKey || "value"}`;
+          const itemConfig = getPayloadConfigFromPayload(config, item, key);
+          const indicatorColor = color || item.payload.fill || item.color;
+          return /* @__PURE__ */ jsx54(
+            "div",
+            {
+              className: cn(
+                "flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground",
+                indicator === "dot" && "items-center"
+              ),
+              children: formatter && item?.value !== void 0 && item.name ? formatter(item.value, item.name, item, index2, item.payload) : /* @__PURE__ */ jsxs16(Fragment12, { children: [
+                itemConfig?.icon ? /* @__PURE__ */ jsx54(itemConfig.icon, {}) : !hideIndicator && /* @__PURE__ */ jsx54(
+                  "div",
+                  {
+                    className: cn(
+                      "shrink-0 rounded-[2px] border-(--color-border) bg-(--color-bg)",
+                      {
+                        "h-2.5 w-2.5": indicator === "dot",
+                        "w-1": indicator === "line",
+                        "w-0 border-[1.5px] border-dashed bg-transparent": indicator === "dashed",
+                        "my-0.5": nestLabel && indicator === "dashed"
+                      }
+                    ),
+                    style: {
+                      "--color-bg": indicatorColor,
+                      "--color-border": indicatorColor
+                    }
+                  }
+                ),
+                /* @__PURE__ */ jsxs16(
+                  "div",
+                  {
+                    className: cn(
+                      "flex flex-1 justify-between leading-none",
+                      nestLabel ? "items-end" : "items-center"
+                    ),
+                    children: [
+                      /* @__PURE__ */ jsxs16("div", { className: "grid gap-1.5", children: [
+                        nestLabel ? tooltipLabel : null,
+                        /* @__PURE__ */ jsx54("span", { className: "text-muted-foreground", children: itemConfig?.label || item.name })
+                      ] }),
+                      item.value && /* @__PURE__ */ jsx54("span", { className: "font-mono font-medium text-foreground tabular-nums", children: item.value.toLocaleString() })
+                    ]
+                  }
+                )
+              ] })
+            },
+            item.dataKey
+          );
+        }) })
+      ]
+    }
   );
 }
 var ChartLegend = Legend;
@@ -36596,38 +36619,40 @@ function ChartLegendContent({
   if (!payload?.length) {
     return null;
   }
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx54(
     "div",
     {
       className: cn(
         "flex items-center justify-center gap-4",
         verticalAlign === "top" ? "pb-3" : "pt-3",
         className
-      )
-    },
-    payload.filter((item) => item.type !== "none").map((item) => {
-      const key = `${nameKey || item.dataKey || "value"}`;
-      const itemConfig = getPayloadConfigFromPayload(config, item, key);
-      return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-        "div",
-        {
-          key: item.value,
-          className: cn(
-            "flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground"
-          )
-        },
-        itemConfig?.icon && !hideIcon ? /* @__PURE__ */ shadcn_react_shim_exports.createElement(itemConfig.icon, null) : /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+      ),
+      children: payload.filter((item) => item.type !== "none").map((item) => {
+        const key = `${nameKey || item.dataKey || "value"}`;
+        const itemConfig = getPayloadConfigFromPayload(config, item, key);
+        return /* @__PURE__ */ jsxs16(
           "div",
           {
-            className: "h-2 w-2 shrink-0 rounded-[2px]",
-            style: {
-              backgroundColor: item.color
-            }
-          }
-        ),
-        itemConfig?.label
-      );
-    })
+            className: cn(
+              "flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground"
+            ),
+            children: [
+              itemConfig?.icon && !hideIcon ? /* @__PURE__ */ jsx54(itemConfig.icon, {}) : /* @__PURE__ */ jsx54(
+                "div",
+                {
+                  className: "h-2 w-2 shrink-0 rounded-[2px]",
+                  style: {
+                    backgroundColor: item.color
+                  }
+                }
+              ),
+              itemConfig?.label
+            ]
+          },
+          item.value
+        );
+      })
+    }
   );
 }
 function getPayloadConfigFromPayload(config, payload, key) {
@@ -36645,12 +36670,12 @@ function getPayloadConfigFromPayload(config, payload, key) {
 }
 
 // src/components/ui/checkbox.tsx
-init_shadcn_react_shim();
+import { jsx as jsx55 } from "react/jsx-runtime";
 function Checkbox2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx55(
     dist_exports9.Root,
     {
       "data-slot": "checkbox",
@@ -36658,32 +36683,33 @@ function Checkbox2({
         "peer relative flex size-4 shrink-0 items-center justify-center rounded-[4px] border border-input transition-colors outline-none group-has-disabled/field:opacity-50 after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 aria-invalid:aria-checked:border-primary dark:bg-input/30 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 data-checked:border-primary data-checked:bg-primary data-checked:text-primary-foreground dark:data-checked:bg-primary",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      dist_exports9.Indicator,
-      {
-        "data-slot": "checkbox-indicator",
-        className: "grid place-content-center text-current transition-none [&>svg]:size-3.5"
-      },
-      /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-        Check,
-        null
+      ...props,
+      children: /* @__PURE__ */ jsx55(
+        dist_exports9.Indicator,
+        {
+          "data-slot": "checkbox-indicator",
+          className: "grid place-content-center text-current transition-none [&>svg]:size-3.5",
+          children: /* @__PURE__ */ jsx55(
+            Check,
+            {}
+          )
+        }
       )
-    )
+    }
   );
 }
 
 // src/components/ui/collapsible.tsx
+import { jsx as jsx56 } from "react/jsx-runtime";
 function Collapsible2({
   ...props
 }) {
-  return /* @__PURE__ */ React.createElement(dist_exports2.Root, { "data-slot": "collapsible", ...props });
+  return /* @__PURE__ */ jsx56(dist_exports2.Root, { "data-slot": "collapsible", ...props });
 }
 function CollapsibleTrigger2({
   ...props
 }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx56(
     dist_exports2.CollapsibleTrigger,
     {
       "data-slot": "collapsible-trigger",
@@ -36694,7 +36720,7 @@ function CollapsibleTrigger2({
 function CollapsibleContent2({
   ...props
 }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx56(
     dist_exports2.CollapsibleContent,
     {
       "data-slot": "collapsible-content",
@@ -47038,13 +47064,10 @@ var ComboboxChipRemove = /* @__PURE__ */ shadcn_react_shim_exports.forwardRef(fu
 });
 if (true) ComboboxChipRemove.displayName = "ComboboxChipRemove";
 
-// src/components/ui/input-group.tsx
-init_shadcn_react_shim();
-
 // src/components/ui/input.tsx
-init_shadcn_react_shim();
+import { jsx as jsx57 } from "react/jsx-runtime";
 function Input({ className, type, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx57(
     "input",
     {
       type,
@@ -47059,9 +47082,9 @@ function Input({ className, type, ...props }) {
 }
 
 // src/components/ui/textarea.tsx
-init_shadcn_react_shim();
+import { jsx as jsx58 } from "react/jsx-runtime";
 function Textarea({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx58(
     "textarea",
     {
       "data-slot": "textarea",
@@ -47075,8 +47098,9 @@ function Textarea({ className, ...props }) {
 }
 
 // src/components/ui/input-group.tsx
+import { jsx as jsx59 } from "react/jsx-runtime";
 function InputGroup({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx59(
     "div",
     {
       "data-slot": "input-group",
@@ -47110,7 +47134,7 @@ function InputGroupAddon({
   align = "inline-start",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx59(
     "div",
     {
       role: "group",
@@ -47150,7 +47174,7 @@ function InputGroupButton({
   size: size4 = "xs",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx59(
     Button,
     {
       type,
@@ -47162,7 +47186,7 @@ function InputGroupButton({
   );
 }
 function InputGroupText({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx59(
     "span",
     {
       className: cn(
@@ -47177,7 +47201,7 @@ function InputGroupInput({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx59(
     Input,
     {
       "data-slot": "input-group-control",
@@ -47193,7 +47217,7 @@ function InputGroupTextarea({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx59(
     Textarea,
     {
       "data-slot": "input-group-control",
@@ -47207,36 +47231,39 @@ function InputGroupTextarea({
 }
 
 // src/components/ui/combobox.tsx
+import { jsx as jsx60, jsxs as jsxs17 } from "react/jsx-runtime";
 var Combobox = index_parts_exports.Root;
 function ComboboxValue2({ ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(index_parts_exports.Value, { "data-slot": "combobox-value", ...props });
+  return /* @__PURE__ */ jsx60(index_parts_exports.Value, { "data-slot": "combobox-value", ...props });
 }
 function ComboboxTrigger3({
   className,
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs17(
     index_parts_exports.Trigger,
     {
       "data-slot": "combobox-trigger",
       className: cn("[&_svg:not([class*='size-'])]:size-4", className),
-      ...props
-    },
-    children,
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronDown, { className: "pointer-events-none size-4 text-muted-foreground" })
+      ...props,
+      children: [
+        children,
+        /* @__PURE__ */ jsx60(ChevronDown, { className: "pointer-events-none size-4 text-muted-foreground" })
+      ]
+    }
   );
 }
 function ComboboxClear3({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx60(
     index_parts_exports.Clear,
     {
       "data-slot": "combobox-clear",
-      render: /* @__PURE__ */ shadcn_react_shim_exports.createElement(InputGroupButton, { variant: "ghost", size: "icon-xs" }),
+      render: /* @__PURE__ */ jsx60(InputGroupButton, { variant: "ghost", size: "icon-xs" }),
       className: cn(className),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(X, { className: "pointer-events-none" })
+      ...props,
+      children: /* @__PURE__ */ jsx60(X, { className: "pointer-events-none" })
+    }
   );
 }
 function ComboboxInput3({
@@ -47247,24 +47274,31 @@ function ComboboxInput3({
   showClear = false,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(InputGroup, { className: cn("w-auto", className) }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-    index_parts_exports.Input,
-    {
-      render: /* @__PURE__ */ shadcn_react_shim_exports.createElement(InputGroupInput, { disabled: disabled2 }),
-      ...props
-    }
-  ), /* @__PURE__ */ shadcn_react_shim_exports.createElement(InputGroupAddon, { align: "inline-end" }, showTrigger && /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-    InputGroupButton,
-    {
-      size: "icon-xs",
-      variant: "ghost",
-      asChild: true,
-      "data-slot": "input-group-button",
-      className: "group-has-data-[slot=combobox-clear]/input-group:hidden data-pressed:bg-transparent",
-      disabled: disabled2
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ComboboxTrigger3, null)
-  ), showClear && /* @__PURE__ */ shadcn_react_shim_exports.createElement(ComboboxClear3, { disabled: disabled2 })), children);
+  return /* @__PURE__ */ jsxs17(InputGroup, { className: cn("w-auto", className), children: [
+    /* @__PURE__ */ jsx60(
+      index_parts_exports.Input,
+      {
+        render: /* @__PURE__ */ jsx60(InputGroupInput, { disabled: disabled2 }),
+        ...props
+      }
+    ),
+    /* @__PURE__ */ jsxs17(InputGroupAddon, { align: "inline-end", children: [
+      showTrigger && /* @__PURE__ */ jsx60(
+        InputGroupButton,
+        {
+          size: "icon-xs",
+          variant: "ghost",
+          asChild: true,
+          "data-slot": "input-group-button",
+          className: "group-has-data-[slot=combobox-clear]/input-group:hidden data-pressed:bg-transparent",
+          disabled: disabled2,
+          children: /* @__PURE__ */ jsx60(ComboboxTrigger3, {})
+        }
+      ),
+      showClear && /* @__PURE__ */ jsx60(ComboboxClear3, { disabled: disabled2 })
+    ] }),
+    children
+  ] });
 }
 function ComboboxContent({
   className,
@@ -47275,7 +47309,7 @@ function ComboboxContent({
   anchor,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(index_parts_exports.Portal, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx60(index_parts_exports.Portal, { children: /* @__PURE__ */ jsx60(
     index_parts_exports.Positioner,
     {
       side,
@@ -47283,21 +47317,21 @@ function ComboboxContent({
       align,
       alignOffset,
       anchor,
-      className: "isolate z-50"
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      index_parts_exports.Popup,
-      {
-        "data-slot": "combobox-content",
-        "data-chips": !!anchor,
-        className: cn("group/combobox-content relative max-h-(--available-height) w-(--anchor-width) max-w-(--available-width) min-w-[calc(var(--anchor-width)+--spacing(7))] origin-(--transform-origin) overflow-hidden rounded-lg bg-popover text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 data-[chips=true]:min-w-(--anchor-width) data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 *:data-[slot=input-group]:m-1 *:data-[slot=input-group]:mb-0 *:data-[slot=input-group]:h-8 *:data-[slot=input-group]:border-input/30 *:data-[slot=input-group]:bg-input/30 *:data-[slot=input-group]:shadow-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className),
-        ...props
-      }
-    )
-  ));
+      className: "isolate z-50",
+      children: /* @__PURE__ */ jsx60(
+        index_parts_exports.Popup,
+        {
+          "data-slot": "combobox-content",
+          "data-chips": !!anchor,
+          className: cn("group/combobox-content relative max-h-(--available-height) w-(--anchor-width) max-w-(--available-width) min-w-[calc(var(--anchor-width)+--spacing(7))] origin-(--transform-origin) overflow-hidden rounded-lg bg-popover text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 data-[chips=true]:min-w-(--anchor-width) data-[side=bottom]:slide-in-from-top-2 data-[side=inline-end]:slide-in-from-left-2 data-[side=inline-start]:slide-in-from-right-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 *:data-[slot=input-group]:m-1 *:data-[slot=input-group]:mb-0 *:data-[slot=input-group]:h-8 *:data-[slot=input-group]:border-input/30 *:data-[slot=input-group]:bg-input/30 *:data-[slot=input-group]:shadow-none data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className),
+          ...props
+        }
+      )
+    }
+  ) });
 }
 function ComboboxList3({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx60(
     index_parts_exports.List,
     {
       "data-slot": "combobox-list",
@@ -47314,7 +47348,7 @@ function ComboboxItem3({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs17(
     index_parts_exports.Item,
     {
       "data-slot": "combobox-item",
@@ -47322,20 +47356,22 @@ function ComboboxItem3({
         "relative flex w-full cursor-default items-center gap-2 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none data-highlighted:bg-accent data-highlighted:text-accent-foreground not-data-[variant=destructive]:data-highlighted:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       ),
-      ...props
-    },
-    children,
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      index_parts_exports.ItemIndicator,
-      {
-        render: /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "pointer-events-none absolute right-2 flex size-4 items-center justify-center" })
-      },
-      /* @__PURE__ */ shadcn_react_shim_exports.createElement(Check, { className: "pointer-events-none" })
-    )
+      ...props,
+      children: [
+        children,
+        /* @__PURE__ */ jsx60(
+          index_parts_exports.ItemIndicator,
+          {
+            render: /* @__PURE__ */ jsx60("span", { className: "pointer-events-none absolute right-2 flex size-4 items-center justify-center" }),
+            children: /* @__PURE__ */ jsx60(Check, { className: "pointer-events-none" })
+          }
+        )
+      ]
+    }
   );
 }
 function ComboboxGroup3({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx60(
     index_parts_exports.Group,
     {
       "data-slot": "combobox-group",
@@ -47348,7 +47384,7 @@ function ComboboxLabel3({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx60(
     index_parts_exports.GroupLabel,
     {
       "data-slot": "combobox-label",
@@ -47358,10 +47394,10 @@ function ComboboxLabel3({
   );
 }
 function ComboboxCollection2({ ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(index_parts_exports.Collection, { "data-slot": "combobox-collection", ...props });
+  return /* @__PURE__ */ jsx60(index_parts_exports.Collection, { "data-slot": "combobox-collection", ...props });
 }
 function ComboboxEmpty3({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx60(
     index_parts_exports.Empty,
     {
       "data-slot": "combobox-empty",
@@ -47377,7 +47413,7 @@ function ComboboxSeparator({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx60(
     index_parts_exports.Separator,
     {
       "data-slot": "combobox-separator",
@@ -47390,7 +47426,7 @@ function ComboboxChips3({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx60(
     index_parts_exports.Chips,
     {
       "data-slot": "combobox-chips",
@@ -47408,7 +47444,7 @@ function ComboboxChip3({
   showRemove = true,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs17(
     index_parts_exports.Chip,
     {
       "data-slot": "combobox-chip",
@@ -47416,25 +47452,27 @@ function ComboboxChip3({
         "flex h-[calc(--spacing(5.25))] w-fit items-center justify-center gap-1 rounded-sm bg-muted px-1.5 text-xs font-medium whitespace-nowrap text-foreground has-disabled:pointer-events-none has-disabled:cursor-not-allowed has-disabled:opacity-50 has-data-[slot=combobox-chip-remove]:pr-0",
         className
       ),
-      ...props
-    },
-    children,
-    showRemove && /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      index_parts_exports.ChipRemove,
-      {
-        render: /* @__PURE__ */ shadcn_react_shim_exports.createElement(Button, { variant: "ghost", size: "icon-xs" }),
-        className: "-ml-1 opacity-50 hover:opacity-100",
-        "data-slot": "combobox-chip-remove"
-      },
-      /* @__PURE__ */ shadcn_react_shim_exports.createElement(X, { className: "pointer-events-none" })
-    )
+      ...props,
+      children: [
+        children,
+        showRemove && /* @__PURE__ */ jsx60(
+          index_parts_exports.ChipRemove,
+          {
+            render: /* @__PURE__ */ jsx60(Button, { variant: "ghost", size: "icon-xs" }),
+            className: "-ml-1 opacity-50 hover:opacity-100",
+            "data-slot": "combobox-chip-remove",
+            children: /* @__PURE__ */ jsx60(X, { className: "pointer-events-none" })
+          }
+        )
+      ]
+    }
   );
 }
 function ComboboxChipsInput({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx60(
     index_parts_exports.Input,
     {
       "data-slot": "combobox-chip-input",
@@ -47446,9 +47484,6 @@ function ComboboxChipsInput({
 function useComboboxAnchor() {
   return shadcn_react_shim_exports.useRef(null);
 }
-
-// src/components/ui/command.tsx
-init_shadcn_react_shim();
 
 // node_modules/.pnpm/cmdk@1.1.1_@types+react-dom_774a6dff9510bebce6a2343405a1ca59/node_modules/cmdk/dist/chunk-NZJY6EH4.mjs
 var U = 1;
@@ -47795,32 +47830,32 @@ function B2({ asChild: r2, children: o }, n) {
 var Te = { position: "absolute", width: "1px", height: "1px", padding: "0", margin: "-1px", overflow: "hidden", clip: "rect(0, 0, 0, 0)", whiteSpace: "nowrap", borderWidth: "0" };
 
 // src/components/ui/dialog.tsx
-init_shadcn_react_shim();
+import { jsx as jsx61, jsxs as jsxs18 } from "react/jsx-runtime";
 function Dialog2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports5.Root, { "data-slot": "dialog", ...props });
+  return /* @__PURE__ */ jsx61(dist_exports5.Root, { "data-slot": "dialog", ...props });
 }
 function DialogTrigger2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports5.Trigger, { "data-slot": "dialog-trigger", ...props });
+  return /* @__PURE__ */ jsx61(dist_exports5.Trigger, { "data-slot": "dialog-trigger", ...props });
 }
 function DialogPortal2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports5.Portal, { "data-slot": "dialog-portal", ...props });
+  return /* @__PURE__ */ jsx61(dist_exports5.Portal, { "data-slot": "dialog-portal", ...props });
 }
 function DialogClose2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports5.Close, { "data-slot": "dialog-close", ...props });
+  return /* @__PURE__ */ jsx61(dist_exports5.Close, { "data-slot": "dialog-close", ...props });
 }
 function DialogOverlay2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx61(
     dist_exports5.Overlay,
     {
       "data-slot": "dialog-overlay",
@@ -47838,34 +47873,41 @@ function DialogContent2({
   showCloseButton = true,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(DialogPortal2, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(DialogOverlay2, null), /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-    dist_exports5.Content,
-    {
-      "data-slot": "dialog-content",
-      className: cn(
-        "fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl bg-background p-4 text-sm ring-1 ring-foreground/10 duration-100 outline-none sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
-        className
-      ),
-      ...props
-    },
-    children,
-    showCloseButton && /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports5.Close, { "data-slot": "dialog-close", asChild: true }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      Button,
+  return /* @__PURE__ */ jsxs18(DialogPortal2, { children: [
+    /* @__PURE__ */ jsx61(DialogOverlay2, {}),
+    /* @__PURE__ */ jsxs18(
+      dist_exports5.Content,
       {
-        variant: "ghost",
-        className: "absolute top-2 right-2",
-        size: "icon-sm"
-      },
-      /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-        X,
-        null
-      ),
-      /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "sr-only" }, "Close")
-    ))
-  ));
+        "data-slot": "dialog-content",
+        className: cn(
+          "fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl bg-background p-4 text-sm ring-1 ring-foreground/10 duration-100 outline-none sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
+          className
+        ),
+        ...props,
+        children: [
+          children,
+          showCloseButton && /* @__PURE__ */ jsx61(dist_exports5.Close, { "data-slot": "dialog-close", asChild: true, children: /* @__PURE__ */ jsxs18(
+            Button,
+            {
+              variant: "ghost",
+              className: "absolute top-2 right-2",
+              size: "icon-sm",
+              children: [
+                /* @__PURE__ */ jsx61(
+                  X,
+                  {}
+                ),
+                /* @__PURE__ */ jsx61("span", { className: "sr-only", children: "Close" })
+              ]
+            }
+          ) })
+        ]
+      }
+    )
+  ] });
 }
 function DialogHeader({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx61(
     "div",
     {
       "data-slot": "dialog-header",
@@ -47880,7 +47922,7 @@ function DialogFooter({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs18(
     "div",
     {
       "data-slot": "dialog-footer",
@@ -47888,17 +47930,19 @@ function DialogFooter({
         "-mx-4 -mb-4 flex flex-col-reverse gap-2 rounded-b-xl border-t bg-muted/50 p-4 sm:flex-row sm:justify-end",
         className
       ),
-      ...props
-    },
-    children,
-    showCloseButton && /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports5.Close, { asChild: true }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(Button, { variant: "outline" }, "Close"))
+      ...props,
+      children: [
+        children,
+        showCloseButton && /* @__PURE__ */ jsx61(dist_exports5.Close, { asChild: true, children: /* @__PURE__ */ jsx61(Button, { variant: "outline", children: "Close" }) })
+      ]
+    }
   );
 }
 function DialogTitle2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx61(
     dist_exports5.Title,
     {
       "data-slot": "dialog-title",
@@ -47911,7 +47955,7 @@ function DialogDescription2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx61(
     dist_exports5.Description,
     {
       "data-slot": "dialog-description",
@@ -47925,11 +47969,12 @@ function DialogDescription2({
 }
 
 // src/components/ui/command.tsx
+import { jsx as jsx62, jsxs as jsxs19 } from "react/jsx-runtime";
 function Command({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx62(
     _e,
     {
       "data-slot": "command",
@@ -47949,39 +47994,48 @@ function CommandDialog({
   showCloseButton = false,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(Dialog2, { ...props }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(DialogHeader, { className: "sr-only" }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(DialogTitle2, null, title), /* @__PURE__ */ shadcn_react_shim_exports.createElement(DialogDescription2, null, description)), /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-    DialogContent2,
-    {
-      className: cn(
-        "top-1/3 translate-y-0 overflow-hidden rounded-xl! p-0",
-        className
-      ),
-      showCloseButton
-    },
-    children
-  ));
+  return /* @__PURE__ */ jsxs19(Dialog2, { ...props, children: [
+    /* @__PURE__ */ jsxs19(DialogHeader, { className: "sr-only", children: [
+      /* @__PURE__ */ jsx62(DialogTitle2, { children: title }),
+      /* @__PURE__ */ jsx62(DialogDescription2, { children: description })
+    ] }),
+    /* @__PURE__ */ jsx62(
+      DialogContent2,
+      {
+        className: cn(
+          "top-1/3 translate-y-0 overflow-hidden rounded-xl! p-0",
+          className
+        ),
+        showCloseButton,
+        children
+      }
+    )
+  ] });
 }
 function CommandInput({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement("div", { "data-slot": "command-input-wrapper", className: "p-1 pb-0" }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(InputGroup, { className: "h-8! rounded-lg! border-input/30 bg-input/30 shadow-none! *:data-[slot=input-group-addon]:pl-2!" }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-    _e.Input,
-    {
-      "data-slot": "command-input",
-      className: cn(
-        "w-full text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
-        className
-      ),
-      ...props
-    }
-  ), /* @__PURE__ */ shadcn_react_shim_exports.createElement(InputGroupAddon, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(Search, { className: "size-4 shrink-0 opacity-50" }))));
+  return /* @__PURE__ */ jsx62("div", { "data-slot": "command-input-wrapper", className: "p-1 pb-0", children: /* @__PURE__ */ jsxs19(InputGroup, { className: "h-8! rounded-lg! border-input/30 bg-input/30 shadow-none! *:data-[slot=input-group-addon]:pl-2!", children: [
+    /* @__PURE__ */ jsx62(
+      _e.Input,
+      {
+        "data-slot": "command-input",
+        className: cn(
+          "w-full text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+          className
+        ),
+        ...props
+      }
+    ),
+    /* @__PURE__ */ jsx62(InputGroupAddon, { children: /* @__PURE__ */ jsx62(Search, { className: "size-4 shrink-0 opacity-50" }) })
+  ] }) });
 }
 function CommandList({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx62(
     _e.List,
     {
       "data-slot": "command-list",
@@ -47997,7 +48051,7 @@ function CommandEmpty({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx62(
     _e.Empty,
     {
       "data-slot": "command-empty",
@@ -48010,7 +48064,7 @@ function CommandGroup({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx62(
     _e.Group,
     {
       "data-slot": "command-group",
@@ -48026,7 +48080,7 @@ function CommandSeparator({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx62(
     _e.Separator,
     {
       "data-slot": "command-separator",
@@ -48040,7 +48094,7 @@ function CommandItem({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs19(
     _e.Item,
     {
       "data-slot": "command-item",
@@ -48048,17 +48102,19 @@ function CommandItem({
         "group/command-item relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none in-data-[slot=dialog-content]:rounded-lg! data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 data-selected:bg-muted data-selected:text-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 data-selected:*:[svg]:text-foreground",
         className
       ),
-      ...props
-    },
-    children,
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(Check, { className: "ml-auto opacity-0 group-has-data-[slot=command-shortcut]/command-item:hidden group-data-[checked=true]/command-item:opacity-100" })
+      ...props,
+      children: [
+        children,
+        /* @__PURE__ */ jsx62(Check, { className: "ml-auto opacity-0 group-has-data-[slot=command-shortcut]/command-item:hidden group-data-[checked=true]/command-item:opacity-100" })
+      ]
+    }
   );
 }
 function CommandShortcut({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx62(
     "span",
     {
       "data-slot": "command-shortcut",
@@ -48072,17 +48128,17 @@ function CommandShortcut({
 }
 
 // src/components/ui/context-menu.tsx
-init_shadcn_react_shim();
+import { jsx as jsx63, jsxs as jsxs20 } from "react/jsx-runtime";
 function ContextMenu2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports13.Root, { "data-slot": "context-menu", ...props });
+  return /* @__PURE__ */ jsx63(dist_exports13.Root, { "data-slot": "context-menu", ...props });
 }
 function ContextMenuTrigger2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx63(
     dist_exports13.Trigger,
     {
       "data-slot": "context-menu-trigger",
@@ -48094,22 +48150,22 @@ function ContextMenuTrigger2({
 function ContextMenuGroup2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports13.Group, { "data-slot": "context-menu-group", ...props });
+  return /* @__PURE__ */ jsx63(dist_exports13.Group, { "data-slot": "context-menu-group", ...props });
 }
 function ContextMenuPortal2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports13.Portal, { "data-slot": "context-menu-portal", ...props });
+  return /* @__PURE__ */ jsx63(dist_exports13.Portal, { "data-slot": "context-menu-portal", ...props });
 }
 function ContextMenuSub2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports13.Sub, { "data-slot": "context-menu-sub", ...props });
+  return /* @__PURE__ */ jsx63(dist_exports13.Sub, { "data-slot": "context-menu-sub", ...props });
 }
 function ContextMenuRadioGroup2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx63(
     dist_exports13.RadioGroup,
     {
       "data-slot": "context-menu-radio-group",
@@ -48121,14 +48177,14 @@ function ContextMenuContent2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports13.Portal, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx63(dist_exports13.Portal, { children: /* @__PURE__ */ jsx63(
     dist_exports13.Content,
     {
       "data-slot": "context-menu-content",
       className: cn("z-50 max-h-(--radix-context-menu-content-available-height) min-w-36 origin-(--radix-context-menu-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-lg bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className),
       ...props
     }
-  ));
+  ) });
 }
 function ContextMenuItem2({
   className,
@@ -48136,7 +48192,7 @@ function ContextMenuItem2({
   variant = "default",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx63(
     dist_exports13.Item,
     {
       "data-slot": "context-menu-item",
@@ -48156,7 +48212,7 @@ function ContextMenuSubTrigger2({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs20(
     dist_exports13.SubTrigger,
     {
       "data-slot": "context-menu-sub-trigger",
@@ -48165,17 +48221,19 @@ function ContextMenuSubTrigger2({
         "flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-inset:pl-7 data-open:bg-accent data-open:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       ),
-      ...props
-    },
-    children,
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronRight, { className: "ml-auto" })
+      ...props,
+      children: [
+        children,
+        /* @__PURE__ */ jsx63(ChevronRight, { className: "ml-auto" })
+      ]
+    }
   );
 }
 function ContextMenuSubContent2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx63(
     dist_exports13.SubContent,
     {
       "data-slot": "context-menu-sub-content",
@@ -48191,7 +48249,7 @@ function ContextMenuCheckboxItem2({
   inset,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs20(
     dist_exports13.CheckboxItem,
     {
       "data-slot": "context-menu-checkbox-item",
@@ -48201,13 +48259,15 @@ function ContextMenuCheckboxItem2({
         className
       ),
       checked,
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "pointer-events-none absolute right-2" }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports13.ItemIndicator, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      Check,
-      null
-    ))),
-    children
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx63("span", { className: "pointer-events-none absolute right-2", children: /* @__PURE__ */ jsx63(dist_exports13.ItemIndicator, { children: /* @__PURE__ */ jsx63(
+          Check,
+          {}
+        ) }) }),
+        children
+      ]
+    }
   );
 }
 function ContextMenuRadioItem2({
@@ -48216,7 +48276,7 @@ function ContextMenuRadioItem2({
   inset,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs20(
     dist_exports13.RadioItem,
     {
       "data-slot": "context-menu-radio-item",
@@ -48225,13 +48285,15 @@ function ContextMenuRadioItem2({
         "relative flex cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-inset:pl-7 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "pointer-events-none absolute right-2" }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports13.ItemIndicator, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      Check,
-      null
-    ))),
-    children
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx63("span", { className: "pointer-events-none absolute right-2", children: /* @__PURE__ */ jsx63(dist_exports13.ItemIndicator, { children: /* @__PURE__ */ jsx63(
+          Check,
+          {}
+        ) }) }),
+        children
+      ]
+    }
   );
 }
 function ContextMenuLabel2({
@@ -48239,7 +48301,7 @@ function ContextMenuLabel2({
   inset,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx63(
     dist_exports13.Label,
     {
       "data-slot": "context-menu-label",
@@ -48256,7 +48318,7 @@ function ContextMenuSeparator2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx63(
     dist_exports13.Separator,
     {
       "data-slot": "context-menu-separator",
@@ -48269,7 +48331,7 @@ function ContextMenuShortcut({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx63(
     "span",
     {
       "data-slot": "context-menu-shortcut",
@@ -48283,18 +48345,15 @@ function ContextMenuShortcut({
 }
 
 // src/components/ui/direction.tsx
-init_shadcn_react_shim();
+import { jsx as jsx64 } from "react/jsx-runtime";
 function DirectionProvider2({
   dir,
   direction,
   children
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports3.DirectionProvider, { dir: direction ?? dir }, children);
+  return /* @__PURE__ */ jsx64(dist_exports3.DirectionProvider, { dir: direction ?? dir, children });
 }
 var useDirection3 = dist_exports3.useDirection;
-
-// src/components/ui/drawer.tsx
-init_shadcn_react_shim();
 
 // node_modules/.pnpm/vaul@1.1.2_@types+react-dom_724ef6c3f0fbc86fbf11d8898c60a0ec/node_modules/vaul/dist/index.mjs
 init_shadcn_react_shim();
@@ -49795,31 +49854,32 @@ var Drawer = {
 };
 
 // src/components/ui/drawer.tsx
+import { jsx as jsx65, jsxs as jsxs21 } from "react/jsx-runtime";
 function Drawer2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(Drawer.Root, { "data-slot": "drawer", ...props });
+  return /* @__PURE__ */ jsx65(Drawer.Root, { "data-slot": "drawer", ...props });
 }
 function DrawerTrigger({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(Drawer.Trigger, { "data-slot": "drawer-trigger", ...props });
+  return /* @__PURE__ */ jsx65(Drawer.Trigger, { "data-slot": "drawer-trigger", ...props });
 }
 function DrawerPortal({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(Drawer.Portal, { "data-slot": "drawer-portal", ...props });
+  return /* @__PURE__ */ jsx65(Drawer.Portal, { "data-slot": "drawer-portal", ...props });
 }
 function DrawerClose({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(Drawer.Close, { "data-slot": "drawer-close", ...props });
+  return /* @__PURE__ */ jsx65(Drawer.Close, { "data-slot": "drawer-close", ...props });
 }
 function DrawerOverlay({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx65(
     Drawer.Overlay,
     {
       "data-slot": "drawer-overlay",
@@ -49836,22 +49896,27 @@ function DrawerContent({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(DrawerPortal, { "data-slot": "drawer-portal" }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(DrawerOverlay, null), /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-    Drawer.Content,
-    {
-      "data-slot": "drawer-content",
-      className: cn(
-        "group/drawer-content fixed z-50 flex h-auto flex-col bg-background text-sm data-[vaul-drawer-direction=bottom]:inset-x-0 data-[vaul-drawer-direction=bottom]:bottom-0 data-[vaul-drawer-direction=bottom]:mt-24 data-[vaul-drawer-direction=bottom]:max-h-[80vh] data-[vaul-drawer-direction=bottom]:rounded-t-xl data-[vaul-drawer-direction=bottom]:border-t data-[vaul-drawer-direction=left]:inset-y-0 data-[vaul-drawer-direction=left]:left-0 data-[vaul-drawer-direction=left]:w-3/4 data-[vaul-drawer-direction=left]:rounded-r-xl data-[vaul-drawer-direction=left]:border-r data-[vaul-drawer-direction=right]:inset-y-0 data-[vaul-drawer-direction=right]:right-0 data-[vaul-drawer-direction=right]:w-3/4 data-[vaul-drawer-direction=right]:rounded-l-xl data-[vaul-drawer-direction=right]:border-l data-[vaul-drawer-direction=top]:inset-x-0 data-[vaul-drawer-direction=top]:top-0 data-[vaul-drawer-direction=top]:mb-24 data-[vaul-drawer-direction=top]:max-h-[80vh] data-[vaul-drawer-direction=top]:rounded-b-xl data-[vaul-drawer-direction=top]:border-b data-[vaul-drawer-direction=left]:sm:max-w-sm data-[vaul-drawer-direction=right]:sm:max-w-sm",
-        className
-      ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement("div", { className: "mx-auto mt-4 hidden h-1 w-[100px] shrink-0 rounded-full bg-muted group-data-[vaul-drawer-direction=bottom]/drawer-content:block" }),
-    children
-  ));
+  return /* @__PURE__ */ jsxs21(DrawerPortal, { "data-slot": "drawer-portal", children: [
+    /* @__PURE__ */ jsx65(DrawerOverlay, {}),
+    /* @__PURE__ */ jsxs21(
+      Drawer.Content,
+      {
+        "data-slot": "drawer-content",
+        className: cn(
+          "group/drawer-content fixed z-50 flex h-auto flex-col bg-background text-sm data-[vaul-drawer-direction=bottom]:inset-x-0 data-[vaul-drawer-direction=bottom]:bottom-0 data-[vaul-drawer-direction=bottom]:mt-24 data-[vaul-drawer-direction=bottom]:max-h-[80vh] data-[vaul-drawer-direction=bottom]:rounded-t-xl data-[vaul-drawer-direction=bottom]:border-t data-[vaul-drawer-direction=left]:inset-y-0 data-[vaul-drawer-direction=left]:left-0 data-[vaul-drawer-direction=left]:w-3/4 data-[vaul-drawer-direction=left]:rounded-r-xl data-[vaul-drawer-direction=left]:border-r data-[vaul-drawer-direction=right]:inset-y-0 data-[vaul-drawer-direction=right]:right-0 data-[vaul-drawer-direction=right]:w-3/4 data-[vaul-drawer-direction=right]:rounded-l-xl data-[vaul-drawer-direction=right]:border-l data-[vaul-drawer-direction=top]:inset-x-0 data-[vaul-drawer-direction=top]:top-0 data-[vaul-drawer-direction=top]:mb-24 data-[vaul-drawer-direction=top]:max-h-[80vh] data-[vaul-drawer-direction=top]:rounded-b-xl data-[vaul-drawer-direction=top]:border-b data-[vaul-drawer-direction=left]:sm:max-w-sm data-[vaul-drawer-direction=right]:sm:max-w-sm",
+          className
+        ),
+        ...props,
+        children: [
+          /* @__PURE__ */ jsx65("div", { className: "mx-auto mt-4 hidden h-1 w-[100px] shrink-0 rounded-full bg-muted group-data-[vaul-drawer-direction=bottom]/drawer-content:block" }),
+          children
+        ]
+      }
+    )
+  ] });
 }
 function DrawerHeader({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx65(
     "div",
     {
       "data-slot": "drawer-header",
@@ -49864,7 +49929,7 @@ function DrawerHeader({ className, ...props }) {
   );
 }
 function DrawerFooter({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx65(
     "div",
     {
       "data-slot": "drawer-footer",
@@ -49877,7 +49942,7 @@ function DrawerTitle({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx65(
     Drawer.Title,
     {
       "data-slot": "drawer-title",
@@ -49890,7 +49955,7 @@ function DrawerDescription({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx65(
     Drawer.Description,
     {
       "data-slot": "drawer-description",
@@ -49901,21 +49966,21 @@ function DrawerDescription({
 }
 
 // src/components/ui/dropdown-menu.tsx
-init_shadcn_react_shim();
+import { jsx as jsx66, jsxs as jsxs22 } from "react/jsx-runtime";
 function DropdownMenu2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports15.Root, { "data-slot": "dropdown-menu", ...props });
+  return /* @__PURE__ */ jsx66(dist_exports15.Root, { "data-slot": "dropdown-menu", ...props });
 }
 function DropdownMenuPortal2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports15.Portal, { "data-slot": "dropdown-menu-portal", ...props });
+  return /* @__PURE__ */ jsx66(dist_exports15.Portal, { "data-slot": "dropdown-menu-portal", ...props });
 }
 function DropdownMenuTrigger2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx66(
     dist_exports15.Trigger,
     {
       "data-slot": "dropdown-menu-trigger",
@@ -49929,7 +49994,7 @@ function DropdownMenuContent2({
   sideOffset = 4,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports15.Portal, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx66(dist_exports15.Portal, { children: /* @__PURE__ */ jsx66(
     dist_exports15.Content,
     {
       "data-slot": "dropdown-menu-content",
@@ -49938,12 +50003,12 @@ function DropdownMenuContent2({
       className: cn("z-50 max-h-(--radix-dropdown-menu-content-available-height) w-(--radix-dropdown-menu-trigger-width) min-w-32 origin-(--radix-dropdown-menu-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-lg bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:overflow-hidden data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", className),
       ...props
     }
-  ));
+  ) });
 }
 function DropdownMenuGroup2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports15.Group, { "data-slot": "dropdown-menu-group", ...props });
+  return /* @__PURE__ */ jsx66(dist_exports15.Group, { "data-slot": "dropdown-menu-group", ...props });
 }
 function DropdownMenuItem2({
   className,
@@ -49951,7 +50016,7 @@ function DropdownMenuItem2({
   variant = "default",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx66(
     dist_exports15.Item,
     {
       "data-slot": "dropdown-menu-item",
@@ -49972,7 +50037,7 @@ function DropdownMenuCheckboxItem2({
   inset,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs22(
     dist_exports15.CheckboxItem,
     {
       "data-slot": "dropdown-menu-checkbox-item",
@@ -49982,26 +50047,28 @@ function DropdownMenuCheckboxItem2({
         className
       ),
       checked,
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      "span",
-      {
-        className: "pointer-events-none absolute right-2 flex items-center justify-center",
-        "data-slot": "dropdown-menu-checkbox-item-indicator"
-      },
-      /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports15.ItemIndicator, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-        Check,
-        null
-      ))
-    ),
-    children
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx66(
+          "span",
+          {
+            className: "pointer-events-none absolute right-2 flex items-center justify-center",
+            "data-slot": "dropdown-menu-checkbox-item-indicator",
+            children: /* @__PURE__ */ jsx66(dist_exports15.ItemIndicator, { children: /* @__PURE__ */ jsx66(
+              Check,
+              {}
+            ) })
+          }
+        ),
+        children
+      ]
+    }
   );
 }
 function DropdownMenuRadioGroup2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx66(
     dist_exports15.RadioGroup,
     {
       "data-slot": "dropdown-menu-radio-group",
@@ -50015,7 +50082,7 @@ function DropdownMenuRadioItem2({
   inset,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs22(
     dist_exports15.RadioItem,
     {
       "data-slot": "dropdown-menu-radio-item",
@@ -50024,20 +50091,22 @@ function DropdownMenuRadioItem2({
         "relative flex cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground focus:**:text-accent-foreground data-inset:pl-7 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      "span",
-      {
-        className: "pointer-events-none absolute right-2 flex items-center justify-center",
-        "data-slot": "dropdown-menu-radio-item-indicator"
-      },
-      /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports15.ItemIndicator, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-        Check,
-        null
-      ))
-    ),
-    children
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx66(
+          "span",
+          {
+            className: "pointer-events-none absolute right-2 flex items-center justify-center",
+            "data-slot": "dropdown-menu-radio-item-indicator",
+            children: /* @__PURE__ */ jsx66(dist_exports15.ItemIndicator, { children: /* @__PURE__ */ jsx66(
+              Check,
+              {}
+            ) })
+          }
+        ),
+        children
+      ]
+    }
   );
 }
 function DropdownMenuLabel2({
@@ -50045,7 +50114,7 @@ function DropdownMenuLabel2({
   inset,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx66(
     dist_exports15.Label,
     {
       "data-slot": "dropdown-menu-label",
@@ -50062,7 +50131,7 @@ function DropdownMenuSeparator2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx66(
     dist_exports15.Separator,
     {
       "data-slot": "dropdown-menu-separator",
@@ -50075,7 +50144,7 @@ function DropdownMenuShortcut({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx66(
     "span",
     {
       "data-slot": "dropdown-menu-shortcut",
@@ -50090,7 +50159,7 @@ function DropdownMenuShortcut({
 function DropdownMenuSub2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports15.Sub, { "data-slot": "dropdown-menu-sub", ...props });
+  return /* @__PURE__ */ jsx66(dist_exports15.Sub, { "data-slot": "dropdown-menu-sub", ...props });
 }
 function DropdownMenuSubTrigger2({
   className,
@@ -50098,7 +50167,7 @@ function DropdownMenuSubTrigger2({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs22(
     dist_exports15.SubTrigger,
     {
       "data-slot": "dropdown-menu-sub-trigger",
@@ -50107,17 +50176,19 @@ function DropdownMenuSubTrigger2({
         "flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-open:bg-accent data-open:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       ),
-      ...props
-    },
-    children,
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronRight, { className: "ml-auto" })
+      ...props,
+      children: [
+        children,
+        /* @__PURE__ */ jsx66(ChevronRight, { className: "ml-auto" })
+      ]
+    }
   );
 }
 function DropdownMenuSubContent2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx66(
     dist_exports15.SubContent,
     {
       "data-slot": "dropdown-menu-sub-content",
@@ -50128,8 +50199,9 @@ function DropdownMenuSubContent2({
 }
 
 // src/components/ui/empty.tsx
+import { jsx as jsx67 } from "react/jsx-runtime";
 function Empty({ className, ...props }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx67(
     "div",
     {
       "data-slot": "empty",
@@ -50142,7 +50214,7 @@ function Empty({ className, ...props }) {
   );
 }
 function EmptyHeader({ className, ...props }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx67(
     "div",
     {
       "data-slot": "empty-header",
@@ -50170,7 +50242,7 @@ function EmptyMedia({
   variant = "default",
   ...props
 }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx67(
     "div",
     {
       "data-slot": "empty-icon",
@@ -50181,7 +50253,7 @@ function EmptyMedia({
   );
 }
 function EmptyTitle({ className, ...props }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx67(
     "div",
     {
       "data-slot": "empty-title",
@@ -50191,7 +50263,7 @@ function EmptyTitle({ className, ...props }) {
   );
 }
 function EmptyDescription({ className, ...props }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx67(
     "div",
     {
       "data-slot": "empty-description",
@@ -50204,7 +50276,7 @@ function EmptyDescription({ className, ...props }) {
   );
 }
 function EmptyContent({ className, ...props }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx67(
     "div",
     {
       "data-slot": "empty-content",
@@ -50221,12 +50293,12 @@ function EmptyContent({ className, ...props }) {
 init_shadcn_react_shim();
 
 // src/components/ui/label.tsx
-init_shadcn_react_shim();
+import { jsx as jsx68 } from "react/jsx-runtime";
 function Label5({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx68(
     dist_exports16.Root,
     {
       "data-slot": "label",
@@ -50240,8 +50312,9 @@ function Label5({
 }
 
 // src/components/ui/field.tsx
+import { jsx as jsx69, jsxs as jsxs23 } from "react/jsx-runtime";
 function FieldSet({ className, ...props }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx69(
     "fieldset",
     {
       "data-slot": "field-set",
@@ -50258,7 +50331,7 @@ function FieldLegend({
   variant = "legend",
   ...props
 }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx69(
     "legend",
     {
       "data-slot": "field-legend",
@@ -50272,7 +50345,7 @@ function FieldLegend({
   );
 }
 function FieldGroup({ className, ...props }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx69(
     "div",
     {
       "data-slot": "field-group",
@@ -50304,7 +50377,7 @@ function Field({
   orientation = "vertical",
   ...props
 }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx69(
     "div",
     {
       role: "group",
@@ -50316,7 +50389,7 @@ function Field({
   );
 }
 function FieldContent({ className, ...props }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx69(
     "div",
     {
       "data-slot": "field-content",
@@ -50332,7 +50405,7 @@ function FieldLabel({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx69(
     Label5,
     {
       "data-slot": "field-label",
@@ -50346,7 +50419,7 @@ function FieldLabel({
   );
 }
 function FieldTitle({ className, ...props }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx69(
     "div",
     {
       "data-slot": "field-label",
@@ -50359,7 +50432,7 @@ function FieldTitle({ className, ...props }) {
   );
 }
 function FieldDescription({ className, ...props }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx69(
     "p",
     {
       "data-slot": "field-description",
@@ -50378,7 +50451,7 @@ function FieldSeparator({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsxs23(
     "div",
     {
       "data-slot": "field-separator",
@@ -50387,17 +50460,19 @@ function FieldSeparator({
         "relative -my-2 h-5 text-sm group-data-[variant=outline]/field-group:-mb-2",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ React.createElement(Separator5, { className: "absolute inset-0 top-1/2" }),
-    children && /* @__PURE__ */ React.createElement(
-      "span",
-      {
-        className: "relative mx-auto block w-fit bg-background px-2 text-muted-foreground",
-        "data-slot": "field-separator-content"
-      },
-      children
-    )
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx69(Separator5, { className: "absolute inset-0 top-1/2" }),
+        children && /* @__PURE__ */ jsx69(
+          "span",
+          {
+            className: "relative mx-auto block w-fit bg-background px-2 text-muted-foreground",
+            "data-slot": "field-separator-content",
+            children
+          }
+        )
+      ]
+    }
   );
 }
 function FieldError({
@@ -50419,36 +50494,36 @@ function FieldError({
     if (uniqueErrors?.length == 1) {
       return uniqueErrors[0]?.message;
     }
-    return /* @__PURE__ */ React.createElement("ul", { className: "ml-4 flex list-disc flex-col gap-1" }, uniqueErrors.map(
-      (error2, index2) => error2?.message && /* @__PURE__ */ React.createElement("li", { key: index2 }, error2.message)
-    ));
+    return /* @__PURE__ */ jsx69("ul", { className: "ml-4 flex list-disc flex-col gap-1", children: uniqueErrors.map(
+      (error2, index2) => error2?.message && /* @__PURE__ */ jsx69("li", { children: error2.message }, index2)
+    ) });
   }, [children, errors]);
   if (!content) {
     return null;
   }
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx69(
     "div",
     {
       role: "alert",
       "data-slot": "field-error",
       className: cn("text-sm font-normal text-destructive", className),
-      ...props
-    },
-    content
+      ...props,
+      children: content
+    }
   );
 }
 
 // src/components/ui/hover-card.tsx
-init_shadcn_react_shim();
+import { jsx as jsx70 } from "react/jsx-runtime";
 function HoverCard2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports17.Root, { "data-slot": "hover-card", ...props });
+  return /* @__PURE__ */ jsx70(dist_exports17.Root, { "data-slot": "hover-card", ...props });
 }
 function HoverCardTrigger2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports17.Trigger, { "data-slot": "hover-card-trigger", ...props });
+  return /* @__PURE__ */ jsx70(dist_exports17.Trigger, { "data-slot": "hover-card-trigger", ...props });
 }
 function HoverCardContent2({
   className,
@@ -50456,7 +50531,7 @@ function HoverCardContent2({
   sideOffset = 4,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports17.Portal, { "data-slot": "hover-card-portal" }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx70(dist_exports17.Portal, { "data-slot": "hover-card-portal", children: /* @__PURE__ */ jsx70(
     dist_exports17.Content,
     {
       "data-slot": "hover-card-content",
@@ -50468,7 +50543,7 @@ function HoverCardContent2({
       ),
       ...props
     }
-  ));
+  ) });
 }
 
 // src/components/ui/input-otp.tsx
@@ -50683,12 +50758,13 @@ var Nt = `
 }`;
 
 // src/components/ui/input-otp.tsx
+import { jsx as jsx71, jsxs as jsxs24 } from "react/jsx-runtime";
 function InputOTP({
   className,
   containerClassName,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx71(
     Lt,
     {
       "data-slot": "input-otp",
@@ -50703,7 +50779,7 @@ function InputOTP({
   );
 }
 function InputOTPGroup({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx71(
     "div",
     {
       "data-slot": "input-otp-group",
@@ -50722,7 +50798,7 @@ function InputOTPSlot({
 }) {
   const inputOTPContext = shadcn_react_shim_exports.useContext(jt);
   const { char, hasFakeCaret, isActive } = inputOTPContext?.slots[index2] ?? {};
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs24(
     "div",
     {
       "data-slot": "input-otp-slot",
@@ -50731,32 +50807,34 @@ function InputOTPSlot({
         "relative flex size-8 items-center justify-center border-y border-r border-input text-sm transition-all outline-none first:rounded-l-lg first:border-l last:rounded-r-lg aria-invalid:border-destructive data-[active=true]:z-10 data-[active=true]:border-ring data-[active=true]:ring-3 data-[active=true]:ring-ring/50 data-[active=true]:aria-invalid:border-destructive data-[active=true]:aria-invalid:ring-destructive/20 dark:bg-input/30 dark:data-[active=true]:aria-invalid:ring-destructive/40",
         className
       ),
-      ...props
-    },
-    char,
-    hasFakeCaret && /* @__PURE__ */ shadcn_react_shim_exports.createElement("div", { className: "pointer-events-none absolute inset-0 flex items-center justify-center" }, /* @__PURE__ */ shadcn_react_shim_exports.createElement("div", { className: "h-4 w-px animate-caret-blink bg-foreground duration-1000" }))
+      ...props,
+      children: [
+        char,
+        hasFakeCaret && /* @__PURE__ */ jsx71("div", { className: "pointer-events-none absolute inset-0 flex items-center justify-center", children: /* @__PURE__ */ jsx71("div", { className: "h-4 w-px animate-caret-blink bg-foreground duration-1000" }) })
+      ]
+    }
   );
 }
 function InputOTPSeparator({ ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx71(
     "div",
     {
       "data-slot": "input-otp-separator",
       className: "flex items-center [&_svg:not([class*='size-'])]:size-4",
       role: "separator",
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      Minus,
-      null
-    )
+      ...props,
+      children: /* @__PURE__ */ jsx71(
+        Minus,
+        {}
+      )
+    }
   );
 }
 
 // src/components/ui/item.tsx
-init_shadcn_react_shim();
+import { jsx as jsx72 } from "react/jsx-runtime";
 function ItemGroup({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx72(
     "div",
     {
       role: "list",
@@ -50773,7 +50851,7 @@ function ItemSeparator({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx72(
     Separator5,
     {
       "data-slot": "item-separator",
@@ -50812,7 +50890,7 @@ function Item6({
   ...props
 }) {
   const Comp = asChild ? dist_exports.Root : "div";
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx72(
     Comp,
     {
       "data-slot": "item",
@@ -50843,7 +50921,7 @@ function ItemMedia({
   variant = "default",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx72(
     "div",
     {
       "data-slot": "item-media",
@@ -50854,7 +50932,7 @@ function ItemMedia({
   );
 }
 function ItemContent({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx72(
     "div",
     {
       "data-slot": "item-content",
@@ -50867,7 +50945,7 @@ function ItemContent({ className, ...props }) {
   );
 }
 function ItemTitle({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx72(
     "div",
     {
       "data-slot": "item-title",
@@ -50880,7 +50958,7 @@ function ItemTitle({ className, ...props }) {
   );
 }
 function ItemDescription({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx72(
     "p",
     {
       "data-slot": "item-description",
@@ -50893,7 +50971,7 @@ function ItemDescription({ className, ...props }) {
   );
 }
 function ItemActions({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx72(
     "div",
     {
       "data-slot": "item-actions",
@@ -50903,7 +50981,7 @@ function ItemActions({ className, ...props }) {
   );
 }
 function ItemHeader({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx72(
     "div",
     {
       "data-slot": "item-header",
@@ -50916,7 +50994,7 @@ function ItemHeader({ className, ...props }) {
   );
 }
 function ItemFooter({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx72(
     "div",
     {
       "data-slot": "item-footer",
@@ -50930,8 +51008,9 @@ function ItemFooter({ className, ...props }) {
 }
 
 // src/components/ui/kbd.tsx
+import { jsx as jsx73 } from "react/jsx-runtime";
 function Kbd({ className, ...props }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx73(
     "kbd",
     {
       "data-slot": "kbd",
@@ -50944,7 +51023,7 @@ function Kbd({ className, ...props }) {
   );
 }
 function KbdGroup({ className, ...props }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx73(
     "kbd",
     {
       "data-slot": "kbd-group",
@@ -50955,12 +51034,12 @@ function KbdGroup({ className, ...props }) {
 }
 
 // src/components/ui/menubar.tsx
-init_shadcn_react_shim();
+import { jsx as jsx74, jsxs as jsxs25 } from "react/jsx-runtime";
 function Menubar2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx74(
     dist_exports18.Root,
     {
       "data-slot": "menubar",
@@ -50975,28 +51054,28 @@ function Menubar2({
 function MenubarMenu2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports18.Menu, { "data-slot": "menubar-menu", ...props });
+  return /* @__PURE__ */ jsx74(dist_exports18.Menu, { "data-slot": "menubar-menu", ...props });
 }
 function MenubarGroup2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports18.Group, { "data-slot": "menubar-group", ...props });
+  return /* @__PURE__ */ jsx74(dist_exports18.Group, { "data-slot": "menubar-group", ...props });
 }
 function MenubarPortal2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports18.Portal, { "data-slot": "menubar-portal", ...props });
+  return /* @__PURE__ */ jsx74(dist_exports18.Portal, { "data-slot": "menubar-portal", ...props });
 }
 function MenubarRadioGroup2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports18.RadioGroup, { "data-slot": "menubar-radio-group", ...props });
+  return /* @__PURE__ */ jsx74(dist_exports18.RadioGroup, { "data-slot": "menubar-radio-group", ...props });
 }
 function MenubarTrigger2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx74(
     dist_exports18.Trigger,
     {
       "data-slot": "menubar-trigger",
@@ -51015,7 +51094,7 @@ function MenubarContent2({
   sideOffset = 8,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(MenubarPortal2, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx74(MenubarPortal2, { children: /* @__PURE__ */ jsx74(
     dist_exports18.Content,
     {
       "data-slot": "menubar-content",
@@ -51025,7 +51104,7 @@ function MenubarContent2({
       className: cn("z-50 min-w-36 origin-(--radix-menubar-content-transform-origin) overflow-hidden rounded-lg bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95", className),
       ...props
     }
-  ));
+  ) });
 }
 function MenubarItem2({
   className,
@@ -51033,7 +51112,7 @@ function MenubarItem2({
   variant = "default",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx74(
     dist_exports18.Item,
     {
       "data-slot": "menubar-item",
@@ -51054,7 +51133,7 @@ function MenubarCheckboxItem2({
   inset,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs25(
     dist_exports18.CheckboxItem,
     {
       "data-slot": "menubar-checkbox-item",
@@ -51064,13 +51143,15 @@ function MenubarCheckboxItem2({
         className
       ),
       checked,
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "pointer-events-none absolute left-1.5 flex size-4 items-center justify-center [&_svg:not([class*='size-'])]:size-4" }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports18.ItemIndicator, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      Check,
-      null
-    ))),
-    children
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx74("span", { className: "pointer-events-none absolute left-1.5 flex size-4 items-center justify-center [&_svg:not([class*='size-'])]:size-4", children: /* @__PURE__ */ jsx74(dist_exports18.ItemIndicator, { children: /* @__PURE__ */ jsx74(
+          Check,
+          {}
+        ) }) }),
+        children
+      ]
+    }
   );
 }
 function MenubarRadioItem2({
@@ -51079,7 +51160,7 @@ function MenubarRadioItem2({
   inset,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs25(
     dist_exports18.RadioItem,
     {
       "data-slot": "menubar-radio-item",
@@ -51088,13 +51169,15 @@ function MenubarRadioItem2({
         "relative flex cursor-default items-center gap-1.5 rounded-md py-1 pr-1.5 pl-7 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground focus:**:text-accent-foreground data-inset:pl-7 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "pointer-events-none absolute left-1.5 flex size-4 items-center justify-center [&_svg:not([class*='size-'])]:size-4" }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports18.ItemIndicator, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      Check,
-      null
-    ))),
-    children
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx74("span", { className: "pointer-events-none absolute left-1.5 flex size-4 items-center justify-center [&_svg:not([class*='size-'])]:size-4", children: /* @__PURE__ */ jsx74(dist_exports18.ItemIndicator, { children: /* @__PURE__ */ jsx74(
+          Check,
+          {}
+        ) }) }),
+        children
+      ]
+    }
   );
 }
 function MenubarLabel2({
@@ -51102,7 +51185,7 @@ function MenubarLabel2({
   inset,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx74(
     dist_exports18.Label,
     {
       "data-slot": "menubar-label",
@@ -51119,7 +51202,7 @@ function MenubarSeparator2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx74(
     dist_exports18.Separator,
     {
       "data-slot": "menubar-separator",
@@ -51132,7 +51215,7 @@ function MenubarShortcut({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx74(
     "span",
     {
       "data-slot": "menubar-shortcut",
@@ -51147,7 +51230,7 @@ function MenubarShortcut({
 function MenubarSub2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports18.Sub, { "data-slot": "menubar-sub", ...props });
+  return /* @__PURE__ */ jsx74(dist_exports18.Sub, { "data-slot": "menubar-sub", ...props });
 }
 function MenubarSubTrigger2({
   className,
@@ -51155,7 +51238,7 @@ function MenubarSubTrigger2({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs25(
     dist_exports18.SubTrigger,
     {
       "data-slot": "menubar-sub-trigger",
@@ -51164,17 +51247,19 @@ function MenubarSubTrigger2({
         "flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-none select-none focus:bg-accent focus:text-accent-foreground data-inset:pl-7 data-open:bg-accent data-open:text-accent-foreground [&_svg:not([class*='size-'])]:size-4",
         className
       ),
-      ...props
-    },
-    children,
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronRight, { className: "ml-auto size-4" })
+      ...props,
+      children: [
+        children,
+        /* @__PURE__ */ jsx74(ChevronRight, { className: "ml-auto size-4" })
+      ]
+    }
   );
 }
 function MenubarSubContent2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx74(
     dist_exports18.SubContent,
     {
       "data-slot": "menubar-sub-content",
@@ -51185,13 +51270,13 @@ function MenubarSubContent2({
 }
 
 // src/components/ui/native-select.tsx
-init_shadcn_react_shim();
+import { jsx as jsx75, jsxs as jsxs26 } from "react/jsx-runtime";
 function NativeSelect({
   className,
   size: size4 = "default",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs26(
     "div",
     {
       className: cn(
@@ -51199,28 +51284,30 @@ function NativeSelect({
         className
       ),
       "data-slot": "native-select-wrapper",
-      "data-size": size4
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      "select",
-      {
-        "data-slot": "native-select",
-        "data-size": size4,
-        className: "h-8 w-full min-w-0 appearance-none rounded-lg border border-input bg-transparent py-1 pr-8 pl-2.5 text-sm transition-colors outline-none select-none selection:bg-primary selection:text-primary-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 data-[size=sm]:h-7 data-[size=sm]:rounded-[min(var(--radius-md),10px)] data-[size=sm]:py-0.5 dark:bg-input/30 dark:hover:bg-input/50 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40",
-        ...props
-      }
-    ),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronDown, { className: "pointer-events-none absolute top-1/2 right-2.5 size-4 -translate-y-1/2 text-muted-foreground select-none", "aria-hidden": "true", "data-slot": "native-select-icon" })
+      "data-size": size4,
+      children: [
+        /* @__PURE__ */ jsx75(
+          "select",
+          {
+            "data-slot": "native-select",
+            "data-size": size4,
+            className: "h-8 w-full min-w-0 appearance-none rounded-lg border border-input bg-transparent py-1 pr-8 pl-2.5 text-sm transition-colors outline-none select-none selection:bg-primary selection:text-primary-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 data-[size=sm]:h-7 data-[size=sm]:rounded-[min(var(--radius-md),10px)] data-[size=sm]:py-0.5 dark:bg-input/30 dark:hover:bg-input/50 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40",
+            ...props
+          }
+        ),
+        /* @__PURE__ */ jsx75(ChevronDown, { className: "pointer-events-none absolute top-1/2 right-2.5 size-4 -translate-y-1/2 text-muted-foreground select-none", "aria-hidden": "true", "data-slot": "native-select-icon" })
+      ]
+    }
   );
 }
 function NativeSelectOption({ ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement("option", { "data-slot": "native-select-option", ...props });
+  return /* @__PURE__ */ jsx75("option", { "data-slot": "native-select-option", ...props });
 }
 function NativeSelectOptGroup({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx75(
     "optgroup",
     {
       "data-slot": "native-select-optgroup",
@@ -51231,14 +51318,14 @@ function NativeSelectOptGroup({
 }
 
 // src/components/ui/navigation-menu.tsx
-init_shadcn_react_shim();
+import { jsx as jsx76, jsxs as jsxs27 } from "react/jsx-runtime";
 function NavigationMenu2({
   className,
   children,
   viewport = true,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs27(
     dist_exports19.Root,
     {
       "data-slot": "navigation-menu",
@@ -51247,17 +51334,19 @@ function NavigationMenu2({
         "group/navigation-menu relative flex max-w-max flex-1 items-center justify-center",
         className
       ),
-      ...props
-    },
-    children,
-    viewport && /* @__PURE__ */ shadcn_react_shim_exports.createElement(NavigationMenuViewport2, null)
+      ...props,
+      children: [
+        children,
+        viewport && /* @__PURE__ */ jsx76(NavigationMenuViewport2, {})
+      ]
+    }
   );
 }
 function NavigationMenuList2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx76(
     dist_exports19.List,
     {
       "data-slot": "navigation-menu-list",
@@ -51273,7 +51362,7 @@ function NavigationMenuItem2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx76(
     dist_exports19.Item,
     {
       "data-slot": "navigation-menu-item",
@@ -51290,23 +51379,25 @@ function NavigationMenuTrigger2({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs27(
     dist_exports19.Trigger,
     {
       "data-slot": "navigation-menu-trigger",
       className: cn(navigationMenuTriggerStyle(), "group", className),
-      ...props
-    },
-    children,
-    " ",
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronDown, { className: "relative top-px ml-1 size-3 transition duration-300 group-data-popup-open/navigation-menu-trigger:rotate-180 group-data-open/navigation-menu-trigger:rotate-180", "aria-hidden": "true" })
+      ...props,
+      children: [
+        children,
+        " ",
+        /* @__PURE__ */ jsx76(ChevronDown, { className: "relative top-px ml-1 size-3 transition duration-300 group-data-popup-open/navigation-menu-trigger:rotate-180 group-data-open/navigation-menu-trigger:rotate-180", "aria-hidden": "true" })
+      ]
+    }
   );
 }
 function NavigationMenuContent2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx76(
     dist_exports19.Content,
     {
       "data-slot": "navigation-menu-content",
@@ -51322,31 +51413,31 @@ function NavigationMenuViewport2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx76(
     "div",
     {
       className: cn(
         "absolute top-full left-0 isolate z-50 flex justify-center"
+      ),
+      children: /* @__PURE__ */ jsx76(
+        dist_exports19.Viewport,
+        {
+          "data-slot": "navigation-menu-viewport",
+          className: cn(
+            "origin-top-center relative mt-1.5 h-(--radix-navigation-menu-viewport-height) w-full overflow-hidden rounded-lg bg-popover text-popover-foreground shadow ring-1 ring-foreground/10 duration-100 md:w-(--radix-navigation-menu-viewport-width) data-open:animate-in data-open:zoom-in-90 data-closed:animate-out data-closed:zoom-out-90",
+            className
+          ),
+          ...props
+        }
       )
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      dist_exports19.Viewport,
-      {
-        "data-slot": "navigation-menu-viewport",
-        className: cn(
-          "origin-top-center relative mt-1.5 h-(--radix-navigation-menu-viewport-height) w-full overflow-hidden rounded-lg bg-popover text-popover-foreground shadow ring-1 ring-foreground/10 duration-100 md:w-(--radix-navigation-menu-viewport-width) data-open:animate-in data-open:zoom-in-90 data-closed:animate-out data-closed:zoom-out-90",
-          className
-        ),
-        ...props
-      }
-    )
+    }
   );
 }
 function NavigationMenuLink2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx76(
     dist_exports19.Link,
     {
       "data-slot": "navigation-menu-link",
@@ -51362,7 +51453,7 @@ function NavigationMenuIndicator2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx76(
     dist_exports19.Indicator,
     {
       "data-slot": "navigation-menu-indicator",
@@ -51370,16 +51461,16 @@ function NavigationMenuIndicator2({
         "top-full z-1 flex h-1.5 items-end justify-center overflow-hidden data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:animate-in data-[state=visible]:fade-in",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement("div", { className: "relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-border shadow-md" })
+      ...props,
+      children: /* @__PURE__ */ jsx76("div", { className: "relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-border shadow-md" })
+    }
   );
 }
 
 // src/components/ui/pagination.tsx
-init_shadcn_react_shim();
+import { jsx as jsx77, jsxs as jsxs28 } from "react/jsx-runtime";
 function Pagination({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx77(
     "nav",
     {
       role: "navigation",
@@ -51394,7 +51485,7 @@ function PaginationContent({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx77(
     "ul",
     {
       "data-slot": "pagination-content",
@@ -51404,7 +51495,7 @@ function PaginationContent({
   );
 }
 function PaginationItem({ ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement("li", { "data-slot": "pagination-item", ...props });
+  return /* @__PURE__ */ jsx77("li", { "data-slot": "pagination-item", ...props });
 }
 function PaginationLink({
   className,
@@ -51412,23 +51503,23 @@ function PaginationLink({
   size: size4 = "icon",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx77(
     Button,
     {
       asChild: true,
       variant: isActive ? "outline" : "ghost",
       size: size4,
-      className: cn(className)
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      "a",
-      {
-        "aria-current": isActive ? "page" : void 0,
-        "data-slot": "pagination-link",
-        "data-active": isActive,
-        ...props
-      }
-    )
+      className: cn(className),
+      children: /* @__PURE__ */ jsx77(
+        "a",
+        {
+          "aria-current": isActive ? "page" : void 0,
+          "data-slot": "pagination-link",
+          "data-active": isActive,
+          ...props
+        }
+      )
+    }
   );
 }
 function PaginationPrevious({
@@ -51436,16 +51527,18 @@ function PaginationPrevious({
   text = "Previous",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs28(
     PaginationLink,
     {
       "aria-label": "Go to previous page",
       size: "default",
       className: cn("pl-1.5!", className),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronLeft, { "data-icon": "inline-start" }),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "hidden sm:block" }, text)
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx77(ChevronLeft, { "data-icon": "inline-start" }),
+        /* @__PURE__ */ jsx77("span", { className: "hidden sm:block", children: text })
+      ]
+    }
   );
 }
 function PaginationNext({
@@ -51453,23 +51546,25 @@ function PaginationNext({
   text = "Next",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs28(
     PaginationLink,
     {
       "aria-label": "Go to next page",
       size: "default",
       className: cn("pr-1.5!", className),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "hidden sm:block" }, text),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronRight, { "data-icon": "inline-end" })
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx77("span", { className: "hidden sm:block", children: text }),
+        /* @__PURE__ */ jsx77(ChevronRight, { "data-icon": "inline-end" })
+      ]
+    }
   );
 }
 function PaginationEllipsis({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs28(
     "span",
     {
       "aria-hidden": true,
@@ -51478,27 +51573,29 @@ function PaginationEllipsis({
         "flex size-8 items-center justify-center [&_svg:not([class*='size-'])]:size-4",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      Ellipsis,
-      null
-    ),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "sr-only" }, "More pages")
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx77(
+          Ellipsis,
+          {}
+        ),
+        /* @__PURE__ */ jsx77("span", { className: "sr-only", children: "More pages" })
+      ]
+    }
   );
 }
 
 // src/components/ui/popover.tsx
-init_shadcn_react_shim();
+import { jsx as jsx78 } from "react/jsx-runtime";
 function Popover2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports21.Root, { "data-slot": "popover", ...props });
+  return /* @__PURE__ */ jsx78(dist_exports21.Root, { "data-slot": "popover", ...props });
 }
 function PopoverTrigger2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports21.Trigger, { "data-slot": "popover-trigger", ...props });
+  return /* @__PURE__ */ jsx78(dist_exports21.Trigger, { "data-slot": "popover-trigger", ...props });
 }
 function PopoverContent2({
   className,
@@ -51506,7 +51603,7 @@ function PopoverContent2({
   sideOffset = 4,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports21.Portal, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx78(dist_exports21.Portal, { children: /* @__PURE__ */ jsx78(
     dist_exports21.Content,
     {
       "data-slot": "popover-content",
@@ -51518,15 +51615,15 @@ function PopoverContent2({
       ),
       ...props
     }
-  ));
+  ) });
 }
 function PopoverAnchor2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports21.Anchor, { "data-slot": "popover-anchor", ...props });
+  return /* @__PURE__ */ jsx78(dist_exports21.Anchor, { "data-slot": "popover-anchor", ...props });
 }
 function PopoverHeader({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx78(
     "div",
     {
       "data-slot": "popover-header",
@@ -51536,7 +51633,7 @@ function PopoverHeader({ className, ...props }) {
   );
 }
 function PopoverTitle({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx78(
     "div",
     {
       "data-slot": "popover-title",
@@ -51549,7 +51646,7 @@ function PopoverDescription({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx78(
     "p",
     {
       "data-slot": "popover-description",
@@ -51560,13 +51657,13 @@ function PopoverDescription({
 }
 
 // src/components/ui/progress.tsx
-init_shadcn_react_shim();
+import { jsx as jsx79 } from "react/jsx-runtime";
 function Progress2({
   className,
   value,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx79(
     dist_exports22.Root,
     {
       "data-slot": "progress",
@@ -51574,26 +51671,26 @@ function Progress2({
         "relative flex h-1 w-full items-center overflow-x-hidden rounded-full bg-muted",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      dist_exports22.Indicator,
-      {
-        "data-slot": "progress-indicator",
-        className: "size-full flex-1 bg-primary transition-all",
-        style: { transform: `translateX(-${100 - (value || 0)}%)` }
-      }
-    )
+      ...props,
+      children: /* @__PURE__ */ jsx79(
+        dist_exports22.Indicator,
+        {
+          "data-slot": "progress-indicator",
+          className: "size-full flex-1 bg-primary transition-all",
+          style: { transform: `translateX(-${100 - (value || 0)}%)` }
+        }
+      )
+    }
   );
 }
 
 // src/components/ui/radio-group.tsx
-init_shadcn_react_shim();
+import { jsx as jsx80 } from "react/jsx-runtime";
 function RadioGroup4({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx80(
     dist_exports23.Root,
     {
       "data-slot": "radio-group",
@@ -51606,7 +51703,7 @@ function RadioGroupItem2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx80(
     dist_exports23.Item,
     {
       "data-slot": "radio-group-item",
@@ -51614,16 +51711,16 @@ function RadioGroupItem2({
         "group/radio-group-item peer relative flex aspect-square size-4 shrink-0 rounded-full border border-input outline-none after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 aria-invalid:aria-checked:border-primary dark:bg-input/30 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 data-checked:border-primary data-checked:bg-primary data-checked:text-primary-foreground dark:data-checked:bg-primary",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      dist_exports23.Indicator,
-      {
-        "data-slot": "radio-group-indicator",
-        className: "flex size-4 items-center justify-center"
-      },
-      /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "absolute top-1/2 left-1/2 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-foreground" })
-    )
+      ...props,
+      children: /* @__PURE__ */ jsx80(
+        dist_exports23.Indicator,
+        {
+          "data-slot": "radio-group-indicator",
+          className: "flex size-4 items-center justify-center",
+          children: /* @__PURE__ */ jsx80("span", { className: "absolute top-1/2 left-1/2 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-foreground" })
+        }
+      )
+    }
   );
 }
 
@@ -53665,11 +53762,12 @@ function Zt({
 Zt.displayName = "Separator";
 
 // src/components/ui/resizable.tsx
+import { jsx as jsx81 } from "react/jsx-runtime";
 function ResizablePanelGroup({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx81(
     Ut,
     {
       "data-slot": "resizable-panel-group",
@@ -53682,14 +53780,14 @@ function ResizablePanelGroup({
   );
 }
 function ResizablePanel({ ...props }) {
-  return /* @__PURE__ */ React.createElement(qt, { "data-slot": "resizable-panel", ...props });
+  return /* @__PURE__ */ jsx81(qt, { "data-slot": "resizable-panel", ...props });
 }
 function ResizableHandle({
   withHandle,
   className,
   ...props
 }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx81(
     Zt,
     {
       "data-slot": "resizable-handle",
@@ -53697,36 +53795,38 @@ function ResizableHandle({
         "relative flex w-px items-center justify-center bg-border ring-offset-background after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-hidden aria-[orientation=horizontal]:h-px aria-[orientation=horizontal]:w-full aria-[orientation=horizontal]:after:left-0 aria-[orientation=horizontal]:after:h-1 aria-[orientation=horizontal]:after:w-full aria-[orientation=horizontal]:after:translate-x-0 aria-[orientation=horizontal]:after:-translate-y-1/2 [&[aria-orientation=horizontal]>div]:rotate-90",
         className
       ),
-      ...props
-    },
-    withHandle && /* @__PURE__ */ React.createElement("div", { className: "z-10 flex h-6 w-1 shrink-0 rounded-lg bg-border" })
+      ...props,
+      children: withHandle && /* @__PURE__ */ jsx81("div", { className: "z-10 flex h-6 w-1 shrink-0 rounded-lg bg-border" })
+    }
   );
 }
 
 // src/components/ui/scroll-area.tsx
-init_shadcn_react_shim();
+import { jsx as jsx82, jsxs as jsxs29 } from "react/jsx-runtime";
 function ScrollArea2({
   className,
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs29(
     dist_exports24.Root,
     {
       "data-slot": "scroll-area",
       className: cn("relative", className),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      dist_exports24.Viewport,
-      {
-        "data-slot": "scroll-area-viewport",
-        className: "size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1"
-      },
-      children
-    ),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(ScrollBar, null),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports24.Corner, null)
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx82(
+          dist_exports24.Viewport,
+          {
+            "data-slot": "scroll-area-viewport",
+            className: "size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1",
+            children
+          }
+        ),
+        /* @__PURE__ */ jsx82(ScrollBar, {}),
+        /* @__PURE__ */ jsx82(dist_exports24.Corner, {})
+      ]
+    }
   );
 }
 function ScrollBar({
@@ -53734,7 +53834,7 @@ function ScrollBar({
   orientation = "vertical",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx82(
     dist_exports24.ScrollAreaScrollbar,
     {
       "data-slot": "scroll-area-scrollbar",
@@ -53744,30 +53844,30 @@ function ScrollBar({
         "flex touch-none p-px transition-colors select-none data-horizontal:h-2.5 data-horizontal:flex-col data-horizontal:border-t data-horizontal:border-t-transparent data-vertical:h-full data-vertical:w-2.5 data-vertical:border-l data-vertical:border-l-transparent",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      dist_exports24.ScrollAreaThumb,
-      {
-        "data-slot": "scroll-area-thumb",
-        className: "relative flex-1 rounded-full bg-border"
-      }
-    )
+      ...props,
+      children: /* @__PURE__ */ jsx82(
+        dist_exports24.ScrollAreaThumb,
+        {
+          "data-slot": "scroll-area-thumb",
+          className: "relative flex-1 rounded-full bg-border"
+        }
+      )
+    }
   );
 }
 
 // src/components/ui/select.tsx
-init_shadcn_react_shim();
+import { jsx as jsx83, jsxs as jsxs30 } from "react/jsx-runtime";
 function Select3({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports25.Root, { "data-slot": "select", ...props });
+  return /* @__PURE__ */ jsx83(dist_exports25.Root, { "data-slot": "select", ...props });
 }
 function SelectGroup2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx83(
     dist_exports25.Group,
     {
       "data-slot": "select-group",
@@ -53779,7 +53879,7 @@ function SelectGroup2({
 function SelectValue2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports25.Value, { "data-slot": "select-value", ...props });
+  return /* @__PURE__ */ jsx83(dist_exports25.Value, { "data-slot": "select-value", ...props });
 }
 function SelectTrigger2({
   className,
@@ -53787,7 +53887,7 @@ function SelectTrigger2({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs30(
     dist_exports25.Trigger,
     {
       "data-slot": "select-trigger",
@@ -53796,10 +53896,12 @@ function SelectTrigger2({
         "flex w-fit items-center justify-between gap-1.5 rounded-lg border border-input bg-transparent py-2 pr-2 pl-2.5 text-sm whitespace-nowrap transition-colors outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 data-placeholder:text-muted-foreground data-[size=default]:h-8 data-[size=sm]:h-7 data-[size=sm]:rounded-[min(var(--radius-md),10px)] *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-1.5 dark:bg-input/30 dark:hover:bg-input/50 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       ),
-      ...props
-    },
-    children,
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports25.Icon, { asChild: true }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(ChevronDown, { className: "pointer-events-none size-4 text-muted-foreground" }))
+      ...props,
+      children: [
+        children,
+        /* @__PURE__ */ jsx83(dist_exports25.Icon, { asChild: true, children: /* @__PURE__ */ jsx83(ChevronDown, { className: "pointer-events-none size-4 text-muted-foreground" }) })
+      ]
+    }
   );
 }
 function SelectContent2({
@@ -53809,7 +53911,7 @@ function SelectContent2({
   align = "center",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports25.Portal, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx83(dist_exports25.Portal, { children: /* @__PURE__ */ jsxs30(
     dist_exports25.Content,
     {
       "data-slot": "select-content",
@@ -53817,28 +53919,30 @@ function SelectContent2({
       className: cn("relative z-50 max-h-(--radix-select-content-available-height) min-w-36 origin-(--radix-select-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-lg bg-popover text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 data-[align-trigger=true]:animate-none data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95", position === "popper" && "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1", className),
       position,
       align,
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(SelectScrollUpButton2, null),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      dist_exports25.Viewport,
-      {
-        "data-position": position,
-        className: cn(
-          "data-[position=popper]:h-(--radix-select-trigger-height) data-[position=popper]:w-full data-[position=popper]:min-w-(--radix-select-trigger-width)",
-          position === "popper" && ""
-        )
-      },
-      children
-    ),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(SelectScrollDownButton2, null)
-  ));
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx83(SelectScrollUpButton2, {}),
+        /* @__PURE__ */ jsx83(
+          dist_exports25.Viewport,
+          {
+            "data-position": position,
+            className: cn(
+              "data-[position=popper]:h-(--radix-select-trigger-height) data-[position=popper]:w-full data-[position=popper]:min-w-(--radix-select-trigger-width)",
+              position === "popper" && ""
+            ),
+            children
+          }
+        ),
+        /* @__PURE__ */ jsx83(SelectScrollDownButton2, {})
+      ]
+    }
+  ) });
 }
 function SelectLabel2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx83(
     dist_exports25.Label,
     {
       "data-slot": "select-label",
@@ -53852,7 +53956,7 @@ function SelectItem2({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs30(
     dist_exports25.Item,
     {
       "data-slot": "select-item",
@@ -53860,17 +53964,19 @@ function SelectItem2({
         "relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "pointer-events-none absolute right-2 flex size-4 items-center justify-center" }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports25.ItemIndicator, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(Check, { className: "pointer-events-none" }))),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports25.ItemText, null, children)
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx83("span", { className: "pointer-events-none absolute right-2 flex size-4 items-center justify-center", children: /* @__PURE__ */ jsx83(dist_exports25.ItemIndicator, { children: /* @__PURE__ */ jsx83(Check, { className: "pointer-events-none" }) }) }),
+        /* @__PURE__ */ jsx83(dist_exports25.ItemText, { children })
+      ]
+    }
   );
 }
 function SelectSeparator2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx83(
     dist_exports25.Separator,
     {
       "data-slot": "select-separator",
@@ -53883,7 +53989,7 @@ function SelectScrollUpButton2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx83(
     dist_exports25.ScrollUpButton,
     {
       "data-slot": "select-scroll-up-button",
@@ -53891,19 +53997,19 @@ function SelectScrollUpButton2({
         "z-10 flex cursor-default items-center justify-center bg-popover py-1 [&_svg:not([class*='size-'])]:size-4",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      ChevronUp,
-      null
-    )
+      ...props,
+      children: /* @__PURE__ */ jsx83(
+        ChevronUp,
+        {}
+      )
+    }
   );
 }
 function SelectScrollDownButton2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx83(
     dist_exports25.ScrollDownButton,
     {
       "data-slot": "select-scroll-down-button",
@@ -53911,40 +54017,40 @@ function SelectScrollDownButton2({
         "z-10 flex cursor-default items-center justify-center bg-popover py-1 [&_svg:not([class*='size-'])]:size-4",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      ChevronDown,
-      null
-    )
+      ...props,
+      children: /* @__PURE__ */ jsx83(
+        ChevronDown,
+        {}
+      )
+    }
   );
 }
 
 // src/components/ui/sheet.tsx
-init_shadcn_react_shim();
+import { jsx as jsx84, jsxs as jsxs31 } from "react/jsx-runtime";
 function Sheet({ ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports5.Root, { "data-slot": "sheet", ...props });
+  return /* @__PURE__ */ jsx84(dist_exports5.Root, { "data-slot": "sheet", ...props });
 }
 function SheetTrigger({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports5.Trigger, { "data-slot": "sheet-trigger", ...props });
+  return /* @__PURE__ */ jsx84(dist_exports5.Trigger, { "data-slot": "sheet-trigger", ...props });
 }
 function SheetClose({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports5.Close, { "data-slot": "sheet-close", ...props });
+  return /* @__PURE__ */ jsx84(dist_exports5.Close, { "data-slot": "sheet-close", ...props });
 }
 function SheetPortal({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports5.Portal, { "data-slot": "sheet-portal", ...props });
+  return /* @__PURE__ */ jsx84(dist_exports5.Portal, { "data-slot": "sheet-portal", ...props });
 }
 function SheetOverlay({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx84(
     dist_exports5.Overlay,
     {
       "data-slot": "sheet-overlay",
@@ -53963,35 +54069,42 @@ function SheetContent({
   showCloseButton = true,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(SheetPortal, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(SheetOverlay, null), /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-    dist_exports5.Content,
-    {
-      "data-slot": "sheet-content",
-      "data-side": side,
-      className: cn(
-        "fixed z-50 flex flex-col gap-4 bg-background bg-clip-padding text-sm shadow-lg transition duration-200 ease-in-out data-[side=bottom]:inset-x-0 data-[side=bottom]:bottom-0 data-[side=bottom]:h-auto data-[side=bottom]:border-t data-[side=left]:inset-y-0 data-[side=left]:left-0 data-[side=left]:h-full data-[side=left]:w-3/4 data-[side=left]:border-r data-[side=right]:inset-y-0 data-[side=right]:right-0 data-[side=right]:h-full data-[side=right]:w-3/4 data-[side=right]:border-l data-[side=top]:inset-x-0 data-[side=top]:top-0 data-[side=top]:h-auto data-[side=top]:border-b data-[side=left]:sm:max-w-sm data-[side=right]:sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-[side=bottom]:data-open:slide-in-from-bottom-10 data-[side=left]:data-open:slide-in-from-left-10 data-[side=right]:data-open:slide-in-from-right-10 data-[side=top]:data-open:slide-in-from-top-10 data-closed:animate-out data-closed:fade-out-0 data-[side=bottom]:data-closed:slide-out-to-bottom-10 data-[side=left]:data-closed:slide-out-to-left-10 data-[side=right]:data-closed:slide-out-to-right-10 data-[side=top]:data-closed:slide-out-to-top-10",
-        className
-      ),
-      ...props
-    },
-    children,
-    showCloseButton && /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports5.Close, { "data-slot": "sheet-close", asChild: true }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      Button,
+  return /* @__PURE__ */ jsxs31(SheetPortal, { children: [
+    /* @__PURE__ */ jsx84(SheetOverlay, {}),
+    /* @__PURE__ */ jsxs31(
+      dist_exports5.Content,
       {
-        variant: "ghost",
-        className: "absolute top-3 right-3",
-        size: "icon-sm"
-      },
-      /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-        X,
-        null
-      ),
-      /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "sr-only" }, "Close")
-    ))
-  ));
+        "data-slot": "sheet-content",
+        "data-side": side,
+        className: cn(
+          "fixed z-50 flex flex-col gap-4 bg-background bg-clip-padding text-sm shadow-lg transition duration-200 ease-in-out data-[side=bottom]:inset-x-0 data-[side=bottom]:bottom-0 data-[side=bottom]:h-auto data-[side=bottom]:border-t data-[side=left]:inset-y-0 data-[side=left]:left-0 data-[side=left]:h-full data-[side=left]:w-3/4 data-[side=left]:border-r data-[side=right]:inset-y-0 data-[side=right]:right-0 data-[side=right]:h-full data-[side=right]:w-3/4 data-[side=right]:border-l data-[side=top]:inset-x-0 data-[side=top]:top-0 data-[side=top]:h-auto data-[side=top]:border-b data-[side=left]:sm:max-w-sm data-[side=right]:sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-[side=bottom]:data-open:slide-in-from-bottom-10 data-[side=left]:data-open:slide-in-from-left-10 data-[side=right]:data-open:slide-in-from-right-10 data-[side=top]:data-open:slide-in-from-top-10 data-closed:animate-out data-closed:fade-out-0 data-[side=bottom]:data-closed:slide-out-to-bottom-10 data-[side=left]:data-closed:slide-out-to-left-10 data-[side=right]:data-closed:slide-out-to-right-10 data-[side=top]:data-closed:slide-out-to-top-10",
+          className
+        ),
+        ...props,
+        children: [
+          children,
+          showCloseButton && /* @__PURE__ */ jsx84(dist_exports5.Close, { "data-slot": "sheet-close", asChild: true, children: /* @__PURE__ */ jsxs31(
+            Button,
+            {
+              variant: "ghost",
+              className: "absolute top-3 right-3",
+              size: "icon-sm",
+              children: [
+                /* @__PURE__ */ jsx84(
+                  X,
+                  {}
+                ),
+                /* @__PURE__ */ jsx84("span", { className: "sr-only", children: "Close" })
+              ]
+            }
+          ) })
+        ]
+      }
+    )
+  ] });
 }
 function SheetHeader({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx84(
     "div",
     {
       "data-slot": "sheet-header",
@@ -54001,7 +54114,7 @@ function SheetHeader({ className, ...props }) {
   );
 }
 function SheetFooter({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx84(
     "div",
     {
       "data-slot": "sheet-footer",
@@ -54014,7 +54127,7 @@ function SheetTitle({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx84(
     dist_exports5.Title,
     {
       "data-slot": "sheet-title",
@@ -54027,7 +54140,7 @@ function SheetDescription({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx84(
     dist_exports5.Description,
     {
       "data-slot": "sheet-description",
@@ -54041,8 +54154,9 @@ function SheetDescription({
 init_shadcn_react_shim();
 
 // src/components/ui/skeleton.tsx
+import { jsx as jsx85 } from "react/jsx-runtime";
 function Skeleton({ className, ...props }) {
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx85(
     "div",
     {
       "data-slot": "skeleton",
@@ -54053,12 +54167,12 @@ function Skeleton({ className, ...props }) {
 }
 
 // src/components/ui/tooltip.tsx
-init_shadcn_react_shim();
+import { jsx as jsx86, jsxs as jsxs32 } from "react/jsx-runtime";
 function TooltipProvider2({
   delayDuration = 0,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx86(
     dist_exports32.Provider,
     {
       "data-slot": "tooltip-provider",
@@ -54070,12 +54184,12 @@ function TooltipProvider2({
 function Tooltip3({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports32.Root, { "data-slot": "tooltip", ...props });
+  return /* @__PURE__ */ jsx86(dist_exports32.Root, { "data-slot": "tooltip", ...props });
 }
 function TooltipTrigger2({
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports32.Trigger, { "data-slot": "tooltip-trigger", ...props });
+  return /* @__PURE__ */ jsx86(dist_exports32.Trigger, { "data-slot": "tooltip-trigger", ...props });
 }
 function TooltipContent2({
   className,
@@ -54083,7 +54197,7 @@ function TooltipContent2({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports32.Portal, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx86(dist_exports32.Portal, { children: /* @__PURE__ */ jsxs32(
     dist_exports32.Content,
     {
       "data-slot": "tooltip-content",
@@ -54092,14 +54206,17 @@ function TooltipContent2({
         "z-50 inline-flex w-fit max-w-xs origin-(--radix-tooltip-content-transform-origin) items-center gap-1.5 rounded-md bg-foreground px-3 py-1.5 text-xs text-background has-data-[slot=kbd]:pr-1.5 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 **:data-[slot=kbd]:relative **:data-[slot=kbd]:isolate **:data-[slot=kbd]:z-50 **:data-[slot=kbd]:rounded-sm data-[state=delayed-open]:animate-in data-[state=delayed-open]:fade-in-0 data-[state=delayed-open]:zoom-in-95 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
         className
       ),
-      ...props
-    },
-    children,
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(dist_exports32.Arrow, { className: "z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px] bg-foreground fill-foreground" })
-  ));
+      ...props,
+      children: [
+        children,
+        /* @__PURE__ */ jsx86(dist_exports32.Arrow, { className: "z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px] bg-foreground fill-foreground" })
+      ]
+    }
+  ) });
 }
 
 // src/components/ui/sidebar.tsx
+import { jsx as jsx87, jsxs as jsxs33 } from "react/jsx-runtime";
 var SIDEBAR_COOKIE_NAME = "sidebar_state";
 var SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
 var SIDEBAR_WIDTH = "16rem";
@@ -54165,7 +54282,7 @@ function SidebarProvider({
     }),
     [state, open, setOpen, isMobile, openMobile, setOpenMobile, toggleSidebar]
   );
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(SidebarContext.Provider, { value: contextValue }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(SidebarContext.Provider, { value: contextValue, children: /* @__PURE__ */ jsx87(
     "div",
     {
       "data-slot": "sidebar-wrapper",
@@ -54178,10 +54295,10 @@ function SidebarProvider({
         "group/sidebar-wrapper flex min-h-svh w-full has-data-[variant=inset]:bg-sidebar",
         className
       ),
-      ...props
-    },
-    children
-  ));
+      ...props,
+      children
+    }
+  ) });
 }
 function Sidebar({
   side = "left",
@@ -54194,7 +54311,7 @@ function Sidebar({
 }) {
   const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
   if (collapsible === "none") {
-    return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+    return /* @__PURE__ */ jsx87(
       "div",
       {
         "data-slot": "sidebar",
@@ -54202,13 +54319,13 @@ function Sidebar({
           "flex h-full w-(--sidebar-width) flex-col bg-sidebar text-sidebar-foreground",
           className
         ),
-        ...props
-      },
-      children
+        ...props,
+        children
+      }
     );
   }
   if (isMobile) {
-    return /* @__PURE__ */ shadcn_react_shim_exports.createElement(Sheet, { open: openMobile, onOpenChange: setOpenMobile, ...props }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+    return /* @__PURE__ */ jsx87(Sheet, { open: openMobile, onOpenChange: setOpenMobile, ...props, children: /* @__PURE__ */ jsxs33(
       SheetContent,
       {
         dir,
@@ -54219,13 +54336,18 @@ function Sidebar({
         style: {
           "--sidebar-width": SIDEBAR_WIDTH_MOBILE
         },
-        side
-      },
-      /* @__PURE__ */ shadcn_react_shim_exports.createElement(SheetHeader, { className: "sr-only" }, /* @__PURE__ */ shadcn_react_shim_exports.createElement(SheetTitle, null, "Sidebar"), /* @__PURE__ */ shadcn_react_shim_exports.createElement(SheetDescription, null, "Displays the mobile sidebar.")),
-      /* @__PURE__ */ shadcn_react_shim_exports.createElement("div", { className: "flex h-full w-full flex-col" }, children)
-    ));
+        side,
+        children: [
+          /* @__PURE__ */ jsxs33(SheetHeader, { className: "sr-only", children: [
+            /* @__PURE__ */ jsx87(SheetTitle, { children: "Sidebar" }),
+            /* @__PURE__ */ jsx87(SheetDescription, { children: "Displays the mobile sidebar." })
+          ] }),
+          /* @__PURE__ */ jsx87("div", { className: "flex h-full w-full flex-col", children })
+        ]
+      }
+    ) });
   }
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs33(
     "div",
     {
       className: "group peer hidden text-sidebar-foreground md:block",
@@ -54233,43 +54355,45 @@ function Sidebar({
       "data-collapsible": state === "collapsed" ? collapsible : "",
       "data-variant": variant,
       "data-side": side,
-      "data-slot": "sidebar"
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      "div",
-      {
-        "data-slot": "sidebar-gap",
-        className: cn(
-          "relative w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear",
-          "group-data-[collapsible=offcanvas]:w-0",
-          "group-data-[side=right]:rotate-180",
-          variant === "floating" || variant === "inset" ? "group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4)))]" : "group-data-[collapsible=icon]:w-(--sidebar-width-icon)"
-        )
-      }
-    ),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      "div",
-      {
-        "data-slot": "sidebar-container",
-        "data-side": side,
-        className: cn(
-          "fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear data-[side=left]:left-0 data-[side=left]:group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)] data-[side=right]:right-0 data-[side=right]:group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)] md:flex",
-          // Adjust the padding for floating and inset variants.
-          variant === "floating" || variant === "inset" ? "p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]" : "group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r group-data-[side=right]:border-l",
-          className
+      "data-slot": "sidebar",
+      children: [
+        /* @__PURE__ */ jsx87(
+          "div",
+          {
+            "data-slot": "sidebar-gap",
+            className: cn(
+              "relative w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear",
+              "group-data-[collapsible=offcanvas]:w-0",
+              "group-data-[side=right]:rotate-180",
+              variant === "floating" || variant === "inset" ? "group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4)))]" : "group-data-[collapsible=icon]:w-(--sidebar-width-icon)"
+            )
+          }
         ),
-        ...props
-      },
-      /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-        "div",
-        {
-          "data-sidebar": "sidebar",
-          "data-slot": "sidebar-inner",
-          className: "flex size-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:shadow-sm group-data-[variant=floating]:ring-1 group-data-[variant=floating]:ring-sidebar-border"
-        },
-        children
-      )
-    )
+        /* @__PURE__ */ jsx87(
+          "div",
+          {
+            "data-slot": "sidebar-container",
+            "data-side": side,
+            className: cn(
+              "fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear data-[side=left]:left-0 data-[side=left]:group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)] data-[side=right]:right-0 data-[side=right]:group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)] md:flex",
+              // Adjust the padding for floating and inset variants.
+              variant === "floating" || variant === "inset" ? "p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]" : "group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r group-data-[side=right]:border-l",
+              className
+            ),
+            ...props,
+            children: /* @__PURE__ */ jsx87(
+              "div",
+              {
+                "data-sidebar": "sidebar",
+                "data-slot": "sidebar-inner",
+                className: "flex size-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:shadow-sm group-data-[variant=floating]:ring-1 group-data-[variant=floating]:ring-sidebar-border",
+                children
+              }
+            )
+          }
+        )
+      ]
+    }
   );
 }
 function SidebarTrigger({
@@ -54278,7 +54402,7 @@ function SidebarTrigger({
   ...props
 }) {
   const { toggleSidebar } = useSidebar();
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs33(
     Button,
     {
       "data-sidebar": "trigger",
@@ -54290,15 +54414,17 @@ function SidebarTrigger({
         onClick?.(event);
         toggleSidebar();
       },
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(PanelLeft, null),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement("span", { className: "sr-only" }, "Toggle Sidebar")
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx87(PanelLeft, {}),
+        /* @__PURE__ */ jsx87("span", { className: "sr-only", children: "Toggle Sidebar" })
+      ]
+    }
   );
 }
 function SidebarRail({ className, ...props }) {
   const { toggleSidebar } = useSidebar();
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     "button",
     {
       "data-sidebar": "rail",
@@ -54321,7 +54447,7 @@ function SidebarRail({ className, ...props }) {
   );
 }
 function SidebarInset({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     "main",
     {
       "data-slot": "sidebar-inset",
@@ -54337,7 +54463,7 @@ function SidebarInput({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     Input,
     {
       "data-slot": "sidebar-input",
@@ -54348,7 +54474,7 @@ function SidebarInput({
   );
 }
 function SidebarHeader({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     "div",
     {
       "data-slot": "sidebar-header",
@@ -54359,7 +54485,7 @@ function SidebarHeader({ className, ...props }) {
   );
 }
 function SidebarFooter({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     "div",
     {
       "data-slot": "sidebar-footer",
@@ -54373,7 +54499,7 @@ function SidebarSeparator({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     Separator5,
     {
       "data-slot": "sidebar-separator",
@@ -54384,7 +54510,7 @@ function SidebarSeparator({
   );
 }
 function SidebarContent({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     "div",
     {
       "data-slot": "sidebar-content",
@@ -54398,7 +54524,7 @@ function SidebarContent({ className, ...props }) {
   );
 }
 function SidebarGroup({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     "div",
     {
       "data-slot": "sidebar-group",
@@ -54414,7 +54540,7 @@ function SidebarGroupLabel({
   ...props
 }) {
   const Comp = asChild ? dist_exports.Root : "div";
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     Comp,
     {
       "data-slot": "sidebar-group-label",
@@ -54433,7 +54559,7 @@ function SidebarGroupAction({
   ...props
 }) {
   const Comp = asChild ? dist_exports.Root : "button";
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     Comp,
     {
       "data-slot": "sidebar-group-action",
@@ -54450,7 +54576,7 @@ function SidebarGroupContent({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     "div",
     {
       "data-slot": "sidebar-group-content",
@@ -54461,7 +54587,7 @@ function SidebarGroupContent({
   );
 }
 function SidebarMenu({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     "ul",
     {
       "data-slot": "sidebar-menu",
@@ -54472,7 +54598,7 @@ function SidebarMenu({ className, ...props }) {
   );
 }
 function SidebarMenuItem({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     "li",
     {
       "data-slot": "sidebar-menu-item",
@@ -54513,7 +54639,7 @@ function SidebarMenuButton({
 }) {
   const Comp = asChild ? dist_exports.Root : "button";
   const { isMobile, state } = useSidebar();
-  const button = /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  const button = /* @__PURE__ */ jsx87(
     Comp,
     {
       "data-slot": "sidebar-menu-button",
@@ -54532,15 +54658,18 @@ function SidebarMenuButton({
       children: tooltip
     };
   }
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(Tooltip3, null, /* @__PURE__ */ shadcn_react_shim_exports.createElement(TooltipTrigger2, { asChild: true }, button), /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-    TooltipContent2,
-    {
-      side: "right",
-      align: "center",
-      hidden: state !== "collapsed" || isMobile,
-      ...tooltip
-    }
-  ));
+  return /* @__PURE__ */ jsxs33(Tooltip3, { children: [
+    /* @__PURE__ */ jsx87(TooltipTrigger2, { asChild: true, children: button }),
+    /* @__PURE__ */ jsx87(
+      TooltipContent2,
+      {
+        side: "right",
+        align: "center",
+        hidden: state !== "collapsed" || isMobile,
+        ...tooltip
+      }
+    )
+  ] });
 }
 function SidebarMenuAction({
   className,
@@ -54549,7 +54678,7 @@ function SidebarMenuAction({
   ...props
 }) {
   const Comp = asChild ? dist_exports.Root : "button";
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     Comp,
     {
       "data-slot": "sidebar-menu-action",
@@ -54567,7 +54696,7 @@ function SidebarMenuBadge({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     "div",
     {
       "data-slot": "sidebar-menu-badge",
@@ -54588,35 +54717,37 @@ function SidebarMenuSkeleton({
   const [width] = shadcn_react_shim_exports.useState(() => {
     return `${Math.floor(Math.random() * 40) + 50}%`;
   });
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs33(
     "div",
     {
       "data-slot": "sidebar-menu-skeleton",
       "data-sidebar": "menu-skeleton",
       className: cn("flex h-8 items-center gap-2 rounded-md px-2", className),
-      ...props
-    },
-    showIcon && /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      Skeleton,
-      {
-        className: "size-4 rounded-md",
-        "data-sidebar": "menu-skeleton-icon"
-      }
-    ),
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      Skeleton,
-      {
-        className: "h-4 max-w-(--skeleton-width) flex-1",
-        "data-sidebar": "menu-skeleton-text",
-        style: {
-          "--skeleton-width": width
-        }
-      }
-    )
+      ...props,
+      children: [
+        showIcon && /* @__PURE__ */ jsx87(
+          Skeleton,
+          {
+            className: "size-4 rounded-md",
+            "data-sidebar": "menu-skeleton-icon"
+          }
+        ),
+        /* @__PURE__ */ jsx87(
+          Skeleton,
+          {
+            className: "h-4 max-w-(--skeleton-width) flex-1",
+            "data-sidebar": "menu-skeleton-text",
+            style: {
+              "--skeleton-width": width
+            }
+          }
+        )
+      ]
+    }
   );
 }
 function SidebarMenuSub({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     "ul",
     {
       "data-slot": "sidebar-menu-sub",
@@ -54633,7 +54764,7 @@ function SidebarMenuSubItem({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     "li",
     {
       "data-slot": "sidebar-menu-sub-item",
@@ -54651,7 +54782,7 @@ function SidebarMenuSubButton({
   ...props
 }) {
   const Comp = asChild ? dist_exports.Root : "a";
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx87(
     Comp,
     {
       "data-slot": "sidebar-menu-sub-button",
@@ -54669,6 +54800,7 @@ function SidebarMenuSubButton({
 
 // src/components/ui/slider.tsx
 init_shadcn_react_shim();
+import { jsx as jsx88, jsxs as jsxs34 } from "react/jsx-runtime";
 function Slider2({
   className,
   defaultValue,
@@ -54681,7 +54813,7 @@ function Slider2({
     () => Array.isArray(value) ? value : Array.isArray(defaultValue) ? defaultValue : [min3, max3],
     [value, defaultValue, min3, max3]
   );
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsxs34(
     dist_exports27.Root,
     {
       "data-slot": "slider",
@@ -54693,30 +54825,32 @@ function Slider2({
         "relative flex w-full touch-none items-center select-none data-disabled:opacity-50 data-vertical:h-full data-vertical:min-h-40 data-vertical:w-auto data-vertical:flex-col",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      dist_exports27.Track,
-      {
-        "data-slot": "slider-track",
-        className: "relative grow overflow-hidden rounded-full bg-muted data-horizontal:h-1 data-horizontal:w-full data-vertical:h-full data-vertical:w-1"
-      },
-      /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-        dist_exports27.Range,
-        {
-          "data-slot": "slider-range",
-          className: "absolute bg-primary select-none data-horizontal:h-full data-vertical:w-full"
-        }
-      )
-    ),
-    Array.from({ length: _values.length }, (_2, index2) => /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      dist_exports27.Thumb,
-      {
-        "data-slot": "slider-thumb",
-        key: index2,
-        className: "relative block size-3 shrink-0 rounded-full border border-ring bg-white ring-ring/50 transition-[color,box-shadow] select-none after:absolute after:-inset-2 hover:ring-3 focus-visible:ring-3 focus-visible:outline-hidden active:ring-3 disabled:pointer-events-none disabled:opacity-50"
-      }
-    ))
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx88(
+          dist_exports27.Track,
+          {
+            "data-slot": "slider-track",
+            className: "relative grow overflow-hidden rounded-full bg-muted data-horizontal:h-1 data-horizontal:w-full data-vertical:h-full data-vertical:w-1",
+            children: /* @__PURE__ */ jsx88(
+              dist_exports27.Range,
+              {
+                "data-slot": "slider-range",
+                className: "absolute bg-primary select-none data-horizontal:h-full data-vertical:w-full"
+              }
+            )
+          }
+        ),
+        Array.from({ length: _values.length }, (_2, index2) => /* @__PURE__ */ jsx88(
+          dist_exports27.Thumb,
+          {
+            "data-slot": "slider-thumb",
+            className: "relative block size-3 shrink-0 rounded-full border border-ring bg-white ring-ring/50 transition-[color,box-shadow] select-none after:absolute after:-inset-2 hover:ring-3 focus-visible:ring-3 focus-visible:outline-hidden active:ring-3 disabled:pointer-events-none disabled:opacity-50"
+          },
+          index2
+        ))
+      ]
+    }
   );
 }
 
@@ -55100,10 +55234,10 @@ var Observer = class {
         });
       }
     };
-    this.custom = (jsx40, data) => {
+    this.custom = (jsx96, data) => {
       const id = (data == null ? void 0 : data.id) || toastsCounter++;
       this.create({
-        jsx: jsx40(id),
+        jsx: jsx96(id),
         id,
         ...data
       });
@@ -55840,19 +55974,20 @@ var Toaster = /* @__PURE__ */ shadcn_react_shim_default.forwardRef(function Toas
 });
 
 // src/components/ui/sonner.tsx
+import { jsx as jsx89 } from "react/jsx-runtime";
 var Toaster3 = ({ ...props }) => {
   const { theme = "system" } = z();
-  return /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ jsx89(
     Toaster,
     {
       theme,
       className: "toaster group",
       icons: {
-        success: /* @__PURE__ */ React.createElement(CircleCheck, { className: "size-4" }),
-        info: /* @__PURE__ */ React.createElement(Info, { className: "size-4" }),
-        warning: /* @__PURE__ */ React.createElement(TriangleAlert, { className: "size-4" }),
-        error: /* @__PURE__ */ React.createElement(OctagonX, { className: "size-4" }),
-        loading: /* @__PURE__ */ React.createElement(LoaderCircle, { className: "size-4 animate-spin" })
+        success: /* @__PURE__ */ jsx89(CircleCheck, { className: "size-4" }),
+        info: /* @__PURE__ */ jsx89(Info, { className: "size-4" }),
+        warning: /* @__PURE__ */ jsx89(TriangleAlert, { className: "size-4" }),
+        error: /* @__PURE__ */ jsx89(OctagonX, { className: "size-4" }),
+        loading: /* @__PURE__ */ jsx89(LoaderCircle, { className: "size-4 animate-spin" })
       },
       style: {
         "--normal-bg": "var(--popover)",
@@ -55871,18 +56006,19 @@ var Toaster3 = ({ ...props }) => {
 };
 
 // src/components/ui/spinner.tsx
+import { jsx as jsx90 } from "react/jsx-runtime";
 function Spinner({ className, ...props }) {
-  return /* @__PURE__ */ React.createElement(LoaderCircle, { role: "status", "aria-label": "Loading", className: cn("size-4 animate-spin", className), ...props });
+  return /* @__PURE__ */ jsx90(LoaderCircle, { role: "status", "aria-label": "Loading", className: cn("size-4 animate-spin", className), ...props });
 }
 
 // src/components/ui/switch.tsx
-init_shadcn_react_shim();
+import { jsx as jsx91 } from "react/jsx-runtime";
 function Switch2({
   className,
   size: size4 = "default",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx91(
     dist_exports28.Root,
     {
       "data-slot": "switch",
@@ -55891,39 +56027,39 @@ function Switch2({
         "peer group/switch relative inline-flex shrink-0 items-center rounded-full border border-transparent transition-all outline-none after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 data-[size=default]:h-[18.4px] data-[size=default]:w-[32px] data-[size=sm]:h-[14px] data-[size=sm]:w-[24px] dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 data-checked:bg-primary data-unchecked:bg-input dark:data-unchecked:bg-input/80 data-disabled:cursor-not-allowed data-disabled:opacity-50",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      dist_exports28.Thumb,
-      {
-        "data-slot": "switch-thumb",
-        className: "pointer-events-none block rounded-full bg-background ring-0 transition-transform group-data-[size=default]/switch:size-4 group-data-[size=sm]/switch:size-3 group-data-[size=default]/switch:data-checked:translate-x-[calc(100%-2px)] group-data-[size=sm]/switch:data-checked:translate-x-[calc(100%-2px)] dark:data-checked:bg-primary-foreground group-data-[size=default]/switch:data-unchecked:translate-x-0 group-data-[size=sm]/switch:data-unchecked:translate-x-0 dark:data-unchecked:bg-foreground"
-      }
-    )
+      ...props,
+      children: /* @__PURE__ */ jsx91(
+        dist_exports28.Thumb,
+        {
+          "data-slot": "switch-thumb",
+          className: "pointer-events-none block rounded-full bg-background ring-0 transition-transform group-data-[size=default]/switch:size-4 group-data-[size=sm]/switch:size-3 group-data-[size=default]/switch:data-checked:translate-x-[calc(100%-2px)] group-data-[size=sm]/switch:data-checked:translate-x-[calc(100%-2px)] dark:data-checked:bg-primary-foreground group-data-[size=default]/switch:data-unchecked:translate-x-0 group-data-[size=sm]/switch:data-unchecked:translate-x-0 dark:data-unchecked:bg-foreground"
+        }
+      )
+    }
   );
 }
 
 // src/components/ui/table.tsx
-init_shadcn_react_shim();
+import { jsx as jsx92 } from "react/jsx-runtime";
 function Table({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx92(
     "div",
     {
       "data-slot": "table-container",
-      className: "relative w-full overflow-x-auto"
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      "table",
-      {
-        "data-slot": "table",
-        className: cn("w-full caption-bottom text-sm", className),
-        ...props
-      }
-    )
+      className: "relative w-full overflow-x-auto",
+      children: /* @__PURE__ */ jsx92(
+        "table",
+        {
+          "data-slot": "table",
+          className: cn("w-full caption-bottom text-sm", className),
+          ...props
+        }
+      )
+    }
   );
 }
 function TableHeader({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx92(
     "thead",
     {
       "data-slot": "table-header",
@@ -55933,7 +56069,7 @@ function TableHeader({ className, ...props }) {
   );
 }
 function TableBody({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx92(
     "tbody",
     {
       "data-slot": "table-body",
@@ -55943,7 +56079,7 @@ function TableBody({ className, ...props }) {
   );
 }
 function TableFooter({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx92(
     "tfoot",
     {
       "data-slot": "table-footer",
@@ -55956,7 +56092,7 @@ function TableFooter({ className, ...props }) {
   );
 }
 function TableRow({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx92(
     "tr",
     {
       "data-slot": "table-row",
@@ -55969,7 +56105,7 @@ function TableRow({ className, ...props }) {
   );
 }
 function TableHead({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx92(
     "th",
     {
       "data-slot": "table-head",
@@ -55982,7 +56118,7 @@ function TableHead({ className, ...props }) {
   );
 }
 function TableCell({ className, ...props }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx92(
     "td",
     {
       "data-slot": "table-cell",
@@ -55998,7 +56134,7 @@ function TableCaption({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx92(
     "caption",
     {
       "data-slot": "table-caption",
@@ -56009,13 +56145,13 @@ function TableCaption({
 }
 
 // src/components/ui/tabs.tsx
-init_shadcn_react_shim();
+import { jsx as jsx93 } from "react/jsx-runtime";
 function Tabs2({
   className,
   orientation = "horizontal",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx93(
     dist_exports29.Root,
     {
       "data-slot": "tabs",
@@ -56047,7 +56183,7 @@ function TabsList2({
   variant = "default",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx93(
     dist_exports29.List,
     {
       "data-slot": "tabs-list",
@@ -56061,7 +56197,7 @@ function TabsTrigger2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx93(
     dist_exports29.Trigger,
     {
       "data-slot": "tabs-trigger",
@@ -56080,7 +56216,7 @@ function TabsContent2({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx93(
     dist_exports29.Content,
     {
       "data-slot": "tabs-content",
@@ -56094,7 +56230,7 @@ function TabsContent2({
 init_shadcn_react_shim();
 
 // src/components/ui/toggle.tsx
-init_shadcn_react_shim();
+import { jsx as jsx94 } from "react/jsx-runtime";
 var toggleVariants = cva(
   "group/toggle inline-flex items-center justify-center gap-1 rounded-lg text-sm font-medium whitespace-nowrap transition-all outline-none hover:bg-muted hover:text-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 aria-pressed:bg-muted data-[state=on]:bg-muted dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
@@ -56121,7 +56257,7 @@ function Toggle2({
   size: size4 = "default",
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx94(
     dist_exports30.Root,
     {
       "data-slot": "toggle",
@@ -56132,6 +56268,7 @@ function Toggle2({
 }
 
 // src/components/ui/toggle-group.tsx
+import { jsx as jsx95 } from "react/jsx-runtime";
 var ToggleGroupContext2 = shadcn_react_shim_exports.createContext({
   size: "default",
   variant: "default",
@@ -56147,7 +56284,7 @@ function ToggleGroup2({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx95(
     dist_exports31.Root,
     {
       "data-slot": "toggle-group",
@@ -56160,15 +56297,15 @@ function ToggleGroup2({
         "group/toggle-group flex w-fit flex-row items-center gap-[--spacing(var(--gap))] rounded-lg data-[size=sm]:rounded-[min(var(--radius-md),10px)] data-vertical:flex-col data-vertical:items-stretch",
         className
       ),
-      ...props
-    },
-    /* @__PURE__ */ shadcn_react_shim_exports.createElement(
-      ToggleGroupContext2.Provider,
-      {
-        value: { variant, size: size4, spacing, orientation }
-      },
-      children
-    )
+      ...props,
+      children: /* @__PURE__ */ jsx95(
+        ToggleGroupContext2.Provider,
+        {
+          value: { variant, size: size4, spacing, orientation },
+          children
+        }
+      )
+    }
   );
 }
 function ToggleGroupItem2({
@@ -56179,7 +56316,7 @@ function ToggleGroupItem2({
   ...props
 }) {
   const context = shadcn_react_shim_exports.useContext(ToggleGroupContext2);
-  return /* @__PURE__ */ shadcn_react_shim_exports.createElement(
+  return /* @__PURE__ */ jsx95(
     dist_exports31.Item,
     {
       "data-slot": "toggle-group-item",
@@ -56194,9 +56331,9 @@ function ToggleGroupItem2({
         }),
         className
       ),
-      ...props
-    },
-    children
+      ...props,
+      children
+    }
   );
 }
 export {

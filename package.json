@@ -1,6 +1,6 @@
 {
   "name": "@viocha/esm-pkg",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Prebuilt browser ESM bundles for React, antd, clsx, lucide-react, htm, and shadcn/ui.",
   "keywords": [
     "esm",
