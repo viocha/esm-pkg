@@ -1,0 +1,20 @@
+{
+  "name": "esm-pkg",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node ./scripts/build-all.mjs",
+    "test:e2e": "npm run build && playwright test"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "antd": "^5.27.6",
+    "esbuild": "^0.25.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}

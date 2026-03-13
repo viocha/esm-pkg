@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>antd.esm.js</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "../dist/react-all.esm.js",
+          "react-dom": "../dist/react-all.esm.js",
+          "react-dom/client": "../dist/react-all.esm.js",
+          "react/jsx-runtime": "../dist/react-all.esm.js",
+          "react/jsx-dev-runtime": "../dist/react-all.esm.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module">
+      import {
+        Alert,
+        Button,
+        Card,
+        ConfigProvider,
+        Divider,
+        Space,
+        Tag,
+        Typography,
+        version as antdVersion
+      } from "../dist/antd.esm.js";
+      import {
+        Fragment,
+        createElement,
+        createRoot,
+        useState
+      } from "../dist/react-all.esm.js";
+
+      function App() {
+        const [count, setCount] = useState(0);
+        const items = [
+          `antd version: ${antdVersion}`,
+          "Button",
+          "Alert",
+          "Typography",
+          "Tag"
+        ];
+
+        return createElement(
+          ConfigProvider,
+          null,
+          createElement(
+            Card,
+            {
+              title: "antd.esm.js",
+              style: {
+                margin: "24px auto",
+                maxWidth: "560px"
+              }
+            },
+            createElement(
+              Space,
+              { direction: "vertical", size: 16 },
+              createElement(Alert, {
+                type: "success",
+                message: "antd bundle loaded",
+                showIcon: true
+              }),
+              createElement(Typography.Text, null, `当前计数: ${count}`),
+              createElement(
+                Fragment,
+                null,
+                ...items.map((item) => createElement(Tag, { key: item }, item))
+              ),
+              createElement(Divider),
+              createElement(
+                Button,
+                {
+                  type: "primary",
+                  onClick: () => setCount((value) => value + 1)
+                },
+                "增加"
+              )
+            )
+          )
+        );
+      }
+
+      createRoot(document.getElementById("app")).render(createElement(App));
+    </script>
+  </body>
+  </html>

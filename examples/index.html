@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>esm-pkg examples</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 40px;
+      }
+
+      ul {
+        line-height: 1.8;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>esm-pkg examples</h1>
+    <ul id="example-list"></ul>
+    <script type="module">
+      import examples from "./examples.generated.js";
+
+      const list = document.getElementById("example-list");
+
+      for (const example of examples) {
+        const item = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = example.file;
+        link.textContent = example.title;
+        item.appendChild(link);
+        list.appendChild(item);
+      }
+    </script>
+  </body>
+  </html>

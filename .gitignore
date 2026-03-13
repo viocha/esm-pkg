@@ -1,0 +1,4 @@
+node_modules/
+.esm-pkg/
+test-results/
+playwright-report/

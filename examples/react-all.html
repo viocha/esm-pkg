@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>react-all.esm.js</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module">
+      import ReactAll, {
+        Children,
+        Fragment,
+        cloneElement,
+        createElement,
+        createRoot,
+        isValidElement,
+        useEffect,
+        useId,
+        useState,
+        version
+      } from "../dist/react-all.esm.js";
+
+      function DecoratedLabel({ children }) {
+        const child = Children.only(children);
+
+        if (!isValidElement(child)) {
+          return createElement("span", null, "invalid child");
+        }
+
+        return cloneElement(child, {
+          title: "decorated-by-cloneElement"
+        });
+      }
+
+      function App() {
+        const [count, setCount] = useState(0);
+        const id = useId();
+
+        useEffect(() => {
+          document.body.dataset.reactVersion = version;
+        }, []);
+
+        return createElement(
+          "main",
+          { style: { fontFamily: "sans-serif", padding: "24px" } },
+          createElement("h1", null, "react-all.esm.js"),
+          createElement("p", null, `默认导出可用字段数: ${Object.keys(ReactAll).length}`),
+          createElement("p", { id }, `React version: ${version}`),
+          createElement(
+            Fragment,
+            null,
+            createElement(
+              DecoratedLabel,
+              null,
+              createElement("strong", null, "使用了 Fragment / Children / cloneElement")
+            )
+          ),
+          createElement(
+            "button",
+            {
+              onClick: () => setCount((value) => value + 1)
+            },
+            `点击次数: ${count}`
+          )
+        );
+      }
+
+      createRoot(document.getElementById("app")).render(createElement(App));
+    </script>
+  </body>
+  </html>
