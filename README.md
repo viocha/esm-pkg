@@ -6,6 +6,7 @@
 
 - 把 `react`、`react-dom` 合并成一个 `react-all.esm.js`
 - 把 `antd` 打成单文件，但把 `react` 相关依赖外部化
+- 把 `@ant-design/icons` 打成单文件，但把 `react` 相关依赖外部化
 - 在静态 HTML 里直接通过 `type="module"` 和 `importmap` 使用产物
 
 ## 特性
@@ -34,8 +35,10 @@ npm run build
 构建后会生成：
 
 - `dist/*.esm.js`
+- `dist/*.esm.min.js`
 - `dist/*.esm.js.map`
-- `examples/examples.generated.js`
+- `dist/*.esm.min.js.map`
+- `examples/index.generated.js`
 
 ## 配置
 
@@ -54,6 +57,11 @@ export default [
     modules: ["antd"],
     exclude: ["react", "react-dom"],
     outFile: "dist/antd.esm.js"
+  },
+  {
+    modules: ["@ant-design/icons"],
+    exclude: ["react", "react-dom"],
+    outFile: "dist/ant-design-icons.esm.js"
   }
 ];
 ```
@@ -159,9 +167,10 @@ import ReactAll, { createElement, createRoot, jsx } from "./dist/react-all.esm.j
 
 - `examples/react-all.html`
 - `examples/antd.html`
+- `examples/ant-design-icons.html`
 - `examples/index.html`
 
-其中 `examples/index.html` 本身不写死页面路径，它会导入 `examples/examples.generated.js` 来渲染列表。
+其中 `examples/index.html` 本身不写死页面路径，它会导入 `examples/index.generated.js` 来渲染列表。
 
 这个文件由构建脚本自动扫描 `examples/` 目录生成：
 
@@ -195,8 +204,9 @@ python -m http.server 4173
 .
 |-- dist/
 |-- examples/
+|   |-- ant-design-icons.html
 |   |-- antd.html
-|   |-- examples.generated.js
+|   |-- index.generated.js
 |   |-- index.html
 |   `-- react-all.html
 |-- scripts/

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>ant-design-icons.esm.js</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "../dist/react-all.esm.js",
+          "react-dom/client": "../dist/react-all.esm.js",
+          "@ant-design/icons": "../dist/ant-design-icons.esm.js"
+        }
+      }
+    </script>
+    <script src="./vendor/babel.min.js"></script>
+    <script type="text/babel" data-type="module">
+      import React from "react";
+      import { createRoot } from "react-dom/client";
+      import {
+        CheckCircleOutlined,
+        HeartFilled,
+        LoadingOutlined,
+        SmileOutlined
+      } from "@ant-design/icons";
+
+      const icons = [
+        ["SmileOutlined", SmileOutlined],
+        ["HeartFilled", HeartFilled],
+        ["CheckCircleOutlined", CheckCircleOutlined],
+        ["LoadingOutlined", LoadingOutlined]
+      ];
+
+      function App() {
+        return (
+          <main
+            style={{
+              display: "grid",
+              gap: "16px",
+              fontFamily: "sans-serif",
+              margin: "24px auto",
+              maxWidth: "560px"
+            }}
+          >
+            <h1>ant-design-icons.esm.js</h1>
+            <div
+              style={{
+                color: "#1677ff",
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "20px"
+              }}
+            >
+              {icons.map(([label, Icon]) => (
+                <div
+                  key={label}
+                  style={{
+                    alignItems: "center",
+                    border: "1px solid #d9d9d9",
+                    borderRadius: "12px",
+                    display: "flex",
+                    gap: "10px",
+                    padding: "12px 16px"
+                  }}
+                >
+                  <React.Fragment>
+                    <Icon
+                      style={{
+                        fontSize: "22px"
+                      }}
+                    />
+                    <span>{label}</span>
+                  </React.Fragment>
+                </div>
+              ))}
+            </div>
+          </main>
+        );
+      }
+
+      createRoot(document.getElementById("app")).render(<App />);
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  </html>

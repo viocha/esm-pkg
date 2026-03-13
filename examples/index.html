@@ -5,33 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="data:," />
     <title>esm-pkg examples</title>
+    <script>
+      document.documentElement.dataset.uiReady = "false";
+    </script>
     <style>
-      body {
-        font-family: sans-serif;
-        margin: 40px;
+      html[data-ui-ready="false"] body {
+        opacity: 0;
       }
 
-      ul {
-        line-height: 1.8;
+      body {
+        transition: opacity 0.18s ease;
       }
     </style>
+    <script src="./vendor/tailwindcss-browser.js"></script>
   </head>
-  <body>
-    <h1>esm-pkg examples</h1>
-    <ul id="example-list"></ul>
+  <body class="bg-slate-100 text-slate-900">
+    <main class="mx-auto max-w-6xl px-6 py-10">
+      <header class="mb-8 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+        <p class="text-sm font-medium uppercase tracking-[0.2em] text-sky-600">esm-pkg</p>
+        <h1 class="mt-3 text-4xl font-semibold tracking-tight">Examples</h1>
+        <p class="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
+          自动生成的示例入口和构建产物列表。所有链接和大小数据都来自构建阶段生成的索引数据文件。
+        </p>
+      </header>
+
+      <section class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
+        <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <h2 class="text-xl font-semibold">Examples</h2>
+          <ul id="example-list" class="mt-4 space-y-3"></ul>
+        </div>
+
+        <div class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+          <h2 class="text-xl font-semibold">Bundles</h2>
+          <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200">
+            <table class="min-w-full border-collapse text-sm">
+              <thead class="bg-slate-50 text-slate-700">
+                <tr>
+                  <th class="border-b border-slate-200 px-4 py-3 text-left font-medium">Bundle</th>
+                  <th class="border-b border-slate-200 px-4 py-3 text-left font-medium">esm.js</th>
+                  <th class="border-b border-slate-200 px-4 py-3 text-left font-medium">esm.min.js</th>
+                </tr>
+              </thead>
+              <tbody id="bundle-list" class="bg-white"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
     <script type="module">
-      import examples from "./examples.generated.js";
+      import data from "./index.generated.js";
 
       const list = document.getElementById("example-list");
+      const bundleList = document.getElementById("bundle-list");
 
-      for (const example of examples) {
+      for (const example of data.examples) {
         const item = document.createElement("li");
         const link = document.createElement("a");
+        const badge = document.createElement("span");
+
         link.href = example.file;
         link.textContent = example.title;
+        link.className =
+          "block rounded-2xl border border-slate-200 px-4 py-3 text-sm font-medium text-slate-800 transition hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700";
+        badge.className =
+          "ml-3 inline-block rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500";
+        badge.textContent = "html";
+        link.appendChild(badge);
         item.appendChild(link);
         list.appendChild(item);
       }
+
+      for (const bundle of data.bundles) {
+        const row = document.createElement("tr");
+        const nameCell = document.createElement("td");
+        const esmCell = document.createElement("td");
+        const minCell = document.createElement("td");
+        const esmLink = document.createElement("a");
+        const minLink = document.createElement("a");
+
+        nameCell.textContent = bundle.name;
+        row.className = "align-top";
+        nameCell.className = "border-b border-slate-200 px-4 py-3 font-medium text-slate-800";
+        esmCell.className = "border-b border-slate-200 px-4 py-3";
+        minCell.className = "border-b border-slate-200 px-4 py-3";
+        esmLink.href = bundle.esm.file;
+        esmLink.textContent = `${bundle.esm.file.replace("../dist/", "")} (${bundle.esm.sizeText})`;
+        esmLink.className = "text-sky-700 underline decoration-slate-300 underline-offset-4";
+        minLink.href = bundle.min.file;
+        minLink.textContent = `${bundle.min.file.replace("../dist/", "")} (${bundle.min.sizeText})`;
+        minLink.className = "text-sky-700 underline decoration-slate-300 underline-offset-4";
+        esmCell.appendChild(esmLink);
+        minCell.appendChild(minLink);
+        row.appendChild(nameCell);
+        row.appendChild(esmCell);
+        row.appendChild(minCell);
+        bundleList.appendChild(row);
+      }
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.documentElement.dataset.uiReady = "true";
+        });
+      });
     </script>
   </body>
   </html>

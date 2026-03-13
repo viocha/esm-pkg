@@ -6,6 +6,7 @@ import { build } from "esbuild";
 const projectRoot = process.cwd();
 const configPath = path.resolve(projectRoot, "esm-pkg.config.mjs");
 const examplesDir = path.resolve(projectRoot, "examples");
+const indexDataFile = path.join(examplesDir, "index.generated.js");
 const reactDomExtras = ["react-dom/client"];
 const reactRuntimeExtras = ["react/jsx-runtime", "react/jsx-dev-runtime"];
 
@@ -54,6 +55,19 @@ function expandExternals(externals) {
       return [specifier, `${specifier}/*`];
     })
   );
+}
+
+function getMinifiedOutFile(outFile) {
+  if (outFile.endsWith(".esm.js")) {
+    return `${outFile.slice(0, -".js".length)}.min.js`;
+  }
+
+  const ext = path.extname(outFile);
+  if (!ext) {
+    return `${outFile}.min`;
+  }
+
+  return `${outFile.slice(0, -ext.length)}.min${ext}`;
 }
 
 function buildEntrySource(specifiers, exportMap, defaultAliases) {
@@ -133,7 +147,19 @@ async function resolveModuleInfo(specifier) {
   };
 }
 
-async function generateExamplesManifest() {
+function formatFileSize(size) {
+  if (size < 1024) {
+    return `${size} B`;
+  }
+
+  if (size < 1024 * 1024) {
+    return `${(size / 1024).toFixed(2)} KB`;
+  }
+
+  return `${(size / (1024 * 1024)).toFixed(2)} MB`;
+}
+
+async function generateExamplesData(results) {
   const entries = await fs.readdir(examplesDir, { withFileTypes: true });
   const htmlFiles = entries
     .filter((entry) => entry.isFile() && entry.name.endsWith(".html") && entry.name !== "index.html")
@@ -153,8 +179,36 @@ async function generateExamplesManifest() {
     });
   }
 
-  const output = `export default ${JSON.stringify(manifest, null, 2)};\n`;
-  await fs.writeFile(path.join(examplesDir, "examples.generated.js"), output);
+  const bundles = [];
+
+  for (const result of results) {
+    const normalStat = await fs.stat(path.resolve(projectRoot, result.outFile));
+    const minifiedStat = await fs.stat(path.resolve(projectRoot, result.minifiedOutFile));
+
+    bundles.push({
+      name: path.basename(result.outFile).replace(/\.esm\.js$/, ""),
+      esm: {
+        file: `../${result.outFile.replace(/\\/g, "/")}`,
+        size: normalStat.size,
+        sizeText: formatFileSize(normalStat.size)
+      },
+      min: {
+        file: `../${result.minifiedOutFile.replace(/\\/g, "/")}`,
+        size: minifiedStat.size,
+        sizeText: formatFileSize(minifiedStat.size)
+      }
+    });
+  }
+
+  const output = `export default ${JSON.stringify(
+    {
+      examples: manifest,
+      bundles
+    },
+    null,
+    2
+  )};\n`;
+  await fs.writeFile(indexDataFile, output);
 }
 
 async function buildBundle(bundleConfig) {
@@ -199,27 +253,41 @@ async function buildBundle(bundleConfig) {
   const source = buildEntrySource(modules, exportMap, defaultAliases);
   const sourceFile = path.resolve(projectRoot, ".esm-pkg", `${sanitizeIdentifier(outFile)}.entry.mjs`);
   const absoluteOutFile = path.resolve(projectRoot, outFile);
+  const minifiedOutFile = getMinifiedOutFile(outFile);
+  const absoluteMinifiedOutFile = path.resolve(projectRoot, minifiedOutFile);
 
   await fs.mkdir(path.dirname(sourceFile), { recursive: true });
   await fs.mkdir(path.dirname(absoluteOutFile), { recursive: true });
+  await fs.mkdir(path.dirname(absoluteMinifiedOutFile), { recursive: true });
   await fs.writeFile(sourceFile, source);
 
-  await build({
+  const sharedBuildOptions = {
     absWorkingDir: projectRoot,
     bundle: true,
     entryPoints: [sourceFile],
     external: expandExternals(exclude),
     format: "esm",
     legalComments: "none",
-    outfile: absoluteOutFile,
     platform: "browser",
     sourcemap: true,
     target: ["es2020"]
+  };
+
+  await build({
+    ...sharedBuildOptions,
+    outfile: absoluteOutFile
+  });
+
+  await build({
+    ...sharedBuildOptions,
+    minify: true,
+    outfile: absoluteMinifiedOutFile
   });
 
   return {
     modules,
-    outFile
+    outFile,
+    minifiedOutFile
   };
 }
 
@@ -227,15 +295,16 @@ async function main() {
   const config = await loadConfig();
   const results = [];
 
-  await generateExamplesManifest();
-
   for (const bundleConfig of config) {
     const result = await buildBundle(bundleConfig);
     results.push(result);
   }
 
+  await generateExamplesData(results);
+
   for (const result of results) {
     console.log(`built ${result.outFile} <- ${result.modules.join(", ")}`);
+    console.log(`built ${result.minifiedOutFile} <- ${result.modules.join(", ")} (min)`);
   }
 }
 

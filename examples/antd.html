@@ -11,15 +11,14 @@
           "react": "../dist/react-all.esm.js",
           "react-dom": "../dist/react-all.esm.js",
           "react-dom/client": "../dist/react-all.esm.js",
-          "react/jsx-runtime": "../dist/react-all.esm.js",
-          "react/jsx-dev-runtime": "../dist/react-all.esm.js"
+          "antd": "../dist/antd.esm.js"
         }
       }
     </script>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module">
+    <script src="./vendor/babel.min.js"></script>
+    <script type="text/babel" data-type="module">
+      import React, { useState } from "react";
+      import { createRoot } from "react-dom/client";
       import {
         Alert,
         Button,
@@ -30,13 +29,7 @@
         Tag,
         Typography,
         version as antdVersion
-      } from "../dist/antd.esm.js";
-      import {
-        Fragment,
-        createElement,
-        createRoot,
-        useState
-      } from "../dist/react-all.esm.js";
+      } from "antd";
 
       function App() {
         const [count, setCount] = useState(0);
@@ -48,47 +41,37 @@
           "Tag"
         ];
 
-        return createElement(
-          ConfigProvider,
-          null,
-          createElement(
-            Card,
-            {
-              title: "antd.esm.js",
-              style: {
+        return (
+          <ConfigProvider>
+            <Card
+              title="antd.esm.js"
+              style={{
                 margin: "24px auto",
                 maxWidth: "560px"
-              }
-            },
-            createElement(
-              Space,
-              { direction: "vertical", size: 16 },
-              createElement(Alert, {
-                type: "success",
-                message: "antd bundle loaded",
-                showIcon: true
-              }),
-              createElement(Typography.Text, null, `当前计数: ${count}`),
-              createElement(
-                Fragment,
-                null,
-                ...items.map((item) => createElement(Tag, { key: item }, item))
-              ),
-              createElement(Divider),
-              createElement(
-                Button,
-                {
-                  type: "primary",
-                  onClick: () => setCount((value) => value + 1)
-                },
-                "增加"
-              )
-            )
-          )
+              }}
+            >
+              <Space direction="vertical" size={16}>
+                <Alert type="success" message="antd bundle loaded" showIcon />
+                <Typography.Text>{`当前计数: ${count}`}</Typography.Text>
+                <React.Fragment>
+                  {items.map((item) => (
+                    <Tag key={item}>{item}</Tag>
+                  ))}
+                </React.Fragment>
+                <Divider />
+                <Button type="primary" onClick={() => setCount((value) => value + 1)}>
+                  增加
+                </Button>
+              </Space>
+            </Card>
+          </ConfigProvider>
         );
       }
 
-      createRoot(document.getElementById("app")).render(createElement(App));
+      createRoot(document.getElementById("app")).render(<App />);
     </script>
+  </head>
+  <body>
+    <div id="app"></div>
   </body>
   </html>

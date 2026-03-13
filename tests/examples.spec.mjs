@@ -33,6 +33,7 @@ for (const exampleFile of exampleFiles) {
 
     if (exampleFile === "index.html") {
       await expect(page.locator("#example-list li")).toHaveCount(exampleFiles.length - 1);
+      await expect(page.locator("#bundle-list tr")).toHaveCount(exampleFiles.length - 1);
     } else {
       await expect(page.locator("#app")).not.toBeEmpty();
     }
