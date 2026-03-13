@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>lucide-react.esm.js</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "../dist/react-all.esm.js",
+          "react-dom/client": "../dist/react-all.esm.js",
+          "lucide-react": "../dist/lucide-react.esm.js"
+        }
+      }
+    </script>
+    <script src="./vendor/tailwindcss-browser.js"></script>
+    <script src="./vendor/babel.min.js"></script>
+    <script type="text/babel" data-type="module">
+      import React, { useState } from "react";
+      import { createRoot } from "react-dom/client";
+      import {
+        ArrowUpRight,
+        Bell,
+        Boxes,
+        ChartColumn,
+        Cloud,
+        FolderKanban,
+        ShieldCheck,
+        Sparkles
+      } from "lucide-react";
+
+      const cards = [
+        {
+          icon: Boxes,
+          title: "单文件交付",
+          value: "1 bundle",
+          text: "通过一个浏览器 ESM 文件提供整组图标组件。"
+        },
+        {
+          icon: ShieldCheck,
+          title: "轻依赖",
+          value: "peer: react",
+          text: "lucide-react 只要求 React，本页通过 importmap 接入。"
+        },
+        {
+          icon: FolderKanban,
+          title: "可直接演示",
+          value: "static html",
+          text: "不需要框架脚手架，也能在 examples 目录中直接验证效果。"
+        }
+      ];
+
+      function MetricCard({ icon: Icon, title, value, text, active }) {
+        return (
+          <article
+            className={[
+              "rounded-[28px] border p-6 transition-all duration-300",
+              active
+                ? "border-sky-200 bg-white shadow-[0_24px_80px_rgba(14,165,233,0.18)]"
+                : "border-slate-200 bg-white/80 shadow-[0_16px_45px_rgba(15,23,42,0.08)]"
+            ].join(" ")}
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div className="rounded-2xl bg-sky-100 p-3 text-sky-700">
+                <Icon size={22} strokeWidth={2.25} />
+              </div>
+              <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                {value}
+              </span>
+            </div>
+            <h2 className="mt-5 text-xl font-semibold tracking-tight text-slate-900">{title}</h2>
+            <p className="mt-3 text-sm leading-7 text-slate-600">{text}</p>
+          </article>
+        );
+      }
+
+      function App() {
+        const [activeIndex, setActiveIndex] = useState(0);
+        const activeCard = cards[activeIndex];
+        const ActiveIcon = activeCard.icon;
+        const stats = [
+          { label: "Imported icons", value: "8" },
+          { label: "Bundle type", value: "React ESM" },
+          { label: "Rendering", value: "Client-side" }
+        ];
+
+        return (
+          <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#e0f2fe_0%,_#f8fafc_34%,_#dbeafe_100%)] px-4 py-10 text-slate-900">
+            <section className="mx-auto max-w-6xl">
+              <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
+                <div className="rounded-[36px] border border-white/70 bg-white/85 p-8 shadow-[0_30px_90px_rgba(15,23,42,0.12)] backdrop-blur">
+                  <div className="flex flex-wrap items-center justify-between gap-4">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.34em] text-sky-700">
+                        Icon Bundle
+                      </p>
+                      <h1 className="mt-2 text-4xl font-semibold tracking-tight text-slate-900">
+                        lucide-react.esm.js
+                      </h1>
+                    </div>
+                    <div className="rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-medium text-sky-800">
+                      import icons directly
+                    </div>
+                  </div>
+
+                  <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+                    使用打包后的单文件 ESM，在静态页面里直接导入 React 图标组件，并根据不同内容区域切换视觉重点。
+                  </p>
+
+                  <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                    {stats.map((item) => (
+                      <div key={item.label} className="rounded-3xl bg-slate-100 px-5 py-4">
+                        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+                          {item.label}
+                        </p>
+                        <p className="mt-3 text-lg font-semibold text-slate-900">{item.value}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    {cards.map((item, index) => (
+                      <button
+                        key={item.title}
+                        type="button"
+                        onClick={() => setActiveIndex(index)}
+                        className={[
+                          "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition",
+                          activeIndex === index
+                            ? "border-sky-600 bg-sky-600 text-white"
+                            : "border-slate-300 bg-white text-slate-700 hover:border-slate-400"
+                        ].join(" ")}
+                      >
+                        <item.icon size={16} />
+                        {item.title}
+                      </button>
+                    ))}
+                  </div>
+
+                  <div className="mt-8 rounded-[32px] bg-slate-950 p-6 text-white">
+                    <div className="flex items-center gap-3">
+                      <div className="rounded-2xl bg-sky-500/20 p-3 text-sky-300">
+                        <ActiveIcon size={28} strokeWidth={2.3} />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-300">
+                          Active Focus
+                        </p>
+                        <h2 className="mt-2 text-2xl font-semibold tracking-tight">{activeCard.title}</h2>
+                      </div>
+                    </div>
+                    <p className="mt-4 max-w-xl text-sm leading-7 text-slate-300">{activeCard.text}</p>
+                    <div className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-sky-300">
+                      查看当前展示状态
+                      <ArrowUpRight size={16} />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid gap-5">
+                  {cards.map((item, index) => (
+                    <MetricCard key={item.title} {...item} active={index === activeIndex} />
+                  ))}
+
+                  <div className="rounded-[28px] border border-slate-200 bg-white/80 p-6 shadow-[0_16px_45px_rgba(15,23,42,0.08)]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+                      More Icons
+                    </p>
+                    <div className="mt-5 flex flex-wrap gap-4 text-slate-700">
+                      <div className="flex items-center gap-3 rounded-2xl bg-slate-100 px-4 py-3">
+                        <Cloud size={20} />
+                        <span className="text-sm font-medium">Cloud</span>
+                      </div>
+                      <div className="flex items-center gap-3 rounded-2xl bg-slate-100 px-4 py-3">
+                        <Bell size={20} />
+                        <span className="text-sm font-medium">Bell</span>
+                      </div>
+                      <div className="flex items-center gap-3 rounded-2xl bg-slate-100 px-4 py-3">
+                        <ChartColumn size={20} />
+                        <span className="text-sm font-medium">ChartColumn</span>
+                      </div>
+                      <div className="flex items-center gap-3 rounded-2xl bg-slate-100 px-4 py-3">
+                        <Sparkles size={20} />
+                        <span className="text-sm font-medium">Sparkles</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </main>
+        );
+      }
+
+      createRoot(document.getElementById("app")).render(<App />);
+    </script>
+  </head>
+  <body class="bg-slate-100">
+    <div id="app"></div>
+  </body>
+  </html>

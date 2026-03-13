@@ -7,6 +7,8 @@
 - 把 `react`、`react-dom` 合并成一个 `react-all.esm.js`
 - 把 `antd` 打成单文件，但把 `react` 相关依赖外部化
 - 把 `@ant-design/icons` 打成单文件，但把 `react` 相关依赖外部化
+- 把 `clsx` 打成单文件，并直接在浏览器里用默认导入
+- 把 `lucide-react` 打成单文件，并在静态页面中渲染 React 图标组件
 - 把 `htm` 打成单文件，并用于不依赖 Babel 的 React 示例
 - 在静态 HTML 里直接通过 `type="module"` 和 `importmap` 使用产物
 
@@ -64,6 +66,16 @@ export default [
     modules: ["@ant-design/icons"],
     exclude: ["react", "react-dom"],
     outFile: "dist/ant-design-icons.esm.js"
+  },
+  {
+    modules: ["clsx"],
+    exclude: [],
+    outFile: "dist/clsx.esm.js"
+  },
+  {
+    modules: ["lucide-react"],
+    exclude: ["react"],
+    outFile: "dist/lucide-react.esm.js"
   },
   {
     modules: ["htm"],
@@ -185,6 +197,8 @@ import ReactAll, { createElement, createRoot, jsx } from "./dist/react-all.esm.j
 - `examples/antd.html`
 - `examples/ant-design-icons.html`
 - `examples/htm-react.html`
+- `examples/clsx.html`
+- `examples/lucide-react.html`
 - `examples/index.html`
 
 其中 `examples/index.html` 本身不写死页面路径，它会导入 `examples/index.generated.js` 来渲染列表。

@@ -61,16 +61,11 @@
       for (const example of data.examples) {
         const item = document.createElement("li");
         const link = document.createElement("a");
-        const badge = document.createElement("span");
 
         link.href = example.file;
         link.textContent = example.title;
         link.className =
           "block rounded-2xl border border-slate-200 px-4 py-3 text-sm font-medium text-slate-800 transition hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700";
-        badge.className =
-          "ml-3 inline-block rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500";
-        badge.textContent = "html";
-        link.appendChild(badge);
         item.appendChild(link);
         list.appendChild(item);
       }
@@ -89,10 +84,10 @@
         esmCell.className = "border-b border-slate-200 px-4 py-3";
         minCell.className = "border-b border-slate-200 px-4 py-3";
         esmLink.href = bundle.esm.file;
-        esmLink.textContent = `${bundle.esm.file.replace("../dist/", "")} (${bundle.esm.sizeText})`;
+        esmLink.textContent = bundle.esm.sizeText;
         esmLink.className = "text-sky-700 underline decoration-slate-300 underline-offset-4";
         minLink.href = bundle.min.file;
-        minLink.textContent = `${bundle.min.file.replace("../dist/", "")} (${bundle.min.sizeText})`;
+        minLink.textContent = bundle.min.sizeText;
         minLink.className = "text-sky-700 underline decoration-slate-300 underline-offset-4";
         esmCell.appendChild(esmLink);
         minCell.appendChild(minLink);

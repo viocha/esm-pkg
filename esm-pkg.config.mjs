@@ -15,6 +15,16 @@ export default [
     outFile: "dist/ant-design-icons.esm.js"
   },
   {
+    modules: ["clsx"],
+    exclude: [],
+    outFile: "dist/clsx.esm.js"
+  },
+  {
+    modules: ["lucide-react"],
+    exclude: ["react"],
+    outFile: "dist/lucide-react.esm.js"
+  },
+  {
     modules: ["htm"],
     exclude: [],
     outFile: "dist/htm.esm.js"

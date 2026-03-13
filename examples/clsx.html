@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>clsx.esm.js</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "clsx": "../dist/clsx.esm.js"
+        }
+      }
+    </script>
+    <script src="./vendor/tailwindcss-browser.js"></script>
+    <script type="module">
+      import clsx from "clsx";
+
+      const state = {
+        compact: false,
+        highlight: true,
+        elevated: true
+      };
+
+      function escapeHtml(value) {
+        return value
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;");
+      }
+
+      function buttonClass(enabled) {
+        return clsx(
+          "rounded-full border px-4 py-2 text-sm font-medium transition",
+          enabled
+            ? "border-slate-900 bg-slate-900 text-white shadow-sm"
+            : "border-slate-300 bg-white text-slate-700 hover:border-slate-400"
+        );
+      }
+
+      function render() {
+        const app = document.getElementById("app");
+        const cardClass = clsx(
+          "rounded-[28px] border transition-all duration-300",
+          state.compact ? "p-5" : "p-8",
+          state.highlight ? "ring-4 ring-cyan-200/70" : "ring-0",
+          state.elevated
+            ? "border-slate-900/5 bg-white shadow-[0_28px_90px_rgba(15,23,42,0.18)]"
+            : "border-slate-200 bg-white/90 shadow-[0_12px_35px_rgba(15,23,42,0.08)]"
+        );
+        const labelClass = clsx(
+          "mt-4 max-w-xl text-sm text-slate-600",
+          state.compact ? "leading-6" : "leading-7"
+        );
+        const tokenClass = clsx(
+          "inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em]",
+          state.highlight ? "bg-cyan-100 text-cyan-800" : "bg-slate-200 text-slate-700"
+        );
+        const result = clsx(
+          "rounded-[28px]",
+          ["border", state.compact ? "p-5" : "p-8"],
+          {
+            "ring-4 ring-cyan-200/70": state.highlight,
+            "shadow-[0_28px_90px_rgba(15,23,42,0.18)]": state.elevated
+          }
+        );
+
+        app.innerHTML = `
+          <main class="min-h-screen bg-[radial-gradient(circle_at_top,_#ecfeff_0%,_#f8fafc_35%,_#e2e8f0_100%)] px-4 py-10 text-slate-900">
+            <section class="mx-auto max-w-5xl">
+              <div class="mb-8 flex flex-wrap items-end justify-between gap-5">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.32em] text-cyan-700">Utility Bundle</p>
+                  <h1 class="mt-2 text-4xl font-semibold tracking-tight text-slate-900">clsx.esm.js</h1>
+                  <p class="mt-3 max-w-2xl text-sm leading-7 text-slate-600">
+                    用一个极小的工具函数，把字符串、数组和对象条件合并成最终 className。
+                  </p>
+                </div>
+                <div class="rounded-full border border-cyan-200 bg-white/80 px-4 py-2 text-sm font-medium text-cyan-800 shadow-sm backdrop-blur">
+                  default import works
+                </div>
+              </div>
+
+              <div class="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+                <section class="${cardClass}">
+                  <span class="${tokenClass}">live preview</span>
+                  <h2 class="mt-4 text-2xl font-semibold tracking-tight text-slate-900">按状态拼出最终样式</h2>
+                  <p class="${labelClass}">
+                    这个例子没有 React，也没有 Babel，只通过 <code>import clsx from "clsx"</code>
+                    在浏览器里动态生成 class 字符串。
+                  </p>
+                  <div class="mt-6 flex flex-wrap gap-3">
+                    <button type="button" data-key="compact" class="${buttonClass(state.compact)}">Compact</button>
+                    <button type="button" data-key="highlight" class="${buttonClass(state.highlight)}">Highlight</button>
+                    <button type="button" data-key="elevated" class="${buttonClass(state.elevated)}">Elevated</button>
+                  </div>
+                  <div class="mt-6 rounded-3xl border border-dashed border-slate-300 bg-slate-50 p-5">
+                    <div class="flex flex-wrap gap-2">
+                      <span class="rounded-full bg-slate-900 px-3 py-1 text-xs font-medium text-white">string</span>
+                      <span class="rounded-full bg-slate-200 px-3 py-1 text-xs font-medium text-slate-700">array</span>
+                      <span class="rounded-full bg-cyan-100 px-3 py-1 text-xs font-medium text-cyan-800">object conditions</span>
+                    </div>
+                    <pre class="mt-4 overflow-x-auto rounded-2xl bg-slate-950 p-4 text-xs leading-6 text-cyan-100">${escapeHtml(result)}</pre>
+                  </div>
+                </section>
+
+                <aside class="rounded-[28px] border border-white/70 bg-white/80 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur">
+                  <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">State</p>
+                  <dl class="mt-4 space-y-4">
+                    <div class="rounded-2xl bg-slate-100 px-4 py-3">
+                      <dt class="text-xs uppercase tracking-[0.2em] text-slate-500">Compact</dt>
+                      <dd class="mt-2 text-lg font-semibold text-slate-900">${state.compact ? "On" : "Off"}</dd>
+                    </div>
+                    <div class="rounded-2xl bg-slate-100 px-4 py-3">
+                      <dt class="text-xs uppercase tracking-[0.2em] text-slate-500">Highlight</dt>
+                      <dd class="mt-2 text-lg font-semibold text-slate-900">${state.highlight ? "On" : "Off"}</dd>
+                    </div>
+                    <div class="rounded-2xl bg-slate-100 px-4 py-3">
+                      <dt class="text-xs uppercase tracking-[0.2em] text-slate-500">Elevated</dt>
+                      <dd class="mt-2 text-lg font-semibold text-slate-900">${state.elevated ? "On" : "Off"}</dd>
+                    </div>
+                  </dl>
+                </aside>
+              </div>
+            </section>
+          </main>
+        `;
+      }
+
+      document.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-key]");
+        if (!button) {
+          return;
+        }
+
+        const key = button.dataset.key;
+        state[key] = !state[key];
+        render();
+      });
+
+      render();
+    </script>
+  </head>
+  <body class="bg-slate-100">
+    <div id="app"></div>
+  </body>
+  </html>
