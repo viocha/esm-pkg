@@ -15,6 +15,7 @@
         }
       }
     </script>
+    <script src="./vendor/tailwindcss-browser.js"></script>
     <script src="./vendor/babel.min.js"></script>
     <script type="text/babel" data-type="module">
       import React, { useState } from "react";
@@ -23,9 +24,13 @@
         Alert,
         Button,
         Card,
+        Col,
         ConfigProvider,
         Divider,
+        Progress,
+        Row,
         Space,
+        Statistic,
         Tag,
         Typography,
         version as antdVersion
@@ -33,37 +38,127 @@
 
       function App() {
         const [count, setCount] = useState(0);
-        const items = [
-          `antd version: ${antdVersion}`,
-          "Button",
-          "Alert",
-          "Typography",
-          "Tag"
-        ];
+        const ratio = Math.min(100, 24 + count * 19);
+        const features = ["Button", "Alert", "Statistic", "Progress", "Tag", "Typography"];
 
         return (
-          <ConfigProvider>
-            <Card
-              title="antd.esm.js"
-              style={{
-                margin: "24px auto",
-                maxWidth: "560px"
-              }}
-            >
-              <Space orientation="vertical" size={16}>
-                <Alert type="success" title="antd bundle loaded" showIcon />
-                <Typography.Text>{`当前计数: ${count}`}</Typography.Text>
-                <React.Fragment>
-                  {items.map((item) => (
-                    <Tag key={item}>{item}</Tag>
-                  ))}
-                </React.Fragment>
-                <Divider />
-                <Button type="primary" onClick={() => setCount((value) => value + 1)}>
-                  增加
-                </Button>
-              </Space>
-            </Card>
+          <ConfigProvider
+            theme={{
+              token: {
+                colorPrimary: "#0f766e",
+                colorInfo: "#0f766e",
+                borderRadius: 20,
+                fontFamily:
+                  '"Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif'
+              }
+            }}
+          >
+            <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#ecfeff_0%,_#f8fafc_38%,_#e2e8f0_100%)] px-4 py-10 text-slate-900">
+              <section className="mx-auto max-w-5xl">
+                <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.32em] text-teal-700">
+                      ESM Bundle Showcase
+                    </p>
+                    <h1 className="mt-2 text-4xl font-semibold tracking-tight text-slate-900">
+                      antd.esm.js
+                    </h1>
+                    <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
+                      单文件 bundle 直接在浏览器里提供 Ant Design 组件能力，React 相关依赖通过
+                      importmap 间接接入。
+                    </p>
+                  </div>
+                  <div className="rounded-full border border-teal-200 bg-white/80 px-4 py-2 text-sm font-medium text-teal-800 shadow-sm backdrop-blur">
+                    {`Ant Design ${antdVersion}`}
+                  </div>
+                </div>
+
+                <Row gutter={[20, 20]} align="stretch">
+                  <Col xs={24} lg={15}>
+                    <Card className="shadow-[0_24px_80px_rgba(15,23,42,0.10)]">
+                      <Space orientation="vertical" size={18} style={{ width: "100%" }}>
+                        <Alert
+                          type="success"
+                          title="bundle loaded"
+                          description="Ant Design 组件已经从 dist/antd.esm.js 正常加载。"
+                          showIcon
+                        />
+
+                        <div className="flex flex-wrap gap-2">
+                          {features.map((item) => (
+                            <Tag key={item} color="cyan">
+                              {item}
+                            </Tag>
+                          ))}
+                        </div>
+
+                        <Typography.Title level={3} style={{ margin: 0 }}>
+                          在静态页面里直接使用 Ant Design 组件
+                        </Typography.Title>
+                        <Typography.Paragraph style={{ marginBottom: 0 }}>
+                          通过单文件 ESM bundle 和 importmap，可以直接加载按钮、提示、统计和进度等常用组件。
+                        </Typography.Paragraph>
+
+                        <Divider style={{ margin: 0 }} />
+
+                        <div className="flex flex-wrap items-center gap-3">
+                          <Button type="primary" size="large" onClick={() => setCount((value) => value + 1)}>
+                            推进进度
+                          </Button>
+                          <Button size="large" onClick={() => setCount(0)}>
+                            重置
+                          </Button>
+                          <Typography.Text type="secondary">{`当前计数: ${count}`}</Typography.Text>
+                        </div>
+
+                        <Progress
+                          percent={ratio}
+                          strokeColor={{ from: "#0f766e", to: "#22c55e" }}
+                          railColor="#dbeafe"
+                          showInfo
+                        />
+                      </Space>
+                    </Card>
+                  </Col>
+
+                  <Col xs={24} lg={9}>
+                    <Space orientation="vertical" size={20} style={{ width: "100%" }}>
+                      <Card className="shadow-[0_18px_50px_rgba(15,23,42,0.08)]">
+                        <Row gutter={[16, 16]}>
+                          <Col span={12}>
+                            <Statistic title="Clicks" value={count} />
+                          </Col>
+                          <Col span={12}>
+                            <Statistic title="Progress" suffix="%" value={ratio} />
+                          </Col>
+                        </Row>
+                      </Card>
+
+                      <Card className="shadow-[0_18px_50px_rgba(15,23,42,0.08)]">
+                        <Typography.Title level={5}>导入覆盖</Typography.Title>
+                        <Typography.Paragraph type="secondary">
+                          这里保留了多个实际使用到的成员，避免示例页只是导入却不消费。
+                        </Typography.Paragraph>
+                        <div className="flex flex-wrap gap-2">
+                          <Tag variant="filled" color="geekblue">
+                            ConfigProvider
+                          </Tag>
+                          <Tag variant="filled" color="green">
+                            Card
+                          </Tag>
+                          <Tag variant="filled" color="gold">
+                            Statistic
+                          </Tag>
+                          <Tag variant="filled" color="purple">
+                            Progress
+                          </Tag>
+                        </div>
+                      </Card>
+                    </Space>
+                  </Col>
+                </Row>
+              </section>
+            </main>
           </ConfigProvider>
         );
       }
@@ -71,7 +166,7 @@
       createRoot(document.getElementById("app")).render(<App />);
     </script>
   </head>
-  <body>
+  <body class="bg-slate-100">
     <div id="app"></div>
   </body>
   </html>
