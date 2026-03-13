@@ -1,0 +1,174 @@
+name: Publish NPM Package
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: npm-publish
+  cancel-in-progress: false
+
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    outputs:
+      should_publish: ${{ steps.compare.outputs.should_publish }}
+      package_name: ${{ steps.compare.outputs.package_name }}
+      local_version: ${{ steps.compare.outputs.local_version }}
+      registry_version: ${{ steps.compare.outputs.registry_version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+
+      - name: Compare local version with npm registry
+        id: compare
+        shell: bash
+        run: |
+          node --input-type=module - <<'NODE'
+          import { execSync } from 'node:child_process'
+          import { appendFileSync, readFileSync } from 'node:fs'
+
+          const pkg = JSON.parse(readFileSync('./package.json', 'utf8'))
+
+          function compareSemver(left, right) {
+            const parse = (value) => {
+              const [coreAndPre] = value.trim().split('+')
+              const [core, pre = ''] = coreAndPre.split('-')
+              return {
+                core: core.split('.').map((part) => Number.parseInt(part, 10) || 0),
+                pre: pre === '' ? [] : pre.split('.'),
+              }
+            }
+
+            const compareIdentifiers = (a, b) => {
+              const aIsNumber = /^\d+$/.test(a)
+              const bIsNumber = /^\d+$/.test(b)
+
+              if (aIsNumber && bIsNumber) {
+                return Number(a) - Number(b)
+              }
+
+              if (aIsNumber) {
+                return -1
+              }
+
+              if (bIsNumber) {
+                return 1
+              }
+
+              return a.localeCompare(b)
+            }
+
+            const leftVersion = parse(left)
+            const rightVersion = parse(right)
+
+            for (let index = 0; index < 3; index += 1) {
+              const diff = (leftVersion.core[index] ?? 0) - (rightVersion.core[index] ?? 0)
+              if (diff !== 0) {
+                return diff
+              }
+            }
+
+            if (leftVersion.pre.length === 0 && rightVersion.pre.length === 0) {
+              return 0
+            }
+
+            if (leftVersion.pre.length === 0) {
+              return 1
+            }
+
+            if (rightVersion.pre.length === 0) {
+              return -1
+            }
+
+            const length = Math.max(leftVersion.pre.length, rightVersion.pre.length)
+            for (let index = 0; index < length; index += 1) {
+              const leftIdentifier = leftVersion.pre[index]
+              const rightIdentifier = rightVersion.pre[index]
+
+              if (leftIdentifier === undefined) {
+                return -1
+              }
+
+              if (rightIdentifier === undefined) {
+                return 1
+              }
+
+              const diff = compareIdentifiers(leftIdentifier, rightIdentifier)
+              if (diff !== 0) {
+                return diff
+              }
+            }
+
+            return 0
+          }
+
+          let registryVersion = ''
+          try {
+            registryVersion = execSync(`npm view ${JSON.stringify(pkg.name)} version`, {
+              encoding: 'utf8',
+              stdio: ['ignore', 'pipe', 'ignore'],
+            }).trim()
+          } catch {
+            registryVersion = ''
+          }
+
+          const shouldPublish =
+            registryVersion === '' || compareSemver(pkg.version, registryVersion) > 0
+
+          appendFileSync(process.env.GITHUB_OUTPUT, `package_name=${pkg.name}\n`)
+          appendFileSync(process.env.GITHUB_OUTPUT, `local_version=${pkg.version}\n`)
+          appendFileSync(
+            process.env.GITHUB_OUTPUT,
+            `registry_version=${registryVersion || 'unpublished'}\n`,
+          )
+          appendFileSync(process.env.GITHUB_OUTPUT, `should_publish=${shouldPublish}\n`)
+
+          console.log(`package: ${pkg.name}`)
+          console.log(`local version: ${pkg.version}`)
+          console.log(`registry version: ${registryVersion || 'unpublished'}`)
+          console.log(`should publish: ${shouldPublish}`)
+          NODE
+
+  publish:
+    needs: check-version
+    if: needs.check-version.outputs.should_publish == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.18.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build package
+        run: pnpm run build
+
+      - name: Publish package
+        run: npm publish --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
