@@ -1,4 +1,8 @@
 export default {
+  "package": {
+    "name": "@viocha/esm-pkg",
+    "version": "1.0.0"
+  },
   "examples": [
     {
       "file": "./ant-design-icons.html",
@@ -32,6 +36,12 @@ export default {
   "bundles": [
     {
       "name": "ant-design-icons",
+      "packageVersions": [
+        {
+          "name": "@ant-design/icons",
+          "version": "6.1.0"
+        }
+      ],
       "esm": {
         "file": "../dist/ant-design-icons.js",
         "size": 1959421,
@@ -45,6 +55,12 @@ export default {
     },
     {
       "name": "antd",
+      "packageVersions": [
+        {
+          "name": "antd",
+          "version": "6.3.2"
+        }
+      ],
       "esm": {
         "file": "../dist/antd.js",
         "size": 3715704,
@@ -58,6 +74,12 @@ export default {
     },
     {
       "name": "clsx",
+      "packageVersions": [
+        {
+          "name": "clsx",
+          "version": "2.1.1"
+        }
+      ],
       "esm": {
         "file": "../dist/clsx.js",
         "size": 2068,
@@ -71,6 +93,12 @@ export default {
     },
     {
       "name": "htm",
+      "packageVersions": [
+        {
+          "name": "htm",
+          "version": "3.1.1"
+        }
+      ],
       "esm": {
         "file": "../dist/htm.js",
         "size": 3372,
@@ -84,6 +112,12 @@ export default {
     },
     {
       "name": "lucide-react",
+      "packageVersions": [
+        {
+          "name": "lucide-react",
+          "version": "0.577.0"
+        }
+      ],
       "esm": {
         "file": "../dist/lucide-react.js",
         "size": 1447321,
@@ -97,6 +131,16 @@ export default {
     },
     {
       "name": "react-all",
+      "packageVersions": [
+        {
+          "name": "react",
+          "version": "19.2.4"
+        },
+        {
+          "name": "react-dom",
+          "version": "19.2.4"
+        }
+      ],
       "esm": {
         "file": "../dist/react-all.js",
         "size": 1100290,
@@ -110,15 +154,20 @@ export default {
     },
     {
       "name": "shadcn",
+      "packageVersions": [
+        {
+          "name": "shadcn/ui"
+        }
+      ],
       "esm": {
         "file": "../dist/shadcn.js",
-        "size": 2113470,
-        "sizeText": "2.02 MB"
+        "size": 2104508,
+        "sizeText": "2.01 MB"
       },
       "min": {
         "file": "../dist/shadcn.min.js",
-        "size": 1027780,
-        "sizeText": "1003.69 KB"
+        "size": 1025360,
+        "sizeText": "1001.33 KB"
       }
     }
   ]

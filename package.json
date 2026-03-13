@@ -1,6 +1,6 @@
 {
   "name": "@viocha/esm-pkg",
-  "version": "0.6.1",
+  "version": "1.0.0",
   "description": "Prebuilt browser ESM bundles for React, antd, clsx, lucide-react, htm, and shadcn/ui.",
   "keywords": [
     "esm",
@@ -10,7 +10,7 @@
     "antd",
     "shadcn"
   ],
-  "homepage": "https://github.com/viocha/esm-pkg#readme",
+  "homepage": "https://viocha.github.io/esm-pkg/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/viocha/esm-pkg.git"
@@ -35,6 +35,7 @@
   },
   "scripts": {
     "build": "node ./scripts/build-all.mjs",
+    "build:index": "node ./scripts/generate-examples-index.mjs",
     "build:shadcn": "node ./scripts/build-shadcn.mjs",
     "test:e2e": "pnpm run build && playwright test"
   },

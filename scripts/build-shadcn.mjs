@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { spawn } from "node:child_process";
-import { pathToFileURL } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { build } from "esbuild";
 
 const workspaceParentName = ".shadcn-workdir";
@@ -396,6 +396,8 @@ export async function buildShadcnBundle(projectRoot) {
 		jsx: "automatic",
 		legalComments: "none",
 		platform: "browser",
+		// Keep React imports on an ESM shim so shadcn's CJS-heavy dependency chain
+		// does not leave browser-incompatible require("react") calls in the final bundle.
 		plugins: [createReactShimPlugin(reactShimFile)],
 		sourcemap: true,
 		target: ["es2020"],
@@ -418,4 +420,14 @@ export async function buildShadcnBundle(projectRoot) {
 		outFile,
 		minifiedOutFile
 	};
+}
+
+const entryFile = process.argv[1] ? path.resolve(process.argv[1]) : null;
+const currentFile = fileURLToPath(import.meta.url);
+
+if (entryFile === currentFile) {
+	buildShadcnBundle(process.cwd()).catch((error) => {
+		console.error(error);
+		process.exitCode = 1;
+	});
 }
