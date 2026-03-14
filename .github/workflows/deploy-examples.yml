@@ -34,7 +34,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
           cache: pnpm
 
       - name: Install dependencies
@@ -43,7 +43,12 @@ jobs:
       - name: Install Playwright browser
         run: pnpm exec playwright install --with-deps chromium
 
-      - name: Build and test
+      - name: Build
+        env:
+          CI: true
+        run: pnpm run build
+
+      - name: Run E2E tests
         env:
           CI: true
         run: pnpm test:e2e
