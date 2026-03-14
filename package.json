@@ -39,6 +39,7 @@
   },
   "scripts": {
     "build": "node ./scripts/build-all.mjs",
+    "build:exports": "node ./scripts/generate-package-exports.mjs",
     "build:index": "node ./scripts/generate-examples-index.mjs",
     "build:shadcn": "node ./scripts/build-shadcn.mjs",
     "build:vendor": "node ./scripts/sync-example-vendor.mjs",
