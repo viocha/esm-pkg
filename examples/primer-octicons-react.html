@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>primer-octicons-react.min.js</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "../dist/react-all.min.js",
+          "react-dom/client": "../dist/react-all.min.js",
+          "@primer/octicons-react": "../dist/primer-octicons-react.min.js"
+        }
+      }
+    </script>
+    <script src="./vendor/babel.min.js"></script>
+    <script type="text/babel" data-type="module">
+      import React from "react";
+      import { createRoot } from "react-dom/client";
+      import { MarkGithubIcon, PulseIcon, RocketIcon, SearchIcon } from "@primer/octicons-react";
+
+      const icons = [
+        ["MarkGithubIcon", MarkGithubIcon],
+        ["SearchIcon", SearchIcon],
+        ["PulseIcon", PulseIcon],
+        ["RocketIcon", RocketIcon]
+      ];
+
+      function App() {
+        return (
+          <main
+            style={{
+              display: "grid",
+              gap: "16px",
+              fontFamily: '"Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif',
+              margin: "24px auto",
+              maxWidth: "620px"
+            }}
+          >
+            <h1>primer-octicons-react.min.js</h1>
+            <div
+              style={{
+                color: "#0f766e",
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "20px"
+              }}
+            >
+              {icons.map(([label, Icon]) => (
+                <div
+                  key={label}
+                  style={{
+                    alignItems: "center",
+                    background: "#ffffff",
+                    border: "1px solid #9fb8b2",
+                    borderRadius: "14px",
+                    display: "flex",
+                    gap: "10px",
+                    padding: "12px 16px"
+                  }}
+                >
+                  <Icon size={22} />
+                  <span>{label}</span>
+                </div>
+              ))}
+            </div>
+          </main>
+        );
+      }
+
+      createRoot(document.getElementById("app")).render(<App />);
+    </script>
+  </head>
+  <body style={{ background: "#f8fafc" }}>
+    <div id="app"></div>
+  </body>
+</html>

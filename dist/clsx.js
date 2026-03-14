@@ -28,32 +28,18 @@ var clsx_default = clsx;
 // .esm-pkg/distClsxJs.entry.mjs
 var __defaultKey = "default";
 var __default0 = __defaultKey in clsx_exports ? clsx_exports[__defaultKey] : void 0;
-var __modules = [clsx_exports];
-var __defaults = [__default0];
-var __namedMerged = Object.assign(
-  {},
-  ...__modules.map((mod) => {
-    const next = {};
-    for (const key of Object.keys(mod)) {
-      if (key !== "default") {
-        next[key] = mod[key];
-      }
-    }
-    return next;
-  })
-);
-var __defaultMerged = Object.assign(
-  {},
-  ...__defaults.filter((value) => value !== void 0 && value !== null && (typeof value === "object" || typeof value === "function"))
-);
-var __merged = Object.assign({}, __defaultMerged, __namedMerged);
-var __singleDefault = __defaults[0];
-if (__default0 !== void 0) __merged.clsxDefault = __default0;
-var __defaultExport = __singleDefault !== void 0 && __singleDefault !== null && (typeof __singleDefault === "object" || typeof __singleDefault === "function") ? Object.assign(__singleDefault, __namedMerged) : __singleDefault !== void 0 ? __singleDefault : __merged;
+var __namedMerged = {};
+for (const key of Object.keys(clsx_exports)) {
+  if (key !== "default") {
+    __namedMerged[key] = clsx_exports[key];
+  }
+}
+var __defaultExport = __default0 !== void 0 && __default0 !== null && (typeof __default0 === "object" || typeof __default0 === "function") ? Object.assign(__default0, __namedMerged) : __default0 !== void 0 ? __default0 : __namedMerged;
 var distClsxJs_entry_default = __defaultExport;
-var clsx2 = clsx;
+var clsxDefault = __default0;
 export {
-  clsx2 as clsx,
+  clsx,
+  clsxDefault,
   distClsxJs_entry_default as default
 };
 //# sourceMappingURL=clsx.js.map

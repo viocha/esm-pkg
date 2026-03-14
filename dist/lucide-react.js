@@ -1,8 +1,20 @@
 var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: true });
 };
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __reExport = (target, mod, secondTarget) => (__copyProps(target, mod, "default"), secondTarget && __copyProps(secondTarget, mod, "default"));
 
 // node_modules/.pnpm/lucide-react@0.577.0_react@19.2.4/node_modules/lucide-react/dist/esm/lucide-react.js
 var lucide_react_exports = {};
@@ -7561,8 +7573,17 @@ __export(icons_exports, {
   ZoomOut: () => ZoomOut
 });
 
-// node_modules/.pnpm/lucide-react@0.577.0_react@19.2.4/node_modules/lucide-react/dist/esm/createLucideIcon.js
-import { forwardRef as forwardRef2, createElement as createElement2 } from "react";
+// .esm-pkg/distLucideReactJs.react-shim.mjs
+var distLucideReactJs_react_shim_exports = {};
+__export(distLucideReactJs_react_shim_exports, {
+  default: () => distLucideReactJs_react_shim_default
+});
+__reExport(distLucideReactJs_react_shim_exports, react_star);
+import * as __namespace from "react";
+import * as react_star from "react";
+var __defaultKey = "default";
+var __defaultValue = __defaultKey in __namespace ? __namespace[__defaultKey] : void 0;
+var distLucideReactJs_react_shim_default = __defaultValue !== void 0 ? __defaultValue : __namespace;
 
 // node_modules/.pnpm/lucide-react@0.577.0_react@19.2.4/node_modules/lucide-react/dist/esm/shared/src/utils/mergeClasses.js
 var mergeClasses = (...classes) => classes.filter((className, index, array) => {
@@ -7583,9 +7604,6 @@ var toPascalCase = (string) => {
   const camelCase = toCamelCase(string);
   return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
 };
-
-// node_modules/.pnpm/lucide-react@0.577.0_react@19.2.4/node_modules/lucide-react/dist/esm/Icon.js
-import { forwardRef, createElement } from "react";
 
 // node_modules/.pnpm/lucide-react@0.577.0_react@19.2.4/node_modules/lucide-react/dist/esm/defaultAttributes.js
 var defaultAttributes = {
@@ -7611,7 +7629,7 @@ var hasA11yProp = (props) => {
 };
 
 // node_modules/.pnpm/lucide-react@0.577.0_react@19.2.4/node_modules/lucide-react/dist/esm/Icon.js
-var Icon = forwardRef(
+var Icon = (0, distLucideReactJs_react_shim_exports.forwardRef)(
   ({
     color = "currentColor",
     size = 24,
@@ -7621,7 +7639,7 @@ var Icon = forwardRef(
     children,
     iconNode,
     ...rest
-  }, ref) => createElement(
+  }, ref) => (0, distLucideReactJs_react_shim_exports.createElement)(
     "svg",
     {
       ref,
@@ -7635,7 +7653,7 @@ var Icon = forwardRef(
       ...rest
     },
     [
-      ...iconNode.map(([tag, attrs]) => createElement(tag, attrs)),
+      ...iconNode.map(([tag, attrs]) => (0, distLucideReactJs_react_shim_exports.createElement)(tag, attrs)),
       ...Array.isArray(children) ? children : [children]
     ]
   )
@@ -7643,8 +7661,8 @@ var Icon = forwardRef(
 
 // node_modules/.pnpm/lucide-react@0.577.0_react@19.2.4/node_modules/lucide-react/dist/esm/createLucideIcon.js
 var createLucideIcon = (iconName, iconNode) => {
-  const Component3 = forwardRef2(
-    ({ className, ...props }, ref) => createElement2(Icon, {
+  const Component2 = (0, distLucideReactJs_react_shim_exports.forwardRef)(
+    ({ className, ...props }, ref) => (0, distLucideReactJs_react_shim_exports.createElement)(Icon, {
       ref,
       iconNode,
       className: mergeClasses(
@@ -7655,8 +7673,8 @@ var createLucideIcon = (iconName, iconNode) => {
       ...props
     })
   );
-  Component3.displayName = toPascalCase(iconName);
-  return Component3;
+  Component2.displayName = toPascalCase(iconName);
+  return Component2;
 };
 
 // node_modules/.pnpm/lucide-react@0.577.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/a-arrow-down.js
@@ -27969,11720 +27987,5863 @@ var __iconNode1703 = [
 var ZoomOut = createLucideIcon("zoom-out", __iconNode1703);
 
 // .esm-pkg/distLucideReactJs.entry.mjs
-var __defaultKey = "default";
-var __default0 = __defaultKey in lucide_react_exports ? lucide_react_exports[__defaultKey] : void 0;
-var __modules = [lucide_react_exports];
-var __defaults = [__default0];
-var __namedMerged = Object.assign(
-  {},
-  ...__modules.map((mod) => {
-    const next = {};
-    for (const key of Object.keys(mod)) {
-      if (key !== "default") {
-        next[key] = mod[key];
-      }
-    }
-    return next;
-  })
-);
-var __defaultMerged = Object.assign(
-  {},
-  ...__defaults.filter((value) => value !== void 0 && value !== null && (typeof value === "object" || typeof value === "function"))
-);
-var __merged = Object.assign({}, __defaultMerged, __namedMerged);
-var __singleDefault = __defaults[0];
-if (__default0 !== void 0) __merged.lucideReactDefault = __default0;
-var __defaultExport = __singleDefault !== void 0 && __singleDefault !== null && (typeof __singleDefault === "object" || typeof __singleDefault === "function") ? Object.assign(__singleDefault, __namedMerged) : __singleDefault !== void 0 ? __singleDefault : __merged;
+var __defaultKey2 = "default";
+var __default0 = __defaultKey2 in lucide_react_exports ? lucide_react_exports[__defaultKey2] : void 0;
+var __namedMerged = {};
+for (const key of Object.keys(lucide_react_exports)) {
+  if (key !== "default") {
+    __namedMerged[key] = lucide_react_exports[key];
+  }
+}
+var __defaultExport = __default0 !== void 0 && __default0 !== null && (typeof __default0 === "object" || typeof __default0 === "function") ? Object.assign(__default0, __namedMerged) : __default0 !== void 0 ? __default0 : __namedMerged;
 var distLucideReactJs_entry_default = __defaultExport;
-var AArrowDown2 = AArrowDown;
-var AArrowDownIcon = AArrowDown;
-var AArrowUp2 = AArrowUp;
-var AArrowUpIcon = AArrowUp;
-var Accessibility2 = Accessibility;
-var AccessibilityIcon = Accessibility;
-var Activity2 = Activity;
-var ActivityIcon = Activity;
-var ActivitySquare = SquareActivity;
-var ActivitySquareIcon = SquareActivity;
-var Airplay2 = Airplay;
-var AirplayIcon = Airplay;
-var AirVent2 = AirVent;
-var AirVentIcon = AirVent;
-var ALargeSmall2 = ALargeSmall;
-var ALargeSmallIcon = ALargeSmall;
-var AlarmCheck = AlarmClockCheck;
-var AlarmCheckIcon = AlarmClockCheck;
-var AlarmClock2 = AlarmClock;
-var AlarmClockCheck2 = AlarmClockCheck;
-var AlarmClockCheckIcon = AlarmClockCheck;
-var AlarmClockIcon = AlarmClock;
-var AlarmClockMinus2 = AlarmClockMinus;
-var AlarmClockMinusIcon = AlarmClockMinus;
-var AlarmClockOff2 = AlarmClockOff;
-var AlarmClockOffIcon = AlarmClockOff;
-var AlarmClockPlus2 = AlarmClockPlus;
-var AlarmClockPlusIcon = AlarmClockPlus;
-var AlarmMinus = AlarmClockMinus;
-var AlarmMinusIcon = AlarmClockMinus;
-var AlarmPlus = AlarmClockPlus;
-var AlarmPlusIcon = AlarmClockPlus;
-var AlarmSmoke2 = AlarmSmoke;
-var AlarmSmokeIcon = AlarmSmoke;
-var Album2 = Album;
-var AlbumIcon = Album;
-var AlertCircle = CircleAlert;
-var AlertCircleIcon = CircleAlert;
-var AlertOctagon = OctagonAlert;
-var AlertOctagonIcon = OctagonAlert;
-var AlertTriangle = TriangleAlert;
-var AlertTriangleIcon = TriangleAlert;
-var AlignCenter = TextAlignCenter;
-var AlignCenterHorizontal2 = AlignCenterHorizontal;
-var AlignCenterHorizontalIcon = AlignCenterHorizontal;
-var AlignCenterIcon = TextAlignCenter;
-var AlignCenterVertical2 = AlignCenterVertical;
-var AlignCenterVerticalIcon = AlignCenterVertical;
-var AlignEndHorizontal2 = AlignEndHorizontal;
-var AlignEndHorizontalIcon = AlignEndHorizontal;
-var AlignEndVertical2 = AlignEndVertical;
-var AlignEndVerticalIcon = AlignEndVertical;
-var AlignHorizontalDistributeCenter2 = AlignHorizontalDistributeCenter;
-var AlignHorizontalDistributeCenterIcon = AlignHorizontalDistributeCenter;
-var AlignHorizontalDistributeEnd2 = AlignHorizontalDistributeEnd;
-var AlignHorizontalDistributeEndIcon = AlignHorizontalDistributeEnd;
-var AlignHorizontalDistributeStart2 = AlignHorizontalDistributeStart;
-var AlignHorizontalDistributeStartIcon = AlignHorizontalDistributeStart;
-var AlignHorizontalJustifyCenter2 = AlignHorizontalJustifyCenter;
-var AlignHorizontalJustifyCenterIcon = AlignHorizontalJustifyCenter;
-var AlignHorizontalJustifyEnd2 = AlignHorizontalJustifyEnd;
-var AlignHorizontalJustifyEndIcon = AlignHorizontalJustifyEnd;
-var AlignHorizontalJustifyStart2 = AlignHorizontalJustifyStart;
-var AlignHorizontalJustifyStartIcon = AlignHorizontalJustifyStart;
-var AlignHorizontalSpaceAround2 = AlignHorizontalSpaceAround;
-var AlignHorizontalSpaceAroundIcon = AlignHorizontalSpaceAround;
-var AlignHorizontalSpaceBetween2 = AlignHorizontalSpaceBetween;
-var AlignHorizontalSpaceBetweenIcon = AlignHorizontalSpaceBetween;
-var AlignJustify = TextAlignJustify;
-var AlignJustifyIcon = TextAlignJustify;
-var AlignLeft = TextAlignStart;
-var AlignLeftIcon = TextAlignStart;
-var AlignRight = TextAlignEnd;
-var AlignRightIcon = TextAlignEnd;
-var AlignStartHorizontal2 = AlignStartHorizontal;
-var AlignStartHorizontalIcon = AlignStartHorizontal;
-var AlignStartVertical2 = AlignStartVertical;
-var AlignStartVerticalIcon = AlignStartVertical;
-var AlignVerticalDistributeCenter2 = AlignVerticalDistributeCenter;
-var AlignVerticalDistributeCenterIcon = AlignVerticalDistributeCenter;
-var AlignVerticalDistributeEnd2 = AlignVerticalDistributeEnd;
-var AlignVerticalDistributeEndIcon = AlignVerticalDistributeEnd;
-var AlignVerticalDistributeStart2 = AlignVerticalDistributeStart;
-var AlignVerticalDistributeStartIcon = AlignVerticalDistributeStart;
-var AlignVerticalJustifyCenter2 = AlignVerticalJustifyCenter;
-var AlignVerticalJustifyCenterIcon = AlignVerticalJustifyCenter;
-var AlignVerticalJustifyEnd2 = AlignVerticalJustifyEnd;
-var AlignVerticalJustifyEndIcon = AlignVerticalJustifyEnd;
-var AlignVerticalJustifyStart2 = AlignVerticalJustifyStart;
-var AlignVerticalJustifyStartIcon = AlignVerticalJustifyStart;
-var AlignVerticalSpaceAround2 = AlignVerticalSpaceAround;
-var AlignVerticalSpaceAroundIcon = AlignVerticalSpaceAround;
-var AlignVerticalSpaceBetween2 = AlignVerticalSpaceBetween;
-var AlignVerticalSpaceBetweenIcon = AlignVerticalSpaceBetween;
-var Ambulance2 = Ambulance;
-var AmbulanceIcon = Ambulance;
-var Ampersand2 = Ampersand;
-var AmpersandIcon = Ampersand;
-var Ampersands2 = Ampersands;
-var AmpersandsIcon = Ampersands;
-var Amphora2 = Amphora;
-var AmphoraIcon = Amphora;
-var Anchor2 = Anchor;
-var AnchorIcon = Anchor;
-var Angry2 = Angry;
-var AngryIcon = Angry;
-var Annoyed2 = Annoyed;
-var AnnoyedIcon = Annoyed;
-var Antenna2 = Antenna;
-var AntennaIcon = Antenna;
-var Anvil2 = Anvil;
-var AnvilIcon = Anvil;
-var Aperture2 = Aperture;
-var ApertureIcon = Aperture;
-var Apple2 = Apple;
-var AppleIcon = Apple;
-var AppWindow2 = AppWindow;
-var AppWindowIcon = AppWindow;
-var AppWindowMac2 = AppWindowMac;
-var AppWindowMacIcon = AppWindowMac;
-var Archive2 = Archive;
-var ArchiveIcon = Archive;
-var ArchiveRestore2 = ArchiveRestore;
-var ArchiveRestoreIcon = ArchiveRestore;
-var ArchiveX2 = ArchiveX;
-var ArchiveXIcon = ArchiveX;
-var AreaChart = ChartArea;
-var AreaChartIcon = ChartArea;
-var Armchair2 = Armchair;
-var ArmchairIcon = Armchair;
-var ArrowBigDown2 = ArrowBigDown;
-var ArrowBigDownDash2 = ArrowBigDownDash;
-var ArrowBigDownDashIcon = ArrowBigDownDash;
-var ArrowBigDownIcon = ArrowBigDown;
-var ArrowBigLeft2 = ArrowBigLeft;
-var ArrowBigLeftDash2 = ArrowBigLeftDash;
-var ArrowBigLeftDashIcon = ArrowBigLeftDash;
-var ArrowBigLeftIcon = ArrowBigLeft;
-var ArrowBigRight2 = ArrowBigRight;
-var ArrowBigRightDash2 = ArrowBigRightDash;
-var ArrowBigRightDashIcon = ArrowBigRightDash;
-var ArrowBigRightIcon = ArrowBigRight;
-var ArrowBigUp2 = ArrowBigUp;
-var ArrowBigUpDash2 = ArrowBigUpDash;
-var ArrowBigUpDashIcon = ArrowBigUpDash;
-var ArrowBigUpIcon = ArrowBigUp;
-var ArrowDown2 = ArrowDown;
-var ArrowDown012 = ArrowDown01;
-var ArrowDown01Icon = ArrowDown01;
-var ArrowDown102 = ArrowDown10;
-var ArrowDown10Icon = ArrowDown10;
-var ArrowDownAz = ArrowDownAZ;
-var ArrowDownAZ2 = ArrowDownAZ;
-var ArrowDownAzIcon = ArrowDownAZ;
-var ArrowDownAZIcon = ArrowDownAZ;
-var ArrowDownCircle = CircleArrowDown;
-var ArrowDownCircleIcon = CircleArrowDown;
-var ArrowDownFromLine2 = ArrowDownFromLine;
-var ArrowDownFromLineIcon = ArrowDownFromLine;
-var ArrowDownIcon = ArrowDown;
-var ArrowDownLeft2 = ArrowDownLeft;
-var ArrowDownLeftFromCircle = CircleArrowOutDownLeft;
-var ArrowDownLeftFromCircleIcon = CircleArrowOutDownLeft;
-var ArrowDownLeftFromSquare = SquareArrowOutDownLeft;
-var ArrowDownLeftFromSquareIcon = SquareArrowOutDownLeft;
-var ArrowDownLeftIcon = ArrowDownLeft;
-var ArrowDownLeftSquare = SquareArrowDownLeft;
-var ArrowDownLeftSquareIcon = SquareArrowDownLeft;
-var ArrowDownNarrowWide2 = ArrowDownNarrowWide;
-var ArrowDownNarrowWideIcon = ArrowDownNarrowWide;
-var ArrowDownRight2 = ArrowDownRight;
-var ArrowDownRightFromCircle = CircleArrowOutDownRight;
-var ArrowDownRightFromCircleIcon = CircleArrowOutDownRight;
-var ArrowDownRightFromSquare = SquareArrowOutDownRight;
-var ArrowDownRightFromSquareIcon = SquareArrowOutDownRight;
-var ArrowDownRightIcon = ArrowDownRight;
-var ArrowDownRightSquare = SquareArrowDownRight;
-var ArrowDownRightSquareIcon = SquareArrowDownRight;
-var ArrowDownSquare = SquareArrowDown;
-var ArrowDownSquareIcon = SquareArrowDown;
-var ArrowDownToDot2 = ArrowDownToDot;
-var ArrowDownToDotIcon = ArrowDownToDot;
-var ArrowDownToLine2 = ArrowDownToLine;
-var ArrowDownToLineIcon = ArrowDownToLine;
-var ArrowDownUp2 = ArrowDownUp;
-var ArrowDownUpIcon = ArrowDownUp;
-var ArrowDownWideNarrow2 = ArrowDownWideNarrow;
-var ArrowDownWideNarrowIcon = ArrowDownWideNarrow;
-var ArrowDownZa = ArrowDownZA;
-var ArrowDownZA2 = ArrowDownZA;
-var ArrowDownZaIcon = ArrowDownZA;
-var ArrowDownZAIcon = ArrowDownZA;
-var ArrowLeft2 = ArrowLeft;
-var ArrowLeftCircle = CircleArrowLeft;
-var ArrowLeftCircleIcon = CircleArrowLeft;
-var ArrowLeftFromLine2 = ArrowLeftFromLine;
-var ArrowLeftFromLineIcon = ArrowLeftFromLine;
-var ArrowLeftIcon = ArrowLeft;
-var ArrowLeftRight2 = ArrowLeftRight;
-var ArrowLeftRightIcon = ArrowLeftRight;
-var ArrowLeftSquare = SquareArrowLeft;
-var ArrowLeftSquareIcon = SquareArrowLeft;
-var ArrowLeftToLine2 = ArrowLeftToLine;
-var ArrowLeftToLineIcon = ArrowLeftToLine;
-var ArrowRight2 = ArrowRight;
-var ArrowRightCircle = CircleArrowRight;
-var ArrowRightCircleIcon = CircleArrowRight;
-var ArrowRightFromLine2 = ArrowRightFromLine;
-var ArrowRightFromLineIcon = ArrowRightFromLine;
-var ArrowRightIcon = ArrowRight;
-var ArrowRightLeft2 = ArrowRightLeft;
-var ArrowRightLeftIcon = ArrowRightLeft;
-var ArrowRightSquare = SquareArrowRight;
-var ArrowRightSquareIcon = SquareArrowRight;
-var ArrowRightToLine2 = ArrowRightToLine;
-var ArrowRightToLineIcon = ArrowRightToLine;
-var ArrowsUpFromLine2 = ArrowsUpFromLine;
-var ArrowsUpFromLineIcon = ArrowsUpFromLine;
-var ArrowUp2 = ArrowUp;
-var ArrowUp012 = ArrowUp01;
-var ArrowUp01Icon = ArrowUp01;
-var ArrowUp102 = ArrowUp10;
-var ArrowUp10Icon = ArrowUp10;
-var ArrowUpAz = ArrowUpAZ;
-var ArrowUpAZ2 = ArrowUpAZ;
-var ArrowUpAzIcon = ArrowUpAZ;
-var ArrowUpAZIcon = ArrowUpAZ;
-var ArrowUpCircle = CircleArrowUp;
-var ArrowUpCircleIcon = CircleArrowUp;
-var ArrowUpDown2 = ArrowUpDown;
-var ArrowUpDownIcon = ArrowUpDown;
-var ArrowUpFromDot2 = ArrowUpFromDot;
-var ArrowUpFromDotIcon = ArrowUpFromDot;
-var ArrowUpFromLine2 = ArrowUpFromLine;
-var ArrowUpFromLineIcon = ArrowUpFromLine;
-var ArrowUpIcon = ArrowUp;
-var ArrowUpLeft2 = ArrowUpLeft;
-var ArrowUpLeftFromCircle = CircleArrowOutUpLeft;
-var ArrowUpLeftFromCircleIcon = CircleArrowOutUpLeft;
-var ArrowUpLeftFromSquare = SquareArrowOutUpLeft;
-var ArrowUpLeftFromSquareIcon = SquareArrowOutUpLeft;
-var ArrowUpLeftIcon = ArrowUpLeft;
-var ArrowUpLeftSquare = SquareArrowUpLeft;
-var ArrowUpLeftSquareIcon = SquareArrowUpLeft;
-var ArrowUpNarrowWide2 = ArrowUpNarrowWide;
-var ArrowUpNarrowWideIcon = ArrowUpNarrowWide;
-var ArrowUpRight2 = ArrowUpRight;
-var ArrowUpRightFromCircle = CircleArrowOutUpRight;
-var ArrowUpRightFromCircleIcon = CircleArrowOutUpRight;
-var ArrowUpRightFromSquare = SquareArrowOutUpRight;
-var ArrowUpRightFromSquareIcon = SquareArrowOutUpRight;
-var ArrowUpRightIcon = ArrowUpRight;
-var ArrowUpRightSquare = SquareArrowUpRight;
-var ArrowUpRightSquareIcon = SquareArrowUpRight;
-var ArrowUpSquare = SquareArrowUp;
-var ArrowUpSquareIcon = SquareArrowUp;
-var ArrowUpToLine2 = ArrowUpToLine;
-var ArrowUpToLineIcon = ArrowUpToLine;
-var ArrowUpWideNarrow2 = ArrowUpWideNarrow;
-var ArrowUpWideNarrowIcon = ArrowUpWideNarrow;
-var ArrowUpZa = ArrowUpZA;
-var ArrowUpZA2 = ArrowUpZA;
-var ArrowUpZaIcon = ArrowUpZA;
-var ArrowUpZAIcon = ArrowUpZA;
-var Asterisk2 = Asterisk;
-var AsteriskIcon = Asterisk;
-var AsteriskSquare = SquareAsterisk;
-var AsteriskSquareIcon = SquareAsterisk;
-var Atom2 = Atom;
-var AtomIcon = Atom;
-var AtSign2 = AtSign;
-var AtSignIcon = AtSign;
-var AudioLines2 = AudioLines;
-var AudioLinesIcon = AudioLines;
-var AudioWaveform2 = AudioWaveform;
-var AudioWaveformIcon = AudioWaveform;
-var Award2 = Award;
-var AwardIcon = Award;
-var Axe2 = Axe;
-var AxeIcon = Axe;
-var Axis3d2 = Axis3d;
-var Axis3D = Axis3d;
-var Axis3dIcon = Axis3d;
-var Axis3DIcon = Axis3d;
-var Baby2 = Baby;
-var BabyIcon = Baby;
-var Backpack2 = Backpack;
-var BackpackIcon = Backpack;
-var Badge2 = Badge;
-var BadgeAlert2 = BadgeAlert;
-var BadgeAlertIcon = BadgeAlert;
-var BadgeCent2 = BadgeCent;
-var BadgeCentIcon = BadgeCent;
-var BadgeCheck2 = BadgeCheck;
-var BadgeCheckIcon = BadgeCheck;
-var BadgeDollarSign2 = BadgeDollarSign;
-var BadgeDollarSignIcon = BadgeDollarSign;
-var BadgeEuro2 = BadgeEuro;
-var BadgeEuroIcon = BadgeEuro;
-var BadgeHelp = BadgeQuestionMark;
-var BadgeHelpIcon = BadgeQuestionMark;
-var BadgeIcon = Badge;
-var BadgeIndianRupee2 = BadgeIndianRupee;
-var BadgeIndianRupeeIcon = BadgeIndianRupee;
-var BadgeInfo2 = BadgeInfo;
-var BadgeInfoIcon = BadgeInfo;
-var BadgeJapaneseYen2 = BadgeJapaneseYen;
-var BadgeJapaneseYenIcon = BadgeJapaneseYen;
-var BadgeMinus2 = BadgeMinus;
-var BadgeMinusIcon = BadgeMinus;
-var BadgePercent2 = BadgePercent;
-var BadgePercentIcon = BadgePercent;
-var BadgePlus2 = BadgePlus;
-var BadgePlusIcon = BadgePlus;
-var BadgePoundSterling2 = BadgePoundSterling;
-var BadgePoundSterlingIcon = BadgePoundSterling;
-var BadgeQuestionMark2 = BadgeQuestionMark;
-var BadgeQuestionMarkIcon = BadgeQuestionMark;
-var BadgeRussianRuble2 = BadgeRussianRuble;
-var BadgeRussianRubleIcon = BadgeRussianRuble;
-var BadgeSwissFranc2 = BadgeSwissFranc;
-var BadgeSwissFrancIcon = BadgeSwissFranc;
-var BadgeTurkishLira2 = BadgeTurkishLira;
-var BadgeTurkishLiraIcon = BadgeTurkishLira;
-var BadgeX2 = BadgeX;
-var BadgeXIcon = BadgeX;
-var BaggageClaim2 = BaggageClaim;
-var BaggageClaimIcon = BaggageClaim;
-var Balloon2 = Balloon;
-var BalloonIcon = Balloon;
-var Ban2 = Ban;
-var Banana2 = Banana;
-var BananaIcon = Banana;
-var Bandage2 = Bandage;
-var BandageIcon = Bandage;
-var BanIcon = Ban;
-var Banknote2 = Banknote;
-var BanknoteArrowDown2 = BanknoteArrowDown;
-var BanknoteArrowDownIcon = BanknoteArrowDown;
-var BanknoteArrowUp2 = BanknoteArrowUp;
-var BanknoteArrowUpIcon = BanknoteArrowUp;
-var BanknoteIcon = Banknote;
-var BanknoteX2 = BanknoteX;
-var BanknoteXIcon = BanknoteX;
-var BarChart = ChartNoAxesColumnIncreasing;
-var BarChart2 = ChartNoAxesColumn;
-var BarChart2Icon = ChartNoAxesColumn;
-var BarChart3 = ChartColumn;
-var BarChart3Icon = ChartColumn;
-var BarChart4 = ChartColumnIncreasing;
-var BarChart4Icon = ChartColumnIncreasing;
-var BarChartBig = ChartColumnBig;
-var BarChartBigIcon = ChartColumnBig;
-var BarChartHorizontal = ChartBar;
-var BarChartHorizontalBig = ChartBarBig;
-var BarChartHorizontalBigIcon = ChartBarBig;
-var BarChartHorizontalIcon = ChartBar;
-var BarChartIcon = ChartNoAxesColumnIncreasing;
-var Barcode2 = Barcode;
-var BarcodeIcon = Barcode;
-var Barrel2 = Barrel;
-var BarrelIcon = Barrel;
-var Baseline2 = Baseline;
-var BaselineIcon = Baseline;
-var Bath2 = Bath;
-var BathIcon = Bath;
-var Battery2 = Battery;
-var BatteryCharging2 = BatteryCharging;
-var BatteryChargingIcon = BatteryCharging;
-var BatteryFull2 = BatteryFull;
-var BatteryFullIcon = BatteryFull;
-var BatteryIcon = Battery;
-var BatteryLow2 = BatteryLow;
-var BatteryLowIcon = BatteryLow;
-var BatteryMedium2 = BatteryMedium;
-var BatteryMediumIcon = BatteryMedium;
-var BatteryPlus2 = BatteryPlus;
-var BatteryPlusIcon = BatteryPlus;
-var BatteryWarning2 = BatteryWarning;
-var BatteryWarningIcon = BatteryWarning;
-var Beaker2 = Beaker;
-var BeakerIcon = Beaker;
-var Bean2 = Bean;
-var BeanIcon = Bean;
-var BeanOff2 = BeanOff;
-var BeanOffIcon = BeanOff;
-var Bed2 = Bed;
-var BedDouble2 = BedDouble;
-var BedDoubleIcon = BedDouble;
-var BedIcon = Bed;
-var BedSingle2 = BedSingle;
-var BedSingleIcon = BedSingle;
-var Beef2 = Beef;
-var BeefIcon = Beef;
-var Beer2 = Beer;
-var BeerIcon = Beer;
-var BeerOff2 = BeerOff;
-var BeerOffIcon = BeerOff;
-var Bell2 = Bell;
-var BellDot2 = BellDot;
-var BellDotIcon = BellDot;
-var BellElectric2 = BellElectric;
-var BellElectricIcon = BellElectric;
-var BellIcon = Bell;
-var BellMinus2 = BellMinus;
-var BellMinusIcon = BellMinus;
-var BellOff2 = BellOff;
-var BellOffIcon = BellOff;
-var BellPlus2 = BellPlus;
-var BellPlusIcon = BellPlus;
-var BellRing2 = BellRing;
-var BellRingIcon = BellRing;
-var BetweenHorizonalEnd = BetweenHorizontalEnd;
-var BetweenHorizonalEndIcon = BetweenHorizontalEnd;
-var BetweenHorizonalStart = BetweenHorizontalStart;
-var BetweenHorizonalStartIcon = BetweenHorizontalStart;
-var BetweenHorizontalEnd2 = BetweenHorizontalEnd;
-var BetweenHorizontalEndIcon = BetweenHorizontalEnd;
-var BetweenHorizontalStart2 = BetweenHorizontalStart;
-var BetweenHorizontalStartIcon = BetweenHorizontalStart;
-var BetweenVerticalEnd2 = BetweenVerticalEnd;
-var BetweenVerticalEndIcon = BetweenVerticalEnd;
-var BetweenVerticalStart2 = BetweenVerticalStart;
-var BetweenVerticalStartIcon = BetweenVerticalStart;
-var BicepsFlexed2 = BicepsFlexed;
-var BicepsFlexedIcon = BicepsFlexed;
-var Bike2 = Bike;
-var BikeIcon = Bike;
-var Binary2 = Binary;
-var BinaryIcon = Binary;
-var Binoculars2 = Binoculars;
-var BinocularsIcon = Binoculars;
-var Biohazard2 = Biohazard;
-var BiohazardIcon = Biohazard;
-var Bird2 = Bird;
-var Birdhouse2 = Birdhouse;
-var BirdhouseIcon = Birdhouse;
-var BirdIcon = Bird;
-var Bitcoin2 = Bitcoin;
-var BitcoinIcon = Bitcoin;
-var Blend2 = Blend;
-var BlendIcon = Blend;
-var Blinds2 = Blinds;
-var BlindsIcon = Blinds;
-var Blocks2 = Blocks;
-var BlocksIcon = Blocks;
-var Bluetooth2 = Bluetooth;
-var BluetoothConnected2 = BluetoothConnected;
-var BluetoothConnectedIcon = BluetoothConnected;
-var BluetoothIcon = Bluetooth;
-var BluetoothOff2 = BluetoothOff;
-var BluetoothOffIcon = BluetoothOff;
-var BluetoothSearching2 = BluetoothSearching;
-var BluetoothSearchingIcon = BluetoothSearching;
-var Bold2 = Bold;
-var BoldIcon = Bold;
-var Bolt2 = Bolt;
-var BoltIcon = Bolt;
-var Bomb2 = Bomb;
-var BombIcon = Bomb;
-var Bone2 = Bone;
-var BoneIcon = Bone;
-var Book2 = Book;
-var BookA2 = BookA;
-var BookAIcon = BookA;
-var BookAlert2 = BookAlert;
-var BookAlertIcon = BookAlert;
-var BookAudio2 = BookAudio;
-var BookAudioIcon = BookAudio;
-var BookCheck2 = BookCheck;
-var BookCheckIcon = BookCheck;
-var BookCopy2 = BookCopy;
-var BookCopyIcon = BookCopy;
-var BookDashed2 = BookDashed;
-var BookDashedIcon = BookDashed;
-var BookDown2 = BookDown;
-var BookDownIcon = BookDown;
-var BookHeadphones2 = BookHeadphones;
-var BookHeadphonesIcon = BookHeadphones;
-var BookHeart2 = BookHeart;
-var BookHeartIcon = BookHeart;
-var BookIcon = Book;
-var BookImage2 = BookImage;
-var BookImageIcon = BookImage;
-var BookKey2 = BookKey;
-var BookKeyIcon = BookKey;
-var BookLock2 = BookLock;
-var BookLockIcon = BookLock;
-var Bookmark2 = Bookmark;
-var BookmarkCheck2 = BookmarkCheck;
-var BookmarkCheckIcon = BookmarkCheck;
-var BookMarked2 = BookMarked;
-var BookMarkedIcon = BookMarked;
-var BookmarkIcon = Bookmark;
-var BookmarkMinus2 = BookmarkMinus;
-var BookmarkMinusIcon = BookmarkMinus;
-var BookmarkPlus2 = BookmarkPlus;
-var BookmarkPlusIcon = BookmarkPlus;
-var BookmarkX2 = BookmarkX;
-var BookmarkXIcon = BookmarkX;
-var BookMinus2 = BookMinus;
-var BookMinusIcon = BookMinus;
-var BookOpen2 = BookOpen;
-var BookOpenCheck2 = BookOpenCheck;
-var BookOpenCheckIcon = BookOpenCheck;
-var BookOpenIcon = BookOpen;
-var BookOpenText2 = BookOpenText;
-var BookOpenTextIcon = BookOpenText;
-var BookPlus2 = BookPlus;
-var BookPlusIcon = BookPlus;
-var BookSearch2 = BookSearch;
-var BookSearchIcon = BookSearch;
-var BookTemplate = BookDashed;
-var BookTemplateIcon = BookDashed;
-var BookText2 = BookText;
-var BookTextIcon = BookText;
-var BookType2 = BookType;
-var BookTypeIcon = BookType;
-var BookUp3 = BookUp;
-var BookUp22 = BookUp2;
-var BookUp2Icon = BookUp2;
-var BookUpIcon = BookUp;
-var BookUser2 = BookUser;
-var BookUserIcon = BookUser;
-var BookX2 = BookX;
-var BookXIcon = BookX;
-var BoomBox2 = BoomBox;
-var BoomBoxIcon = BoomBox;
-var Bot2 = Bot;
-var BotIcon = Bot;
-var BotMessageSquare2 = BotMessageSquare;
-var BotMessageSquareIcon = BotMessageSquare;
-var BotOff2 = BotOff;
-var BotOffIcon = BotOff;
-var BottleWine2 = BottleWine;
-var BottleWineIcon = BottleWine;
-var BowArrow2 = BowArrow;
-var BowArrowIcon = BowArrow;
-var Box2 = Box;
-var Boxes2 = Boxes;
-var BoxesIcon = Boxes;
-var BoxIcon = Box;
-var BoxSelect = SquareDashed;
-var BoxSelectIcon = SquareDashed;
-var Braces2 = Braces;
-var BracesIcon = Braces;
-var Brackets2 = Brackets;
-var BracketsIcon = Brackets;
-var Brain2 = Brain;
-var BrainCircuit2 = BrainCircuit;
-var BrainCircuitIcon = BrainCircuit;
-var BrainCog2 = BrainCog;
-var BrainCogIcon = BrainCog;
-var BrainIcon = Brain;
-var BrickWall2 = BrickWall;
-var BrickWallFire2 = BrickWallFire;
-var BrickWallFireIcon = BrickWallFire;
-var BrickWallIcon = BrickWall;
-var BrickWallShield2 = BrickWallShield;
-var BrickWallShieldIcon = BrickWallShield;
-var Briefcase2 = Briefcase;
-var BriefcaseBusiness2 = BriefcaseBusiness;
-var BriefcaseBusinessIcon = BriefcaseBusiness;
-var BriefcaseConveyorBelt2 = BriefcaseConveyorBelt;
-var BriefcaseConveyorBeltIcon = BriefcaseConveyorBelt;
-var BriefcaseIcon = Briefcase;
-var BriefcaseMedical2 = BriefcaseMedical;
-var BriefcaseMedicalIcon = BriefcaseMedical;
-var BringToFront2 = BringToFront;
-var BringToFrontIcon = BringToFront;
-var Brush2 = Brush;
-var BrushCleaning2 = BrushCleaning;
-var BrushCleaningIcon = BrushCleaning;
-var BrushIcon = Brush;
-var Bubbles2 = Bubbles;
-var BubblesIcon = Bubbles;
-var Bug2 = Bug;
-var BugIcon = Bug;
-var BugOff2 = BugOff;
-var BugOffIcon = BugOff;
-var BugPlay2 = BugPlay;
-var BugPlayIcon = BugPlay;
-var Building3 = Building;
-var Building22 = Building2;
-var Building2Icon = Building2;
-var BuildingIcon = Building;
-var Bus2 = Bus;
-var BusFront2 = BusFront;
-var BusFrontIcon = BusFront;
-var BusIcon = Bus;
-var Cable2 = Cable;
-var CableCar2 = CableCar;
-var CableCarIcon = CableCar;
-var CableIcon = Cable;
-var Cake2 = Cake;
-var CakeIcon = Cake;
-var CakeSlice2 = CakeSlice;
-var CakeSliceIcon = CakeSlice;
-var Calculator2 = Calculator;
-var CalculatorIcon = Calculator;
-var Calendar2 = Calendar;
-var Calendar12 = Calendar1;
-var Calendar1Icon = Calendar1;
-var CalendarArrowDown2 = CalendarArrowDown;
-var CalendarArrowDownIcon = CalendarArrowDown;
-var CalendarArrowUp2 = CalendarArrowUp;
-var CalendarArrowUpIcon = CalendarArrowUp;
-var CalendarCheck3 = CalendarCheck;
-var CalendarCheck22 = CalendarCheck2;
-var CalendarCheck2Icon = CalendarCheck2;
-var CalendarCheckIcon = CalendarCheck;
-var CalendarClock2 = CalendarClock;
-var CalendarClockIcon = CalendarClock;
-var CalendarCog2 = CalendarCog;
-var CalendarCogIcon = CalendarCog;
-var CalendarDays2 = CalendarDays;
-var CalendarDaysIcon = CalendarDays;
-var CalendarFold2 = CalendarFold;
-var CalendarFoldIcon = CalendarFold;
-var CalendarHeart2 = CalendarHeart;
-var CalendarHeartIcon = CalendarHeart;
-var CalendarIcon = Calendar;
-var CalendarMinus3 = CalendarMinus;
-var CalendarMinus22 = CalendarMinus2;
-var CalendarMinus2Icon = CalendarMinus2;
-var CalendarMinusIcon = CalendarMinus;
-var CalendarOff2 = CalendarOff;
-var CalendarOffIcon = CalendarOff;
-var CalendarPlus3 = CalendarPlus;
-var CalendarPlus22 = CalendarPlus2;
-var CalendarPlus2Icon = CalendarPlus2;
-var CalendarPlusIcon = CalendarPlus;
-var CalendarRange2 = CalendarRange;
-var CalendarRangeIcon = CalendarRange;
-var Calendars2 = Calendars;
-var CalendarSearch2 = CalendarSearch;
-var CalendarSearchIcon = CalendarSearch;
-var CalendarsIcon = Calendars;
-var CalendarSync2 = CalendarSync;
-var CalendarSyncIcon = CalendarSync;
-var CalendarX3 = CalendarX;
-var CalendarX22 = CalendarX2;
-var CalendarX2Icon = CalendarX2;
-var CalendarXIcon = CalendarX;
-var Camera2 = Camera;
-var CameraIcon = Camera;
-var CameraOff2 = CameraOff;
-var CameraOffIcon = CameraOff;
-var CandlestickChart = ChartCandlestick;
-var CandlestickChartIcon = ChartCandlestick;
-var Candy2 = Candy;
-var CandyCane2 = CandyCane;
-var CandyCaneIcon = CandyCane;
-var CandyIcon = Candy;
-var CandyOff2 = CandyOff;
-var CandyOffIcon = CandyOff;
-var Cannabis2 = Cannabis;
-var CannabisIcon = Cannabis;
-var CannabisOff2 = CannabisOff;
-var CannabisOffIcon = CannabisOff;
-var Captions2 = Captions;
-var CaptionsIcon = Captions;
-var CaptionsOff2 = CaptionsOff;
-var CaptionsOffIcon = CaptionsOff;
-var Car2 = Car;
-var Caravan2 = Caravan;
-var CaravanIcon = Caravan;
-var CardSim2 = CardSim;
-var CardSimIcon = CardSim;
-var CarFront2 = CarFront;
-var CarFrontIcon = CarFront;
-var CarIcon = Car;
-var Carrot2 = Carrot;
-var CarrotIcon = Carrot;
-var CarTaxiFront2 = CarTaxiFront;
-var CarTaxiFrontIcon = CarTaxiFront;
-var CaseLower2 = CaseLower;
-var CaseLowerIcon = CaseLower;
-var CaseSensitive2 = CaseSensitive;
-var CaseSensitiveIcon = CaseSensitive;
-var CaseUpper2 = CaseUpper;
-var CaseUpperIcon = CaseUpper;
-var CassetteTape2 = CassetteTape;
-var CassetteTapeIcon = CassetteTape;
-var Cast2 = Cast;
-var CastIcon = Cast;
-var Castle2 = Castle;
-var CastleIcon = Castle;
-var Cat2 = Cat;
-var CatIcon = Cat;
-var Cctv2 = Cctv;
-var CctvIcon = Cctv;
-var ChartArea2 = ChartArea;
-var ChartAreaIcon = ChartArea;
-var ChartBar2 = ChartBar;
-var ChartBarBig2 = ChartBarBig;
-var ChartBarBigIcon = ChartBarBig;
-var ChartBarDecreasing2 = ChartBarDecreasing;
-var ChartBarDecreasingIcon = ChartBarDecreasing;
-var ChartBarIcon = ChartBar;
-var ChartBarIncreasing2 = ChartBarIncreasing;
-var ChartBarIncreasingIcon = ChartBarIncreasing;
-var ChartBarStacked2 = ChartBarStacked;
-var ChartBarStackedIcon = ChartBarStacked;
-var ChartCandlestick2 = ChartCandlestick;
-var ChartCandlestickIcon = ChartCandlestick;
-var ChartColumn2 = ChartColumn;
-var ChartColumnBig2 = ChartColumnBig;
-var ChartColumnBigIcon = ChartColumnBig;
-var ChartColumnDecreasing2 = ChartColumnDecreasing;
-var ChartColumnDecreasingIcon = ChartColumnDecreasing;
-var ChartColumnIcon = ChartColumn;
-var ChartColumnIncreasing2 = ChartColumnIncreasing;
-var ChartColumnIncreasingIcon = ChartColumnIncreasing;
-var ChartColumnStacked2 = ChartColumnStacked;
-var ChartColumnStackedIcon = ChartColumnStacked;
-var ChartGantt2 = ChartGantt;
-var ChartGanttIcon = ChartGantt;
-var ChartLine2 = ChartLine;
-var ChartLineIcon = ChartLine;
-var ChartNetwork2 = ChartNetwork;
-var ChartNetworkIcon = ChartNetwork;
-var ChartNoAxesColumn2 = ChartNoAxesColumn;
-var ChartNoAxesColumnDecreasing2 = ChartNoAxesColumnDecreasing;
-var ChartNoAxesColumnDecreasingIcon = ChartNoAxesColumnDecreasing;
-var ChartNoAxesColumnIcon = ChartNoAxesColumn;
-var ChartNoAxesColumnIncreasing2 = ChartNoAxesColumnIncreasing;
-var ChartNoAxesColumnIncreasingIcon = ChartNoAxesColumnIncreasing;
-var ChartNoAxesCombined2 = ChartNoAxesCombined;
-var ChartNoAxesCombinedIcon = ChartNoAxesCombined;
-var ChartNoAxesGantt2 = ChartNoAxesGantt;
-var ChartNoAxesGanttIcon = ChartNoAxesGantt;
-var ChartPie2 = ChartPie;
-var ChartPieIcon = ChartPie;
-var ChartScatter2 = ChartScatter;
-var ChartScatterIcon = ChartScatter;
-var ChartSpline2 = ChartSpline;
-var ChartSplineIcon = ChartSpline;
-var Check2 = Check;
-var CheckCheck2 = CheckCheck;
-var CheckCheckIcon = CheckCheck;
-var CheckCircle = CircleCheckBig;
-var CheckCircle2 = CircleCheck;
-var CheckCircle2Icon = CircleCheck;
-var CheckCircleIcon = CircleCheckBig;
-var CheckIcon = Check;
-var CheckLine2 = CheckLine;
-var CheckLineIcon = CheckLine;
-var CheckSquare = SquareCheckBig;
-var CheckSquare2 = SquareCheck;
-var CheckSquare2Icon = SquareCheck;
-var CheckSquareIcon = SquareCheckBig;
-var ChefHat2 = ChefHat;
-var ChefHatIcon = ChefHat;
-var Cherry2 = Cherry;
-var CherryIcon = Cherry;
-var ChessBishop2 = ChessBishop;
-var ChessBishopIcon = ChessBishop;
-var ChessKing2 = ChessKing;
-var ChessKingIcon = ChessKing;
-var ChessKnight2 = ChessKnight;
-var ChessKnightIcon = ChessKnight;
-var ChessPawn2 = ChessPawn;
-var ChessPawnIcon = ChessPawn;
-var ChessQueen2 = ChessQueen;
-var ChessQueenIcon = ChessQueen;
-var ChessRook2 = ChessRook;
-var ChessRookIcon = ChessRook;
-var ChevronDown2 = ChevronDown;
-var ChevronDownCircle = CircleChevronDown;
-var ChevronDownCircleIcon = CircleChevronDown;
-var ChevronDownIcon = ChevronDown;
-var ChevronDownSquare = SquareChevronDown;
-var ChevronDownSquareIcon = SquareChevronDown;
-var ChevronFirst2 = ChevronFirst;
-var ChevronFirstIcon = ChevronFirst;
-var ChevronLast2 = ChevronLast;
-var ChevronLastIcon = ChevronLast;
-var ChevronLeft2 = ChevronLeft;
-var ChevronLeftCircle = CircleChevronLeft;
-var ChevronLeftCircleIcon = CircleChevronLeft;
-var ChevronLeftIcon = ChevronLeft;
-var ChevronLeftSquare = SquareChevronLeft;
-var ChevronLeftSquareIcon = SquareChevronLeft;
-var ChevronRight2 = ChevronRight;
-var ChevronRightCircle = CircleChevronRight;
-var ChevronRightCircleIcon = CircleChevronRight;
-var ChevronRightIcon = ChevronRight;
-var ChevronRightSquare = SquareChevronRight;
-var ChevronRightSquareIcon = SquareChevronRight;
-var ChevronsDown2 = ChevronsDown;
-var ChevronsDownIcon = ChevronsDown;
-var ChevronsDownUp2 = ChevronsDownUp;
-var ChevronsDownUpIcon = ChevronsDownUp;
-var ChevronsLeft2 = ChevronsLeft;
-var ChevronsLeftIcon = ChevronsLeft;
-var ChevronsLeftRight2 = ChevronsLeftRight;
-var ChevronsLeftRightEllipsis2 = ChevronsLeftRightEllipsis;
-var ChevronsLeftRightEllipsisIcon = ChevronsLeftRightEllipsis;
-var ChevronsLeftRightIcon = ChevronsLeftRight;
-var ChevronsRight2 = ChevronsRight;
-var ChevronsRightIcon = ChevronsRight;
-var ChevronsRightLeft2 = ChevronsRightLeft;
-var ChevronsRightLeftIcon = ChevronsRightLeft;
-var ChevronsUp2 = ChevronsUp;
-var ChevronsUpDown2 = ChevronsUpDown;
-var ChevronsUpDownIcon = ChevronsUpDown;
-var ChevronsUpIcon = ChevronsUp;
-var ChevronUp2 = ChevronUp;
-var ChevronUpCircle = CircleChevronUp;
-var ChevronUpCircleIcon = CircleChevronUp;
-var ChevronUpIcon = ChevronUp;
-var ChevronUpSquare = SquareChevronUp;
-var ChevronUpSquareIcon = SquareChevronUp;
-var Chrome = Chromium;
-var ChromeIcon = Chromium;
-var Chromium2 = Chromium;
-var ChromiumIcon = Chromium;
-var Church2 = Church;
-var ChurchIcon = Church;
-var Cigarette2 = Cigarette;
-var CigaretteIcon = Cigarette;
-var CigaretteOff2 = CigaretteOff;
-var CigaretteOffIcon = CigaretteOff;
-var Circle2 = Circle;
-var CircleAlert2 = CircleAlert;
-var CircleAlertIcon = CircleAlert;
-var CircleArrowDown2 = CircleArrowDown;
-var CircleArrowDownIcon = CircleArrowDown;
-var CircleArrowLeft2 = CircleArrowLeft;
-var CircleArrowLeftIcon = CircleArrowLeft;
-var CircleArrowOutDownLeft2 = CircleArrowOutDownLeft;
-var CircleArrowOutDownLeftIcon = CircleArrowOutDownLeft;
-var CircleArrowOutDownRight2 = CircleArrowOutDownRight;
-var CircleArrowOutDownRightIcon = CircleArrowOutDownRight;
-var CircleArrowOutUpLeft2 = CircleArrowOutUpLeft;
-var CircleArrowOutUpLeftIcon = CircleArrowOutUpLeft;
-var CircleArrowOutUpRight2 = CircleArrowOutUpRight;
-var CircleArrowOutUpRightIcon = CircleArrowOutUpRight;
-var CircleArrowRight2 = CircleArrowRight;
-var CircleArrowRightIcon = CircleArrowRight;
-var CircleArrowUp2 = CircleArrowUp;
-var CircleArrowUpIcon = CircleArrowUp;
-var CircleCheck2 = CircleCheck;
-var CircleCheckBig2 = CircleCheckBig;
-var CircleCheckBigIcon = CircleCheckBig;
-var CircleCheckIcon = CircleCheck;
-var CircleChevronDown2 = CircleChevronDown;
-var CircleChevronDownIcon = CircleChevronDown;
-var CircleChevronLeft2 = CircleChevronLeft;
-var CircleChevronLeftIcon = CircleChevronLeft;
-var CircleChevronRight2 = CircleChevronRight;
-var CircleChevronRightIcon = CircleChevronRight;
-var CircleChevronUp2 = CircleChevronUp;
-var CircleChevronUpIcon = CircleChevronUp;
-var CircleDashed2 = CircleDashed;
-var CircleDashedIcon = CircleDashed;
-var CircleDivide2 = CircleDivide;
-var CircleDivideIcon = CircleDivide;
-var CircleDollarSign2 = CircleDollarSign;
-var CircleDollarSignIcon = CircleDollarSign;
-var CircleDot2 = CircleDot;
-var CircleDotDashed2 = CircleDotDashed;
-var CircleDotDashedIcon = CircleDotDashed;
-var CircleDotIcon = CircleDot;
-var CircleEllipsis2 = CircleEllipsis;
-var CircleEllipsisIcon = CircleEllipsis;
-var CircleEqual2 = CircleEqual;
-var CircleEqualIcon = CircleEqual;
-var CircleFadingArrowUp2 = CircleFadingArrowUp;
-var CircleFadingArrowUpIcon = CircleFadingArrowUp;
-var CircleFadingPlus2 = CircleFadingPlus;
-var CircleFadingPlusIcon = CircleFadingPlus;
-var CircleGauge2 = CircleGauge;
-var CircleGaugeIcon = CircleGauge;
-var CircleHelp = CircleQuestionMark;
-var CircleHelpIcon = CircleQuestionMark;
-var CircleIcon = Circle;
-var CircleMinus2 = CircleMinus;
-var CircleMinusIcon = CircleMinus;
-var CircleOff2 = CircleOff;
-var CircleOffIcon = CircleOff;
-var CircleParking2 = CircleParking;
-var CircleParkingIcon = CircleParking;
-var CircleParkingOff2 = CircleParkingOff;
-var CircleParkingOffIcon = CircleParkingOff;
-var CirclePause2 = CirclePause;
-var CirclePauseIcon = CirclePause;
-var CirclePercent2 = CirclePercent;
-var CirclePercentIcon = CirclePercent;
-var CirclePile2 = CirclePile;
-var CirclePileIcon = CirclePile;
-var CirclePlay2 = CirclePlay;
-var CirclePlayIcon = CirclePlay;
-var CirclePlus2 = CirclePlus;
-var CirclePlusIcon = CirclePlus;
-var CirclePoundSterling2 = CirclePoundSterling;
-var CirclePoundSterlingIcon = CirclePoundSterling;
-var CirclePower2 = CirclePower;
-var CirclePowerIcon = CirclePower;
-var CircleQuestionMark2 = CircleQuestionMark;
-var CircleQuestionMarkIcon = CircleQuestionMark;
-var CircleSlash3 = CircleSlash;
-var CircleSlash22 = CircleSlash2;
-var CircleSlash2Icon = CircleSlash2;
-var CircleSlashed = CircleSlash2;
-var CircleSlashedIcon = CircleSlash2;
-var CircleSlashIcon = CircleSlash;
-var CircleSmall2 = CircleSmall;
-var CircleSmallIcon = CircleSmall;
-var CircleStar2 = CircleStar;
-var CircleStarIcon = CircleStar;
-var CircleStop2 = CircleStop;
-var CircleStopIcon = CircleStop;
-var CircleUser2 = CircleUser;
-var CircleUserIcon = CircleUser;
-var CircleUserRound2 = CircleUserRound;
-var CircleUserRoundIcon = CircleUserRound;
-var CircleX2 = CircleX;
-var CircleXIcon = CircleX;
-var CircuitBoard2 = CircuitBoard;
-var CircuitBoardIcon = CircuitBoard;
-var Citrus2 = Citrus;
-var CitrusIcon = Citrus;
-var Clapperboard2 = Clapperboard;
-var ClapperboardIcon = Clapperboard;
-var Clipboard2 = Clipboard;
-var ClipboardCheck2 = ClipboardCheck;
-var ClipboardCheckIcon = ClipboardCheck;
-var ClipboardClock2 = ClipboardClock;
-var ClipboardClockIcon = ClipboardClock;
-var ClipboardCopy2 = ClipboardCopy;
-var ClipboardCopyIcon = ClipboardCopy;
-var ClipboardEdit = ClipboardPen;
-var ClipboardEditIcon = ClipboardPen;
-var ClipboardIcon = Clipboard;
-var ClipboardList2 = ClipboardList;
-var ClipboardListIcon = ClipboardList;
-var ClipboardMinus2 = ClipboardMinus;
-var ClipboardMinusIcon = ClipboardMinus;
-var ClipboardPaste2 = ClipboardPaste;
-var ClipboardPasteIcon = ClipboardPaste;
-var ClipboardPen2 = ClipboardPen;
-var ClipboardPenIcon = ClipboardPen;
-var ClipboardPenLine2 = ClipboardPenLine;
-var ClipboardPenLineIcon = ClipboardPenLine;
-var ClipboardPlus2 = ClipboardPlus;
-var ClipboardPlusIcon = ClipboardPlus;
-var ClipboardSignature = ClipboardPenLine;
-var ClipboardSignatureIcon = ClipboardPenLine;
-var ClipboardType2 = ClipboardType;
-var ClipboardTypeIcon = ClipboardType;
-var ClipboardX2 = ClipboardX;
-var ClipboardXIcon = ClipboardX;
-var Clock13 = Clock;
-var Clock14 = Clock1;
-var Clock102 = Clock10;
-var Clock10Icon = Clock10;
-var Clock112 = Clock11;
-var Clock11Icon = Clock11;
-var Clock122 = Clock12;
-var Clock12Icon = Clock12;
-var Clock1Icon = Clock1;
-var Clock22 = Clock2;
-var Clock2Icon = Clock2;
-var Clock32 = Clock3;
-var Clock3Icon = Clock3;
-var Clock42 = Clock4;
-var Clock4Icon = Clock4;
-var Clock52 = Clock5;
-var Clock5Icon = Clock5;
-var Clock62 = Clock6;
-var Clock6Icon = Clock6;
-var Clock72 = Clock7;
-var Clock7Icon = Clock7;
-var Clock82 = Clock8;
-var Clock8Icon = Clock8;
-var Clock92 = Clock9;
-var Clock9Icon = Clock9;
-var ClockAlert2 = ClockAlert;
-var ClockAlertIcon = ClockAlert;
-var ClockArrowDown2 = ClockArrowDown;
-var ClockArrowDownIcon = ClockArrowDown;
-var ClockArrowUp2 = ClockArrowUp;
-var ClockArrowUpIcon = ClockArrowUp;
-var ClockCheck2 = ClockCheck;
-var ClockCheckIcon = ClockCheck;
-var ClockFading2 = ClockFading;
-var ClockFadingIcon = ClockFading;
-var ClockIcon = Clock;
-var ClockPlus2 = ClockPlus;
-var ClockPlusIcon = ClockPlus;
-var ClosedCaption2 = ClosedCaption;
-var ClosedCaptionIcon = ClosedCaption;
-var Cloud2 = Cloud;
-var CloudAlert2 = CloudAlert;
-var CloudAlertIcon = CloudAlert;
-var CloudBackup2 = CloudBackup;
-var CloudBackupIcon = CloudBackup;
-var CloudCheck2 = CloudCheck;
-var CloudCheckIcon = CloudCheck;
-var CloudCog2 = CloudCog;
-var CloudCogIcon = CloudCog;
-var CloudDownload2 = CloudDownload;
-var CloudDownloadIcon = CloudDownload;
-var CloudDrizzle2 = CloudDrizzle;
-var CloudDrizzleIcon = CloudDrizzle;
-var CloudFog2 = CloudFog;
-var CloudFogIcon = CloudFog;
-var CloudHail2 = CloudHail;
-var CloudHailIcon = CloudHail;
-var CloudIcon = Cloud;
-var CloudLightning2 = CloudLightning;
-var CloudLightningIcon = CloudLightning;
-var CloudMoon2 = CloudMoon;
-var CloudMoonIcon = CloudMoon;
-var CloudMoonRain2 = CloudMoonRain;
-var CloudMoonRainIcon = CloudMoonRain;
-var CloudOff2 = CloudOff;
-var CloudOffIcon = CloudOff;
-var CloudRain2 = CloudRain;
-var CloudRainIcon = CloudRain;
-var CloudRainWind2 = CloudRainWind;
-var CloudRainWindIcon = CloudRainWind;
-var CloudSnow2 = CloudSnow;
-var CloudSnowIcon = CloudSnow;
-var CloudSun2 = CloudSun;
-var CloudSunIcon = CloudSun;
-var CloudSunRain2 = CloudSunRain;
-var CloudSunRainIcon = CloudSunRain;
-var CloudSync2 = CloudSync;
-var CloudSyncIcon = CloudSync;
-var CloudUpload2 = CloudUpload;
-var CloudUploadIcon = CloudUpload;
-var Cloudy2 = Cloudy;
-var CloudyIcon = Cloudy;
-var Clover2 = Clover;
-var CloverIcon = Clover;
-var Club2 = Club;
-var ClubIcon = Club;
-var Code2 = Code;
-var Code22 = CodeXml;
-var Code2Icon = CodeXml;
-var CodeIcon = Code;
-var Codepen2 = Codepen;
-var CodepenIcon = Codepen;
-var Codesandbox2 = Codesandbox;
-var CodesandboxIcon = Codesandbox;
-var CodeSquare = SquareCode;
-var CodeSquareIcon = SquareCode;
-var CodeXml2 = CodeXml;
-var CodeXmlIcon = CodeXml;
-var Coffee2 = Coffee;
-var CoffeeIcon = Coffee;
-var Cog2 = Cog;
-var CogIcon = Cog;
-var Coins2 = Coins;
-var CoinsIcon = Coins;
-var Columns = Columns2;
-var Columns22 = Columns2;
-var Columns2Icon = Columns2;
-var Columns32 = Columns3;
-var Columns3Cog2 = Columns3Cog;
-var Columns3CogIcon = Columns3Cog;
-var Columns3Icon = Columns3;
-var Columns42 = Columns4;
-var Columns4Icon = Columns4;
-var ColumnsIcon = Columns2;
-var ColumnsSettings = Columns3Cog;
-var ColumnsSettingsIcon = Columns3Cog;
-var Combine2 = Combine;
-var CombineIcon = Combine;
-var Command2 = Command;
-var CommandIcon = Command;
-var Compass2 = Compass;
-var CompassIcon = Compass;
-var Component2 = Component;
-var ComponentIcon = Component;
-var Computer2 = Computer;
-var ComputerIcon = Computer;
-var ConciergeBell2 = ConciergeBell;
-var ConciergeBellIcon = ConciergeBell;
-var Cone2 = Cone;
-var ConeIcon = Cone;
-var Construction2 = Construction;
-var ConstructionIcon = Construction;
-var Contact2 = Contact;
-var Contact22 = ContactRound;
-var Contact2Icon = ContactRound;
-var ContactIcon = Contact;
-var ContactRound2 = ContactRound;
-var ContactRoundIcon = ContactRound;
-var Container2 = Container;
-var ContainerIcon = Container;
-var Contrast2 = Contrast;
-var ContrastIcon = Contrast;
-var Cookie2 = Cookie;
-var CookieIcon = Cookie;
-var CookingPot2 = CookingPot;
-var CookingPotIcon = CookingPot;
-var Copy2 = Copy;
-var CopyCheck2 = CopyCheck;
-var CopyCheckIcon = CopyCheck;
-var CopyIcon = Copy;
-var Copyleft2 = Copyleft;
-var CopyleftIcon = Copyleft;
-var CopyMinus2 = CopyMinus;
-var CopyMinusIcon = CopyMinus;
-var CopyPlus2 = CopyPlus;
-var CopyPlusIcon = CopyPlus;
-var Copyright2 = Copyright;
-var CopyrightIcon = Copyright;
-var CopySlash2 = CopySlash;
-var CopySlashIcon = CopySlash;
-var CopyX2 = CopyX;
-var CopyXIcon = CopyX;
-var CornerDownLeft2 = CornerDownLeft;
-var CornerDownLeftIcon = CornerDownLeft;
-var CornerDownRight2 = CornerDownRight;
-var CornerDownRightIcon = CornerDownRight;
-var CornerLeftDown2 = CornerLeftDown;
-var CornerLeftDownIcon = CornerLeftDown;
-var CornerLeftUp2 = CornerLeftUp;
-var CornerLeftUpIcon = CornerLeftUp;
-var CornerRightDown2 = CornerRightDown;
-var CornerRightDownIcon = CornerRightDown;
-var CornerRightUp2 = CornerRightUp;
-var CornerRightUpIcon = CornerRightUp;
-var CornerUpLeft2 = CornerUpLeft;
-var CornerUpLeftIcon = CornerUpLeft;
-var CornerUpRight2 = CornerUpRight;
-var CornerUpRightIcon = CornerUpRight;
-var Cpu2 = Cpu;
-var CpuIcon = Cpu;
-var createLucideIcon2 = createLucideIcon;
-var CreativeCommons2 = CreativeCommons;
-var CreativeCommonsIcon = CreativeCommons;
-var CreditCard2 = CreditCard;
-var CreditCardIcon = CreditCard;
-var Croissant2 = Croissant;
-var CroissantIcon = Croissant;
-var Crop2 = Crop;
-var CropIcon = Crop;
-var Cross2 = Cross;
-var Crosshair2 = Crosshair;
-var CrosshairIcon = Crosshair;
-var CrossIcon = Cross;
-var Crown2 = Crown;
-var CrownIcon = Crown;
-var Cuboid2 = Cuboid;
-var CuboidIcon = Cuboid;
-var CupSoda2 = CupSoda;
-var CupSodaIcon = CupSoda;
-var CurlyBraces = Braces;
-var CurlyBracesIcon = Braces;
-var Currency2 = Currency;
-var CurrencyIcon = Currency;
-var Cylinder2 = Cylinder;
-var CylinderIcon = Cylinder;
-var Dam2 = Dam;
-var DamIcon = Dam;
-var Database2 = Database;
-var DatabaseBackup2 = DatabaseBackup;
-var DatabaseBackupIcon = DatabaseBackup;
-var DatabaseIcon = Database;
-var DatabaseSearch2 = DatabaseSearch;
-var DatabaseSearchIcon = DatabaseSearch;
-var DatabaseZap2 = DatabaseZap;
-var DatabaseZapIcon = DatabaseZap;
-var DecimalsArrowLeft2 = DecimalsArrowLeft;
-var DecimalsArrowLeftIcon = DecimalsArrowLeft;
-var DecimalsArrowRight2 = DecimalsArrowRight;
-var DecimalsArrowRightIcon = DecimalsArrowRight;
-var Delete2 = Delete;
-var DeleteIcon = Delete;
-var Dessert2 = Dessert;
-var DessertIcon = Dessert;
-var Diameter2 = Diameter;
-var DiameterIcon = Diameter;
-var Diamond2 = Diamond;
-var DiamondIcon = Diamond;
-var DiamondMinus2 = DiamondMinus;
-var DiamondMinusIcon = DiamondMinus;
-var DiamondPercent2 = DiamondPercent;
-var DiamondPercentIcon = DiamondPercent;
-var DiamondPlus2 = DiamondPlus;
-var DiamondPlusIcon = DiamondPlus;
-var Dice12 = Dice1;
-var Dice1Icon = Dice1;
-var Dice22 = Dice2;
-var Dice2Icon = Dice2;
-var Dice32 = Dice3;
-var Dice3Icon = Dice3;
-var Dice42 = Dice4;
-var Dice4Icon = Dice4;
-var Dice52 = Dice5;
-var Dice5Icon = Dice5;
-var Dice62 = Dice6;
-var Dice6Icon = Dice6;
-var Dices2 = Dices;
-var DicesIcon = Dices;
-var Diff2 = Diff;
-var DiffIcon = Diff;
-var Disc4 = Disc;
-var Disc22 = Disc2;
-var Disc2Icon = Disc2;
-var Disc32 = Disc3;
-var Disc3Icon = Disc3;
-var DiscAlbum2 = DiscAlbum;
-var DiscAlbumIcon = DiscAlbum;
-var DiscIcon = Disc;
-var Divide2 = Divide;
-var DivideCircle = CircleDivide;
-var DivideCircleIcon = CircleDivide;
-var DivideIcon = Divide;
-var DivideSquare = SquareDivide;
-var DivideSquareIcon = SquareDivide;
-var Dna2 = Dna;
-var DnaIcon = Dna;
-var DnaOff2 = DnaOff;
-var DnaOffIcon = DnaOff;
-var Dock2 = Dock;
-var DockIcon = Dock;
-var Dog2 = Dog;
-var DogIcon = Dog;
-var DollarSign2 = DollarSign;
-var DollarSignIcon = DollarSign;
-var Donut2 = Donut;
-var DonutIcon = Donut;
-var DoorClosed2 = DoorClosed;
-var DoorClosedIcon = DoorClosed;
-var DoorClosedLocked2 = DoorClosedLocked;
-var DoorClosedLockedIcon = DoorClosedLocked;
-var DoorOpen2 = DoorOpen;
-var DoorOpenIcon = DoorOpen;
-var Dot2 = Dot;
-var DotIcon = Dot;
-var DotSquare = SquareDot;
-var DotSquareIcon = SquareDot;
-var Download2 = Download;
-var DownloadCloud = CloudDownload;
-var DownloadCloudIcon = CloudDownload;
-var DownloadIcon = Download;
-var DraftingCompass2 = DraftingCompass;
-var DraftingCompassIcon = DraftingCompass;
-var Drama2 = Drama;
-var DramaIcon = Drama;
-var Dribbble2 = Dribbble;
-var DribbbleIcon = Dribbble;
-var Drill2 = Drill;
-var DrillIcon = Drill;
-var Drone2 = Drone;
-var DroneIcon = Drone;
-var Droplet2 = Droplet;
-var DropletIcon = Droplet;
-var DropletOff2 = DropletOff;
-var DropletOffIcon = DropletOff;
-var Droplets2 = Droplets;
-var DropletsIcon = Droplets;
-var Drum2 = Drum;
-var DrumIcon = Drum;
-var Drumstick2 = Drumstick;
-var DrumstickIcon = Drumstick;
-var Dumbbell2 = Dumbbell;
-var DumbbellIcon = Dumbbell;
-var Ear2 = Ear;
-var EarIcon = Ear;
-var EarOff2 = EarOff;
-var EarOffIcon = EarOff;
-var Earth2 = Earth;
-var EarthIcon = Earth;
-var EarthLock2 = EarthLock;
-var EarthLockIcon = EarthLock;
-var Eclipse2 = Eclipse;
-var EclipseIcon = Eclipse;
-var Edit = SquarePen;
-var Edit2 = Pen;
-var Edit2Icon = Pen;
-var Edit3 = PenLine;
-var Edit3Icon = PenLine;
-var EditIcon = SquarePen;
-var Egg2 = Egg;
-var EggFried2 = EggFried;
-var EggFriedIcon = EggFried;
-var EggIcon = Egg;
-var EggOff2 = EggOff;
-var EggOffIcon = EggOff;
-var Ellipse2 = Ellipse;
-var EllipseIcon = Ellipse;
-var Ellipsis2 = Ellipsis;
-var EllipsisIcon = Ellipsis;
-var EllipsisVertical2 = EllipsisVertical;
-var EllipsisVerticalIcon = EllipsisVertical;
-var Equal2 = Equal;
-var EqualApproximately2 = EqualApproximately;
-var EqualApproximatelyIcon = EqualApproximately;
-var EqualIcon = Equal;
-var EqualNot2 = EqualNot;
-var EqualNotIcon = EqualNot;
-var EqualSquare = SquareEqual;
-var EqualSquareIcon = SquareEqual;
-var Eraser2 = Eraser;
-var EraserIcon = Eraser;
-var EthernetPort2 = EthernetPort;
-var EthernetPortIcon = EthernetPort;
-var Euro2 = Euro;
-var EuroIcon = Euro;
-var EvCharger2 = EvCharger;
-var EvChargerIcon = EvCharger;
-var Expand2 = Expand;
-var ExpandIcon = Expand;
-var ExternalLink2 = ExternalLink;
-var ExternalLinkIcon = ExternalLink;
-var Eye2 = Eye;
-var EyeClosed2 = EyeClosed;
-var EyeClosedIcon = EyeClosed;
-var EyeIcon = Eye;
-var EyeOff2 = EyeOff;
-var EyeOffIcon = EyeOff;
-var Facebook2 = Facebook;
-var FacebookIcon = Facebook;
-var Factory2 = Factory;
-var FactoryIcon = Factory;
-var Fan2 = Fan;
-var FanIcon = Fan;
-var FastForward2 = FastForward;
-var FastForwardIcon = FastForward;
-var Feather2 = Feather;
-var FeatherIcon = Feather;
-var Fence2 = Fence;
-var FenceIcon = Fence;
-var FerrisWheel2 = FerrisWheel;
-var FerrisWheelIcon = FerrisWheel;
-var Figma2 = Figma;
-var FigmaIcon = Figma;
-var File2 = File;
-var FileArchive2 = FileArchive;
-var FileArchiveIcon = FileArchive;
-var FileAudio = FileHeadphone;
-var FileAudio2 = FileHeadphone;
-var FileAudio2Icon = FileHeadphone;
-var FileAudioIcon = FileHeadphone;
-var FileAxis3d2 = FileAxis3d;
-var FileAxis3D = FileAxis3d;
-var FileAxis3dIcon = FileAxis3d;
-var FileAxis3DIcon = FileAxis3d;
-var FileBadge2 = FileBadge;
-var FileBadge22 = FileBadge;
-var FileBadge2Icon = FileBadge;
-var FileBadgeIcon = FileBadge;
-var FileBarChart = FileChartColumnIncreasing;
-var FileBarChart2 = FileChartColumn;
-var FileBarChart2Icon = FileChartColumn;
-var FileBarChartIcon = FileChartColumnIncreasing;
-var FileBox2 = FileBox;
-var FileBoxIcon = FileBox;
-var FileBraces2 = FileBraces;
-var FileBracesCorner2 = FileBracesCorner;
-var FileBracesCornerIcon = FileBracesCorner;
-var FileBracesIcon = FileBraces;
-var FileChartColumn2 = FileChartColumn;
-var FileChartColumnIcon = FileChartColumn;
-var FileChartColumnIncreasing2 = FileChartColumnIncreasing;
-var FileChartColumnIncreasingIcon = FileChartColumnIncreasing;
-var FileChartLine2 = FileChartLine;
-var FileChartLineIcon = FileChartLine;
-var FileChartPie2 = FileChartPie;
-var FileChartPieIcon = FileChartPie;
-var FileCheck2 = FileCheck;
-var FileCheck22 = FileCheckCorner;
-var FileCheck2Icon = FileCheckCorner;
-var FileCheckCorner2 = FileCheckCorner;
-var FileCheckCornerIcon = FileCheckCorner;
-var FileCheckIcon = FileCheck;
-var FileClock2 = FileClock;
-var FileClockIcon = FileClock;
-var FileCode2 = FileCode;
-var FileCode22 = FileCodeCorner;
-var FileCode2Icon = FileCodeCorner;
-var FileCodeCorner2 = FileCodeCorner;
-var FileCodeCornerIcon = FileCodeCorner;
-var FileCodeIcon = FileCode;
-var FileCog2 = FileCog;
-var FileCog22 = FileCog;
-var FileCog2Icon = FileCog;
-var FileCogIcon = FileCog;
-var FileDiff2 = FileDiff;
-var FileDiffIcon = FileDiff;
-var FileDigit2 = FileDigit;
-var FileDigitIcon = FileDigit;
-var FileDown2 = FileDown;
-var FileDownIcon = FileDown;
-var FileEdit = FilePen;
-var FileEditIcon = FilePen;
-var FileExclamationPoint2 = FileExclamationPoint;
-var FileExclamationPointIcon = FileExclamationPoint;
-var FileHeadphone2 = FileHeadphone;
-var FileHeadphoneIcon = FileHeadphone;
-var FileHeart2 = FileHeart;
-var FileHeartIcon = FileHeart;
-var FileIcon = File;
-var FileImage2 = FileImage;
-var FileImageIcon = FileImage;
-var FileInput2 = FileInput;
-var FileInputIcon = FileInput;
-var FileJson = FileBraces;
-var FileJson2 = FileBracesCorner;
-var FileJson2Icon = FileBracesCorner;
-var FileJsonIcon = FileBraces;
-var FileKey2 = FileKey;
-var FileKey22 = FileKey;
-var FileKey2Icon = FileKey;
-var FileKeyIcon = FileKey;
-var FileLineChart = FileChartLine;
-var FileLineChartIcon = FileChartLine;
-var FileLock2 = FileLock;
-var FileLock22 = FileLock;
-var FileLock2Icon = FileLock;
-var FileLockIcon = FileLock;
-var FileMinus2 = FileMinus;
-var FileMinus22 = FileMinusCorner;
-var FileMinus2Icon = FileMinusCorner;
-var FileMinusCorner2 = FileMinusCorner;
-var FileMinusCornerIcon = FileMinusCorner;
-var FileMinusIcon = FileMinus;
-var FileMusic2 = FileMusic;
-var FileMusicIcon = FileMusic;
-var FileOutput2 = FileOutput;
-var FileOutputIcon = FileOutput;
-var FilePen2 = FilePen;
-var FilePenIcon = FilePen;
-var FilePenLine2 = FilePenLine;
-var FilePenLineIcon = FilePenLine;
-var FilePieChart = FileChartPie;
-var FilePieChartIcon = FileChartPie;
-var FilePlay2 = FilePlay;
-var FilePlayIcon = FilePlay;
-var FilePlus2 = FilePlus;
-var FilePlus22 = FilePlusCorner;
-var FilePlus2Icon = FilePlusCorner;
-var FilePlusCorner2 = FilePlusCorner;
-var FilePlusCornerIcon = FilePlusCorner;
-var FilePlusIcon = FilePlus;
-var FileQuestion = FileQuestionMark;
-var FileQuestionIcon = FileQuestionMark;
-var FileQuestionMark2 = FileQuestionMark;
-var FileQuestionMarkIcon = FileQuestionMark;
-var Files2 = Files;
-var FileScan2 = FileScan;
-var FileScanIcon = FileScan;
-var FileSearch2 = FileSearch;
-var FileSearch22 = FileSearchCorner;
-var FileSearch2Icon = FileSearchCorner;
-var FileSearchCorner2 = FileSearchCorner;
-var FileSearchCornerIcon = FileSearchCorner;
-var FileSearchIcon = FileSearch;
-var FilesIcon = Files;
-var FileSignal2 = FileSignal;
-var FileSignalIcon = FileSignal;
-var FileSignature = FilePenLine;
-var FileSignatureIcon = FilePenLine;
-var FileSliders2 = FileSliders;
-var FileSlidersIcon = FileSliders;
-var FileSpreadsheet2 = FileSpreadsheet;
-var FileSpreadsheetIcon = FileSpreadsheet;
-var FileStack2 = FileStack;
-var FileStackIcon = FileStack;
-var FileSymlink2 = FileSymlink;
-var FileSymlinkIcon = FileSymlink;
-var FileTerminal2 = FileTerminal;
-var FileTerminalIcon = FileTerminal;
-var FileText2 = FileText;
-var FileTextIcon = FileText;
-var FileType2 = FileType;
-var FileType22 = FileTypeCorner;
-var FileType2Icon = FileTypeCorner;
-var FileTypeCorner2 = FileTypeCorner;
-var FileTypeCornerIcon = FileTypeCorner;
-var FileTypeIcon = FileType;
-var FileUp2 = FileUp;
-var FileUpIcon = FileUp;
-var FileUser2 = FileUser;
-var FileUserIcon = FileUser;
-var FileVideo = FilePlay;
-var FileVideo2 = FileVideoCamera;
-var FileVideo2Icon = FileVideoCamera;
-var FileVideoCamera2 = FileVideoCamera;
-var FileVideoCameraIcon = FileVideoCamera;
-var FileVideoIcon = FilePlay;
-var FileVolume2 = FileVolume;
-var FileVolume22 = FileSignal;
-var FileVolume2Icon = FileSignal;
-var FileVolumeIcon = FileVolume;
-var FileWarning = FileExclamationPoint;
-var FileWarningIcon = FileExclamationPoint;
-var FileX2 = FileX;
-var FileX22 = FileXCorner;
-var FileX2Icon = FileXCorner;
-var FileXCorner2 = FileXCorner;
-var FileXCornerIcon = FileXCorner;
-var FileXIcon = FileX;
-var Film2 = Film;
-var FilmIcon = Film;
-var Filter = Funnel;
-var FilterIcon = Funnel;
-var FilterX = FunnelX;
-var FilterXIcon = FunnelX;
-var Fingerprint = FingerprintPattern;
-var FingerprintIcon = FingerprintPattern;
-var FingerprintPattern2 = FingerprintPattern;
-var FingerprintPatternIcon = FingerprintPattern;
-var FireExtinguisher2 = FireExtinguisher;
-var FireExtinguisherIcon = FireExtinguisher;
-var Fish2 = Fish;
-var FishIcon = Fish;
-var FishingHook2 = FishingHook;
-var FishingHookIcon = FishingHook;
-var FishingRod2 = FishingRod;
-var FishingRodIcon = FishingRod;
-var FishOff2 = FishOff;
-var FishOffIcon = FishOff;
-var FishSymbol2 = FishSymbol;
-var FishSymbolIcon = FishSymbol;
-var Flag2 = Flag;
-var FlagIcon = Flag;
-var FlagOff2 = FlagOff;
-var FlagOffIcon = FlagOff;
-var FlagTriangleLeft2 = FlagTriangleLeft;
-var FlagTriangleLeftIcon = FlagTriangleLeft;
-var FlagTriangleRight2 = FlagTriangleRight;
-var FlagTriangleRightIcon = FlagTriangleRight;
-var Flame2 = Flame;
-var FlameIcon = Flame;
-var FlameKindling2 = FlameKindling;
-var FlameKindlingIcon = FlameKindling;
-var Flashlight2 = Flashlight;
-var FlashlightIcon = Flashlight;
-var FlashlightOff2 = FlashlightOff;
-var FlashlightOffIcon = FlashlightOff;
-var FlaskConical2 = FlaskConical;
-var FlaskConicalIcon = FlaskConical;
-var FlaskConicalOff2 = FlaskConicalOff;
-var FlaskConicalOffIcon = FlaskConicalOff;
-var FlaskRound2 = FlaskRound;
-var FlaskRoundIcon = FlaskRound;
-var FlipHorizontal = SquareCenterlineDashedHorizontal;
-var FlipHorizontal22 = FlipHorizontal2;
-var FlipHorizontal2Icon = FlipHorizontal2;
-var FlipHorizontalIcon = SquareCenterlineDashedHorizontal;
-var FlipVertical = SquareCenterlineDashedVertical;
-var FlipVertical22 = FlipVertical2;
-var FlipVertical2Icon = FlipVertical2;
-var FlipVerticalIcon = SquareCenterlineDashedVertical;
-var Flower3 = Flower;
-var Flower22 = Flower2;
-var Flower2Icon = Flower2;
-var FlowerIcon = Flower;
-var Focus2 = Focus;
-var FocusIcon = Focus;
-var Folder2 = Folder;
-var FolderArchive2 = FolderArchive;
-var FolderArchiveIcon = FolderArchive;
-var FolderCheck2 = FolderCheck;
-var FolderCheckIcon = FolderCheck;
-var FolderClock2 = FolderClock;
-var FolderClockIcon = FolderClock;
-var FolderClosed2 = FolderClosed;
-var FolderClosedIcon = FolderClosed;
-var FolderCode2 = FolderCode;
-var FolderCodeIcon = FolderCode;
-var FolderCog2 = FolderCog;
-var FolderCog22 = FolderCog;
-var FolderCog2Icon = FolderCog;
-var FolderCogIcon = FolderCog;
-var FolderDot2 = FolderDot;
-var FolderDotIcon = FolderDot;
-var FolderDown2 = FolderDown;
-var FolderDownIcon = FolderDown;
-var FolderEdit = FolderPen;
-var FolderEditIcon = FolderPen;
-var FolderGit3 = FolderGit;
-var FolderGit22 = FolderGit2;
-var FolderGit2Icon = FolderGit2;
-var FolderGitIcon = FolderGit;
-var FolderHeart2 = FolderHeart;
-var FolderHeartIcon = FolderHeart;
-var FolderIcon = Folder;
-var FolderInput2 = FolderInput;
-var FolderInputIcon = FolderInput;
-var FolderKanban2 = FolderKanban;
-var FolderKanbanIcon = FolderKanban;
-var FolderKey2 = FolderKey;
-var FolderKeyIcon = FolderKey;
-var FolderLock2 = FolderLock;
-var FolderLockIcon = FolderLock;
-var FolderMinus2 = FolderMinus;
-var FolderMinusIcon = FolderMinus;
-var FolderOpen2 = FolderOpen;
-var FolderOpenDot2 = FolderOpenDot;
-var FolderOpenDotIcon = FolderOpenDot;
-var FolderOpenIcon = FolderOpen;
-var FolderOutput2 = FolderOutput;
-var FolderOutputIcon = FolderOutput;
-var FolderPen2 = FolderPen;
-var FolderPenIcon = FolderPen;
-var FolderPlus2 = FolderPlus;
-var FolderPlusIcon = FolderPlus;
-var FolderRoot2 = FolderRoot;
-var FolderRootIcon = FolderRoot;
-var Folders2 = Folders;
-var FolderSearch3 = FolderSearch;
-var FolderSearch22 = FolderSearch2;
-var FolderSearch2Icon = FolderSearch2;
-var FolderSearchIcon = FolderSearch;
-var FoldersIcon = Folders;
-var FolderSymlink2 = FolderSymlink;
-var FolderSymlinkIcon = FolderSymlink;
-var FolderSync2 = FolderSync;
-var FolderSyncIcon = FolderSync;
-var FolderTree2 = FolderTree;
-var FolderTreeIcon = FolderTree;
-var FolderUp2 = FolderUp;
-var FolderUpIcon = FolderUp;
-var FolderX2 = FolderX;
-var FolderXIcon = FolderX;
-var FoldHorizontal2 = FoldHorizontal;
-var FoldHorizontalIcon = FoldHorizontal;
-var FoldVertical2 = FoldVertical;
-var FoldVerticalIcon = FoldVertical;
-var Footprints2 = Footprints;
-var FootprintsIcon = Footprints;
-var ForkKnife = Utensils;
-var ForkKnifeCrossed = UtensilsCrossed;
-var ForkKnifeCrossedIcon = UtensilsCrossed;
-var ForkKnifeIcon = Utensils;
-var Forklift2 = Forklift;
-var ForkliftIcon = Forklift;
-var Form2 = Form;
-var FormIcon = Form;
-var FormInput = RectangleEllipsis;
-var FormInputIcon = RectangleEllipsis;
-var Forward2 = Forward;
-var ForwardIcon = Forward;
-var Frame2 = Frame;
-var FrameIcon = Frame;
-var Framer2 = Framer;
-var FramerIcon = Framer;
-var Frown2 = Frown;
-var FrownIcon = Frown;
-var Fuel2 = Fuel;
-var FuelIcon = Fuel;
-var Fullscreen2 = Fullscreen;
-var FullscreenIcon = Fullscreen;
-var FunctionSquare = SquareFunction;
-var FunctionSquareIcon = SquareFunction;
-var Funnel2 = Funnel;
-var FunnelIcon = Funnel;
-var FunnelPlus2 = FunnelPlus;
-var FunnelPlusIcon = FunnelPlus;
-var FunnelX2 = FunnelX;
-var FunnelXIcon = FunnelX;
-var GalleryHorizontal2 = GalleryHorizontal;
-var GalleryHorizontalEnd2 = GalleryHorizontalEnd;
-var GalleryHorizontalEndIcon = GalleryHorizontalEnd;
-var GalleryHorizontalIcon = GalleryHorizontal;
-var GalleryThumbnails2 = GalleryThumbnails;
-var GalleryThumbnailsIcon = GalleryThumbnails;
-var GalleryVertical2 = GalleryVertical;
-var GalleryVerticalEnd2 = GalleryVerticalEnd;
-var GalleryVerticalEndIcon = GalleryVerticalEnd;
-var GalleryVerticalIcon = GalleryVertical;
-var Gamepad3 = Gamepad;
-var Gamepad22 = Gamepad2;
-var Gamepad2Icon = Gamepad2;
-var GamepadDirectional2 = GamepadDirectional;
-var GamepadDirectionalIcon = GamepadDirectional;
-var GamepadIcon = Gamepad;
-var GanttChart = ChartNoAxesGantt;
-var GanttChartIcon = ChartNoAxesGantt;
-var GanttChartSquare = SquareChartGantt;
-var GanttChartSquareIcon = SquareChartGantt;
-var Gauge2 = Gauge;
-var GaugeCircle = CircleGauge;
-var GaugeCircleIcon = CircleGauge;
-var GaugeIcon = Gauge;
-var Gavel2 = Gavel;
-var GavelIcon = Gavel;
-var Gem2 = Gem;
-var GemIcon = Gem;
-var GeorgianLari2 = GeorgianLari;
-var GeorgianLariIcon = GeorgianLari;
-var Ghost2 = Ghost;
-var GhostIcon = Ghost;
-var Gift2 = Gift;
-var GiftIcon = Gift;
-var GitBranch2 = GitBranch;
-var GitBranchIcon = GitBranch;
-var GitBranchMinus2 = GitBranchMinus;
-var GitBranchMinusIcon = GitBranchMinus;
-var GitBranchPlus2 = GitBranchPlus;
-var GitBranchPlusIcon = GitBranchPlus;
-var GitCommit = GitCommitHorizontal;
-var GitCommitHorizontal2 = GitCommitHorizontal;
-var GitCommitHorizontalIcon = GitCommitHorizontal;
-var GitCommitIcon = GitCommitHorizontal;
-var GitCommitVertical2 = GitCommitVertical;
-var GitCommitVerticalIcon = GitCommitVertical;
-var GitCompare2 = GitCompare;
-var GitCompareArrows2 = GitCompareArrows;
-var GitCompareArrowsIcon = GitCompareArrows;
-var GitCompareIcon = GitCompare;
-var GitFork2 = GitFork;
-var GitForkIcon = GitFork;
-var GitGraph2 = GitGraph;
-var GitGraphIcon = GitGraph;
-var Github2 = Github;
-var GithubIcon = Github;
-var Gitlab2 = Gitlab;
-var GitlabIcon = Gitlab;
-var GitMerge2 = GitMerge;
-var GitMergeConflict2 = GitMergeConflict;
-var GitMergeConflictIcon = GitMergeConflict;
-var GitMergeIcon = GitMerge;
-var GitPullRequest2 = GitPullRequest;
-var GitPullRequestArrow2 = GitPullRequestArrow;
-var GitPullRequestArrowIcon = GitPullRequestArrow;
-var GitPullRequestClosed2 = GitPullRequestClosed;
-var GitPullRequestClosedIcon = GitPullRequestClosed;
-var GitPullRequestCreate2 = GitPullRequestCreate;
-var GitPullRequestCreateArrow2 = GitPullRequestCreateArrow;
-var GitPullRequestCreateArrowIcon = GitPullRequestCreateArrow;
-var GitPullRequestCreateIcon = GitPullRequestCreate;
-var GitPullRequestDraft2 = GitPullRequestDraft;
-var GitPullRequestDraftIcon = GitPullRequestDraft;
-var GitPullRequestIcon = GitPullRequest;
-var Glasses2 = Glasses;
-var GlassesIcon = Glasses;
-var GlassWater2 = GlassWater;
-var GlassWaterIcon = GlassWater;
-var Globe2 = Globe;
-var Globe22 = Earth;
-var Globe2Icon = Earth;
-var GlobeIcon = Globe;
-var GlobeLock2 = GlobeLock;
-var GlobeLockIcon = GlobeLock;
-var GlobeOff2 = GlobeOff;
-var GlobeOffIcon = GlobeOff;
-var GlobeX2 = GlobeX;
-var GlobeXIcon = GlobeX;
-var Goal2 = Goal;
-var GoalIcon = Goal;
-var Gpu2 = Gpu;
-var GpuIcon = Gpu;
-var Grab = HandGrab;
-var GrabIcon = HandGrab;
-var GraduationCap2 = GraduationCap;
-var GraduationCapIcon = GraduationCap;
-var Grape2 = Grape;
-var GrapeIcon = Grape;
-var Grid = Grid3x3;
-var Grid2x22 = Grid2x2;
-var Grid2X2 = Grid2x2;
-var Grid2x2Check2 = Grid2x2Check;
-var Grid2X2Check = Grid2x2Check;
-var Grid2x2CheckIcon = Grid2x2Check;
-var Grid2X2CheckIcon = Grid2x2Check;
-var Grid2x2Icon = Grid2x2;
-var Grid2X2Icon = Grid2x2;
-var Grid2x2Plus2 = Grid2x2Plus;
-var Grid2X2Plus = Grid2x2Plus;
-var Grid2x2PlusIcon = Grid2x2Plus;
-var Grid2X2PlusIcon = Grid2x2Plus;
-var Grid2x2X2 = Grid2x2X;
-var Grid2X2X = Grid2x2X;
-var Grid2x2XIcon = Grid2x2X;
-var Grid2X2XIcon = Grid2x2X;
-var Grid3x22 = Grid3x2;
-var Grid3x2Icon = Grid3x2;
-var Grid3x32 = Grid3x3;
-var Grid3X3 = Grid3x3;
-var Grid3x3Icon = Grid3x3;
-var Grid3X3Icon = Grid3x3;
-var GridIcon = Grid3x3;
-var Grip2 = Grip;
-var GripHorizontal2 = GripHorizontal;
-var GripHorizontalIcon = GripHorizontal;
-var GripIcon = Grip;
-var GripVertical2 = GripVertical;
-var GripVerticalIcon = GripVertical;
-var Group2 = Group;
-var GroupIcon = Group;
-var Guitar2 = Guitar;
-var GuitarIcon = Guitar;
-var Ham2 = Ham;
-var Hamburger2 = Hamburger;
-var HamburgerIcon = Hamburger;
-var HamIcon = Ham;
-var Hammer2 = Hammer;
-var HammerIcon = Hammer;
-var Hand2 = Hand;
-var Handbag2 = Handbag;
-var HandbagIcon = Handbag;
-var HandCoins2 = HandCoins;
-var HandCoinsIcon = HandCoins;
-var HandFist2 = HandFist;
-var HandFistIcon = HandFist;
-var HandGrab2 = HandGrab;
-var HandGrabIcon = HandGrab;
-var HandHeart2 = HandHeart;
-var HandHeartIcon = HandHeart;
-var HandHelping2 = HandHelping;
-var HandHelpingIcon = HandHelping;
-var HandIcon = Hand;
-var HandMetal2 = HandMetal;
-var HandMetalIcon = HandMetal;
-var HandPlatter2 = HandPlatter;
-var HandPlatterIcon = HandPlatter;
-var Handshake2 = Handshake;
-var HandshakeIcon = Handshake;
-var HardDrive2 = HardDrive;
-var HardDriveDownload2 = HardDriveDownload;
-var HardDriveDownloadIcon = HardDriveDownload;
-var HardDriveIcon = HardDrive;
-var HardDriveUpload2 = HardDriveUpload;
-var HardDriveUploadIcon = HardDriveUpload;
-var HardHat2 = HardHat;
-var HardHatIcon = HardHat;
-var Hash2 = Hash;
-var HashIcon = Hash;
-var HatGlasses2 = HatGlasses;
-var HatGlassesIcon = HatGlasses;
-var Haze2 = Haze;
-var HazeIcon = Haze;
-var Hd2 = Hd;
-var HdIcon = Hd;
-var HdmiPort2 = HdmiPort;
-var HdmiPortIcon = HdmiPort;
-var Heading7 = Heading;
-var Heading12 = Heading1;
-var Heading1Icon = Heading1;
-var Heading22 = Heading2;
-var Heading2Icon = Heading2;
-var Heading32 = Heading3;
-var Heading3Icon = Heading3;
-var Heading42 = Heading4;
-var Heading4Icon = Heading4;
-var Heading52 = Heading5;
-var Heading5Icon = Heading5;
-var Heading62 = Heading6;
-var Heading6Icon = Heading6;
-var HeadingIcon = Heading;
-var HeadphoneOff2 = HeadphoneOff;
-var HeadphoneOffIcon = HeadphoneOff;
-var Headphones2 = Headphones;
-var HeadphonesIcon = Headphones;
-var Headset2 = Headset;
-var HeadsetIcon = Headset;
-var Heart2 = Heart;
-var HeartCrack2 = HeartCrack;
-var HeartCrackIcon = HeartCrack;
-var HeartHandshake2 = HeartHandshake;
-var HeartHandshakeIcon = HeartHandshake;
-var HeartIcon = Heart;
-var HeartMinus2 = HeartMinus;
-var HeartMinusIcon = HeartMinus;
-var HeartOff2 = HeartOff;
-var HeartOffIcon = HeartOff;
-var HeartPlus2 = HeartPlus;
-var HeartPlusIcon = HeartPlus;
-var HeartPulse2 = HeartPulse;
-var HeartPulseIcon = HeartPulse;
-var Heater2 = Heater;
-var HeaterIcon = Heater;
-var Helicopter2 = Helicopter;
-var HelicopterIcon = Helicopter;
-var HelpCircle = CircleQuestionMark;
-var HelpCircleIcon = CircleQuestionMark;
-var HelpingHand = HandHelping;
-var HelpingHandIcon = HandHelping;
-var Hexagon2 = Hexagon;
-var HexagonIcon = Hexagon;
-var Highlighter2 = Highlighter;
-var HighlighterIcon = Highlighter;
-var History2 = History;
-var HistoryIcon = History;
-var Home = House;
-var HomeIcon = House;
-var Hop2 = Hop;
-var HopIcon = Hop;
-var HopOff2 = HopOff;
-var HopOffIcon = HopOff;
-var Hospital2 = Hospital;
-var HospitalIcon = Hospital;
-var Hotel2 = Hotel;
-var HotelIcon = Hotel;
-var Hourglass2 = Hourglass;
-var HourglassIcon = Hourglass;
-var House2 = House;
-var HouseHeart2 = HouseHeart;
-var HouseHeartIcon = HouseHeart;
-var HouseIcon = House;
-var HousePlug2 = HousePlug;
-var HousePlugIcon = HousePlug;
-var HousePlus2 = HousePlus;
-var HousePlusIcon = HousePlus;
-var HouseWifi2 = HouseWifi;
-var HouseWifiIcon = HouseWifi;
-var IceCream = IceCreamCone;
-var IceCream2 = IceCreamBowl;
-var IceCream2Icon = IceCreamBowl;
-var IceCreamBowl2 = IceCreamBowl;
-var IceCreamBowlIcon = IceCreamBowl;
-var IceCreamCone2 = IceCreamCone;
-var IceCreamConeIcon = IceCreamCone;
-var IceCreamIcon = IceCreamCone;
-var Icon2 = Icon;
-var icons = icons_exports;
-var IdCard2 = IdCard;
-var IdCardIcon = IdCard;
-var IdCardLanyard2 = IdCardLanyard;
-var IdCardLanyardIcon = IdCardLanyard;
-var Image2 = Image;
-var ImageDown2 = ImageDown;
-var ImageDownIcon = ImageDown;
-var ImageIcon = Image;
-var ImageMinus2 = ImageMinus;
-var ImageMinusIcon = ImageMinus;
-var ImageOff2 = ImageOff;
-var ImageOffIcon = ImageOff;
-var ImagePlay2 = ImagePlay;
-var ImagePlayIcon = ImagePlay;
-var ImagePlus2 = ImagePlus;
-var ImagePlusIcon = ImagePlus;
-var Images2 = Images;
-var ImagesIcon = Images;
-var ImageUp2 = ImageUp;
-var ImageUpIcon = ImageUp;
-var ImageUpscale2 = ImageUpscale;
-var ImageUpscaleIcon = ImageUpscale;
-var Import2 = Import;
-var ImportIcon = Import;
-var Inbox2 = Inbox;
-var InboxIcon = Inbox;
-var Indent = ListIndentIncrease;
-var IndentDecrease = ListIndentDecrease;
-var IndentDecreaseIcon = ListIndentDecrease;
-var IndentIcon = ListIndentIncrease;
-var IndentIncrease = ListIndentIncrease;
-var IndentIncreaseIcon = ListIndentIncrease;
-var IndianRupee2 = IndianRupee;
-var IndianRupeeIcon = IndianRupee;
-var Infinity2 = Infinity;
-var InfinityIcon = Infinity;
-var Info2 = Info;
-var InfoIcon = Info;
-var Inspect = SquareMousePointer;
-var InspectIcon = SquareMousePointer;
-var InspectionPanel2 = InspectionPanel;
-var InspectionPanelIcon = InspectionPanel;
-var Instagram2 = Instagram;
-var InstagramIcon = Instagram;
-var Italic2 = Italic;
-var ItalicIcon = Italic;
-var IterationCcw2 = IterationCcw;
-var IterationCcwIcon = IterationCcw;
-var IterationCw2 = IterationCw;
-var IterationCwIcon = IterationCw;
-var JapaneseYen2 = JapaneseYen;
-var JapaneseYenIcon = JapaneseYen;
-var Joystick2 = Joystick;
-var JoystickIcon = Joystick;
-var Kanban2 = Kanban;
-var KanbanIcon = Kanban;
-var KanbanSquare = SquareKanban;
-var KanbanSquareDashed = SquareDashedKanban;
-var KanbanSquareDashedIcon = SquareDashedKanban;
-var KanbanSquareIcon = SquareKanban;
-var Kayak2 = Kayak;
-var KayakIcon = Kayak;
-var Key2 = Key;
-var Keyboard2 = Keyboard;
-var KeyboardIcon = Keyboard;
-var KeyboardMusic2 = KeyboardMusic;
-var KeyboardMusicIcon = KeyboardMusic;
-var KeyboardOff2 = KeyboardOff;
-var KeyboardOffIcon = KeyboardOff;
-var KeyIcon = Key;
-var KeyRound2 = KeyRound;
-var KeyRoundIcon = KeyRound;
-var KeySquare2 = KeySquare;
-var KeySquareIcon = KeySquare;
-var Lamp2 = Lamp;
-var LampCeiling2 = LampCeiling;
-var LampCeilingIcon = LampCeiling;
-var LampDesk2 = LampDesk;
-var LampDeskIcon = LampDesk;
-var LampFloor2 = LampFloor;
-var LampFloorIcon = LampFloor;
-var LampIcon = Lamp;
-var LampWallDown2 = LampWallDown;
-var LampWallDownIcon = LampWallDown;
-var LampWallUp2 = LampWallUp;
-var LampWallUpIcon = LampWallUp;
-var Landmark2 = Landmark;
-var LandmarkIcon = Landmark;
-var LandPlot2 = LandPlot;
-var LandPlotIcon = LandPlot;
-var Languages2 = Languages;
-var LanguagesIcon = Languages;
-var Laptop2 = Laptop;
-var Laptop22 = LaptopMinimal;
-var Laptop2Icon = LaptopMinimal;
-var LaptopIcon = Laptop;
-var LaptopMinimal2 = LaptopMinimal;
-var LaptopMinimalCheck2 = LaptopMinimalCheck;
-var LaptopMinimalCheckIcon = LaptopMinimalCheck;
-var LaptopMinimalIcon = LaptopMinimal;
-var Lasso2 = Lasso;
-var LassoIcon = Lasso;
-var LassoSelect2 = LassoSelect;
-var LassoSelectIcon = LassoSelect;
-var Laugh2 = Laugh;
-var LaughIcon = Laugh;
-var Layers3 = Layers;
-var Layers22 = Layers2;
-var Layers2Icon = Layers2;
-var Layers32 = Layers;
-var Layers3Icon = Layers;
-var LayersIcon = Layers;
-var LayersPlus2 = LayersPlus;
-var LayersPlusIcon = LayersPlus;
-var Layout = PanelsTopLeft;
-var LayoutDashboard2 = LayoutDashboard;
-var LayoutDashboardIcon = LayoutDashboard;
-var LayoutGrid2 = LayoutGrid;
-var LayoutGridIcon = LayoutGrid;
-var LayoutIcon = PanelsTopLeft;
-var LayoutList2 = LayoutList;
-var LayoutListIcon = LayoutList;
-var LayoutPanelLeft2 = LayoutPanelLeft;
-var LayoutPanelLeftIcon = LayoutPanelLeft;
-var LayoutPanelTop2 = LayoutPanelTop;
-var LayoutPanelTopIcon = LayoutPanelTop;
-var LayoutTemplate2 = LayoutTemplate;
-var LayoutTemplateIcon = LayoutTemplate;
-var Leaf2 = Leaf;
-var LeafIcon = Leaf;
-var LeafyGreen2 = LeafyGreen;
-var LeafyGreenIcon = LeafyGreen;
-var Lectern2 = Lectern;
-var LecternIcon = Lectern;
-var LensConcave2 = LensConcave;
-var LensConcaveIcon = LensConcave;
-var LensConvex2 = LensConvex;
-var LensConvexIcon = LensConvex;
-var LetterText = TextInitial;
-var LetterTextIcon = TextInitial;
-var Library2 = Library;
-var LibraryBig2 = LibraryBig;
-var LibraryBigIcon = LibraryBig;
-var LibraryIcon = Library;
-var LibrarySquare = SquareLibrary;
-var LibrarySquareIcon = SquareLibrary;
-var LifeBuoy2 = LifeBuoy;
-var LifeBuoyIcon = LifeBuoy;
-var Ligature2 = Ligature;
-var LigatureIcon = Ligature;
-var Lightbulb2 = Lightbulb;
-var LightbulbIcon = Lightbulb;
-var LightbulbOff2 = LightbulbOff;
-var LightbulbOffIcon = LightbulbOff;
-var LineChart = ChartLine;
-var LineChartIcon = ChartLine;
-var LineDotRightHorizontal2 = LineDotRightHorizontal;
-var LineDotRightHorizontalIcon = LineDotRightHorizontal;
-var LineSquiggle2 = LineSquiggle;
-var LineSquiggleIcon = LineSquiggle;
-var Link3 = Link;
-var Link22 = Link2;
-var Link2Icon = Link2;
-var Link2Off2 = Link2Off;
-var Link2OffIcon = Link2Off;
-var Linkedin2 = Linkedin;
-var LinkedinIcon = Linkedin;
-var LinkIcon = Link;
-var List2 = List;
-var ListCheck2 = ListCheck;
-var ListCheckIcon = ListCheck;
-var ListChecks2 = ListChecks;
-var ListChecksIcon = ListChecks;
-var ListChevronsDownUp2 = ListChevronsDownUp;
-var ListChevronsDownUpIcon = ListChevronsDownUp;
-var ListChevronsUpDown2 = ListChevronsUpDown;
-var ListChevronsUpDownIcon = ListChevronsUpDown;
-var ListCollapse2 = ListCollapse;
-var ListCollapseIcon = ListCollapse;
-var ListEnd2 = ListEnd;
-var ListEndIcon = ListEnd;
-var ListFilter2 = ListFilter;
-var ListFilterIcon = ListFilter;
-var ListFilterPlus2 = ListFilterPlus;
-var ListFilterPlusIcon = ListFilterPlus;
-var ListIcon = List;
-var ListIndentDecrease2 = ListIndentDecrease;
-var ListIndentDecreaseIcon = ListIndentDecrease;
-var ListIndentIncrease2 = ListIndentIncrease;
-var ListIndentIncreaseIcon = ListIndentIncrease;
-var ListMinus2 = ListMinus;
-var ListMinusIcon = ListMinus;
-var ListMusic2 = ListMusic;
-var ListMusicIcon = ListMusic;
-var ListOrdered2 = ListOrdered;
-var ListOrderedIcon = ListOrdered;
-var ListPlus2 = ListPlus;
-var ListPlusIcon = ListPlus;
-var ListRestart2 = ListRestart;
-var ListRestartIcon = ListRestart;
-var ListStart2 = ListStart;
-var ListStartIcon = ListStart;
-var ListTodo2 = ListTodo;
-var ListTodoIcon = ListTodo;
-var ListTree2 = ListTree;
-var ListTreeIcon = ListTree;
-var ListVideo2 = ListVideo;
-var ListVideoIcon = ListVideo;
-var ListX2 = ListX;
-var ListXIcon = ListX;
-var Loader2 = Loader;
-var Loader22 = LoaderCircle;
-var Loader2Icon = LoaderCircle;
-var LoaderCircle2 = LoaderCircle;
-var LoaderCircleIcon = LoaderCircle;
-var LoaderIcon = Loader;
-var LoaderPinwheel2 = LoaderPinwheel;
-var LoaderPinwheelIcon = LoaderPinwheel;
-var Locate2 = Locate;
-var LocateFixed2 = LocateFixed;
-var LocateFixedIcon = LocateFixed;
-var LocateIcon = Locate;
-var LocateOff2 = LocateOff;
-var LocateOffIcon = LocateOff;
-var LocationEdit = MapPinPen;
-var LocationEditIcon = MapPinPen;
-var Lock2 = Lock;
-var LockIcon = Lock;
-var LockKeyhole2 = LockKeyhole;
-var LockKeyholeIcon = LockKeyhole;
-var LockKeyholeOpen2 = LockKeyholeOpen;
-var LockKeyholeOpenIcon = LockKeyholeOpen;
-var LockOpen2 = LockOpen;
-var LockOpenIcon = LockOpen;
-var LogIn2 = LogIn;
-var LogInIcon = LogIn;
-var LogOut2 = LogOut;
-var LogOutIcon = LogOut;
-var Logs2 = Logs;
-var LogsIcon = Logs;
-var Lollipop2 = Lollipop;
-var LollipopIcon = Lollipop;
-var LucideAArrowDown = AArrowDown;
-var LucideAArrowUp = AArrowUp;
-var LucideAccessibility = Accessibility;
-var LucideActivity = Activity;
-var LucideActivitySquare = SquareActivity;
-var LucideAirplay = Airplay;
-var LucideAirVent = AirVent;
-var LucideALargeSmall = ALargeSmall;
-var LucideAlarmCheck = AlarmClockCheck;
-var LucideAlarmClock = AlarmClock;
-var LucideAlarmClockCheck = AlarmClockCheck;
-var LucideAlarmClockMinus = AlarmClockMinus;
-var LucideAlarmClockOff = AlarmClockOff;
-var LucideAlarmClockPlus = AlarmClockPlus;
-var LucideAlarmMinus = AlarmClockMinus;
-var LucideAlarmPlus = AlarmClockPlus;
-var LucideAlarmSmoke = AlarmSmoke;
-var LucideAlbum = Album;
-var LucideAlertCircle = CircleAlert;
-var LucideAlertOctagon = OctagonAlert;
-var LucideAlertTriangle = TriangleAlert;
-var LucideAlignCenter = TextAlignCenter;
-var LucideAlignCenterHorizontal = AlignCenterHorizontal;
-var LucideAlignCenterVertical = AlignCenterVertical;
-var LucideAlignEndHorizontal = AlignEndHorizontal;
-var LucideAlignEndVertical = AlignEndVertical;
-var LucideAlignHorizontalDistributeCenter = AlignHorizontalDistributeCenter;
-var LucideAlignHorizontalDistributeEnd = AlignHorizontalDistributeEnd;
-var LucideAlignHorizontalDistributeStart = AlignHorizontalDistributeStart;
-var LucideAlignHorizontalJustifyCenter = AlignHorizontalJustifyCenter;
-var LucideAlignHorizontalJustifyEnd = AlignHorizontalJustifyEnd;
-var LucideAlignHorizontalJustifyStart = AlignHorizontalJustifyStart;
-var LucideAlignHorizontalSpaceAround = AlignHorizontalSpaceAround;
-var LucideAlignHorizontalSpaceBetween = AlignHorizontalSpaceBetween;
-var LucideAlignJustify = TextAlignJustify;
-var LucideAlignLeft = TextAlignStart;
-var LucideAlignRight = TextAlignEnd;
-var LucideAlignStartHorizontal = AlignStartHorizontal;
-var LucideAlignStartVertical = AlignStartVertical;
-var LucideAlignVerticalDistributeCenter = AlignVerticalDistributeCenter;
-var LucideAlignVerticalDistributeEnd = AlignVerticalDistributeEnd;
-var LucideAlignVerticalDistributeStart = AlignVerticalDistributeStart;
-var LucideAlignVerticalJustifyCenter = AlignVerticalJustifyCenter;
-var LucideAlignVerticalJustifyEnd = AlignVerticalJustifyEnd;
-var LucideAlignVerticalJustifyStart = AlignVerticalJustifyStart;
-var LucideAlignVerticalSpaceAround = AlignVerticalSpaceAround;
-var LucideAlignVerticalSpaceBetween = AlignVerticalSpaceBetween;
-var LucideAmbulance = Ambulance;
-var LucideAmpersand = Ampersand;
-var LucideAmpersands = Ampersands;
-var LucideAmphora = Amphora;
-var LucideAnchor = Anchor;
-var LucideAngry = Angry;
-var LucideAnnoyed = Annoyed;
-var LucideAntenna = Antenna;
-var LucideAnvil = Anvil;
-var LucideAperture = Aperture;
-var LucideApple = Apple;
-var LucideAppWindow = AppWindow;
-var LucideAppWindowMac = AppWindowMac;
-var LucideArchive = Archive;
-var LucideArchiveRestore = ArchiveRestore;
-var LucideArchiveX = ArchiveX;
-var LucideAreaChart = ChartArea;
-var LucideArmchair = Armchair;
-var LucideArrowBigDown = ArrowBigDown;
-var LucideArrowBigDownDash = ArrowBigDownDash;
-var LucideArrowBigLeft = ArrowBigLeft;
-var LucideArrowBigLeftDash = ArrowBigLeftDash;
-var LucideArrowBigRight = ArrowBigRight;
-var LucideArrowBigRightDash = ArrowBigRightDash;
-var LucideArrowBigUp = ArrowBigUp;
-var LucideArrowBigUpDash = ArrowBigUpDash;
-var LucideArrowDown = ArrowDown;
-var LucideArrowDown01 = ArrowDown01;
-var LucideArrowDown10 = ArrowDown10;
-var LucideArrowDownAz = ArrowDownAZ;
-var LucideArrowDownAZ = ArrowDownAZ;
-var LucideArrowDownCircle = CircleArrowDown;
-var LucideArrowDownFromLine = ArrowDownFromLine;
-var LucideArrowDownLeft = ArrowDownLeft;
-var LucideArrowDownLeftFromCircle = CircleArrowOutDownLeft;
-var LucideArrowDownLeftFromSquare = SquareArrowOutDownLeft;
-var LucideArrowDownLeftSquare = SquareArrowDownLeft;
-var LucideArrowDownNarrowWide = ArrowDownNarrowWide;
-var LucideArrowDownRight = ArrowDownRight;
-var LucideArrowDownRightFromCircle = CircleArrowOutDownRight;
-var LucideArrowDownRightFromSquare = SquareArrowOutDownRight;
-var LucideArrowDownRightSquare = SquareArrowDownRight;
-var LucideArrowDownSquare = SquareArrowDown;
-var LucideArrowDownToDot = ArrowDownToDot;
-var LucideArrowDownToLine = ArrowDownToLine;
-var LucideArrowDownUp = ArrowDownUp;
-var LucideArrowDownWideNarrow = ArrowDownWideNarrow;
-var LucideArrowDownZa = ArrowDownZA;
-var LucideArrowDownZA = ArrowDownZA;
-var LucideArrowLeft = ArrowLeft;
-var LucideArrowLeftCircle = CircleArrowLeft;
-var LucideArrowLeftFromLine = ArrowLeftFromLine;
-var LucideArrowLeftRight = ArrowLeftRight;
-var LucideArrowLeftSquare = SquareArrowLeft;
-var LucideArrowLeftToLine = ArrowLeftToLine;
-var LucideArrowRight = ArrowRight;
-var LucideArrowRightCircle = CircleArrowRight;
-var LucideArrowRightFromLine = ArrowRightFromLine;
-var LucideArrowRightLeft = ArrowRightLeft;
-var LucideArrowRightSquare = SquareArrowRight;
-var LucideArrowRightToLine = ArrowRightToLine;
-var LucideArrowsUpFromLine = ArrowsUpFromLine;
-var LucideArrowUp = ArrowUp;
-var LucideArrowUp01 = ArrowUp01;
-var LucideArrowUp10 = ArrowUp10;
-var LucideArrowUpAz = ArrowUpAZ;
-var LucideArrowUpAZ = ArrowUpAZ;
-var LucideArrowUpCircle = CircleArrowUp;
-var LucideArrowUpDown = ArrowUpDown;
-var LucideArrowUpFromDot = ArrowUpFromDot;
-var LucideArrowUpFromLine = ArrowUpFromLine;
-var LucideArrowUpLeft = ArrowUpLeft;
-var LucideArrowUpLeftFromCircle = CircleArrowOutUpLeft;
-var LucideArrowUpLeftFromSquare = SquareArrowOutUpLeft;
-var LucideArrowUpLeftSquare = SquareArrowUpLeft;
-var LucideArrowUpNarrowWide = ArrowUpNarrowWide;
-var LucideArrowUpRight = ArrowUpRight;
-var LucideArrowUpRightFromCircle = CircleArrowOutUpRight;
-var LucideArrowUpRightFromSquare = SquareArrowOutUpRight;
-var LucideArrowUpRightSquare = SquareArrowUpRight;
-var LucideArrowUpSquare = SquareArrowUp;
-var LucideArrowUpToLine = ArrowUpToLine;
-var LucideArrowUpWideNarrow = ArrowUpWideNarrow;
-var LucideArrowUpZa = ArrowUpZA;
-var LucideArrowUpZA = ArrowUpZA;
-var LucideAsterisk = Asterisk;
-var LucideAsteriskSquare = SquareAsterisk;
-var LucideAtom = Atom;
-var LucideAtSign = AtSign;
-var LucideAudioLines = AudioLines;
-var LucideAudioWaveform = AudioWaveform;
-var LucideAward = Award;
-var LucideAxe = Axe;
-var LucideAxis3d = Axis3d;
-var LucideAxis3D = Axis3d;
-var LucideBaby = Baby;
-var LucideBackpack = Backpack;
-var LucideBadge = Badge;
-var LucideBadgeAlert = BadgeAlert;
-var LucideBadgeCent = BadgeCent;
-var LucideBadgeCheck = BadgeCheck;
-var LucideBadgeDollarSign = BadgeDollarSign;
-var LucideBadgeEuro = BadgeEuro;
-var LucideBadgeHelp = BadgeQuestionMark;
-var LucideBadgeIndianRupee = BadgeIndianRupee;
-var LucideBadgeInfo = BadgeInfo;
-var LucideBadgeJapaneseYen = BadgeJapaneseYen;
-var LucideBadgeMinus = BadgeMinus;
-var LucideBadgePercent = BadgePercent;
-var LucideBadgePlus = BadgePlus;
-var LucideBadgePoundSterling = BadgePoundSterling;
-var LucideBadgeQuestionMark = BadgeQuestionMark;
-var LucideBadgeRussianRuble = BadgeRussianRuble;
-var LucideBadgeSwissFranc = BadgeSwissFranc;
-var LucideBadgeTurkishLira = BadgeTurkishLira;
-var LucideBadgeX = BadgeX;
-var LucideBaggageClaim = BaggageClaim;
-var LucideBalloon = Balloon;
-var LucideBan = Ban;
-var LucideBanana = Banana;
-var LucideBandage = Bandage;
-var LucideBanknote = Banknote;
-var LucideBanknoteArrowDown = BanknoteArrowDown;
-var LucideBanknoteArrowUp = BanknoteArrowUp;
-var LucideBanknoteX = BanknoteX;
-var LucideBarChart = ChartNoAxesColumnIncreasing;
-var LucideBarChart2 = ChartNoAxesColumn;
-var LucideBarChart3 = ChartColumn;
-var LucideBarChart4 = ChartColumnIncreasing;
-var LucideBarChartBig = ChartColumnBig;
-var LucideBarChartHorizontal = ChartBar;
-var LucideBarChartHorizontalBig = ChartBarBig;
-var LucideBarcode = Barcode;
-var LucideBarrel = Barrel;
-var LucideBaseline = Baseline;
-var LucideBath = Bath;
-var LucideBattery = Battery;
-var LucideBatteryCharging = BatteryCharging;
-var LucideBatteryFull = BatteryFull;
-var LucideBatteryLow = BatteryLow;
-var LucideBatteryMedium = BatteryMedium;
-var LucideBatteryPlus = BatteryPlus;
-var LucideBatteryWarning = BatteryWarning;
-var LucideBeaker = Beaker;
-var LucideBean = Bean;
-var LucideBeanOff = BeanOff;
-var LucideBed = Bed;
-var LucideBedDouble = BedDouble;
-var LucideBedSingle = BedSingle;
-var LucideBeef = Beef;
-var LucideBeer = Beer;
-var LucideBeerOff = BeerOff;
-var LucideBell = Bell;
-var LucideBellDot = BellDot;
-var LucideBellElectric = BellElectric;
-var LucideBellMinus = BellMinus;
-var LucideBellOff = BellOff;
-var LucideBellPlus = BellPlus;
-var LucideBellRing = BellRing;
-var LucideBetweenHorizonalEnd = BetweenHorizontalEnd;
-var LucideBetweenHorizonalStart = BetweenHorizontalStart;
-var LucideBetweenHorizontalEnd = BetweenHorizontalEnd;
-var LucideBetweenHorizontalStart = BetweenHorizontalStart;
-var LucideBetweenVerticalEnd = BetweenVerticalEnd;
-var LucideBetweenVerticalStart = BetweenVerticalStart;
-var LucideBicepsFlexed = BicepsFlexed;
-var LucideBike = Bike;
-var LucideBinary = Binary;
-var LucideBinoculars = Binoculars;
-var LucideBiohazard = Biohazard;
-var LucideBird = Bird;
-var LucideBirdhouse = Birdhouse;
-var LucideBitcoin = Bitcoin;
-var LucideBlend = Blend;
-var LucideBlinds = Blinds;
-var LucideBlocks = Blocks;
-var LucideBluetooth = Bluetooth;
-var LucideBluetoothConnected = BluetoothConnected;
-var LucideBluetoothOff = BluetoothOff;
-var LucideBluetoothSearching = BluetoothSearching;
-var LucideBold = Bold;
-var LucideBolt = Bolt;
-var LucideBomb = Bomb;
-var LucideBone = Bone;
-var LucideBook = Book;
-var LucideBookA = BookA;
-var LucideBookAlert = BookAlert;
-var LucideBookAudio = BookAudio;
-var LucideBookCheck = BookCheck;
-var LucideBookCopy = BookCopy;
-var LucideBookDashed = BookDashed;
-var LucideBookDown = BookDown;
-var LucideBookHeadphones = BookHeadphones;
-var LucideBookHeart = BookHeart;
-var LucideBookImage = BookImage;
-var LucideBookKey = BookKey;
-var LucideBookLock = BookLock;
-var LucideBookmark = Bookmark;
-var LucideBookmarkCheck = BookmarkCheck;
-var LucideBookMarked = BookMarked;
-var LucideBookmarkMinus = BookmarkMinus;
-var LucideBookmarkPlus = BookmarkPlus;
-var LucideBookmarkX = BookmarkX;
-var LucideBookMinus = BookMinus;
-var LucideBookOpen = BookOpen;
-var LucideBookOpenCheck = BookOpenCheck;
-var LucideBookOpenText = BookOpenText;
-var LucideBookPlus = BookPlus;
-var LucideBookSearch = BookSearch;
-var LucideBookTemplate = BookDashed;
-var LucideBookText = BookText;
-var LucideBookType = BookType;
-var LucideBookUp = BookUp;
-var LucideBookUp2 = BookUp2;
-var LucideBookUser = BookUser;
-var LucideBookX = BookX;
-var LucideBoomBox = BoomBox;
-var LucideBot = Bot;
-var LucideBotMessageSquare = BotMessageSquare;
-var LucideBotOff = BotOff;
-var LucideBottleWine = BottleWine;
-var LucideBowArrow = BowArrow;
-var LucideBox = Box;
-var LucideBoxes = Boxes;
-var LucideBoxSelect = SquareDashed;
-var LucideBraces = Braces;
-var LucideBrackets = Brackets;
-var LucideBrain = Brain;
-var LucideBrainCircuit = BrainCircuit;
-var LucideBrainCog = BrainCog;
-var LucideBrickWall = BrickWall;
-var LucideBrickWallFire = BrickWallFire;
-var LucideBrickWallShield = BrickWallShield;
-var LucideBriefcase = Briefcase;
-var LucideBriefcaseBusiness = BriefcaseBusiness;
-var LucideBriefcaseConveyorBelt = BriefcaseConveyorBelt;
-var LucideBriefcaseMedical = BriefcaseMedical;
-var LucideBringToFront = BringToFront;
-var LucideBrush = Brush;
-var LucideBrushCleaning = BrushCleaning;
-var LucideBubbles = Bubbles;
-var LucideBug = Bug;
-var LucideBugOff = BugOff;
-var LucideBugPlay = BugPlay;
-var LucideBuilding = Building;
-var LucideBuilding2 = Building2;
-var LucideBus = Bus;
-var LucideBusFront = BusFront;
-var LucideCable = Cable;
-var LucideCableCar = CableCar;
-var LucideCake = Cake;
-var LucideCakeSlice = CakeSlice;
-var LucideCalculator = Calculator;
-var LucideCalendar = Calendar;
-var LucideCalendar1 = Calendar1;
-var LucideCalendarArrowDown = CalendarArrowDown;
-var LucideCalendarArrowUp = CalendarArrowUp;
-var LucideCalendarCheck = CalendarCheck;
-var LucideCalendarCheck2 = CalendarCheck2;
-var LucideCalendarClock = CalendarClock;
-var LucideCalendarCog = CalendarCog;
-var LucideCalendarDays = CalendarDays;
-var LucideCalendarFold = CalendarFold;
-var LucideCalendarHeart = CalendarHeart;
-var LucideCalendarMinus = CalendarMinus;
-var LucideCalendarMinus2 = CalendarMinus2;
-var LucideCalendarOff = CalendarOff;
-var LucideCalendarPlus = CalendarPlus;
-var LucideCalendarPlus2 = CalendarPlus2;
-var LucideCalendarRange = CalendarRange;
-var LucideCalendars = Calendars;
-var LucideCalendarSearch = CalendarSearch;
-var LucideCalendarSync = CalendarSync;
-var LucideCalendarX = CalendarX;
-var LucideCalendarX2 = CalendarX2;
-var LucideCamera = Camera;
-var LucideCameraOff = CameraOff;
-var LucideCandlestickChart = ChartCandlestick;
-var LucideCandy = Candy;
-var LucideCandyCane = CandyCane;
-var LucideCandyOff = CandyOff;
-var LucideCannabis = Cannabis;
-var LucideCannabisOff = CannabisOff;
-var LucideCaptions = Captions;
-var LucideCaptionsOff = CaptionsOff;
-var LucideCar = Car;
-var LucideCaravan = Caravan;
-var LucideCardSim = CardSim;
-var LucideCarFront = CarFront;
-var LucideCarrot = Carrot;
-var LucideCarTaxiFront = CarTaxiFront;
-var LucideCaseLower = CaseLower;
-var LucideCaseSensitive = CaseSensitive;
-var LucideCaseUpper = CaseUpper;
-var LucideCassetteTape = CassetteTape;
-var LucideCast = Cast;
-var LucideCastle = Castle;
-var LucideCat = Cat;
-var LucideCctv = Cctv;
-var LucideChartArea = ChartArea;
-var LucideChartBar = ChartBar;
-var LucideChartBarBig = ChartBarBig;
-var LucideChartBarDecreasing = ChartBarDecreasing;
-var LucideChartBarIncreasing = ChartBarIncreasing;
-var LucideChartBarStacked = ChartBarStacked;
-var LucideChartCandlestick = ChartCandlestick;
-var LucideChartColumn = ChartColumn;
-var LucideChartColumnBig = ChartColumnBig;
-var LucideChartColumnDecreasing = ChartColumnDecreasing;
-var LucideChartColumnIncreasing = ChartColumnIncreasing;
-var LucideChartColumnStacked = ChartColumnStacked;
-var LucideChartGantt = ChartGantt;
-var LucideChartLine = ChartLine;
-var LucideChartNetwork = ChartNetwork;
-var LucideChartNoAxesColumn = ChartNoAxesColumn;
-var LucideChartNoAxesColumnDecreasing = ChartNoAxesColumnDecreasing;
-var LucideChartNoAxesColumnIncreasing = ChartNoAxesColumnIncreasing;
-var LucideChartNoAxesCombined = ChartNoAxesCombined;
-var LucideChartNoAxesGantt = ChartNoAxesGantt;
-var LucideChartPie = ChartPie;
-var LucideChartScatter = ChartScatter;
-var LucideChartSpline = ChartSpline;
-var LucideCheck = Check;
-var LucideCheckCheck = CheckCheck;
-var LucideCheckCircle = CircleCheckBig;
-var LucideCheckCircle2 = CircleCheck;
-var LucideCheckLine = CheckLine;
-var LucideCheckSquare = SquareCheckBig;
-var LucideCheckSquare2 = SquareCheck;
-var LucideChefHat = ChefHat;
-var LucideCherry = Cherry;
-var LucideChessBishop = ChessBishop;
-var LucideChessKing = ChessKing;
-var LucideChessKnight = ChessKnight;
-var LucideChessPawn = ChessPawn;
-var LucideChessQueen = ChessQueen;
-var LucideChessRook = ChessRook;
-var LucideChevronDown = ChevronDown;
-var LucideChevronDownCircle = CircleChevronDown;
-var LucideChevronDownSquare = SquareChevronDown;
-var LucideChevronFirst = ChevronFirst;
-var LucideChevronLast = ChevronLast;
-var LucideChevronLeft = ChevronLeft;
-var LucideChevronLeftCircle = CircleChevronLeft;
-var LucideChevronLeftSquare = SquareChevronLeft;
-var LucideChevronRight = ChevronRight;
-var LucideChevronRightCircle = CircleChevronRight;
-var LucideChevronRightSquare = SquareChevronRight;
-var LucideChevronsDown = ChevronsDown;
-var LucideChevronsDownUp = ChevronsDownUp;
-var LucideChevronsLeft = ChevronsLeft;
-var LucideChevronsLeftRight = ChevronsLeftRight;
-var LucideChevronsLeftRightEllipsis = ChevronsLeftRightEllipsis;
-var LucideChevronsRight = ChevronsRight;
-var LucideChevronsRightLeft = ChevronsRightLeft;
-var LucideChevronsUp = ChevronsUp;
-var LucideChevronsUpDown = ChevronsUpDown;
-var LucideChevronUp = ChevronUp;
-var LucideChevronUpCircle = CircleChevronUp;
-var LucideChevronUpSquare = SquareChevronUp;
-var LucideChrome = Chromium;
-var LucideChromium = Chromium;
-var LucideChurch = Church;
-var LucideCigarette = Cigarette;
-var LucideCigaretteOff = CigaretteOff;
-var LucideCircle = Circle;
-var LucideCircleAlert = CircleAlert;
-var LucideCircleArrowDown = CircleArrowDown;
-var LucideCircleArrowLeft = CircleArrowLeft;
-var LucideCircleArrowOutDownLeft = CircleArrowOutDownLeft;
-var LucideCircleArrowOutDownRight = CircleArrowOutDownRight;
-var LucideCircleArrowOutUpLeft = CircleArrowOutUpLeft;
-var LucideCircleArrowOutUpRight = CircleArrowOutUpRight;
-var LucideCircleArrowRight = CircleArrowRight;
-var LucideCircleArrowUp = CircleArrowUp;
-var LucideCircleCheck = CircleCheck;
-var LucideCircleCheckBig = CircleCheckBig;
-var LucideCircleChevronDown = CircleChevronDown;
-var LucideCircleChevronLeft = CircleChevronLeft;
-var LucideCircleChevronRight = CircleChevronRight;
-var LucideCircleChevronUp = CircleChevronUp;
-var LucideCircleDashed = CircleDashed;
-var LucideCircleDivide = CircleDivide;
-var LucideCircleDollarSign = CircleDollarSign;
-var LucideCircleDot = CircleDot;
-var LucideCircleDotDashed = CircleDotDashed;
-var LucideCircleEllipsis = CircleEllipsis;
-var LucideCircleEqual = CircleEqual;
-var LucideCircleFadingArrowUp = CircleFadingArrowUp;
-var LucideCircleFadingPlus = CircleFadingPlus;
-var LucideCircleGauge = CircleGauge;
-var LucideCircleHelp = CircleQuestionMark;
-var LucideCircleMinus = CircleMinus;
-var LucideCircleOff = CircleOff;
-var LucideCircleParking = CircleParking;
-var LucideCircleParkingOff = CircleParkingOff;
-var LucideCirclePause = CirclePause;
-var LucideCirclePercent = CirclePercent;
-var LucideCirclePile = CirclePile;
-var LucideCirclePlay = CirclePlay;
-var LucideCirclePlus = CirclePlus;
-var LucideCirclePoundSterling = CirclePoundSterling;
-var LucideCirclePower = CirclePower;
-var LucideCircleQuestionMark = CircleQuestionMark;
-var LucideCircleSlash = CircleSlash;
-var LucideCircleSlash2 = CircleSlash2;
-var LucideCircleSlashed = CircleSlash2;
-var LucideCircleSmall = CircleSmall;
-var LucideCircleStar = CircleStar;
-var LucideCircleStop = CircleStop;
-var LucideCircleUser = CircleUser;
-var LucideCircleUserRound = CircleUserRound;
-var LucideCircleX = CircleX;
-var LucideCircuitBoard = CircuitBoard;
-var LucideCitrus = Citrus;
-var LucideClapperboard = Clapperboard;
-var LucideClipboard = Clipboard;
-var LucideClipboardCheck = ClipboardCheck;
-var LucideClipboardClock = ClipboardClock;
-var LucideClipboardCopy = ClipboardCopy;
-var LucideClipboardEdit = ClipboardPen;
-var LucideClipboardList = ClipboardList;
-var LucideClipboardMinus = ClipboardMinus;
-var LucideClipboardPaste = ClipboardPaste;
-var LucideClipboardPen = ClipboardPen;
-var LucideClipboardPenLine = ClipboardPenLine;
-var LucideClipboardPlus = ClipboardPlus;
-var LucideClipboardSignature = ClipboardPenLine;
-var LucideClipboardType = ClipboardType;
-var LucideClipboardX = ClipboardX;
-var LucideClock = Clock;
-var LucideClock1 = Clock1;
-var LucideClock10 = Clock10;
-var LucideClock11 = Clock11;
-var LucideClock12 = Clock12;
-var LucideClock2 = Clock2;
-var LucideClock3 = Clock3;
-var LucideClock4 = Clock4;
-var LucideClock5 = Clock5;
-var LucideClock6 = Clock6;
-var LucideClock7 = Clock7;
-var LucideClock8 = Clock8;
-var LucideClock9 = Clock9;
-var LucideClockAlert = ClockAlert;
-var LucideClockArrowDown = ClockArrowDown;
-var LucideClockArrowUp = ClockArrowUp;
-var LucideClockCheck = ClockCheck;
-var LucideClockFading = ClockFading;
-var LucideClockPlus = ClockPlus;
-var LucideClosedCaption = ClosedCaption;
-var LucideCloud = Cloud;
-var LucideCloudAlert = CloudAlert;
-var LucideCloudBackup = CloudBackup;
-var LucideCloudCheck = CloudCheck;
-var LucideCloudCog = CloudCog;
-var LucideCloudDownload = CloudDownload;
-var LucideCloudDrizzle = CloudDrizzle;
-var LucideCloudFog = CloudFog;
-var LucideCloudHail = CloudHail;
-var LucideCloudLightning = CloudLightning;
-var LucideCloudMoon = CloudMoon;
-var LucideCloudMoonRain = CloudMoonRain;
-var LucideCloudOff = CloudOff;
-var LucideCloudRain = CloudRain;
-var LucideCloudRainWind = CloudRainWind;
-var LucideCloudSnow = CloudSnow;
-var LucideCloudSun = CloudSun;
-var LucideCloudSunRain = CloudSunRain;
-var LucideCloudSync = CloudSync;
-var LucideCloudUpload = CloudUpload;
-var LucideCloudy = Cloudy;
-var LucideClover = Clover;
-var LucideClub = Club;
-var LucideCode = Code;
-var LucideCode2 = CodeXml;
-var LucideCodepen = Codepen;
-var LucideCodesandbox = Codesandbox;
-var LucideCodeSquare = SquareCode;
-var LucideCodeXml = CodeXml;
-var LucideCoffee = Coffee;
-var LucideCog = Cog;
-var LucideCoins = Coins;
-var LucideColumns = Columns2;
-var LucideColumns2 = Columns2;
-var LucideColumns3 = Columns3;
-var LucideColumns3Cog = Columns3Cog;
-var LucideColumns4 = Columns4;
-var LucideColumnsSettings = Columns3Cog;
-var LucideCombine = Combine;
-var LucideCommand = Command;
-var LucideCompass = Compass;
-var LucideComponent = Component;
-var LucideComputer = Computer;
-var LucideConciergeBell = ConciergeBell;
-var LucideCone = Cone;
-var LucideConstruction = Construction;
-var LucideContact = Contact;
-var LucideContact2 = ContactRound;
-var LucideContactRound = ContactRound;
-var LucideContainer = Container;
-var LucideContrast = Contrast;
-var LucideCookie = Cookie;
-var LucideCookingPot = CookingPot;
-var LucideCopy = Copy;
-var LucideCopyCheck = CopyCheck;
-var LucideCopyleft = Copyleft;
-var LucideCopyMinus = CopyMinus;
-var LucideCopyPlus = CopyPlus;
-var LucideCopyright = Copyright;
-var LucideCopySlash = CopySlash;
-var LucideCopyX = CopyX;
-var LucideCornerDownLeft = CornerDownLeft;
-var LucideCornerDownRight = CornerDownRight;
-var LucideCornerLeftDown = CornerLeftDown;
-var LucideCornerLeftUp = CornerLeftUp;
-var LucideCornerRightDown = CornerRightDown;
-var LucideCornerRightUp = CornerRightUp;
-var LucideCornerUpLeft = CornerUpLeft;
-var LucideCornerUpRight = CornerUpRight;
-var LucideCpu = Cpu;
-var LucideCreativeCommons = CreativeCommons;
-var LucideCreditCard = CreditCard;
-var LucideCroissant = Croissant;
-var LucideCrop = Crop;
-var LucideCross = Cross;
-var LucideCrosshair = Crosshair;
-var LucideCrown = Crown;
-var LucideCuboid = Cuboid;
-var LucideCupSoda = CupSoda;
-var LucideCurlyBraces = Braces;
-var LucideCurrency = Currency;
-var LucideCylinder = Cylinder;
-var LucideDam = Dam;
-var LucideDatabase = Database;
-var LucideDatabaseBackup = DatabaseBackup;
-var LucideDatabaseSearch = DatabaseSearch;
-var LucideDatabaseZap = DatabaseZap;
-var LucideDecimalsArrowLeft = DecimalsArrowLeft;
-var LucideDecimalsArrowRight = DecimalsArrowRight;
-var LucideDelete = Delete;
-var LucideDessert = Dessert;
-var LucideDiameter = Diameter;
-var LucideDiamond = Diamond;
-var LucideDiamondMinus = DiamondMinus;
-var LucideDiamondPercent = DiamondPercent;
-var LucideDiamondPlus = DiamondPlus;
-var LucideDice1 = Dice1;
-var LucideDice2 = Dice2;
-var LucideDice3 = Dice3;
-var LucideDice4 = Dice4;
-var LucideDice5 = Dice5;
-var LucideDice6 = Dice6;
-var LucideDices = Dices;
-var LucideDiff = Diff;
-var LucideDisc = Disc;
-var LucideDisc2 = Disc2;
-var LucideDisc3 = Disc3;
-var LucideDiscAlbum = DiscAlbum;
-var LucideDivide = Divide;
-var LucideDivideCircle = CircleDivide;
-var LucideDivideSquare = SquareDivide;
-var LucideDna = Dna;
-var LucideDnaOff = DnaOff;
-var LucideDock = Dock;
-var LucideDog = Dog;
-var LucideDollarSign = DollarSign;
-var LucideDonut = Donut;
-var LucideDoorClosed = DoorClosed;
-var LucideDoorClosedLocked = DoorClosedLocked;
-var LucideDoorOpen = DoorOpen;
-var LucideDot = Dot;
-var LucideDotSquare = SquareDot;
-var LucideDownload = Download;
-var LucideDownloadCloud = CloudDownload;
-var LucideDraftingCompass = DraftingCompass;
-var LucideDrama = Drama;
-var LucideDribbble = Dribbble;
-var LucideDrill = Drill;
-var LucideDrone = Drone;
-var LucideDroplet = Droplet;
-var LucideDropletOff = DropletOff;
-var LucideDroplets = Droplets;
-var LucideDrum = Drum;
-var LucideDrumstick = Drumstick;
-var LucideDumbbell = Dumbbell;
-var LucideEar = Ear;
-var LucideEarOff = EarOff;
-var LucideEarth = Earth;
-var LucideEarthLock = EarthLock;
-var LucideEclipse = Eclipse;
-var LucideEdit = SquarePen;
-var LucideEdit2 = Pen;
-var LucideEdit3 = PenLine;
-var LucideEgg = Egg;
-var LucideEggFried = EggFried;
-var LucideEggOff = EggOff;
-var LucideEllipse = Ellipse;
-var LucideEllipsis = Ellipsis;
-var LucideEllipsisVertical = EllipsisVertical;
-var LucideEqual = Equal;
-var LucideEqualApproximately = EqualApproximately;
-var LucideEqualNot = EqualNot;
-var LucideEqualSquare = SquareEqual;
-var LucideEraser = Eraser;
-var LucideEthernetPort = EthernetPort;
-var LucideEuro = Euro;
-var LucideEvCharger = EvCharger;
-var LucideExpand = Expand;
-var LucideExternalLink = ExternalLink;
-var LucideEye = Eye;
-var LucideEyeClosed = EyeClosed;
-var LucideEyeOff = EyeOff;
-var LucideFacebook = Facebook;
-var LucideFactory = Factory;
-var LucideFan = Fan;
-var LucideFastForward = FastForward;
-var LucideFeather = Feather;
-var LucideFence = Fence;
-var LucideFerrisWheel = FerrisWheel;
-var LucideFigma = Figma;
-var LucideFile = File;
-var LucideFileArchive = FileArchive;
-var LucideFileAudio = FileHeadphone;
-var LucideFileAudio2 = FileHeadphone;
-var LucideFileAxis3d = FileAxis3d;
-var LucideFileAxis3D = FileAxis3d;
-var LucideFileBadge = FileBadge;
-var LucideFileBadge2 = FileBadge;
-var LucideFileBarChart = FileChartColumnIncreasing;
-var LucideFileBarChart2 = FileChartColumn;
-var LucideFileBox = FileBox;
-var LucideFileBraces = FileBraces;
-var LucideFileBracesCorner = FileBracesCorner;
-var LucideFileChartColumn = FileChartColumn;
-var LucideFileChartColumnIncreasing = FileChartColumnIncreasing;
-var LucideFileChartLine = FileChartLine;
-var LucideFileChartPie = FileChartPie;
-var LucideFileCheck = FileCheck;
-var LucideFileCheck2 = FileCheckCorner;
-var LucideFileCheckCorner = FileCheckCorner;
-var LucideFileClock = FileClock;
-var LucideFileCode = FileCode;
-var LucideFileCode2 = FileCodeCorner;
-var LucideFileCodeCorner = FileCodeCorner;
-var LucideFileCog = FileCog;
-var LucideFileCog2 = FileCog;
-var LucideFileDiff = FileDiff;
-var LucideFileDigit = FileDigit;
-var LucideFileDown = FileDown;
-var LucideFileEdit = FilePen;
-var LucideFileExclamationPoint = FileExclamationPoint;
-var LucideFileHeadphone = FileHeadphone;
-var LucideFileHeart = FileHeart;
-var LucideFileImage = FileImage;
-var LucideFileInput = FileInput;
-var LucideFileJson = FileBraces;
-var LucideFileJson2 = FileBracesCorner;
-var LucideFileKey = FileKey;
-var LucideFileKey2 = FileKey;
-var LucideFileLineChart = FileChartLine;
-var LucideFileLock = FileLock;
-var LucideFileLock2 = FileLock;
-var LucideFileMinus = FileMinus;
-var LucideFileMinus2 = FileMinusCorner;
-var LucideFileMinusCorner = FileMinusCorner;
-var LucideFileMusic = FileMusic;
-var LucideFileOutput = FileOutput;
-var LucideFilePen = FilePen;
-var LucideFilePenLine = FilePenLine;
-var LucideFilePieChart = FileChartPie;
-var LucideFilePlay = FilePlay;
-var LucideFilePlus = FilePlus;
-var LucideFilePlus2 = FilePlusCorner;
-var LucideFilePlusCorner = FilePlusCorner;
-var LucideFileQuestion = FileQuestionMark;
-var LucideFileQuestionMark = FileQuestionMark;
-var LucideFiles = Files;
-var LucideFileScan = FileScan;
-var LucideFileSearch = FileSearch;
-var LucideFileSearch2 = FileSearchCorner;
-var LucideFileSearchCorner = FileSearchCorner;
-var LucideFileSignal = FileSignal;
-var LucideFileSignature = FilePenLine;
-var LucideFileSliders = FileSliders;
-var LucideFileSpreadsheet = FileSpreadsheet;
-var LucideFileStack = FileStack;
-var LucideFileSymlink = FileSymlink;
-var LucideFileTerminal = FileTerminal;
-var LucideFileText = FileText;
-var LucideFileType = FileType;
-var LucideFileType2 = FileTypeCorner;
-var LucideFileTypeCorner = FileTypeCorner;
-var LucideFileUp = FileUp;
-var LucideFileUser = FileUser;
-var LucideFileVideo = FilePlay;
-var LucideFileVideo2 = FileVideoCamera;
-var LucideFileVideoCamera = FileVideoCamera;
-var LucideFileVolume = FileVolume;
-var LucideFileVolume2 = FileSignal;
-var LucideFileWarning = FileExclamationPoint;
-var LucideFileX = FileX;
-var LucideFileX2 = FileXCorner;
-var LucideFileXCorner = FileXCorner;
-var LucideFilm = Film;
-var LucideFilter = Funnel;
-var LucideFilterX = FunnelX;
-var LucideFingerprint = FingerprintPattern;
-var LucideFingerprintPattern = FingerprintPattern;
-var LucideFireExtinguisher = FireExtinguisher;
-var LucideFish = Fish;
-var LucideFishingHook = FishingHook;
-var LucideFishingRod = FishingRod;
-var LucideFishOff = FishOff;
-var LucideFishSymbol = FishSymbol;
-var LucideFlag = Flag;
-var LucideFlagOff = FlagOff;
-var LucideFlagTriangleLeft = FlagTriangleLeft;
-var LucideFlagTriangleRight = FlagTriangleRight;
-var LucideFlame = Flame;
-var LucideFlameKindling = FlameKindling;
-var LucideFlashlight = Flashlight;
-var LucideFlashlightOff = FlashlightOff;
-var LucideFlaskConical = FlaskConical;
-var LucideFlaskConicalOff = FlaskConicalOff;
-var LucideFlaskRound = FlaskRound;
-var LucideFlipHorizontal = SquareCenterlineDashedHorizontal;
-var LucideFlipHorizontal2 = FlipHorizontal2;
-var LucideFlipVertical = SquareCenterlineDashedVertical;
-var LucideFlipVertical2 = FlipVertical2;
-var LucideFlower = Flower;
-var LucideFlower2 = Flower2;
-var LucideFocus = Focus;
-var LucideFolder = Folder;
-var LucideFolderArchive = FolderArchive;
-var LucideFolderCheck = FolderCheck;
-var LucideFolderClock = FolderClock;
-var LucideFolderClosed = FolderClosed;
-var LucideFolderCode = FolderCode;
-var LucideFolderCog = FolderCog;
-var LucideFolderCog2 = FolderCog;
-var LucideFolderDot = FolderDot;
-var LucideFolderDown = FolderDown;
-var LucideFolderEdit = FolderPen;
-var LucideFolderGit = FolderGit;
-var LucideFolderGit2 = FolderGit2;
-var LucideFolderHeart = FolderHeart;
-var LucideFolderInput = FolderInput;
-var LucideFolderKanban = FolderKanban;
-var LucideFolderKey = FolderKey;
-var LucideFolderLock = FolderLock;
-var LucideFolderMinus = FolderMinus;
-var LucideFolderOpen = FolderOpen;
-var LucideFolderOpenDot = FolderOpenDot;
-var LucideFolderOutput = FolderOutput;
-var LucideFolderPen = FolderPen;
-var LucideFolderPlus = FolderPlus;
-var LucideFolderRoot = FolderRoot;
-var LucideFolders = Folders;
-var LucideFolderSearch = FolderSearch;
-var LucideFolderSearch2 = FolderSearch2;
-var LucideFolderSymlink = FolderSymlink;
-var LucideFolderSync = FolderSync;
-var LucideFolderTree = FolderTree;
-var LucideFolderUp = FolderUp;
-var LucideFolderX = FolderX;
-var LucideFoldHorizontal = FoldHorizontal;
-var LucideFoldVertical = FoldVertical;
-var LucideFootprints = Footprints;
-var LucideForkKnife = Utensils;
-var LucideForkKnifeCrossed = UtensilsCrossed;
-var LucideForklift = Forklift;
-var LucideForm = Form;
-var LucideFormInput = RectangleEllipsis;
-var LucideForward = Forward;
-var LucideFrame = Frame;
-var LucideFramer = Framer;
-var LucideFrown = Frown;
-var LucideFuel = Fuel;
-var LucideFullscreen = Fullscreen;
-var LucideFunctionSquare = SquareFunction;
-var LucideFunnel = Funnel;
-var LucideFunnelPlus = FunnelPlus;
-var LucideFunnelX = FunnelX;
-var LucideGalleryHorizontal = GalleryHorizontal;
-var LucideGalleryHorizontalEnd = GalleryHorizontalEnd;
-var LucideGalleryThumbnails = GalleryThumbnails;
-var LucideGalleryVertical = GalleryVertical;
-var LucideGalleryVerticalEnd = GalleryVerticalEnd;
-var LucideGamepad = Gamepad;
-var LucideGamepad2 = Gamepad2;
-var LucideGamepadDirectional = GamepadDirectional;
-var LucideGanttChart = ChartNoAxesGantt;
-var LucideGanttChartSquare = SquareChartGantt;
-var LucideGauge = Gauge;
-var LucideGaugeCircle = CircleGauge;
-var LucideGavel = Gavel;
-var LucideGem = Gem;
-var LucideGeorgianLari = GeorgianLari;
-var LucideGhost = Ghost;
-var LucideGift = Gift;
-var LucideGitBranch = GitBranch;
-var LucideGitBranchMinus = GitBranchMinus;
-var LucideGitBranchPlus = GitBranchPlus;
-var LucideGitCommit = GitCommitHorizontal;
-var LucideGitCommitHorizontal = GitCommitHorizontal;
-var LucideGitCommitVertical = GitCommitVertical;
-var LucideGitCompare = GitCompare;
-var LucideGitCompareArrows = GitCompareArrows;
-var LucideGitFork = GitFork;
-var LucideGitGraph = GitGraph;
-var LucideGithub = Github;
-var LucideGitlab = Gitlab;
-var LucideGitMerge = GitMerge;
-var LucideGitMergeConflict = GitMergeConflict;
-var LucideGitPullRequest = GitPullRequest;
-var LucideGitPullRequestArrow = GitPullRequestArrow;
-var LucideGitPullRequestClosed = GitPullRequestClosed;
-var LucideGitPullRequestCreate = GitPullRequestCreate;
-var LucideGitPullRequestCreateArrow = GitPullRequestCreateArrow;
-var LucideGitPullRequestDraft = GitPullRequestDraft;
-var LucideGlasses = Glasses;
-var LucideGlassWater = GlassWater;
-var LucideGlobe = Globe;
-var LucideGlobe2 = Earth;
-var LucideGlobeLock = GlobeLock;
-var LucideGlobeOff = GlobeOff;
-var LucideGlobeX = GlobeX;
-var LucideGoal = Goal;
-var LucideGpu = Gpu;
-var LucideGrab = HandGrab;
-var LucideGraduationCap = GraduationCap;
-var LucideGrape = Grape;
-var LucideGrid = Grid3x3;
-var LucideGrid2x2 = Grid2x2;
-var LucideGrid2X2 = Grid2x2;
-var LucideGrid2x2Check = Grid2x2Check;
-var LucideGrid2X2Check = Grid2x2Check;
-var LucideGrid2x2Plus = Grid2x2Plus;
-var LucideGrid2X2Plus = Grid2x2Plus;
-var LucideGrid2x2X = Grid2x2X;
-var LucideGrid2X2X = Grid2x2X;
-var LucideGrid3x2 = Grid3x2;
-var LucideGrid3x3 = Grid3x3;
-var LucideGrid3X3 = Grid3x3;
-var LucideGrip = Grip;
-var LucideGripHorizontal = GripHorizontal;
-var LucideGripVertical = GripVertical;
-var LucideGroup = Group;
-var LucideGuitar = Guitar;
-var LucideHam = Ham;
-var LucideHamburger = Hamburger;
-var LucideHammer = Hammer;
-var LucideHand = Hand;
-var LucideHandbag = Handbag;
-var LucideHandCoins = HandCoins;
-var LucideHandFist = HandFist;
-var LucideHandGrab = HandGrab;
-var LucideHandHeart = HandHeart;
-var LucideHandHelping = HandHelping;
-var LucideHandMetal = HandMetal;
-var LucideHandPlatter = HandPlatter;
-var LucideHandshake = Handshake;
-var LucideHardDrive = HardDrive;
-var LucideHardDriveDownload = HardDriveDownload;
-var LucideHardDriveUpload = HardDriveUpload;
-var LucideHardHat = HardHat;
-var LucideHash = Hash;
-var LucideHatGlasses = HatGlasses;
-var LucideHaze = Haze;
-var LucideHd = Hd;
-var LucideHdmiPort = HdmiPort;
-var LucideHeading = Heading;
-var LucideHeading1 = Heading1;
-var LucideHeading2 = Heading2;
-var LucideHeading3 = Heading3;
-var LucideHeading4 = Heading4;
-var LucideHeading5 = Heading5;
-var LucideHeading6 = Heading6;
-var LucideHeadphoneOff = HeadphoneOff;
-var LucideHeadphones = Headphones;
-var LucideHeadset = Headset;
-var LucideHeart = Heart;
-var LucideHeartCrack = HeartCrack;
-var LucideHeartHandshake = HeartHandshake;
-var LucideHeartMinus = HeartMinus;
-var LucideHeartOff = HeartOff;
-var LucideHeartPlus = HeartPlus;
-var LucideHeartPulse = HeartPulse;
-var LucideHeater = Heater;
-var LucideHelicopter = Helicopter;
-var LucideHelpCircle = CircleQuestionMark;
-var LucideHelpingHand = HandHelping;
-var LucideHexagon = Hexagon;
-var LucideHighlighter = Highlighter;
-var LucideHistory = History;
-var LucideHome = House;
-var LucideHop = Hop;
-var LucideHopOff = HopOff;
-var LucideHospital = Hospital;
-var LucideHotel = Hotel;
-var LucideHourglass = Hourglass;
-var LucideHouse = House;
-var LucideHouseHeart = HouseHeart;
-var LucideHousePlug = HousePlug;
-var LucideHousePlus = HousePlus;
-var LucideHouseWifi = HouseWifi;
-var LucideIceCream = IceCreamCone;
-var LucideIceCream2 = IceCreamBowl;
-var LucideIceCreamBowl = IceCreamBowl;
-var LucideIceCreamCone = IceCreamCone;
-var LucideIdCard = IdCard;
-var LucideIdCardLanyard = IdCardLanyard;
-var LucideImage = Image;
-var LucideImageDown = ImageDown;
-var LucideImageMinus = ImageMinus;
-var LucideImageOff = ImageOff;
-var LucideImagePlay = ImagePlay;
-var LucideImagePlus = ImagePlus;
-var LucideImages = Images;
-var LucideImageUp = ImageUp;
-var LucideImageUpscale = ImageUpscale;
-var LucideImport = Import;
-var LucideInbox = Inbox;
-var LucideIndent = ListIndentIncrease;
-var LucideIndentDecrease = ListIndentDecrease;
-var LucideIndentIncrease = ListIndentIncrease;
-var LucideIndianRupee = IndianRupee;
-var LucideInfinity = Infinity;
-var LucideInfo = Info;
-var LucideInspect = SquareMousePointer;
-var LucideInspectionPanel = InspectionPanel;
-var LucideInstagram = Instagram;
-var LucideItalic = Italic;
-var LucideIterationCcw = IterationCcw;
-var LucideIterationCw = IterationCw;
-var LucideJapaneseYen = JapaneseYen;
-var LucideJoystick = Joystick;
-var LucideKanban = Kanban;
-var LucideKanbanSquare = SquareKanban;
-var LucideKanbanSquareDashed = SquareDashedKanban;
-var LucideKayak = Kayak;
-var LucideKey = Key;
-var LucideKeyboard = Keyboard;
-var LucideKeyboardMusic = KeyboardMusic;
-var LucideKeyboardOff = KeyboardOff;
-var LucideKeyRound = KeyRound;
-var LucideKeySquare = KeySquare;
-var LucideLamp = Lamp;
-var LucideLampCeiling = LampCeiling;
-var LucideLampDesk = LampDesk;
-var LucideLampFloor = LampFloor;
-var LucideLampWallDown = LampWallDown;
-var LucideLampWallUp = LampWallUp;
-var LucideLandmark = Landmark;
-var LucideLandPlot = LandPlot;
-var LucideLanguages = Languages;
-var LucideLaptop = Laptop;
-var LucideLaptop2 = LaptopMinimal;
-var LucideLaptopMinimal = LaptopMinimal;
-var LucideLaptopMinimalCheck = LaptopMinimalCheck;
-var LucideLasso = Lasso;
-var LucideLassoSelect = LassoSelect;
-var LucideLaugh = Laugh;
-var LucideLayers = Layers;
-var LucideLayers2 = Layers2;
-var LucideLayers3 = Layers;
-var LucideLayersPlus = LayersPlus;
-var LucideLayout = PanelsTopLeft;
-var LucideLayoutDashboard = LayoutDashboard;
-var LucideLayoutGrid = LayoutGrid;
-var LucideLayoutList = LayoutList;
-var LucideLayoutPanelLeft = LayoutPanelLeft;
-var LucideLayoutPanelTop = LayoutPanelTop;
-var LucideLayoutTemplate = LayoutTemplate;
-var LucideLeaf = Leaf;
-var LucideLeafyGreen = LeafyGreen;
-var LucideLectern = Lectern;
-var LucideLensConcave = LensConcave;
-var LucideLensConvex = LensConvex;
-var LucideLetterText = TextInitial;
-var LucideLibrary = Library;
-var LucideLibraryBig = LibraryBig;
-var LucideLibrarySquare = SquareLibrary;
-var LucideLifeBuoy = LifeBuoy;
-var LucideLigature = Ligature;
-var LucideLightbulb = Lightbulb;
-var LucideLightbulbOff = LightbulbOff;
-var LucideLineChart = ChartLine;
-var LucideLineDotRightHorizontal = LineDotRightHorizontal;
-var LucideLineSquiggle = LineSquiggle;
-var LucideLink = Link;
-var LucideLink2 = Link2;
-var LucideLink2Off = Link2Off;
-var LucideLinkedin = Linkedin;
-var LucideList = List;
-var LucideListCheck = ListCheck;
-var LucideListChecks = ListChecks;
-var LucideListChevronsDownUp = ListChevronsDownUp;
-var LucideListChevronsUpDown = ListChevronsUpDown;
-var LucideListCollapse = ListCollapse;
-var LucideListEnd = ListEnd;
-var LucideListFilter = ListFilter;
-var LucideListFilterPlus = ListFilterPlus;
-var LucideListIndentDecrease = ListIndentDecrease;
-var LucideListIndentIncrease = ListIndentIncrease;
-var LucideListMinus = ListMinus;
-var LucideListMusic = ListMusic;
-var LucideListOrdered = ListOrdered;
-var LucideListPlus = ListPlus;
-var LucideListRestart = ListRestart;
-var LucideListStart = ListStart;
-var LucideListTodo = ListTodo;
-var LucideListTree = ListTree;
-var LucideListVideo = ListVideo;
-var LucideListX = ListX;
-var LucideLoader = Loader;
-var LucideLoader2 = LoaderCircle;
-var LucideLoaderCircle = LoaderCircle;
-var LucideLoaderPinwheel = LoaderPinwheel;
-var LucideLocate = Locate;
-var LucideLocateFixed = LocateFixed;
-var LucideLocateOff = LocateOff;
-var LucideLocationEdit = MapPinPen;
-var LucideLock = Lock;
-var LucideLockKeyhole = LockKeyhole;
-var LucideLockKeyholeOpen = LockKeyholeOpen;
-var LucideLockOpen = LockOpen;
-var LucideLogIn = LogIn;
-var LucideLogOut = LogOut;
-var LucideLogs = Logs;
-var LucideLollipop = Lollipop;
-var LucideLuggage = Luggage;
-var LucideMagnet = Magnet;
-var LucideMail = Mail;
-var LucideMailbox = Mailbox;
-var LucideMailCheck = MailCheck;
-var LucideMailMinus = MailMinus;
-var LucideMailOpen = MailOpen;
-var LucideMailPlus = MailPlus;
-var LucideMailQuestion = MailQuestionMark;
-var LucideMailQuestionMark = MailQuestionMark;
-var LucideMails = Mails;
-var LucideMailSearch = MailSearch;
-var LucideMailWarning = MailWarning;
-var LucideMailX = MailX;
-var LucideMap = Map;
-var LucideMapMinus = MapMinus;
-var LucideMapPin = MapPin;
-var LucideMapPinCheck = MapPinCheck;
-var LucideMapPinCheckInside = MapPinCheckInside;
-var LucideMapPinHouse = MapPinHouse;
-var LucideMapPinMinus = MapPinMinus;
-var LucideMapPinMinusInside = MapPinMinusInside;
-var LucideMapPinned = MapPinned;
-var LucideMapPinOff = MapPinOff;
-var LucideMapPinPen = MapPinPen;
-var LucideMapPinPlus = MapPinPlus;
-var LucideMapPinPlusInside = MapPinPlusInside;
-var LucideMapPinX = MapPinX;
-var LucideMapPinXInside = MapPinXInside;
-var LucideMapPlus = MapPlus;
-var LucideMars = Mars;
-var LucideMarsStroke = MarsStroke;
-var LucideMartini = Martini;
-var LucideMaximize = Maximize;
-var LucideMaximize2 = Maximize2;
-var LucideMedal = Medal;
-var LucideMegaphone = Megaphone;
-var LucideMegaphoneOff = MegaphoneOff;
-var LucideMeh = Meh;
-var LucideMemoryStick = MemoryStick;
-var LucideMenu = Menu;
-var LucideMenuSquare = SquareMenu;
-var LucideMerge = Merge;
-var LucideMessageCircle = MessageCircle;
-var LucideMessageCircleCheck = MessageCircleCheck;
-var LucideMessageCircleCode = MessageCircleCode;
-var LucideMessageCircleDashed = MessageCircleDashed;
-var LucideMessageCircleHeart = MessageCircleHeart;
-var LucideMessageCircleMore = MessageCircleMore;
-var LucideMessageCircleOff = MessageCircleOff;
-var LucideMessageCirclePlus = MessageCirclePlus;
-var LucideMessageCircleQuestion = MessageCircleQuestionMark;
-var LucideMessageCircleQuestionMark = MessageCircleQuestionMark;
-var LucideMessageCircleReply = MessageCircleReply;
-var LucideMessageCircleWarning = MessageCircleWarning;
-var LucideMessageCircleX = MessageCircleX;
-var LucideMessageSquare = MessageSquare;
-var LucideMessageSquareCheck = MessageSquareCheck;
-var LucideMessageSquareCode = MessageSquareCode;
-var LucideMessageSquareDashed = MessageSquareDashed;
-var LucideMessageSquareDiff = MessageSquareDiff;
-var LucideMessageSquareDot = MessageSquareDot;
-var LucideMessageSquareHeart = MessageSquareHeart;
-var LucideMessageSquareLock = MessageSquareLock;
-var LucideMessageSquareMore = MessageSquareMore;
-var LucideMessageSquareOff = MessageSquareOff;
-var LucideMessageSquarePlus = MessageSquarePlus;
-var LucideMessageSquareQuote = MessageSquareQuote;
-var LucideMessageSquareReply = MessageSquareReply;
-var LucideMessageSquareShare = MessageSquareShare;
-var LucideMessageSquareText = MessageSquareText;
-var LucideMessageSquareWarning = MessageSquareWarning;
-var LucideMessageSquareX = MessageSquareX;
-var LucideMessagesSquare = MessagesSquare;
-var LucideMetronome = Metronome;
-var LucideMic = Mic;
-var LucideMic2 = MicVocal;
-var LucideMicOff = MicOff;
-var LucideMicrochip = Microchip;
-var LucideMicroscope = Microscope;
-var LucideMicrowave = Microwave;
-var LucideMicVocal = MicVocal;
-var LucideMilestone = Milestone;
-var LucideMilk = Milk;
-var LucideMilkOff = MilkOff;
-var LucideMinimize = Minimize;
-var LucideMinimize2 = Minimize2;
-var LucideMinus = Minus;
-var LucideMinusCircle = CircleMinus;
-var LucideMinusSquare = SquareMinus;
-var LucideMirrorRectangular = MirrorRectangular;
-var LucideMirrorRound = MirrorRound;
-var LucideMonitor = Monitor;
-var LucideMonitorCheck = MonitorCheck;
-var LucideMonitorCloud = MonitorCloud;
-var LucideMonitorCog = MonitorCog;
-var LucideMonitorDot = MonitorDot;
-var LucideMonitorDown = MonitorDown;
-var LucideMonitorOff = MonitorOff;
-var LucideMonitorPause = MonitorPause;
-var LucideMonitorPlay = MonitorPlay;
-var LucideMonitorSmartphone = MonitorSmartphone;
-var LucideMonitorSpeaker = MonitorSpeaker;
-var LucideMonitorStop = MonitorStop;
-var LucideMonitorUp = MonitorUp;
-var LucideMonitorX = MonitorX;
-var LucideMoon = Moon;
-var LucideMoonStar = MoonStar;
-var LucideMoreHorizontal = Ellipsis;
-var LucideMoreVertical = EllipsisVertical;
-var LucideMotorbike = Motorbike;
-var LucideMountain = Mountain;
-var LucideMountainSnow = MountainSnow;
-var LucideMouse = Mouse;
-var LucideMouseLeft = MouseLeft;
-var LucideMouseOff = MouseOff;
-var LucideMousePointer = MousePointer;
-var LucideMousePointer2 = MousePointer2;
-var LucideMousePointer2Off = MousePointer2Off;
-var LucideMousePointerBan = MousePointerBan;
-var LucideMousePointerClick = MousePointerClick;
-var LucideMousePointerSquareDashed = SquareDashedMousePointer;
-var LucideMouseRight = MouseRight;
-var LucideMove = Move;
-var LucideMove3d = Move3d;
-var LucideMove3D = Move3d;
-var LucideMoveDiagonal = MoveDiagonal;
-var LucideMoveDiagonal2 = MoveDiagonal2;
-var LucideMoveDown = MoveDown;
-var LucideMoveDownLeft = MoveDownLeft;
-var LucideMoveDownRight = MoveDownRight;
-var LucideMoveHorizontal = MoveHorizontal;
-var LucideMoveLeft = MoveLeft;
-var LucideMoveRight = MoveRight;
-var LucideMoveUp = MoveUp;
-var LucideMoveUpLeft = MoveUpLeft;
-var LucideMoveUpRight = MoveUpRight;
-var LucideMoveVertical = MoveVertical;
-var LucideMSquare = SquareM;
-var LucideMusic = Music;
-var LucideMusic2 = Music2;
-var LucideMusic3 = Music3;
-var LucideMusic4 = Music4;
-var LucideNavigation = Navigation;
-var LucideNavigation2 = Navigation2;
-var LucideNavigation2Off = Navigation2Off;
-var LucideNavigationOff = NavigationOff;
-var LucideNetwork = Network;
-var LucideNewspaper = Newspaper;
-var LucideNfc = Nfc;
-var LucideNonBinary = NonBinary;
-var LucideNotebook = Notebook;
-var LucideNotebookPen = NotebookPen;
-var LucideNotebookTabs = NotebookTabs;
-var LucideNotebookText = NotebookText;
-var LucideNotepadText = NotepadText;
-var LucideNotepadTextDashed = NotepadTextDashed;
-var LucideNut = Nut;
-var LucideNutOff = NutOff;
-var LucideOctagon = Octagon;
-var LucideOctagonAlert = OctagonAlert;
-var LucideOctagonMinus = OctagonMinus;
-var LucideOctagonPause = OctagonPause;
-var LucideOctagonX = OctagonX;
-var LucideOmega = Omega;
-var LucideOption = Option;
-var LucideOrbit = Orbit;
-var LucideOrigami = Origami;
-var LucideOutdent = ListIndentDecrease;
-var LucidePackage = Package;
-var LucidePackage2 = Package2;
-var LucidePackageCheck = PackageCheck;
-var LucidePackageMinus = PackageMinus;
-var LucidePackageOpen = PackageOpen;
-var LucidePackagePlus = PackagePlus;
-var LucidePackageSearch = PackageSearch;
-var LucidePackageX = PackageX;
-var LucidePaintbrush = Paintbrush;
-var LucidePaintbrush2 = PaintbrushVertical;
-var LucidePaintbrushVertical = PaintbrushVertical;
-var LucidePaintBucket = PaintBucket;
-var LucidePaintRoller = PaintRoller;
-var LucidePalette = Palette;
-var LucidePalmtree = TreePalm;
-var LucidePanda = Panda;
-var LucidePanelBottom = PanelBottom;
-var LucidePanelBottomClose = PanelBottomClose;
-var LucidePanelBottomDashed = PanelBottomDashed;
-var LucidePanelBottomInactive = PanelBottomDashed;
-var LucidePanelBottomOpen = PanelBottomOpen;
-var LucidePanelLeft = PanelLeft;
-var LucidePanelLeftClose = PanelLeftClose;
-var LucidePanelLeftDashed = PanelLeftDashed;
-var LucidePanelLeftInactive = PanelLeftDashed;
-var LucidePanelLeftOpen = PanelLeftOpen;
-var LucidePanelLeftRightDashed = PanelLeftRightDashed;
-var LucidePanelRight = PanelRight;
-var LucidePanelRightClose = PanelRightClose;
-var LucidePanelRightDashed = PanelRightDashed;
-var LucidePanelRightInactive = PanelRightDashed;
-var LucidePanelRightOpen = PanelRightOpen;
-var LucidePanelsLeftBottom = PanelsLeftBottom;
-var LucidePanelsLeftRight = Columns3;
-var LucidePanelsRightBottom = PanelsRightBottom;
-var LucidePanelsTopBottom = Rows3;
-var LucidePanelsTopLeft = PanelsTopLeft;
-var LucidePanelTop = PanelTop;
-var LucidePanelTopBottomDashed = PanelTopBottomDashed;
-var LucidePanelTopClose = PanelTopClose;
-var LucidePanelTopDashed = PanelTopDashed;
-var LucidePanelTopInactive = PanelTopDashed;
-var LucidePanelTopOpen = PanelTopOpen;
-var LucidePaperclip = Paperclip;
-var LucideParentheses = Parentheses;
-var LucideParkingCircle = CircleParking;
-var LucideParkingCircleOff = CircleParkingOff;
-var LucideParkingMeter = ParkingMeter;
-var LucideParkingSquare = SquareParking;
-var LucideParkingSquareOff = SquareParkingOff;
-var LucidePartyPopper = PartyPopper;
-var LucidePause = Pause;
-var LucidePauseCircle = CirclePause;
-var LucidePauseOctagon = OctagonPause;
-var LucidePawPrint = PawPrint;
-var LucidePcCase = PcCase;
-var LucidePen = Pen;
-var LucidePenBox = SquarePen;
-var LucidePencil = Pencil;
-var LucidePencilLine = PencilLine;
-var LucidePencilOff = PencilOff;
-var LucidePencilRuler = PencilRuler;
-var LucidePenLine = PenLine;
-var LucidePenOff = PenOff;
-var LucidePenSquare = SquarePen;
-var LucidePentagon = Pentagon;
-var LucidePenTool = PenTool;
-var LucidePercent = Percent;
-var LucidePercentCircle = CirclePercent;
-var LucidePercentDiamond = DiamondPercent;
-var LucidePercentSquare = SquarePercent;
-var LucidePersonStanding = PersonStanding;
-var LucidePhilippinePeso = PhilippinePeso;
-var LucidePhone = Phone;
-var LucidePhoneCall = PhoneCall;
-var LucidePhoneForwarded = PhoneForwarded;
-var LucidePhoneIncoming = PhoneIncoming;
-var LucidePhoneMissed = PhoneMissed;
-var LucidePhoneOff = PhoneOff;
-var LucidePhoneOutgoing = PhoneOutgoing;
-var LucidePi = Pi;
-var LucidePiano = Piano;
-var LucidePickaxe = Pickaxe;
-var LucidePictureInPicture = PictureInPicture;
-var LucidePictureInPicture2 = PictureInPicture2;
-var LucidePieChart = ChartPie;
-var LucidePiggyBank = PiggyBank;
-var LucidePilcrow = Pilcrow;
-var LucidePilcrowLeft = PilcrowLeft;
-var LucidePilcrowRight = PilcrowRight;
-var LucidePilcrowSquare = SquarePilcrow;
-var LucidePill = Pill;
-var LucidePillBottle = PillBottle;
-var LucidePin = Pin;
-var LucidePinOff = PinOff;
-var LucidePipette = Pipette;
-var LucidePiSquare = SquarePi;
-var LucidePizza = Pizza;
-var LucidePlane = Plane;
-var LucidePlaneLanding = PlaneLanding;
-var LucidePlaneTakeoff = PlaneTakeoff;
-var LucidePlay = Play;
-var LucidePlayCircle = CirclePlay;
-var LucidePlaySquare = SquarePlay;
-var LucidePlug = Plug;
-var LucidePlug2 = Plug2;
-var LucidePlugZap = PlugZap;
-var LucidePlugZap2 = PlugZap;
-var LucidePlus = Plus;
-var LucidePlusCircle = CirclePlus;
-var LucidePlusSquare = SquarePlus;
-var LucidePocket = Pocket;
-var LucidePocketKnife = PocketKnife;
-var LucidePodcast = Podcast;
-var LucidePointer = Pointer;
-var LucidePointerOff = PointerOff;
-var LucidePopcorn = Popcorn;
-var LucidePopsicle = Popsicle;
-var LucidePoundSterling = PoundSterling;
-var LucidePower = Power;
-var LucidePowerCircle = CirclePower;
-var LucidePowerOff = PowerOff;
-var LucidePowerSquare = SquarePower;
-var LucidePresentation = Presentation;
-var LucidePrinter = Printer;
-var LucidePrinterCheck = PrinterCheck;
-var LucidePrinterX = PrinterX;
-var LucideProjector = Projector;
-var LucideProportions = Proportions;
-var LucidePuzzle = Puzzle;
-var LucidePyramid = Pyramid;
-var LucideQrCode = QrCode;
-var LucideQuote = Quote;
-var LucideRabbit = Rabbit;
-var LucideRadar = Radar;
-var LucideRadiation = Radiation;
-var LucideRadical = Radical;
-var LucideRadio = Radio;
-var LucideRadioReceiver = RadioReceiver;
-var LucideRadioTower = RadioTower;
-var LucideRadius = Radius;
-var LucideRailSymbol = RailSymbol;
-var LucideRainbow = Rainbow;
-var LucideRat = Rat;
-var LucideRatio = Ratio;
-var LucideReceipt = Receipt;
-var LucideReceiptCent = ReceiptCent;
-var LucideReceiptEuro = ReceiptEuro;
-var LucideReceiptIndianRupee = ReceiptIndianRupee;
-var LucideReceiptJapaneseYen = ReceiptJapaneseYen;
-var LucideReceiptPoundSterling = ReceiptPoundSterling;
-var LucideReceiptRussianRuble = ReceiptRussianRuble;
-var LucideReceiptSwissFranc = ReceiptSwissFranc;
-var LucideReceiptText = ReceiptText;
-var LucideReceiptTurkishLira = ReceiptTurkishLira;
-var LucideRectangleCircle = RectangleCircle;
-var LucideRectangleEllipsis = RectangleEllipsis;
-var LucideRectangleGoggles = RectangleGoggles;
-var LucideRectangleHorizontal = RectangleHorizontal;
-var LucideRectangleVertical = RectangleVertical;
-var LucideRecycle = Recycle;
-var LucideRedo = Redo;
-var LucideRedo2 = Redo2;
-var LucideRedoDot = RedoDot;
-var LucideRefreshCcw = RefreshCcw;
-var LucideRefreshCcwDot = RefreshCcwDot;
-var LucideRefreshCw = RefreshCw;
-var LucideRefreshCwOff = RefreshCwOff;
-var LucideRefrigerator = Refrigerator;
-var LucideRegex = Regex;
-var LucideRemoveFormatting = RemoveFormatting;
-var LucideRepeat = Repeat;
-var LucideRepeat1 = Repeat1;
-var LucideRepeat2 = Repeat2;
-var LucideReplace = Replace;
-var LucideReplaceAll = ReplaceAll;
-var LucideReply = Reply;
-var LucideReplyAll = ReplyAll;
-var LucideRewind = Rewind;
-var LucideRibbon = Ribbon;
-var LucideRocket = Rocket;
-var LucideRockingChair = RockingChair;
-var LucideRollerCoaster = RollerCoaster;
-var LucideRose = Rose;
-var LucideRotate3d = Rotate3d;
-var LucideRotate3D = Rotate3d;
-var LucideRotateCcw = RotateCcw;
-var LucideRotateCcwKey = RotateCcwKey;
-var LucideRotateCcwSquare = RotateCcwSquare;
-var LucideRotateCw = RotateCw;
-var LucideRotateCwSquare = RotateCwSquare;
-var LucideRoute = Route;
-var LucideRouteOff = RouteOff;
-var LucideRouter = Router;
-var LucideRows = Rows2;
-var LucideRows2 = Rows2;
-var LucideRows3 = Rows3;
-var LucideRows4 = Rows4;
-var LucideRss = Rss;
-var LucideRuler = Ruler;
-var LucideRulerDimensionLine = RulerDimensionLine;
-var LucideRussianRuble = RussianRuble;
-var LucideSailboat = Sailboat;
-var LucideSalad = Salad;
-var LucideSandwich = Sandwich;
-var LucideSatellite = Satellite;
-var LucideSatelliteDish = SatelliteDish;
-var LucideSaudiRiyal = SaudiRiyal;
-var LucideSave = Save;
-var LucideSaveAll = SaveAll;
-var LucideSaveOff = SaveOff;
-var LucideScale = Scale;
-var LucideScale3d = Scale3d;
-var LucideScale3D = Scale3d;
-var LucideScaling = Scaling;
-var LucideScan = Scan;
-var LucideScanBarcode = ScanBarcode;
-var LucideScanEye = ScanEye;
-var LucideScanFace = ScanFace;
-var LucideScanHeart = ScanHeart;
-var LucideScanLine = ScanLine;
-var LucideScanQrCode = ScanQrCode;
-var LucideScanSearch = ScanSearch;
-var LucideScanText = ScanText;
-var LucideScatterChart = ChartScatter;
-var LucideSchool = School;
-var LucideSchool2 = University;
-var LucideScissors = Scissors;
-var LucideScissorsLineDashed = ScissorsLineDashed;
-var LucideScissorsSquare = SquareScissors;
-var LucideScissorsSquareDashedBottom = SquareBottomDashedScissors;
-var LucideScooter = Scooter;
-var LucideScreenShare = ScreenShare;
-var LucideScreenShareOff = ScreenShareOff;
-var LucideScroll = Scroll;
-var LucideScrollText = ScrollText;
-var LucideSearch = Search;
-var LucideSearchAlert = SearchAlert;
-var LucideSearchCheck = SearchCheck;
-var LucideSearchCode = SearchCode;
-var LucideSearchSlash = SearchSlash;
-var LucideSearchX = SearchX;
-var LucideSection = Section;
-var LucideSend = Send;
-var LucideSendHorizonal = SendHorizontal;
-var LucideSendHorizontal = SendHorizontal;
-var LucideSendToBack = SendToBack;
-var LucideSeparatorHorizontal = SeparatorHorizontal;
-var LucideSeparatorVertical = SeparatorVertical;
-var LucideServer = Server;
-var LucideServerCog = ServerCog;
-var LucideServerCrash = ServerCrash;
-var LucideServerOff = ServerOff;
-var LucideSettings = Settings;
-var LucideSettings2 = Settings2;
-var LucideShapes = Shapes;
-var LucideShare = Share;
-var LucideShare2 = Share2;
-var LucideSheet = Sheet;
-var LucideShell = Shell;
-var LucideShelvingUnit = ShelvingUnit;
-var LucideShield = Shield;
-var LucideShieldAlert = ShieldAlert;
-var LucideShieldBan = ShieldBan;
-var LucideShieldCheck = ShieldCheck;
-var LucideShieldClose = ShieldX;
-var LucideShieldEllipsis = ShieldEllipsis;
-var LucideShieldHalf = ShieldHalf;
-var LucideShieldMinus = ShieldMinus;
-var LucideShieldOff = ShieldOff;
-var LucideShieldPlus = ShieldPlus;
-var LucideShieldQuestion = ShieldQuestionMark;
-var LucideShieldQuestionMark = ShieldQuestionMark;
-var LucideShieldUser = ShieldUser;
-var LucideShieldX = ShieldX;
-var LucideShip = Ship;
-var LucideShipWheel = ShipWheel;
-var LucideShirt = Shirt;
-var LucideShoppingBag = ShoppingBag;
-var LucideShoppingBasket = ShoppingBasket;
-var LucideShoppingCart = ShoppingCart;
-var LucideShovel = Shovel;
-var LucideShowerHead = ShowerHead;
-var LucideShredder = Shredder;
-var LucideShrimp = Shrimp;
-var LucideShrink = Shrink;
-var LucideShrub = Shrub;
-var LucideShuffle = Shuffle;
-var LucideSidebar = PanelLeft;
-var LucideSidebarClose = PanelLeftClose;
-var LucideSidebarOpen = PanelLeftOpen;
-var LucideSigma = Sigma;
-var LucideSigmaSquare = SquareSigma;
-var LucideSignal = Signal;
-var LucideSignalHigh = SignalHigh;
-var LucideSignalLow = SignalLow;
-var LucideSignalMedium = SignalMedium;
-var LucideSignalZero = SignalZero;
-var LucideSignature = Signature;
-var LucideSignpost = Signpost;
-var LucideSignpostBig = SignpostBig;
-var LucideSiren = Siren;
-var LucideSkipBack = SkipBack;
-var LucideSkipForward = SkipForward;
-var LucideSkull = Skull;
-var LucideSlack = Slack;
-var LucideSlash = Slash;
-var LucideSlashSquare = SquareSlash;
-var LucideSlice = Slice;
-var LucideSliders = SlidersVertical;
-var LucideSlidersHorizontal = SlidersHorizontal;
-var LucideSlidersVertical = SlidersVertical;
-var LucideSmartphone = Smartphone;
-var LucideSmartphoneCharging = SmartphoneCharging;
-var LucideSmartphoneNfc = SmartphoneNfc;
-var LucideSmile = Smile;
-var LucideSmilePlus = SmilePlus;
-var LucideSnail = Snail;
-var LucideSnowflake = Snowflake;
-var LucideSoapDispenserDroplet = SoapDispenserDroplet;
-var LucideSofa = Sofa;
-var LucideSolarPanel = SolarPanel;
-var LucideSortAsc = ArrowUpNarrowWide;
-var LucideSortDesc = ArrowDownWideNarrow;
-var LucideSoup = Soup;
-var LucideSpace = Space;
-var LucideSpade = Spade;
-var LucideSparkle = Sparkle;
-var LucideSparkles = Sparkles;
-var LucideSpeaker = Speaker;
-var LucideSpeech = Speech;
-var LucideSpellCheck = SpellCheck;
-var LucideSpellCheck2 = SpellCheck2;
-var LucideSpline = Spline;
-var LucideSplinePointer = SplinePointer;
-var LucideSplit = Split;
-var LucideSplitSquareHorizontal = SquareSplitHorizontal;
-var LucideSplitSquareVertical = SquareSplitVertical;
-var LucideSpool = Spool;
-var LucideSpotlight = Spotlight;
-var LucideSprayCan = SprayCan;
-var LucideSprout = Sprout;
-var LucideSquare = Square;
-var LucideSquareActivity = SquareActivity;
-var LucideSquareArrowDown = SquareArrowDown;
-var LucideSquareArrowDownLeft = SquareArrowDownLeft;
-var LucideSquareArrowDownRight = SquareArrowDownRight;
-var LucideSquareArrowLeft = SquareArrowLeft;
-var LucideSquareArrowOutDownLeft = SquareArrowOutDownLeft;
-var LucideSquareArrowOutDownRight = SquareArrowOutDownRight;
-var LucideSquareArrowOutUpLeft = SquareArrowOutUpLeft;
-var LucideSquareArrowOutUpRight = SquareArrowOutUpRight;
-var LucideSquareArrowRight = SquareArrowRight;
-var LucideSquareArrowRightEnter = SquareArrowRightEnter;
-var LucideSquareArrowRightExit = SquareArrowRightExit;
-var LucideSquareArrowUp = SquareArrowUp;
-var LucideSquareArrowUpLeft = SquareArrowUpLeft;
-var LucideSquareArrowUpRight = SquareArrowUpRight;
-var LucideSquareAsterisk = SquareAsterisk;
-var LucideSquareBottomDashedScissors = SquareBottomDashedScissors;
-var LucideSquareCenterlineDashedHorizontal = SquareCenterlineDashedHorizontal;
-var LucideSquareCenterlineDashedVertical = SquareCenterlineDashedVertical;
-var LucideSquareChartGantt = SquareChartGantt;
-var LucideSquareCheck = SquareCheck;
-var LucideSquareCheckBig = SquareCheckBig;
-var LucideSquareChevronDown = SquareChevronDown;
-var LucideSquareChevronLeft = SquareChevronLeft;
-var LucideSquareChevronRight = SquareChevronRight;
-var LucideSquareChevronUp = SquareChevronUp;
-var LucideSquareCode = SquareCode;
-var LucideSquareDashed = SquareDashed;
-var LucideSquareDashedBottom = SquareDashedBottom;
-var LucideSquareDashedBottomCode = SquareDashedBottomCode;
-var LucideSquareDashedKanban = SquareDashedKanban;
-var LucideSquareDashedMousePointer = SquareDashedMousePointer;
-var LucideSquareDashedTopSolid = SquareDashedTopSolid;
-var LucideSquareDivide = SquareDivide;
-var LucideSquareDot = SquareDot;
-var LucideSquareEqual = SquareEqual;
-var LucideSquareFunction = SquareFunction;
-var LucideSquareGanttChart = SquareChartGantt;
-var LucideSquareKanban = SquareKanban;
-var LucideSquareLibrary = SquareLibrary;
-var LucideSquareM = SquareM;
-var LucideSquareMenu = SquareMenu;
-var LucideSquareMinus = SquareMinus;
-var LucideSquareMousePointer = SquareMousePointer;
-var LucideSquareParking = SquareParking;
-var LucideSquareParkingOff = SquareParkingOff;
-var LucideSquarePause = SquarePause;
-var LucideSquarePen = SquarePen;
-var LucideSquarePercent = SquarePercent;
-var LucideSquarePi = SquarePi;
-var LucideSquarePilcrow = SquarePilcrow;
-var LucideSquarePlay = SquarePlay;
-var LucideSquarePlus = SquarePlus;
-var LucideSquarePower = SquarePower;
-var LucideSquareRadical = SquareRadical;
-var LucideSquareRoundCorner = SquareRoundCorner;
-var LucideSquareScissors = SquareScissors;
-var LucideSquaresExclude = SquaresExclude;
-var LucideSquareSigma = SquareSigma;
-var LucideSquaresIntersect = SquaresIntersect;
-var LucideSquareSlash = SquareSlash;
-var LucideSquareSplitHorizontal = SquareSplitHorizontal;
-var LucideSquareSplitVertical = SquareSplitVertical;
-var LucideSquareSquare = SquareSquare;
-var LucideSquaresSubtract = SquaresSubtract;
-var LucideSquareStack = SquareStack;
-var LucideSquareStar = SquareStar;
-var LucideSquareStop = SquareStop;
-var LucideSquaresUnite = SquaresUnite;
-var LucideSquareTerminal = SquareTerminal;
-var LucideSquareUser = SquareUser;
-var LucideSquareUserRound = SquareUserRound;
-var LucideSquareX = SquareX;
-var LucideSquircle = Squircle;
-var LucideSquircleDashed = SquircleDashed;
-var LucideSquirrel = Squirrel;
-var LucideStamp = Stamp;
-var LucideStar = Star;
-var LucideStarHalf = StarHalf;
-var LucideStarOff = StarOff;
-var LucideStars = Sparkles;
-var LucideStepBack = StepBack;
-var LucideStepForward = StepForward;
-var LucideStethoscope = Stethoscope;
-var LucideSticker = Sticker;
-var LucideStickyNote = StickyNote;
-var LucideStone = Stone;
-var LucideStopCircle = CircleStop;
-var LucideStore = Store;
-var LucideStretchHorizontal = StretchHorizontal;
-var LucideStretchVertical = StretchVertical;
-var LucideStrikethrough = Strikethrough;
-var LucideSubscript = Subscript;
-var LucideSubtitles = Captions;
-var LucideSun = Sun;
-var LucideSunDim = SunDim;
-var LucideSunMedium = SunMedium;
-var LucideSunMoon = SunMoon;
-var LucideSunrise = Sunrise;
-var LucideSunset = Sunset;
-var LucideSunSnow = SunSnow;
-var LucideSuperscript = Superscript;
-var LucideSwatchBook = SwatchBook;
-var LucideSwissFranc = SwissFranc;
-var LucideSwitchCamera = SwitchCamera;
-var LucideSword = Sword;
-var LucideSwords = Swords;
-var LucideSyringe = Syringe;
-var LucideTable = Table;
-var LucideTable2 = Table2;
-var LucideTableCellsMerge = TableCellsMerge;
-var LucideTableCellsSplit = TableCellsSplit;
-var LucideTableColumnsSplit = TableColumnsSplit;
-var LucideTableConfig = Columns3Cog;
-var LucideTableOfContents = TableOfContents;
-var LucideTableProperties = TableProperties;
-var LucideTableRowsSplit = TableRowsSplit;
-var LucideTablet = Tablet;
-var LucideTablets = Tablets;
-var LucideTabletSmartphone = TabletSmartphone;
-var LucideTag = Tag;
-var LucideTags = Tags;
-var LucideTally1 = Tally1;
-var LucideTally2 = Tally2;
-var LucideTally3 = Tally3;
-var LucideTally4 = Tally4;
-var LucideTally5 = Tally5;
-var LucideTangent = Tangent;
-var LucideTarget = Target;
-var LucideTelescope = Telescope;
-var LucideTent = Tent;
-var LucideTentTree = TentTree;
-var LucideTerminal = Terminal;
-var LucideTerminalSquare = SquareTerminal;
-var LucideTestTube = TestTube;
-var LucideTestTube2 = TestTubeDiagonal;
-var LucideTestTubeDiagonal = TestTubeDiagonal;
-var LucideTestTubes = TestTubes;
-var LucideText = TextAlignStart;
-var LucideTextAlignCenter = TextAlignCenter;
-var LucideTextAlignEnd = TextAlignEnd;
-var LucideTextAlignJustify = TextAlignJustify;
-var LucideTextAlignStart = TextAlignStart;
-var LucideTextCursor = TextCursor;
-var LucideTextCursorInput = TextCursorInput;
-var LucideTextInitial = TextInitial;
-var LucideTextQuote = TextQuote;
-var LucideTextSearch = TextSearch;
-var LucideTextSelect = TextSelect;
-var LucideTextSelection = TextSelect;
-var LucideTextWrap = TextWrap;
-var LucideTheater = Theater;
-var LucideThermometer = Thermometer;
-var LucideThermometerSnowflake = ThermometerSnowflake;
-var LucideThermometerSun = ThermometerSun;
-var LucideThumbsDown = ThumbsDown;
-var LucideThumbsUp = ThumbsUp;
-var LucideTicket = Ticket;
-var LucideTicketCheck = TicketCheck;
-var LucideTicketMinus = TicketMinus;
-var LucideTicketPercent = TicketPercent;
-var LucideTicketPlus = TicketPlus;
-var LucideTickets = Tickets;
-var LucideTicketSlash = TicketSlash;
-var LucideTicketsPlane = TicketsPlane;
-var LucideTicketX = TicketX;
-var LucideTimer = Timer;
-var LucideTimerOff = TimerOff;
-var LucideTimerReset = TimerReset;
-var LucideToggleLeft = ToggleLeft;
-var LucideToggleRight = ToggleRight;
-var LucideToilet = Toilet;
-var LucideToolbox = Toolbox;
-var LucideToolCase = ToolCase;
-var LucideTornado = Tornado;
-var LucideTorus = Torus;
-var LucideTouchpad = Touchpad;
-var LucideTouchpadOff = TouchpadOff;
-var LucideTowelRack = TowelRack;
-var LucideTowerControl = TowerControl;
-var LucideToyBrick = ToyBrick;
-var LucideTractor = Tractor;
-var LucideTrafficCone = TrafficCone;
-var LucideTrain = TramFront;
-var LucideTrainFront = TrainFront;
-var LucideTrainFrontTunnel = TrainFrontTunnel;
-var LucideTrainTrack = TrainTrack;
-var LucideTramFront = TramFront;
-var LucideTransgender = Transgender;
-var LucideTrash = Trash;
-var LucideTrash2 = Trash2;
-var LucideTreeDeciduous = TreeDeciduous;
-var LucideTreePalm = TreePalm;
-var LucideTreePine = TreePine;
-var LucideTrees = Trees;
-var LucideTrello = Trello;
-var LucideTrendingDown = TrendingDown;
-var LucideTrendingUp = TrendingUp;
-var LucideTrendingUpDown = TrendingUpDown;
-var LucideTriangle = Triangle;
-var LucideTriangleAlert = TriangleAlert;
-var LucideTriangleDashed = TriangleDashed;
-var LucideTriangleRight = TriangleRight;
-var LucideTrophy = Trophy;
-var LucideTruck = Truck;
-var LucideTruckElectric = TruckElectric;
-var LucideTurkishLira = TurkishLira;
-var LucideTurntable = Turntable;
-var LucideTurtle = Turtle;
-var LucideTv = Tv;
-var LucideTv2 = TvMinimal;
-var LucideTvMinimal = TvMinimal;
-var LucideTvMinimalPlay = TvMinimalPlay;
-var LucideTwitch = Twitch;
-var LucideTwitter = Twitter;
-var LucideType = Type;
-var LucideTypeOutline = TypeOutline;
-var LucideUmbrella = Umbrella;
-var LucideUmbrellaOff = UmbrellaOff;
-var LucideUnderline = Underline;
-var LucideUndo = Undo;
-var LucideUndo2 = Undo2;
-var LucideUndoDot = UndoDot;
-var LucideUnfoldHorizontal = UnfoldHorizontal;
-var LucideUnfoldVertical = UnfoldVertical;
-var LucideUngroup = Ungroup;
-var LucideUniversity = University;
-var LucideUnlink = Unlink;
-var LucideUnlink2 = Unlink2;
-var LucideUnlock = LockOpen;
-var LucideUnlockKeyhole = LockKeyholeOpen;
-var LucideUnplug = Unplug;
-var LucideUpload = Upload;
-var LucideUploadCloud = CloudUpload;
-var LucideUsb = Usb;
-var LucideUser = User;
-var LucideUser2 = UserRound;
-var LucideUserCheck = UserCheck;
-var LucideUserCheck2 = UserRoundCheck;
-var LucideUserCircle = CircleUser;
-var LucideUserCircle2 = CircleUserRound;
-var LucideUserCog = UserCog;
-var LucideUserCog2 = UserRoundCog;
-var LucideUserKey = UserKey;
-var LucideUserLock = UserLock;
-var LucideUserMinus = UserMinus;
-var LucideUserMinus2 = UserRoundMinus;
-var LucideUserPen = UserPen;
-var LucideUserPlus = UserPlus;
-var LucideUserPlus2 = UserRoundPlus;
-var LucideUserRound = UserRound;
-var LucideUserRoundCheck = UserRoundCheck;
-var LucideUserRoundCog = UserRoundCog;
-var LucideUserRoundKey = UserRoundKey;
-var LucideUserRoundMinus = UserRoundMinus;
-var LucideUserRoundPen = UserRoundPen;
-var LucideUserRoundPlus = UserRoundPlus;
-var LucideUserRoundSearch = UserRoundSearch;
-var LucideUserRoundX = UserRoundX;
-var LucideUsers = Users;
-var LucideUsers2 = UsersRound;
-var LucideUserSearch = UserSearch;
-var LucideUserSquare = SquareUser;
-var LucideUserSquare2 = SquareUserRound;
-var LucideUsersRound = UsersRound;
-var LucideUserStar = UserStar;
-var LucideUserX = UserX;
-var LucideUserX2 = UserRoundX;
-var LucideUtensils = Utensils;
-var LucideUtensilsCrossed = UtensilsCrossed;
-var LucideUtilityPole = UtilityPole;
-var LucideVan = Van;
-var LucideVariable = Variable;
-var LucideVault = Vault;
-var LucideVectorSquare = VectorSquare;
-var LucideVegan = Vegan;
-var LucideVenetianMask = VenetianMask;
-var LucideVenus = Venus;
-var LucideVenusAndMars = VenusAndMars;
-var LucideVerified = BadgeCheck;
-var LucideVibrate = Vibrate;
-var LucideVibrateOff = VibrateOff;
-var LucideVideo = Video;
-var LucideVideoOff = VideoOff;
-var LucideVideotape = Videotape;
-var LucideView = View;
-var LucideVoicemail = Voicemail;
-var LucideVolleyball = Volleyball;
-var LucideVolume = Volume;
-var LucideVolume1 = Volume1;
-var LucideVolume2 = Volume2;
-var LucideVolumeOff = VolumeOff;
-var LucideVolumeX = VolumeX;
-var LucideVote = Vote;
-var LucideWallet = Wallet;
-var LucideWallet2 = WalletMinimal;
-var LucideWalletCards = WalletCards;
-var LucideWalletMinimal = WalletMinimal;
-var LucideWallpaper = Wallpaper;
-var LucideWand = Wand;
-var LucideWand2 = WandSparkles;
-var LucideWandSparkles = WandSparkles;
-var LucideWarehouse = Warehouse;
-var LucideWashingMachine = WashingMachine;
-var LucideWatch = Watch;
-var LucideWaves = Waves;
-var LucideWavesArrowDown = WavesArrowDown;
-var LucideWavesArrowUp = WavesArrowUp;
-var LucideWavesLadder = WavesLadder;
-var LucideWaypoints = Waypoints;
-var LucideWebcam = Webcam;
-var LucideWebhook = Webhook;
-var LucideWebhookOff = WebhookOff;
-var LucideWeight = Weight;
-var LucideWeightTilde = WeightTilde;
-var LucideWheat = Wheat;
-var LucideWheatOff = WheatOff;
-var LucideWholeWord = WholeWord;
-var LucideWifi = Wifi;
-var LucideWifiCog = WifiCog;
-var LucideWifiHigh = WifiHigh;
-var LucideWifiLow = WifiLow;
-var LucideWifiOff = WifiOff;
-var LucideWifiPen = WifiPen;
-var LucideWifiSync = WifiSync;
-var LucideWifiZero = WifiZero;
-var LucideWind = Wind;
-var LucideWindArrowDown = WindArrowDown;
-var LucideWine = Wine;
-var LucideWineOff = WineOff;
-var LucideWorkflow = Workflow;
-var LucideWorm = Worm;
-var LucideWrapText = TextWrap;
-var LucideWrench = Wrench;
-var LucideX = X;
-var LucideXCircle = CircleX;
-var LucideXLineTop = XLineTop;
-var LucideXOctagon = OctagonX;
-var LucideXSquare = SquareX;
-var LucideYoutube = Youtube;
-var LucideZap = Zap;
-var LucideZapOff = ZapOff;
-var LucideZodiacAquarius = ZodiacAquarius;
-var LucideZodiacAries = ZodiacAries;
-var LucideZodiacCancer = ZodiacCancer;
-var LucideZodiacCapricorn = ZodiacCapricorn;
-var LucideZodiacGemini = ZodiacGemini;
-var LucideZodiacLeo = ZodiacLeo;
-var LucideZodiacLibra = ZodiacLibra;
-var LucideZodiacOphiuchus = ZodiacOphiuchus;
-var LucideZodiacPisces = ZodiacPisces;
-var LucideZodiacSagittarius = ZodiacSagittarius;
-var LucideZodiacScorpio = ZodiacScorpio;
-var LucideZodiacTaurus = ZodiacTaurus;
-var LucideZodiacVirgo = ZodiacVirgo;
-var LucideZoomIn = ZoomIn;
-var LucideZoomOut = ZoomOut;
-var Luggage2 = Luggage;
-var LuggageIcon = Luggage;
-var Magnet2 = Magnet;
-var MagnetIcon = Magnet;
-var Mail2 = Mail;
-var Mailbox2 = Mailbox;
-var MailboxIcon = Mailbox;
-var MailCheck2 = MailCheck;
-var MailCheckIcon = MailCheck;
-var MailIcon = Mail;
-var MailMinus2 = MailMinus;
-var MailMinusIcon = MailMinus;
-var MailOpen2 = MailOpen;
-var MailOpenIcon = MailOpen;
-var MailPlus2 = MailPlus;
-var MailPlusIcon = MailPlus;
-var MailQuestion = MailQuestionMark;
-var MailQuestionIcon = MailQuestionMark;
-var MailQuestionMark2 = MailQuestionMark;
-var MailQuestionMarkIcon = MailQuestionMark;
-var Mails2 = Mails;
-var MailSearch2 = MailSearch;
-var MailSearchIcon = MailSearch;
-var MailsIcon = Mails;
-var MailWarning2 = MailWarning;
-var MailWarningIcon = MailWarning;
-var MailX2 = MailX;
-var MailXIcon = MailX;
-var Map2 = Map;
-var MapIcon = Map;
-var MapMinus2 = MapMinus;
-var MapMinusIcon = MapMinus;
-var MapPin2 = MapPin;
-var MapPinCheck2 = MapPinCheck;
-var MapPinCheckIcon = MapPinCheck;
-var MapPinCheckInside2 = MapPinCheckInside;
-var MapPinCheckInsideIcon = MapPinCheckInside;
-var MapPinHouse2 = MapPinHouse;
-var MapPinHouseIcon = MapPinHouse;
-var MapPinIcon = MapPin;
-var MapPinMinus2 = MapPinMinus;
-var MapPinMinusIcon = MapPinMinus;
-var MapPinMinusInside2 = MapPinMinusInside;
-var MapPinMinusInsideIcon = MapPinMinusInside;
-var MapPinned2 = MapPinned;
-var MapPinnedIcon = MapPinned;
-var MapPinOff2 = MapPinOff;
-var MapPinOffIcon = MapPinOff;
-var MapPinPen2 = MapPinPen;
-var MapPinPenIcon = MapPinPen;
-var MapPinPlus2 = MapPinPlus;
-var MapPinPlusIcon = MapPinPlus;
-var MapPinPlusInside2 = MapPinPlusInside;
-var MapPinPlusInsideIcon = MapPinPlusInside;
-var MapPinX2 = MapPinX;
-var MapPinXIcon = MapPinX;
-var MapPinXInside2 = MapPinXInside;
-var MapPinXInsideIcon = MapPinXInside;
-var MapPlus2 = MapPlus;
-var MapPlusIcon = MapPlus;
-var Mars2 = Mars;
-var MarsIcon = Mars;
-var MarsStroke2 = MarsStroke;
-var MarsStrokeIcon = MarsStroke;
-var Martini2 = Martini;
-var MartiniIcon = Martini;
-var Maximize3 = Maximize;
-var Maximize22 = Maximize2;
-var Maximize2Icon = Maximize2;
-var MaximizeIcon = Maximize;
-var Medal2 = Medal;
-var MedalIcon = Medal;
-var Megaphone2 = Megaphone;
-var MegaphoneIcon = Megaphone;
-var MegaphoneOff2 = MegaphoneOff;
-var MegaphoneOffIcon = MegaphoneOff;
-var Meh2 = Meh;
-var MehIcon = Meh;
-var MemoryStick2 = MemoryStick;
-var MemoryStickIcon = MemoryStick;
-var Menu2 = Menu;
-var MenuIcon = Menu;
-var MenuSquare = SquareMenu;
-var MenuSquareIcon = SquareMenu;
-var Merge2 = Merge;
-var MergeIcon = Merge;
-var MessageCircle2 = MessageCircle;
-var MessageCircleCheck2 = MessageCircleCheck;
-var MessageCircleCheckIcon = MessageCircleCheck;
-var MessageCircleCode2 = MessageCircleCode;
-var MessageCircleCodeIcon = MessageCircleCode;
-var MessageCircleDashed2 = MessageCircleDashed;
-var MessageCircleDashedIcon = MessageCircleDashed;
-var MessageCircleHeart2 = MessageCircleHeart;
-var MessageCircleHeartIcon = MessageCircleHeart;
-var MessageCircleIcon = MessageCircle;
-var MessageCircleMore2 = MessageCircleMore;
-var MessageCircleMoreIcon = MessageCircleMore;
-var MessageCircleOff2 = MessageCircleOff;
-var MessageCircleOffIcon = MessageCircleOff;
-var MessageCirclePlus2 = MessageCirclePlus;
-var MessageCirclePlusIcon = MessageCirclePlus;
-var MessageCircleQuestion = MessageCircleQuestionMark;
-var MessageCircleQuestionIcon = MessageCircleQuestionMark;
-var MessageCircleQuestionMark2 = MessageCircleQuestionMark;
-var MessageCircleQuestionMarkIcon = MessageCircleQuestionMark;
-var MessageCircleReply2 = MessageCircleReply;
-var MessageCircleReplyIcon = MessageCircleReply;
-var MessageCircleWarning2 = MessageCircleWarning;
-var MessageCircleWarningIcon = MessageCircleWarning;
-var MessageCircleX2 = MessageCircleX;
-var MessageCircleXIcon = MessageCircleX;
-var MessageSquare2 = MessageSquare;
-var MessageSquareCheck2 = MessageSquareCheck;
-var MessageSquareCheckIcon = MessageSquareCheck;
-var MessageSquareCode2 = MessageSquareCode;
-var MessageSquareCodeIcon = MessageSquareCode;
-var MessageSquareDashed2 = MessageSquareDashed;
-var MessageSquareDashedIcon = MessageSquareDashed;
-var MessageSquareDiff2 = MessageSquareDiff;
-var MessageSquareDiffIcon = MessageSquareDiff;
-var MessageSquareDot2 = MessageSquareDot;
-var MessageSquareDotIcon = MessageSquareDot;
-var MessageSquareHeart2 = MessageSquareHeart;
-var MessageSquareHeartIcon = MessageSquareHeart;
-var MessageSquareIcon = MessageSquare;
-var MessageSquareLock2 = MessageSquareLock;
-var MessageSquareLockIcon = MessageSquareLock;
-var MessageSquareMore2 = MessageSquareMore;
-var MessageSquareMoreIcon = MessageSquareMore;
-var MessageSquareOff2 = MessageSquareOff;
-var MessageSquareOffIcon = MessageSquareOff;
-var MessageSquarePlus2 = MessageSquarePlus;
-var MessageSquarePlusIcon = MessageSquarePlus;
-var MessageSquareQuote2 = MessageSquareQuote;
-var MessageSquareQuoteIcon = MessageSquareQuote;
-var MessageSquareReply2 = MessageSquareReply;
-var MessageSquareReplyIcon = MessageSquareReply;
-var MessageSquareShare2 = MessageSquareShare;
-var MessageSquareShareIcon = MessageSquareShare;
-var MessageSquareText2 = MessageSquareText;
-var MessageSquareTextIcon = MessageSquareText;
-var MessageSquareWarning2 = MessageSquareWarning;
-var MessageSquareWarningIcon = MessageSquareWarning;
-var MessageSquareX2 = MessageSquareX;
-var MessageSquareXIcon = MessageSquareX;
-var MessagesSquare2 = MessagesSquare;
-var MessagesSquareIcon = MessagesSquare;
-var Metronome2 = Metronome;
-var MetronomeIcon = Metronome;
-var Mic2 = Mic;
-var Mic22 = MicVocal;
-var Mic2Icon = MicVocal;
-var MicIcon = Mic;
-var MicOff2 = MicOff;
-var MicOffIcon = MicOff;
-var Microchip2 = Microchip;
-var MicrochipIcon = Microchip;
-var Microscope2 = Microscope;
-var MicroscopeIcon = Microscope;
-var Microwave2 = Microwave;
-var MicrowaveIcon = Microwave;
-var MicVocal2 = MicVocal;
-var MicVocalIcon = MicVocal;
-var Milestone2 = Milestone;
-var MilestoneIcon = Milestone;
-var Milk2 = Milk;
-var MilkIcon = Milk;
-var MilkOff2 = MilkOff;
-var MilkOffIcon = MilkOff;
-var Minimize3 = Minimize;
-var Minimize22 = Minimize2;
-var Minimize2Icon = Minimize2;
-var MinimizeIcon = Minimize;
-var Minus2 = Minus;
-var MinusCircle = CircleMinus;
-var MinusCircleIcon = CircleMinus;
-var MinusIcon = Minus;
-var MinusSquare = SquareMinus;
-var MinusSquareIcon = SquareMinus;
-var MirrorRectangular2 = MirrorRectangular;
-var MirrorRectangularIcon = MirrorRectangular;
-var MirrorRound2 = MirrorRound;
-var MirrorRoundIcon = MirrorRound;
-var Monitor2 = Monitor;
-var MonitorCheck2 = MonitorCheck;
-var MonitorCheckIcon = MonitorCheck;
-var MonitorCloud2 = MonitorCloud;
-var MonitorCloudIcon = MonitorCloud;
-var MonitorCog2 = MonitorCog;
-var MonitorCogIcon = MonitorCog;
-var MonitorDot2 = MonitorDot;
-var MonitorDotIcon = MonitorDot;
-var MonitorDown2 = MonitorDown;
-var MonitorDownIcon = MonitorDown;
-var MonitorIcon = Monitor;
-var MonitorOff2 = MonitorOff;
-var MonitorOffIcon = MonitorOff;
-var MonitorPause2 = MonitorPause;
-var MonitorPauseIcon = MonitorPause;
-var MonitorPlay2 = MonitorPlay;
-var MonitorPlayIcon = MonitorPlay;
-var MonitorSmartphone2 = MonitorSmartphone;
-var MonitorSmartphoneIcon = MonitorSmartphone;
-var MonitorSpeaker2 = MonitorSpeaker;
-var MonitorSpeakerIcon = MonitorSpeaker;
-var MonitorStop2 = MonitorStop;
-var MonitorStopIcon = MonitorStop;
-var MonitorUp2 = MonitorUp;
-var MonitorUpIcon = MonitorUp;
-var MonitorX2 = MonitorX;
-var MonitorXIcon = MonitorX;
-var Moon2 = Moon;
-var MoonIcon = Moon;
-var MoonStar2 = MoonStar;
-var MoonStarIcon = MoonStar;
-var MoreHorizontal = Ellipsis;
-var MoreHorizontalIcon = Ellipsis;
-var MoreVertical = EllipsisVertical;
-var MoreVerticalIcon = EllipsisVertical;
-var Motorbike2 = Motorbike;
-var MotorbikeIcon = Motorbike;
-var Mountain2 = Mountain;
-var MountainIcon = Mountain;
-var MountainSnow2 = MountainSnow;
-var MountainSnowIcon = MountainSnow;
-var Mouse2 = Mouse;
-var MouseIcon = Mouse;
-var MouseLeft2 = MouseLeft;
-var MouseLeftIcon = MouseLeft;
-var MouseOff2 = MouseOff;
-var MouseOffIcon = MouseOff;
-var MousePointer3 = MousePointer;
-var MousePointer22 = MousePointer2;
-var MousePointer2Icon = MousePointer2;
-var MousePointer2Off2 = MousePointer2Off;
-var MousePointer2OffIcon = MousePointer2Off;
-var MousePointerBan2 = MousePointerBan;
-var MousePointerBanIcon = MousePointerBan;
-var MousePointerClick2 = MousePointerClick;
-var MousePointerClickIcon = MousePointerClick;
-var MousePointerIcon = MousePointer;
-var MousePointerSquareDashed = SquareDashedMousePointer;
-var MousePointerSquareDashedIcon = SquareDashedMousePointer;
-var MouseRight2 = MouseRight;
-var MouseRightIcon = MouseRight;
-var Move2 = Move;
-var Move3d2 = Move3d;
-var Move3D = Move3d;
-var Move3dIcon = Move3d;
-var Move3DIcon = Move3d;
-var MoveDiagonal3 = MoveDiagonal;
-var MoveDiagonal22 = MoveDiagonal2;
-var MoveDiagonal2Icon = MoveDiagonal2;
-var MoveDiagonalIcon = MoveDiagonal;
-var MoveDown2 = MoveDown;
-var MoveDownIcon = MoveDown;
-var MoveDownLeft2 = MoveDownLeft;
-var MoveDownLeftIcon = MoveDownLeft;
-var MoveDownRight2 = MoveDownRight;
-var MoveDownRightIcon = MoveDownRight;
-var MoveHorizontal2 = MoveHorizontal;
-var MoveHorizontalIcon = MoveHorizontal;
-var MoveIcon = Move;
-var MoveLeft2 = MoveLeft;
-var MoveLeftIcon = MoveLeft;
-var MoveRight2 = MoveRight;
-var MoveRightIcon = MoveRight;
-var MoveUp2 = MoveUp;
-var MoveUpIcon = MoveUp;
-var MoveUpLeft2 = MoveUpLeft;
-var MoveUpLeftIcon = MoveUpLeft;
-var MoveUpRight2 = MoveUpRight;
-var MoveUpRightIcon = MoveUpRight;
-var MoveVertical2 = MoveVertical;
-var MoveVerticalIcon = MoveVertical;
-var MSquare = SquareM;
-var MSquareIcon = SquareM;
-var Music5 = Music;
-var Music22 = Music2;
-var Music2Icon = Music2;
-var Music32 = Music3;
-var Music3Icon = Music3;
-var Music42 = Music4;
-var Music4Icon = Music4;
-var MusicIcon = Music;
-var Navigation3 = Navigation;
-var Navigation22 = Navigation2;
-var Navigation2Icon = Navigation2;
-var Navigation2Off2 = Navigation2Off;
-var Navigation2OffIcon = Navigation2Off;
-var NavigationIcon = Navigation;
-var NavigationOff2 = NavigationOff;
-var NavigationOffIcon = NavigationOff;
-var Network2 = Network;
-var NetworkIcon = Network;
-var Newspaper2 = Newspaper;
-var NewspaperIcon = Newspaper;
-var Nfc2 = Nfc;
-var NfcIcon = Nfc;
-var NonBinary2 = NonBinary;
-var NonBinaryIcon = NonBinary;
-var Notebook2 = Notebook;
-var NotebookIcon = Notebook;
-var NotebookPen2 = NotebookPen;
-var NotebookPenIcon = NotebookPen;
-var NotebookTabs2 = NotebookTabs;
-var NotebookTabsIcon = NotebookTabs;
-var NotebookText2 = NotebookText;
-var NotebookTextIcon = NotebookText;
-var NotepadText2 = NotepadText;
-var NotepadTextDashed2 = NotepadTextDashed;
-var NotepadTextDashedIcon = NotepadTextDashed;
-var NotepadTextIcon = NotepadText;
-var Nut2 = Nut;
-var NutIcon = Nut;
-var NutOff2 = NutOff;
-var NutOffIcon = NutOff;
-var Octagon2 = Octagon;
-var OctagonAlert2 = OctagonAlert;
-var OctagonAlertIcon = OctagonAlert;
-var OctagonIcon = Octagon;
-var OctagonMinus2 = OctagonMinus;
-var OctagonMinusIcon = OctagonMinus;
-var OctagonPause2 = OctagonPause;
-var OctagonPauseIcon = OctagonPause;
-var OctagonX2 = OctagonX;
-var OctagonXIcon = OctagonX;
-var Omega2 = Omega;
-var OmegaIcon = Omega;
-var Option2 = Option;
-var OptionIcon = Option;
-var Orbit2 = Orbit;
-var OrbitIcon = Orbit;
-var Origami2 = Origami;
-var OrigamiIcon = Origami;
-var Outdent = ListIndentDecrease;
-var OutdentIcon = ListIndentDecrease;
-var Package3 = Package;
-var Package22 = Package2;
-var Package2Icon = Package2;
-var PackageCheck2 = PackageCheck;
-var PackageCheckIcon = PackageCheck;
-var PackageIcon = Package;
-var PackageMinus2 = PackageMinus;
-var PackageMinusIcon = PackageMinus;
-var PackageOpen2 = PackageOpen;
-var PackageOpenIcon = PackageOpen;
-var PackagePlus2 = PackagePlus;
-var PackagePlusIcon = PackagePlus;
-var PackageSearch2 = PackageSearch;
-var PackageSearchIcon = PackageSearch;
-var PackageX2 = PackageX;
-var PackageXIcon = PackageX;
-var Paintbrush2 = Paintbrush;
-var Paintbrush22 = PaintbrushVertical;
-var Paintbrush2Icon = PaintbrushVertical;
-var PaintbrushIcon = Paintbrush;
-var PaintbrushVertical2 = PaintbrushVertical;
-var PaintbrushVerticalIcon = PaintbrushVertical;
-var PaintBucket2 = PaintBucket;
-var PaintBucketIcon = PaintBucket;
-var PaintRoller2 = PaintRoller;
-var PaintRollerIcon = PaintRoller;
-var Palette2 = Palette;
-var PaletteIcon = Palette;
-var Palmtree = TreePalm;
-var PalmtreeIcon = TreePalm;
-var Panda2 = Panda;
-var PandaIcon = Panda;
-var PanelBottom2 = PanelBottom;
-var PanelBottomClose2 = PanelBottomClose;
-var PanelBottomCloseIcon = PanelBottomClose;
-var PanelBottomDashed2 = PanelBottomDashed;
-var PanelBottomDashedIcon = PanelBottomDashed;
-var PanelBottomIcon = PanelBottom;
-var PanelBottomInactive = PanelBottomDashed;
-var PanelBottomInactiveIcon = PanelBottomDashed;
-var PanelBottomOpen2 = PanelBottomOpen;
-var PanelBottomOpenIcon = PanelBottomOpen;
-var PanelLeft2 = PanelLeft;
-var PanelLeftClose2 = PanelLeftClose;
-var PanelLeftCloseIcon = PanelLeftClose;
-var PanelLeftDashed2 = PanelLeftDashed;
-var PanelLeftDashedIcon = PanelLeftDashed;
-var PanelLeftIcon = PanelLeft;
-var PanelLeftInactive = PanelLeftDashed;
-var PanelLeftInactiveIcon = PanelLeftDashed;
-var PanelLeftOpen2 = PanelLeftOpen;
-var PanelLeftOpenIcon = PanelLeftOpen;
-var PanelLeftRightDashed2 = PanelLeftRightDashed;
-var PanelLeftRightDashedIcon = PanelLeftRightDashed;
-var PanelRight2 = PanelRight;
-var PanelRightClose2 = PanelRightClose;
-var PanelRightCloseIcon = PanelRightClose;
-var PanelRightDashed2 = PanelRightDashed;
-var PanelRightDashedIcon = PanelRightDashed;
-var PanelRightIcon = PanelRight;
-var PanelRightInactive = PanelRightDashed;
-var PanelRightInactiveIcon = PanelRightDashed;
-var PanelRightOpen2 = PanelRightOpen;
-var PanelRightOpenIcon = PanelRightOpen;
-var PanelsLeftBottom2 = PanelsLeftBottom;
-var PanelsLeftBottomIcon = PanelsLeftBottom;
-var PanelsLeftRight = Columns3;
-var PanelsLeftRightIcon = Columns3;
-var PanelsRightBottom2 = PanelsRightBottom;
-var PanelsRightBottomIcon = PanelsRightBottom;
-var PanelsTopBottom = Rows3;
-var PanelsTopBottomIcon = Rows3;
-var PanelsTopLeft2 = PanelsTopLeft;
-var PanelsTopLeftIcon = PanelsTopLeft;
-var PanelTop2 = PanelTop;
-var PanelTopBottomDashed2 = PanelTopBottomDashed;
-var PanelTopBottomDashedIcon = PanelTopBottomDashed;
-var PanelTopClose2 = PanelTopClose;
-var PanelTopCloseIcon = PanelTopClose;
-var PanelTopDashed2 = PanelTopDashed;
-var PanelTopDashedIcon = PanelTopDashed;
-var PanelTopIcon = PanelTop;
-var PanelTopInactive = PanelTopDashed;
-var PanelTopInactiveIcon = PanelTopDashed;
-var PanelTopOpen2 = PanelTopOpen;
-var PanelTopOpenIcon = PanelTopOpen;
-var Paperclip2 = Paperclip;
-var PaperclipIcon = Paperclip;
-var Parentheses2 = Parentheses;
-var ParenthesesIcon = Parentheses;
-var ParkingCircle = CircleParking;
-var ParkingCircleIcon = CircleParking;
-var ParkingCircleOff = CircleParkingOff;
-var ParkingCircleOffIcon = CircleParkingOff;
-var ParkingMeter2 = ParkingMeter;
-var ParkingMeterIcon = ParkingMeter;
-var ParkingSquare = SquareParking;
-var ParkingSquareIcon = SquareParking;
-var ParkingSquareOff = SquareParkingOff;
-var ParkingSquareOffIcon = SquareParkingOff;
-var PartyPopper2 = PartyPopper;
-var PartyPopperIcon = PartyPopper;
-var Pause2 = Pause;
-var PauseCircle = CirclePause;
-var PauseCircleIcon = CirclePause;
-var PauseIcon = Pause;
-var PauseOctagon = OctagonPause;
-var PauseOctagonIcon = OctagonPause;
-var PawPrint2 = PawPrint;
-var PawPrintIcon = PawPrint;
-var PcCase2 = PcCase;
-var PcCaseIcon = PcCase;
-var Pen2 = Pen;
-var PenBox = SquarePen;
-var PenBoxIcon = SquarePen;
-var Pencil2 = Pencil;
-var PencilIcon = Pencil;
-var PencilLine2 = PencilLine;
-var PencilLineIcon = PencilLine;
-var PencilOff2 = PencilOff;
-var PencilOffIcon = PencilOff;
-var PencilRuler2 = PencilRuler;
-var PencilRulerIcon = PencilRuler;
-var PenIcon = Pen;
-var PenLine2 = PenLine;
-var PenLineIcon = PenLine;
-var PenOff2 = PenOff;
-var PenOffIcon = PenOff;
-var PenSquare = SquarePen;
-var PenSquareIcon = SquarePen;
-var Pentagon2 = Pentagon;
-var PentagonIcon = Pentagon;
-var PenTool2 = PenTool;
-var PenToolIcon = PenTool;
-var Percent2 = Percent;
-var PercentCircle = CirclePercent;
-var PercentCircleIcon = CirclePercent;
-var PercentDiamond = DiamondPercent;
-var PercentDiamondIcon = DiamondPercent;
-var PercentIcon = Percent;
-var PercentSquare = SquarePercent;
-var PercentSquareIcon = SquarePercent;
-var PersonStanding2 = PersonStanding;
-var PersonStandingIcon = PersonStanding;
-var PhilippinePeso2 = PhilippinePeso;
-var PhilippinePesoIcon = PhilippinePeso;
-var Phone2 = Phone;
-var PhoneCall2 = PhoneCall;
-var PhoneCallIcon = PhoneCall;
-var PhoneForwarded2 = PhoneForwarded;
-var PhoneForwardedIcon = PhoneForwarded;
-var PhoneIcon = Phone;
-var PhoneIncoming2 = PhoneIncoming;
-var PhoneIncomingIcon = PhoneIncoming;
-var PhoneMissed2 = PhoneMissed;
-var PhoneMissedIcon = PhoneMissed;
-var PhoneOff2 = PhoneOff;
-var PhoneOffIcon = PhoneOff;
-var PhoneOutgoing2 = PhoneOutgoing;
-var PhoneOutgoingIcon = PhoneOutgoing;
-var Pi2 = Pi;
-var Piano2 = Piano;
-var PianoIcon = Piano;
-var Pickaxe2 = Pickaxe;
-var PickaxeIcon = Pickaxe;
-var PictureInPicture3 = PictureInPicture;
-var PictureInPicture22 = PictureInPicture2;
-var PictureInPicture2Icon = PictureInPicture2;
-var PictureInPictureIcon = PictureInPicture;
-var PieChart = ChartPie;
-var PieChartIcon = ChartPie;
-var PiggyBank2 = PiggyBank;
-var PiggyBankIcon = PiggyBank;
-var PiIcon = Pi;
-var Pilcrow2 = Pilcrow;
-var PilcrowIcon = Pilcrow;
-var PilcrowLeft2 = PilcrowLeft;
-var PilcrowLeftIcon = PilcrowLeft;
-var PilcrowRight2 = PilcrowRight;
-var PilcrowRightIcon = PilcrowRight;
-var PilcrowSquare = SquarePilcrow;
-var PilcrowSquareIcon = SquarePilcrow;
-var Pill2 = Pill;
-var PillBottle2 = PillBottle;
-var PillBottleIcon = PillBottle;
-var PillIcon = Pill;
-var Pin2 = Pin;
-var PinIcon = Pin;
-var PinOff2 = PinOff;
-var PinOffIcon = PinOff;
-var Pipette2 = Pipette;
-var PipetteIcon = Pipette;
-var PiSquare = SquarePi;
-var PiSquareIcon = SquarePi;
-var Pizza2 = Pizza;
-var PizzaIcon = Pizza;
-var Plane2 = Plane;
-var PlaneIcon = Plane;
-var PlaneLanding2 = PlaneLanding;
-var PlaneLandingIcon = PlaneLanding;
-var PlaneTakeoff2 = PlaneTakeoff;
-var PlaneTakeoffIcon = PlaneTakeoff;
-var Play2 = Play;
-var PlayCircle = CirclePlay;
-var PlayCircleIcon = CirclePlay;
-var PlayIcon = Play;
-var PlaySquare = SquarePlay;
-var PlaySquareIcon = SquarePlay;
-var Plug3 = Plug;
-var Plug22 = Plug2;
-var Plug2Icon = Plug2;
-var PlugIcon = Plug;
-var PlugZap2 = PlugZap;
-var PlugZap22 = PlugZap;
-var PlugZap2Icon = PlugZap;
-var PlugZapIcon = PlugZap;
-var Plus2 = Plus;
-var PlusCircle = CirclePlus;
-var PlusCircleIcon = CirclePlus;
-var PlusIcon = Plus;
-var PlusSquare = SquarePlus;
-var PlusSquareIcon = SquarePlus;
-var Pocket2 = Pocket;
-var PocketIcon = Pocket;
-var PocketKnife2 = PocketKnife;
-var PocketKnifeIcon = PocketKnife;
-var Podcast2 = Podcast;
-var PodcastIcon = Podcast;
-var Pointer2 = Pointer;
-var PointerIcon = Pointer;
-var PointerOff2 = PointerOff;
-var PointerOffIcon = PointerOff;
-var Popcorn2 = Popcorn;
-var PopcornIcon = Popcorn;
-var Popsicle2 = Popsicle;
-var PopsicleIcon = Popsicle;
-var PoundSterling2 = PoundSterling;
-var PoundSterlingIcon = PoundSterling;
-var Power2 = Power;
-var PowerCircle = CirclePower;
-var PowerCircleIcon = CirclePower;
-var PowerIcon = Power;
-var PowerOff2 = PowerOff;
-var PowerOffIcon = PowerOff;
-var PowerSquare = SquarePower;
-var PowerSquareIcon = SquarePower;
-var Presentation2 = Presentation;
-var PresentationIcon = Presentation;
-var Printer2 = Printer;
-var PrinterCheck2 = PrinterCheck;
-var PrinterCheckIcon = PrinterCheck;
-var PrinterIcon = Printer;
-var PrinterX2 = PrinterX;
-var PrinterXIcon = PrinterX;
-var Projector2 = Projector;
-var ProjectorIcon = Projector;
-var Proportions2 = Proportions;
-var ProportionsIcon = Proportions;
-var Puzzle2 = Puzzle;
-var PuzzleIcon = Puzzle;
-var Pyramid2 = Pyramid;
-var PyramidIcon = Pyramid;
-var QrCode2 = QrCode;
-var QrCodeIcon = QrCode;
-var Quote2 = Quote;
-var QuoteIcon = Quote;
-var Rabbit2 = Rabbit;
-var RabbitIcon = Rabbit;
-var Radar2 = Radar;
-var RadarIcon = Radar;
-var Radiation2 = Radiation;
-var RadiationIcon = Radiation;
-var Radical2 = Radical;
-var RadicalIcon = Radical;
-var Radio2 = Radio;
-var RadioIcon = Radio;
-var RadioReceiver2 = RadioReceiver;
-var RadioReceiverIcon = RadioReceiver;
-var RadioTower2 = RadioTower;
-var RadioTowerIcon = RadioTower;
-var Radius2 = Radius;
-var RadiusIcon = Radius;
-var RailSymbol2 = RailSymbol;
-var RailSymbolIcon = RailSymbol;
-var Rainbow2 = Rainbow;
-var RainbowIcon = Rainbow;
-var Rat2 = Rat;
-var RatIcon = Rat;
-var Ratio2 = Ratio;
-var RatioIcon = Ratio;
-var Receipt2 = Receipt;
-var ReceiptCent2 = ReceiptCent;
-var ReceiptCentIcon = ReceiptCent;
-var ReceiptEuro2 = ReceiptEuro;
-var ReceiptEuroIcon = ReceiptEuro;
-var ReceiptIcon = Receipt;
-var ReceiptIndianRupee2 = ReceiptIndianRupee;
-var ReceiptIndianRupeeIcon = ReceiptIndianRupee;
-var ReceiptJapaneseYen2 = ReceiptJapaneseYen;
-var ReceiptJapaneseYenIcon = ReceiptJapaneseYen;
-var ReceiptPoundSterling2 = ReceiptPoundSterling;
-var ReceiptPoundSterlingIcon = ReceiptPoundSterling;
-var ReceiptRussianRuble2 = ReceiptRussianRuble;
-var ReceiptRussianRubleIcon = ReceiptRussianRuble;
-var ReceiptSwissFranc2 = ReceiptSwissFranc;
-var ReceiptSwissFrancIcon = ReceiptSwissFranc;
-var ReceiptText2 = ReceiptText;
-var ReceiptTextIcon = ReceiptText;
-var ReceiptTurkishLira2 = ReceiptTurkishLira;
-var ReceiptTurkishLiraIcon = ReceiptTurkishLira;
-var RectangleCircle2 = RectangleCircle;
-var RectangleCircleIcon = RectangleCircle;
-var RectangleEllipsis2 = RectangleEllipsis;
-var RectangleEllipsisIcon = RectangleEllipsis;
-var RectangleGoggles2 = RectangleGoggles;
-var RectangleGogglesIcon = RectangleGoggles;
-var RectangleHorizontal2 = RectangleHorizontal;
-var RectangleHorizontalIcon = RectangleHorizontal;
-var RectangleVertical2 = RectangleVertical;
-var RectangleVerticalIcon = RectangleVertical;
-var Recycle2 = Recycle;
-var RecycleIcon = Recycle;
-var Redo3 = Redo;
-var Redo22 = Redo2;
-var Redo2Icon = Redo2;
-var RedoDot2 = RedoDot;
-var RedoDotIcon = RedoDot;
-var RedoIcon = Redo;
-var RefreshCcw2 = RefreshCcw;
-var RefreshCcwDot2 = RefreshCcwDot;
-var RefreshCcwDotIcon = RefreshCcwDot;
-var RefreshCcwIcon = RefreshCcw;
-var RefreshCw2 = RefreshCw;
-var RefreshCwIcon = RefreshCw;
-var RefreshCwOff2 = RefreshCwOff;
-var RefreshCwOffIcon = RefreshCwOff;
-var Refrigerator2 = Refrigerator;
-var RefrigeratorIcon = Refrigerator;
-var Regex2 = Regex;
-var RegexIcon = Regex;
-var RemoveFormatting2 = RemoveFormatting;
-var RemoveFormattingIcon = RemoveFormatting;
-var Repeat3 = Repeat;
-var Repeat12 = Repeat1;
-var Repeat1Icon = Repeat1;
-var Repeat22 = Repeat2;
-var Repeat2Icon = Repeat2;
-var RepeatIcon = Repeat;
-var Replace2 = Replace;
-var ReplaceAll2 = ReplaceAll;
-var ReplaceAllIcon = ReplaceAll;
-var ReplaceIcon = Replace;
-var Reply2 = Reply;
-var ReplyAll2 = ReplyAll;
-var ReplyAllIcon = ReplyAll;
-var ReplyIcon = Reply;
-var Rewind2 = Rewind;
-var RewindIcon = Rewind;
-var Ribbon2 = Ribbon;
-var RibbonIcon = Ribbon;
-var Rocket2 = Rocket;
-var RocketIcon = Rocket;
-var RockingChair2 = RockingChair;
-var RockingChairIcon = RockingChair;
-var RollerCoaster2 = RollerCoaster;
-var RollerCoasterIcon = RollerCoaster;
-var Rose2 = Rose;
-var RoseIcon = Rose;
-var Rotate3d2 = Rotate3d;
-var Rotate3D = Rotate3d;
-var Rotate3dIcon = Rotate3d;
-var Rotate3DIcon = Rotate3d;
-var RotateCcw2 = RotateCcw;
-var RotateCcwIcon = RotateCcw;
-var RotateCcwKey2 = RotateCcwKey;
-var RotateCcwKeyIcon = RotateCcwKey;
-var RotateCcwSquare2 = RotateCcwSquare;
-var RotateCcwSquareIcon = RotateCcwSquare;
-var RotateCw2 = RotateCw;
-var RotateCwIcon = RotateCw;
-var RotateCwSquare2 = RotateCwSquare;
-var RotateCwSquareIcon = RotateCwSquare;
-var Route2 = Route;
-var RouteIcon = Route;
-var RouteOff2 = RouteOff;
-var RouteOffIcon = RouteOff;
-var Router2 = Router;
-var RouterIcon = Router;
-var Rows = Rows2;
-var Rows22 = Rows2;
-var Rows2Icon = Rows2;
-var Rows32 = Rows3;
-var Rows3Icon = Rows3;
-var Rows42 = Rows4;
-var Rows4Icon = Rows4;
-var RowsIcon = Rows2;
-var Rss2 = Rss;
-var RssIcon = Rss;
-var Ruler2 = Ruler;
-var RulerDimensionLine2 = RulerDimensionLine;
-var RulerDimensionLineIcon = RulerDimensionLine;
-var RulerIcon = Ruler;
-var RussianRuble2 = RussianRuble;
-var RussianRubleIcon = RussianRuble;
-var Sailboat2 = Sailboat;
-var SailboatIcon = Sailboat;
-var Salad2 = Salad;
-var SaladIcon = Salad;
-var Sandwich2 = Sandwich;
-var SandwichIcon = Sandwich;
-var Satellite2 = Satellite;
-var SatelliteDish2 = SatelliteDish;
-var SatelliteDishIcon = SatelliteDish;
-var SatelliteIcon = Satellite;
-var SaudiRiyal2 = SaudiRiyal;
-var SaudiRiyalIcon = SaudiRiyal;
-var Save2 = Save;
-var SaveAll2 = SaveAll;
-var SaveAllIcon = SaveAll;
-var SaveIcon = Save;
-var SaveOff2 = SaveOff;
-var SaveOffIcon = SaveOff;
-var Scale2 = Scale;
-var Scale3d2 = Scale3d;
-var Scale3D = Scale3d;
-var Scale3dIcon = Scale3d;
-var Scale3DIcon = Scale3d;
-var ScaleIcon = Scale;
-var Scaling2 = Scaling;
-var ScalingIcon = Scaling;
-var Scan2 = Scan;
-var ScanBarcode2 = ScanBarcode;
-var ScanBarcodeIcon = ScanBarcode;
-var ScanEye2 = ScanEye;
-var ScanEyeIcon = ScanEye;
-var ScanFace2 = ScanFace;
-var ScanFaceIcon = ScanFace;
-var ScanHeart2 = ScanHeart;
-var ScanHeartIcon = ScanHeart;
-var ScanIcon = Scan;
-var ScanLine2 = ScanLine;
-var ScanLineIcon = ScanLine;
-var ScanQrCode2 = ScanQrCode;
-var ScanQrCodeIcon = ScanQrCode;
-var ScanSearch2 = ScanSearch;
-var ScanSearchIcon = ScanSearch;
-var ScanText2 = ScanText;
-var ScanTextIcon = ScanText;
-var ScatterChart = ChartScatter;
-var ScatterChartIcon = ChartScatter;
-var School2 = School;
-var School22 = University;
-var School2Icon = University;
-var SchoolIcon = School;
-var Scissors2 = Scissors;
-var ScissorsIcon = Scissors;
-var ScissorsLineDashed2 = ScissorsLineDashed;
-var ScissorsLineDashedIcon = ScissorsLineDashed;
-var ScissorsSquare = SquareScissors;
-var ScissorsSquareDashedBottom = SquareBottomDashedScissors;
-var ScissorsSquareDashedBottomIcon = SquareBottomDashedScissors;
-var ScissorsSquareIcon = SquareScissors;
-var Scooter2 = Scooter;
-var ScooterIcon = Scooter;
-var ScreenShare2 = ScreenShare;
-var ScreenShareIcon = ScreenShare;
-var ScreenShareOff2 = ScreenShareOff;
-var ScreenShareOffIcon = ScreenShareOff;
-var Scroll2 = Scroll;
-var ScrollIcon = Scroll;
-var ScrollText2 = ScrollText;
-var ScrollTextIcon = ScrollText;
-var Search2 = Search;
-var SearchAlert2 = SearchAlert;
-var SearchAlertIcon = SearchAlert;
-var SearchCheck2 = SearchCheck;
-var SearchCheckIcon = SearchCheck;
-var SearchCode2 = SearchCode;
-var SearchCodeIcon = SearchCode;
-var SearchIcon = Search;
-var SearchSlash2 = SearchSlash;
-var SearchSlashIcon = SearchSlash;
-var SearchX2 = SearchX;
-var SearchXIcon = SearchX;
-var Section2 = Section;
-var SectionIcon = Section;
-var Send2 = Send;
-var SendHorizonal = SendHorizontal;
-var SendHorizonalIcon = SendHorizontal;
-var SendHorizontal2 = SendHorizontal;
-var SendHorizontalIcon = SendHorizontal;
-var SendIcon = Send;
-var SendToBack2 = SendToBack;
-var SendToBackIcon = SendToBack;
-var SeparatorHorizontal2 = SeparatorHorizontal;
-var SeparatorHorizontalIcon = SeparatorHorizontal;
-var SeparatorVertical2 = SeparatorVertical;
-var SeparatorVerticalIcon = SeparatorVertical;
-var Server2 = Server;
-var ServerCog2 = ServerCog;
-var ServerCogIcon = ServerCog;
-var ServerCrash2 = ServerCrash;
-var ServerCrashIcon = ServerCrash;
-var ServerIcon = Server;
-var ServerOff2 = ServerOff;
-var ServerOffIcon = ServerOff;
-var Settings3 = Settings;
-var Settings22 = Settings2;
-var Settings2Icon = Settings2;
-var SettingsIcon = Settings;
-var Shapes2 = Shapes;
-var ShapesIcon = Shapes;
-var Share3 = Share;
-var Share22 = Share2;
-var Share2Icon = Share2;
-var ShareIcon = Share;
-var Sheet2 = Sheet;
-var SheetIcon = Sheet;
-var Shell2 = Shell;
-var ShellIcon = Shell;
-var ShelvingUnit2 = ShelvingUnit;
-var ShelvingUnitIcon = ShelvingUnit;
-var Shield2 = Shield;
-var ShieldAlert2 = ShieldAlert;
-var ShieldAlertIcon = ShieldAlert;
-var ShieldBan2 = ShieldBan;
-var ShieldBanIcon = ShieldBan;
-var ShieldCheck2 = ShieldCheck;
-var ShieldCheckIcon = ShieldCheck;
-var ShieldClose = ShieldX;
-var ShieldCloseIcon = ShieldX;
-var ShieldEllipsis2 = ShieldEllipsis;
-var ShieldEllipsisIcon = ShieldEllipsis;
-var ShieldHalf2 = ShieldHalf;
-var ShieldHalfIcon = ShieldHalf;
-var ShieldIcon = Shield;
-var ShieldMinus2 = ShieldMinus;
-var ShieldMinusIcon = ShieldMinus;
-var ShieldOff2 = ShieldOff;
-var ShieldOffIcon = ShieldOff;
-var ShieldPlus2 = ShieldPlus;
-var ShieldPlusIcon = ShieldPlus;
-var ShieldQuestion = ShieldQuestionMark;
-var ShieldQuestionIcon = ShieldQuestionMark;
-var ShieldQuestionMark2 = ShieldQuestionMark;
-var ShieldQuestionMarkIcon = ShieldQuestionMark;
-var ShieldUser2 = ShieldUser;
-var ShieldUserIcon = ShieldUser;
-var ShieldX2 = ShieldX;
-var ShieldXIcon = ShieldX;
-var Ship2 = Ship;
-var ShipIcon = Ship;
-var ShipWheel2 = ShipWheel;
-var ShipWheelIcon = ShipWheel;
-var Shirt2 = Shirt;
-var ShirtIcon = Shirt;
-var ShoppingBag2 = ShoppingBag;
-var ShoppingBagIcon = ShoppingBag;
-var ShoppingBasket2 = ShoppingBasket;
-var ShoppingBasketIcon = ShoppingBasket;
-var ShoppingCart2 = ShoppingCart;
-var ShoppingCartIcon = ShoppingCart;
-var Shovel2 = Shovel;
-var ShovelIcon = Shovel;
-var ShowerHead2 = ShowerHead;
-var ShowerHeadIcon = ShowerHead;
-var Shredder2 = Shredder;
-var ShredderIcon = Shredder;
-var Shrimp2 = Shrimp;
-var ShrimpIcon = Shrimp;
-var Shrink2 = Shrink;
-var ShrinkIcon = Shrink;
-var Shrub2 = Shrub;
-var ShrubIcon = Shrub;
-var Shuffle2 = Shuffle;
-var ShuffleIcon = Shuffle;
-var Sidebar = PanelLeft;
-var SidebarClose = PanelLeftClose;
-var SidebarCloseIcon = PanelLeftClose;
-var SidebarIcon = PanelLeft;
-var SidebarOpen = PanelLeftOpen;
-var SidebarOpenIcon = PanelLeftOpen;
-var Sigma2 = Sigma;
-var SigmaIcon = Sigma;
-var SigmaSquare = SquareSigma;
-var SigmaSquareIcon = SquareSigma;
-var Signal2 = Signal;
-var SignalHigh2 = SignalHigh;
-var SignalHighIcon = SignalHigh;
-var SignalIcon = Signal;
-var SignalLow2 = SignalLow;
-var SignalLowIcon = SignalLow;
-var SignalMedium2 = SignalMedium;
-var SignalMediumIcon = SignalMedium;
-var SignalZero2 = SignalZero;
-var SignalZeroIcon = SignalZero;
-var Signature2 = Signature;
-var SignatureIcon = Signature;
-var Signpost2 = Signpost;
-var SignpostBig2 = SignpostBig;
-var SignpostBigIcon = SignpostBig;
-var SignpostIcon = Signpost;
-var Siren2 = Siren;
-var SirenIcon = Siren;
-var SkipBack2 = SkipBack;
-var SkipBackIcon = SkipBack;
-var SkipForward2 = SkipForward;
-var SkipForwardIcon = SkipForward;
-var Skull2 = Skull;
-var SkullIcon = Skull;
-var Slack2 = Slack;
-var SlackIcon = Slack;
-var Slash2 = Slash;
-var SlashIcon = Slash;
-var SlashSquare = SquareSlash;
-var SlashSquareIcon = SquareSlash;
-var Slice2 = Slice;
-var SliceIcon = Slice;
-var Sliders = SlidersVertical;
-var SlidersHorizontal2 = SlidersHorizontal;
-var SlidersHorizontalIcon = SlidersHorizontal;
-var SlidersIcon = SlidersVertical;
-var SlidersVertical2 = SlidersVertical;
-var SlidersVerticalIcon = SlidersVertical;
-var Smartphone2 = Smartphone;
-var SmartphoneCharging2 = SmartphoneCharging;
-var SmartphoneChargingIcon = SmartphoneCharging;
-var SmartphoneIcon = Smartphone;
-var SmartphoneNfc2 = SmartphoneNfc;
-var SmartphoneNfcIcon = SmartphoneNfc;
-var Smile2 = Smile;
-var SmileIcon = Smile;
-var SmilePlus2 = SmilePlus;
-var SmilePlusIcon = SmilePlus;
-var Snail2 = Snail;
-var SnailIcon = Snail;
-var Snowflake2 = Snowflake;
-var SnowflakeIcon = Snowflake;
-var SoapDispenserDroplet2 = SoapDispenserDroplet;
-var SoapDispenserDropletIcon = SoapDispenserDroplet;
-var Sofa2 = Sofa;
-var SofaIcon = Sofa;
-var SolarPanel2 = SolarPanel;
-var SolarPanelIcon = SolarPanel;
-var SortAsc = ArrowUpNarrowWide;
-var SortAscIcon = ArrowUpNarrowWide;
-var SortDesc = ArrowDownWideNarrow;
-var SortDescIcon = ArrowDownWideNarrow;
-var Soup2 = Soup;
-var SoupIcon = Soup;
-var Space2 = Space;
-var SpaceIcon = Space;
-var Spade2 = Spade;
-var SpadeIcon = Spade;
-var Sparkle2 = Sparkle;
-var SparkleIcon = Sparkle;
-var Sparkles2 = Sparkles;
-var SparklesIcon = Sparkles;
-var Speaker2 = Speaker;
-var SpeakerIcon = Speaker;
-var Speech2 = Speech;
-var SpeechIcon = Speech;
-var SpellCheck3 = SpellCheck;
-var SpellCheck22 = SpellCheck2;
-var SpellCheck2Icon = SpellCheck2;
-var SpellCheckIcon = SpellCheck;
-var Spline2 = Spline;
-var SplineIcon = Spline;
-var SplinePointer2 = SplinePointer;
-var SplinePointerIcon = SplinePointer;
-var Split2 = Split;
-var SplitIcon = Split;
-var SplitSquareHorizontal = SquareSplitHorizontal;
-var SplitSquareHorizontalIcon = SquareSplitHorizontal;
-var SplitSquareVertical = SquareSplitVertical;
-var SplitSquareVerticalIcon = SquareSplitVertical;
-var Spool2 = Spool;
-var SpoolIcon = Spool;
-var Spotlight2 = Spotlight;
-var SpotlightIcon = Spotlight;
-var SprayCan2 = SprayCan;
-var SprayCanIcon = SprayCan;
-var Sprout2 = Sprout;
-var SproutIcon = Sprout;
-var Square2 = Square;
-var SquareActivity2 = SquareActivity;
-var SquareActivityIcon = SquareActivity;
-var SquareArrowDown2 = SquareArrowDown;
-var SquareArrowDownIcon = SquareArrowDown;
-var SquareArrowDownLeft2 = SquareArrowDownLeft;
-var SquareArrowDownLeftIcon = SquareArrowDownLeft;
-var SquareArrowDownRight2 = SquareArrowDownRight;
-var SquareArrowDownRightIcon = SquareArrowDownRight;
-var SquareArrowLeft2 = SquareArrowLeft;
-var SquareArrowLeftIcon = SquareArrowLeft;
-var SquareArrowOutDownLeft2 = SquareArrowOutDownLeft;
-var SquareArrowOutDownLeftIcon = SquareArrowOutDownLeft;
-var SquareArrowOutDownRight2 = SquareArrowOutDownRight;
-var SquareArrowOutDownRightIcon = SquareArrowOutDownRight;
-var SquareArrowOutUpLeft2 = SquareArrowOutUpLeft;
-var SquareArrowOutUpLeftIcon = SquareArrowOutUpLeft;
-var SquareArrowOutUpRight2 = SquareArrowOutUpRight;
-var SquareArrowOutUpRightIcon = SquareArrowOutUpRight;
-var SquareArrowRight2 = SquareArrowRight;
-var SquareArrowRightEnter2 = SquareArrowRightEnter;
-var SquareArrowRightEnterIcon = SquareArrowRightEnter;
-var SquareArrowRightExit2 = SquareArrowRightExit;
-var SquareArrowRightExitIcon = SquareArrowRightExit;
-var SquareArrowRightIcon = SquareArrowRight;
-var SquareArrowUp2 = SquareArrowUp;
-var SquareArrowUpIcon = SquareArrowUp;
-var SquareArrowUpLeft2 = SquareArrowUpLeft;
-var SquareArrowUpLeftIcon = SquareArrowUpLeft;
-var SquareArrowUpRight2 = SquareArrowUpRight;
-var SquareArrowUpRightIcon = SquareArrowUpRight;
-var SquareAsterisk2 = SquareAsterisk;
-var SquareAsteriskIcon = SquareAsterisk;
-var SquareBottomDashedScissors2 = SquareBottomDashedScissors;
-var SquareBottomDashedScissorsIcon = SquareBottomDashedScissors;
-var SquareCenterlineDashedHorizontal2 = SquareCenterlineDashedHorizontal;
-var SquareCenterlineDashedHorizontalIcon = SquareCenterlineDashedHorizontal;
-var SquareCenterlineDashedVertical2 = SquareCenterlineDashedVertical;
-var SquareCenterlineDashedVerticalIcon = SquareCenterlineDashedVertical;
-var SquareChartGantt2 = SquareChartGantt;
-var SquareChartGanttIcon = SquareChartGantt;
-var SquareCheck2 = SquareCheck;
-var SquareCheckBig2 = SquareCheckBig;
-var SquareCheckBigIcon = SquareCheckBig;
-var SquareCheckIcon = SquareCheck;
-var SquareChevronDown2 = SquareChevronDown;
-var SquareChevronDownIcon = SquareChevronDown;
-var SquareChevronLeft2 = SquareChevronLeft;
-var SquareChevronLeftIcon = SquareChevronLeft;
-var SquareChevronRight2 = SquareChevronRight;
-var SquareChevronRightIcon = SquareChevronRight;
-var SquareChevronUp2 = SquareChevronUp;
-var SquareChevronUpIcon = SquareChevronUp;
-var SquareCode2 = SquareCode;
-var SquareCodeIcon = SquareCode;
-var SquareDashed2 = SquareDashed;
-var SquareDashedBottom2 = SquareDashedBottom;
-var SquareDashedBottomCode2 = SquareDashedBottomCode;
-var SquareDashedBottomCodeIcon = SquareDashedBottomCode;
-var SquareDashedBottomIcon = SquareDashedBottom;
-var SquareDashedIcon = SquareDashed;
-var SquareDashedKanban2 = SquareDashedKanban;
-var SquareDashedKanbanIcon = SquareDashedKanban;
-var SquareDashedMousePointer2 = SquareDashedMousePointer;
-var SquareDashedMousePointerIcon = SquareDashedMousePointer;
-var SquareDashedTopSolid2 = SquareDashedTopSolid;
-var SquareDashedTopSolidIcon = SquareDashedTopSolid;
-var SquareDivide2 = SquareDivide;
-var SquareDivideIcon = SquareDivide;
-var SquareDot2 = SquareDot;
-var SquareDotIcon = SquareDot;
-var SquareEqual2 = SquareEqual;
-var SquareEqualIcon = SquareEqual;
-var SquareFunction2 = SquareFunction;
-var SquareFunctionIcon = SquareFunction;
-var SquareGanttChart = SquareChartGantt;
-var SquareGanttChartIcon = SquareChartGantt;
-var SquareIcon = Square;
-var SquareKanban2 = SquareKanban;
-var SquareKanbanIcon = SquareKanban;
-var SquareLibrary2 = SquareLibrary;
-var SquareLibraryIcon = SquareLibrary;
-var SquareM2 = SquareM;
-var SquareMenu2 = SquareMenu;
-var SquareMenuIcon = SquareMenu;
-var SquareMIcon = SquareM;
-var SquareMinus2 = SquareMinus;
-var SquareMinusIcon = SquareMinus;
-var SquareMousePointer2 = SquareMousePointer;
-var SquareMousePointerIcon = SquareMousePointer;
-var SquareParking2 = SquareParking;
-var SquareParkingIcon = SquareParking;
-var SquareParkingOff2 = SquareParkingOff;
-var SquareParkingOffIcon = SquareParkingOff;
-var SquarePause2 = SquarePause;
-var SquarePauseIcon = SquarePause;
-var SquarePen2 = SquarePen;
-var SquarePenIcon = SquarePen;
-var SquarePercent2 = SquarePercent;
-var SquarePercentIcon = SquarePercent;
-var SquarePi2 = SquarePi;
-var SquarePiIcon = SquarePi;
-var SquarePilcrow2 = SquarePilcrow;
-var SquarePilcrowIcon = SquarePilcrow;
-var SquarePlay2 = SquarePlay;
-var SquarePlayIcon = SquarePlay;
-var SquarePlus2 = SquarePlus;
-var SquarePlusIcon = SquarePlus;
-var SquarePower2 = SquarePower;
-var SquarePowerIcon = SquarePower;
-var SquareRadical2 = SquareRadical;
-var SquareRadicalIcon = SquareRadical;
-var SquareRoundCorner2 = SquareRoundCorner;
-var SquareRoundCornerIcon = SquareRoundCorner;
-var SquareScissors2 = SquareScissors;
-var SquareScissorsIcon = SquareScissors;
-var SquaresExclude2 = SquaresExclude;
-var SquaresExcludeIcon = SquaresExclude;
-var SquareSigma2 = SquareSigma;
-var SquareSigmaIcon = SquareSigma;
-var SquaresIntersect2 = SquaresIntersect;
-var SquaresIntersectIcon = SquaresIntersect;
-var SquareSlash2 = SquareSlash;
-var SquareSlashIcon = SquareSlash;
-var SquareSplitHorizontal2 = SquareSplitHorizontal;
-var SquareSplitHorizontalIcon = SquareSplitHorizontal;
-var SquareSplitVertical2 = SquareSplitVertical;
-var SquareSplitVerticalIcon = SquareSplitVertical;
-var SquareSquare2 = SquareSquare;
-var SquareSquareIcon = SquareSquare;
-var SquaresSubtract2 = SquaresSubtract;
-var SquaresSubtractIcon = SquaresSubtract;
-var SquareStack2 = SquareStack;
-var SquareStackIcon = SquareStack;
-var SquareStar2 = SquareStar;
-var SquareStarIcon = SquareStar;
-var SquareStop2 = SquareStop;
-var SquareStopIcon = SquareStop;
-var SquaresUnite2 = SquaresUnite;
-var SquaresUniteIcon = SquaresUnite;
-var SquareTerminal2 = SquareTerminal;
-var SquareTerminalIcon = SquareTerminal;
-var SquareUser2 = SquareUser;
-var SquareUserIcon = SquareUser;
-var SquareUserRound2 = SquareUserRound;
-var SquareUserRoundIcon = SquareUserRound;
-var SquareX2 = SquareX;
-var SquareXIcon = SquareX;
-var Squircle2 = Squircle;
-var SquircleDashed2 = SquircleDashed;
-var SquircleDashedIcon = SquircleDashed;
-var SquircleIcon = Squircle;
-var Squirrel2 = Squirrel;
-var SquirrelIcon = Squirrel;
-var Stamp2 = Stamp;
-var StampIcon = Stamp;
-var Star2 = Star;
-var StarHalf2 = StarHalf;
-var StarHalfIcon = StarHalf;
-var StarIcon = Star;
-var StarOff2 = StarOff;
-var StarOffIcon = StarOff;
-var Stars = Sparkles;
-var StarsIcon = Sparkles;
-var StepBack2 = StepBack;
-var StepBackIcon = StepBack;
-var StepForward2 = StepForward;
-var StepForwardIcon = StepForward;
-var Stethoscope2 = Stethoscope;
-var StethoscopeIcon = Stethoscope;
-var Sticker2 = Sticker;
-var StickerIcon = Sticker;
-var StickyNote2 = StickyNote;
-var StickyNoteIcon = StickyNote;
-var Stone2 = Stone;
-var StoneIcon = Stone;
-var StopCircle = CircleStop;
-var StopCircleIcon = CircleStop;
-var Store2 = Store;
-var StoreIcon = Store;
-var StretchHorizontal2 = StretchHorizontal;
-var StretchHorizontalIcon = StretchHorizontal;
-var StretchVertical2 = StretchVertical;
-var StretchVerticalIcon = StretchVertical;
-var Strikethrough2 = Strikethrough;
-var StrikethroughIcon = Strikethrough;
-var Subscript2 = Subscript;
-var SubscriptIcon = Subscript;
-var Subtitles = Captions;
-var SubtitlesIcon = Captions;
-var Sun2 = Sun;
-var SunDim2 = SunDim;
-var SunDimIcon = SunDim;
-var SunIcon = Sun;
-var SunMedium2 = SunMedium;
-var SunMediumIcon = SunMedium;
-var SunMoon2 = SunMoon;
-var SunMoonIcon = SunMoon;
-var Sunrise2 = Sunrise;
-var SunriseIcon = Sunrise;
-var Sunset2 = Sunset;
-var SunsetIcon = Sunset;
-var SunSnow2 = SunSnow;
-var SunSnowIcon = SunSnow;
-var Superscript2 = Superscript;
-var SuperscriptIcon = Superscript;
-var SwatchBook2 = SwatchBook;
-var SwatchBookIcon = SwatchBook;
-var SwissFranc2 = SwissFranc;
-var SwissFrancIcon = SwissFranc;
-var SwitchCamera2 = SwitchCamera;
-var SwitchCameraIcon = SwitchCamera;
-var Sword2 = Sword;
-var SwordIcon = Sword;
-var Swords2 = Swords;
-var SwordsIcon = Swords;
-var Syringe2 = Syringe;
-var SyringeIcon = Syringe;
-var Table3 = Table;
-var Table22 = Table2;
-var Table2Icon = Table2;
-var TableCellsMerge2 = TableCellsMerge;
-var TableCellsMergeIcon = TableCellsMerge;
-var TableCellsSplit2 = TableCellsSplit;
-var TableCellsSplitIcon = TableCellsSplit;
-var TableColumnsSplit2 = TableColumnsSplit;
-var TableColumnsSplitIcon = TableColumnsSplit;
-var TableConfig = Columns3Cog;
-var TableConfigIcon = Columns3Cog;
-var TableIcon = Table;
-var TableOfContents2 = TableOfContents;
-var TableOfContentsIcon = TableOfContents;
-var TableProperties2 = TableProperties;
-var TablePropertiesIcon = TableProperties;
-var TableRowsSplit2 = TableRowsSplit;
-var TableRowsSplitIcon = TableRowsSplit;
-var Tablet2 = Tablet;
-var TabletIcon = Tablet;
-var Tablets2 = Tablets;
-var TabletsIcon = Tablets;
-var TabletSmartphone2 = TabletSmartphone;
-var TabletSmartphoneIcon = TabletSmartphone;
-var Tag2 = Tag;
-var TagIcon = Tag;
-var Tags2 = Tags;
-var TagsIcon = Tags;
-var Tally12 = Tally1;
-var Tally1Icon = Tally1;
-var Tally22 = Tally2;
-var Tally2Icon = Tally2;
-var Tally32 = Tally3;
-var Tally3Icon = Tally3;
-var Tally42 = Tally4;
-var Tally4Icon = Tally4;
-var Tally52 = Tally5;
-var Tally5Icon = Tally5;
-var Tangent2 = Tangent;
-var TangentIcon = Tangent;
-var Target2 = Target;
-var TargetIcon = Target;
-var Telescope2 = Telescope;
-var TelescopeIcon = Telescope;
-var Tent2 = Tent;
-var TentIcon = Tent;
-var TentTree2 = TentTree;
-var TentTreeIcon = TentTree;
-var Terminal2 = Terminal;
-var TerminalIcon = Terminal;
-var TerminalSquare = SquareTerminal;
-var TerminalSquareIcon = SquareTerminal;
-var TestTube2 = TestTube;
-var TestTube22 = TestTubeDiagonal;
-var TestTube2Icon = TestTubeDiagonal;
-var TestTubeDiagonal2 = TestTubeDiagonal;
-var TestTubeDiagonalIcon = TestTubeDiagonal;
-var TestTubeIcon = TestTube;
-var TestTubes2 = TestTubes;
-var TestTubesIcon = TestTubes;
-var Text = TextAlignStart;
-var TextAlignCenter2 = TextAlignCenter;
-var TextAlignCenterIcon = TextAlignCenter;
-var TextAlignEnd2 = TextAlignEnd;
-var TextAlignEndIcon = TextAlignEnd;
-var TextAlignJustify2 = TextAlignJustify;
-var TextAlignJustifyIcon = TextAlignJustify;
-var TextAlignStart2 = TextAlignStart;
-var TextAlignStartIcon = TextAlignStart;
-var TextCursor2 = TextCursor;
-var TextCursorIcon = TextCursor;
-var TextCursorInput2 = TextCursorInput;
-var TextCursorInputIcon = TextCursorInput;
-var TextIcon = TextAlignStart;
-var TextInitial2 = TextInitial;
-var TextInitialIcon = TextInitial;
-var TextQuote2 = TextQuote;
-var TextQuoteIcon = TextQuote;
-var TextSearch2 = TextSearch;
-var TextSearchIcon = TextSearch;
-var TextSelect2 = TextSelect;
-var TextSelectIcon = TextSelect;
-var TextSelection = TextSelect;
-var TextSelectionIcon = TextSelect;
-var TextWrap2 = TextWrap;
-var TextWrapIcon = TextWrap;
-var Theater2 = Theater;
-var TheaterIcon = Theater;
-var Thermometer2 = Thermometer;
-var ThermometerIcon = Thermometer;
-var ThermometerSnowflake2 = ThermometerSnowflake;
-var ThermometerSnowflakeIcon = ThermometerSnowflake;
-var ThermometerSun2 = ThermometerSun;
-var ThermometerSunIcon = ThermometerSun;
-var ThumbsDown2 = ThumbsDown;
-var ThumbsDownIcon = ThumbsDown;
-var ThumbsUp2 = ThumbsUp;
-var ThumbsUpIcon = ThumbsUp;
-var Ticket2 = Ticket;
-var TicketCheck2 = TicketCheck;
-var TicketCheckIcon = TicketCheck;
-var TicketIcon = Ticket;
-var TicketMinus2 = TicketMinus;
-var TicketMinusIcon = TicketMinus;
-var TicketPercent2 = TicketPercent;
-var TicketPercentIcon = TicketPercent;
-var TicketPlus2 = TicketPlus;
-var TicketPlusIcon = TicketPlus;
-var Tickets2 = Tickets;
-var TicketsIcon = Tickets;
-var TicketSlash2 = TicketSlash;
-var TicketSlashIcon = TicketSlash;
-var TicketsPlane2 = TicketsPlane;
-var TicketsPlaneIcon = TicketsPlane;
-var TicketX2 = TicketX;
-var TicketXIcon = TicketX;
-var Timer2 = Timer;
-var TimerIcon = Timer;
-var TimerOff2 = TimerOff;
-var TimerOffIcon = TimerOff;
-var TimerReset2 = TimerReset;
-var TimerResetIcon = TimerReset;
-var ToggleLeft2 = ToggleLeft;
-var ToggleLeftIcon = ToggleLeft;
-var ToggleRight2 = ToggleRight;
-var ToggleRightIcon = ToggleRight;
-var Toilet2 = Toilet;
-var ToiletIcon = Toilet;
-var Toolbox2 = Toolbox;
-var ToolboxIcon = Toolbox;
-var ToolCase2 = ToolCase;
-var ToolCaseIcon = ToolCase;
-var Tornado2 = Tornado;
-var TornadoIcon = Tornado;
-var Torus2 = Torus;
-var TorusIcon = Torus;
-var Touchpad2 = Touchpad;
-var TouchpadIcon = Touchpad;
-var TouchpadOff2 = TouchpadOff;
-var TouchpadOffIcon = TouchpadOff;
-var TowelRack2 = TowelRack;
-var TowelRackIcon = TowelRack;
-var TowerControl2 = TowerControl;
-var TowerControlIcon = TowerControl;
-var ToyBrick2 = ToyBrick;
-var ToyBrickIcon = ToyBrick;
-var Tractor2 = Tractor;
-var TractorIcon = Tractor;
-var TrafficCone2 = TrafficCone;
-var TrafficConeIcon = TrafficCone;
-var Train = TramFront;
-var TrainFront2 = TrainFront;
-var TrainFrontIcon = TrainFront;
-var TrainFrontTunnel2 = TrainFrontTunnel;
-var TrainFrontTunnelIcon = TrainFrontTunnel;
-var TrainIcon = TramFront;
-var TrainTrack2 = TrainTrack;
-var TrainTrackIcon = TrainTrack;
-var TramFront2 = TramFront;
-var TramFrontIcon = TramFront;
-var Transgender2 = Transgender;
-var TransgenderIcon = Transgender;
-var Trash3 = Trash;
-var Trash22 = Trash2;
-var Trash2Icon = Trash2;
-var TrashIcon = Trash;
-var TreeDeciduous2 = TreeDeciduous;
-var TreeDeciduousIcon = TreeDeciduous;
-var TreePalm2 = TreePalm;
-var TreePalmIcon = TreePalm;
-var TreePine2 = TreePine;
-var TreePineIcon = TreePine;
-var Trees2 = Trees;
-var TreesIcon = Trees;
-var Trello2 = Trello;
-var TrelloIcon = Trello;
-var TrendingDown2 = TrendingDown;
-var TrendingDownIcon = TrendingDown;
-var TrendingUp2 = TrendingUp;
-var TrendingUpDown2 = TrendingUpDown;
-var TrendingUpDownIcon = TrendingUpDown;
-var TrendingUpIcon = TrendingUp;
-var Triangle2 = Triangle;
-var TriangleAlert2 = TriangleAlert;
-var TriangleAlertIcon = TriangleAlert;
-var TriangleDashed2 = TriangleDashed;
-var TriangleDashedIcon = TriangleDashed;
-var TriangleIcon = Triangle;
-var TriangleRight2 = TriangleRight;
-var TriangleRightIcon = TriangleRight;
-var Trophy2 = Trophy;
-var TrophyIcon = Trophy;
-var Truck2 = Truck;
-var TruckElectric2 = TruckElectric;
-var TruckElectricIcon = TruckElectric;
-var TruckIcon = Truck;
-var TurkishLira2 = TurkishLira;
-var TurkishLiraIcon = TurkishLira;
-var Turntable2 = Turntable;
-var TurntableIcon = Turntable;
-var Turtle2 = Turtle;
-var TurtleIcon = Turtle;
-var Tv2 = Tv;
-var Tv22 = TvMinimal;
-var Tv2Icon = TvMinimal;
-var TvIcon = Tv;
-var TvMinimal2 = TvMinimal;
-var TvMinimalIcon = TvMinimal;
-var TvMinimalPlay2 = TvMinimalPlay;
-var TvMinimalPlayIcon = TvMinimalPlay;
-var Twitch2 = Twitch;
-var TwitchIcon = Twitch;
-var Twitter2 = Twitter;
-var TwitterIcon = Twitter;
-var Type2 = Type;
-var TypeIcon = Type;
-var TypeOutline2 = TypeOutline;
-var TypeOutlineIcon = TypeOutline;
-var Umbrella2 = Umbrella;
-var UmbrellaIcon = Umbrella;
-var UmbrellaOff2 = UmbrellaOff;
-var UmbrellaOffIcon = UmbrellaOff;
-var Underline2 = Underline;
-var UnderlineIcon = Underline;
-var Undo3 = Undo;
-var Undo22 = Undo2;
-var Undo2Icon = Undo2;
-var UndoDot2 = UndoDot;
-var UndoDotIcon = UndoDot;
-var UndoIcon = Undo;
-var UnfoldHorizontal2 = UnfoldHorizontal;
-var UnfoldHorizontalIcon = UnfoldHorizontal;
-var UnfoldVertical2 = UnfoldVertical;
-var UnfoldVerticalIcon = UnfoldVertical;
-var Ungroup2 = Ungroup;
-var UngroupIcon = Ungroup;
-var University2 = University;
-var UniversityIcon = University;
-var Unlink3 = Unlink;
-var Unlink22 = Unlink2;
-var Unlink2Icon = Unlink2;
-var UnlinkIcon = Unlink;
-var Unlock = LockOpen;
-var UnlockIcon = LockOpen;
-var UnlockKeyhole = LockKeyholeOpen;
-var UnlockKeyholeIcon = LockKeyholeOpen;
-var Unplug2 = Unplug;
-var UnplugIcon = Unplug;
-var Upload2 = Upload;
-var UploadCloud = CloudUpload;
-var UploadCloudIcon = CloudUpload;
-var UploadIcon = Upload;
-var Usb2 = Usb;
-var UsbIcon = Usb;
-var User2 = User;
-var User22 = UserRound;
-var User2Icon = UserRound;
-var UserCheck2 = UserCheck;
-var UserCheck22 = UserRoundCheck;
-var UserCheck2Icon = UserRoundCheck;
-var UserCheckIcon = UserCheck;
-var UserCircle = CircleUser;
-var UserCircle2 = CircleUserRound;
-var UserCircle2Icon = CircleUserRound;
-var UserCircleIcon = CircleUser;
-var UserCog2 = UserCog;
-var UserCog22 = UserRoundCog;
-var UserCog2Icon = UserRoundCog;
-var UserCogIcon = UserCog;
-var UserIcon = User;
-var UserKey2 = UserKey;
-var UserKeyIcon = UserKey;
-var UserLock2 = UserLock;
-var UserLockIcon = UserLock;
-var UserMinus2 = UserMinus;
-var UserMinus22 = UserRoundMinus;
-var UserMinus2Icon = UserRoundMinus;
-var UserMinusIcon = UserMinus;
-var UserPen2 = UserPen;
-var UserPenIcon = UserPen;
-var UserPlus2 = UserPlus;
-var UserPlus22 = UserRoundPlus;
-var UserPlus2Icon = UserRoundPlus;
-var UserPlusIcon = UserPlus;
-var UserRound2 = UserRound;
-var UserRoundCheck2 = UserRoundCheck;
-var UserRoundCheckIcon = UserRoundCheck;
-var UserRoundCog2 = UserRoundCog;
-var UserRoundCogIcon = UserRoundCog;
-var UserRoundIcon = UserRound;
-var UserRoundKey2 = UserRoundKey;
-var UserRoundKeyIcon = UserRoundKey;
-var UserRoundMinus2 = UserRoundMinus;
-var UserRoundMinusIcon = UserRoundMinus;
-var UserRoundPen2 = UserRoundPen;
-var UserRoundPenIcon = UserRoundPen;
-var UserRoundPlus2 = UserRoundPlus;
-var UserRoundPlusIcon = UserRoundPlus;
-var UserRoundSearch2 = UserRoundSearch;
-var UserRoundSearchIcon = UserRoundSearch;
-var UserRoundX2 = UserRoundX;
-var UserRoundXIcon = UserRoundX;
-var Users2 = Users;
-var Users22 = UsersRound;
-var Users2Icon = UsersRound;
-var UserSearch2 = UserSearch;
-var UserSearchIcon = UserSearch;
-var UsersIcon = Users;
-var UserSquare = SquareUser;
-var UserSquare2 = SquareUserRound;
-var UserSquare2Icon = SquareUserRound;
-var UserSquareIcon = SquareUser;
-var UsersRound2 = UsersRound;
-var UsersRoundIcon = UsersRound;
-var UserStar2 = UserStar;
-var UserStarIcon = UserStar;
-var UserX2 = UserX;
-var UserX22 = UserRoundX;
-var UserX2Icon = UserRoundX;
-var UserXIcon = UserX;
-var Utensils2 = Utensils;
-var UtensilsCrossed2 = UtensilsCrossed;
-var UtensilsCrossedIcon = UtensilsCrossed;
-var UtensilsIcon = Utensils;
-var UtilityPole2 = UtilityPole;
-var UtilityPoleIcon = UtilityPole;
-var Van2 = Van;
-var VanIcon = Van;
-var Variable2 = Variable;
-var VariableIcon = Variable;
-var Vault2 = Vault;
-var VaultIcon = Vault;
-var VectorSquare2 = VectorSquare;
-var VectorSquareIcon = VectorSquare;
-var Vegan2 = Vegan;
-var VeganIcon = Vegan;
-var VenetianMask2 = VenetianMask;
-var VenetianMaskIcon = VenetianMask;
-var Venus2 = Venus;
-var VenusAndMars2 = VenusAndMars;
-var VenusAndMarsIcon = VenusAndMars;
-var VenusIcon = Venus;
-var Verified = BadgeCheck;
-var VerifiedIcon = BadgeCheck;
-var Vibrate2 = Vibrate;
-var VibrateIcon = Vibrate;
-var VibrateOff2 = VibrateOff;
-var VibrateOffIcon = VibrateOff;
-var Video2 = Video;
-var VideoIcon = Video;
-var VideoOff2 = VideoOff;
-var VideoOffIcon = VideoOff;
-var Videotape2 = Videotape;
-var VideotapeIcon = Videotape;
-var View2 = View;
-var ViewIcon = View;
-var Voicemail2 = Voicemail;
-var VoicemailIcon = Voicemail;
-var Volleyball2 = Volleyball;
-var VolleyballIcon = Volleyball;
-var Volume3 = Volume;
-var Volume12 = Volume1;
-var Volume1Icon = Volume1;
-var Volume22 = Volume2;
-var Volume2Icon = Volume2;
-var VolumeIcon = Volume;
-var VolumeOff2 = VolumeOff;
-var VolumeOffIcon = VolumeOff;
-var VolumeX2 = VolumeX;
-var VolumeXIcon = VolumeX;
-var Vote2 = Vote;
-var VoteIcon = Vote;
-var Wallet2 = Wallet;
-var Wallet22 = WalletMinimal;
-var Wallet2Icon = WalletMinimal;
-var WalletCards2 = WalletCards;
-var WalletCardsIcon = WalletCards;
-var WalletIcon = Wallet;
-var WalletMinimal2 = WalletMinimal;
-var WalletMinimalIcon = WalletMinimal;
-var Wallpaper2 = Wallpaper;
-var WallpaperIcon = Wallpaper;
-var Wand2 = Wand;
-var Wand22 = WandSparkles;
-var Wand2Icon = WandSparkles;
-var WandIcon = Wand;
-var WandSparkles2 = WandSparkles;
-var WandSparklesIcon = WandSparkles;
-var Warehouse2 = Warehouse;
-var WarehouseIcon = Warehouse;
-var WashingMachine2 = WashingMachine;
-var WashingMachineIcon = WashingMachine;
-var Watch2 = Watch;
-var WatchIcon = Watch;
-var Waves2 = Waves;
-var WavesArrowDown2 = WavesArrowDown;
-var WavesArrowDownIcon = WavesArrowDown;
-var WavesArrowUp2 = WavesArrowUp;
-var WavesArrowUpIcon = WavesArrowUp;
-var WavesIcon = Waves;
-var WavesLadder2 = WavesLadder;
-var WavesLadderIcon = WavesLadder;
-var Waypoints2 = Waypoints;
-var WaypointsIcon = Waypoints;
-var Webcam2 = Webcam;
-var WebcamIcon = Webcam;
-var Webhook2 = Webhook;
-var WebhookIcon = Webhook;
-var WebhookOff2 = WebhookOff;
-var WebhookOffIcon = WebhookOff;
-var Weight2 = Weight;
-var WeightIcon = Weight;
-var WeightTilde2 = WeightTilde;
-var WeightTildeIcon = WeightTilde;
-var Wheat2 = Wheat;
-var WheatIcon = Wheat;
-var WheatOff2 = WheatOff;
-var WheatOffIcon = WheatOff;
-var WholeWord2 = WholeWord;
-var WholeWordIcon = WholeWord;
-var Wifi2 = Wifi;
-var WifiCog2 = WifiCog;
-var WifiCogIcon = WifiCog;
-var WifiHigh2 = WifiHigh;
-var WifiHighIcon = WifiHigh;
-var WifiIcon = Wifi;
-var WifiLow2 = WifiLow;
-var WifiLowIcon = WifiLow;
-var WifiOff2 = WifiOff;
-var WifiOffIcon = WifiOff;
-var WifiPen2 = WifiPen;
-var WifiPenIcon = WifiPen;
-var WifiSync2 = WifiSync;
-var WifiSyncIcon = WifiSync;
-var WifiZero2 = WifiZero;
-var WifiZeroIcon = WifiZero;
-var Wind2 = Wind;
-var WindArrowDown2 = WindArrowDown;
-var WindArrowDownIcon = WindArrowDown;
-var WindIcon = Wind;
-var Wine2 = Wine;
-var WineIcon = Wine;
-var WineOff2 = WineOff;
-var WineOffIcon = WineOff;
-var Workflow2 = Workflow;
-var WorkflowIcon = Workflow;
-var Worm2 = Worm;
-var WormIcon = Worm;
-var WrapText = TextWrap;
-var WrapTextIcon = TextWrap;
-var Wrench2 = Wrench;
-var WrenchIcon = Wrench;
-var X2 = X;
-var XCircle = CircleX;
-var XCircleIcon = CircleX;
-var XIcon = X;
-var XLineTop2 = XLineTop;
-var XLineTopIcon = XLineTop;
-var XOctagon = OctagonX;
-var XOctagonIcon = OctagonX;
-var XSquare = SquareX;
-var XSquareIcon = SquareX;
-var Youtube2 = Youtube;
-var YoutubeIcon = Youtube;
-var Zap2 = Zap;
-var ZapIcon = Zap;
-var ZapOff2 = ZapOff;
-var ZapOffIcon = ZapOff;
-var ZodiacAquarius2 = ZodiacAquarius;
-var ZodiacAquariusIcon = ZodiacAquarius;
-var ZodiacAries2 = ZodiacAries;
-var ZodiacAriesIcon = ZodiacAries;
-var ZodiacCancer2 = ZodiacCancer;
-var ZodiacCancerIcon = ZodiacCancer;
-var ZodiacCapricorn2 = ZodiacCapricorn;
-var ZodiacCapricornIcon = ZodiacCapricorn;
-var ZodiacGemini2 = ZodiacGemini;
-var ZodiacGeminiIcon = ZodiacGemini;
-var ZodiacLeo2 = ZodiacLeo;
-var ZodiacLeoIcon = ZodiacLeo;
-var ZodiacLibra2 = ZodiacLibra;
-var ZodiacLibraIcon = ZodiacLibra;
-var ZodiacOphiuchus2 = ZodiacOphiuchus;
-var ZodiacOphiuchusIcon = ZodiacOphiuchus;
-var ZodiacPisces2 = ZodiacPisces;
-var ZodiacPiscesIcon = ZodiacPisces;
-var ZodiacSagittarius2 = ZodiacSagittarius;
-var ZodiacSagittariusIcon = ZodiacSagittarius;
-var ZodiacScorpio2 = ZodiacScorpio;
-var ZodiacScorpioIcon = ZodiacScorpio;
-var ZodiacTaurus2 = ZodiacTaurus;
-var ZodiacTaurusIcon = ZodiacTaurus;
-var ZodiacVirgo2 = ZodiacVirgo;
-var ZodiacVirgoIcon = ZodiacVirgo;
-var ZoomIn2 = ZoomIn;
-var ZoomInIcon = ZoomIn;
-var ZoomOut2 = ZoomOut;
-var ZoomOutIcon = ZoomOut;
+var lucideReactDefault = __default0;
 export {
-  AArrowDown2 as AArrowDown,
-  AArrowDownIcon,
-  AArrowUp2 as AArrowUp,
-  AArrowUpIcon,
-  ALargeSmall2 as ALargeSmall,
-  ALargeSmallIcon,
-  Accessibility2 as Accessibility,
-  AccessibilityIcon,
-  Activity2 as Activity,
-  ActivityIcon,
-  ActivitySquare,
-  ActivitySquareIcon,
-  AirVent2 as AirVent,
-  AirVentIcon,
-  Airplay2 as Airplay,
-  AirplayIcon,
-  AlarmCheck,
-  AlarmCheckIcon,
-  AlarmClock2 as AlarmClock,
-  AlarmClockCheck2 as AlarmClockCheck,
-  AlarmClockCheckIcon,
-  AlarmClockIcon,
-  AlarmClockMinus2 as AlarmClockMinus,
-  AlarmClockMinusIcon,
-  AlarmClockOff2 as AlarmClockOff,
-  AlarmClockOffIcon,
-  AlarmClockPlus2 as AlarmClockPlus,
-  AlarmClockPlusIcon,
-  AlarmMinus,
-  AlarmMinusIcon,
-  AlarmPlus,
-  AlarmPlusIcon,
-  AlarmSmoke2 as AlarmSmoke,
-  AlarmSmokeIcon,
-  Album2 as Album,
-  AlbumIcon,
-  AlertCircle,
-  AlertCircleIcon,
-  AlertOctagon,
-  AlertOctagonIcon,
-  AlertTriangle,
-  AlertTriangleIcon,
-  AlignCenter,
-  AlignCenterHorizontal2 as AlignCenterHorizontal,
-  AlignCenterHorizontalIcon,
-  AlignCenterIcon,
-  AlignCenterVertical2 as AlignCenterVertical,
-  AlignCenterVerticalIcon,
-  AlignEndHorizontal2 as AlignEndHorizontal,
-  AlignEndHorizontalIcon,
-  AlignEndVertical2 as AlignEndVertical,
-  AlignEndVerticalIcon,
-  AlignHorizontalDistributeCenter2 as AlignHorizontalDistributeCenter,
-  AlignHorizontalDistributeCenterIcon,
-  AlignHorizontalDistributeEnd2 as AlignHorizontalDistributeEnd,
-  AlignHorizontalDistributeEndIcon,
-  AlignHorizontalDistributeStart2 as AlignHorizontalDistributeStart,
-  AlignHorizontalDistributeStartIcon,
-  AlignHorizontalJustifyCenter2 as AlignHorizontalJustifyCenter,
-  AlignHorizontalJustifyCenterIcon,
-  AlignHorizontalJustifyEnd2 as AlignHorizontalJustifyEnd,
-  AlignHorizontalJustifyEndIcon,
-  AlignHorizontalJustifyStart2 as AlignHorizontalJustifyStart,
-  AlignHorizontalJustifyStartIcon,
-  AlignHorizontalSpaceAround2 as AlignHorizontalSpaceAround,
-  AlignHorizontalSpaceAroundIcon,
-  AlignHorizontalSpaceBetween2 as AlignHorizontalSpaceBetween,
-  AlignHorizontalSpaceBetweenIcon,
-  AlignJustify,
-  AlignJustifyIcon,
-  AlignLeft,
-  AlignLeftIcon,
-  AlignRight,
-  AlignRightIcon,
-  AlignStartHorizontal2 as AlignStartHorizontal,
-  AlignStartHorizontalIcon,
-  AlignStartVertical2 as AlignStartVertical,
-  AlignStartVerticalIcon,
-  AlignVerticalDistributeCenter2 as AlignVerticalDistributeCenter,
-  AlignVerticalDistributeCenterIcon,
-  AlignVerticalDistributeEnd2 as AlignVerticalDistributeEnd,
-  AlignVerticalDistributeEndIcon,
-  AlignVerticalDistributeStart2 as AlignVerticalDistributeStart,
-  AlignVerticalDistributeStartIcon,
-  AlignVerticalJustifyCenter2 as AlignVerticalJustifyCenter,
-  AlignVerticalJustifyCenterIcon,
-  AlignVerticalJustifyEnd2 as AlignVerticalJustifyEnd,
-  AlignVerticalJustifyEndIcon,
-  AlignVerticalJustifyStart2 as AlignVerticalJustifyStart,
-  AlignVerticalJustifyStartIcon,
-  AlignVerticalSpaceAround2 as AlignVerticalSpaceAround,
-  AlignVerticalSpaceAroundIcon,
-  AlignVerticalSpaceBetween2 as AlignVerticalSpaceBetween,
-  AlignVerticalSpaceBetweenIcon,
-  Ambulance2 as Ambulance,
-  AmbulanceIcon,
-  Ampersand2 as Ampersand,
-  AmpersandIcon,
-  Ampersands2 as Ampersands,
-  AmpersandsIcon,
-  Amphora2 as Amphora,
-  AmphoraIcon,
-  Anchor2 as Anchor,
-  AnchorIcon,
-  Angry2 as Angry,
-  AngryIcon,
-  Annoyed2 as Annoyed,
-  AnnoyedIcon,
-  Antenna2 as Antenna,
-  AntennaIcon,
-  Anvil2 as Anvil,
-  AnvilIcon,
-  Aperture2 as Aperture,
-  ApertureIcon,
-  AppWindow2 as AppWindow,
-  AppWindowIcon,
-  AppWindowMac2 as AppWindowMac,
-  AppWindowMacIcon,
-  Apple2 as Apple,
-  AppleIcon,
-  Archive2 as Archive,
-  ArchiveIcon,
-  ArchiveRestore2 as ArchiveRestore,
-  ArchiveRestoreIcon,
-  ArchiveX2 as ArchiveX,
-  ArchiveXIcon,
-  AreaChart,
-  AreaChartIcon,
-  Armchair2 as Armchair,
-  ArmchairIcon,
-  ArrowBigDown2 as ArrowBigDown,
-  ArrowBigDownDash2 as ArrowBigDownDash,
-  ArrowBigDownDashIcon,
-  ArrowBigDownIcon,
-  ArrowBigLeft2 as ArrowBigLeft,
-  ArrowBigLeftDash2 as ArrowBigLeftDash,
-  ArrowBigLeftDashIcon,
-  ArrowBigLeftIcon,
-  ArrowBigRight2 as ArrowBigRight,
-  ArrowBigRightDash2 as ArrowBigRightDash,
-  ArrowBigRightDashIcon,
-  ArrowBigRightIcon,
-  ArrowBigUp2 as ArrowBigUp,
-  ArrowBigUpDash2 as ArrowBigUpDash,
-  ArrowBigUpDashIcon,
-  ArrowBigUpIcon,
-  ArrowDown2 as ArrowDown,
-  ArrowDown012 as ArrowDown01,
-  ArrowDown01Icon,
-  ArrowDown102 as ArrowDown10,
-  ArrowDown10Icon,
-  ArrowDownAZ2 as ArrowDownAZ,
-  ArrowDownAZIcon,
-  ArrowDownAz,
-  ArrowDownAzIcon,
-  ArrowDownCircle,
-  ArrowDownCircleIcon,
-  ArrowDownFromLine2 as ArrowDownFromLine,
-  ArrowDownFromLineIcon,
-  ArrowDownIcon,
-  ArrowDownLeft2 as ArrowDownLeft,
-  ArrowDownLeftFromCircle,
-  ArrowDownLeftFromCircleIcon,
-  ArrowDownLeftFromSquare,
-  ArrowDownLeftFromSquareIcon,
-  ArrowDownLeftIcon,
-  ArrowDownLeftSquare,
-  ArrowDownLeftSquareIcon,
-  ArrowDownNarrowWide2 as ArrowDownNarrowWide,
-  ArrowDownNarrowWideIcon,
-  ArrowDownRight2 as ArrowDownRight,
-  ArrowDownRightFromCircle,
-  ArrowDownRightFromCircleIcon,
-  ArrowDownRightFromSquare,
-  ArrowDownRightFromSquareIcon,
-  ArrowDownRightIcon,
-  ArrowDownRightSquare,
-  ArrowDownRightSquareIcon,
-  ArrowDownSquare,
-  ArrowDownSquareIcon,
-  ArrowDownToDot2 as ArrowDownToDot,
-  ArrowDownToDotIcon,
-  ArrowDownToLine2 as ArrowDownToLine,
-  ArrowDownToLineIcon,
-  ArrowDownUp2 as ArrowDownUp,
-  ArrowDownUpIcon,
-  ArrowDownWideNarrow2 as ArrowDownWideNarrow,
-  ArrowDownWideNarrowIcon,
-  ArrowDownZA2 as ArrowDownZA,
-  ArrowDownZAIcon,
-  ArrowDownZa,
-  ArrowDownZaIcon,
-  ArrowLeft2 as ArrowLeft,
-  ArrowLeftCircle,
-  ArrowLeftCircleIcon,
-  ArrowLeftFromLine2 as ArrowLeftFromLine,
-  ArrowLeftFromLineIcon,
-  ArrowLeftIcon,
-  ArrowLeftRight2 as ArrowLeftRight,
-  ArrowLeftRightIcon,
-  ArrowLeftSquare,
-  ArrowLeftSquareIcon,
-  ArrowLeftToLine2 as ArrowLeftToLine,
-  ArrowLeftToLineIcon,
-  ArrowRight2 as ArrowRight,
-  ArrowRightCircle,
-  ArrowRightCircleIcon,
-  ArrowRightFromLine2 as ArrowRightFromLine,
-  ArrowRightFromLineIcon,
-  ArrowRightIcon,
-  ArrowRightLeft2 as ArrowRightLeft,
-  ArrowRightLeftIcon,
-  ArrowRightSquare,
-  ArrowRightSquareIcon,
-  ArrowRightToLine2 as ArrowRightToLine,
-  ArrowRightToLineIcon,
-  ArrowUp2 as ArrowUp,
-  ArrowUp012 as ArrowUp01,
-  ArrowUp01Icon,
-  ArrowUp102 as ArrowUp10,
-  ArrowUp10Icon,
-  ArrowUpAZ2 as ArrowUpAZ,
-  ArrowUpAZIcon,
-  ArrowUpAz,
-  ArrowUpAzIcon,
-  ArrowUpCircle,
-  ArrowUpCircleIcon,
-  ArrowUpDown2 as ArrowUpDown,
-  ArrowUpDownIcon,
-  ArrowUpFromDot2 as ArrowUpFromDot,
-  ArrowUpFromDotIcon,
-  ArrowUpFromLine2 as ArrowUpFromLine,
-  ArrowUpFromLineIcon,
-  ArrowUpIcon,
-  ArrowUpLeft2 as ArrowUpLeft,
-  ArrowUpLeftFromCircle,
-  ArrowUpLeftFromCircleIcon,
-  ArrowUpLeftFromSquare,
-  ArrowUpLeftFromSquareIcon,
-  ArrowUpLeftIcon,
-  ArrowUpLeftSquare,
-  ArrowUpLeftSquareIcon,
-  ArrowUpNarrowWide2 as ArrowUpNarrowWide,
-  ArrowUpNarrowWideIcon,
-  ArrowUpRight2 as ArrowUpRight,
-  ArrowUpRightFromCircle,
-  ArrowUpRightFromCircleIcon,
-  ArrowUpRightFromSquare,
-  ArrowUpRightFromSquareIcon,
-  ArrowUpRightIcon,
-  ArrowUpRightSquare,
-  ArrowUpRightSquareIcon,
-  ArrowUpSquare,
-  ArrowUpSquareIcon,
-  ArrowUpToLine2 as ArrowUpToLine,
-  ArrowUpToLineIcon,
-  ArrowUpWideNarrow2 as ArrowUpWideNarrow,
-  ArrowUpWideNarrowIcon,
-  ArrowUpZA2 as ArrowUpZA,
-  ArrowUpZAIcon,
-  ArrowUpZa,
-  ArrowUpZaIcon,
-  ArrowsUpFromLine2 as ArrowsUpFromLine,
-  ArrowsUpFromLineIcon,
-  Asterisk2 as Asterisk,
-  AsteriskIcon,
-  AsteriskSquare,
-  AsteriskSquareIcon,
-  AtSign2 as AtSign,
-  AtSignIcon,
-  Atom2 as Atom,
-  AtomIcon,
-  AudioLines2 as AudioLines,
-  AudioLinesIcon,
-  AudioWaveform2 as AudioWaveform,
-  AudioWaveformIcon,
-  Award2 as Award,
-  AwardIcon,
-  Axe2 as Axe,
-  AxeIcon,
-  Axis3D,
-  Axis3DIcon,
-  Axis3d2 as Axis3d,
-  Axis3dIcon,
-  Baby2 as Baby,
-  BabyIcon,
-  Backpack2 as Backpack,
-  BackpackIcon,
-  Badge2 as Badge,
-  BadgeAlert2 as BadgeAlert,
-  BadgeAlertIcon,
-  BadgeCent2 as BadgeCent,
-  BadgeCentIcon,
-  BadgeCheck2 as BadgeCheck,
-  BadgeCheckIcon,
-  BadgeDollarSign2 as BadgeDollarSign,
-  BadgeDollarSignIcon,
-  BadgeEuro2 as BadgeEuro,
-  BadgeEuroIcon,
-  BadgeHelp,
-  BadgeHelpIcon,
-  BadgeIcon,
-  BadgeIndianRupee2 as BadgeIndianRupee,
-  BadgeIndianRupeeIcon,
-  BadgeInfo2 as BadgeInfo,
-  BadgeInfoIcon,
-  BadgeJapaneseYen2 as BadgeJapaneseYen,
-  BadgeJapaneseYenIcon,
-  BadgeMinus2 as BadgeMinus,
-  BadgeMinusIcon,
-  BadgePercent2 as BadgePercent,
-  BadgePercentIcon,
-  BadgePlus2 as BadgePlus,
-  BadgePlusIcon,
-  BadgePoundSterling2 as BadgePoundSterling,
-  BadgePoundSterlingIcon,
-  BadgeQuestionMark2 as BadgeQuestionMark,
-  BadgeQuestionMarkIcon,
-  BadgeRussianRuble2 as BadgeRussianRuble,
-  BadgeRussianRubleIcon,
-  BadgeSwissFranc2 as BadgeSwissFranc,
-  BadgeSwissFrancIcon,
-  BadgeTurkishLira2 as BadgeTurkishLira,
-  BadgeTurkishLiraIcon,
-  BadgeX2 as BadgeX,
-  BadgeXIcon,
-  BaggageClaim2 as BaggageClaim,
-  BaggageClaimIcon,
-  Balloon2 as Balloon,
-  BalloonIcon,
-  Ban2 as Ban,
-  BanIcon,
-  Banana2 as Banana,
-  BananaIcon,
-  Bandage2 as Bandage,
-  BandageIcon,
-  Banknote2 as Banknote,
-  BanknoteArrowDown2 as BanknoteArrowDown,
-  BanknoteArrowDownIcon,
-  BanknoteArrowUp2 as BanknoteArrowUp,
-  BanknoteArrowUpIcon,
-  BanknoteIcon,
-  BanknoteX2 as BanknoteX,
-  BanknoteXIcon,
-  BarChart,
-  BarChart2,
-  BarChart2Icon,
-  BarChart3,
-  BarChart3Icon,
-  BarChart4,
-  BarChart4Icon,
-  BarChartBig,
-  BarChartBigIcon,
-  BarChartHorizontal,
-  BarChartHorizontalBig,
-  BarChartHorizontalBigIcon,
-  BarChartHorizontalIcon,
-  BarChartIcon,
-  Barcode2 as Barcode,
-  BarcodeIcon,
-  Barrel2 as Barrel,
-  BarrelIcon,
-  Baseline2 as Baseline,
-  BaselineIcon,
-  Bath2 as Bath,
-  BathIcon,
-  Battery2 as Battery,
-  BatteryCharging2 as BatteryCharging,
-  BatteryChargingIcon,
-  BatteryFull2 as BatteryFull,
-  BatteryFullIcon,
-  BatteryIcon,
-  BatteryLow2 as BatteryLow,
-  BatteryLowIcon,
-  BatteryMedium2 as BatteryMedium,
-  BatteryMediumIcon,
-  BatteryPlus2 as BatteryPlus,
-  BatteryPlusIcon,
-  BatteryWarning2 as BatteryWarning,
-  BatteryWarningIcon,
-  Beaker2 as Beaker,
-  BeakerIcon,
-  Bean2 as Bean,
-  BeanIcon,
-  BeanOff2 as BeanOff,
-  BeanOffIcon,
-  Bed2 as Bed,
-  BedDouble2 as BedDouble,
-  BedDoubleIcon,
-  BedIcon,
-  BedSingle2 as BedSingle,
-  BedSingleIcon,
-  Beef2 as Beef,
-  BeefIcon,
-  Beer2 as Beer,
-  BeerIcon,
-  BeerOff2 as BeerOff,
-  BeerOffIcon,
-  Bell2 as Bell,
-  BellDot2 as BellDot,
-  BellDotIcon,
-  BellElectric2 as BellElectric,
-  BellElectricIcon,
-  BellIcon,
-  BellMinus2 as BellMinus,
-  BellMinusIcon,
-  BellOff2 as BellOff,
-  BellOffIcon,
-  BellPlus2 as BellPlus,
-  BellPlusIcon,
-  BellRing2 as BellRing,
-  BellRingIcon,
-  BetweenHorizonalEnd,
-  BetweenHorizonalEndIcon,
-  BetweenHorizonalStart,
-  BetweenHorizonalStartIcon,
-  BetweenHorizontalEnd2 as BetweenHorizontalEnd,
-  BetweenHorizontalEndIcon,
-  BetweenHorizontalStart2 as BetweenHorizontalStart,
-  BetweenHorizontalStartIcon,
-  BetweenVerticalEnd2 as BetweenVerticalEnd,
-  BetweenVerticalEndIcon,
-  BetweenVerticalStart2 as BetweenVerticalStart,
-  BetweenVerticalStartIcon,
-  BicepsFlexed2 as BicepsFlexed,
-  BicepsFlexedIcon,
-  Bike2 as Bike,
-  BikeIcon,
-  Binary2 as Binary,
-  BinaryIcon,
-  Binoculars2 as Binoculars,
-  BinocularsIcon,
-  Biohazard2 as Biohazard,
-  BiohazardIcon,
-  Bird2 as Bird,
-  BirdIcon,
-  Birdhouse2 as Birdhouse,
-  BirdhouseIcon,
-  Bitcoin2 as Bitcoin,
-  BitcoinIcon,
-  Blend2 as Blend,
-  BlendIcon,
-  Blinds2 as Blinds,
-  BlindsIcon,
-  Blocks2 as Blocks,
-  BlocksIcon,
-  Bluetooth2 as Bluetooth,
-  BluetoothConnected2 as BluetoothConnected,
-  BluetoothConnectedIcon,
-  BluetoothIcon,
-  BluetoothOff2 as BluetoothOff,
-  BluetoothOffIcon,
-  BluetoothSearching2 as BluetoothSearching,
-  BluetoothSearchingIcon,
-  Bold2 as Bold,
-  BoldIcon,
-  Bolt2 as Bolt,
-  BoltIcon,
-  Bomb2 as Bomb,
-  BombIcon,
-  Bone2 as Bone,
-  BoneIcon,
-  Book2 as Book,
-  BookA2 as BookA,
-  BookAIcon,
-  BookAlert2 as BookAlert,
-  BookAlertIcon,
-  BookAudio2 as BookAudio,
-  BookAudioIcon,
-  BookCheck2 as BookCheck,
-  BookCheckIcon,
-  BookCopy2 as BookCopy,
-  BookCopyIcon,
-  BookDashed2 as BookDashed,
-  BookDashedIcon,
-  BookDown2 as BookDown,
-  BookDownIcon,
-  BookHeadphones2 as BookHeadphones,
-  BookHeadphonesIcon,
-  BookHeart2 as BookHeart,
-  BookHeartIcon,
-  BookIcon,
-  BookImage2 as BookImage,
-  BookImageIcon,
-  BookKey2 as BookKey,
-  BookKeyIcon,
-  BookLock2 as BookLock,
-  BookLockIcon,
-  BookMarked2 as BookMarked,
-  BookMarkedIcon,
-  BookMinus2 as BookMinus,
-  BookMinusIcon,
-  BookOpen2 as BookOpen,
-  BookOpenCheck2 as BookOpenCheck,
-  BookOpenCheckIcon,
-  BookOpenIcon,
-  BookOpenText2 as BookOpenText,
-  BookOpenTextIcon,
-  BookPlus2 as BookPlus,
-  BookPlusIcon,
-  BookSearch2 as BookSearch,
-  BookSearchIcon,
-  BookTemplate,
-  BookTemplateIcon,
-  BookText2 as BookText,
-  BookTextIcon,
-  BookType2 as BookType,
-  BookTypeIcon,
-  BookUp3 as BookUp,
-  BookUp22 as BookUp2,
-  BookUp2Icon,
-  BookUpIcon,
-  BookUser2 as BookUser,
-  BookUserIcon,
-  BookX2 as BookX,
-  BookXIcon,
-  Bookmark2 as Bookmark,
-  BookmarkCheck2 as BookmarkCheck,
-  BookmarkCheckIcon,
-  BookmarkIcon,
-  BookmarkMinus2 as BookmarkMinus,
-  BookmarkMinusIcon,
-  BookmarkPlus2 as BookmarkPlus,
-  BookmarkPlusIcon,
-  BookmarkX2 as BookmarkX,
-  BookmarkXIcon,
-  BoomBox2 as BoomBox,
-  BoomBoxIcon,
-  Bot2 as Bot,
-  BotIcon,
-  BotMessageSquare2 as BotMessageSquare,
-  BotMessageSquareIcon,
-  BotOff2 as BotOff,
-  BotOffIcon,
-  BottleWine2 as BottleWine,
-  BottleWineIcon,
-  BowArrow2 as BowArrow,
-  BowArrowIcon,
-  Box2 as Box,
-  BoxIcon,
-  BoxSelect,
-  BoxSelectIcon,
-  Boxes2 as Boxes,
-  BoxesIcon,
-  Braces2 as Braces,
-  BracesIcon,
-  Brackets2 as Brackets,
-  BracketsIcon,
-  Brain2 as Brain,
-  BrainCircuit2 as BrainCircuit,
-  BrainCircuitIcon,
-  BrainCog2 as BrainCog,
-  BrainCogIcon,
-  BrainIcon,
-  BrickWall2 as BrickWall,
-  BrickWallFire2 as BrickWallFire,
-  BrickWallFireIcon,
-  BrickWallIcon,
-  BrickWallShield2 as BrickWallShield,
-  BrickWallShieldIcon,
-  Briefcase2 as Briefcase,
-  BriefcaseBusiness2 as BriefcaseBusiness,
-  BriefcaseBusinessIcon,
-  BriefcaseConveyorBelt2 as BriefcaseConveyorBelt,
-  BriefcaseConveyorBeltIcon,
-  BriefcaseIcon,
-  BriefcaseMedical2 as BriefcaseMedical,
-  BriefcaseMedicalIcon,
-  BringToFront2 as BringToFront,
-  BringToFrontIcon,
-  Brush2 as Brush,
-  BrushCleaning2 as BrushCleaning,
-  BrushCleaningIcon,
-  BrushIcon,
-  Bubbles2 as Bubbles,
-  BubblesIcon,
-  Bug2 as Bug,
-  BugIcon,
-  BugOff2 as BugOff,
-  BugOffIcon,
-  BugPlay2 as BugPlay,
-  BugPlayIcon,
-  Building3 as Building,
-  Building22 as Building2,
-  Building2Icon,
-  BuildingIcon,
-  Bus2 as Bus,
-  BusFront2 as BusFront,
-  BusFrontIcon,
-  BusIcon,
-  Cable2 as Cable,
-  CableCar2 as CableCar,
-  CableCarIcon,
-  CableIcon,
-  Cake2 as Cake,
-  CakeIcon,
-  CakeSlice2 as CakeSlice,
-  CakeSliceIcon,
-  Calculator2 as Calculator,
-  CalculatorIcon,
-  Calendar2 as Calendar,
-  Calendar12 as Calendar1,
-  Calendar1Icon,
-  CalendarArrowDown2 as CalendarArrowDown,
-  CalendarArrowDownIcon,
-  CalendarArrowUp2 as CalendarArrowUp,
-  CalendarArrowUpIcon,
-  CalendarCheck3 as CalendarCheck,
-  CalendarCheck22 as CalendarCheck2,
-  CalendarCheck2Icon,
-  CalendarCheckIcon,
-  CalendarClock2 as CalendarClock,
-  CalendarClockIcon,
-  CalendarCog2 as CalendarCog,
-  CalendarCogIcon,
-  CalendarDays2 as CalendarDays,
-  CalendarDaysIcon,
-  CalendarFold2 as CalendarFold,
-  CalendarFoldIcon,
-  CalendarHeart2 as CalendarHeart,
-  CalendarHeartIcon,
-  CalendarIcon,
-  CalendarMinus3 as CalendarMinus,
-  CalendarMinus22 as CalendarMinus2,
-  CalendarMinus2Icon,
-  CalendarMinusIcon,
-  CalendarOff2 as CalendarOff,
-  CalendarOffIcon,
-  CalendarPlus3 as CalendarPlus,
-  CalendarPlus22 as CalendarPlus2,
-  CalendarPlus2Icon,
-  CalendarPlusIcon,
-  CalendarRange2 as CalendarRange,
-  CalendarRangeIcon,
-  CalendarSearch2 as CalendarSearch,
-  CalendarSearchIcon,
-  CalendarSync2 as CalendarSync,
-  CalendarSyncIcon,
-  CalendarX3 as CalendarX,
-  CalendarX22 as CalendarX2,
-  CalendarX2Icon,
-  CalendarXIcon,
-  Calendars2 as Calendars,
-  CalendarsIcon,
-  Camera2 as Camera,
-  CameraIcon,
-  CameraOff2 as CameraOff,
-  CameraOffIcon,
-  CandlestickChart,
-  CandlestickChartIcon,
-  Candy2 as Candy,
-  CandyCane2 as CandyCane,
-  CandyCaneIcon,
-  CandyIcon,
-  CandyOff2 as CandyOff,
-  CandyOffIcon,
-  Cannabis2 as Cannabis,
-  CannabisIcon,
-  CannabisOff2 as CannabisOff,
-  CannabisOffIcon,
-  Captions2 as Captions,
-  CaptionsIcon,
-  CaptionsOff2 as CaptionsOff,
-  CaptionsOffIcon,
-  Car2 as Car,
-  CarFront2 as CarFront,
-  CarFrontIcon,
-  CarIcon,
-  CarTaxiFront2 as CarTaxiFront,
-  CarTaxiFrontIcon,
-  Caravan2 as Caravan,
-  CaravanIcon,
-  CardSim2 as CardSim,
-  CardSimIcon,
-  Carrot2 as Carrot,
-  CarrotIcon,
-  CaseLower2 as CaseLower,
-  CaseLowerIcon,
-  CaseSensitive2 as CaseSensitive,
-  CaseSensitiveIcon,
-  CaseUpper2 as CaseUpper,
-  CaseUpperIcon,
-  CassetteTape2 as CassetteTape,
-  CassetteTapeIcon,
-  Cast2 as Cast,
-  CastIcon,
-  Castle2 as Castle,
-  CastleIcon,
-  Cat2 as Cat,
-  CatIcon,
-  Cctv2 as Cctv,
-  CctvIcon,
-  ChartArea2 as ChartArea,
-  ChartAreaIcon,
-  ChartBar2 as ChartBar,
-  ChartBarBig2 as ChartBarBig,
-  ChartBarBigIcon,
-  ChartBarDecreasing2 as ChartBarDecreasing,
-  ChartBarDecreasingIcon,
-  ChartBarIcon,
-  ChartBarIncreasing2 as ChartBarIncreasing,
-  ChartBarIncreasingIcon,
-  ChartBarStacked2 as ChartBarStacked,
-  ChartBarStackedIcon,
-  ChartCandlestick2 as ChartCandlestick,
-  ChartCandlestickIcon,
-  ChartColumn2 as ChartColumn,
-  ChartColumnBig2 as ChartColumnBig,
-  ChartColumnBigIcon,
-  ChartColumnDecreasing2 as ChartColumnDecreasing,
-  ChartColumnDecreasingIcon,
-  ChartColumnIcon,
-  ChartColumnIncreasing2 as ChartColumnIncreasing,
-  ChartColumnIncreasingIcon,
-  ChartColumnStacked2 as ChartColumnStacked,
-  ChartColumnStackedIcon,
-  ChartGantt2 as ChartGantt,
-  ChartGanttIcon,
-  ChartLine2 as ChartLine,
-  ChartLineIcon,
-  ChartNetwork2 as ChartNetwork,
-  ChartNetworkIcon,
-  ChartNoAxesColumn2 as ChartNoAxesColumn,
-  ChartNoAxesColumnDecreasing2 as ChartNoAxesColumnDecreasing,
-  ChartNoAxesColumnDecreasingIcon,
-  ChartNoAxesColumnIcon,
-  ChartNoAxesColumnIncreasing2 as ChartNoAxesColumnIncreasing,
-  ChartNoAxesColumnIncreasingIcon,
-  ChartNoAxesCombined2 as ChartNoAxesCombined,
-  ChartNoAxesCombinedIcon,
-  ChartNoAxesGantt2 as ChartNoAxesGantt,
-  ChartNoAxesGanttIcon,
-  ChartPie2 as ChartPie,
-  ChartPieIcon,
-  ChartScatter2 as ChartScatter,
-  ChartScatterIcon,
-  ChartSpline2 as ChartSpline,
-  ChartSplineIcon,
-  Check2 as Check,
-  CheckCheck2 as CheckCheck,
-  CheckCheckIcon,
-  CheckCircle,
-  CheckCircle2,
-  CheckCircle2Icon,
-  CheckCircleIcon,
-  CheckIcon,
-  CheckLine2 as CheckLine,
-  CheckLineIcon,
-  CheckSquare,
-  CheckSquare2,
-  CheckSquare2Icon,
-  CheckSquareIcon,
-  ChefHat2 as ChefHat,
-  ChefHatIcon,
-  Cherry2 as Cherry,
-  CherryIcon,
-  ChessBishop2 as ChessBishop,
-  ChessBishopIcon,
-  ChessKing2 as ChessKing,
-  ChessKingIcon,
-  ChessKnight2 as ChessKnight,
-  ChessKnightIcon,
-  ChessPawn2 as ChessPawn,
-  ChessPawnIcon,
-  ChessQueen2 as ChessQueen,
-  ChessQueenIcon,
-  ChessRook2 as ChessRook,
-  ChessRookIcon,
-  ChevronDown2 as ChevronDown,
-  ChevronDownCircle,
-  ChevronDownCircleIcon,
-  ChevronDownIcon,
-  ChevronDownSquare,
-  ChevronDownSquareIcon,
-  ChevronFirst2 as ChevronFirst,
-  ChevronFirstIcon,
-  ChevronLast2 as ChevronLast,
-  ChevronLastIcon,
-  ChevronLeft2 as ChevronLeft,
-  ChevronLeftCircle,
-  ChevronLeftCircleIcon,
-  ChevronLeftIcon,
-  ChevronLeftSquare,
-  ChevronLeftSquareIcon,
-  ChevronRight2 as ChevronRight,
-  ChevronRightCircle,
-  ChevronRightCircleIcon,
-  ChevronRightIcon,
-  ChevronRightSquare,
-  ChevronRightSquareIcon,
-  ChevronUp2 as ChevronUp,
-  ChevronUpCircle,
-  ChevronUpCircleIcon,
-  ChevronUpIcon,
-  ChevronUpSquare,
-  ChevronUpSquareIcon,
-  ChevronsDown2 as ChevronsDown,
-  ChevronsDownIcon,
-  ChevronsDownUp2 as ChevronsDownUp,
-  ChevronsDownUpIcon,
-  ChevronsLeft2 as ChevronsLeft,
-  ChevronsLeftIcon,
-  ChevronsLeftRight2 as ChevronsLeftRight,
-  ChevronsLeftRightEllipsis2 as ChevronsLeftRightEllipsis,
-  ChevronsLeftRightEllipsisIcon,
-  ChevronsLeftRightIcon,
-  ChevronsRight2 as ChevronsRight,
-  ChevronsRightIcon,
-  ChevronsRightLeft2 as ChevronsRightLeft,
-  ChevronsRightLeftIcon,
-  ChevronsUp2 as ChevronsUp,
-  ChevronsUpDown2 as ChevronsUpDown,
-  ChevronsUpDownIcon,
-  ChevronsUpIcon,
-  Chrome,
-  ChromeIcon,
-  Chromium2 as Chromium,
-  ChromiumIcon,
-  Church2 as Church,
-  ChurchIcon,
-  Cigarette2 as Cigarette,
-  CigaretteIcon,
-  CigaretteOff2 as CigaretteOff,
-  CigaretteOffIcon,
-  Circle2 as Circle,
-  CircleAlert2 as CircleAlert,
-  CircleAlertIcon,
-  CircleArrowDown2 as CircleArrowDown,
-  CircleArrowDownIcon,
-  CircleArrowLeft2 as CircleArrowLeft,
-  CircleArrowLeftIcon,
-  CircleArrowOutDownLeft2 as CircleArrowOutDownLeft,
-  CircleArrowOutDownLeftIcon,
-  CircleArrowOutDownRight2 as CircleArrowOutDownRight,
-  CircleArrowOutDownRightIcon,
-  CircleArrowOutUpLeft2 as CircleArrowOutUpLeft,
-  CircleArrowOutUpLeftIcon,
-  CircleArrowOutUpRight2 as CircleArrowOutUpRight,
-  CircleArrowOutUpRightIcon,
-  CircleArrowRight2 as CircleArrowRight,
-  CircleArrowRightIcon,
-  CircleArrowUp2 as CircleArrowUp,
-  CircleArrowUpIcon,
-  CircleCheck2 as CircleCheck,
-  CircleCheckBig2 as CircleCheckBig,
-  CircleCheckBigIcon,
-  CircleCheckIcon,
-  CircleChevronDown2 as CircleChevronDown,
-  CircleChevronDownIcon,
-  CircleChevronLeft2 as CircleChevronLeft,
-  CircleChevronLeftIcon,
-  CircleChevronRight2 as CircleChevronRight,
-  CircleChevronRightIcon,
-  CircleChevronUp2 as CircleChevronUp,
-  CircleChevronUpIcon,
-  CircleDashed2 as CircleDashed,
-  CircleDashedIcon,
-  CircleDivide2 as CircleDivide,
-  CircleDivideIcon,
-  CircleDollarSign2 as CircleDollarSign,
-  CircleDollarSignIcon,
-  CircleDot2 as CircleDot,
-  CircleDotDashed2 as CircleDotDashed,
-  CircleDotDashedIcon,
-  CircleDotIcon,
-  CircleEllipsis2 as CircleEllipsis,
-  CircleEllipsisIcon,
-  CircleEqual2 as CircleEqual,
-  CircleEqualIcon,
-  CircleFadingArrowUp2 as CircleFadingArrowUp,
-  CircleFadingArrowUpIcon,
-  CircleFadingPlus2 as CircleFadingPlus,
-  CircleFadingPlusIcon,
-  CircleGauge2 as CircleGauge,
-  CircleGaugeIcon,
-  CircleHelp,
-  CircleHelpIcon,
-  CircleIcon,
-  CircleMinus2 as CircleMinus,
-  CircleMinusIcon,
-  CircleOff2 as CircleOff,
-  CircleOffIcon,
-  CircleParking2 as CircleParking,
-  CircleParkingIcon,
-  CircleParkingOff2 as CircleParkingOff,
-  CircleParkingOffIcon,
-  CirclePause2 as CirclePause,
-  CirclePauseIcon,
-  CirclePercent2 as CirclePercent,
-  CirclePercentIcon,
-  CirclePile2 as CirclePile,
-  CirclePileIcon,
-  CirclePlay2 as CirclePlay,
-  CirclePlayIcon,
-  CirclePlus2 as CirclePlus,
-  CirclePlusIcon,
-  CirclePoundSterling2 as CirclePoundSterling,
-  CirclePoundSterlingIcon,
-  CirclePower2 as CirclePower,
-  CirclePowerIcon,
-  CircleQuestionMark2 as CircleQuestionMark,
-  CircleQuestionMarkIcon,
-  CircleSlash3 as CircleSlash,
-  CircleSlash22 as CircleSlash2,
-  CircleSlash2Icon,
-  CircleSlashIcon,
-  CircleSlashed,
-  CircleSlashedIcon,
-  CircleSmall2 as CircleSmall,
-  CircleSmallIcon,
-  CircleStar2 as CircleStar,
-  CircleStarIcon,
-  CircleStop2 as CircleStop,
-  CircleStopIcon,
-  CircleUser2 as CircleUser,
-  CircleUserIcon,
-  CircleUserRound2 as CircleUserRound,
-  CircleUserRoundIcon,
-  CircleX2 as CircleX,
-  CircleXIcon,
-  CircuitBoard2 as CircuitBoard,
-  CircuitBoardIcon,
-  Citrus2 as Citrus,
-  CitrusIcon,
-  Clapperboard2 as Clapperboard,
-  ClapperboardIcon,
-  Clipboard2 as Clipboard,
-  ClipboardCheck2 as ClipboardCheck,
-  ClipboardCheckIcon,
-  ClipboardClock2 as ClipboardClock,
-  ClipboardClockIcon,
-  ClipboardCopy2 as ClipboardCopy,
-  ClipboardCopyIcon,
-  ClipboardEdit,
-  ClipboardEditIcon,
-  ClipboardIcon,
-  ClipboardList2 as ClipboardList,
-  ClipboardListIcon,
-  ClipboardMinus2 as ClipboardMinus,
-  ClipboardMinusIcon,
-  ClipboardPaste2 as ClipboardPaste,
-  ClipboardPasteIcon,
-  ClipboardPen2 as ClipboardPen,
-  ClipboardPenIcon,
-  ClipboardPenLine2 as ClipboardPenLine,
-  ClipboardPenLineIcon,
-  ClipboardPlus2 as ClipboardPlus,
-  ClipboardPlusIcon,
-  ClipboardSignature,
-  ClipboardSignatureIcon,
-  ClipboardType2 as ClipboardType,
-  ClipboardTypeIcon,
-  ClipboardX2 as ClipboardX,
-  ClipboardXIcon,
-  Clock13 as Clock,
-  Clock14 as Clock1,
-  Clock102 as Clock10,
-  Clock10Icon,
-  Clock112 as Clock11,
-  Clock11Icon,
-  Clock122 as Clock12,
-  Clock12Icon,
-  Clock1Icon,
-  Clock22 as Clock2,
-  Clock2Icon,
-  Clock32 as Clock3,
-  Clock3Icon,
-  Clock42 as Clock4,
-  Clock4Icon,
-  Clock52 as Clock5,
-  Clock5Icon,
-  Clock62 as Clock6,
-  Clock6Icon,
-  Clock72 as Clock7,
-  Clock7Icon,
-  Clock82 as Clock8,
-  Clock8Icon,
-  Clock92 as Clock9,
-  Clock9Icon,
-  ClockAlert2 as ClockAlert,
-  ClockAlertIcon,
-  ClockArrowDown2 as ClockArrowDown,
-  ClockArrowDownIcon,
-  ClockArrowUp2 as ClockArrowUp,
-  ClockArrowUpIcon,
-  ClockCheck2 as ClockCheck,
-  ClockCheckIcon,
-  ClockFading2 as ClockFading,
-  ClockFadingIcon,
-  ClockIcon,
-  ClockPlus2 as ClockPlus,
-  ClockPlusIcon,
-  ClosedCaption2 as ClosedCaption,
-  ClosedCaptionIcon,
-  Cloud2 as Cloud,
-  CloudAlert2 as CloudAlert,
-  CloudAlertIcon,
-  CloudBackup2 as CloudBackup,
-  CloudBackupIcon,
-  CloudCheck2 as CloudCheck,
-  CloudCheckIcon,
-  CloudCog2 as CloudCog,
-  CloudCogIcon,
-  CloudDownload2 as CloudDownload,
-  CloudDownloadIcon,
-  CloudDrizzle2 as CloudDrizzle,
-  CloudDrizzleIcon,
-  CloudFog2 as CloudFog,
-  CloudFogIcon,
-  CloudHail2 as CloudHail,
-  CloudHailIcon,
-  CloudIcon,
-  CloudLightning2 as CloudLightning,
-  CloudLightningIcon,
-  CloudMoon2 as CloudMoon,
-  CloudMoonIcon,
-  CloudMoonRain2 as CloudMoonRain,
-  CloudMoonRainIcon,
-  CloudOff2 as CloudOff,
-  CloudOffIcon,
-  CloudRain2 as CloudRain,
-  CloudRainIcon,
-  CloudRainWind2 as CloudRainWind,
-  CloudRainWindIcon,
-  CloudSnow2 as CloudSnow,
-  CloudSnowIcon,
-  CloudSun2 as CloudSun,
-  CloudSunIcon,
-  CloudSunRain2 as CloudSunRain,
-  CloudSunRainIcon,
-  CloudSync2 as CloudSync,
-  CloudSyncIcon,
-  CloudUpload2 as CloudUpload,
-  CloudUploadIcon,
-  Cloudy2 as Cloudy,
-  CloudyIcon,
-  Clover2 as Clover,
-  CloverIcon,
-  Club2 as Club,
-  ClubIcon,
-  Code2 as Code,
-  Code22 as Code2,
-  Code2Icon,
-  CodeIcon,
-  CodeSquare,
-  CodeSquareIcon,
-  CodeXml2 as CodeXml,
-  CodeXmlIcon,
-  Codepen2 as Codepen,
-  CodepenIcon,
-  Codesandbox2 as Codesandbox,
-  CodesandboxIcon,
-  Coffee2 as Coffee,
-  CoffeeIcon,
-  Cog2 as Cog,
-  CogIcon,
-  Coins2 as Coins,
-  CoinsIcon,
-  Columns,
-  Columns22 as Columns2,
-  Columns2Icon,
-  Columns32 as Columns3,
-  Columns3Cog2 as Columns3Cog,
-  Columns3CogIcon,
-  Columns3Icon,
-  Columns42 as Columns4,
-  Columns4Icon,
-  ColumnsIcon,
-  ColumnsSettings,
-  ColumnsSettingsIcon,
-  Combine2 as Combine,
-  CombineIcon,
-  Command2 as Command,
-  CommandIcon,
-  Compass2 as Compass,
-  CompassIcon,
-  Component2 as Component,
-  ComponentIcon,
-  Computer2 as Computer,
-  ComputerIcon,
-  ConciergeBell2 as ConciergeBell,
-  ConciergeBellIcon,
-  Cone2 as Cone,
-  ConeIcon,
-  Construction2 as Construction,
-  ConstructionIcon,
-  Contact2 as Contact,
-  Contact22 as Contact2,
-  Contact2Icon,
-  ContactIcon,
-  ContactRound2 as ContactRound,
-  ContactRoundIcon,
-  Container2 as Container,
-  ContainerIcon,
-  Contrast2 as Contrast,
-  ContrastIcon,
-  Cookie2 as Cookie,
-  CookieIcon,
-  CookingPot2 as CookingPot,
-  CookingPotIcon,
-  Copy2 as Copy,
-  CopyCheck2 as CopyCheck,
-  CopyCheckIcon,
-  CopyIcon,
-  CopyMinus2 as CopyMinus,
-  CopyMinusIcon,
-  CopyPlus2 as CopyPlus,
-  CopyPlusIcon,
-  CopySlash2 as CopySlash,
-  CopySlashIcon,
-  CopyX2 as CopyX,
-  CopyXIcon,
-  Copyleft2 as Copyleft,
-  CopyleftIcon,
-  Copyright2 as Copyright,
-  CopyrightIcon,
-  CornerDownLeft2 as CornerDownLeft,
-  CornerDownLeftIcon,
-  CornerDownRight2 as CornerDownRight,
-  CornerDownRightIcon,
-  CornerLeftDown2 as CornerLeftDown,
-  CornerLeftDownIcon,
-  CornerLeftUp2 as CornerLeftUp,
-  CornerLeftUpIcon,
-  CornerRightDown2 as CornerRightDown,
-  CornerRightDownIcon,
-  CornerRightUp2 as CornerRightUp,
-  CornerRightUpIcon,
-  CornerUpLeft2 as CornerUpLeft,
-  CornerUpLeftIcon,
-  CornerUpRight2 as CornerUpRight,
-  CornerUpRightIcon,
-  Cpu2 as Cpu,
-  CpuIcon,
-  CreativeCommons2 as CreativeCommons,
-  CreativeCommonsIcon,
-  CreditCard2 as CreditCard,
-  CreditCardIcon,
-  Croissant2 as Croissant,
-  CroissantIcon,
-  Crop2 as Crop,
-  CropIcon,
-  Cross2 as Cross,
-  CrossIcon,
-  Crosshair2 as Crosshair,
-  CrosshairIcon,
-  Crown2 as Crown,
-  CrownIcon,
-  Cuboid2 as Cuboid,
-  CuboidIcon,
-  CupSoda2 as CupSoda,
-  CupSodaIcon,
-  CurlyBraces,
-  CurlyBracesIcon,
-  Currency2 as Currency,
-  CurrencyIcon,
-  Cylinder2 as Cylinder,
-  CylinderIcon,
-  Dam2 as Dam,
-  DamIcon,
-  Database2 as Database,
-  DatabaseBackup2 as DatabaseBackup,
-  DatabaseBackupIcon,
-  DatabaseIcon,
-  DatabaseSearch2 as DatabaseSearch,
-  DatabaseSearchIcon,
-  DatabaseZap2 as DatabaseZap,
-  DatabaseZapIcon,
-  DecimalsArrowLeft2 as DecimalsArrowLeft,
-  DecimalsArrowLeftIcon,
-  DecimalsArrowRight2 as DecimalsArrowRight,
-  DecimalsArrowRightIcon,
-  Delete2 as Delete,
-  DeleteIcon,
-  Dessert2 as Dessert,
-  DessertIcon,
-  Diameter2 as Diameter,
-  DiameterIcon,
-  Diamond2 as Diamond,
-  DiamondIcon,
-  DiamondMinus2 as DiamondMinus,
-  DiamondMinusIcon,
-  DiamondPercent2 as DiamondPercent,
-  DiamondPercentIcon,
-  DiamondPlus2 as DiamondPlus,
-  DiamondPlusIcon,
-  Dice12 as Dice1,
-  Dice1Icon,
-  Dice22 as Dice2,
-  Dice2Icon,
-  Dice32 as Dice3,
-  Dice3Icon,
-  Dice42 as Dice4,
-  Dice4Icon,
-  Dice52 as Dice5,
-  Dice5Icon,
-  Dice62 as Dice6,
-  Dice6Icon,
-  Dices2 as Dices,
-  DicesIcon,
-  Diff2 as Diff,
-  DiffIcon,
-  Disc4 as Disc,
-  Disc22 as Disc2,
-  Disc2Icon,
-  Disc32 as Disc3,
-  Disc3Icon,
-  DiscAlbum2 as DiscAlbum,
-  DiscAlbumIcon,
-  DiscIcon,
-  Divide2 as Divide,
-  DivideCircle,
-  DivideCircleIcon,
-  DivideIcon,
-  DivideSquare,
-  DivideSquareIcon,
-  Dna2 as Dna,
-  DnaIcon,
-  DnaOff2 as DnaOff,
-  DnaOffIcon,
-  Dock2 as Dock,
-  DockIcon,
-  Dog2 as Dog,
-  DogIcon,
-  DollarSign2 as DollarSign,
-  DollarSignIcon,
-  Donut2 as Donut,
-  DonutIcon,
-  DoorClosed2 as DoorClosed,
-  DoorClosedIcon,
-  DoorClosedLocked2 as DoorClosedLocked,
-  DoorClosedLockedIcon,
-  DoorOpen2 as DoorOpen,
-  DoorOpenIcon,
-  Dot2 as Dot,
-  DotIcon,
-  DotSquare,
-  DotSquareIcon,
-  Download2 as Download,
-  DownloadCloud,
-  DownloadCloudIcon,
-  DownloadIcon,
-  DraftingCompass2 as DraftingCompass,
-  DraftingCompassIcon,
-  Drama2 as Drama,
-  DramaIcon,
-  Dribbble2 as Dribbble,
-  DribbbleIcon,
-  Drill2 as Drill,
-  DrillIcon,
-  Drone2 as Drone,
-  DroneIcon,
-  Droplet2 as Droplet,
-  DropletIcon,
-  DropletOff2 as DropletOff,
-  DropletOffIcon,
-  Droplets2 as Droplets,
-  DropletsIcon,
-  Drum2 as Drum,
-  DrumIcon,
-  Drumstick2 as Drumstick,
-  DrumstickIcon,
-  Dumbbell2 as Dumbbell,
-  DumbbellIcon,
-  Ear2 as Ear,
-  EarIcon,
-  EarOff2 as EarOff,
-  EarOffIcon,
-  Earth2 as Earth,
-  EarthIcon,
-  EarthLock2 as EarthLock,
-  EarthLockIcon,
-  Eclipse2 as Eclipse,
-  EclipseIcon,
-  Edit,
-  Edit2,
-  Edit2Icon,
-  Edit3,
-  Edit3Icon,
-  EditIcon,
-  Egg2 as Egg,
-  EggFried2 as EggFried,
-  EggFriedIcon,
-  EggIcon,
-  EggOff2 as EggOff,
-  EggOffIcon,
-  Ellipse2 as Ellipse,
-  EllipseIcon,
-  Ellipsis2 as Ellipsis,
-  EllipsisIcon,
-  EllipsisVertical2 as EllipsisVertical,
-  EllipsisVerticalIcon,
-  Equal2 as Equal,
-  EqualApproximately2 as EqualApproximately,
-  EqualApproximatelyIcon,
-  EqualIcon,
-  EqualNot2 as EqualNot,
-  EqualNotIcon,
-  EqualSquare,
-  EqualSquareIcon,
-  Eraser2 as Eraser,
-  EraserIcon,
-  EthernetPort2 as EthernetPort,
-  EthernetPortIcon,
-  Euro2 as Euro,
-  EuroIcon,
-  EvCharger2 as EvCharger,
-  EvChargerIcon,
-  Expand2 as Expand,
-  ExpandIcon,
-  ExternalLink2 as ExternalLink,
-  ExternalLinkIcon,
-  Eye2 as Eye,
-  EyeClosed2 as EyeClosed,
-  EyeClosedIcon,
-  EyeIcon,
-  EyeOff2 as EyeOff,
-  EyeOffIcon,
-  Facebook2 as Facebook,
-  FacebookIcon,
-  Factory2 as Factory,
-  FactoryIcon,
-  Fan2 as Fan,
-  FanIcon,
-  FastForward2 as FastForward,
-  FastForwardIcon,
-  Feather2 as Feather,
-  FeatherIcon,
-  Fence2 as Fence,
-  FenceIcon,
-  FerrisWheel2 as FerrisWheel,
-  FerrisWheelIcon,
-  Figma2 as Figma,
-  FigmaIcon,
-  File2 as File,
-  FileArchive2 as FileArchive,
-  FileArchiveIcon,
-  FileAudio,
-  FileAudio2,
-  FileAudio2Icon,
-  FileAudioIcon,
-  FileAxis3D,
-  FileAxis3DIcon,
-  FileAxis3d2 as FileAxis3d,
-  FileAxis3dIcon,
-  FileBadge2 as FileBadge,
-  FileBadge22 as FileBadge2,
-  FileBadge2Icon,
-  FileBadgeIcon,
-  FileBarChart,
-  FileBarChart2,
-  FileBarChart2Icon,
-  FileBarChartIcon,
-  FileBox2 as FileBox,
-  FileBoxIcon,
-  FileBraces2 as FileBraces,
-  FileBracesCorner2 as FileBracesCorner,
-  FileBracesCornerIcon,
-  FileBracesIcon,
-  FileChartColumn2 as FileChartColumn,
-  FileChartColumnIcon,
-  FileChartColumnIncreasing2 as FileChartColumnIncreasing,
-  FileChartColumnIncreasingIcon,
-  FileChartLine2 as FileChartLine,
-  FileChartLineIcon,
-  FileChartPie2 as FileChartPie,
-  FileChartPieIcon,
-  FileCheck2 as FileCheck,
-  FileCheck22 as FileCheck2,
-  FileCheck2Icon,
-  FileCheckCorner2 as FileCheckCorner,
-  FileCheckCornerIcon,
-  FileCheckIcon,
-  FileClock2 as FileClock,
-  FileClockIcon,
-  FileCode2 as FileCode,
-  FileCode22 as FileCode2,
-  FileCode2Icon,
-  FileCodeCorner2 as FileCodeCorner,
-  FileCodeCornerIcon,
-  FileCodeIcon,
-  FileCog2 as FileCog,
-  FileCog22 as FileCog2,
-  FileCog2Icon,
-  FileCogIcon,
-  FileDiff2 as FileDiff,
-  FileDiffIcon,
-  FileDigit2 as FileDigit,
-  FileDigitIcon,
-  FileDown2 as FileDown,
-  FileDownIcon,
-  FileEdit,
-  FileEditIcon,
-  FileExclamationPoint2 as FileExclamationPoint,
-  FileExclamationPointIcon,
-  FileHeadphone2 as FileHeadphone,
-  FileHeadphoneIcon,
-  FileHeart2 as FileHeart,
-  FileHeartIcon,
-  FileIcon,
-  FileImage2 as FileImage,
-  FileImageIcon,
-  FileInput2 as FileInput,
-  FileInputIcon,
-  FileJson,
-  FileJson2,
-  FileJson2Icon,
-  FileJsonIcon,
-  FileKey2 as FileKey,
-  FileKey22 as FileKey2,
-  FileKey2Icon,
-  FileKeyIcon,
-  FileLineChart,
-  FileLineChartIcon,
-  FileLock2 as FileLock,
-  FileLock22 as FileLock2,
-  FileLock2Icon,
-  FileLockIcon,
-  FileMinus2 as FileMinus,
-  FileMinus22 as FileMinus2,
-  FileMinus2Icon,
-  FileMinusCorner2 as FileMinusCorner,
-  FileMinusCornerIcon,
-  FileMinusIcon,
-  FileMusic2 as FileMusic,
-  FileMusicIcon,
-  FileOutput2 as FileOutput,
-  FileOutputIcon,
-  FilePen2 as FilePen,
-  FilePenIcon,
-  FilePenLine2 as FilePenLine,
-  FilePenLineIcon,
-  FilePieChart,
-  FilePieChartIcon,
-  FilePlay2 as FilePlay,
-  FilePlayIcon,
-  FilePlus2 as FilePlus,
-  FilePlus22 as FilePlus2,
-  FilePlus2Icon,
-  FilePlusCorner2 as FilePlusCorner,
-  FilePlusCornerIcon,
-  FilePlusIcon,
-  FileQuestion,
-  FileQuestionIcon,
-  FileQuestionMark2 as FileQuestionMark,
-  FileQuestionMarkIcon,
-  FileScan2 as FileScan,
-  FileScanIcon,
-  FileSearch2 as FileSearch,
-  FileSearch22 as FileSearch2,
-  FileSearch2Icon,
-  FileSearchCorner2 as FileSearchCorner,
-  FileSearchCornerIcon,
-  FileSearchIcon,
-  FileSignal2 as FileSignal,
-  FileSignalIcon,
-  FileSignature,
-  FileSignatureIcon,
-  FileSliders2 as FileSliders,
-  FileSlidersIcon,
-  FileSpreadsheet2 as FileSpreadsheet,
-  FileSpreadsheetIcon,
-  FileStack2 as FileStack,
-  FileStackIcon,
-  FileSymlink2 as FileSymlink,
-  FileSymlinkIcon,
-  FileTerminal2 as FileTerminal,
-  FileTerminalIcon,
-  FileText2 as FileText,
-  FileTextIcon,
-  FileType2 as FileType,
-  FileType22 as FileType2,
-  FileType2Icon,
-  FileTypeCorner2 as FileTypeCorner,
-  FileTypeCornerIcon,
-  FileTypeIcon,
-  FileUp2 as FileUp,
-  FileUpIcon,
-  FileUser2 as FileUser,
-  FileUserIcon,
-  FileVideo,
-  FileVideo2,
-  FileVideo2Icon,
-  FileVideoCamera2 as FileVideoCamera,
-  FileVideoCameraIcon,
-  FileVideoIcon,
-  FileVolume2 as FileVolume,
-  FileVolume22 as FileVolume2,
-  FileVolume2Icon,
-  FileVolumeIcon,
-  FileWarning,
-  FileWarningIcon,
-  FileX2 as FileX,
-  FileX22 as FileX2,
-  FileX2Icon,
-  FileXCorner2 as FileXCorner,
-  FileXCornerIcon,
-  FileXIcon,
-  Files2 as Files,
-  FilesIcon,
-  Film2 as Film,
-  FilmIcon,
-  Filter,
-  FilterIcon,
-  FilterX,
-  FilterXIcon,
-  Fingerprint,
-  FingerprintIcon,
-  FingerprintPattern2 as FingerprintPattern,
-  FingerprintPatternIcon,
-  FireExtinguisher2 as FireExtinguisher,
-  FireExtinguisherIcon,
-  Fish2 as Fish,
-  FishIcon,
-  FishOff2 as FishOff,
-  FishOffIcon,
-  FishSymbol2 as FishSymbol,
-  FishSymbolIcon,
-  FishingHook2 as FishingHook,
-  FishingHookIcon,
-  FishingRod2 as FishingRod,
-  FishingRodIcon,
-  Flag2 as Flag,
-  FlagIcon,
-  FlagOff2 as FlagOff,
-  FlagOffIcon,
-  FlagTriangleLeft2 as FlagTriangleLeft,
-  FlagTriangleLeftIcon,
-  FlagTriangleRight2 as FlagTriangleRight,
-  FlagTriangleRightIcon,
-  Flame2 as Flame,
-  FlameIcon,
-  FlameKindling2 as FlameKindling,
-  FlameKindlingIcon,
-  Flashlight2 as Flashlight,
-  FlashlightIcon,
-  FlashlightOff2 as FlashlightOff,
-  FlashlightOffIcon,
-  FlaskConical2 as FlaskConical,
-  FlaskConicalIcon,
-  FlaskConicalOff2 as FlaskConicalOff,
-  FlaskConicalOffIcon,
-  FlaskRound2 as FlaskRound,
-  FlaskRoundIcon,
-  FlipHorizontal,
-  FlipHorizontal22 as FlipHorizontal2,
-  FlipHorizontal2Icon,
-  FlipHorizontalIcon,
-  FlipVertical,
-  FlipVertical22 as FlipVertical2,
-  FlipVertical2Icon,
-  FlipVerticalIcon,
-  Flower3 as Flower,
-  Flower22 as Flower2,
-  Flower2Icon,
-  FlowerIcon,
-  Focus2 as Focus,
-  FocusIcon,
-  FoldHorizontal2 as FoldHorizontal,
-  FoldHorizontalIcon,
-  FoldVertical2 as FoldVertical,
-  FoldVerticalIcon,
-  Folder2 as Folder,
-  FolderArchive2 as FolderArchive,
-  FolderArchiveIcon,
-  FolderCheck2 as FolderCheck,
-  FolderCheckIcon,
-  FolderClock2 as FolderClock,
-  FolderClockIcon,
-  FolderClosed2 as FolderClosed,
-  FolderClosedIcon,
-  FolderCode2 as FolderCode,
-  FolderCodeIcon,
-  FolderCog2 as FolderCog,
-  FolderCog22 as FolderCog2,
-  FolderCog2Icon,
-  FolderCogIcon,
-  FolderDot2 as FolderDot,
-  FolderDotIcon,
-  FolderDown2 as FolderDown,
-  FolderDownIcon,
-  FolderEdit,
-  FolderEditIcon,
-  FolderGit3 as FolderGit,
-  FolderGit22 as FolderGit2,
-  FolderGit2Icon,
-  FolderGitIcon,
-  FolderHeart2 as FolderHeart,
-  FolderHeartIcon,
-  FolderIcon,
-  FolderInput2 as FolderInput,
-  FolderInputIcon,
-  FolderKanban2 as FolderKanban,
-  FolderKanbanIcon,
-  FolderKey2 as FolderKey,
-  FolderKeyIcon,
-  FolderLock2 as FolderLock,
-  FolderLockIcon,
-  FolderMinus2 as FolderMinus,
-  FolderMinusIcon,
-  FolderOpen2 as FolderOpen,
-  FolderOpenDot2 as FolderOpenDot,
-  FolderOpenDotIcon,
-  FolderOpenIcon,
-  FolderOutput2 as FolderOutput,
-  FolderOutputIcon,
-  FolderPen2 as FolderPen,
-  FolderPenIcon,
-  FolderPlus2 as FolderPlus,
-  FolderPlusIcon,
-  FolderRoot2 as FolderRoot,
-  FolderRootIcon,
-  FolderSearch3 as FolderSearch,
-  FolderSearch22 as FolderSearch2,
-  FolderSearch2Icon,
-  FolderSearchIcon,
-  FolderSymlink2 as FolderSymlink,
-  FolderSymlinkIcon,
-  FolderSync2 as FolderSync,
-  FolderSyncIcon,
-  FolderTree2 as FolderTree,
-  FolderTreeIcon,
-  FolderUp2 as FolderUp,
-  FolderUpIcon,
-  FolderX2 as FolderX,
-  FolderXIcon,
-  Folders2 as Folders,
-  FoldersIcon,
-  Footprints2 as Footprints,
-  FootprintsIcon,
-  ForkKnife,
-  ForkKnifeCrossed,
-  ForkKnifeCrossedIcon,
-  ForkKnifeIcon,
-  Forklift2 as Forklift,
-  ForkliftIcon,
-  Form2 as Form,
-  FormIcon,
-  FormInput,
-  FormInputIcon,
-  Forward2 as Forward,
-  ForwardIcon,
-  Frame2 as Frame,
-  FrameIcon,
-  Framer2 as Framer,
-  FramerIcon,
-  Frown2 as Frown,
-  FrownIcon,
-  Fuel2 as Fuel,
-  FuelIcon,
-  Fullscreen2 as Fullscreen,
-  FullscreenIcon,
-  FunctionSquare,
-  FunctionSquareIcon,
-  Funnel2 as Funnel,
-  FunnelIcon,
-  FunnelPlus2 as FunnelPlus,
-  FunnelPlusIcon,
-  FunnelX2 as FunnelX,
-  FunnelXIcon,
-  GalleryHorizontal2 as GalleryHorizontal,
-  GalleryHorizontalEnd2 as GalleryHorizontalEnd,
-  GalleryHorizontalEndIcon,
-  GalleryHorizontalIcon,
-  GalleryThumbnails2 as GalleryThumbnails,
-  GalleryThumbnailsIcon,
-  GalleryVertical2 as GalleryVertical,
-  GalleryVerticalEnd2 as GalleryVerticalEnd,
-  GalleryVerticalEndIcon,
-  GalleryVerticalIcon,
-  Gamepad3 as Gamepad,
-  Gamepad22 as Gamepad2,
-  Gamepad2Icon,
-  GamepadDirectional2 as GamepadDirectional,
-  GamepadDirectionalIcon,
-  GamepadIcon,
-  GanttChart,
-  GanttChartIcon,
-  GanttChartSquare,
-  GanttChartSquareIcon,
-  Gauge2 as Gauge,
-  GaugeCircle,
-  GaugeCircleIcon,
-  GaugeIcon,
-  Gavel2 as Gavel,
-  GavelIcon,
-  Gem2 as Gem,
-  GemIcon,
-  GeorgianLari2 as GeorgianLari,
-  GeorgianLariIcon,
-  Ghost2 as Ghost,
-  GhostIcon,
-  Gift2 as Gift,
-  GiftIcon,
-  GitBranch2 as GitBranch,
-  GitBranchIcon,
-  GitBranchMinus2 as GitBranchMinus,
-  GitBranchMinusIcon,
-  GitBranchPlus2 as GitBranchPlus,
-  GitBranchPlusIcon,
-  GitCommit,
-  GitCommitHorizontal2 as GitCommitHorizontal,
-  GitCommitHorizontalIcon,
-  GitCommitIcon,
-  GitCommitVertical2 as GitCommitVertical,
-  GitCommitVerticalIcon,
-  GitCompare2 as GitCompare,
-  GitCompareArrows2 as GitCompareArrows,
-  GitCompareArrowsIcon,
-  GitCompareIcon,
-  GitFork2 as GitFork,
-  GitForkIcon,
-  GitGraph2 as GitGraph,
-  GitGraphIcon,
-  GitMerge2 as GitMerge,
-  GitMergeConflict2 as GitMergeConflict,
-  GitMergeConflictIcon,
-  GitMergeIcon,
-  GitPullRequest2 as GitPullRequest,
-  GitPullRequestArrow2 as GitPullRequestArrow,
-  GitPullRequestArrowIcon,
-  GitPullRequestClosed2 as GitPullRequestClosed,
-  GitPullRequestClosedIcon,
-  GitPullRequestCreate2 as GitPullRequestCreate,
-  GitPullRequestCreateArrow2 as GitPullRequestCreateArrow,
-  GitPullRequestCreateArrowIcon,
-  GitPullRequestCreateIcon,
-  GitPullRequestDraft2 as GitPullRequestDraft,
-  GitPullRequestDraftIcon,
-  GitPullRequestIcon,
-  Github2 as Github,
-  GithubIcon,
-  Gitlab2 as Gitlab,
-  GitlabIcon,
-  GlassWater2 as GlassWater,
-  GlassWaterIcon,
-  Glasses2 as Glasses,
-  GlassesIcon,
-  Globe2 as Globe,
-  Globe22 as Globe2,
-  Globe2Icon,
-  GlobeIcon,
-  GlobeLock2 as GlobeLock,
-  GlobeLockIcon,
-  GlobeOff2 as GlobeOff,
-  GlobeOffIcon,
-  GlobeX2 as GlobeX,
-  GlobeXIcon,
-  Goal2 as Goal,
-  GoalIcon,
-  Gpu2 as Gpu,
-  GpuIcon,
-  Grab,
-  GrabIcon,
-  GraduationCap2 as GraduationCap,
-  GraduationCapIcon,
-  Grape2 as Grape,
-  GrapeIcon,
-  Grid,
-  Grid2X2,
-  Grid2X2Check,
-  Grid2X2CheckIcon,
-  Grid2X2Icon,
-  Grid2X2Plus,
-  Grid2X2PlusIcon,
-  Grid2X2X,
-  Grid2X2XIcon,
-  Grid2x22 as Grid2x2,
-  Grid2x2Check2 as Grid2x2Check,
-  Grid2x2CheckIcon,
-  Grid2x2Icon,
-  Grid2x2Plus2 as Grid2x2Plus,
-  Grid2x2PlusIcon,
-  Grid2x2X2 as Grid2x2X,
-  Grid2x2XIcon,
-  Grid3X3,
-  Grid3X3Icon,
-  Grid3x22 as Grid3x2,
-  Grid3x2Icon,
-  Grid3x32 as Grid3x3,
-  Grid3x3Icon,
-  GridIcon,
-  Grip2 as Grip,
-  GripHorizontal2 as GripHorizontal,
-  GripHorizontalIcon,
-  GripIcon,
-  GripVertical2 as GripVertical,
-  GripVerticalIcon,
-  Group2 as Group,
-  GroupIcon,
-  Guitar2 as Guitar,
-  GuitarIcon,
-  Ham2 as Ham,
-  HamIcon,
-  Hamburger2 as Hamburger,
-  HamburgerIcon,
-  Hammer2 as Hammer,
-  HammerIcon,
-  Hand2 as Hand,
-  HandCoins2 as HandCoins,
-  HandCoinsIcon,
-  HandFist2 as HandFist,
-  HandFistIcon,
-  HandGrab2 as HandGrab,
-  HandGrabIcon,
-  HandHeart2 as HandHeart,
-  HandHeartIcon,
-  HandHelping2 as HandHelping,
-  HandHelpingIcon,
-  HandIcon,
-  HandMetal2 as HandMetal,
-  HandMetalIcon,
-  HandPlatter2 as HandPlatter,
-  HandPlatterIcon,
-  Handbag2 as Handbag,
-  HandbagIcon,
-  Handshake2 as Handshake,
-  HandshakeIcon,
-  HardDrive2 as HardDrive,
-  HardDriveDownload2 as HardDriveDownload,
-  HardDriveDownloadIcon,
-  HardDriveIcon,
-  HardDriveUpload2 as HardDriveUpload,
-  HardDriveUploadIcon,
-  HardHat2 as HardHat,
-  HardHatIcon,
-  Hash2 as Hash,
-  HashIcon,
-  HatGlasses2 as HatGlasses,
-  HatGlassesIcon,
-  Haze2 as Haze,
-  HazeIcon,
-  Hd2 as Hd,
-  HdIcon,
-  HdmiPort2 as HdmiPort,
-  HdmiPortIcon,
-  Heading7 as Heading,
-  Heading12 as Heading1,
-  Heading1Icon,
-  Heading22 as Heading2,
-  Heading2Icon,
-  Heading32 as Heading3,
-  Heading3Icon,
-  Heading42 as Heading4,
-  Heading4Icon,
-  Heading52 as Heading5,
-  Heading5Icon,
-  Heading62 as Heading6,
-  Heading6Icon,
-  HeadingIcon,
-  HeadphoneOff2 as HeadphoneOff,
-  HeadphoneOffIcon,
-  Headphones2 as Headphones,
-  HeadphonesIcon,
-  Headset2 as Headset,
-  HeadsetIcon,
-  Heart2 as Heart,
-  HeartCrack2 as HeartCrack,
-  HeartCrackIcon,
-  HeartHandshake2 as HeartHandshake,
-  HeartHandshakeIcon,
-  HeartIcon,
-  HeartMinus2 as HeartMinus,
-  HeartMinusIcon,
-  HeartOff2 as HeartOff,
-  HeartOffIcon,
-  HeartPlus2 as HeartPlus,
-  HeartPlusIcon,
-  HeartPulse2 as HeartPulse,
-  HeartPulseIcon,
-  Heater2 as Heater,
-  HeaterIcon,
-  Helicopter2 as Helicopter,
-  HelicopterIcon,
-  HelpCircle,
-  HelpCircleIcon,
-  HelpingHand,
-  HelpingHandIcon,
-  Hexagon2 as Hexagon,
-  HexagonIcon,
-  Highlighter2 as Highlighter,
-  HighlighterIcon,
-  History2 as History,
-  HistoryIcon,
-  Home,
-  HomeIcon,
-  Hop2 as Hop,
-  HopIcon,
-  HopOff2 as HopOff,
-  HopOffIcon,
-  Hospital2 as Hospital,
-  HospitalIcon,
-  Hotel2 as Hotel,
-  HotelIcon,
-  Hourglass2 as Hourglass,
-  HourglassIcon,
-  House2 as House,
-  HouseHeart2 as HouseHeart,
-  HouseHeartIcon,
-  HouseIcon,
-  HousePlug2 as HousePlug,
-  HousePlugIcon,
-  HousePlus2 as HousePlus,
-  HousePlusIcon,
-  HouseWifi2 as HouseWifi,
-  HouseWifiIcon,
-  IceCream,
-  IceCream2,
-  IceCream2Icon,
-  IceCreamBowl2 as IceCreamBowl,
-  IceCreamBowlIcon,
-  IceCreamCone2 as IceCreamCone,
-  IceCreamConeIcon,
-  IceCreamIcon,
-  Icon2 as Icon,
-  IdCard2 as IdCard,
-  IdCardIcon,
-  IdCardLanyard2 as IdCardLanyard,
-  IdCardLanyardIcon,
-  Image2 as Image,
-  ImageDown2 as ImageDown,
-  ImageDownIcon,
-  ImageIcon,
-  ImageMinus2 as ImageMinus,
-  ImageMinusIcon,
-  ImageOff2 as ImageOff,
-  ImageOffIcon,
-  ImagePlay2 as ImagePlay,
-  ImagePlayIcon,
-  ImagePlus2 as ImagePlus,
-  ImagePlusIcon,
-  ImageUp2 as ImageUp,
-  ImageUpIcon,
-  ImageUpscale2 as ImageUpscale,
-  ImageUpscaleIcon,
-  Images2 as Images,
-  ImagesIcon,
-  Import2 as Import,
-  ImportIcon,
-  Inbox2 as Inbox,
-  InboxIcon,
-  Indent,
-  IndentDecrease,
-  IndentDecreaseIcon,
-  IndentIcon,
-  IndentIncrease,
-  IndentIncreaseIcon,
-  IndianRupee2 as IndianRupee,
-  IndianRupeeIcon,
-  Infinity2 as Infinity,
-  InfinityIcon,
-  Info2 as Info,
-  InfoIcon,
-  Inspect,
-  InspectIcon,
-  InspectionPanel2 as InspectionPanel,
-  InspectionPanelIcon,
-  Instagram2 as Instagram,
-  InstagramIcon,
-  Italic2 as Italic,
-  ItalicIcon,
-  IterationCcw2 as IterationCcw,
-  IterationCcwIcon,
-  IterationCw2 as IterationCw,
-  IterationCwIcon,
-  JapaneseYen2 as JapaneseYen,
-  JapaneseYenIcon,
-  Joystick2 as Joystick,
-  JoystickIcon,
-  Kanban2 as Kanban,
-  KanbanIcon,
-  KanbanSquare,
-  KanbanSquareDashed,
-  KanbanSquareDashedIcon,
-  KanbanSquareIcon,
-  Kayak2 as Kayak,
-  KayakIcon,
-  Key2 as Key,
-  KeyIcon,
-  KeyRound2 as KeyRound,
-  KeyRoundIcon,
-  KeySquare2 as KeySquare,
-  KeySquareIcon,
-  Keyboard2 as Keyboard,
-  KeyboardIcon,
-  KeyboardMusic2 as KeyboardMusic,
-  KeyboardMusicIcon,
-  KeyboardOff2 as KeyboardOff,
-  KeyboardOffIcon,
-  Lamp2 as Lamp,
-  LampCeiling2 as LampCeiling,
-  LampCeilingIcon,
-  LampDesk2 as LampDesk,
-  LampDeskIcon,
-  LampFloor2 as LampFloor,
-  LampFloorIcon,
-  LampIcon,
-  LampWallDown2 as LampWallDown,
-  LampWallDownIcon,
-  LampWallUp2 as LampWallUp,
-  LampWallUpIcon,
-  LandPlot2 as LandPlot,
-  LandPlotIcon,
-  Landmark2 as Landmark,
-  LandmarkIcon,
-  Languages2 as Languages,
-  LanguagesIcon,
-  Laptop2 as Laptop,
-  Laptop22 as Laptop2,
-  Laptop2Icon,
-  LaptopIcon,
-  LaptopMinimal2 as LaptopMinimal,
-  LaptopMinimalCheck2 as LaptopMinimalCheck,
-  LaptopMinimalCheckIcon,
-  LaptopMinimalIcon,
-  Lasso2 as Lasso,
-  LassoIcon,
-  LassoSelect2 as LassoSelect,
-  LassoSelectIcon,
-  Laugh2 as Laugh,
-  LaughIcon,
-  Layers3 as Layers,
-  Layers22 as Layers2,
-  Layers2Icon,
-  Layers32 as Layers3,
-  Layers3Icon,
-  LayersIcon,
-  LayersPlus2 as LayersPlus,
-  LayersPlusIcon,
-  Layout,
-  LayoutDashboard2 as LayoutDashboard,
-  LayoutDashboardIcon,
-  LayoutGrid2 as LayoutGrid,
-  LayoutGridIcon,
-  LayoutIcon,
-  LayoutList2 as LayoutList,
-  LayoutListIcon,
-  LayoutPanelLeft2 as LayoutPanelLeft,
-  LayoutPanelLeftIcon,
-  LayoutPanelTop2 as LayoutPanelTop,
-  LayoutPanelTopIcon,
-  LayoutTemplate2 as LayoutTemplate,
-  LayoutTemplateIcon,
-  Leaf2 as Leaf,
-  LeafIcon,
-  LeafyGreen2 as LeafyGreen,
-  LeafyGreenIcon,
-  Lectern2 as Lectern,
-  LecternIcon,
-  LensConcave2 as LensConcave,
-  LensConcaveIcon,
-  LensConvex2 as LensConvex,
-  LensConvexIcon,
-  LetterText,
-  LetterTextIcon,
-  Library2 as Library,
-  LibraryBig2 as LibraryBig,
-  LibraryBigIcon,
-  LibraryIcon,
-  LibrarySquare,
-  LibrarySquareIcon,
-  LifeBuoy2 as LifeBuoy,
-  LifeBuoyIcon,
-  Ligature2 as Ligature,
-  LigatureIcon,
-  Lightbulb2 as Lightbulb,
-  LightbulbIcon,
-  LightbulbOff2 as LightbulbOff,
-  LightbulbOffIcon,
-  LineChart,
-  LineChartIcon,
-  LineDotRightHorizontal2 as LineDotRightHorizontal,
-  LineDotRightHorizontalIcon,
-  LineSquiggle2 as LineSquiggle,
-  LineSquiggleIcon,
-  Link3 as Link,
-  Link22 as Link2,
-  Link2Icon,
-  Link2Off2 as Link2Off,
-  Link2OffIcon,
-  LinkIcon,
-  Linkedin2 as Linkedin,
-  LinkedinIcon,
-  List2 as List,
-  ListCheck2 as ListCheck,
-  ListCheckIcon,
-  ListChecks2 as ListChecks,
-  ListChecksIcon,
-  ListChevronsDownUp2 as ListChevronsDownUp,
-  ListChevronsDownUpIcon,
-  ListChevronsUpDown2 as ListChevronsUpDown,
-  ListChevronsUpDownIcon,
-  ListCollapse2 as ListCollapse,
-  ListCollapseIcon,
-  ListEnd2 as ListEnd,
-  ListEndIcon,
-  ListFilter2 as ListFilter,
-  ListFilterIcon,
-  ListFilterPlus2 as ListFilterPlus,
-  ListFilterPlusIcon,
-  ListIcon,
-  ListIndentDecrease2 as ListIndentDecrease,
-  ListIndentDecreaseIcon,
-  ListIndentIncrease2 as ListIndentIncrease,
-  ListIndentIncreaseIcon,
-  ListMinus2 as ListMinus,
-  ListMinusIcon,
-  ListMusic2 as ListMusic,
-  ListMusicIcon,
-  ListOrdered2 as ListOrdered,
-  ListOrderedIcon,
-  ListPlus2 as ListPlus,
-  ListPlusIcon,
-  ListRestart2 as ListRestart,
-  ListRestartIcon,
-  ListStart2 as ListStart,
-  ListStartIcon,
-  ListTodo2 as ListTodo,
-  ListTodoIcon,
-  ListTree2 as ListTree,
-  ListTreeIcon,
-  ListVideo2 as ListVideo,
-  ListVideoIcon,
-  ListX2 as ListX,
-  ListXIcon,
-  Loader2 as Loader,
-  Loader22 as Loader2,
-  Loader2Icon,
-  LoaderCircle2 as LoaderCircle,
-  LoaderCircleIcon,
-  LoaderIcon,
-  LoaderPinwheel2 as LoaderPinwheel,
-  LoaderPinwheelIcon,
-  Locate2 as Locate,
-  LocateFixed2 as LocateFixed,
-  LocateFixedIcon,
-  LocateIcon,
-  LocateOff2 as LocateOff,
-  LocateOffIcon,
-  LocationEdit,
-  LocationEditIcon,
-  Lock2 as Lock,
-  LockIcon,
-  LockKeyhole2 as LockKeyhole,
-  LockKeyholeIcon,
-  LockKeyholeOpen2 as LockKeyholeOpen,
-  LockKeyholeOpenIcon,
-  LockOpen2 as LockOpen,
-  LockOpenIcon,
-  LogIn2 as LogIn,
-  LogInIcon,
-  LogOut2 as LogOut,
-  LogOutIcon,
-  Logs2 as Logs,
-  LogsIcon,
-  Lollipop2 as Lollipop,
-  LollipopIcon,
-  LucideAArrowDown,
-  LucideAArrowUp,
-  LucideALargeSmall,
-  LucideAccessibility,
-  LucideActivity,
-  LucideActivitySquare,
-  LucideAirVent,
-  LucideAirplay,
-  LucideAlarmCheck,
-  LucideAlarmClock,
-  LucideAlarmClockCheck,
-  LucideAlarmClockMinus,
-  LucideAlarmClockOff,
-  LucideAlarmClockPlus,
-  LucideAlarmMinus,
-  LucideAlarmPlus,
-  LucideAlarmSmoke,
-  LucideAlbum,
-  LucideAlertCircle,
-  LucideAlertOctagon,
-  LucideAlertTriangle,
-  LucideAlignCenter,
-  LucideAlignCenterHorizontal,
-  LucideAlignCenterVertical,
-  LucideAlignEndHorizontal,
-  LucideAlignEndVertical,
-  LucideAlignHorizontalDistributeCenter,
-  LucideAlignHorizontalDistributeEnd,
-  LucideAlignHorizontalDistributeStart,
-  LucideAlignHorizontalJustifyCenter,
-  LucideAlignHorizontalJustifyEnd,
-  LucideAlignHorizontalJustifyStart,
-  LucideAlignHorizontalSpaceAround,
-  LucideAlignHorizontalSpaceBetween,
-  LucideAlignJustify,
-  LucideAlignLeft,
-  LucideAlignRight,
-  LucideAlignStartHorizontal,
-  LucideAlignStartVertical,
-  LucideAlignVerticalDistributeCenter,
-  LucideAlignVerticalDistributeEnd,
-  LucideAlignVerticalDistributeStart,
-  LucideAlignVerticalJustifyCenter,
-  LucideAlignVerticalJustifyEnd,
-  LucideAlignVerticalJustifyStart,
-  LucideAlignVerticalSpaceAround,
-  LucideAlignVerticalSpaceBetween,
-  LucideAmbulance,
-  LucideAmpersand,
-  LucideAmpersands,
-  LucideAmphora,
-  LucideAnchor,
-  LucideAngry,
-  LucideAnnoyed,
-  LucideAntenna,
-  LucideAnvil,
-  LucideAperture,
-  LucideAppWindow,
-  LucideAppWindowMac,
-  LucideApple,
-  LucideArchive,
-  LucideArchiveRestore,
-  LucideArchiveX,
-  LucideAreaChart,
-  LucideArmchair,
-  LucideArrowBigDown,
-  LucideArrowBigDownDash,
-  LucideArrowBigLeft,
-  LucideArrowBigLeftDash,
-  LucideArrowBigRight,
-  LucideArrowBigRightDash,
-  LucideArrowBigUp,
-  LucideArrowBigUpDash,
-  LucideArrowDown,
-  LucideArrowDown01,
-  LucideArrowDown10,
-  LucideArrowDownAZ,
-  LucideArrowDownAz,
-  LucideArrowDownCircle,
-  LucideArrowDownFromLine,
-  LucideArrowDownLeft,
-  LucideArrowDownLeftFromCircle,
-  LucideArrowDownLeftFromSquare,
-  LucideArrowDownLeftSquare,
-  LucideArrowDownNarrowWide,
-  LucideArrowDownRight,
-  LucideArrowDownRightFromCircle,
-  LucideArrowDownRightFromSquare,
-  LucideArrowDownRightSquare,
-  LucideArrowDownSquare,
-  LucideArrowDownToDot,
-  LucideArrowDownToLine,
-  LucideArrowDownUp,
-  LucideArrowDownWideNarrow,
-  LucideArrowDownZA,
-  LucideArrowDownZa,
-  LucideArrowLeft,
-  LucideArrowLeftCircle,
-  LucideArrowLeftFromLine,
-  LucideArrowLeftRight,
-  LucideArrowLeftSquare,
-  LucideArrowLeftToLine,
-  LucideArrowRight,
-  LucideArrowRightCircle,
-  LucideArrowRightFromLine,
-  LucideArrowRightLeft,
-  LucideArrowRightSquare,
-  LucideArrowRightToLine,
-  LucideArrowUp,
-  LucideArrowUp01,
-  LucideArrowUp10,
-  LucideArrowUpAZ,
-  LucideArrowUpAz,
-  LucideArrowUpCircle,
-  LucideArrowUpDown,
-  LucideArrowUpFromDot,
-  LucideArrowUpFromLine,
-  LucideArrowUpLeft,
-  LucideArrowUpLeftFromCircle,
-  LucideArrowUpLeftFromSquare,
-  LucideArrowUpLeftSquare,
-  LucideArrowUpNarrowWide,
-  LucideArrowUpRight,
-  LucideArrowUpRightFromCircle,
-  LucideArrowUpRightFromSquare,
-  LucideArrowUpRightSquare,
-  LucideArrowUpSquare,
-  LucideArrowUpToLine,
-  LucideArrowUpWideNarrow,
-  LucideArrowUpZA,
-  LucideArrowUpZa,
-  LucideArrowsUpFromLine,
-  LucideAsterisk,
-  LucideAsteriskSquare,
-  LucideAtSign,
-  LucideAtom,
-  LucideAudioLines,
-  LucideAudioWaveform,
-  LucideAward,
-  LucideAxe,
-  LucideAxis3D,
-  LucideAxis3d,
-  LucideBaby,
-  LucideBackpack,
-  LucideBadge,
-  LucideBadgeAlert,
-  LucideBadgeCent,
-  LucideBadgeCheck,
-  LucideBadgeDollarSign,
-  LucideBadgeEuro,
-  LucideBadgeHelp,
-  LucideBadgeIndianRupee,
-  LucideBadgeInfo,
-  LucideBadgeJapaneseYen,
-  LucideBadgeMinus,
-  LucideBadgePercent,
-  LucideBadgePlus,
-  LucideBadgePoundSterling,
-  LucideBadgeQuestionMark,
-  LucideBadgeRussianRuble,
-  LucideBadgeSwissFranc,
-  LucideBadgeTurkishLira,
-  LucideBadgeX,
-  LucideBaggageClaim,
-  LucideBalloon,
-  LucideBan,
-  LucideBanana,
-  LucideBandage,
-  LucideBanknote,
-  LucideBanknoteArrowDown,
-  LucideBanknoteArrowUp,
-  LucideBanknoteX,
-  LucideBarChart,
-  LucideBarChart2,
-  LucideBarChart3,
-  LucideBarChart4,
-  LucideBarChartBig,
-  LucideBarChartHorizontal,
-  LucideBarChartHorizontalBig,
-  LucideBarcode,
-  LucideBarrel,
-  LucideBaseline,
-  LucideBath,
-  LucideBattery,
-  LucideBatteryCharging,
-  LucideBatteryFull,
-  LucideBatteryLow,
-  LucideBatteryMedium,
-  LucideBatteryPlus,
-  LucideBatteryWarning,
-  LucideBeaker,
-  LucideBean,
-  LucideBeanOff,
-  LucideBed,
-  LucideBedDouble,
-  LucideBedSingle,
-  LucideBeef,
-  LucideBeer,
-  LucideBeerOff,
-  LucideBell,
-  LucideBellDot,
-  LucideBellElectric,
-  LucideBellMinus,
-  LucideBellOff,
-  LucideBellPlus,
-  LucideBellRing,
-  LucideBetweenHorizonalEnd,
-  LucideBetweenHorizonalStart,
-  LucideBetweenHorizontalEnd,
-  LucideBetweenHorizontalStart,
-  LucideBetweenVerticalEnd,
-  LucideBetweenVerticalStart,
-  LucideBicepsFlexed,
-  LucideBike,
-  LucideBinary,
-  LucideBinoculars,
-  LucideBiohazard,
-  LucideBird,
-  LucideBirdhouse,
-  LucideBitcoin,
-  LucideBlend,
-  LucideBlinds,
-  LucideBlocks,
-  LucideBluetooth,
-  LucideBluetoothConnected,
-  LucideBluetoothOff,
-  LucideBluetoothSearching,
-  LucideBold,
-  LucideBolt,
-  LucideBomb,
-  LucideBone,
-  LucideBook,
-  LucideBookA,
-  LucideBookAlert,
-  LucideBookAudio,
-  LucideBookCheck,
-  LucideBookCopy,
-  LucideBookDashed,
-  LucideBookDown,
-  LucideBookHeadphones,
-  LucideBookHeart,
-  LucideBookImage,
-  LucideBookKey,
-  LucideBookLock,
-  LucideBookMarked,
-  LucideBookMinus,
-  LucideBookOpen,
-  LucideBookOpenCheck,
-  LucideBookOpenText,
-  LucideBookPlus,
-  LucideBookSearch,
-  LucideBookTemplate,
-  LucideBookText,
-  LucideBookType,
-  LucideBookUp,
-  LucideBookUp2,
-  LucideBookUser,
-  LucideBookX,
-  LucideBookmark,
-  LucideBookmarkCheck,
-  LucideBookmarkMinus,
-  LucideBookmarkPlus,
-  LucideBookmarkX,
-  LucideBoomBox,
-  LucideBot,
-  LucideBotMessageSquare,
-  LucideBotOff,
-  LucideBottleWine,
-  LucideBowArrow,
-  LucideBox,
-  LucideBoxSelect,
-  LucideBoxes,
-  LucideBraces,
-  LucideBrackets,
-  LucideBrain,
-  LucideBrainCircuit,
-  LucideBrainCog,
-  LucideBrickWall,
-  LucideBrickWallFire,
-  LucideBrickWallShield,
-  LucideBriefcase,
-  LucideBriefcaseBusiness,
-  LucideBriefcaseConveyorBelt,
-  LucideBriefcaseMedical,
-  LucideBringToFront,
-  LucideBrush,
-  LucideBrushCleaning,
-  LucideBubbles,
-  LucideBug,
-  LucideBugOff,
-  LucideBugPlay,
-  LucideBuilding,
-  LucideBuilding2,
-  LucideBus,
-  LucideBusFront,
-  LucideCable,
-  LucideCableCar,
-  LucideCake,
-  LucideCakeSlice,
-  LucideCalculator,
-  LucideCalendar,
-  LucideCalendar1,
-  LucideCalendarArrowDown,
-  LucideCalendarArrowUp,
-  LucideCalendarCheck,
-  LucideCalendarCheck2,
-  LucideCalendarClock,
-  LucideCalendarCog,
-  LucideCalendarDays,
-  LucideCalendarFold,
-  LucideCalendarHeart,
-  LucideCalendarMinus,
-  LucideCalendarMinus2,
-  LucideCalendarOff,
-  LucideCalendarPlus,
-  LucideCalendarPlus2,
-  LucideCalendarRange,
-  LucideCalendarSearch,
-  LucideCalendarSync,
-  LucideCalendarX,
-  LucideCalendarX2,
-  LucideCalendars,
-  LucideCamera,
-  LucideCameraOff,
-  LucideCandlestickChart,
-  LucideCandy,
-  LucideCandyCane,
-  LucideCandyOff,
-  LucideCannabis,
-  LucideCannabisOff,
-  LucideCaptions,
-  LucideCaptionsOff,
-  LucideCar,
-  LucideCarFront,
-  LucideCarTaxiFront,
-  LucideCaravan,
-  LucideCardSim,
-  LucideCarrot,
-  LucideCaseLower,
-  LucideCaseSensitive,
-  LucideCaseUpper,
-  LucideCassetteTape,
-  LucideCast,
-  LucideCastle,
-  LucideCat,
-  LucideCctv,
-  LucideChartArea,
-  LucideChartBar,
-  LucideChartBarBig,
-  LucideChartBarDecreasing,
-  LucideChartBarIncreasing,
-  LucideChartBarStacked,
-  LucideChartCandlestick,
-  LucideChartColumn,
-  LucideChartColumnBig,
-  LucideChartColumnDecreasing,
-  LucideChartColumnIncreasing,
-  LucideChartColumnStacked,
-  LucideChartGantt,
-  LucideChartLine,
-  LucideChartNetwork,
-  LucideChartNoAxesColumn,
-  LucideChartNoAxesColumnDecreasing,
-  LucideChartNoAxesColumnIncreasing,
-  LucideChartNoAxesCombined,
-  LucideChartNoAxesGantt,
-  LucideChartPie,
-  LucideChartScatter,
-  LucideChartSpline,
-  LucideCheck,
-  LucideCheckCheck,
-  LucideCheckCircle,
-  LucideCheckCircle2,
-  LucideCheckLine,
-  LucideCheckSquare,
-  LucideCheckSquare2,
-  LucideChefHat,
-  LucideCherry,
-  LucideChessBishop,
-  LucideChessKing,
-  LucideChessKnight,
-  LucideChessPawn,
-  LucideChessQueen,
-  LucideChessRook,
-  LucideChevronDown,
-  LucideChevronDownCircle,
-  LucideChevronDownSquare,
-  LucideChevronFirst,
-  LucideChevronLast,
-  LucideChevronLeft,
-  LucideChevronLeftCircle,
-  LucideChevronLeftSquare,
-  LucideChevronRight,
-  LucideChevronRightCircle,
-  LucideChevronRightSquare,
-  LucideChevronUp,
-  LucideChevronUpCircle,
-  LucideChevronUpSquare,
-  LucideChevronsDown,
-  LucideChevronsDownUp,
-  LucideChevronsLeft,
-  LucideChevronsLeftRight,
-  LucideChevronsLeftRightEllipsis,
-  LucideChevronsRight,
-  LucideChevronsRightLeft,
-  LucideChevronsUp,
-  LucideChevronsUpDown,
-  LucideChrome,
-  LucideChromium,
-  LucideChurch,
-  LucideCigarette,
-  LucideCigaretteOff,
-  LucideCircle,
-  LucideCircleAlert,
-  LucideCircleArrowDown,
-  LucideCircleArrowLeft,
-  LucideCircleArrowOutDownLeft,
-  LucideCircleArrowOutDownRight,
-  LucideCircleArrowOutUpLeft,
-  LucideCircleArrowOutUpRight,
-  LucideCircleArrowRight,
-  LucideCircleArrowUp,
-  LucideCircleCheck,
-  LucideCircleCheckBig,
-  LucideCircleChevronDown,
-  LucideCircleChevronLeft,
-  LucideCircleChevronRight,
-  LucideCircleChevronUp,
-  LucideCircleDashed,
-  LucideCircleDivide,
-  LucideCircleDollarSign,
-  LucideCircleDot,
-  LucideCircleDotDashed,
-  LucideCircleEllipsis,
-  LucideCircleEqual,
-  LucideCircleFadingArrowUp,
-  LucideCircleFadingPlus,
-  LucideCircleGauge,
-  LucideCircleHelp,
-  LucideCircleMinus,
-  LucideCircleOff,
-  LucideCircleParking,
-  LucideCircleParkingOff,
-  LucideCirclePause,
-  LucideCirclePercent,
-  LucideCirclePile,
-  LucideCirclePlay,
-  LucideCirclePlus,
-  LucideCirclePoundSterling,
-  LucideCirclePower,
-  LucideCircleQuestionMark,
-  LucideCircleSlash,
-  LucideCircleSlash2,
-  LucideCircleSlashed,
-  LucideCircleSmall,
-  LucideCircleStar,
-  LucideCircleStop,
-  LucideCircleUser,
-  LucideCircleUserRound,
-  LucideCircleX,
-  LucideCircuitBoard,
-  LucideCitrus,
-  LucideClapperboard,
-  LucideClipboard,
-  LucideClipboardCheck,
-  LucideClipboardClock,
-  LucideClipboardCopy,
-  LucideClipboardEdit,
-  LucideClipboardList,
-  LucideClipboardMinus,
-  LucideClipboardPaste,
-  LucideClipboardPen,
-  LucideClipboardPenLine,
-  LucideClipboardPlus,
-  LucideClipboardSignature,
-  LucideClipboardType,
-  LucideClipboardX,
-  LucideClock,
-  LucideClock1,
-  LucideClock10,
-  LucideClock11,
-  LucideClock12,
-  LucideClock2,
-  LucideClock3,
-  LucideClock4,
-  LucideClock5,
-  LucideClock6,
-  LucideClock7,
-  LucideClock8,
-  LucideClock9,
-  LucideClockAlert,
-  LucideClockArrowDown,
-  LucideClockArrowUp,
-  LucideClockCheck,
-  LucideClockFading,
-  LucideClockPlus,
-  LucideClosedCaption,
-  LucideCloud,
-  LucideCloudAlert,
-  LucideCloudBackup,
-  LucideCloudCheck,
-  LucideCloudCog,
-  LucideCloudDownload,
-  LucideCloudDrizzle,
-  LucideCloudFog,
-  LucideCloudHail,
-  LucideCloudLightning,
-  LucideCloudMoon,
-  LucideCloudMoonRain,
-  LucideCloudOff,
-  LucideCloudRain,
-  LucideCloudRainWind,
-  LucideCloudSnow,
-  LucideCloudSun,
-  LucideCloudSunRain,
-  LucideCloudSync,
-  LucideCloudUpload,
-  LucideCloudy,
-  LucideClover,
-  LucideClub,
-  LucideCode,
-  LucideCode2,
-  LucideCodeSquare,
-  LucideCodeXml,
-  LucideCodepen,
-  LucideCodesandbox,
-  LucideCoffee,
-  LucideCog,
-  LucideCoins,
-  LucideColumns,
-  LucideColumns2,
-  LucideColumns3,
-  LucideColumns3Cog,
-  LucideColumns4,
-  LucideColumnsSettings,
-  LucideCombine,
-  LucideCommand,
-  LucideCompass,
-  LucideComponent,
-  LucideComputer,
-  LucideConciergeBell,
-  LucideCone,
-  LucideConstruction,
-  LucideContact,
-  LucideContact2,
-  LucideContactRound,
-  LucideContainer,
-  LucideContrast,
-  LucideCookie,
-  LucideCookingPot,
-  LucideCopy,
-  LucideCopyCheck,
-  LucideCopyMinus,
-  LucideCopyPlus,
-  LucideCopySlash,
-  LucideCopyX,
-  LucideCopyleft,
-  LucideCopyright,
-  LucideCornerDownLeft,
-  LucideCornerDownRight,
-  LucideCornerLeftDown,
-  LucideCornerLeftUp,
-  LucideCornerRightDown,
-  LucideCornerRightUp,
-  LucideCornerUpLeft,
-  LucideCornerUpRight,
-  LucideCpu,
-  LucideCreativeCommons,
-  LucideCreditCard,
-  LucideCroissant,
-  LucideCrop,
-  LucideCross,
-  LucideCrosshair,
-  LucideCrown,
-  LucideCuboid,
-  LucideCupSoda,
-  LucideCurlyBraces,
-  LucideCurrency,
-  LucideCylinder,
-  LucideDam,
-  LucideDatabase,
-  LucideDatabaseBackup,
-  LucideDatabaseSearch,
-  LucideDatabaseZap,
-  LucideDecimalsArrowLeft,
-  LucideDecimalsArrowRight,
-  LucideDelete,
-  LucideDessert,
-  LucideDiameter,
-  LucideDiamond,
-  LucideDiamondMinus,
-  LucideDiamondPercent,
-  LucideDiamondPlus,
-  LucideDice1,
-  LucideDice2,
-  LucideDice3,
-  LucideDice4,
-  LucideDice5,
-  LucideDice6,
-  LucideDices,
-  LucideDiff,
-  LucideDisc,
-  LucideDisc2,
-  LucideDisc3,
-  LucideDiscAlbum,
-  LucideDivide,
-  LucideDivideCircle,
-  LucideDivideSquare,
-  LucideDna,
-  LucideDnaOff,
-  LucideDock,
-  LucideDog,
-  LucideDollarSign,
-  LucideDonut,
-  LucideDoorClosed,
-  LucideDoorClosedLocked,
-  LucideDoorOpen,
-  LucideDot,
-  LucideDotSquare,
-  LucideDownload,
-  LucideDownloadCloud,
-  LucideDraftingCompass,
-  LucideDrama,
-  LucideDribbble,
-  LucideDrill,
-  LucideDrone,
-  LucideDroplet,
-  LucideDropletOff,
-  LucideDroplets,
-  LucideDrum,
-  LucideDrumstick,
-  LucideDumbbell,
-  LucideEar,
-  LucideEarOff,
-  LucideEarth,
-  LucideEarthLock,
-  LucideEclipse,
-  LucideEdit,
-  LucideEdit2,
-  LucideEdit3,
-  LucideEgg,
-  LucideEggFried,
-  LucideEggOff,
-  LucideEllipse,
-  LucideEllipsis,
-  LucideEllipsisVertical,
-  LucideEqual,
-  LucideEqualApproximately,
-  LucideEqualNot,
-  LucideEqualSquare,
-  LucideEraser,
-  LucideEthernetPort,
-  LucideEuro,
-  LucideEvCharger,
-  LucideExpand,
-  LucideExternalLink,
-  LucideEye,
-  LucideEyeClosed,
-  LucideEyeOff,
-  LucideFacebook,
-  LucideFactory,
-  LucideFan,
-  LucideFastForward,
-  LucideFeather,
-  LucideFence,
-  LucideFerrisWheel,
-  LucideFigma,
-  LucideFile,
-  LucideFileArchive,
-  LucideFileAudio,
-  LucideFileAudio2,
-  LucideFileAxis3D,
-  LucideFileAxis3d,
-  LucideFileBadge,
-  LucideFileBadge2,
-  LucideFileBarChart,
-  LucideFileBarChart2,
-  LucideFileBox,
-  LucideFileBraces,
-  LucideFileBracesCorner,
-  LucideFileChartColumn,
-  LucideFileChartColumnIncreasing,
-  LucideFileChartLine,
-  LucideFileChartPie,
-  LucideFileCheck,
-  LucideFileCheck2,
-  LucideFileCheckCorner,
-  LucideFileClock,
-  LucideFileCode,
-  LucideFileCode2,
-  LucideFileCodeCorner,
-  LucideFileCog,
-  LucideFileCog2,
-  LucideFileDiff,
-  LucideFileDigit,
-  LucideFileDown,
-  LucideFileEdit,
-  LucideFileExclamationPoint,
-  LucideFileHeadphone,
-  LucideFileHeart,
-  LucideFileImage,
-  LucideFileInput,
-  LucideFileJson,
-  LucideFileJson2,
-  LucideFileKey,
-  LucideFileKey2,
-  LucideFileLineChart,
-  LucideFileLock,
-  LucideFileLock2,
-  LucideFileMinus,
-  LucideFileMinus2,
-  LucideFileMinusCorner,
-  LucideFileMusic,
-  LucideFileOutput,
-  LucideFilePen,
-  LucideFilePenLine,
-  LucideFilePieChart,
-  LucideFilePlay,
-  LucideFilePlus,
-  LucideFilePlus2,
-  LucideFilePlusCorner,
-  LucideFileQuestion,
-  LucideFileQuestionMark,
-  LucideFileScan,
-  LucideFileSearch,
-  LucideFileSearch2,
-  LucideFileSearchCorner,
-  LucideFileSignal,
-  LucideFileSignature,
-  LucideFileSliders,
-  LucideFileSpreadsheet,
-  LucideFileStack,
-  LucideFileSymlink,
-  LucideFileTerminal,
-  LucideFileText,
-  LucideFileType,
-  LucideFileType2,
-  LucideFileTypeCorner,
-  LucideFileUp,
-  LucideFileUser,
-  LucideFileVideo,
-  LucideFileVideo2,
-  LucideFileVideoCamera,
-  LucideFileVolume,
-  LucideFileVolume2,
-  LucideFileWarning,
-  LucideFileX,
-  LucideFileX2,
-  LucideFileXCorner,
-  LucideFiles,
-  LucideFilm,
-  LucideFilter,
-  LucideFilterX,
-  LucideFingerprint,
-  LucideFingerprintPattern,
-  LucideFireExtinguisher,
-  LucideFish,
-  LucideFishOff,
-  LucideFishSymbol,
-  LucideFishingHook,
-  LucideFishingRod,
-  LucideFlag,
-  LucideFlagOff,
-  LucideFlagTriangleLeft,
-  LucideFlagTriangleRight,
-  LucideFlame,
-  LucideFlameKindling,
-  LucideFlashlight,
-  LucideFlashlightOff,
-  LucideFlaskConical,
-  LucideFlaskConicalOff,
-  LucideFlaskRound,
-  LucideFlipHorizontal,
-  LucideFlipHorizontal2,
-  LucideFlipVertical,
-  LucideFlipVertical2,
-  LucideFlower,
-  LucideFlower2,
-  LucideFocus,
-  LucideFoldHorizontal,
-  LucideFoldVertical,
-  LucideFolder,
-  LucideFolderArchive,
-  LucideFolderCheck,
-  LucideFolderClock,
-  LucideFolderClosed,
-  LucideFolderCode,
-  LucideFolderCog,
-  LucideFolderCog2,
-  LucideFolderDot,
-  LucideFolderDown,
-  LucideFolderEdit,
-  LucideFolderGit,
-  LucideFolderGit2,
-  LucideFolderHeart,
-  LucideFolderInput,
-  LucideFolderKanban,
-  LucideFolderKey,
-  LucideFolderLock,
-  LucideFolderMinus,
-  LucideFolderOpen,
-  LucideFolderOpenDot,
-  LucideFolderOutput,
-  LucideFolderPen,
-  LucideFolderPlus,
-  LucideFolderRoot,
-  LucideFolderSearch,
-  LucideFolderSearch2,
-  LucideFolderSymlink,
-  LucideFolderSync,
-  LucideFolderTree,
-  LucideFolderUp,
-  LucideFolderX,
-  LucideFolders,
-  LucideFootprints,
-  LucideForkKnife,
-  LucideForkKnifeCrossed,
-  LucideForklift,
-  LucideForm,
-  LucideFormInput,
-  LucideForward,
-  LucideFrame,
-  LucideFramer,
-  LucideFrown,
-  LucideFuel,
-  LucideFullscreen,
-  LucideFunctionSquare,
-  LucideFunnel,
-  LucideFunnelPlus,
-  LucideFunnelX,
-  LucideGalleryHorizontal,
-  LucideGalleryHorizontalEnd,
-  LucideGalleryThumbnails,
-  LucideGalleryVertical,
-  LucideGalleryVerticalEnd,
-  LucideGamepad,
-  LucideGamepad2,
-  LucideGamepadDirectional,
-  LucideGanttChart,
-  LucideGanttChartSquare,
-  LucideGauge,
-  LucideGaugeCircle,
-  LucideGavel,
-  LucideGem,
-  LucideGeorgianLari,
-  LucideGhost,
-  LucideGift,
-  LucideGitBranch,
-  LucideGitBranchMinus,
-  LucideGitBranchPlus,
-  LucideGitCommit,
-  LucideGitCommitHorizontal,
-  LucideGitCommitVertical,
-  LucideGitCompare,
-  LucideGitCompareArrows,
-  LucideGitFork,
-  LucideGitGraph,
-  LucideGitMerge,
-  LucideGitMergeConflict,
-  LucideGitPullRequest,
-  LucideGitPullRequestArrow,
-  LucideGitPullRequestClosed,
-  LucideGitPullRequestCreate,
-  LucideGitPullRequestCreateArrow,
-  LucideGitPullRequestDraft,
-  LucideGithub,
-  LucideGitlab,
-  LucideGlassWater,
-  LucideGlasses,
-  LucideGlobe,
-  LucideGlobe2,
-  LucideGlobeLock,
-  LucideGlobeOff,
-  LucideGlobeX,
-  LucideGoal,
-  LucideGpu,
-  LucideGrab,
-  LucideGraduationCap,
-  LucideGrape,
-  LucideGrid,
-  LucideGrid2X2,
-  LucideGrid2X2Check,
-  LucideGrid2X2Plus,
-  LucideGrid2X2X,
-  LucideGrid2x2,
-  LucideGrid2x2Check,
-  LucideGrid2x2Plus,
-  LucideGrid2x2X,
-  LucideGrid3X3,
-  LucideGrid3x2,
-  LucideGrid3x3,
-  LucideGrip,
-  LucideGripHorizontal,
-  LucideGripVertical,
-  LucideGroup,
-  LucideGuitar,
-  LucideHam,
-  LucideHamburger,
-  LucideHammer,
-  LucideHand,
-  LucideHandCoins,
-  LucideHandFist,
-  LucideHandGrab,
-  LucideHandHeart,
-  LucideHandHelping,
-  LucideHandMetal,
-  LucideHandPlatter,
-  LucideHandbag,
-  LucideHandshake,
-  LucideHardDrive,
-  LucideHardDriveDownload,
-  LucideHardDriveUpload,
-  LucideHardHat,
-  LucideHash,
-  LucideHatGlasses,
-  LucideHaze,
-  LucideHd,
-  LucideHdmiPort,
-  LucideHeading,
-  LucideHeading1,
-  LucideHeading2,
-  LucideHeading3,
-  LucideHeading4,
-  LucideHeading5,
-  LucideHeading6,
-  LucideHeadphoneOff,
-  LucideHeadphones,
-  LucideHeadset,
-  LucideHeart,
-  LucideHeartCrack,
-  LucideHeartHandshake,
-  LucideHeartMinus,
-  LucideHeartOff,
-  LucideHeartPlus,
-  LucideHeartPulse,
-  LucideHeater,
-  LucideHelicopter,
-  LucideHelpCircle,
-  LucideHelpingHand,
-  LucideHexagon,
-  LucideHighlighter,
-  LucideHistory,
-  LucideHome,
-  LucideHop,
-  LucideHopOff,
-  LucideHospital,
-  LucideHotel,
-  LucideHourglass,
-  LucideHouse,
-  LucideHouseHeart,
-  LucideHousePlug,
-  LucideHousePlus,
-  LucideHouseWifi,
-  LucideIceCream,
-  LucideIceCream2,
-  LucideIceCreamBowl,
-  LucideIceCreamCone,
-  LucideIdCard,
-  LucideIdCardLanyard,
-  LucideImage,
-  LucideImageDown,
-  LucideImageMinus,
-  LucideImageOff,
-  LucideImagePlay,
-  LucideImagePlus,
-  LucideImageUp,
-  LucideImageUpscale,
-  LucideImages,
-  LucideImport,
-  LucideInbox,
-  LucideIndent,
-  LucideIndentDecrease,
-  LucideIndentIncrease,
-  LucideIndianRupee,
-  LucideInfinity,
-  LucideInfo,
-  LucideInspect,
-  LucideInspectionPanel,
-  LucideInstagram,
-  LucideItalic,
-  LucideIterationCcw,
-  LucideIterationCw,
-  LucideJapaneseYen,
-  LucideJoystick,
-  LucideKanban,
-  LucideKanbanSquare,
-  LucideKanbanSquareDashed,
-  LucideKayak,
-  LucideKey,
-  LucideKeyRound,
-  LucideKeySquare,
-  LucideKeyboard,
-  LucideKeyboardMusic,
-  LucideKeyboardOff,
-  LucideLamp,
-  LucideLampCeiling,
-  LucideLampDesk,
-  LucideLampFloor,
-  LucideLampWallDown,
-  LucideLampWallUp,
-  LucideLandPlot,
-  LucideLandmark,
-  LucideLanguages,
-  LucideLaptop,
-  LucideLaptop2,
-  LucideLaptopMinimal,
-  LucideLaptopMinimalCheck,
-  LucideLasso,
-  LucideLassoSelect,
-  LucideLaugh,
-  LucideLayers,
-  LucideLayers2,
-  LucideLayers3,
-  LucideLayersPlus,
-  LucideLayout,
-  LucideLayoutDashboard,
-  LucideLayoutGrid,
-  LucideLayoutList,
-  LucideLayoutPanelLeft,
-  LucideLayoutPanelTop,
-  LucideLayoutTemplate,
-  LucideLeaf,
-  LucideLeafyGreen,
-  LucideLectern,
-  LucideLensConcave,
-  LucideLensConvex,
-  LucideLetterText,
-  LucideLibrary,
-  LucideLibraryBig,
-  LucideLibrarySquare,
-  LucideLifeBuoy,
-  LucideLigature,
-  LucideLightbulb,
-  LucideLightbulbOff,
-  LucideLineChart,
-  LucideLineDotRightHorizontal,
-  LucideLineSquiggle,
-  LucideLink,
-  LucideLink2,
-  LucideLink2Off,
-  LucideLinkedin,
-  LucideList,
-  LucideListCheck,
-  LucideListChecks,
-  LucideListChevronsDownUp,
-  LucideListChevronsUpDown,
-  LucideListCollapse,
-  LucideListEnd,
-  LucideListFilter,
-  LucideListFilterPlus,
-  LucideListIndentDecrease,
-  LucideListIndentIncrease,
-  LucideListMinus,
-  LucideListMusic,
-  LucideListOrdered,
-  LucideListPlus,
-  LucideListRestart,
-  LucideListStart,
-  LucideListTodo,
-  LucideListTree,
-  LucideListVideo,
-  LucideListX,
-  LucideLoader,
-  LucideLoader2,
-  LucideLoaderCircle,
-  LucideLoaderPinwheel,
-  LucideLocate,
-  LucideLocateFixed,
-  LucideLocateOff,
-  LucideLocationEdit,
-  LucideLock,
-  LucideLockKeyhole,
-  LucideLockKeyholeOpen,
-  LucideLockOpen,
-  LucideLogIn,
-  LucideLogOut,
-  LucideLogs,
-  LucideLollipop,
-  LucideLuggage,
-  LucideMSquare,
-  LucideMagnet,
-  LucideMail,
-  LucideMailCheck,
-  LucideMailMinus,
-  LucideMailOpen,
-  LucideMailPlus,
-  LucideMailQuestion,
-  LucideMailQuestionMark,
-  LucideMailSearch,
-  LucideMailWarning,
-  LucideMailX,
-  LucideMailbox,
-  LucideMails,
-  LucideMap,
-  LucideMapMinus,
-  LucideMapPin,
-  LucideMapPinCheck,
-  LucideMapPinCheckInside,
-  LucideMapPinHouse,
-  LucideMapPinMinus,
-  LucideMapPinMinusInside,
-  LucideMapPinOff,
-  LucideMapPinPen,
-  LucideMapPinPlus,
-  LucideMapPinPlusInside,
-  LucideMapPinX,
-  LucideMapPinXInside,
-  LucideMapPinned,
-  LucideMapPlus,
-  LucideMars,
-  LucideMarsStroke,
-  LucideMartini,
-  LucideMaximize,
-  LucideMaximize2,
-  LucideMedal,
-  LucideMegaphone,
-  LucideMegaphoneOff,
-  LucideMeh,
-  LucideMemoryStick,
-  LucideMenu,
-  LucideMenuSquare,
-  LucideMerge,
-  LucideMessageCircle,
-  LucideMessageCircleCheck,
-  LucideMessageCircleCode,
-  LucideMessageCircleDashed,
-  LucideMessageCircleHeart,
-  LucideMessageCircleMore,
-  LucideMessageCircleOff,
-  LucideMessageCirclePlus,
-  LucideMessageCircleQuestion,
-  LucideMessageCircleQuestionMark,
-  LucideMessageCircleReply,
-  LucideMessageCircleWarning,
-  LucideMessageCircleX,
-  LucideMessageSquare,
-  LucideMessageSquareCheck,
-  LucideMessageSquareCode,
-  LucideMessageSquareDashed,
-  LucideMessageSquareDiff,
-  LucideMessageSquareDot,
-  LucideMessageSquareHeart,
-  LucideMessageSquareLock,
-  LucideMessageSquareMore,
-  LucideMessageSquareOff,
-  LucideMessageSquarePlus,
-  LucideMessageSquareQuote,
-  LucideMessageSquareReply,
-  LucideMessageSquareShare,
-  LucideMessageSquareText,
-  LucideMessageSquareWarning,
-  LucideMessageSquareX,
-  LucideMessagesSquare,
-  LucideMetronome,
-  LucideMic,
-  LucideMic2,
-  LucideMicOff,
-  LucideMicVocal,
-  LucideMicrochip,
-  LucideMicroscope,
-  LucideMicrowave,
-  LucideMilestone,
-  LucideMilk,
-  LucideMilkOff,
-  LucideMinimize,
-  LucideMinimize2,
-  LucideMinus,
-  LucideMinusCircle,
-  LucideMinusSquare,
-  LucideMirrorRectangular,
-  LucideMirrorRound,
-  LucideMonitor,
-  LucideMonitorCheck,
-  LucideMonitorCloud,
-  LucideMonitorCog,
-  LucideMonitorDot,
-  LucideMonitorDown,
-  LucideMonitorOff,
-  LucideMonitorPause,
-  LucideMonitorPlay,
-  LucideMonitorSmartphone,
-  LucideMonitorSpeaker,
-  LucideMonitorStop,
-  LucideMonitorUp,
-  LucideMonitorX,
-  LucideMoon,
-  LucideMoonStar,
-  LucideMoreHorizontal,
-  LucideMoreVertical,
-  LucideMotorbike,
-  LucideMountain,
-  LucideMountainSnow,
-  LucideMouse,
-  LucideMouseLeft,
-  LucideMouseOff,
-  LucideMousePointer,
-  LucideMousePointer2,
-  LucideMousePointer2Off,
-  LucideMousePointerBan,
-  LucideMousePointerClick,
-  LucideMousePointerSquareDashed,
-  LucideMouseRight,
-  LucideMove,
-  LucideMove3D,
-  LucideMove3d,
-  LucideMoveDiagonal,
-  LucideMoveDiagonal2,
-  LucideMoveDown,
-  LucideMoveDownLeft,
-  LucideMoveDownRight,
-  LucideMoveHorizontal,
-  LucideMoveLeft,
-  LucideMoveRight,
-  LucideMoveUp,
-  LucideMoveUpLeft,
-  LucideMoveUpRight,
-  LucideMoveVertical,
-  LucideMusic,
-  LucideMusic2,
-  LucideMusic3,
-  LucideMusic4,
-  LucideNavigation,
-  LucideNavigation2,
-  LucideNavigation2Off,
-  LucideNavigationOff,
-  LucideNetwork,
-  LucideNewspaper,
-  LucideNfc,
-  LucideNonBinary,
-  LucideNotebook,
-  LucideNotebookPen,
-  LucideNotebookTabs,
-  LucideNotebookText,
-  LucideNotepadText,
-  LucideNotepadTextDashed,
-  LucideNut,
-  LucideNutOff,
-  LucideOctagon,
-  LucideOctagonAlert,
-  LucideOctagonMinus,
-  LucideOctagonPause,
-  LucideOctagonX,
-  LucideOmega,
-  LucideOption,
-  LucideOrbit,
-  LucideOrigami,
-  LucideOutdent,
-  LucidePackage,
-  LucidePackage2,
-  LucidePackageCheck,
-  LucidePackageMinus,
-  LucidePackageOpen,
-  LucidePackagePlus,
-  LucidePackageSearch,
-  LucidePackageX,
-  LucidePaintBucket,
-  LucidePaintRoller,
-  LucidePaintbrush,
-  LucidePaintbrush2,
-  LucidePaintbrushVertical,
-  LucidePalette,
-  LucidePalmtree,
-  LucidePanda,
-  LucidePanelBottom,
-  LucidePanelBottomClose,
-  LucidePanelBottomDashed,
-  LucidePanelBottomInactive,
-  LucidePanelBottomOpen,
-  LucidePanelLeft,
-  LucidePanelLeftClose,
-  LucidePanelLeftDashed,
-  LucidePanelLeftInactive,
-  LucidePanelLeftOpen,
-  LucidePanelLeftRightDashed,
-  LucidePanelRight,
-  LucidePanelRightClose,
-  LucidePanelRightDashed,
-  LucidePanelRightInactive,
-  LucidePanelRightOpen,
-  LucidePanelTop,
-  LucidePanelTopBottomDashed,
-  LucidePanelTopClose,
-  LucidePanelTopDashed,
-  LucidePanelTopInactive,
-  LucidePanelTopOpen,
-  LucidePanelsLeftBottom,
-  LucidePanelsLeftRight,
-  LucidePanelsRightBottom,
-  LucidePanelsTopBottom,
-  LucidePanelsTopLeft,
-  LucidePaperclip,
-  LucideParentheses,
-  LucideParkingCircle,
-  LucideParkingCircleOff,
-  LucideParkingMeter,
-  LucideParkingSquare,
-  LucideParkingSquareOff,
-  LucidePartyPopper,
-  LucidePause,
-  LucidePauseCircle,
-  LucidePauseOctagon,
-  LucidePawPrint,
-  LucidePcCase,
-  LucidePen,
-  LucidePenBox,
-  LucidePenLine,
-  LucidePenOff,
-  LucidePenSquare,
-  LucidePenTool,
-  LucidePencil,
-  LucidePencilLine,
-  LucidePencilOff,
-  LucidePencilRuler,
-  LucidePentagon,
-  LucidePercent,
-  LucidePercentCircle,
-  LucidePercentDiamond,
-  LucidePercentSquare,
-  LucidePersonStanding,
-  LucidePhilippinePeso,
-  LucidePhone,
-  LucidePhoneCall,
-  LucidePhoneForwarded,
-  LucidePhoneIncoming,
-  LucidePhoneMissed,
-  LucidePhoneOff,
-  LucidePhoneOutgoing,
-  LucidePi,
-  LucidePiSquare,
-  LucidePiano,
-  LucidePickaxe,
-  LucidePictureInPicture,
-  LucidePictureInPicture2,
-  LucidePieChart,
-  LucidePiggyBank,
-  LucidePilcrow,
-  LucidePilcrowLeft,
-  LucidePilcrowRight,
-  LucidePilcrowSquare,
-  LucidePill,
-  LucidePillBottle,
-  LucidePin,
-  LucidePinOff,
-  LucidePipette,
-  LucidePizza,
-  LucidePlane,
-  LucidePlaneLanding,
-  LucidePlaneTakeoff,
-  LucidePlay,
-  LucidePlayCircle,
-  LucidePlaySquare,
-  LucidePlug,
-  LucidePlug2,
-  LucidePlugZap,
-  LucidePlugZap2,
-  LucidePlus,
-  LucidePlusCircle,
-  LucidePlusSquare,
-  LucidePocket,
-  LucidePocketKnife,
-  LucidePodcast,
-  LucidePointer,
-  LucidePointerOff,
-  LucidePopcorn,
-  LucidePopsicle,
-  LucidePoundSterling,
-  LucidePower,
-  LucidePowerCircle,
-  LucidePowerOff,
-  LucidePowerSquare,
-  LucidePresentation,
-  LucidePrinter,
-  LucidePrinterCheck,
-  LucidePrinterX,
-  LucideProjector,
-  LucideProportions,
-  LucidePuzzle,
-  LucidePyramid,
-  LucideQrCode,
-  LucideQuote,
-  LucideRabbit,
-  LucideRadar,
-  LucideRadiation,
-  LucideRadical,
-  LucideRadio,
-  LucideRadioReceiver,
-  LucideRadioTower,
-  LucideRadius,
-  LucideRailSymbol,
-  LucideRainbow,
-  LucideRat,
-  LucideRatio,
-  LucideReceipt,
-  LucideReceiptCent,
-  LucideReceiptEuro,
-  LucideReceiptIndianRupee,
-  LucideReceiptJapaneseYen,
-  LucideReceiptPoundSterling,
-  LucideReceiptRussianRuble,
-  LucideReceiptSwissFranc,
-  LucideReceiptText,
-  LucideReceiptTurkishLira,
-  LucideRectangleCircle,
-  LucideRectangleEllipsis,
-  LucideRectangleGoggles,
-  LucideRectangleHorizontal,
-  LucideRectangleVertical,
-  LucideRecycle,
-  LucideRedo,
-  LucideRedo2,
-  LucideRedoDot,
-  LucideRefreshCcw,
-  LucideRefreshCcwDot,
-  LucideRefreshCw,
-  LucideRefreshCwOff,
-  LucideRefrigerator,
-  LucideRegex,
-  LucideRemoveFormatting,
-  LucideRepeat,
-  LucideRepeat1,
-  LucideRepeat2,
-  LucideReplace,
-  LucideReplaceAll,
-  LucideReply,
-  LucideReplyAll,
-  LucideRewind,
-  LucideRibbon,
-  LucideRocket,
-  LucideRockingChair,
-  LucideRollerCoaster,
-  LucideRose,
-  LucideRotate3D,
-  LucideRotate3d,
-  LucideRotateCcw,
-  LucideRotateCcwKey,
-  LucideRotateCcwSquare,
-  LucideRotateCw,
-  LucideRotateCwSquare,
-  LucideRoute,
-  LucideRouteOff,
-  LucideRouter,
-  LucideRows,
-  LucideRows2,
-  LucideRows3,
-  LucideRows4,
-  LucideRss,
-  LucideRuler,
-  LucideRulerDimensionLine,
-  LucideRussianRuble,
-  LucideSailboat,
-  LucideSalad,
-  LucideSandwich,
-  LucideSatellite,
-  LucideSatelliteDish,
-  LucideSaudiRiyal,
-  LucideSave,
-  LucideSaveAll,
-  LucideSaveOff,
-  LucideScale,
-  LucideScale3D,
-  LucideScale3d,
-  LucideScaling,
-  LucideScan,
-  LucideScanBarcode,
-  LucideScanEye,
-  LucideScanFace,
-  LucideScanHeart,
-  LucideScanLine,
-  LucideScanQrCode,
-  LucideScanSearch,
-  LucideScanText,
-  LucideScatterChart,
-  LucideSchool,
-  LucideSchool2,
-  LucideScissors,
-  LucideScissorsLineDashed,
-  LucideScissorsSquare,
-  LucideScissorsSquareDashedBottom,
-  LucideScooter,
-  LucideScreenShare,
-  LucideScreenShareOff,
-  LucideScroll,
-  LucideScrollText,
-  LucideSearch,
-  LucideSearchAlert,
-  LucideSearchCheck,
-  LucideSearchCode,
-  LucideSearchSlash,
-  LucideSearchX,
-  LucideSection,
-  LucideSend,
-  LucideSendHorizonal,
-  LucideSendHorizontal,
-  LucideSendToBack,
-  LucideSeparatorHorizontal,
-  LucideSeparatorVertical,
-  LucideServer,
-  LucideServerCog,
-  LucideServerCrash,
-  LucideServerOff,
-  LucideSettings,
-  LucideSettings2,
-  LucideShapes,
-  LucideShare,
-  LucideShare2,
-  LucideSheet,
-  LucideShell,
-  LucideShelvingUnit,
-  LucideShield,
-  LucideShieldAlert,
-  LucideShieldBan,
-  LucideShieldCheck,
-  LucideShieldClose,
-  LucideShieldEllipsis,
-  LucideShieldHalf,
-  LucideShieldMinus,
-  LucideShieldOff,
-  LucideShieldPlus,
-  LucideShieldQuestion,
-  LucideShieldQuestionMark,
-  LucideShieldUser,
-  LucideShieldX,
-  LucideShip,
-  LucideShipWheel,
-  LucideShirt,
-  LucideShoppingBag,
-  LucideShoppingBasket,
-  LucideShoppingCart,
-  LucideShovel,
-  LucideShowerHead,
-  LucideShredder,
-  LucideShrimp,
-  LucideShrink,
-  LucideShrub,
-  LucideShuffle,
-  LucideSidebar,
-  LucideSidebarClose,
-  LucideSidebarOpen,
-  LucideSigma,
-  LucideSigmaSquare,
-  LucideSignal,
-  LucideSignalHigh,
-  LucideSignalLow,
-  LucideSignalMedium,
-  LucideSignalZero,
-  LucideSignature,
-  LucideSignpost,
-  LucideSignpostBig,
-  LucideSiren,
-  LucideSkipBack,
-  LucideSkipForward,
-  LucideSkull,
-  LucideSlack,
-  LucideSlash,
-  LucideSlashSquare,
-  LucideSlice,
-  LucideSliders,
-  LucideSlidersHorizontal,
-  LucideSlidersVertical,
-  LucideSmartphone,
-  LucideSmartphoneCharging,
-  LucideSmartphoneNfc,
-  LucideSmile,
-  LucideSmilePlus,
-  LucideSnail,
-  LucideSnowflake,
-  LucideSoapDispenserDroplet,
-  LucideSofa,
-  LucideSolarPanel,
-  LucideSortAsc,
-  LucideSortDesc,
-  LucideSoup,
-  LucideSpace,
-  LucideSpade,
-  LucideSparkle,
-  LucideSparkles,
-  LucideSpeaker,
-  LucideSpeech,
-  LucideSpellCheck,
-  LucideSpellCheck2,
-  LucideSpline,
-  LucideSplinePointer,
-  LucideSplit,
-  LucideSplitSquareHorizontal,
-  LucideSplitSquareVertical,
-  LucideSpool,
-  LucideSpotlight,
-  LucideSprayCan,
-  LucideSprout,
-  LucideSquare,
-  LucideSquareActivity,
-  LucideSquareArrowDown,
-  LucideSquareArrowDownLeft,
-  LucideSquareArrowDownRight,
-  LucideSquareArrowLeft,
-  LucideSquareArrowOutDownLeft,
-  LucideSquareArrowOutDownRight,
-  LucideSquareArrowOutUpLeft,
-  LucideSquareArrowOutUpRight,
-  LucideSquareArrowRight,
-  LucideSquareArrowRightEnter,
-  LucideSquareArrowRightExit,
-  LucideSquareArrowUp,
-  LucideSquareArrowUpLeft,
-  LucideSquareArrowUpRight,
-  LucideSquareAsterisk,
-  LucideSquareBottomDashedScissors,
-  LucideSquareCenterlineDashedHorizontal,
-  LucideSquareCenterlineDashedVertical,
-  LucideSquareChartGantt,
-  LucideSquareCheck,
-  LucideSquareCheckBig,
-  LucideSquareChevronDown,
-  LucideSquareChevronLeft,
-  LucideSquareChevronRight,
-  LucideSquareChevronUp,
-  LucideSquareCode,
-  LucideSquareDashed,
-  LucideSquareDashedBottom,
-  LucideSquareDashedBottomCode,
-  LucideSquareDashedKanban,
-  LucideSquareDashedMousePointer,
-  LucideSquareDashedTopSolid,
-  LucideSquareDivide,
-  LucideSquareDot,
-  LucideSquareEqual,
-  LucideSquareFunction,
-  LucideSquareGanttChart,
-  LucideSquareKanban,
-  LucideSquareLibrary,
-  LucideSquareM,
-  LucideSquareMenu,
-  LucideSquareMinus,
-  LucideSquareMousePointer,
-  LucideSquareParking,
-  LucideSquareParkingOff,
-  LucideSquarePause,
-  LucideSquarePen,
-  LucideSquarePercent,
-  LucideSquarePi,
-  LucideSquarePilcrow,
-  LucideSquarePlay,
-  LucideSquarePlus,
-  LucideSquarePower,
-  LucideSquareRadical,
-  LucideSquareRoundCorner,
-  LucideSquareScissors,
-  LucideSquareSigma,
-  LucideSquareSlash,
-  LucideSquareSplitHorizontal,
-  LucideSquareSplitVertical,
-  LucideSquareSquare,
-  LucideSquareStack,
-  LucideSquareStar,
-  LucideSquareStop,
-  LucideSquareTerminal,
-  LucideSquareUser,
-  LucideSquareUserRound,
-  LucideSquareX,
-  LucideSquaresExclude,
-  LucideSquaresIntersect,
-  LucideSquaresSubtract,
-  LucideSquaresUnite,
-  LucideSquircle,
-  LucideSquircleDashed,
-  LucideSquirrel,
-  LucideStamp,
-  LucideStar,
-  LucideStarHalf,
-  LucideStarOff,
-  LucideStars,
-  LucideStepBack,
-  LucideStepForward,
-  LucideStethoscope,
-  LucideSticker,
-  LucideStickyNote,
-  LucideStone,
-  LucideStopCircle,
-  LucideStore,
-  LucideStretchHorizontal,
-  LucideStretchVertical,
-  LucideStrikethrough,
-  LucideSubscript,
-  LucideSubtitles,
-  LucideSun,
-  LucideSunDim,
-  LucideSunMedium,
-  LucideSunMoon,
-  LucideSunSnow,
-  LucideSunrise,
-  LucideSunset,
-  LucideSuperscript,
-  LucideSwatchBook,
-  LucideSwissFranc,
-  LucideSwitchCamera,
-  LucideSword,
-  LucideSwords,
-  LucideSyringe,
-  LucideTable,
-  LucideTable2,
-  LucideTableCellsMerge,
-  LucideTableCellsSplit,
-  LucideTableColumnsSplit,
-  LucideTableConfig,
-  LucideTableOfContents,
-  LucideTableProperties,
-  LucideTableRowsSplit,
-  LucideTablet,
-  LucideTabletSmartphone,
-  LucideTablets,
-  LucideTag,
-  LucideTags,
-  LucideTally1,
-  LucideTally2,
-  LucideTally3,
-  LucideTally4,
-  LucideTally5,
-  LucideTangent,
-  LucideTarget,
-  LucideTelescope,
-  LucideTent,
-  LucideTentTree,
-  LucideTerminal,
-  LucideTerminalSquare,
-  LucideTestTube,
-  LucideTestTube2,
-  LucideTestTubeDiagonal,
-  LucideTestTubes,
-  LucideText,
-  LucideTextAlignCenter,
-  LucideTextAlignEnd,
-  LucideTextAlignJustify,
-  LucideTextAlignStart,
-  LucideTextCursor,
-  LucideTextCursorInput,
-  LucideTextInitial,
-  LucideTextQuote,
-  LucideTextSearch,
-  LucideTextSelect,
-  LucideTextSelection,
-  LucideTextWrap,
-  LucideTheater,
-  LucideThermometer,
-  LucideThermometerSnowflake,
-  LucideThermometerSun,
-  LucideThumbsDown,
-  LucideThumbsUp,
-  LucideTicket,
-  LucideTicketCheck,
-  LucideTicketMinus,
-  LucideTicketPercent,
-  LucideTicketPlus,
-  LucideTicketSlash,
-  LucideTicketX,
-  LucideTickets,
-  LucideTicketsPlane,
-  LucideTimer,
-  LucideTimerOff,
-  LucideTimerReset,
-  LucideToggleLeft,
-  LucideToggleRight,
-  LucideToilet,
-  LucideToolCase,
-  LucideToolbox,
-  LucideTornado,
-  LucideTorus,
-  LucideTouchpad,
-  LucideTouchpadOff,
-  LucideTowelRack,
-  LucideTowerControl,
-  LucideToyBrick,
-  LucideTractor,
-  LucideTrafficCone,
-  LucideTrain,
-  LucideTrainFront,
-  LucideTrainFrontTunnel,
-  LucideTrainTrack,
-  LucideTramFront,
-  LucideTransgender,
-  LucideTrash,
-  LucideTrash2,
-  LucideTreeDeciduous,
-  LucideTreePalm,
-  LucideTreePine,
-  LucideTrees,
-  LucideTrello,
-  LucideTrendingDown,
-  LucideTrendingUp,
-  LucideTrendingUpDown,
-  LucideTriangle,
-  LucideTriangleAlert,
-  LucideTriangleDashed,
-  LucideTriangleRight,
-  LucideTrophy,
-  LucideTruck,
-  LucideTruckElectric,
-  LucideTurkishLira,
-  LucideTurntable,
-  LucideTurtle,
-  LucideTv,
-  LucideTv2,
-  LucideTvMinimal,
-  LucideTvMinimalPlay,
-  LucideTwitch,
-  LucideTwitter,
-  LucideType,
-  LucideTypeOutline,
-  LucideUmbrella,
-  LucideUmbrellaOff,
-  LucideUnderline,
-  LucideUndo,
-  LucideUndo2,
-  LucideUndoDot,
-  LucideUnfoldHorizontal,
-  LucideUnfoldVertical,
-  LucideUngroup,
-  LucideUniversity,
-  LucideUnlink,
-  LucideUnlink2,
-  LucideUnlock,
-  LucideUnlockKeyhole,
-  LucideUnplug,
-  LucideUpload,
-  LucideUploadCloud,
-  LucideUsb,
-  LucideUser,
-  LucideUser2,
-  LucideUserCheck,
-  LucideUserCheck2,
-  LucideUserCircle,
-  LucideUserCircle2,
-  LucideUserCog,
-  LucideUserCog2,
-  LucideUserKey,
-  LucideUserLock,
-  LucideUserMinus,
-  LucideUserMinus2,
-  LucideUserPen,
-  LucideUserPlus,
-  LucideUserPlus2,
-  LucideUserRound,
-  LucideUserRoundCheck,
-  LucideUserRoundCog,
-  LucideUserRoundKey,
-  LucideUserRoundMinus,
-  LucideUserRoundPen,
-  LucideUserRoundPlus,
-  LucideUserRoundSearch,
-  LucideUserRoundX,
-  LucideUserSearch,
-  LucideUserSquare,
-  LucideUserSquare2,
-  LucideUserStar,
-  LucideUserX,
-  LucideUserX2,
-  LucideUsers,
-  LucideUsers2,
-  LucideUsersRound,
-  LucideUtensils,
-  LucideUtensilsCrossed,
-  LucideUtilityPole,
-  LucideVan,
-  LucideVariable,
-  LucideVault,
-  LucideVectorSquare,
-  LucideVegan,
-  LucideVenetianMask,
-  LucideVenus,
-  LucideVenusAndMars,
-  LucideVerified,
-  LucideVibrate,
-  LucideVibrateOff,
-  LucideVideo,
-  LucideVideoOff,
-  LucideVideotape,
-  LucideView,
-  LucideVoicemail,
-  LucideVolleyball,
-  LucideVolume,
-  LucideVolume1,
-  LucideVolume2,
-  LucideVolumeOff,
-  LucideVolumeX,
-  LucideVote,
-  LucideWallet,
-  LucideWallet2,
-  LucideWalletCards,
-  LucideWalletMinimal,
-  LucideWallpaper,
-  LucideWand,
-  LucideWand2,
-  LucideWandSparkles,
-  LucideWarehouse,
-  LucideWashingMachine,
-  LucideWatch,
-  LucideWaves,
-  LucideWavesArrowDown,
-  LucideWavesArrowUp,
-  LucideWavesLadder,
-  LucideWaypoints,
-  LucideWebcam,
-  LucideWebhook,
-  LucideWebhookOff,
-  LucideWeight,
-  LucideWeightTilde,
-  LucideWheat,
-  LucideWheatOff,
-  LucideWholeWord,
-  LucideWifi,
-  LucideWifiCog,
-  LucideWifiHigh,
-  LucideWifiLow,
-  LucideWifiOff,
-  LucideWifiPen,
-  LucideWifiSync,
-  LucideWifiZero,
-  LucideWind,
-  LucideWindArrowDown,
-  LucideWine,
-  LucideWineOff,
-  LucideWorkflow,
-  LucideWorm,
-  LucideWrapText,
-  LucideWrench,
-  LucideX,
-  LucideXCircle,
-  LucideXLineTop,
-  LucideXOctagon,
-  LucideXSquare,
-  LucideYoutube,
-  LucideZap,
-  LucideZapOff,
-  LucideZodiacAquarius,
-  LucideZodiacAries,
-  LucideZodiacCancer,
-  LucideZodiacCapricorn,
-  LucideZodiacGemini,
-  LucideZodiacLeo,
-  LucideZodiacLibra,
-  LucideZodiacOphiuchus,
-  LucideZodiacPisces,
-  LucideZodiacSagittarius,
-  LucideZodiacScorpio,
-  LucideZodiacTaurus,
-  LucideZodiacVirgo,
-  LucideZoomIn,
-  LucideZoomOut,
-  Luggage2 as Luggage,
-  LuggageIcon,
-  MSquare,
-  MSquareIcon,
-  Magnet2 as Magnet,
-  MagnetIcon,
-  Mail2 as Mail,
-  MailCheck2 as MailCheck,
-  MailCheckIcon,
-  MailIcon,
-  MailMinus2 as MailMinus,
-  MailMinusIcon,
-  MailOpen2 as MailOpen,
-  MailOpenIcon,
-  MailPlus2 as MailPlus,
-  MailPlusIcon,
-  MailQuestion,
-  MailQuestionIcon,
-  MailQuestionMark2 as MailQuestionMark,
-  MailQuestionMarkIcon,
-  MailSearch2 as MailSearch,
-  MailSearchIcon,
-  MailWarning2 as MailWarning,
-  MailWarningIcon,
-  MailX2 as MailX,
-  MailXIcon,
-  Mailbox2 as Mailbox,
-  MailboxIcon,
-  Mails2 as Mails,
-  MailsIcon,
-  Map2 as Map,
-  MapIcon,
-  MapMinus2 as MapMinus,
-  MapMinusIcon,
-  MapPin2 as MapPin,
-  MapPinCheck2 as MapPinCheck,
-  MapPinCheckIcon,
-  MapPinCheckInside2 as MapPinCheckInside,
-  MapPinCheckInsideIcon,
-  MapPinHouse2 as MapPinHouse,
-  MapPinHouseIcon,
-  MapPinIcon,
-  MapPinMinus2 as MapPinMinus,
-  MapPinMinusIcon,
-  MapPinMinusInside2 as MapPinMinusInside,
-  MapPinMinusInsideIcon,
-  MapPinOff2 as MapPinOff,
-  MapPinOffIcon,
-  MapPinPen2 as MapPinPen,
-  MapPinPenIcon,
-  MapPinPlus2 as MapPinPlus,
-  MapPinPlusIcon,
-  MapPinPlusInside2 as MapPinPlusInside,
-  MapPinPlusInsideIcon,
-  MapPinX2 as MapPinX,
-  MapPinXIcon,
-  MapPinXInside2 as MapPinXInside,
-  MapPinXInsideIcon,
-  MapPinned2 as MapPinned,
-  MapPinnedIcon,
-  MapPlus2 as MapPlus,
-  MapPlusIcon,
-  Mars2 as Mars,
-  MarsIcon,
-  MarsStroke2 as MarsStroke,
-  MarsStrokeIcon,
-  Martini2 as Martini,
-  MartiniIcon,
-  Maximize3 as Maximize,
-  Maximize22 as Maximize2,
-  Maximize2Icon,
-  MaximizeIcon,
-  Medal2 as Medal,
-  MedalIcon,
-  Megaphone2 as Megaphone,
-  MegaphoneIcon,
-  MegaphoneOff2 as MegaphoneOff,
-  MegaphoneOffIcon,
-  Meh2 as Meh,
-  MehIcon,
-  MemoryStick2 as MemoryStick,
-  MemoryStickIcon,
-  Menu2 as Menu,
-  MenuIcon,
-  MenuSquare,
-  MenuSquareIcon,
-  Merge2 as Merge,
-  MergeIcon,
-  MessageCircle2 as MessageCircle,
-  MessageCircleCheck2 as MessageCircleCheck,
-  MessageCircleCheckIcon,
-  MessageCircleCode2 as MessageCircleCode,
-  MessageCircleCodeIcon,
-  MessageCircleDashed2 as MessageCircleDashed,
-  MessageCircleDashedIcon,
-  MessageCircleHeart2 as MessageCircleHeart,
-  MessageCircleHeartIcon,
-  MessageCircleIcon,
-  MessageCircleMore2 as MessageCircleMore,
-  MessageCircleMoreIcon,
-  MessageCircleOff2 as MessageCircleOff,
-  MessageCircleOffIcon,
-  MessageCirclePlus2 as MessageCirclePlus,
-  MessageCirclePlusIcon,
-  MessageCircleQuestion,
-  MessageCircleQuestionIcon,
-  MessageCircleQuestionMark2 as MessageCircleQuestionMark,
-  MessageCircleQuestionMarkIcon,
-  MessageCircleReply2 as MessageCircleReply,
-  MessageCircleReplyIcon,
-  MessageCircleWarning2 as MessageCircleWarning,
-  MessageCircleWarningIcon,
-  MessageCircleX2 as MessageCircleX,
-  MessageCircleXIcon,
-  MessageSquare2 as MessageSquare,
-  MessageSquareCheck2 as MessageSquareCheck,
-  MessageSquareCheckIcon,
-  MessageSquareCode2 as MessageSquareCode,
-  MessageSquareCodeIcon,
-  MessageSquareDashed2 as MessageSquareDashed,
-  MessageSquareDashedIcon,
-  MessageSquareDiff2 as MessageSquareDiff,
-  MessageSquareDiffIcon,
-  MessageSquareDot2 as MessageSquareDot,
-  MessageSquareDotIcon,
-  MessageSquareHeart2 as MessageSquareHeart,
-  MessageSquareHeartIcon,
-  MessageSquareIcon,
-  MessageSquareLock2 as MessageSquareLock,
-  MessageSquareLockIcon,
-  MessageSquareMore2 as MessageSquareMore,
-  MessageSquareMoreIcon,
-  MessageSquareOff2 as MessageSquareOff,
-  MessageSquareOffIcon,
-  MessageSquarePlus2 as MessageSquarePlus,
-  MessageSquarePlusIcon,
-  MessageSquareQuote2 as MessageSquareQuote,
-  MessageSquareQuoteIcon,
-  MessageSquareReply2 as MessageSquareReply,
-  MessageSquareReplyIcon,
-  MessageSquareShare2 as MessageSquareShare,
-  MessageSquareShareIcon,
-  MessageSquareText2 as MessageSquareText,
-  MessageSquareTextIcon,
-  MessageSquareWarning2 as MessageSquareWarning,
-  MessageSquareWarningIcon,
-  MessageSquareX2 as MessageSquareX,
-  MessageSquareXIcon,
-  MessagesSquare2 as MessagesSquare,
-  MessagesSquareIcon,
-  Metronome2 as Metronome,
-  MetronomeIcon,
-  Mic2 as Mic,
-  Mic22 as Mic2,
-  Mic2Icon,
-  MicIcon,
-  MicOff2 as MicOff,
-  MicOffIcon,
-  MicVocal2 as MicVocal,
-  MicVocalIcon,
-  Microchip2 as Microchip,
-  MicrochipIcon,
-  Microscope2 as Microscope,
-  MicroscopeIcon,
-  Microwave2 as Microwave,
-  MicrowaveIcon,
-  Milestone2 as Milestone,
-  MilestoneIcon,
-  Milk2 as Milk,
-  MilkIcon,
-  MilkOff2 as MilkOff,
-  MilkOffIcon,
-  Minimize3 as Minimize,
-  Minimize22 as Minimize2,
-  Minimize2Icon,
-  MinimizeIcon,
-  Minus2 as Minus,
-  MinusCircle,
-  MinusCircleIcon,
-  MinusIcon,
-  MinusSquare,
-  MinusSquareIcon,
-  MirrorRectangular2 as MirrorRectangular,
-  MirrorRectangularIcon,
-  MirrorRound2 as MirrorRound,
-  MirrorRoundIcon,
-  Monitor2 as Monitor,
-  MonitorCheck2 as MonitorCheck,
-  MonitorCheckIcon,
-  MonitorCloud2 as MonitorCloud,
-  MonitorCloudIcon,
-  MonitorCog2 as MonitorCog,
-  MonitorCogIcon,
-  MonitorDot2 as MonitorDot,
-  MonitorDotIcon,
-  MonitorDown2 as MonitorDown,
-  MonitorDownIcon,
-  MonitorIcon,
-  MonitorOff2 as MonitorOff,
-  MonitorOffIcon,
-  MonitorPause2 as MonitorPause,
-  MonitorPauseIcon,
-  MonitorPlay2 as MonitorPlay,
-  MonitorPlayIcon,
-  MonitorSmartphone2 as MonitorSmartphone,
-  MonitorSmartphoneIcon,
-  MonitorSpeaker2 as MonitorSpeaker,
-  MonitorSpeakerIcon,
-  MonitorStop2 as MonitorStop,
-  MonitorStopIcon,
-  MonitorUp2 as MonitorUp,
-  MonitorUpIcon,
-  MonitorX2 as MonitorX,
-  MonitorXIcon,
-  Moon2 as Moon,
-  MoonIcon,
-  MoonStar2 as MoonStar,
-  MoonStarIcon,
-  MoreHorizontal,
-  MoreHorizontalIcon,
-  MoreVertical,
-  MoreVerticalIcon,
-  Motorbike2 as Motorbike,
-  MotorbikeIcon,
-  Mountain2 as Mountain,
-  MountainIcon,
-  MountainSnow2 as MountainSnow,
-  MountainSnowIcon,
-  Mouse2 as Mouse,
-  MouseIcon,
-  MouseLeft2 as MouseLeft,
-  MouseLeftIcon,
-  MouseOff2 as MouseOff,
-  MouseOffIcon,
-  MousePointer3 as MousePointer,
-  MousePointer22 as MousePointer2,
-  MousePointer2Icon,
-  MousePointer2Off2 as MousePointer2Off,
-  MousePointer2OffIcon,
-  MousePointerBan2 as MousePointerBan,
-  MousePointerBanIcon,
-  MousePointerClick2 as MousePointerClick,
-  MousePointerClickIcon,
-  MousePointerIcon,
-  MousePointerSquareDashed,
-  MousePointerSquareDashedIcon,
-  MouseRight2 as MouseRight,
-  MouseRightIcon,
-  Move2 as Move,
-  Move3D,
-  Move3DIcon,
-  Move3d2 as Move3d,
-  Move3dIcon,
-  MoveDiagonal3 as MoveDiagonal,
-  MoveDiagonal22 as MoveDiagonal2,
-  MoveDiagonal2Icon,
-  MoveDiagonalIcon,
-  MoveDown2 as MoveDown,
-  MoveDownIcon,
-  MoveDownLeft2 as MoveDownLeft,
-  MoveDownLeftIcon,
-  MoveDownRight2 as MoveDownRight,
-  MoveDownRightIcon,
-  MoveHorizontal2 as MoveHorizontal,
-  MoveHorizontalIcon,
-  MoveIcon,
-  MoveLeft2 as MoveLeft,
-  MoveLeftIcon,
-  MoveRight2 as MoveRight,
-  MoveRightIcon,
-  MoveUp2 as MoveUp,
-  MoveUpIcon,
-  MoveUpLeft2 as MoveUpLeft,
-  MoveUpLeftIcon,
-  MoveUpRight2 as MoveUpRight,
-  MoveUpRightIcon,
-  MoveVertical2 as MoveVertical,
-  MoveVerticalIcon,
-  Music5 as Music,
-  Music22 as Music2,
-  Music2Icon,
-  Music32 as Music3,
-  Music3Icon,
-  Music42 as Music4,
-  Music4Icon,
-  MusicIcon,
-  Navigation3 as Navigation,
-  Navigation22 as Navigation2,
-  Navigation2Icon,
-  Navigation2Off2 as Navigation2Off,
-  Navigation2OffIcon,
-  NavigationIcon,
-  NavigationOff2 as NavigationOff,
-  NavigationOffIcon,
-  Network2 as Network,
-  NetworkIcon,
-  Newspaper2 as Newspaper,
-  NewspaperIcon,
-  Nfc2 as Nfc,
-  NfcIcon,
-  NonBinary2 as NonBinary,
-  NonBinaryIcon,
-  Notebook2 as Notebook,
-  NotebookIcon,
-  NotebookPen2 as NotebookPen,
-  NotebookPenIcon,
-  NotebookTabs2 as NotebookTabs,
-  NotebookTabsIcon,
-  NotebookText2 as NotebookText,
-  NotebookTextIcon,
-  NotepadText2 as NotepadText,
-  NotepadTextDashed2 as NotepadTextDashed,
-  NotepadTextDashedIcon,
-  NotepadTextIcon,
-  Nut2 as Nut,
-  NutIcon,
-  NutOff2 as NutOff,
-  NutOffIcon,
-  Octagon2 as Octagon,
-  OctagonAlert2 as OctagonAlert,
-  OctagonAlertIcon,
-  OctagonIcon,
-  OctagonMinus2 as OctagonMinus,
-  OctagonMinusIcon,
-  OctagonPause2 as OctagonPause,
-  OctagonPauseIcon,
-  OctagonX2 as OctagonX,
-  OctagonXIcon,
-  Omega2 as Omega,
-  OmegaIcon,
-  Option2 as Option,
-  OptionIcon,
-  Orbit2 as Orbit,
-  OrbitIcon,
-  Origami2 as Origami,
-  OrigamiIcon,
-  Outdent,
-  OutdentIcon,
-  Package3 as Package,
-  Package22 as Package2,
-  Package2Icon,
-  PackageCheck2 as PackageCheck,
-  PackageCheckIcon,
-  PackageIcon,
-  PackageMinus2 as PackageMinus,
-  PackageMinusIcon,
-  PackageOpen2 as PackageOpen,
-  PackageOpenIcon,
-  PackagePlus2 as PackagePlus,
-  PackagePlusIcon,
-  PackageSearch2 as PackageSearch,
-  PackageSearchIcon,
-  PackageX2 as PackageX,
-  PackageXIcon,
-  PaintBucket2 as PaintBucket,
-  PaintBucketIcon,
-  PaintRoller2 as PaintRoller,
-  PaintRollerIcon,
-  Paintbrush2 as Paintbrush,
-  Paintbrush22 as Paintbrush2,
-  Paintbrush2Icon,
-  PaintbrushIcon,
-  PaintbrushVertical2 as PaintbrushVertical,
-  PaintbrushVerticalIcon,
-  Palette2 as Palette,
-  PaletteIcon,
-  Palmtree,
-  PalmtreeIcon,
-  Panda2 as Panda,
-  PandaIcon,
-  PanelBottom2 as PanelBottom,
-  PanelBottomClose2 as PanelBottomClose,
-  PanelBottomCloseIcon,
-  PanelBottomDashed2 as PanelBottomDashed,
-  PanelBottomDashedIcon,
-  PanelBottomIcon,
-  PanelBottomInactive,
-  PanelBottomInactiveIcon,
-  PanelBottomOpen2 as PanelBottomOpen,
-  PanelBottomOpenIcon,
-  PanelLeft2 as PanelLeft,
-  PanelLeftClose2 as PanelLeftClose,
-  PanelLeftCloseIcon,
-  PanelLeftDashed2 as PanelLeftDashed,
-  PanelLeftDashedIcon,
-  PanelLeftIcon,
-  PanelLeftInactive,
-  PanelLeftInactiveIcon,
-  PanelLeftOpen2 as PanelLeftOpen,
-  PanelLeftOpenIcon,
-  PanelLeftRightDashed2 as PanelLeftRightDashed,
-  PanelLeftRightDashedIcon,
-  PanelRight2 as PanelRight,
-  PanelRightClose2 as PanelRightClose,
-  PanelRightCloseIcon,
-  PanelRightDashed2 as PanelRightDashed,
-  PanelRightDashedIcon,
-  PanelRightIcon,
-  PanelRightInactive,
-  PanelRightInactiveIcon,
-  PanelRightOpen2 as PanelRightOpen,
-  PanelRightOpenIcon,
-  PanelTop2 as PanelTop,
-  PanelTopBottomDashed2 as PanelTopBottomDashed,
-  PanelTopBottomDashedIcon,
-  PanelTopClose2 as PanelTopClose,
-  PanelTopCloseIcon,
-  PanelTopDashed2 as PanelTopDashed,
-  PanelTopDashedIcon,
-  PanelTopIcon,
-  PanelTopInactive,
-  PanelTopInactiveIcon,
-  PanelTopOpen2 as PanelTopOpen,
-  PanelTopOpenIcon,
-  PanelsLeftBottom2 as PanelsLeftBottom,
-  PanelsLeftBottomIcon,
-  PanelsLeftRight,
-  PanelsLeftRightIcon,
-  PanelsRightBottom2 as PanelsRightBottom,
-  PanelsRightBottomIcon,
-  PanelsTopBottom,
-  PanelsTopBottomIcon,
-  PanelsTopLeft2 as PanelsTopLeft,
-  PanelsTopLeftIcon,
-  Paperclip2 as Paperclip,
-  PaperclipIcon,
-  Parentheses2 as Parentheses,
-  ParenthesesIcon,
-  ParkingCircle,
-  ParkingCircleIcon,
-  ParkingCircleOff,
-  ParkingCircleOffIcon,
-  ParkingMeter2 as ParkingMeter,
-  ParkingMeterIcon,
-  ParkingSquare,
-  ParkingSquareIcon,
-  ParkingSquareOff,
-  ParkingSquareOffIcon,
-  PartyPopper2 as PartyPopper,
-  PartyPopperIcon,
-  Pause2 as Pause,
-  PauseCircle,
-  PauseCircleIcon,
-  PauseIcon,
-  PauseOctagon,
-  PauseOctagonIcon,
-  PawPrint2 as PawPrint,
-  PawPrintIcon,
-  PcCase2 as PcCase,
-  PcCaseIcon,
-  Pen2 as Pen,
-  PenBox,
-  PenBoxIcon,
-  PenIcon,
-  PenLine2 as PenLine,
-  PenLineIcon,
-  PenOff2 as PenOff,
-  PenOffIcon,
-  PenSquare,
-  PenSquareIcon,
-  PenTool2 as PenTool,
-  PenToolIcon,
-  Pencil2 as Pencil,
-  PencilIcon,
-  PencilLine2 as PencilLine,
-  PencilLineIcon,
-  PencilOff2 as PencilOff,
-  PencilOffIcon,
-  PencilRuler2 as PencilRuler,
-  PencilRulerIcon,
-  Pentagon2 as Pentagon,
-  PentagonIcon,
-  Percent2 as Percent,
-  PercentCircle,
-  PercentCircleIcon,
-  PercentDiamond,
-  PercentDiamondIcon,
-  PercentIcon,
-  PercentSquare,
-  PercentSquareIcon,
-  PersonStanding2 as PersonStanding,
-  PersonStandingIcon,
-  PhilippinePeso2 as PhilippinePeso,
-  PhilippinePesoIcon,
-  Phone2 as Phone,
-  PhoneCall2 as PhoneCall,
-  PhoneCallIcon,
-  PhoneForwarded2 as PhoneForwarded,
-  PhoneForwardedIcon,
-  PhoneIcon,
-  PhoneIncoming2 as PhoneIncoming,
-  PhoneIncomingIcon,
-  PhoneMissed2 as PhoneMissed,
-  PhoneMissedIcon,
-  PhoneOff2 as PhoneOff,
-  PhoneOffIcon,
-  PhoneOutgoing2 as PhoneOutgoing,
-  PhoneOutgoingIcon,
-  Pi2 as Pi,
-  PiIcon,
-  PiSquare,
-  PiSquareIcon,
-  Piano2 as Piano,
-  PianoIcon,
-  Pickaxe2 as Pickaxe,
-  PickaxeIcon,
-  PictureInPicture3 as PictureInPicture,
-  PictureInPicture22 as PictureInPicture2,
-  PictureInPicture2Icon,
-  PictureInPictureIcon,
-  PieChart,
-  PieChartIcon,
-  PiggyBank2 as PiggyBank,
-  PiggyBankIcon,
-  Pilcrow2 as Pilcrow,
-  PilcrowIcon,
-  PilcrowLeft2 as PilcrowLeft,
-  PilcrowLeftIcon,
-  PilcrowRight2 as PilcrowRight,
-  PilcrowRightIcon,
-  PilcrowSquare,
-  PilcrowSquareIcon,
-  Pill2 as Pill,
-  PillBottle2 as PillBottle,
-  PillBottleIcon,
-  PillIcon,
-  Pin2 as Pin,
-  PinIcon,
-  PinOff2 as PinOff,
-  PinOffIcon,
-  Pipette2 as Pipette,
-  PipetteIcon,
-  Pizza2 as Pizza,
-  PizzaIcon,
-  Plane2 as Plane,
-  PlaneIcon,
-  PlaneLanding2 as PlaneLanding,
-  PlaneLandingIcon,
-  PlaneTakeoff2 as PlaneTakeoff,
-  PlaneTakeoffIcon,
-  Play2 as Play,
-  PlayCircle,
-  PlayCircleIcon,
-  PlayIcon,
-  PlaySquare,
-  PlaySquareIcon,
-  Plug3 as Plug,
-  Plug22 as Plug2,
-  Plug2Icon,
-  PlugIcon,
-  PlugZap2 as PlugZap,
-  PlugZap22 as PlugZap2,
-  PlugZap2Icon,
-  PlugZapIcon,
-  Plus2 as Plus,
-  PlusCircle,
-  PlusCircleIcon,
-  PlusIcon,
-  PlusSquare,
-  PlusSquareIcon,
-  Pocket2 as Pocket,
-  PocketIcon,
-  PocketKnife2 as PocketKnife,
-  PocketKnifeIcon,
-  Podcast2 as Podcast,
-  PodcastIcon,
-  Pointer2 as Pointer,
-  PointerIcon,
-  PointerOff2 as PointerOff,
-  PointerOffIcon,
-  Popcorn2 as Popcorn,
-  PopcornIcon,
-  Popsicle2 as Popsicle,
-  PopsicleIcon,
-  PoundSterling2 as PoundSterling,
-  PoundSterlingIcon,
-  Power2 as Power,
-  PowerCircle,
-  PowerCircleIcon,
-  PowerIcon,
-  PowerOff2 as PowerOff,
-  PowerOffIcon,
-  PowerSquare,
-  PowerSquareIcon,
-  Presentation2 as Presentation,
-  PresentationIcon,
-  Printer2 as Printer,
-  PrinterCheck2 as PrinterCheck,
-  PrinterCheckIcon,
-  PrinterIcon,
-  PrinterX2 as PrinterX,
-  PrinterXIcon,
-  Projector2 as Projector,
-  ProjectorIcon,
-  Proportions2 as Proportions,
-  ProportionsIcon,
-  Puzzle2 as Puzzle,
-  PuzzleIcon,
-  Pyramid2 as Pyramid,
-  PyramidIcon,
-  QrCode2 as QrCode,
-  QrCodeIcon,
-  Quote2 as Quote,
-  QuoteIcon,
-  Rabbit2 as Rabbit,
-  RabbitIcon,
-  Radar2 as Radar,
-  RadarIcon,
-  Radiation2 as Radiation,
-  RadiationIcon,
-  Radical2 as Radical,
-  RadicalIcon,
-  Radio2 as Radio,
-  RadioIcon,
-  RadioReceiver2 as RadioReceiver,
-  RadioReceiverIcon,
-  RadioTower2 as RadioTower,
-  RadioTowerIcon,
-  Radius2 as Radius,
-  RadiusIcon,
-  RailSymbol2 as RailSymbol,
-  RailSymbolIcon,
-  Rainbow2 as Rainbow,
-  RainbowIcon,
-  Rat2 as Rat,
-  RatIcon,
-  Ratio2 as Ratio,
-  RatioIcon,
-  Receipt2 as Receipt,
-  ReceiptCent2 as ReceiptCent,
-  ReceiptCentIcon,
-  ReceiptEuro2 as ReceiptEuro,
-  ReceiptEuroIcon,
-  ReceiptIcon,
-  ReceiptIndianRupee2 as ReceiptIndianRupee,
-  ReceiptIndianRupeeIcon,
-  ReceiptJapaneseYen2 as ReceiptJapaneseYen,
-  ReceiptJapaneseYenIcon,
-  ReceiptPoundSterling2 as ReceiptPoundSterling,
-  ReceiptPoundSterlingIcon,
-  ReceiptRussianRuble2 as ReceiptRussianRuble,
-  ReceiptRussianRubleIcon,
-  ReceiptSwissFranc2 as ReceiptSwissFranc,
-  ReceiptSwissFrancIcon,
-  ReceiptText2 as ReceiptText,
-  ReceiptTextIcon,
-  ReceiptTurkishLira2 as ReceiptTurkishLira,
-  ReceiptTurkishLiraIcon,
-  RectangleCircle2 as RectangleCircle,
-  RectangleCircleIcon,
-  RectangleEllipsis2 as RectangleEllipsis,
-  RectangleEllipsisIcon,
-  RectangleGoggles2 as RectangleGoggles,
-  RectangleGogglesIcon,
-  RectangleHorizontal2 as RectangleHorizontal,
-  RectangleHorizontalIcon,
-  RectangleVertical2 as RectangleVertical,
-  RectangleVerticalIcon,
-  Recycle2 as Recycle,
-  RecycleIcon,
-  Redo3 as Redo,
-  Redo22 as Redo2,
-  Redo2Icon,
-  RedoDot2 as RedoDot,
-  RedoDotIcon,
-  RedoIcon,
-  RefreshCcw2 as RefreshCcw,
-  RefreshCcwDot2 as RefreshCcwDot,
-  RefreshCcwDotIcon,
-  RefreshCcwIcon,
-  RefreshCw2 as RefreshCw,
-  RefreshCwIcon,
-  RefreshCwOff2 as RefreshCwOff,
-  RefreshCwOffIcon,
-  Refrigerator2 as Refrigerator,
-  RefrigeratorIcon,
-  Regex2 as Regex,
-  RegexIcon,
-  RemoveFormatting2 as RemoveFormatting,
-  RemoveFormattingIcon,
-  Repeat3 as Repeat,
-  Repeat12 as Repeat1,
-  Repeat1Icon,
-  Repeat22 as Repeat2,
-  Repeat2Icon,
-  RepeatIcon,
-  Replace2 as Replace,
-  ReplaceAll2 as ReplaceAll,
-  ReplaceAllIcon,
-  ReplaceIcon,
-  Reply2 as Reply,
-  ReplyAll2 as ReplyAll,
-  ReplyAllIcon,
-  ReplyIcon,
-  Rewind2 as Rewind,
-  RewindIcon,
-  Ribbon2 as Ribbon,
-  RibbonIcon,
-  Rocket2 as Rocket,
-  RocketIcon,
-  RockingChair2 as RockingChair,
-  RockingChairIcon,
-  RollerCoaster2 as RollerCoaster,
-  RollerCoasterIcon,
-  Rose2 as Rose,
-  RoseIcon,
-  Rotate3D,
-  Rotate3DIcon,
-  Rotate3d2 as Rotate3d,
-  Rotate3dIcon,
-  RotateCcw2 as RotateCcw,
-  RotateCcwIcon,
-  RotateCcwKey2 as RotateCcwKey,
-  RotateCcwKeyIcon,
-  RotateCcwSquare2 as RotateCcwSquare,
-  RotateCcwSquareIcon,
-  RotateCw2 as RotateCw,
-  RotateCwIcon,
-  RotateCwSquare2 as RotateCwSquare,
-  RotateCwSquareIcon,
-  Route2 as Route,
-  RouteIcon,
-  RouteOff2 as RouteOff,
-  RouteOffIcon,
-  Router2 as Router,
-  RouterIcon,
-  Rows,
-  Rows22 as Rows2,
-  Rows2Icon,
-  Rows32 as Rows3,
-  Rows3Icon,
-  Rows42 as Rows4,
-  Rows4Icon,
-  RowsIcon,
-  Rss2 as Rss,
-  RssIcon,
-  Ruler2 as Ruler,
-  RulerDimensionLine2 as RulerDimensionLine,
-  RulerDimensionLineIcon,
-  RulerIcon,
-  RussianRuble2 as RussianRuble,
-  RussianRubleIcon,
-  Sailboat2 as Sailboat,
-  SailboatIcon,
-  Salad2 as Salad,
-  SaladIcon,
-  Sandwich2 as Sandwich,
-  SandwichIcon,
-  Satellite2 as Satellite,
-  SatelliteDish2 as SatelliteDish,
-  SatelliteDishIcon,
-  SatelliteIcon,
-  SaudiRiyal2 as SaudiRiyal,
-  SaudiRiyalIcon,
-  Save2 as Save,
-  SaveAll2 as SaveAll,
-  SaveAllIcon,
-  SaveIcon,
-  SaveOff2 as SaveOff,
-  SaveOffIcon,
-  Scale2 as Scale,
-  Scale3D,
-  Scale3DIcon,
-  Scale3d2 as Scale3d,
-  Scale3dIcon,
-  ScaleIcon,
-  Scaling2 as Scaling,
-  ScalingIcon,
-  Scan2 as Scan,
-  ScanBarcode2 as ScanBarcode,
-  ScanBarcodeIcon,
-  ScanEye2 as ScanEye,
-  ScanEyeIcon,
-  ScanFace2 as ScanFace,
-  ScanFaceIcon,
-  ScanHeart2 as ScanHeart,
-  ScanHeartIcon,
-  ScanIcon,
-  ScanLine2 as ScanLine,
-  ScanLineIcon,
-  ScanQrCode2 as ScanQrCode,
-  ScanQrCodeIcon,
-  ScanSearch2 as ScanSearch,
-  ScanSearchIcon,
-  ScanText2 as ScanText,
-  ScanTextIcon,
-  ScatterChart,
-  ScatterChartIcon,
-  School2 as School,
-  School22 as School2,
-  School2Icon,
-  SchoolIcon,
-  Scissors2 as Scissors,
-  ScissorsIcon,
-  ScissorsLineDashed2 as ScissorsLineDashed,
-  ScissorsLineDashedIcon,
-  ScissorsSquare,
-  ScissorsSquareDashedBottom,
-  ScissorsSquareDashedBottomIcon,
-  ScissorsSquareIcon,
-  Scooter2 as Scooter,
-  ScooterIcon,
-  ScreenShare2 as ScreenShare,
-  ScreenShareIcon,
-  ScreenShareOff2 as ScreenShareOff,
-  ScreenShareOffIcon,
-  Scroll2 as Scroll,
-  ScrollIcon,
-  ScrollText2 as ScrollText,
-  ScrollTextIcon,
-  Search2 as Search,
-  SearchAlert2 as SearchAlert,
-  SearchAlertIcon,
-  SearchCheck2 as SearchCheck,
-  SearchCheckIcon,
-  SearchCode2 as SearchCode,
-  SearchCodeIcon,
-  SearchIcon,
-  SearchSlash2 as SearchSlash,
-  SearchSlashIcon,
-  SearchX2 as SearchX,
-  SearchXIcon,
-  Section2 as Section,
-  SectionIcon,
-  Send2 as Send,
-  SendHorizonal,
-  SendHorizonalIcon,
-  SendHorizontal2 as SendHorizontal,
-  SendHorizontalIcon,
-  SendIcon,
-  SendToBack2 as SendToBack,
-  SendToBackIcon,
-  SeparatorHorizontal2 as SeparatorHorizontal,
-  SeparatorHorizontalIcon,
-  SeparatorVertical2 as SeparatorVertical,
-  SeparatorVerticalIcon,
-  Server2 as Server,
-  ServerCog2 as ServerCog,
-  ServerCogIcon,
-  ServerCrash2 as ServerCrash,
-  ServerCrashIcon,
-  ServerIcon,
-  ServerOff2 as ServerOff,
-  ServerOffIcon,
-  Settings3 as Settings,
-  Settings22 as Settings2,
-  Settings2Icon,
-  SettingsIcon,
-  Shapes2 as Shapes,
-  ShapesIcon,
-  Share3 as Share,
-  Share22 as Share2,
-  Share2Icon,
-  ShareIcon,
-  Sheet2 as Sheet,
-  SheetIcon,
-  Shell2 as Shell,
-  ShellIcon,
-  ShelvingUnit2 as ShelvingUnit,
-  ShelvingUnitIcon,
-  Shield2 as Shield,
-  ShieldAlert2 as ShieldAlert,
-  ShieldAlertIcon,
-  ShieldBan2 as ShieldBan,
-  ShieldBanIcon,
-  ShieldCheck2 as ShieldCheck,
-  ShieldCheckIcon,
-  ShieldClose,
-  ShieldCloseIcon,
-  ShieldEllipsis2 as ShieldEllipsis,
-  ShieldEllipsisIcon,
-  ShieldHalf2 as ShieldHalf,
-  ShieldHalfIcon,
-  ShieldIcon,
-  ShieldMinus2 as ShieldMinus,
-  ShieldMinusIcon,
-  ShieldOff2 as ShieldOff,
-  ShieldOffIcon,
-  ShieldPlus2 as ShieldPlus,
-  ShieldPlusIcon,
-  ShieldQuestion,
-  ShieldQuestionIcon,
-  ShieldQuestionMark2 as ShieldQuestionMark,
-  ShieldQuestionMarkIcon,
-  ShieldUser2 as ShieldUser,
-  ShieldUserIcon,
-  ShieldX2 as ShieldX,
-  ShieldXIcon,
-  Ship2 as Ship,
-  ShipIcon,
-  ShipWheel2 as ShipWheel,
-  ShipWheelIcon,
-  Shirt2 as Shirt,
-  ShirtIcon,
-  ShoppingBag2 as ShoppingBag,
-  ShoppingBagIcon,
-  ShoppingBasket2 as ShoppingBasket,
-  ShoppingBasketIcon,
-  ShoppingCart2 as ShoppingCart,
-  ShoppingCartIcon,
-  Shovel2 as Shovel,
-  ShovelIcon,
-  ShowerHead2 as ShowerHead,
-  ShowerHeadIcon,
-  Shredder2 as Shredder,
-  ShredderIcon,
-  Shrimp2 as Shrimp,
-  ShrimpIcon,
-  Shrink2 as Shrink,
-  ShrinkIcon,
-  Shrub2 as Shrub,
-  ShrubIcon,
-  Shuffle2 as Shuffle,
-  ShuffleIcon,
-  Sidebar,
-  SidebarClose,
-  SidebarCloseIcon,
-  SidebarIcon,
-  SidebarOpen,
-  SidebarOpenIcon,
-  Sigma2 as Sigma,
-  SigmaIcon,
-  SigmaSquare,
-  SigmaSquareIcon,
-  Signal2 as Signal,
-  SignalHigh2 as SignalHigh,
-  SignalHighIcon,
-  SignalIcon,
-  SignalLow2 as SignalLow,
-  SignalLowIcon,
-  SignalMedium2 as SignalMedium,
-  SignalMediumIcon,
-  SignalZero2 as SignalZero,
-  SignalZeroIcon,
-  Signature2 as Signature,
-  SignatureIcon,
-  Signpost2 as Signpost,
-  SignpostBig2 as SignpostBig,
-  SignpostBigIcon,
-  SignpostIcon,
-  Siren2 as Siren,
-  SirenIcon,
-  SkipBack2 as SkipBack,
-  SkipBackIcon,
-  SkipForward2 as SkipForward,
-  SkipForwardIcon,
-  Skull2 as Skull,
-  SkullIcon,
-  Slack2 as Slack,
-  SlackIcon,
-  Slash2 as Slash,
-  SlashIcon,
-  SlashSquare,
-  SlashSquareIcon,
-  Slice2 as Slice,
-  SliceIcon,
-  Sliders,
-  SlidersHorizontal2 as SlidersHorizontal,
-  SlidersHorizontalIcon,
-  SlidersIcon,
-  SlidersVertical2 as SlidersVertical,
-  SlidersVerticalIcon,
-  Smartphone2 as Smartphone,
-  SmartphoneCharging2 as SmartphoneCharging,
-  SmartphoneChargingIcon,
-  SmartphoneIcon,
-  SmartphoneNfc2 as SmartphoneNfc,
-  SmartphoneNfcIcon,
-  Smile2 as Smile,
-  SmileIcon,
-  SmilePlus2 as SmilePlus,
-  SmilePlusIcon,
-  Snail2 as Snail,
-  SnailIcon,
-  Snowflake2 as Snowflake,
-  SnowflakeIcon,
-  SoapDispenserDroplet2 as SoapDispenserDroplet,
-  SoapDispenserDropletIcon,
-  Sofa2 as Sofa,
-  SofaIcon,
-  SolarPanel2 as SolarPanel,
-  SolarPanelIcon,
-  SortAsc,
-  SortAscIcon,
-  SortDesc,
-  SortDescIcon,
-  Soup2 as Soup,
-  SoupIcon,
-  Space2 as Space,
-  SpaceIcon,
-  Spade2 as Spade,
-  SpadeIcon,
-  Sparkle2 as Sparkle,
-  SparkleIcon,
-  Sparkles2 as Sparkles,
-  SparklesIcon,
-  Speaker2 as Speaker,
-  SpeakerIcon,
-  Speech2 as Speech,
-  SpeechIcon,
-  SpellCheck3 as SpellCheck,
-  SpellCheck22 as SpellCheck2,
-  SpellCheck2Icon,
-  SpellCheckIcon,
-  Spline2 as Spline,
-  SplineIcon,
-  SplinePointer2 as SplinePointer,
-  SplinePointerIcon,
-  Split2 as Split,
-  SplitIcon,
-  SplitSquareHorizontal,
-  SplitSquareHorizontalIcon,
-  SplitSquareVertical,
-  SplitSquareVerticalIcon,
-  Spool2 as Spool,
-  SpoolIcon,
-  Spotlight2 as Spotlight,
-  SpotlightIcon,
-  SprayCan2 as SprayCan,
-  SprayCanIcon,
-  Sprout2 as Sprout,
-  SproutIcon,
-  Square2 as Square,
-  SquareActivity2 as SquareActivity,
-  SquareActivityIcon,
-  SquareArrowDown2 as SquareArrowDown,
-  SquareArrowDownIcon,
-  SquareArrowDownLeft2 as SquareArrowDownLeft,
-  SquareArrowDownLeftIcon,
-  SquareArrowDownRight2 as SquareArrowDownRight,
-  SquareArrowDownRightIcon,
-  SquareArrowLeft2 as SquareArrowLeft,
-  SquareArrowLeftIcon,
-  SquareArrowOutDownLeft2 as SquareArrowOutDownLeft,
-  SquareArrowOutDownLeftIcon,
-  SquareArrowOutDownRight2 as SquareArrowOutDownRight,
-  SquareArrowOutDownRightIcon,
-  SquareArrowOutUpLeft2 as SquareArrowOutUpLeft,
-  SquareArrowOutUpLeftIcon,
-  SquareArrowOutUpRight2 as SquareArrowOutUpRight,
-  SquareArrowOutUpRightIcon,
-  SquareArrowRight2 as SquareArrowRight,
-  SquareArrowRightEnter2 as SquareArrowRightEnter,
-  SquareArrowRightEnterIcon,
-  SquareArrowRightExit2 as SquareArrowRightExit,
-  SquareArrowRightExitIcon,
-  SquareArrowRightIcon,
-  SquareArrowUp2 as SquareArrowUp,
-  SquareArrowUpIcon,
-  SquareArrowUpLeft2 as SquareArrowUpLeft,
-  SquareArrowUpLeftIcon,
-  SquareArrowUpRight2 as SquareArrowUpRight,
-  SquareArrowUpRightIcon,
-  SquareAsterisk2 as SquareAsterisk,
-  SquareAsteriskIcon,
-  SquareBottomDashedScissors2 as SquareBottomDashedScissors,
-  SquareBottomDashedScissorsIcon,
-  SquareCenterlineDashedHorizontal2 as SquareCenterlineDashedHorizontal,
-  SquareCenterlineDashedHorizontalIcon,
-  SquareCenterlineDashedVertical2 as SquareCenterlineDashedVertical,
-  SquareCenterlineDashedVerticalIcon,
-  SquareChartGantt2 as SquareChartGantt,
-  SquareChartGanttIcon,
-  SquareCheck2 as SquareCheck,
-  SquareCheckBig2 as SquareCheckBig,
-  SquareCheckBigIcon,
-  SquareCheckIcon,
-  SquareChevronDown2 as SquareChevronDown,
-  SquareChevronDownIcon,
-  SquareChevronLeft2 as SquareChevronLeft,
-  SquareChevronLeftIcon,
-  SquareChevronRight2 as SquareChevronRight,
-  SquareChevronRightIcon,
-  SquareChevronUp2 as SquareChevronUp,
-  SquareChevronUpIcon,
-  SquareCode2 as SquareCode,
-  SquareCodeIcon,
-  SquareDashed2 as SquareDashed,
-  SquareDashedBottom2 as SquareDashedBottom,
-  SquareDashedBottomCode2 as SquareDashedBottomCode,
-  SquareDashedBottomCodeIcon,
-  SquareDashedBottomIcon,
-  SquareDashedIcon,
-  SquareDashedKanban2 as SquareDashedKanban,
-  SquareDashedKanbanIcon,
-  SquareDashedMousePointer2 as SquareDashedMousePointer,
-  SquareDashedMousePointerIcon,
-  SquareDashedTopSolid2 as SquareDashedTopSolid,
-  SquareDashedTopSolidIcon,
-  SquareDivide2 as SquareDivide,
-  SquareDivideIcon,
-  SquareDot2 as SquareDot,
-  SquareDotIcon,
-  SquareEqual2 as SquareEqual,
-  SquareEqualIcon,
-  SquareFunction2 as SquareFunction,
-  SquareFunctionIcon,
-  SquareGanttChart,
-  SquareGanttChartIcon,
-  SquareIcon,
-  SquareKanban2 as SquareKanban,
-  SquareKanbanIcon,
-  SquareLibrary2 as SquareLibrary,
-  SquareLibraryIcon,
-  SquareM2 as SquareM,
-  SquareMIcon,
-  SquareMenu2 as SquareMenu,
-  SquareMenuIcon,
-  SquareMinus2 as SquareMinus,
-  SquareMinusIcon,
-  SquareMousePointer2 as SquareMousePointer,
-  SquareMousePointerIcon,
-  SquareParking2 as SquareParking,
-  SquareParkingIcon,
-  SquareParkingOff2 as SquareParkingOff,
-  SquareParkingOffIcon,
-  SquarePause2 as SquarePause,
-  SquarePauseIcon,
-  SquarePen2 as SquarePen,
-  SquarePenIcon,
-  SquarePercent2 as SquarePercent,
-  SquarePercentIcon,
-  SquarePi2 as SquarePi,
-  SquarePiIcon,
-  SquarePilcrow2 as SquarePilcrow,
-  SquarePilcrowIcon,
-  SquarePlay2 as SquarePlay,
-  SquarePlayIcon,
-  SquarePlus2 as SquarePlus,
-  SquarePlusIcon,
-  SquarePower2 as SquarePower,
-  SquarePowerIcon,
-  SquareRadical2 as SquareRadical,
-  SquareRadicalIcon,
-  SquareRoundCorner2 as SquareRoundCorner,
-  SquareRoundCornerIcon,
-  SquareScissors2 as SquareScissors,
-  SquareScissorsIcon,
-  SquareSigma2 as SquareSigma,
-  SquareSigmaIcon,
-  SquareSlash2 as SquareSlash,
-  SquareSlashIcon,
-  SquareSplitHorizontal2 as SquareSplitHorizontal,
-  SquareSplitHorizontalIcon,
-  SquareSplitVertical2 as SquareSplitVertical,
-  SquareSplitVerticalIcon,
-  SquareSquare2 as SquareSquare,
-  SquareSquareIcon,
-  SquareStack2 as SquareStack,
-  SquareStackIcon,
-  SquareStar2 as SquareStar,
-  SquareStarIcon,
-  SquareStop2 as SquareStop,
-  SquareStopIcon,
-  SquareTerminal2 as SquareTerminal,
-  SquareTerminalIcon,
-  SquareUser2 as SquareUser,
-  SquareUserIcon,
-  SquareUserRound2 as SquareUserRound,
-  SquareUserRoundIcon,
-  SquareX2 as SquareX,
-  SquareXIcon,
-  SquaresExclude2 as SquaresExclude,
-  SquaresExcludeIcon,
-  SquaresIntersect2 as SquaresIntersect,
-  SquaresIntersectIcon,
-  SquaresSubtract2 as SquaresSubtract,
-  SquaresSubtractIcon,
-  SquaresUnite2 as SquaresUnite,
-  SquaresUniteIcon,
-  Squircle2 as Squircle,
-  SquircleDashed2 as SquircleDashed,
-  SquircleDashedIcon,
-  SquircleIcon,
-  Squirrel2 as Squirrel,
-  SquirrelIcon,
-  Stamp2 as Stamp,
-  StampIcon,
-  Star2 as Star,
-  StarHalf2 as StarHalf,
-  StarHalfIcon,
-  StarIcon,
-  StarOff2 as StarOff,
-  StarOffIcon,
-  Stars,
-  StarsIcon,
-  StepBack2 as StepBack,
-  StepBackIcon,
-  StepForward2 as StepForward,
-  StepForwardIcon,
-  Stethoscope2 as Stethoscope,
-  StethoscopeIcon,
-  Sticker2 as Sticker,
-  StickerIcon,
-  StickyNote2 as StickyNote,
-  StickyNoteIcon,
-  Stone2 as Stone,
-  StoneIcon,
-  StopCircle,
-  StopCircleIcon,
-  Store2 as Store,
-  StoreIcon,
-  StretchHorizontal2 as StretchHorizontal,
-  StretchHorizontalIcon,
-  StretchVertical2 as StretchVertical,
-  StretchVerticalIcon,
-  Strikethrough2 as Strikethrough,
-  StrikethroughIcon,
-  Subscript2 as Subscript,
-  SubscriptIcon,
-  Subtitles,
-  SubtitlesIcon,
-  Sun2 as Sun,
-  SunDim2 as SunDim,
-  SunDimIcon,
-  SunIcon,
-  SunMedium2 as SunMedium,
-  SunMediumIcon,
-  SunMoon2 as SunMoon,
-  SunMoonIcon,
-  SunSnow2 as SunSnow,
-  SunSnowIcon,
-  Sunrise2 as Sunrise,
-  SunriseIcon,
-  Sunset2 as Sunset,
-  SunsetIcon,
-  Superscript2 as Superscript,
-  SuperscriptIcon,
-  SwatchBook2 as SwatchBook,
-  SwatchBookIcon,
-  SwissFranc2 as SwissFranc,
-  SwissFrancIcon,
-  SwitchCamera2 as SwitchCamera,
-  SwitchCameraIcon,
-  Sword2 as Sword,
-  SwordIcon,
-  Swords2 as Swords,
-  SwordsIcon,
-  Syringe2 as Syringe,
-  SyringeIcon,
-  Table3 as Table,
-  Table22 as Table2,
-  Table2Icon,
-  TableCellsMerge2 as TableCellsMerge,
-  TableCellsMergeIcon,
-  TableCellsSplit2 as TableCellsSplit,
-  TableCellsSplitIcon,
-  TableColumnsSplit2 as TableColumnsSplit,
-  TableColumnsSplitIcon,
-  TableConfig,
-  TableConfigIcon,
-  TableIcon,
-  TableOfContents2 as TableOfContents,
-  TableOfContentsIcon,
-  TableProperties2 as TableProperties,
-  TablePropertiesIcon,
-  TableRowsSplit2 as TableRowsSplit,
-  TableRowsSplitIcon,
-  Tablet2 as Tablet,
-  TabletIcon,
-  TabletSmartphone2 as TabletSmartphone,
-  TabletSmartphoneIcon,
-  Tablets2 as Tablets,
-  TabletsIcon,
-  Tag2 as Tag,
-  TagIcon,
-  Tags2 as Tags,
-  TagsIcon,
-  Tally12 as Tally1,
-  Tally1Icon,
-  Tally22 as Tally2,
-  Tally2Icon,
-  Tally32 as Tally3,
-  Tally3Icon,
-  Tally42 as Tally4,
-  Tally4Icon,
-  Tally52 as Tally5,
-  Tally5Icon,
-  Tangent2 as Tangent,
-  TangentIcon,
-  Target2 as Target,
-  TargetIcon,
-  Telescope2 as Telescope,
-  TelescopeIcon,
-  Tent2 as Tent,
-  TentIcon,
-  TentTree2 as TentTree,
-  TentTreeIcon,
-  Terminal2 as Terminal,
-  TerminalIcon,
-  TerminalSquare,
-  TerminalSquareIcon,
-  TestTube2 as TestTube,
-  TestTube22 as TestTube2,
-  TestTube2Icon,
-  TestTubeDiagonal2 as TestTubeDiagonal,
-  TestTubeDiagonalIcon,
-  TestTubeIcon,
-  TestTubes2 as TestTubes,
-  TestTubesIcon,
-  Text,
-  TextAlignCenter2 as TextAlignCenter,
-  TextAlignCenterIcon,
-  TextAlignEnd2 as TextAlignEnd,
-  TextAlignEndIcon,
-  TextAlignJustify2 as TextAlignJustify,
-  TextAlignJustifyIcon,
-  TextAlignStart2 as TextAlignStart,
-  TextAlignStartIcon,
-  TextCursor2 as TextCursor,
-  TextCursorIcon,
-  TextCursorInput2 as TextCursorInput,
-  TextCursorInputIcon,
-  TextIcon,
-  TextInitial2 as TextInitial,
-  TextInitialIcon,
-  TextQuote2 as TextQuote,
-  TextQuoteIcon,
-  TextSearch2 as TextSearch,
-  TextSearchIcon,
-  TextSelect2 as TextSelect,
-  TextSelectIcon,
-  TextSelection,
-  TextSelectionIcon,
-  TextWrap2 as TextWrap,
-  TextWrapIcon,
-  Theater2 as Theater,
-  TheaterIcon,
-  Thermometer2 as Thermometer,
-  ThermometerIcon,
-  ThermometerSnowflake2 as ThermometerSnowflake,
-  ThermometerSnowflakeIcon,
-  ThermometerSun2 as ThermometerSun,
-  ThermometerSunIcon,
-  ThumbsDown2 as ThumbsDown,
-  ThumbsDownIcon,
-  ThumbsUp2 as ThumbsUp,
-  ThumbsUpIcon,
-  Ticket2 as Ticket,
-  TicketCheck2 as TicketCheck,
-  TicketCheckIcon,
-  TicketIcon,
-  TicketMinus2 as TicketMinus,
-  TicketMinusIcon,
-  TicketPercent2 as TicketPercent,
-  TicketPercentIcon,
-  TicketPlus2 as TicketPlus,
-  TicketPlusIcon,
-  TicketSlash2 as TicketSlash,
-  TicketSlashIcon,
-  TicketX2 as TicketX,
-  TicketXIcon,
-  Tickets2 as Tickets,
-  TicketsIcon,
-  TicketsPlane2 as TicketsPlane,
-  TicketsPlaneIcon,
-  Timer2 as Timer,
-  TimerIcon,
-  TimerOff2 as TimerOff,
-  TimerOffIcon,
-  TimerReset2 as TimerReset,
-  TimerResetIcon,
-  ToggleLeft2 as ToggleLeft,
-  ToggleLeftIcon,
-  ToggleRight2 as ToggleRight,
-  ToggleRightIcon,
-  Toilet2 as Toilet,
-  ToiletIcon,
-  ToolCase2 as ToolCase,
-  ToolCaseIcon,
-  Toolbox2 as Toolbox,
-  ToolboxIcon,
-  Tornado2 as Tornado,
-  TornadoIcon,
-  Torus2 as Torus,
-  TorusIcon,
-  Touchpad2 as Touchpad,
-  TouchpadIcon,
-  TouchpadOff2 as TouchpadOff,
-  TouchpadOffIcon,
-  TowelRack2 as TowelRack,
-  TowelRackIcon,
-  TowerControl2 as TowerControl,
-  TowerControlIcon,
-  ToyBrick2 as ToyBrick,
-  ToyBrickIcon,
-  Tractor2 as Tractor,
-  TractorIcon,
-  TrafficCone2 as TrafficCone,
-  TrafficConeIcon,
-  Train,
-  TrainFront2 as TrainFront,
-  TrainFrontIcon,
-  TrainFrontTunnel2 as TrainFrontTunnel,
-  TrainFrontTunnelIcon,
-  TrainIcon,
-  TrainTrack2 as TrainTrack,
-  TrainTrackIcon,
-  TramFront2 as TramFront,
-  TramFrontIcon,
-  Transgender2 as Transgender,
-  TransgenderIcon,
-  Trash3 as Trash,
-  Trash22 as Trash2,
-  Trash2Icon,
-  TrashIcon,
-  TreeDeciduous2 as TreeDeciduous,
-  TreeDeciduousIcon,
-  TreePalm2 as TreePalm,
-  TreePalmIcon,
-  TreePine2 as TreePine,
-  TreePineIcon,
-  Trees2 as Trees,
-  TreesIcon,
-  Trello2 as Trello,
-  TrelloIcon,
-  TrendingDown2 as TrendingDown,
-  TrendingDownIcon,
-  TrendingUp2 as TrendingUp,
-  TrendingUpDown2 as TrendingUpDown,
-  TrendingUpDownIcon,
-  TrendingUpIcon,
-  Triangle2 as Triangle,
-  TriangleAlert2 as TriangleAlert,
-  TriangleAlertIcon,
-  TriangleDashed2 as TriangleDashed,
-  TriangleDashedIcon,
-  TriangleIcon,
-  TriangleRight2 as TriangleRight,
-  TriangleRightIcon,
-  Trophy2 as Trophy,
-  TrophyIcon,
-  Truck2 as Truck,
-  TruckElectric2 as TruckElectric,
-  TruckElectricIcon,
-  TruckIcon,
-  TurkishLira2 as TurkishLira,
-  TurkishLiraIcon,
-  Turntable2 as Turntable,
-  TurntableIcon,
-  Turtle2 as Turtle,
-  TurtleIcon,
-  Tv2 as Tv,
-  Tv22 as Tv2,
-  Tv2Icon,
-  TvIcon,
-  TvMinimal2 as TvMinimal,
-  TvMinimalIcon,
-  TvMinimalPlay2 as TvMinimalPlay,
-  TvMinimalPlayIcon,
-  Twitch2 as Twitch,
-  TwitchIcon,
-  Twitter2 as Twitter,
-  TwitterIcon,
-  Type2 as Type,
-  TypeIcon,
-  TypeOutline2 as TypeOutline,
-  TypeOutlineIcon,
-  Umbrella2 as Umbrella,
-  UmbrellaIcon,
-  UmbrellaOff2 as UmbrellaOff,
-  UmbrellaOffIcon,
-  Underline2 as Underline,
-  UnderlineIcon,
-  Undo3 as Undo,
-  Undo22 as Undo2,
-  Undo2Icon,
-  UndoDot2 as UndoDot,
-  UndoDotIcon,
-  UndoIcon,
-  UnfoldHorizontal2 as UnfoldHorizontal,
-  UnfoldHorizontalIcon,
-  UnfoldVertical2 as UnfoldVertical,
-  UnfoldVerticalIcon,
-  Ungroup2 as Ungroup,
-  UngroupIcon,
-  University2 as University,
-  UniversityIcon,
-  Unlink3 as Unlink,
-  Unlink22 as Unlink2,
-  Unlink2Icon,
-  UnlinkIcon,
-  Unlock,
-  UnlockIcon,
-  UnlockKeyhole,
-  UnlockKeyholeIcon,
-  Unplug2 as Unplug,
-  UnplugIcon,
-  Upload2 as Upload,
-  UploadCloud,
-  UploadCloudIcon,
-  UploadIcon,
-  Usb2 as Usb,
-  UsbIcon,
-  User2 as User,
-  User22 as User2,
-  User2Icon,
-  UserCheck2 as UserCheck,
-  UserCheck22 as UserCheck2,
-  UserCheck2Icon,
-  UserCheckIcon,
-  UserCircle,
-  UserCircle2,
-  UserCircle2Icon,
-  UserCircleIcon,
-  UserCog2 as UserCog,
-  UserCog22 as UserCog2,
-  UserCog2Icon,
-  UserCogIcon,
-  UserIcon,
-  UserKey2 as UserKey,
-  UserKeyIcon,
-  UserLock2 as UserLock,
-  UserLockIcon,
-  UserMinus2 as UserMinus,
-  UserMinus22 as UserMinus2,
-  UserMinus2Icon,
-  UserMinusIcon,
-  UserPen2 as UserPen,
-  UserPenIcon,
-  UserPlus2 as UserPlus,
-  UserPlus22 as UserPlus2,
-  UserPlus2Icon,
-  UserPlusIcon,
-  UserRound2 as UserRound,
-  UserRoundCheck2 as UserRoundCheck,
-  UserRoundCheckIcon,
-  UserRoundCog2 as UserRoundCog,
-  UserRoundCogIcon,
-  UserRoundIcon,
-  UserRoundKey2 as UserRoundKey,
-  UserRoundKeyIcon,
-  UserRoundMinus2 as UserRoundMinus,
-  UserRoundMinusIcon,
-  UserRoundPen2 as UserRoundPen,
-  UserRoundPenIcon,
-  UserRoundPlus2 as UserRoundPlus,
-  UserRoundPlusIcon,
-  UserRoundSearch2 as UserRoundSearch,
-  UserRoundSearchIcon,
-  UserRoundX2 as UserRoundX,
-  UserRoundXIcon,
-  UserSearch2 as UserSearch,
-  UserSearchIcon,
-  UserSquare,
-  UserSquare2,
-  UserSquare2Icon,
-  UserSquareIcon,
-  UserStar2 as UserStar,
-  UserStarIcon,
-  UserX2 as UserX,
-  UserX22 as UserX2,
-  UserX2Icon,
-  UserXIcon,
-  Users2 as Users,
-  Users22 as Users2,
-  Users2Icon,
-  UsersIcon,
-  UsersRound2 as UsersRound,
-  UsersRoundIcon,
-  Utensils2 as Utensils,
-  UtensilsCrossed2 as UtensilsCrossed,
-  UtensilsCrossedIcon,
-  UtensilsIcon,
-  UtilityPole2 as UtilityPole,
-  UtilityPoleIcon,
-  Van2 as Van,
-  VanIcon,
-  Variable2 as Variable,
-  VariableIcon,
-  Vault2 as Vault,
-  VaultIcon,
-  VectorSquare2 as VectorSquare,
-  VectorSquareIcon,
-  Vegan2 as Vegan,
-  VeganIcon,
-  VenetianMask2 as VenetianMask,
-  VenetianMaskIcon,
-  Venus2 as Venus,
-  VenusAndMars2 as VenusAndMars,
-  VenusAndMarsIcon,
-  VenusIcon,
-  Verified,
-  VerifiedIcon,
-  Vibrate2 as Vibrate,
-  VibrateIcon,
-  VibrateOff2 as VibrateOff,
-  VibrateOffIcon,
-  Video2 as Video,
-  VideoIcon,
-  VideoOff2 as VideoOff,
-  VideoOffIcon,
-  Videotape2 as Videotape,
-  VideotapeIcon,
-  View2 as View,
-  ViewIcon,
-  Voicemail2 as Voicemail,
-  VoicemailIcon,
-  Volleyball2 as Volleyball,
-  VolleyballIcon,
-  Volume3 as Volume,
-  Volume12 as Volume1,
-  Volume1Icon,
-  Volume22 as Volume2,
-  Volume2Icon,
-  VolumeIcon,
-  VolumeOff2 as VolumeOff,
-  VolumeOffIcon,
-  VolumeX2 as VolumeX,
-  VolumeXIcon,
-  Vote2 as Vote,
-  VoteIcon,
-  Wallet2 as Wallet,
-  Wallet22 as Wallet2,
-  Wallet2Icon,
-  WalletCards2 as WalletCards,
-  WalletCardsIcon,
-  WalletIcon,
-  WalletMinimal2 as WalletMinimal,
-  WalletMinimalIcon,
-  Wallpaper2 as Wallpaper,
-  WallpaperIcon,
-  Wand2 as Wand,
-  Wand22 as Wand2,
-  Wand2Icon,
-  WandIcon,
-  WandSparkles2 as WandSparkles,
-  WandSparklesIcon,
-  Warehouse2 as Warehouse,
-  WarehouseIcon,
-  WashingMachine2 as WashingMachine,
-  WashingMachineIcon,
-  Watch2 as Watch,
-  WatchIcon,
-  Waves2 as Waves,
-  WavesArrowDown2 as WavesArrowDown,
-  WavesArrowDownIcon,
-  WavesArrowUp2 as WavesArrowUp,
-  WavesArrowUpIcon,
-  WavesIcon,
-  WavesLadder2 as WavesLadder,
-  WavesLadderIcon,
-  Waypoints2 as Waypoints,
-  WaypointsIcon,
-  Webcam2 as Webcam,
-  WebcamIcon,
-  Webhook2 as Webhook,
-  WebhookIcon,
-  WebhookOff2 as WebhookOff,
-  WebhookOffIcon,
-  Weight2 as Weight,
-  WeightIcon,
-  WeightTilde2 as WeightTilde,
-  WeightTildeIcon,
-  Wheat2 as Wheat,
-  WheatIcon,
-  WheatOff2 as WheatOff,
-  WheatOffIcon,
-  WholeWord2 as WholeWord,
-  WholeWordIcon,
-  Wifi2 as Wifi,
-  WifiCog2 as WifiCog,
-  WifiCogIcon,
-  WifiHigh2 as WifiHigh,
-  WifiHighIcon,
-  WifiIcon,
-  WifiLow2 as WifiLow,
-  WifiLowIcon,
-  WifiOff2 as WifiOff,
-  WifiOffIcon,
-  WifiPen2 as WifiPen,
-  WifiPenIcon,
-  WifiSync2 as WifiSync,
-  WifiSyncIcon,
-  WifiZero2 as WifiZero,
-  WifiZeroIcon,
-  Wind2 as Wind,
-  WindArrowDown2 as WindArrowDown,
-  WindArrowDownIcon,
-  WindIcon,
-  Wine2 as Wine,
-  WineIcon,
-  WineOff2 as WineOff,
-  WineOffIcon,
-  Workflow2 as Workflow,
-  WorkflowIcon,
-  Worm2 as Worm,
-  WormIcon,
-  WrapText,
-  WrapTextIcon,
-  Wrench2 as Wrench,
-  WrenchIcon,
-  X2 as X,
-  XCircle,
-  XCircleIcon,
-  XIcon,
-  XLineTop2 as XLineTop,
-  XLineTopIcon,
-  XOctagon,
-  XOctagonIcon,
-  XSquare,
-  XSquareIcon,
-  Youtube2 as Youtube,
-  YoutubeIcon,
-  Zap2 as Zap,
-  ZapIcon,
-  ZapOff2 as ZapOff,
-  ZapOffIcon,
-  ZodiacAquarius2 as ZodiacAquarius,
-  ZodiacAquariusIcon,
-  ZodiacAries2 as ZodiacAries,
-  ZodiacAriesIcon,
-  ZodiacCancer2 as ZodiacCancer,
-  ZodiacCancerIcon,
-  ZodiacCapricorn2 as ZodiacCapricorn,
-  ZodiacCapricornIcon,
-  ZodiacGemini2 as ZodiacGemini,
-  ZodiacGeminiIcon,
-  ZodiacLeo2 as ZodiacLeo,
-  ZodiacLeoIcon,
-  ZodiacLibra2 as ZodiacLibra,
-  ZodiacLibraIcon,
-  ZodiacOphiuchus2 as ZodiacOphiuchus,
-  ZodiacOphiuchusIcon,
-  ZodiacPisces2 as ZodiacPisces,
-  ZodiacPiscesIcon,
-  ZodiacSagittarius2 as ZodiacSagittarius,
-  ZodiacSagittariusIcon,
-  ZodiacScorpio2 as ZodiacScorpio,
-  ZodiacScorpioIcon,
-  ZodiacTaurus2 as ZodiacTaurus,
-  ZodiacTaurusIcon,
-  ZodiacVirgo2 as ZodiacVirgo,
-  ZodiacVirgoIcon,
-  ZoomIn2 as ZoomIn,
-  ZoomInIcon,
-  ZoomOut2 as ZoomOut,
-  ZoomOutIcon,
-  createLucideIcon2 as createLucideIcon,
+  AArrowDown,
+  AArrowDown as AArrowDownIcon,
+  AArrowUp,
+  AArrowUp as AArrowUpIcon,
+  ALargeSmall,
+  ALargeSmall as ALargeSmallIcon,
+  Accessibility,
+  Accessibility as AccessibilityIcon,
+  Activity,
+  Activity as ActivityIcon,
+  SquareActivity as ActivitySquare,
+  SquareActivity as ActivitySquareIcon,
+  AirVent,
+  AirVent as AirVentIcon,
+  Airplay,
+  Airplay as AirplayIcon,
+  AlarmClockCheck as AlarmCheck,
+  AlarmClockCheck as AlarmCheckIcon,
+  AlarmClock,
+  AlarmClockCheck,
+  AlarmClockCheck as AlarmClockCheckIcon,
+  AlarmClock as AlarmClockIcon,
+  AlarmClockMinus,
+  AlarmClockMinus as AlarmClockMinusIcon,
+  AlarmClockOff,
+  AlarmClockOff as AlarmClockOffIcon,
+  AlarmClockPlus,
+  AlarmClockPlus as AlarmClockPlusIcon,
+  AlarmClockMinus as AlarmMinus,
+  AlarmClockMinus as AlarmMinusIcon,
+  AlarmClockPlus as AlarmPlus,
+  AlarmClockPlus as AlarmPlusIcon,
+  AlarmSmoke,
+  AlarmSmoke as AlarmSmokeIcon,
+  Album,
+  Album as AlbumIcon,
+  CircleAlert as AlertCircle,
+  CircleAlert as AlertCircleIcon,
+  OctagonAlert as AlertOctagon,
+  OctagonAlert as AlertOctagonIcon,
+  TriangleAlert as AlertTriangle,
+  TriangleAlert as AlertTriangleIcon,
+  TextAlignCenter as AlignCenter,
+  AlignCenterHorizontal,
+  AlignCenterHorizontal as AlignCenterHorizontalIcon,
+  TextAlignCenter as AlignCenterIcon,
+  AlignCenterVertical,
+  AlignCenterVertical as AlignCenterVerticalIcon,
+  AlignEndHorizontal,
+  AlignEndHorizontal as AlignEndHorizontalIcon,
+  AlignEndVertical,
+  AlignEndVertical as AlignEndVerticalIcon,
+  AlignHorizontalDistributeCenter,
+  AlignHorizontalDistributeCenter as AlignHorizontalDistributeCenterIcon,
+  AlignHorizontalDistributeEnd,
+  AlignHorizontalDistributeEnd as AlignHorizontalDistributeEndIcon,
+  AlignHorizontalDistributeStart,
+  AlignHorizontalDistributeStart as AlignHorizontalDistributeStartIcon,
+  AlignHorizontalJustifyCenter,
+  AlignHorizontalJustifyCenter as AlignHorizontalJustifyCenterIcon,
+  AlignHorizontalJustifyEnd,
+  AlignHorizontalJustifyEnd as AlignHorizontalJustifyEndIcon,
+  AlignHorizontalJustifyStart,
+  AlignHorizontalJustifyStart as AlignHorizontalJustifyStartIcon,
+  AlignHorizontalSpaceAround,
+  AlignHorizontalSpaceAround as AlignHorizontalSpaceAroundIcon,
+  AlignHorizontalSpaceBetween,
+  AlignHorizontalSpaceBetween as AlignHorizontalSpaceBetweenIcon,
+  TextAlignJustify as AlignJustify,
+  TextAlignJustify as AlignJustifyIcon,
+  TextAlignStart as AlignLeft,
+  TextAlignStart as AlignLeftIcon,
+  TextAlignEnd as AlignRight,
+  TextAlignEnd as AlignRightIcon,
+  AlignStartHorizontal,
+  AlignStartHorizontal as AlignStartHorizontalIcon,
+  AlignStartVertical,
+  AlignStartVertical as AlignStartVerticalIcon,
+  AlignVerticalDistributeCenter,
+  AlignVerticalDistributeCenter as AlignVerticalDistributeCenterIcon,
+  AlignVerticalDistributeEnd,
+  AlignVerticalDistributeEnd as AlignVerticalDistributeEndIcon,
+  AlignVerticalDistributeStart,
+  AlignVerticalDistributeStart as AlignVerticalDistributeStartIcon,
+  AlignVerticalJustifyCenter,
+  AlignVerticalJustifyCenter as AlignVerticalJustifyCenterIcon,
+  AlignVerticalJustifyEnd,
+  AlignVerticalJustifyEnd as AlignVerticalJustifyEndIcon,
+  AlignVerticalJustifyStart,
+  AlignVerticalJustifyStart as AlignVerticalJustifyStartIcon,
+  AlignVerticalSpaceAround,
+  AlignVerticalSpaceAround as AlignVerticalSpaceAroundIcon,
+  AlignVerticalSpaceBetween,
+  AlignVerticalSpaceBetween as AlignVerticalSpaceBetweenIcon,
+  Ambulance,
+  Ambulance as AmbulanceIcon,
+  Ampersand,
+  Ampersand as AmpersandIcon,
+  Ampersands,
+  Ampersands as AmpersandsIcon,
+  Amphora,
+  Amphora as AmphoraIcon,
+  Anchor,
+  Anchor as AnchorIcon,
+  Angry,
+  Angry as AngryIcon,
+  Annoyed,
+  Annoyed as AnnoyedIcon,
+  Antenna,
+  Antenna as AntennaIcon,
+  Anvil,
+  Anvil as AnvilIcon,
+  Aperture,
+  Aperture as ApertureIcon,
+  AppWindow,
+  AppWindow as AppWindowIcon,
+  AppWindowMac,
+  AppWindowMac as AppWindowMacIcon,
+  Apple,
+  Apple as AppleIcon,
+  Archive,
+  Archive as ArchiveIcon,
+  ArchiveRestore,
+  ArchiveRestore as ArchiveRestoreIcon,
+  ArchiveX,
+  ArchiveX as ArchiveXIcon,
+  ChartArea as AreaChart,
+  ChartArea as AreaChartIcon,
+  Armchair,
+  Armchair as ArmchairIcon,
+  ArrowBigDown,
+  ArrowBigDownDash,
+  ArrowBigDownDash as ArrowBigDownDashIcon,
+  ArrowBigDown as ArrowBigDownIcon,
+  ArrowBigLeft,
+  ArrowBigLeftDash,
+  ArrowBigLeftDash as ArrowBigLeftDashIcon,
+  ArrowBigLeft as ArrowBigLeftIcon,
+  ArrowBigRight,
+  ArrowBigRightDash,
+  ArrowBigRightDash as ArrowBigRightDashIcon,
+  ArrowBigRight as ArrowBigRightIcon,
+  ArrowBigUp,
+  ArrowBigUpDash,
+  ArrowBigUpDash as ArrowBigUpDashIcon,
+  ArrowBigUp as ArrowBigUpIcon,
+  ArrowDown,
+  ArrowDown01,
+  ArrowDown01 as ArrowDown01Icon,
+  ArrowDown10,
+  ArrowDown10 as ArrowDown10Icon,
+  ArrowDownAZ,
+  ArrowDownAZ as ArrowDownAZIcon,
+  ArrowDownAZ as ArrowDownAz,
+  ArrowDownAZ as ArrowDownAzIcon,
+  CircleArrowDown as ArrowDownCircle,
+  CircleArrowDown as ArrowDownCircleIcon,
+  ArrowDownFromLine,
+  ArrowDownFromLine as ArrowDownFromLineIcon,
+  ArrowDown as ArrowDownIcon,
+  ArrowDownLeft,
+  CircleArrowOutDownLeft as ArrowDownLeftFromCircle,
+  CircleArrowOutDownLeft as ArrowDownLeftFromCircleIcon,
+  SquareArrowOutDownLeft as ArrowDownLeftFromSquare,
+  SquareArrowOutDownLeft as ArrowDownLeftFromSquareIcon,
+  ArrowDownLeft as ArrowDownLeftIcon,
+  SquareArrowDownLeft as ArrowDownLeftSquare,
+  SquareArrowDownLeft as ArrowDownLeftSquareIcon,
+  ArrowDownNarrowWide,
+  ArrowDownNarrowWide as ArrowDownNarrowWideIcon,
+  ArrowDownRight,
+  CircleArrowOutDownRight as ArrowDownRightFromCircle,
+  CircleArrowOutDownRight as ArrowDownRightFromCircleIcon,
+  SquareArrowOutDownRight as ArrowDownRightFromSquare,
+  SquareArrowOutDownRight as ArrowDownRightFromSquareIcon,
+  ArrowDownRight as ArrowDownRightIcon,
+  SquareArrowDownRight as ArrowDownRightSquare,
+  SquareArrowDownRight as ArrowDownRightSquareIcon,
+  SquareArrowDown as ArrowDownSquare,
+  SquareArrowDown as ArrowDownSquareIcon,
+  ArrowDownToDot,
+  ArrowDownToDot as ArrowDownToDotIcon,
+  ArrowDownToLine,
+  ArrowDownToLine as ArrowDownToLineIcon,
+  ArrowDownUp,
+  ArrowDownUp as ArrowDownUpIcon,
+  ArrowDownWideNarrow,
+  ArrowDownWideNarrow as ArrowDownWideNarrowIcon,
+  ArrowDownZA,
+  ArrowDownZA as ArrowDownZAIcon,
+  ArrowDownZA as ArrowDownZa,
+  ArrowDownZA as ArrowDownZaIcon,
+  ArrowLeft,
+  CircleArrowLeft as ArrowLeftCircle,
+  CircleArrowLeft as ArrowLeftCircleIcon,
+  ArrowLeftFromLine,
+  ArrowLeftFromLine as ArrowLeftFromLineIcon,
+  ArrowLeft as ArrowLeftIcon,
+  ArrowLeftRight,
+  ArrowLeftRight as ArrowLeftRightIcon,
+  SquareArrowLeft as ArrowLeftSquare,
+  SquareArrowLeft as ArrowLeftSquareIcon,
+  ArrowLeftToLine,
+  ArrowLeftToLine as ArrowLeftToLineIcon,
+  ArrowRight,
+  CircleArrowRight as ArrowRightCircle,
+  CircleArrowRight as ArrowRightCircleIcon,
+  ArrowRightFromLine,
+  ArrowRightFromLine as ArrowRightFromLineIcon,
+  ArrowRight as ArrowRightIcon,
+  ArrowRightLeft,
+  ArrowRightLeft as ArrowRightLeftIcon,
+  SquareArrowRight as ArrowRightSquare,
+  SquareArrowRight as ArrowRightSquareIcon,
+  ArrowRightToLine,
+  ArrowRightToLine as ArrowRightToLineIcon,
+  ArrowUp,
+  ArrowUp01,
+  ArrowUp01 as ArrowUp01Icon,
+  ArrowUp10,
+  ArrowUp10 as ArrowUp10Icon,
+  ArrowUpAZ,
+  ArrowUpAZ as ArrowUpAZIcon,
+  ArrowUpAZ as ArrowUpAz,
+  ArrowUpAZ as ArrowUpAzIcon,
+  CircleArrowUp as ArrowUpCircle,
+  CircleArrowUp as ArrowUpCircleIcon,
+  ArrowUpDown,
+  ArrowUpDown as ArrowUpDownIcon,
+  ArrowUpFromDot,
+  ArrowUpFromDot as ArrowUpFromDotIcon,
+  ArrowUpFromLine,
+  ArrowUpFromLine as ArrowUpFromLineIcon,
+  ArrowUp as ArrowUpIcon,
+  ArrowUpLeft,
+  CircleArrowOutUpLeft as ArrowUpLeftFromCircle,
+  CircleArrowOutUpLeft as ArrowUpLeftFromCircleIcon,
+  SquareArrowOutUpLeft as ArrowUpLeftFromSquare,
+  SquareArrowOutUpLeft as ArrowUpLeftFromSquareIcon,
+  ArrowUpLeft as ArrowUpLeftIcon,
+  SquareArrowUpLeft as ArrowUpLeftSquare,
+  SquareArrowUpLeft as ArrowUpLeftSquareIcon,
+  ArrowUpNarrowWide,
+  ArrowUpNarrowWide as ArrowUpNarrowWideIcon,
+  ArrowUpRight,
+  CircleArrowOutUpRight as ArrowUpRightFromCircle,
+  CircleArrowOutUpRight as ArrowUpRightFromCircleIcon,
+  SquareArrowOutUpRight as ArrowUpRightFromSquare,
+  SquareArrowOutUpRight as ArrowUpRightFromSquareIcon,
+  ArrowUpRight as ArrowUpRightIcon,
+  SquareArrowUpRight as ArrowUpRightSquare,
+  SquareArrowUpRight as ArrowUpRightSquareIcon,
+  SquareArrowUp as ArrowUpSquare,
+  SquareArrowUp as ArrowUpSquareIcon,
+  ArrowUpToLine,
+  ArrowUpToLine as ArrowUpToLineIcon,
+  ArrowUpWideNarrow,
+  ArrowUpWideNarrow as ArrowUpWideNarrowIcon,
+  ArrowUpZA,
+  ArrowUpZA as ArrowUpZAIcon,
+  ArrowUpZA as ArrowUpZa,
+  ArrowUpZA as ArrowUpZaIcon,
+  ArrowsUpFromLine,
+  ArrowsUpFromLine as ArrowsUpFromLineIcon,
+  Asterisk,
+  Asterisk as AsteriskIcon,
+  SquareAsterisk as AsteriskSquare,
+  SquareAsterisk as AsteriskSquareIcon,
+  AtSign,
+  AtSign as AtSignIcon,
+  Atom,
+  Atom as AtomIcon,
+  AudioLines,
+  AudioLines as AudioLinesIcon,
+  AudioWaveform,
+  AudioWaveform as AudioWaveformIcon,
+  Award,
+  Award as AwardIcon,
+  Axe,
+  Axe as AxeIcon,
+  Axis3d as Axis3D,
+  Axis3d as Axis3DIcon,
+  Axis3d,
+  Axis3d as Axis3dIcon,
+  Baby,
+  Baby as BabyIcon,
+  Backpack,
+  Backpack as BackpackIcon,
+  Badge,
+  BadgeAlert,
+  BadgeAlert as BadgeAlertIcon,
+  BadgeCent,
+  BadgeCent as BadgeCentIcon,
+  BadgeCheck,
+  BadgeCheck as BadgeCheckIcon,
+  BadgeDollarSign,
+  BadgeDollarSign as BadgeDollarSignIcon,
+  BadgeEuro,
+  BadgeEuro as BadgeEuroIcon,
+  BadgeQuestionMark as BadgeHelp,
+  BadgeQuestionMark as BadgeHelpIcon,
+  Badge as BadgeIcon,
+  BadgeIndianRupee,
+  BadgeIndianRupee as BadgeIndianRupeeIcon,
+  BadgeInfo,
+  BadgeInfo as BadgeInfoIcon,
+  BadgeJapaneseYen,
+  BadgeJapaneseYen as BadgeJapaneseYenIcon,
+  BadgeMinus,
+  BadgeMinus as BadgeMinusIcon,
+  BadgePercent,
+  BadgePercent as BadgePercentIcon,
+  BadgePlus,
+  BadgePlus as BadgePlusIcon,
+  BadgePoundSterling,
+  BadgePoundSterling as BadgePoundSterlingIcon,
+  BadgeQuestionMark,
+  BadgeQuestionMark as BadgeQuestionMarkIcon,
+  BadgeRussianRuble,
+  BadgeRussianRuble as BadgeRussianRubleIcon,
+  BadgeSwissFranc,
+  BadgeSwissFranc as BadgeSwissFrancIcon,
+  BadgeTurkishLira,
+  BadgeTurkishLira as BadgeTurkishLiraIcon,
+  BadgeX,
+  BadgeX as BadgeXIcon,
+  BaggageClaim,
+  BaggageClaim as BaggageClaimIcon,
+  Balloon,
+  Balloon as BalloonIcon,
+  Ban,
+  Ban as BanIcon,
+  Banana,
+  Banana as BananaIcon,
+  Bandage,
+  Bandage as BandageIcon,
+  Banknote,
+  BanknoteArrowDown,
+  BanknoteArrowDown as BanknoteArrowDownIcon,
+  BanknoteArrowUp,
+  BanknoteArrowUp as BanknoteArrowUpIcon,
+  Banknote as BanknoteIcon,
+  BanknoteX,
+  BanknoteX as BanknoteXIcon,
+  ChartNoAxesColumnIncreasing as BarChart,
+  ChartNoAxesColumn as BarChart2,
+  ChartNoAxesColumn as BarChart2Icon,
+  ChartColumn as BarChart3,
+  ChartColumn as BarChart3Icon,
+  ChartColumnIncreasing as BarChart4,
+  ChartColumnIncreasing as BarChart4Icon,
+  ChartColumnBig as BarChartBig,
+  ChartColumnBig as BarChartBigIcon,
+  ChartBar as BarChartHorizontal,
+  ChartBarBig as BarChartHorizontalBig,
+  ChartBarBig as BarChartHorizontalBigIcon,
+  ChartBar as BarChartHorizontalIcon,
+  ChartNoAxesColumnIncreasing as BarChartIcon,
+  Barcode,
+  Barcode as BarcodeIcon,
+  Barrel,
+  Barrel as BarrelIcon,
+  Baseline,
+  Baseline as BaselineIcon,
+  Bath,
+  Bath as BathIcon,
+  Battery,
+  BatteryCharging,
+  BatteryCharging as BatteryChargingIcon,
+  BatteryFull,
+  BatteryFull as BatteryFullIcon,
+  Battery as BatteryIcon,
+  BatteryLow,
+  BatteryLow as BatteryLowIcon,
+  BatteryMedium,
+  BatteryMedium as BatteryMediumIcon,
+  BatteryPlus,
+  BatteryPlus as BatteryPlusIcon,
+  BatteryWarning,
+  BatteryWarning as BatteryWarningIcon,
+  Beaker,
+  Beaker as BeakerIcon,
+  Bean,
+  Bean as BeanIcon,
+  BeanOff,
+  BeanOff as BeanOffIcon,
+  Bed,
+  BedDouble,
+  BedDouble as BedDoubleIcon,
+  Bed as BedIcon,
+  BedSingle,
+  BedSingle as BedSingleIcon,
+  Beef,
+  Beef as BeefIcon,
+  Beer,
+  Beer as BeerIcon,
+  BeerOff,
+  BeerOff as BeerOffIcon,
+  Bell,
+  BellDot,
+  BellDot as BellDotIcon,
+  BellElectric,
+  BellElectric as BellElectricIcon,
+  Bell as BellIcon,
+  BellMinus,
+  BellMinus as BellMinusIcon,
+  BellOff,
+  BellOff as BellOffIcon,
+  BellPlus,
+  BellPlus as BellPlusIcon,
+  BellRing,
+  BellRing as BellRingIcon,
+  BetweenHorizontalEnd as BetweenHorizonalEnd,
+  BetweenHorizontalEnd as BetweenHorizonalEndIcon,
+  BetweenHorizontalStart as BetweenHorizonalStart,
+  BetweenHorizontalStart as BetweenHorizonalStartIcon,
+  BetweenHorizontalEnd,
+  BetweenHorizontalEnd as BetweenHorizontalEndIcon,
+  BetweenHorizontalStart,
+  BetweenHorizontalStart as BetweenHorizontalStartIcon,
+  BetweenVerticalEnd,
+  BetweenVerticalEnd as BetweenVerticalEndIcon,
+  BetweenVerticalStart,
+  BetweenVerticalStart as BetweenVerticalStartIcon,
+  BicepsFlexed,
+  BicepsFlexed as BicepsFlexedIcon,
+  Bike,
+  Bike as BikeIcon,
+  Binary,
+  Binary as BinaryIcon,
+  Binoculars,
+  Binoculars as BinocularsIcon,
+  Biohazard,
+  Biohazard as BiohazardIcon,
+  Bird,
+  Bird as BirdIcon,
+  Birdhouse,
+  Birdhouse as BirdhouseIcon,
+  Bitcoin,
+  Bitcoin as BitcoinIcon,
+  Blend,
+  Blend as BlendIcon,
+  Blinds,
+  Blinds as BlindsIcon,
+  Blocks,
+  Blocks as BlocksIcon,
+  Bluetooth,
+  BluetoothConnected,
+  BluetoothConnected as BluetoothConnectedIcon,
+  Bluetooth as BluetoothIcon,
+  BluetoothOff,
+  BluetoothOff as BluetoothOffIcon,
+  BluetoothSearching,
+  BluetoothSearching as BluetoothSearchingIcon,
+  Bold,
+  Bold as BoldIcon,
+  Bolt,
+  Bolt as BoltIcon,
+  Bomb,
+  Bomb as BombIcon,
+  Bone,
+  Bone as BoneIcon,
+  Book,
+  BookA,
+  BookA as BookAIcon,
+  BookAlert,
+  BookAlert as BookAlertIcon,
+  BookAudio,
+  BookAudio as BookAudioIcon,
+  BookCheck,
+  BookCheck as BookCheckIcon,
+  BookCopy,
+  BookCopy as BookCopyIcon,
+  BookDashed,
+  BookDashed as BookDashedIcon,
+  BookDown,
+  BookDown as BookDownIcon,
+  BookHeadphones,
+  BookHeadphones as BookHeadphonesIcon,
+  BookHeart,
+  BookHeart as BookHeartIcon,
+  Book as BookIcon,
+  BookImage,
+  BookImage as BookImageIcon,
+  BookKey,
+  BookKey as BookKeyIcon,
+  BookLock,
+  BookLock as BookLockIcon,
+  BookMarked,
+  BookMarked as BookMarkedIcon,
+  BookMinus,
+  BookMinus as BookMinusIcon,
+  BookOpen,
+  BookOpenCheck,
+  BookOpenCheck as BookOpenCheckIcon,
+  BookOpen as BookOpenIcon,
+  BookOpenText,
+  BookOpenText as BookOpenTextIcon,
+  BookPlus,
+  BookPlus as BookPlusIcon,
+  BookSearch,
+  BookSearch as BookSearchIcon,
+  BookDashed as BookTemplate,
+  BookDashed as BookTemplateIcon,
+  BookText,
+  BookText as BookTextIcon,
+  BookType,
+  BookType as BookTypeIcon,
+  BookUp,
+  BookUp2,
+  BookUp2 as BookUp2Icon,
+  BookUp as BookUpIcon,
+  BookUser,
+  BookUser as BookUserIcon,
+  BookX,
+  BookX as BookXIcon,
+  Bookmark,
+  BookmarkCheck,
+  BookmarkCheck as BookmarkCheckIcon,
+  Bookmark as BookmarkIcon,
+  BookmarkMinus,
+  BookmarkMinus as BookmarkMinusIcon,
+  BookmarkPlus,
+  BookmarkPlus as BookmarkPlusIcon,
+  BookmarkX,
+  BookmarkX as BookmarkXIcon,
+  BoomBox,
+  BoomBox as BoomBoxIcon,
+  Bot,
+  Bot as BotIcon,
+  BotMessageSquare,
+  BotMessageSquare as BotMessageSquareIcon,
+  BotOff,
+  BotOff as BotOffIcon,
+  BottleWine,
+  BottleWine as BottleWineIcon,
+  BowArrow,
+  BowArrow as BowArrowIcon,
+  Box,
+  Box as BoxIcon,
+  SquareDashed as BoxSelect,
+  SquareDashed as BoxSelectIcon,
+  Boxes,
+  Boxes as BoxesIcon,
+  Braces,
+  Braces as BracesIcon,
+  Brackets,
+  Brackets as BracketsIcon,
+  Brain,
+  BrainCircuit,
+  BrainCircuit as BrainCircuitIcon,
+  BrainCog,
+  BrainCog as BrainCogIcon,
+  Brain as BrainIcon,
+  BrickWall,
+  BrickWallFire,
+  BrickWallFire as BrickWallFireIcon,
+  BrickWall as BrickWallIcon,
+  BrickWallShield,
+  BrickWallShield as BrickWallShieldIcon,
+  Briefcase,
+  BriefcaseBusiness,
+  BriefcaseBusiness as BriefcaseBusinessIcon,
+  BriefcaseConveyorBelt,
+  BriefcaseConveyorBelt as BriefcaseConveyorBeltIcon,
+  Briefcase as BriefcaseIcon,
+  BriefcaseMedical,
+  BriefcaseMedical as BriefcaseMedicalIcon,
+  BringToFront,
+  BringToFront as BringToFrontIcon,
+  Brush,
+  BrushCleaning,
+  BrushCleaning as BrushCleaningIcon,
+  Brush as BrushIcon,
+  Bubbles,
+  Bubbles as BubblesIcon,
+  Bug,
+  Bug as BugIcon,
+  BugOff,
+  BugOff as BugOffIcon,
+  BugPlay,
+  BugPlay as BugPlayIcon,
+  Building,
+  Building2,
+  Building2 as Building2Icon,
+  Building as BuildingIcon,
+  Bus,
+  BusFront,
+  BusFront as BusFrontIcon,
+  Bus as BusIcon,
+  Cable,
+  CableCar,
+  CableCar as CableCarIcon,
+  Cable as CableIcon,
+  Cake,
+  Cake as CakeIcon,
+  CakeSlice,
+  CakeSlice as CakeSliceIcon,
+  Calculator,
+  Calculator as CalculatorIcon,
+  Calendar,
+  Calendar1,
+  Calendar1 as Calendar1Icon,
+  CalendarArrowDown,
+  CalendarArrowDown as CalendarArrowDownIcon,
+  CalendarArrowUp,
+  CalendarArrowUp as CalendarArrowUpIcon,
+  CalendarCheck,
+  CalendarCheck2,
+  CalendarCheck2 as CalendarCheck2Icon,
+  CalendarCheck as CalendarCheckIcon,
+  CalendarClock,
+  CalendarClock as CalendarClockIcon,
+  CalendarCog,
+  CalendarCog as CalendarCogIcon,
+  CalendarDays,
+  CalendarDays as CalendarDaysIcon,
+  CalendarFold,
+  CalendarFold as CalendarFoldIcon,
+  CalendarHeart,
+  CalendarHeart as CalendarHeartIcon,
+  Calendar as CalendarIcon,
+  CalendarMinus,
+  CalendarMinus2,
+  CalendarMinus2 as CalendarMinus2Icon,
+  CalendarMinus as CalendarMinusIcon,
+  CalendarOff,
+  CalendarOff as CalendarOffIcon,
+  CalendarPlus,
+  CalendarPlus2,
+  CalendarPlus2 as CalendarPlus2Icon,
+  CalendarPlus as CalendarPlusIcon,
+  CalendarRange,
+  CalendarRange as CalendarRangeIcon,
+  CalendarSearch,
+  CalendarSearch as CalendarSearchIcon,
+  CalendarSync,
+  CalendarSync as CalendarSyncIcon,
+  CalendarX,
+  CalendarX2,
+  CalendarX2 as CalendarX2Icon,
+  CalendarX as CalendarXIcon,
+  Calendars,
+  Calendars as CalendarsIcon,
+  Camera,
+  Camera as CameraIcon,
+  CameraOff,
+  CameraOff as CameraOffIcon,
+  ChartCandlestick as CandlestickChart,
+  ChartCandlestick as CandlestickChartIcon,
+  Candy,
+  CandyCane,
+  CandyCane as CandyCaneIcon,
+  Candy as CandyIcon,
+  CandyOff,
+  CandyOff as CandyOffIcon,
+  Cannabis,
+  Cannabis as CannabisIcon,
+  CannabisOff,
+  CannabisOff as CannabisOffIcon,
+  Captions,
+  Captions as CaptionsIcon,
+  CaptionsOff,
+  CaptionsOff as CaptionsOffIcon,
+  Car,
+  CarFront,
+  CarFront as CarFrontIcon,
+  Car as CarIcon,
+  CarTaxiFront,
+  CarTaxiFront as CarTaxiFrontIcon,
+  Caravan,
+  Caravan as CaravanIcon,
+  CardSim,
+  CardSim as CardSimIcon,
+  Carrot,
+  Carrot as CarrotIcon,
+  CaseLower,
+  CaseLower as CaseLowerIcon,
+  CaseSensitive,
+  CaseSensitive as CaseSensitiveIcon,
+  CaseUpper,
+  CaseUpper as CaseUpperIcon,
+  CassetteTape,
+  CassetteTape as CassetteTapeIcon,
+  Cast,
+  Cast as CastIcon,
+  Castle,
+  Castle as CastleIcon,
+  Cat,
+  Cat as CatIcon,
+  Cctv,
+  Cctv as CctvIcon,
+  ChartArea,
+  ChartArea as ChartAreaIcon,
+  ChartBar,
+  ChartBarBig,
+  ChartBarBig as ChartBarBigIcon,
+  ChartBarDecreasing,
+  ChartBarDecreasing as ChartBarDecreasingIcon,
+  ChartBar as ChartBarIcon,
+  ChartBarIncreasing,
+  ChartBarIncreasing as ChartBarIncreasingIcon,
+  ChartBarStacked,
+  ChartBarStacked as ChartBarStackedIcon,
+  ChartCandlestick,
+  ChartCandlestick as ChartCandlestickIcon,
+  ChartColumn,
+  ChartColumnBig,
+  ChartColumnBig as ChartColumnBigIcon,
+  ChartColumnDecreasing,
+  ChartColumnDecreasing as ChartColumnDecreasingIcon,
+  ChartColumn as ChartColumnIcon,
+  ChartColumnIncreasing,
+  ChartColumnIncreasing as ChartColumnIncreasingIcon,
+  ChartColumnStacked,
+  ChartColumnStacked as ChartColumnStackedIcon,
+  ChartGantt,
+  ChartGantt as ChartGanttIcon,
+  ChartLine,
+  ChartLine as ChartLineIcon,
+  ChartNetwork,
+  ChartNetwork as ChartNetworkIcon,
+  ChartNoAxesColumn,
+  ChartNoAxesColumnDecreasing,
+  ChartNoAxesColumnDecreasing as ChartNoAxesColumnDecreasingIcon,
+  ChartNoAxesColumn as ChartNoAxesColumnIcon,
+  ChartNoAxesColumnIncreasing,
+  ChartNoAxesColumnIncreasing as ChartNoAxesColumnIncreasingIcon,
+  ChartNoAxesCombined,
+  ChartNoAxesCombined as ChartNoAxesCombinedIcon,
+  ChartNoAxesGantt,
+  ChartNoAxesGantt as ChartNoAxesGanttIcon,
+  ChartPie,
+  ChartPie as ChartPieIcon,
+  ChartScatter,
+  ChartScatter as ChartScatterIcon,
+  ChartSpline,
+  ChartSpline as ChartSplineIcon,
+  Check,
+  CheckCheck,
+  CheckCheck as CheckCheckIcon,
+  CircleCheckBig as CheckCircle,
+  CircleCheck as CheckCircle2,
+  CircleCheck as CheckCircle2Icon,
+  CircleCheckBig as CheckCircleIcon,
+  Check as CheckIcon,
+  CheckLine,
+  CheckLine as CheckLineIcon,
+  SquareCheckBig as CheckSquare,
+  SquareCheck as CheckSquare2,
+  SquareCheck as CheckSquare2Icon,
+  SquareCheckBig as CheckSquareIcon,
+  ChefHat,
+  ChefHat as ChefHatIcon,
+  Cherry,
+  Cherry as CherryIcon,
+  ChessBishop,
+  ChessBishop as ChessBishopIcon,
+  ChessKing,
+  ChessKing as ChessKingIcon,
+  ChessKnight,
+  ChessKnight as ChessKnightIcon,
+  ChessPawn,
+  ChessPawn as ChessPawnIcon,
+  ChessQueen,
+  ChessQueen as ChessQueenIcon,
+  ChessRook,
+  ChessRook as ChessRookIcon,
+  ChevronDown,
+  CircleChevronDown as ChevronDownCircle,
+  CircleChevronDown as ChevronDownCircleIcon,
+  ChevronDown as ChevronDownIcon,
+  SquareChevronDown as ChevronDownSquare,
+  SquareChevronDown as ChevronDownSquareIcon,
+  ChevronFirst,
+  ChevronFirst as ChevronFirstIcon,
+  ChevronLast,
+  ChevronLast as ChevronLastIcon,
+  ChevronLeft,
+  CircleChevronLeft as ChevronLeftCircle,
+  CircleChevronLeft as ChevronLeftCircleIcon,
+  ChevronLeft as ChevronLeftIcon,
+  SquareChevronLeft as ChevronLeftSquare,
+  SquareChevronLeft as ChevronLeftSquareIcon,
+  ChevronRight,
+  CircleChevronRight as ChevronRightCircle,
+  CircleChevronRight as ChevronRightCircleIcon,
+  ChevronRight as ChevronRightIcon,
+  SquareChevronRight as ChevronRightSquare,
+  SquareChevronRight as ChevronRightSquareIcon,
+  ChevronUp,
+  CircleChevronUp as ChevronUpCircle,
+  CircleChevronUp as ChevronUpCircleIcon,
+  ChevronUp as ChevronUpIcon,
+  SquareChevronUp as ChevronUpSquare,
+  SquareChevronUp as ChevronUpSquareIcon,
+  ChevronsDown,
+  ChevronsDown as ChevronsDownIcon,
+  ChevronsDownUp,
+  ChevronsDownUp as ChevronsDownUpIcon,
+  ChevronsLeft,
+  ChevronsLeft as ChevronsLeftIcon,
+  ChevronsLeftRight,
+  ChevronsLeftRightEllipsis,
+  ChevronsLeftRightEllipsis as ChevronsLeftRightEllipsisIcon,
+  ChevronsLeftRight as ChevronsLeftRightIcon,
+  ChevronsRight,
+  ChevronsRight as ChevronsRightIcon,
+  ChevronsRightLeft,
+  ChevronsRightLeft as ChevronsRightLeftIcon,
+  ChevronsUp,
+  ChevronsUpDown,
+  ChevronsUpDown as ChevronsUpDownIcon,
+  ChevronsUp as ChevronsUpIcon,
+  Chromium as Chrome,
+  Chromium as ChromeIcon,
+  Chromium,
+  Chromium as ChromiumIcon,
+  Church,
+  Church as ChurchIcon,
+  Cigarette,
+  Cigarette as CigaretteIcon,
+  CigaretteOff,
+  CigaretteOff as CigaretteOffIcon,
+  Circle,
+  CircleAlert,
+  CircleAlert as CircleAlertIcon,
+  CircleArrowDown,
+  CircleArrowDown as CircleArrowDownIcon,
+  CircleArrowLeft,
+  CircleArrowLeft as CircleArrowLeftIcon,
+  CircleArrowOutDownLeft,
+  CircleArrowOutDownLeft as CircleArrowOutDownLeftIcon,
+  CircleArrowOutDownRight,
+  CircleArrowOutDownRight as CircleArrowOutDownRightIcon,
+  CircleArrowOutUpLeft,
+  CircleArrowOutUpLeft as CircleArrowOutUpLeftIcon,
+  CircleArrowOutUpRight,
+  CircleArrowOutUpRight as CircleArrowOutUpRightIcon,
+  CircleArrowRight,
+  CircleArrowRight as CircleArrowRightIcon,
+  CircleArrowUp,
+  CircleArrowUp as CircleArrowUpIcon,
+  CircleCheck,
+  CircleCheckBig,
+  CircleCheckBig as CircleCheckBigIcon,
+  CircleCheck as CircleCheckIcon,
+  CircleChevronDown,
+  CircleChevronDown as CircleChevronDownIcon,
+  CircleChevronLeft,
+  CircleChevronLeft as CircleChevronLeftIcon,
+  CircleChevronRight,
+  CircleChevronRight as CircleChevronRightIcon,
+  CircleChevronUp,
+  CircleChevronUp as CircleChevronUpIcon,
+  CircleDashed,
+  CircleDashed as CircleDashedIcon,
+  CircleDivide,
+  CircleDivide as CircleDivideIcon,
+  CircleDollarSign,
+  CircleDollarSign as CircleDollarSignIcon,
+  CircleDot,
+  CircleDotDashed,
+  CircleDotDashed as CircleDotDashedIcon,
+  CircleDot as CircleDotIcon,
+  CircleEllipsis,
+  CircleEllipsis as CircleEllipsisIcon,
+  CircleEqual,
+  CircleEqual as CircleEqualIcon,
+  CircleFadingArrowUp,
+  CircleFadingArrowUp as CircleFadingArrowUpIcon,
+  CircleFadingPlus,
+  CircleFadingPlus as CircleFadingPlusIcon,
+  CircleGauge,
+  CircleGauge as CircleGaugeIcon,
+  CircleQuestionMark as CircleHelp,
+  CircleQuestionMark as CircleHelpIcon,
+  Circle as CircleIcon,
+  CircleMinus,
+  CircleMinus as CircleMinusIcon,
+  CircleOff,
+  CircleOff as CircleOffIcon,
+  CircleParking,
+  CircleParking as CircleParkingIcon,
+  CircleParkingOff,
+  CircleParkingOff as CircleParkingOffIcon,
+  CirclePause,
+  CirclePause as CirclePauseIcon,
+  CirclePercent,
+  CirclePercent as CirclePercentIcon,
+  CirclePile,
+  CirclePile as CirclePileIcon,
+  CirclePlay,
+  CirclePlay as CirclePlayIcon,
+  CirclePlus,
+  CirclePlus as CirclePlusIcon,
+  CirclePoundSterling,
+  CirclePoundSterling as CirclePoundSterlingIcon,
+  CirclePower,
+  CirclePower as CirclePowerIcon,
+  CircleQuestionMark,
+  CircleQuestionMark as CircleQuestionMarkIcon,
+  CircleSlash,
+  CircleSlash2,
+  CircleSlash2 as CircleSlash2Icon,
+  CircleSlash as CircleSlashIcon,
+  CircleSlash2 as CircleSlashed,
+  CircleSlash2 as CircleSlashedIcon,
+  CircleSmall,
+  CircleSmall as CircleSmallIcon,
+  CircleStar,
+  CircleStar as CircleStarIcon,
+  CircleStop,
+  CircleStop as CircleStopIcon,
+  CircleUser,
+  CircleUser as CircleUserIcon,
+  CircleUserRound,
+  CircleUserRound as CircleUserRoundIcon,
+  CircleX,
+  CircleX as CircleXIcon,
+  CircuitBoard,
+  CircuitBoard as CircuitBoardIcon,
+  Citrus,
+  Citrus as CitrusIcon,
+  Clapperboard,
+  Clapperboard as ClapperboardIcon,
+  Clipboard,
+  ClipboardCheck,
+  ClipboardCheck as ClipboardCheckIcon,
+  ClipboardClock,
+  ClipboardClock as ClipboardClockIcon,
+  ClipboardCopy,
+  ClipboardCopy as ClipboardCopyIcon,
+  ClipboardPen as ClipboardEdit,
+  ClipboardPen as ClipboardEditIcon,
+  Clipboard as ClipboardIcon,
+  ClipboardList,
+  ClipboardList as ClipboardListIcon,
+  ClipboardMinus,
+  ClipboardMinus as ClipboardMinusIcon,
+  ClipboardPaste,
+  ClipboardPaste as ClipboardPasteIcon,
+  ClipboardPen,
+  ClipboardPen as ClipboardPenIcon,
+  ClipboardPenLine,
+  ClipboardPenLine as ClipboardPenLineIcon,
+  ClipboardPlus,
+  ClipboardPlus as ClipboardPlusIcon,
+  ClipboardPenLine as ClipboardSignature,
+  ClipboardPenLine as ClipboardSignatureIcon,
+  ClipboardType,
+  ClipboardType as ClipboardTypeIcon,
+  ClipboardX,
+  ClipboardX as ClipboardXIcon,
+  Clock,
+  Clock1,
+  Clock10,
+  Clock10 as Clock10Icon,
+  Clock11,
+  Clock11 as Clock11Icon,
+  Clock12,
+  Clock12 as Clock12Icon,
+  Clock1 as Clock1Icon,
+  Clock2,
+  Clock2 as Clock2Icon,
+  Clock3,
+  Clock3 as Clock3Icon,
+  Clock4,
+  Clock4 as Clock4Icon,
+  Clock5,
+  Clock5 as Clock5Icon,
+  Clock6,
+  Clock6 as Clock6Icon,
+  Clock7,
+  Clock7 as Clock7Icon,
+  Clock8,
+  Clock8 as Clock8Icon,
+  Clock9,
+  Clock9 as Clock9Icon,
+  ClockAlert,
+  ClockAlert as ClockAlertIcon,
+  ClockArrowDown,
+  ClockArrowDown as ClockArrowDownIcon,
+  ClockArrowUp,
+  ClockArrowUp as ClockArrowUpIcon,
+  ClockCheck,
+  ClockCheck as ClockCheckIcon,
+  ClockFading,
+  ClockFading as ClockFadingIcon,
+  Clock as ClockIcon,
+  ClockPlus,
+  ClockPlus as ClockPlusIcon,
+  ClosedCaption,
+  ClosedCaption as ClosedCaptionIcon,
+  Cloud,
+  CloudAlert,
+  CloudAlert as CloudAlertIcon,
+  CloudBackup,
+  CloudBackup as CloudBackupIcon,
+  CloudCheck,
+  CloudCheck as CloudCheckIcon,
+  CloudCog,
+  CloudCog as CloudCogIcon,
+  CloudDownload,
+  CloudDownload as CloudDownloadIcon,
+  CloudDrizzle,
+  CloudDrizzle as CloudDrizzleIcon,
+  CloudFog,
+  CloudFog as CloudFogIcon,
+  CloudHail,
+  CloudHail as CloudHailIcon,
+  Cloud as CloudIcon,
+  CloudLightning,
+  CloudLightning as CloudLightningIcon,
+  CloudMoon,
+  CloudMoon as CloudMoonIcon,
+  CloudMoonRain,
+  CloudMoonRain as CloudMoonRainIcon,
+  CloudOff,
+  CloudOff as CloudOffIcon,
+  CloudRain,
+  CloudRain as CloudRainIcon,
+  CloudRainWind,
+  CloudRainWind as CloudRainWindIcon,
+  CloudSnow,
+  CloudSnow as CloudSnowIcon,
+  CloudSun,
+  CloudSun as CloudSunIcon,
+  CloudSunRain,
+  CloudSunRain as CloudSunRainIcon,
+  CloudSync,
+  CloudSync as CloudSyncIcon,
+  CloudUpload,
+  CloudUpload as CloudUploadIcon,
+  Cloudy,
+  Cloudy as CloudyIcon,
+  Clover,
+  Clover as CloverIcon,
+  Club,
+  Club as ClubIcon,
+  Code,
+  CodeXml as Code2,
+  CodeXml as Code2Icon,
+  Code as CodeIcon,
+  SquareCode as CodeSquare,
+  SquareCode as CodeSquareIcon,
+  CodeXml,
+  CodeXml as CodeXmlIcon,
+  Codepen,
+  Codepen as CodepenIcon,
+  Codesandbox,
+  Codesandbox as CodesandboxIcon,
+  Coffee,
+  Coffee as CoffeeIcon,
+  Cog,
+  Cog as CogIcon,
+  Coins,
+  Coins as CoinsIcon,
+  Columns2 as Columns,
+  Columns2,
+  Columns2 as Columns2Icon,
+  Columns3,
+  Columns3Cog,
+  Columns3Cog as Columns3CogIcon,
+  Columns3 as Columns3Icon,
+  Columns4,
+  Columns4 as Columns4Icon,
+  Columns2 as ColumnsIcon,
+  Columns3Cog as ColumnsSettings,
+  Columns3Cog as ColumnsSettingsIcon,
+  Combine,
+  Combine as CombineIcon,
+  Command,
+  Command as CommandIcon,
+  Compass,
+  Compass as CompassIcon,
+  Component,
+  Component as ComponentIcon,
+  Computer,
+  Computer as ComputerIcon,
+  ConciergeBell,
+  ConciergeBell as ConciergeBellIcon,
+  Cone,
+  Cone as ConeIcon,
+  Construction,
+  Construction as ConstructionIcon,
+  Contact,
+  ContactRound as Contact2,
+  ContactRound as Contact2Icon,
+  Contact as ContactIcon,
+  ContactRound,
+  ContactRound as ContactRoundIcon,
+  Container,
+  Container as ContainerIcon,
+  Contrast,
+  Contrast as ContrastIcon,
+  Cookie,
+  Cookie as CookieIcon,
+  CookingPot,
+  CookingPot as CookingPotIcon,
+  Copy,
+  CopyCheck,
+  CopyCheck as CopyCheckIcon,
+  Copy as CopyIcon,
+  CopyMinus,
+  CopyMinus as CopyMinusIcon,
+  CopyPlus,
+  CopyPlus as CopyPlusIcon,
+  CopySlash,
+  CopySlash as CopySlashIcon,
+  CopyX,
+  CopyX as CopyXIcon,
+  Copyleft,
+  Copyleft as CopyleftIcon,
+  Copyright,
+  Copyright as CopyrightIcon,
+  CornerDownLeft,
+  CornerDownLeft as CornerDownLeftIcon,
+  CornerDownRight,
+  CornerDownRight as CornerDownRightIcon,
+  CornerLeftDown,
+  CornerLeftDown as CornerLeftDownIcon,
+  CornerLeftUp,
+  CornerLeftUp as CornerLeftUpIcon,
+  CornerRightDown,
+  CornerRightDown as CornerRightDownIcon,
+  CornerRightUp,
+  CornerRightUp as CornerRightUpIcon,
+  CornerUpLeft,
+  CornerUpLeft as CornerUpLeftIcon,
+  CornerUpRight,
+  CornerUpRight as CornerUpRightIcon,
+  Cpu,
+  Cpu as CpuIcon,
+  CreativeCommons,
+  CreativeCommons as CreativeCommonsIcon,
+  CreditCard,
+  CreditCard as CreditCardIcon,
+  Croissant,
+  Croissant as CroissantIcon,
+  Crop,
+  Crop as CropIcon,
+  Cross,
+  Cross as CrossIcon,
+  Crosshair,
+  Crosshair as CrosshairIcon,
+  Crown,
+  Crown as CrownIcon,
+  Cuboid,
+  Cuboid as CuboidIcon,
+  CupSoda,
+  CupSoda as CupSodaIcon,
+  Braces as CurlyBraces,
+  Braces as CurlyBracesIcon,
+  Currency,
+  Currency as CurrencyIcon,
+  Cylinder,
+  Cylinder as CylinderIcon,
+  Dam,
+  Dam as DamIcon,
+  Database,
+  DatabaseBackup,
+  DatabaseBackup as DatabaseBackupIcon,
+  Database as DatabaseIcon,
+  DatabaseSearch,
+  DatabaseSearch as DatabaseSearchIcon,
+  DatabaseZap,
+  DatabaseZap as DatabaseZapIcon,
+  DecimalsArrowLeft,
+  DecimalsArrowLeft as DecimalsArrowLeftIcon,
+  DecimalsArrowRight,
+  DecimalsArrowRight as DecimalsArrowRightIcon,
+  Delete,
+  Delete as DeleteIcon,
+  Dessert,
+  Dessert as DessertIcon,
+  Diameter,
+  Diameter as DiameterIcon,
+  Diamond,
+  Diamond as DiamondIcon,
+  DiamondMinus,
+  DiamondMinus as DiamondMinusIcon,
+  DiamondPercent,
+  DiamondPercent as DiamondPercentIcon,
+  DiamondPlus,
+  DiamondPlus as DiamondPlusIcon,
+  Dice1,
+  Dice1 as Dice1Icon,
+  Dice2,
+  Dice2 as Dice2Icon,
+  Dice3,
+  Dice3 as Dice3Icon,
+  Dice4,
+  Dice4 as Dice4Icon,
+  Dice5,
+  Dice5 as Dice5Icon,
+  Dice6,
+  Dice6 as Dice6Icon,
+  Dices,
+  Dices as DicesIcon,
+  Diff,
+  Diff as DiffIcon,
+  Disc,
+  Disc2,
+  Disc2 as Disc2Icon,
+  Disc3,
+  Disc3 as Disc3Icon,
+  DiscAlbum,
+  DiscAlbum as DiscAlbumIcon,
+  Disc as DiscIcon,
+  Divide,
+  CircleDivide as DivideCircle,
+  CircleDivide as DivideCircleIcon,
+  Divide as DivideIcon,
+  SquareDivide as DivideSquare,
+  SquareDivide as DivideSquareIcon,
+  Dna,
+  Dna as DnaIcon,
+  DnaOff,
+  DnaOff as DnaOffIcon,
+  Dock,
+  Dock as DockIcon,
+  Dog,
+  Dog as DogIcon,
+  DollarSign,
+  DollarSign as DollarSignIcon,
+  Donut,
+  Donut as DonutIcon,
+  DoorClosed,
+  DoorClosed as DoorClosedIcon,
+  DoorClosedLocked,
+  DoorClosedLocked as DoorClosedLockedIcon,
+  DoorOpen,
+  DoorOpen as DoorOpenIcon,
+  Dot,
+  Dot as DotIcon,
+  SquareDot as DotSquare,
+  SquareDot as DotSquareIcon,
+  Download,
+  CloudDownload as DownloadCloud,
+  CloudDownload as DownloadCloudIcon,
+  Download as DownloadIcon,
+  DraftingCompass,
+  DraftingCompass as DraftingCompassIcon,
+  Drama,
+  Drama as DramaIcon,
+  Dribbble,
+  Dribbble as DribbbleIcon,
+  Drill,
+  Drill as DrillIcon,
+  Drone,
+  Drone as DroneIcon,
+  Droplet,
+  Droplet as DropletIcon,
+  DropletOff,
+  DropletOff as DropletOffIcon,
+  Droplets,
+  Droplets as DropletsIcon,
+  Drum,
+  Drum as DrumIcon,
+  Drumstick,
+  Drumstick as DrumstickIcon,
+  Dumbbell,
+  Dumbbell as DumbbellIcon,
+  Ear,
+  Ear as EarIcon,
+  EarOff,
+  EarOff as EarOffIcon,
+  Earth,
+  Earth as EarthIcon,
+  EarthLock,
+  EarthLock as EarthLockIcon,
+  Eclipse,
+  Eclipse as EclipseIcon,
+  SquarePen as Edit,
+  Pen as Edit2,
+  Pen as Edit2Icon,
+  PenLine as Edit3,
+  PenLine as Edit3Icon,
+  SquarePen as EditIcon,
+  Egg,
+  EggFried,
+  EggFried as EggFriedIcon,
+  Egg as EggIcon,
+  EggOff,
+  EggOff as EggOffIcon,
+  Ellipse,
+  Ellipse as EllipseIcon,
+  Ellipsis,
+  Ellipsis as EllipsisIcon,
+  EllipsisVertical,
+  EllipsisVertical as EllipsisVerticalIcon,
+  Equal,
+  EqualApproximately,
+  EqualApproximately as EqualApproximatelyIcon,
+  Equal as EqualIcon,
+  EqualNot,
+  EqualNot as EqualNotIcon,
+  SquareEqual as EqualSquare,
+  SquareEqual as EqualSquareIcon,
+  Eraser,
+  Eraser as EraserIcon,
+  EthernetPort,
+  EthernetPort as EthernetPortIcon,
+  Euro,
+  Euro as EuroIcon,
+  EvCharger,
+  EvCharger as EvChargerIcon,
+  Expand,
+  Expand as ExpandIcon,
+  ExternalLink,
+  ExternalLink as ExternalLinkIcon,
+  Eye,
+  EyeClosed,
+  EyeClosed as EyeClosedIcon,
+  Eye as EyeIcon,
+  EyeOff,
+  EyeOff as EyeOffIcon,
+  Facebook,
+  Facebook as FacebookIcon,
+  Factory,
+  Factory as FactoryIcon,
+  Fan,
+  Fan as FanIcon,
+  FastForward,
+  FastForward as FastForwardIcon,
+  Feather,
+  Feather as FeatherIcon,
+  Fence,
+  Fence as FenceIcon,
+  FerrisWheel,
+  FerrisWheel as FerrisWheelIcon,
+  Figma,
+  Figma as FigmaIcon,
+  File,
+  FileArchive,
+  FileArchive as FileArchiveIcon,
+  FileHeadphone as FileAudio,
+  FileHeadphone as FileAudio2,
+  FileHeadphone as FileAudio2Icon,
+  FileHeadphone as FileAudioIcon,
+  FileAxis3d as FileAxis3D,
+  FileAxis3d as FileAxis3DIcon,
+  FileAxis3d,
+  FileAxis3d as FileAxis3dIcon,
+  FileBadge,
+  FileBadge as FileBadge2,
+  FileBadge as FileBadge2Icon,
+  FileBadge as FileBadgeIcon,
+  FileChartColumnIncreasing as FileBarChart,
+  FileChartColumn as FileBarChart2,
+  FileChartColumn as FileBarChart2Icon,
+  FileChartColumnIncreasing as FileBarChartIcon,
+  FileBox,
+  FileBox as FileBoxIcon,
+  FileBraces,
+  FileBracesCorner,
+  FileBracesCorner as FileBracesCornerIcon,
+  FileBraces as FileBracesIcon,
+  FileChartColumn,
+  FileChartColumn as FileChartColumnIcon,
+  FileChartColumnIncreasing,
+  FileChartColumnIncreasing as FileChartColumnIncreasingIcon,
+  FileChartLine,
+  FileChartLine as FileChartLineIcon,
+  FileChartPie,
+  FileChartPie as FileChartPieIcon,
+  FileCheck,
+  FileCheckCorner as FileCheck2,
+  FileCheckCorner as FileCheck2Icon,
+  FileCheckCorner,
+  FileCheckCorner as FileCheckCornerIcon,
+  FileCheck as FileCheckIcon,
+  FileClock,
+  FileClock as FileClockIcon,
+  FileCode,
+  FileCodeCorner as FileCode2,
+  FileCodeCorner as FileCode2Icon,
+  FileCodeCorner,
+  FileCodeCorner as FileCodeCornerIcon,
+  FileCode as FileCodeIcon,
+  FileCog,
+  FileCog as FileCog2,
+  FileCog as FileCog2Icon,
+  FileCog as FileCogIcon,
+  FileDiff,
+  FileDiff as FileDiffIcon,
+  FileDigit,
+  FileDigit as FileDigitIcon,
+  FileDown,
+  FileDown as FileDownIcon,
+  FilePen as FileEdit,
+  FilePen as FileEditIcon,
+  FileExclamationPoint,
+  FileExclamationPoint as FileExclamationPointIcon,
+  FileHeadphone,
+  FileHeadphone as FileHeadphoneIcon,
+  FileHeart,
+  FileHeart as FileHeartIcon,
+  File as FileIcon,
+  FileImage,
+  FileImage as FileImageIcon,
+  FileInput,
+  FileInput as FileInputIcon,
+  FileBraces as FileJson,
+  FileBracesCorner as FileJson2,
+  FileBracesCorner as FileJson2Icon,
+  FileBraces as FileJsonIcon,
+  FileKey,
+  FileKey as FileKey2,
+  FileKey as FileKey2Icon,
+  FileKey as FileKeyIcon,
+  FileChartLine as FileLineChart,
+  FileChartLine as FileLineChartIcon,
+  FileLock,
+  FileLock as FileLock2,
+  FileLock as FileLock2Icon,
+  FileLock as FileLockIcon,
+  FileMinus,
+  FileMinusCorner as FileMinus2,
+  FileMinusCorner as FileMinus2Icon,
+  FileMinusCorner,
+  FileMinusCorner as FileMinusCornerIcon,
+  FileMinus as FileMinusIcon,
+  FileMusic,
+  FileMusic as FileMusicIcon,
+  FileOutput,
+  FileOutput as FileOutputIcon,
+  FilePen,
+  FilePen as FilePenIcon,
+  FilePenLine,
+  FilePenLine as FilePenLineIcon,
+  FileChartPie as FilePieChart,
+  FileChartPie as FilePieChartIcon,
+  FilePlay,
+  FilePlay as FilePlayIcon,
+  FilePlus,
+  FilePlusCorner as FilePlus2,
+  FilePlusCorner as FilePlus2Icon,
+  FilePlusCorner,
+  FilePlusCorner as FilePlusCornerIcon,
+  FilePlus as FilePlusIcon,
+  FileQuestionMark as FileQuestion,
+  FileQuestionMark as FileQuestionIcon,
+  FileQuestionMark,
+  FileQuestionMark as FileQuestionMarkIcon,
+  FileScan,
+  FileScan as FileScanIcon,
+  FileSearch,
+  FileSearchCorner as FileSearch2,
+  FileSearchCorner as FileSearch2Icon,
+  FileSearchCorner,
+  FileSearchCorner as FileSearchCornerIcon,
+  FileSearch as FileSearchIcon,
+  FileSignal,
+  FileSignal as FileSignalIcon,
+  FilePenLine as FileSignature,
+  FilePenLine as FileSignatureIcon,
+  FileSliders,
+  FileSliders as FileSlidersIcon,
+  FileSpreadsheet,
+  FileSpreadsheet as FileSpreadsheetIcon,
+  FileStack,
+  FileStack as FileStackIcon,
+  FileSymlink,
+  FileSymlink as FileSymlinkIcon,
+  FileTerminal,
+  FileTerminal as FileTerminalIcon,
+  FileText,
+  FileText as FileTextIcon,
+  FileType,
+  FileTypeCorner as FileType2,
+  FileTypeCorner as FileType2Icon,
+  FileTypeCorner,
+  FileTypeCorner as FileTypeCornerIcon,
+  FileType as FileTypeIcon,
+  FileUp,
+  FileUp as FileUpIcon,
+  FileUser,
+  FileUser as FileUserIcon,
+  FilePlay as FileVideo,
+  FileVideoCamera as FileVideo2,
+  FileVideoCamera as FileVideo2Icon,
+  FileVideoCamera,
+  FileVideoCamera as FileVideoCameraIcon,
+  FilePlay as FileVideoIcon,
+  FileVolume,
+  FileSignal as FileVolume2,
+  FileSignal as FileVolume2Icon,
+  FileVolume as FileVolumeIcon,
+  FileExclamationPoint as FileWarning,
+  FileExclamationPoint as FileWarningIcon,
+  FileX,
+  FileXCorner as FileX2,
+  FileXCorner as FileX2Icon,
+  FileXCorner,
+  FileXCorner as FileXCornerIcon,
+  FileX as FileXIcon,
+  Files,
+  Files as FilesIcon,
+  Film,
+  Film as FilmIcon,
+  Funnel as Filter,
+  Funnel as FilterIcon,
+  FunnelX as FilterX,
+  FunnelX as FilterXIcon,
+  FingerprintPattern as Fingerprint,
+  FingerprintPattern as FingerprintIcon,
+  FingerprintPattern,
+  FingerprintPattern as FingerprintPatternIcon,
+  FireExtinguisher,
+  FireExtinguisher as FireExtinguisherIcon,
+  Fish,
+  Fish as FishIcon,
+  FishOff,
+  FishOff as FishOffIcon,
+  FishSymbol,
+  FishSymbol as FishSymbolIcon,
+  FishingHook,
+  FishingHook as FishingHookIcon,
+  FishingRod,
+  FishingRod as FishingRodIcon,
+  Flag,
+  Flag as FlagIcon,
+  FlagOff,
+  FlagOff as FlagOffIcon,
+  FlagTriangleLeft,
+  FlagTriangleLeft as FlagTriangleLeftIcon,
+  FlagTriangleRight,
+  FlagTriangleRight as FlagTriangleRightIcon,
+  Flame,
+  Flame as FlameIcon,
+  FlameKindling,
+  FlameKindling as FlameKindlingIcon,
+  Flashlight,
+  Flashlight as FlashlightIcon,
+  FlashlightOff,
+  FlashlightOff as FlashlightOffIcon,
+  FlaskConical,
+  FlaskConical as FlaskConicalIcon,
+  FlaskConicalOff,
+  FlaskConicalOff as FlaskConicalOffIcon,
+  FlaskRound,
+  FlaskRound as FlaskRoundIcon,
+  SquareCenterlineDashedHorizontal as FlipHorizontal,
+  FlipHorizontal2,
+  FlipHorizontal2 as FlipHorizontal2Icon,
+  SquareCenterlineDashedHorizontal as FlipHorizontalIcon,
+  SquareCenterlineDashedVertical as FlipVertical,
+  FlipVertical2,
+  FlipVertical2 as FlipVertical2Icon,
+  SquareCenterlineDashedVertical as FlipVerticalIcon,
+  Flower,
+  Flower2,
+  Flower2 as Flower2Icon,
+  Flower as FlowerIcon,
+  Focus,
+  Focus as FocusIcon,
+  FoldHorizontal,
+  FoldHorizontal as FoldHorizontalIcon,
+  FoldVertical,
+  FoldVertical as FoldVerticalIcon,
+  Folder,
+  FolderArchive,
+  FolderArchive as FolderArchiveIcon,
+  FolderCheck,
+  FolderCheck as FolderCheckIcon,
+  FolderClock,
+  FolderClock as FolderClockIcon,
+  FolderClosed,
+  FolderClosed as FolderClosedIcon,
+  FolderCode,
+  FolderCode as FolderCodeIcon,
+  FolderCog,
+  FolderCog as FolderCog2,
+  FolderCog as FolderCog2Icon,
+  FolderCog as FolderCogIcon,
+  FolderDot,
+  FolderDot as FolderDotIcon,
+  FolderDown,
+  FolderDown as FolderDownIcon,
+  FolderPen as FolderEdit,
+  FolderPen as FolderEditIcon,
+  FolderGit,
+  FolderGit2,
+  FolderGit2 as FolderGit2Icon,
+  FolderGit as FolderGitIcon,
+  FolderHeart,
+  FolderHeart as FolderHeartIcon,
+  Folder as FolderIcon,
+  FolderInput,
+  FolderInput as FolderInputIcon,
+  FolderKanban,
+  FolderKanban as FolderKanbanIcon,
+  FolderKey,
+  FolderKey as FolderKeyIcon,
+  FolderLock,
+  FolderLock as FolderLockIcon,
+  FolderMinus,
+  FolderMinus as FolderMinusIcon,
+  FolderOpen,
+  FolderOpenDot,
+  FolderOpenDot as FolderOpenDotIcon,
+  FolderOpen as FolderOpenIcon,
+  FolderOutput,
+  FolderOutput as FolderOutputIcon,
+  FolderPen,
+  FolderPen as FolderPenIcon,
+  FolderPlus,
+  FolderPlus as FolderPlusIcon,
+  FolderRoot,
+  FolderRoot as FolderRootIcon,
+  FolderSearch,
+  FolderSearch2,
+  FolderSearch2 as FolderSearch2Icon,
+  FolderSearch as FolderSearchIcon,
+  FolderSymlink,
+  FolderSymlink as FolderSymlinkIcon,
+  FolderSync,
+  FolderSync as FolderSyncIcon,
+  FolderTree,
+  FolderTree as FolderTreeIcon,
+  FolderUp,
+  FolderUp as FolderUpIcon,
+  FolderX,
+  FolderX as FolderXIcon,
+  Folders,
+  Folders as FoldersIcon,
+  Footprints,
+  Footprints as FootprintsIcon,
+  Utensils as ForkKnife,
+  UtensilsCrossed as ForkKnifeCrossed,
+  UtensilsCrossed as ForkKnifeCrossedIcon,
+  Utensils as ForkKnifeIcon,
+  Forklift,
+  Forklift as ForkliftIcon,
+  Form,
+  Form as FormIcon,
+  RectangleEllipsis as FormInput,
+  RectangleEllipsis as FormInputIcon,
+  Forward,
+  Forward as ForwardIcon,
+  Frame,
+  Frame as FrameIcon,
+  Framer,
+  Framer as FramerIcon,
+  Frown,
+  Frown as FrownIcon,
+  Fuel,
+  Fuel as FuelIcon,
+  Fullscreen,
+  Fullscreen as FullscreenIcon,
+  SquareFunction as FunctionSquare,
+  SquareFunction as FunctionSquareIcon,
+  Funnel,
+  Funnel as FunnelIcon,
+  FunnelPlus,
+  FunnelPlus as FunnelPlusIcon,
+  FunnelX,
+  FunnelX as FunnelXIcon,
+  GalleryHorizontal,
+  GalleryHorizontalEnd,
+  GalleryHorizontalEnd as GalleryHorizontalEndIcon,
+  GalleryHorizontal as GalleryHorizontalIcon,
+  GalleryThumbnails,
+  GalleryThumbnails as GalleryThumbnailsIcon,
+  GalleryVertical,
+  GalleryVerticalEnd,
+  GalleryVerticalEnd as GalleryVerticalEndIcon,
+  GalleryVertical as GalleryVerticalIcon,
+  Gamepad,
+  Gamepad2,
+  Gamepad2 as Gamepad2Icon,
+  GamepadDirectional,
+  GamepadDirectional as GamepadDirectionalIcon,
+  Gamepad as GamepadIcon,
+  ChartNoAxesGantt as GanttChart,
+  ChartNoAxesGantt as GanttChartIcon,
+  SquareChartGantt as GanttChartSquare,
+  SquareChartGantt as GanttChartSquareIcon,
+  Gauge,
+  CircleGauge as GaugeCircle,
+  CircleGauge as GaugeCircleIcon,
+  Gauge as GaugeIcon,
+  Gavel,
+  Gavel as GavelIcon,
+  Gem,
+  Gem as GemIcon,
+  GeorgianLari,
+  GeorgianLari as GeorgianLariIcon,
+  Ghost,
+  Ghost as GhostIcon,
+  Gift,
+  Gift as GiftIcon,
+  GitBranch,
+  GitBranch as GitBranchIcon,
+  GitBranchMinus,
+  GitBranchMinus as GitBranchMinusIcon,
+  GitBranchPlus,
+  GitBranchPlus as GitBranchPlusIcon,
+  GitCommitHorizontal as GitCommit,
+  GitCommitHorizontal,
+  GitCommitHorizontal as GitCommitHorizontalIcon,
+  GitCommitHorizontal as GitCommitIcon,
+  GitCommitVertical,
+  GitCommitVertical as GitCommitVerticalIcon,
+  GitCompare,
+  GitCompareArrows,
+  GitCompareArrows as GitCompareArrowsIcon,
+  GitCompare as GitCompareIcon,
+  GitFork,
+  GitFork as GitForkIcon,
+  GitGraph,
+  GitGraph as GitGraphIcon,
+  GitMerge,
+  GitMergeConflict,
+  GitMergeConflict as GitMergeConflictIcon,
+  GitMerge as GitMergeIcon,
+  GitPullRequest,
+  GitPullRequestArrow,
+  GitPullRequestArrow as GitPullRequestArrowIcon,
+  GitPullRequestClosed,
+  GitPullRequestClosed as GitPullRequestClosedIcon,
+  GitPullRequestCreate,
+  GitPullRequestCreateArrow,
+  GitPullRequestCreateArrow as GitPullRequestCreateArrowIcon,
+  GitPullRequestCreate as GitPullRequestCreateIcon,
+  GitPullRequestDraft,
+  GitPullRequestDraft as GitPullRequestDraftIcon,
+  GitPullRequest as GitPullRequestIcon,
+  Github,
+  Github as GithubIcon,
+  Gitlab,
+  Gitlab as GitlabIcon,
+  GlassWater,
+  GlassWater as GlassWaterIcon,
+  Glasses,
+  Glasses as GlassesIcon,
+  Globe,
+  Earth as Globe2,
+  Earth as Globe2Icon,
+  Globe as GlobeIcon,
+  GlobeLock,
+  GlobeLock as GlobeLockIcon,
+  GlobeOff,
+  GlobeOff as GlobeOffIcon,
+  GlobeX,
+  GlobeX as GlobeXIcon,
+  Goal,
+  Goal as GoalIcon,
+  Gpu,
+  Gpu as GpuIcon,
+  HandGrab as Grab,
+  HandGrab as GrabIcon,
+  GraduationCap,
+  GraduationCap as GraduationCapIcon,
+  Grape,
+  Grape as GrapeIcon,
+  Grid3x3 as Grid,
+  Grid2x2 as Grid2X2,
+  Grid2x2Check as Grid2X2Check,
+  Grid2x2Check as Grid2X2CheckIcon,
+  Grid2x2 as Grid2X2Icon,
+  Grid2x2Plus as Grid2X2Plus,
+  Grid2x2Plus as Grid2X2PlusIcon,
+  Grid2x2X as Grid2X2X,
+  Grid2x2X as Grid2X2XIcon,
+  Grid2x2,
+  Grid2x2Check,
+  Grid2x2Check as Grid2x2CheckIcon,
+  Grid2x2 as Grid2x2Icon,
+  Grid2x2Plus,
+  Grid2x2Plus as Grid2x2PlusIcon,
+  Grid2x2X,
+  Grid2x2X as Grid2x2XIcon,
+  Grid3x3 as Grid3X3,
+  Grid3x3 as Grid3X3Icon,
+  Grid3x2,
+  Grid3x2 as Grid3x2Icon,
+  Grid3x3,
+  Grid3x3 as Grid3x3Icon,
+  Grid3x3 as GridIcon,
+  Grip,
+  GripHorizontal,
+  GripHorizontal as GripHorizontalIcon,
+  Grip as GripIcon,
+  GripVertical,
+  GripVertical as GripVerticalIcon,
+  Group,
+  Group as GroupIcon,
+  Guitar,
+  Guitar as GuitarIcon,
+  Ham,
+  Ham as HamIcon,
+  Hamburger,
+  Hamburger as HamburgerIcon,
+  Hammer,
+  Hammer as HammerIcon,
+  Hand,
+  HandCoins,
+  HandCoins as HandCoinsIcon,
+  HandFist,
+  HandFist as HandFistIcon,
+  HandGrab,
+  HandGrab as HandGrabIcon,
+  HandHeart,
+  HandHeart as HandHeartIcon,
+  HandHelping,
+  HandHelping as HandHelpingIcon,
+  Hand as HandIcon,
+  HandMetal,
+  HandMetal as HandMetalIcon,
+  HandPlatter,
+  HandPlatter as HandPlatterIcon,
+  Handbag,
+  Handbag as HandbagIcon,
+  Handshake,
+  Handshake as HandshakeIcon,
+  HardDrive,
+  HardDriveDownload,
+  HardDriveDownload as HardDriveDownloadIcon,
+  HardDrive as HardDriveIcon,
+  HardDriveUpload,
+  HardDriveUpload as HardDriveUploadIcon,
+  HardHat,
+  HardHat as HardHatIcon,
+  Hash,
+  Hash as HashIcon,
+  HatGlasses,
+  HatGlasses as HatGlassesIcon,
+  Haze,
+  Haze as HazeIcon,
+  Hd,
+  Hd as HdIcon,
+  HdmiPort,
+  HdmiPort as HdmiPortIcon,
+  Heading,
+  Heading1,
+  Heading1 as Heading1Icon,
+  Heading2,
+  Heading2 as Heading2Icon,
+  Heading3,
+  Heading3 as Heading3Icon,
+  Heading4,
+  Heading4 as Heading4Icon,
+  Heading5,
+  Heading5 as Heading5Icon,
+  Heading6,
+  Heading6 as Heading6Icon,
+  Heading as HeadingIcon,
+  HeadphoneOff,
+  HeadphoneOff as HeadphoneOffIcon,
+  Headphones,
+  Headphones as HeadphonesIcon,
+  Headset,
+  Headset as HeadsetIcon,
+  Heart,
+  HeartCrack,
+  HeartCrack as HeartCrackIcon,
+  HeartHandshake,
+  HeartHandshake as HeartHandshakeIcon,
+  Heart as HeartIcon,
+  HeartMinus,
+  HeartMinus as HeartMinusIcon,
+  HeartOff,
+  HeartOff as HeartOffIcon,
+  HeartPlus,
+  HeartPlus as HeartPlusIcon,
+  HeartPulse,
+  HeartPulse as HeartPulseIcon,
+  Heater,
+  Heater as HeaterIcon,
+  Helicopter,
+  Helicopter as HelicopterIcon,
+  CircleQuestionMark as HelpCircle,
+  CircleQuestionMark as HelpCircleIcon,
+  HandHelping as HelpingHand,
+  HandHelping as HelpingHandIcon,
+  Hexagon,
+  Hexagon as HexagonIcon,
+  Highlighter,
+  Highlighter as HighlighterIcon,
+  History,
+  History as HistoryIcon,
+  House as Home,
+  House as HomeIcon,
+  Hop,
+  Hop as HopIcon,
+  HopOff,
+  HopOff as HopOffIcon,
+  Hospital,
+  Hospital as HospitalIcon,
+  Hotel,
+  Hotel as HotelIcon,
+  Hourglass,
+  Hourglass as HourglassIcon,
+  House,
+  HouseHeart,
+  HouseHeart as HouseHeartIcon,
+  House as HouseIcon,
+  HousePlug,
+  HousePlug as HousePlugIcon,
+  HousePlus,
+  HousePlus as HousePlusIcon,
+  HouseWifi,
+  HouseWifi as HouseWifiIcon,
+  IceCreamCone as IceCream,
+  IceCreamBowl as IceCream2,
+  IceCreamBowl as IceCream2Icon,
+  IceCreamBowl,
+  IceCreamBowl as IceCreamBowlIcon,
+  IceCreamCone,
+  IceCreamCone as IceCreamConeIcon,
+  IceCreamCone as IceCreamIcon,
+  Icon,
+  IdCard,
+  IdCard as IdCardIcon,
+  IdCardLanyard,
+  IdCardLanyard as IdCardLanyardIcon,
+  Image,
+  ImageDown,
+  ImageDown as ImageDownIcon,
+  Image as ImageIcon,
+  ImageMinus,
+  ImageMinus as ImageMinusIcon,
+  ImageOff,
+  ImageOff as ImageOffIcon,
+  ImagePlay,
+  ImagePlay as ImagePlayIcon,
+  ImagePlus,
+  ImagePlus as ImagePlusIcon,
+  ImageUp,
+  ImageUp as ImageUpIcon,
+  ImageUpscale,
+  ImageUpscale as ImageUpscaleIcon,
+  Images,
+  Images as ImagesIcon,
+  Import,
+  Import as ImportIcon,
+  Inbox,
+  Inbox as InboxIcon,
+  ListIndentIncrease as Indent,
+  ListIndentDecrease as IndentDecrease,
+  ListIndentDecrease as IndentDecreaseIcon,
+  ListIndentIncrease as IndentIcon,
+  ListIndentIncrease as IndentIncrease,
+  ListIndentIncrease as IndentIncreaseIcon,
+  IndianRupee,
+  IndianRupee as IndianRupeeIcon,
+  Infinity,
+  Infinity as InfinityIcon,
+  Info,
+  Info as InfoIcon,
+  SquareMousePointer as Inspect,
+  SquareMousePointer as InspectIcon,
+  InspectionPanel,
+  InspectionPanel as InspectionPanelIcon,
+  Instagram,
+  Instagram as InstagramIcon,
+  Italic,
+  Italic as ItalicIcon,
+  IterationCcw,
+  IterationCcw as IterationCcwIcon,
+  IterationCw,
+  IterationCw as IterationCwIcon,
+  JapaneseYen,
+  JapaneseYen as JapaneseYenIcon,
+  Joystick,
+  Joystick as JoystickIcon,
+  Kanban,
+  Kanban as KanbanIcon,
+  SquareKanban as KanbanSquare,
+  SquareDashedKanban as KanbanSquareDashed,
+  SquareDashedKanban as KanbanSquareDashedIcon,
+  SquareKanban as KanbanSquareIcon,
+  Kayak,
+  Kayak as KayakIcon,
+  Key,
+  Key as KeyIcon,
+  KeyRound,
+  KeyRound as KeyRoundIcon,
+  KeySquare,
+  KeySquare as KeySquareIcon,
+  Keyboard,
+  Keyboard as KeyboardIcon,
+  KeyboardMusic,
+  KeyboardMusic as KeyboardMusicIcon,
+  KeyboardOff,
+  KeyboardOff as KeyboardOffIcon,
+  Lamp,
+  LampCeiling,
+  LampCeiling as LampCeilingIcon,
+  LampDesk,
+  LampDesk as LampDeskIcon,
+  LampFloor,
+  LampFloor as LampFloorIcon,
+  Lamp as LampIcon,
+  LampWallDown,
+  LampWallDown as LampWallDownIcon,
+  LampWallUp,
+  LampWallUp as LampWallUpIcon,
+  LandPlot,
+  LandPlot as LandPlotIcon,
+  Landmark,
+  Landmark as LandmarkIcon,
+  Languages,
+  Languages as LanguagesIcon,
+  Laptop,
+  LaptopMinimal as Laptop2,
+  LaptopMinimal as Laptop2Icon,
+  Laptop as LaptopIcon,
+  LaptopMinimal,
+  LaptopMinimalCheck,
+  LaptopMinimalCheck as LaptopMinimalCheckIcon,
+  LaptopMinimal as LaptopMinimalIcon,
+  Lasso,
+  Lasso as LassoIcon,
+  LassoSelect,
+  LassoSelect as LassoSelectIcon,
+  Laugh,
+  Laugh as LaughIcon,
+  Layers,
+  Layers2,
+  Layers2 as Layers2Icon,
+  Layers as Layers3,
+  Layers as Layers3Icon,
+  Layers as LayersIcon,
+  LayersPlus,
+  LayersPlus as LayersPlusIcon,
+  PanelsTopLeft as Layout,
+  LayoutDashboard,
+  LayoutDashboard as LayoutDashboardIcon,
+  LayoutGrid,
+  LayoutGrid as LayoutGridIcon,
+  PanelsTopLeft as LayoutIcon,
+  LayoutList,
+  LayoutList as LayoutListIcon,
+  LayoutPanelLeft,
+  LayoutPanelLeft as LayoutPanelLeftIcon,
+  LayoutPanelTop,
+  LayoutPanelTop as LayoutPanelTopIcon,
+  LayoutTemplate,
+  LayoutTemplate as LayoutTemplateIcon,
+  Leaf,
+  Leaf as LeafIcon,
+  LeafyGreen,
+  LeafyGreen as LeafyGreenIcon,
+  Lectern,
+  Lectern as LecternIcon,
+  LensConcave,
+  LensConcave as LensConcaveIcon,
+  LensConvex,
+  LensConvex as LensConvexIcon,
+  TextInitial as LetterText,
+  TextInitial as LetterTextIcon,
+  Library,
+  LibraryBig,
+  LibraryBig as LibraryBigIcon,
+  Library as LibraryIcon,
+  SquareLibrary as LibrarySquare,
+  SquareLibrary as LibrarySquareIcon,
+  LifeBuoy,
+  LifeBuoy as LifeBuoyIcon,
+  Ligature,
+  Ligature as LigatureIcon,
+  Lightbulb,
+  Lightbulb as LightbulbIcon,
+  LightbulbOff,
+  LightbulbOff as LightbulbOffIcon,
+  ChartLine as LineChart,
+  ChartLine as LineChartIcon,
+  LineDotRightHorizontal,
+  LineDotRightHorizontal as LineDotRightHorizontalIcon,
+  LineSquiggle,
+  LineSquiggle as LineSquiggleIcon,
+  Link,
+  Link2,
+  Link2 as Link2Icon,
+  Link2Off,
+  Link2Off as Link2OffIcon,
+  Link as LinkIcon,
+  Linkedin,
+  Linkedin as LinkedinIcon,
+  List,
+  ListCheck,
+  ListCheck as ListCheckIcon,
+  ListChecks,
+  ListChecks as ListChecksIcon,
+  ListChevronsDownUp,
+  ListChevronsDownUp as ListChevronsDownUpIcon,
+  ListChevronsUpDown,
+  ListChevronsUpDown as ListChevronsUpDownIcon,
+  ListCollapse,
+  ListCollapse as ListCollapseIcon,
+  ListEnd,
+  ListEnd as ListEndIcon,
+  ListFilter,
+  ListFilter as ListFilterIcon,
+  ListFilterPlus,
+  ListFilterPlus as ListFilterPlusIcon,
+  List as ListIcon,
+  ListIndentDecrease,
+  ListIndentDecrease as ListIndentDecreaseIcon,
+  ListIndentIncrease,
+  ListIndentIncrease as ListIndentIncreaseIcon,
+  ListMinus,
+  ListMinus as ListMinusIcon,
+  ListMusic,
+  ListMusic as ListMusicIcon,
+  ListOrdered,
+  ListOrdered as ListOrderedIcon,
+  ListPlus,
+  ListPlus as ListPlusIcon,
+  ListRestart,
+  ListRestart as ListRestartIcon,
+  ListStart,
+  ListStart as ListStartIcon,
+  ListTodo,
+  ListTodo as ListTodoIcon,
+  ListTree,
+  ListTree as ListTreeIcon,
+  ListVideo,
+  ListVideo as ListVideoIcon,
+  ListX,
+  ListX as ListXIcon,
+  Loader,
+  LoaderCircle as Loader2,
+  LoaderCircle as Loader2Icon,
+  LoaderCircle,
+  LoaderCircle as LoaderCircleIcon,
+  Loader as LoaderIcon,
+  LoaderPinwheel,
+  LoaderPinwheel as LoaderPinwheelIcon,
+  Locate,
+  LocateFixed,
+  LocateFixed as LocateFixedIcon,
+  Locate as LocateIcon,
+  LocateOff,
+  LocateOff as LocateOffIcon,
+  MapPinPen as LocationEdit,
+  MapPinPen as LocationEditIcon,
+  Lock,
+  Lock as LockIcon,
+  LockKeyhole,
+  LockKeyhole as LockKeyholeIcon,
+  LockKeyholeOpen,
+  LockKeyholeOpen as LockKeyholeOpenIcon,
+  LockOpen,
+  LockOpen as LockOpenIcon,
+  LogIn,
+  LogIn as LogInIcon,
+  LogOut,
+  LogOut as LogOutIcon,
+  Logs,
+  Logs as LogsIcon,
+  Lollipop,
+  Lollipop as LollipopIcon,
+  AArrowDown as LucideAArrowDown,
+  AArrowUp as LucideAArrowUp,
+  ALargeSmall as LucideALargeSmall,
+  Accessibility as LucideAccessibility,
+  Activity as LucideActivity,
+  SquareActivity as LucideActivitySquare,
+  AirVent as LucideAirVent,
+  Airplay as LucideAirplay,
+  AlarmClockCheck as LucideAlarmCheck,
+  AlarmClock as LucideAlarmClock,
+  AlarmClockCheck as LucideAlarmClockCheck,
+  AlarmClockMinus as LucideAlarmClockMinus,
+  AlarmClockOff as LucideAlarmClockOff,
+  AlarmClockPlus as LucideAlarmClockPlus,
+  AlarmClockMinus as LucideAlarmMinus,
+  AlarmClockPlus as LucideAlarmPlus,
+  AlarmSmoke as LucideAlarmSmoke,
+  Album as LucideAlbum,
+  CircleAlert as LucideAlertCircle,
+  OctagonAlert as LucideAlertOctagon,
+  TriangleAlert as LucideAlertTriangle,
+  TextAlignCenter as LucideAlignCenter,
+  AlignCenterHorizontal as LucideAlignCenterHorizontal,
+  AlignCenterVertical as LucideAlignCenterVertical,
+  AlignEndHorizontal as LucideAlignEndHorizontal,
+  AlignEndVertical as LucideAlignEndVertical,
+  AlignHorizontalDistributeCenter as LucideAlignHorizontalDistributeCenter,
+  AlignHorizontalDistributeEnd as LucideAlignHorizontalDistributeEnd,
+  AlignHorizontalDistributeStart as LucideAlignHorizontalDistributeStart,
+  AlignHorizontalJustifyCenter as LucideAlignHorizontalJustifyCenter,
+  AlignHorizontalJustifyEnd as LucideAlignHorizontalJustifyEnd,
+  AlignHorizontalJustifyStart as LucideAlignHorizontalJustifyStart,
+  AlignHorizontalSpaceAround as LucideAlignHorizontalSpaceAround,
+  AlignHorizontalSpaceBetween as LucideAlignHorizontalSpaceBetween,
+  TextAlignJustify as LucideAlignJustify,
+  TextAlignStart as LucideAlignLeft,
+  TextAlignEnd as LucideAlignRight,
+  AlignStartHorizontal as LucideAlignStartHorizontal,
+  AlignStartVertical as LucideAlignStartVertical,
+  AlignVerticalDistributeCenter as LucideAlignVerticalDistributeCenter,
+  AlignVerticalDistributeEnd as LucideAlignVerticalDistributeEnd,
+  AlignVerticalDistributeStart as LucideAlignVerticalDistributeStart,
+  AlignVerticalJustifyCenter as LucideAlignVerticalJustifyCenter,
+  AlignVerticalJustifyEnd as LucideAlignVerticalJustifyEnd,
+  AlignVerticalJustifyStart as LucideAlignVerticalJustifyStart,
+  AlignVerticalSpaceAround as LucideAlignVerticalSpaceAround,
+  AlignVerticalSpaceBetween as LucideAlignVerticalSpaceBetween,
+  Ambulance as LucideAmbulance,
+  Ampersand as LucideAmpersand,
+  Ampersands as LucideAmpersands,
+  Amphora as LucideAmphora,
+  Anchor as LucideAnchor,
+  Angry as LucideAngry,
+  Annoyed as LucideAnnoyed,
+  Antenna as LucideAntenna,
+  Anvil as LucideAnvil,
+  Aperture as LucideAperture,
+  AppWindow as LucideAppWindow,
+  AppWindowMac as LucideAppWindowMac,
+  Apple as LucideApple,
+  Archive as LucideArchive,
+  ArchiveRestore as LucideArchiveRestore,
+  ArchiveX as LucideArchiveX,
+  ChartArea as LucideAreaChart,
+  Armchair as LucideArmchair,
+  ArrowBigDown as LucideArrowBigDown,
+  ArrowBigDownDash as LucideArrowBigDownDash,
+  ArrowBigLeft as LucideArrowBigLeft,
+  ArrowBigLeftDash as LucideArrowBigLeftDash,
+  ArrowBigRight as LucideArrowBigRight,
+  ArrowBigRightDash as LucideArrowBigRightDash,
+  ArrowBigUp as LucideArrowBigUp,
+  ArrowBigUpDash as LucideArrowBigUpDash,
+  ArrowDown as LucideArrowDown,
+  ArrowDown01 as LucideArrowDown01,
+  ArrowDown10 as LucideArrowDown10,
+  ArrowDownAZ as LucideArrowDownAZ,
+  ArrowDownAZ as LucideArrowDownAz,
+  CircleArrowDown as LucideArrowDownCircle,
+  ArrowDownFromLine as LucideArrowDownFromLine,
+  ArrowDownLeft as LucideArrowDownLeft,
+  CircleArrowOutDownLeft as LucideArrowDownLeftFromCircle,
+  SquareArrowOutDownLeft as LucideArrowDownLeftFromSquare,
+  SquareArrowDownLeft as LucideArrowDownLeftSquare,
+  ArrowDownNarrowWide as LucideArrowDownNarrowWide,
+  ArrowDownRight as LucideArrowDownRight,
+  CircleArrowOutDownRight as LucideArrowDownRightFromCircle,
+  SquareArrowOutDownRight as LucideArrowDownRightFromSquare,
+  SquareArrowDownRight as LucideArrowDownRightSquare,
+  SquareArrowDown as LucideArrowDownSquare,
+  ArrowDownToDot as LucideArrowDownToDot,
+  ArrowDownToLine as LucideArrowDownToLine,
+  ArrowDownUp as LucideArrowDownUp,
+  ArrowDownWideNarrow as LucideArrowDownWideNarrow,
+  ArrowDownZA as LucideArrowDownZA,
+  ArrowDownZA as LucideArrowDownZa,
+  ArrowLeft as LucideArrowLeft,
+  CircleArrowLeft as LucideArrowLeftCircle,
+  ArrowLeftFromLine as LucideArrowLeftFromLine,
+  ArrowLeftRight as LucideArrowLeftRight,
+  SquareArrowLeft as LucideArrowLeftSquare,
+  ArrowLeftToLine as LucideArrowLeftToLine,
+  ArrowRight as LucideArrowRight,
+  CircleArrowRight as LucideArrowRightCircle,
+  ArrowRightFromLine as LucideArrowRightFromLine,
+  ArrowRightLeft as LucideArrowRightLeft,
+  SquareArrowRight as LucideArrowRightSquare,
+  ArrowRightToLine as LucideArrowRightToLine,
+  ArrowUp as LucideArrowUp,
+  ArrowUp01 as LucideArrowUp01,
+  ArrowUp10 as LucideArrowUp10,
+  ArrowUpAZ as LucideArrowUpAZ,
+  ArrowUpAZ as LucideArrowUpAz,
+  CircleArrowUp as LucideArrowUpCircle,
+  ArrowUpDown as LucideArrowUpDown,
+  ArrowUpFromDot as LucideArrowUpFromDot,
+  ArrowUpFromLine as LucideArrowUpFromLine,
+  ArrowUpLeft as LucideArrowUpLeft,
+  CircleArrowOutUpLeft as LucideArrowUpLeftFromCircle,
+  SquareArrowOutUpLeft as LucideArrowUpLeftFromSquare,
+  SquareArrowUpLeft as LucideArrowUpLeftSquare,
+  ArrowUpNarrowWide as LucideArrowUpNarrowWide,
+  ArrowUpRight as LucideArrowUpRight,
+  CircleArrowOutUpRight as LucideArrowUpRightFromCircle,
+  SquareArrowOutUpRight as LucideArrowUpRightFromSquare,
+  SquareArrowUpRight as LucideArrowUpRightSquare,
+  SquareArrowUp as LucideArrowUpSquare,
+  ArrowUpToLine as LucideArrowUpToLine,
+  ArrowUpWideNarrow as LucideArrowUpWideNarrow,
+  ArrowUpZA as LucideArrowUpZA,
+  ArrowUpZA as LucideArrowUpZa,
+  ArrowsUpFromLine as LucideArrowsUpFromLine,
+  Asterisk as LucideAsterisk,
+  SquareAsterisk as LucideAsteriskSquare,
+  AtSign as LucideAtSign,
+  Atom as LucideAtom,
+  AudioLines as LucideAudioLines,
+  AudioWaveform as LucideAudioWaveform,
+  Award as LucideAward,
+  Axe as LucideAxe,
+  Axis3d as LucideAxis3D,
+  Axis3d as LucideAxis3d,
+  Baby as LucideBaby,
+  Backpack as LucideBackpack,
+  Badge as LucideBadge,
+  BadgeAlert as LucideBadgeAlert,
+  BadgeCent as LucideBadgeCent,
+  BadgeCheck as LucideBadgeCheck,
+  BadgeDollarSign as LucideBadgeDollarSign,
+  BadgeEuro as LucideBadgeEuro,
+  BadgeQuestionMark as LucideBadgeHelp,
+  BadgeIndianRupee as LucideBadgeIndianRupee,
+  BadgeInfo as LucideBadgeInfo,
+  BadgeJapaneseYen as LucideBadgeJapaneseYen,
+  BadgeMinus as LucideBadgeMinus,
+  BadgePercent as LucideBadgePercent,
+  BadgePlus as LucideBadgePlus,
+  BadgePoundSterling as LucideBadgePoundSterling,
+  BadgeQuestionMark as LucideBadgeQuestionMark,
+  BadgeRussianRuble as LucideBadgeRussianRuble,
+  BadgeSwissFranc as LucideBadgeSwissFranc,
+  BadgeTurkishLira as LucideBadgeTurkishLira,
+  BadgeX as LucideBadgeX,
+  BaggageClaim as LucideBaggageClaim,
+  Balloon as LucideBalloon,
+  Ban as LucideBan,
+  Banana as LucideBanana,
+  Bandage as LucideBandage,
+  Banknote as LucideBanknote,
+  BanknoteArrowDown as LucideBanknoteArrowDown,
+  BanknoteArrowUp as LucideBanknoteArrowUp,
+  BanknoteX as LucideBanknoteX,
+  ChartNoAxesColumnIncreasing as LucideBarChart,
+  ChartNoAxesColumn as LucideBarChart2,
+  ChartColumn as LucideBarChart3,
+  ChartColumnIncreasing as LucideBarChart4,
+  ChartColumnBig as LucideBarChartBig,
+  ChartBar as LucideBarChartHorizontal,
+  ChartBarBig as LucideBarChartHorizontalBig,
+  Barcode as LucideBarcode,
+  Barrel as LucideBarrel,
+  Baseline as LucideBaseline,
+  Bath as LucideBath,
+  Battery as LucideBattery,
+  BatteryCharging as LucideBatteryCharging,
+  BatteryFull as LucideBatteryFull,
+  BatteryLow as LucideBatteryLow,
+  BatteryMedium as LucideBatteryMedium,
+  BatteryPlus as LucideBatteryPlus,
+  BatteryWarning as LucideBatteryWarning,
+  Beaker as LucideBeaker,
+  Bean as LucideBean,
+  BeanOff as LucideBeanOff,
+  Bed as LucideBed,
+  BedDouble as LucideBedDouble,
+  BedSingle as LucideBedSingle,
+  Beef as LucideBeef,
+  Beer as LucideBeer,
+  BeerOff as LucideBeerOff,
+  Bell as LucideBell,
+  BellDot as LucideBellDot,
+  BellElectric as LucideBellElectric,
+  BellMinus as LucideBellMinus,
+  BellOff as LucideBellOff,
+  BellPlus as LucideBellPlus,
+  BellRing as LucideBellRing,
+  BetweenHorizontalEnd as LucideBetweenHorizonalEnd,
+  BetweenHorizontalStart as LucideBetweenHorizonalStart,
+  BetweenHorizontalEnd as LucideBetweenHorizontalEnd,
+  BetweenHorizontalStart as LucideBetweenHorizontalStart,
+  BetweenVerticalEnd as LucideBetweenVerticalEnd,
+  BetweenVerticalStart as LucideBetweenVerticalStart,
+  BicepsFlexed as LucideBicepsFlexed,
+  Bike as LucideBike,
+  Binary as LucideBinary,
+  Binoculars as LucideBinoculars,
+  Biohazard as LucideBiohazard,
+  Bird as LucideBird,
+  Birdhouse as LucideBirdhouse,
+  Bitcoin as LucideBitcoin,
+  Blend as LucideBlend,
+  Blinds as LucideBlinds,
+  Blocks as LucideBlocks,
+  Bluetooth as LucideBluetooth,
+  BluetoothConnected as LucideBluetoothConnected,
+  BluetoothOff as LucideBluetoothOff,
+  BluetoothSearching as LucideBluetoothSearching,
+  Bold as LucideBold,
+  Bolt as LucideBolt,
+  Bomb as LucideBomb,
+  Bone as LucideBone,
+  Book as LucideBook,
+  BookA as LucideBookA,
+  BookAlert as LucideBookAlert,
+  BookAudio as LucideBookAudio,
+  BookCheck as LucideBookCheck,
+  BookCopy as LucideBookCopy,
+  BookDashed as LucideBookDashed,
+  BookDown as LucideBookDown,
+  BookHeadphones as LucideBookHeadphones,
+  BookHeart as LucideBookHeart,
+  BookImage as LucideBookImage,
+  BookKey as LucideBookKey,
+  BookLock as LucideBookLock,
+  BookMarked as LucideBookMarked,
+  BookMinus as LucideBookMinus,
+  BookOpen as LucideBookOpen,
+  BookOpenCheck as LucideBookOpenCheck,
+  BookOpenText as LucideBookOpenText,
+  BookPlus as LucideBookPlus,
+  BookSearch as LucideBookSearch,
+  BookDashed as LucideBookTemplate,
+  BookText as LucideBookText,
+  BookType as LucideBookType,
+  BookUp as LucideBookUp,
+  BookUp2 as LucideBookUp2,
+  BookUser as LucideBookUser,
+  BookX as LucideBookX,
+  Bookmark as LucideBookmark,
+  BookmarkCheck as LucideBookmarkCheck,
+  BookmarkMinus as LucideBookmarkMinus,
+  BookmarkPlus as LucideBookmarkPlus,
+  BookmarkX as LucideBookmarkX,
+  BoomBox as LucideBoomBox,
+  Bot as LucideBot,
+  BotMessageSquare as LucideBotMessageSquare,
+  BotOff as LucideBotOff,
+  BottleWine as LucideBottleWine,
+  BowArrow as LucideBowArrow,
+  Box as LucideBox,
+  SquareDashed as LucideBoxSelect,
+  Boxes as LucideBoxes,
+  Braces as LucideBraces,
+  Brackets as LucideBrackets,
+  Brain as LucideBrain,
+  BrainCircuit as LucideBrainCircuit,
+  BrainCog as LucideBrainCog,
+  BrickWall as LucideBrickWall,
+  BrickWallFire as LucideBrickWallFire,
+  BrickWallShield as LucideBrickWallShield,
+  Briefcase as LucideBriefcase,
+  BriefcaseBusiness as LucideBriefcaseBusiness,
+  BriefcaseConveyorBelt as LucideBriefcaseConveyorBelt,
+  BriefcaseMedical as LucideBriefcaseMedical,
+  BringToFront as LucideBringToFront,
+  Brush as LucideBrush,
+  BrushCleaning as LucideBrushCleaning,
+  Bubbles as LucideBubbles,
+  Bug as LucideBug,
+  BugOff as LucideBugOff,
+  BugPlay as LucideBugPlay,
+  Building as LucideBuilding,
+  Building2 as LucideBuilding2,
+  Bus as LucideBus,
+  BusFront as LucideBusFront,
+  Cable as LucideCable,
+  CableCar as LucideCableCar,
+  Cake as LucideCake,
+  CakeSlice as LucideCakeSlice,
+  Calculator as LucideCalculator,
+  Calendar as LucideCalendar,
+  Calendar1 as LucideCalendar1,
+  CalendarArrowDown as LucideCalendarArrowDown,
+  CalendarArrowUp as LucideCalendarArrowUp,
+  CalendarCheck as LucideCalendarCheck,
+  CalendarCheck2 as LucideCalendarCheck2,
+  CalendarClock as LucideCalendarClock,
+  CalendarCog as LucideCalendarCog,
+  CalendarDays as LucideCalendarDays,
+  CalendarFold as LucideCalendarFold,
+  CalendarHeart as LucideCalendarHeart,
+  CalendarMinus as LucideCalendarMinus,
+  CalendarMinus2 as LucideCalendarMinus2,
+  CalendarOff as LucideCalendarOff,
+  CalendarPlus as LucideCalendarPlus,
+  CalendarPlus2 as LucideCalendarPlus2,
+  CalendarRange as LucideCalendarRange,
+  CalendarSearch as LucideCalendarSearch,
+  CalendarSync as LucideCalendarSync,
+  CalendarX as LucideCalendarX,
+  CalendarX2 as LucideCalendarX2,
+  Calendars as LucideCalendars,
+  Camera as LucideCamera,
+  CameraOff as LucideCameraOff,
+  ChartCandlestick as LucideCandlestickChart,
+  Candy as LucideCandy,
+  CandyCane as LucideCandyCane,
+  CandyOff as LucideCandyOff,
+  Cannabis as LucideCannabis,
+  CannabisOff as LucideCannabisOff,
+  Captions as LucideCaptions,
+  CaptionsOff as LucideCaptionsOff,
+  Car as LucideCar,
+  CarFront as LucideCarFront,
+  CarTaxiFront as LucideCarTaxiFront,
+  Caravan as LucideCaravan,
+  CardSim as LucideCardSim,
+  Carrot as LucideCarrot,
+  CaseLower as LucideCaseLower,
+  CaseSensitive as LucideCaseSensitive,
+  CaseUpper as LucideCaseUpper,
+  CassetteTape as LucideCassetteTape,
+  Cast as LucideCast,
+  Castle as LucideCastle,
+  Cat as LucideCat,
+  Cctv as LucideCctv,
+  ChartArea as LucideChartArea,
+  ChartBar as LucideChartBar,
+  ChartBarBig as LucideChartBarBig,
+  ChartBarDecreasing as LucideChartBarDecreasing,
+  ChartBarIncreasing as LucideChartBarIncreasing,
+  ChartBarStacked as LucideChartBarStacked,
+  ChartCandlestick as LucideChartCandlestick,
+  ChartColumn as LucideChartColumn,
+  ChartColumnBig as LucideChartColumnBig,
+  ChartColumnDecreasing as LucideChartColumnDecreasing,
+  ChartColumnIncreasing as LucideChartColumnIncreasing,
+  ChartColumnStacked as LucideChartColumnStacked,
+  ChartGantt as LucideChartGantt,
+  ChartLine as LucideChartLine,
+  ChartNetwork as LucideChartNetwork,
+  ChartNoAxesColumn as LucideChartNoAxesColumn,
+  ChartNoAxesColumnDecreasing as LucideChartNoAxesColumnDecreasing,
+  ChartNoAxesColumnIncreasing as LucideChartNoAxesColumnIncreasing,
+  ChartNoAxesCombined as LucideChartNoAxesCombined,
+  ChartNoAxesGantt as LucideChartNoAxesGantt,
+  ChartPie as LucideChartPie,
+  ChartScatter as LucideChartScatter,
+  ChartSpline as LucideChartSpline,
+  Check as LucideCheck,
+  CheckCheck as LucideCheckCheck,
+  CircleCheckBig as LucideCheckCircle,
+  CircleCheck as LucideCheckCircle2,
+  CheckLine as LucideCheckLine,
+  SquareCheckBig as LucideCheckSquare,
+  SquareCheck as LucideCheckSquare2,
+  ChefHat as LucideChefHat,
+  Cherry as LucideCherry,
+  ChessBishop as LucideChessBishop,
+  ChessKing as LucideChessKing,
+  ChessKnight as LucideChessKnight,
+  ChessPawn as LucideChessPawn,
+  ChessQueen as LucideChessQueen,
+  ChessRook as LucideChessRook,
+  ChevronDown as LucideChevronDown,
+  CircleChevronDown as LucideChevronDownCircle,
+  SquareChevronDown as LucideChevronDownSquare,
+  ChevronFirst as LucideChevronFirst,
+  ChevronLast as LucideChevronLast,
+  ChevronLeft as LucideChevronLeft,
+  CircleChevronLeft as LucideChevronLeftCircle,
+  SquareChevronLeft as LucideChevronLeftSquare,
+  ChevronRight as LucideChevronRight,
+  CircleChevronRight as LucideChevronRightCircle,
+  SquareChevronRight as LucideChevronRightSquare,
+  ChevronUp as LucideChevronUp,
+  CircleChevronUp as LucideChevronUpCircle,
+  SquareChevronUp as LucideChevronUpSquare,
+  ChevronsDown as LucideChevronsDown,
+  ChevronsDownUp as LucideChevronsDownUp,
+  ChevronsLeft as LucideChevronsLeft,
+  ChevronsLeftRight as LucideChevronsLeftRight,
+  ChevronsLeftRightEllipsis as LucideChevronsLeftRightEllipsis,
+  ChevronsRight as LucideChevronsRight,
+  ChevronsRightLeft as LucideChevronsRightLeft,
+  ChevronsUp as LucideChevronsUp,
+  ChevronsUpDown as LucideChevronsUpDown,
+  Chromium as LucideChrome,
+  Chromium as LucideChromium,
+  Church as LucideChurch,
+  Cigarette as LucideCigarette,
+  CigaretteOff as LucideCigaretteOff,
+  Circle as LucideCircle,
+  CircleAlert as LucideCircleAlert,
+  CircleArrowDown as LucideCircleArrowDown,
+  CircleArrowLeft as LucideCircleArrowLeft,
+  CircleArrowOutDownLeft as LucideCircleArrowOutDownLeft,
+  CircleArrowOutDownRight as LucideCircleArrowOutDownRight,
+  CircleArrowOutUpLeft as LucideCircleArrowOutUpLeft,
+  CircleArrowOutUpRight as LucideCircleArrowOutUpRight,
+  CircleArrowRight as LucideCircleArrowRight,
+  CircleArrowUp as LucideCircleArrowUp,
+  CircleCheck as LucideCircleCheck,
+  CircleCheckBig as LucideCircleCheckBig,
+  CircleChevronDown as LucideCircleChevronDown,
+  CircleChevronLeft as LucideCircleChevronLeft,
+  CircleChevronRight as LucideCircleChevronRight,
+  CircleChevronUp as LucideCircleChevronUp,
+  CircleDashed as LucideCircleDashed,
+  CircleDivide as LucideCircleDivide,
+  CircleDollarSign as LucideCircleDollarSign,
+  CircleDot as LucideCircleDot,
+  CircleDotDashed as LucideCircleDotDashed,
+  CircleEllipsis as LucideCircleEllipsis,
+  CircleEqual as LucideCircleEqual,
+  CircleFadingArrowUp as LucideCircleFadingArrowUp,
+  CircleFadingPlus as LucideCircleFadingPlus,
+  CircleGauge as LucideCircleGauge,
+  CircleQuestionMark as LucideCircleHelp,
+  CircleMinus as LucideCircleMinus,
+  CircleOff as LucideCircleOff,
+  CircleParking as LucideCircleParking,
+  CircleParkingOff as LucideCircleParkingOff,
+  CirclePause as LucideCirclePause,
+  CirclePercent as LucideCirclePercent,
+  CirclePile as LucideCirclePile,
+  CirclePlay as LucideCirclePlay,
+  CirclePlus as LucideCirclePlus,
+  CirclePoundSterling as LucideCirclePoundSterling,
+  CirclePower as LucideCirclePower,
+  CircleQuestionMark as LucideCircleQuestionMark,
+  CircleSlash as LucideCircleSlash,
+  CircleSlash2 as LucideCircleSlash2,
+  CircleSlash2 as LucideCircleSlashed,
+  CircleSmall as LucideCircleSmall,
+  CircleStar as LucideCircleStar,
+  CircleStop as LucideCircleStop,
+  CircleUser as LucideCircleUser,
+  CircleUserRound as LucideCircleUserRound,
+  CircleX as LucideCircleX,
+  CircuitBoard as LucideCircuitBoard,
+  Citrus as LucideCitrus,
+  Clapperboard as LucideClapperboard,
+  Clipboard as LucideClipboard,
+  ClipboardCheck as LucideClipboardCheck,
+  ClipboardClock as LucideClipboardClock,
+  ClipboardCopy as LucideClipboardCopy,
+  ClipboardPen as LucideClipboardEdit,
+  ClipboardList as LucideClipboardList,
+  ClipboardMinus as LucideClipboardMinus,
+  ClipboardPaste as LucideClipboardPaste,
+  ClipboardPen as LucideClipboardPen,
+  ClipboardPenLine as LucideClipboardPenLine,
+  ClipboardPlus as LucideClipboardPlus,
+  ClipboardPenLine as LucideClipboardSignature,
+  ClipboardType as LucideClipboardType,
+  ClipboardX as LucideClipboardX,
+  Clock as LucideClock,
+  Clock1 as LucideClock1,
+  Clock10 as LucideClock10,
+  Clock11 as LucideClock11,
+  Clock12 as LucideClock12,
+  Clock2 as LucideClock2,
+  Clock3 as LucideClock3,
+  Clock4 as LucideClock4,
+  Clock5 as LucideClock5,
+  Clock6 as LucideClock6,
+  Clock7 as LucideClock7,
+  Clock8 as LucideClock8,
+  Clock9 as LucideClock9,
+  ClockAlert as LucideClockAlert,
+  ClockArrowDown as LucideClockArrowDown,
+  ClockArrowUp as LucideClockArrowUp,
+  ClockCheck as LucideClockCheck,
+  ClockFading as LucideClockFading,
+  ClockPlus as LucideClockPlus,
+  ClosedCaption as LucideClosedCaption,
+  Cloud as LucideCloud,
+  CloudAlert as LucideCloudAlert,
+  CloudBackup as LucideCloudBackup,
+  CloudCheck as LucideCloudCheck,
+  CloudCog as LucideCloudCog,
+  CloudDownload as LucideCloudDownload,
+  CloudDrizzle as LucideCloudDrizzle,
+  CloudFog as LucideCloudFog,
+  CloudHail as LucideCloudHail,
+  CloudLightning as LucideCloudLightning,
+  CloudMoon as LucideCloudMoon,
+  CloudMoonRain as LucideCloudMoonRain,
+  CloudOff as LucideCloudOff,
+  CloudRain as LucideCloudRain,
+  CloudRainWind as LucideCloudRainWind,
+  CloudSnow as LucideCloudSnow,
+  CloudSun as LucideCloudSun,
+  CloudSunRain as LucideCloudSunRain,
+  CloudSync as LucideCloudSync,
+  CloudUpload as LucideCloudUpload,
+  Cloudy as LucideCloudy,
+  Clover as LucideClover,
+  Club as LucideClub,
+  Code as LucideCode,
+  CodeXml as LucideCode2,
+  SquareCode as LucideCodeSquare,
+  CodeXml as LucideCodeXml,
+  Codepen as LucideCodepen,
+  Codesandbox as LucideCodesandbox,
+  Coffee as LucideCoffee,
+  Cog as LucideCog,
+  Coins as LucideCoins,
+  Columns2 as LucideColumns,
+  Columns2 as LucideColumns2,
+  Columns3 as LucideColumns3,
+  Columns3Cog as LucideColumns3Cog,
+  Columns4 as LucideColumns4,
+  Columns3Cog as LucideColumnsSettings,
+  Combine as LucideCombine,
+  Command as LucideCommand,
+  Compass as LucideCompass,
+  Component as LucideComponent,
+  Computer as LucideComputer,
+  ConciergeBell as LucideConciergeBell,
+  Cone as LucideCone,
+  Construction as LucideConstruction,
+  Contact as LucideContact,
+  ContactRound as LucideContact2,
+  ContactRound as LucideContactRound,
+  Container as LucideContainer,
+  Contrast as LucideContrast,
+  Cookie as LucideCookie,
+  CookingPot as LucideCookingPot,
+  Copy as LucideCopy,
+  CopyCheck as LucideCopyCheck,
+  CopyMinus as LucideCopyMinus,
+  CopyPlus as LucideCopyPlus,
+  CopySlash as LucideCopySlash,
+  CopyX as LucideCopyX,
+  Copyleft as LucideCopyleft,
+  Copyright as LucideCopyright,
+  CornerDownLeft as LucideCornerDownLeft,
+  CornerDownRight as LucideCornerDownRight,
+  CornerLeftDown as LucideCornerLeftDown,
+  CornerLeftUp as LucideCornerLeftUp,
+  CornerRightDown as LucideCornerRightDown,
+  CornerRightUp as LucideCornerRightUp,
+  CornerUpLeft as LucideCornerUpLeft,
+  CornerUpRight as LucideCornerUpRight,
+  Cpu as LucideCpu,
+  CreativeCommons as LucideCreativeCommons,
+  CreditCard as LucideCreditCard,
+  Croissant as LucideCroissant,
+  Crop as LucideCrop,
+  Cross as LucideCross,
+  Crosshair as LucideCrosshair,
+  Crown as LucideCrown,
+  Cuboid as LucideCuboid,
+  CupSoda as LucideCupSoda,
+  Braces as LucideCurlyBraces,
+  Currency as LucideCurrency,
+  Cylinder as LucideCylinder,
+  Dam as LucideDam,
+  Database as LucideDatabase,
+  DatabaseBackup as LucideDatabaseBackup,
+  DatabaseSearch as LucideDatabaseSearch,
+  DatabaseZap as LucideDatabaseZap,
+  DecimalsArrowLeft as LucideDecimalsArrowLeft,
+  DecimalsArrowRight as LucideDecimalsArrowRight,
+  Delete as LucideDelete,
+  Dessert as LucideDessert,
+  Diameter as LucideDiameter,
+  Diamond as LucideDiamond,
+  DiamondMinus as LucideDiamondMinus,
+  DiamondPercent as LucideDiamondPercent,
+  DiamondPlus as LucideDiamondPlus,
+  Dice1 as LucideDice1,
+  Dice2 as LucideDice2,
+  Dice3 as LucideDice3,
+  Dice4 as LucideDice4,
+  Dice5 as LucideDice5,
+  Dice6 as LucideDice6,
+  Dices as LucideDices,
+  Diff as LucideDiff,
+  Disc as LucideDisc,
+  Disc2 as LucideDisc2,
+  Disc3 as LucideDisc3,
+  DiscAlbum as LucideDiscAlbum,
+  Divide as LucideDivide,
+  CircleDivide as LucideDivideCircle,
+  SquareDivide as LucideDivideSquare,
+  Dna as LucideDna,
+  DnaOff as LucideDnaOff,
+  Dock as LucideDock,
+  Dog as LucideDog,
+  DollarSign as LucideDollarSign,
+  Donut as LucideDonut,
+  DoorClosed as LucideDoorClosed,
+  DoorClosedLocked as LucideDoorClosedLocked,
+  DoorOpen as LucideDoorOpen,
+  Dot as LucideDot,
+  SquareDot as LucideDotSquare,
+  Download as LucideDownload,
+  CloudDownload as LucideDownloadCloud,
+  DraftingCompass as LucideDraftingCompass,
+  Drama as LucideDrama,
+  Dribbble as LucideDribbble,
+  Drill as LucideDrill,
+  Drone as LucideDrone,
+  Droplet as LucideDroplet,
+  DropletOff as LucideDropletOff,
+  Droplets as LucideDroplets,
+  Drum as LucideDrum,
+  Drumstick as LucideDrumstick,
+  Dumbbell as LucideDumbbell,
+  Ear as LucideEar,
+  EarOff as LucideEarOff,
+  Earth as LucideEarth,
+  EarthLock as LucideEarthLock,
+  Eclipse as LucideEclipse,
+  SquarePen as LucideEdit,
+  Pen as LucideEdit2,
+  PenLine as LucideEdit3,
+  Egg as LucideEgg,
+  EggFried as LucideEggFried,
+  EggOff as LucideEggOff,
+  Ellipse as LucideEllipse,
+  Ellipsis as LucideEllipsis,
+  EllipsisVertical as LucideEllipsisVertical,
+  Equal as LucideEqual,
+  EqualApproximately as LucideEqualApproximately,
+  EqualNot as LucideEqualNot,
+  SquareEqual as LucideEqualSquare,
+  Eraser as LucideEraser,
+  EthernetPort as LucideEthernetPort,
+  Euro as LucideEuro,
+  EvCharger as LucideEvCharger,
+  Expand as LucideExpand,
+  ExternalLink as LucideExternalLink,
+  Eye as LucideEye,
+  EyeClosed as LucideEyeClosed,
+  EyeOff as LucideEyeOff,
+  Facebook as LucideFacebook,
+  Factory as LucideFactory,
+  Fan as LucideFan,
+  FastForward as LucideFastForward,
+  Feather as LucideFeather,
+  Fence as LucideFence,
+  FerrisWheel as LucideFerrisWheel,
+  Figma as LucideFigma,
+  File as LucideFile,
+  FileArchive as LucideFileArchive,
+  FileHeadphone as LucideFileAudio,
+  FileHeadphone as LucideFileAudio2,
+  FileAxis3d as LucideFileAxis3D,
+  FileAxis3d as LucideFileAxis3d,
+  FileBadge as LucideFileBadge,
+  FileBadge as LucideFileBadge2,
+  FileChartColumnIncreasing as LucideFileBarChart,
+  FileChartColumn as LucideFileBarChart2,
+  FileBox as LucideFileBox,
+  FileBraces as LucideFileBraces,
+  FileBracesCorner as LucideFileBracesCorner,
+  FileChartColumn as LucideFileChartColumn,
+  FileChartColumnIncreasing as LucideFileChartColumnIncreasing,
+  FileChartLine as LucideFileChartLine,
+  FileChartPie as LucideFileChartPie,
+  FileCheck as LucideFileCheck,
+  FileCheckCorner as LucideFileCheck2,
+  FileCheckCorner as LucideFileCheckCorner,
+  FileClock as LucideFileClock,
+  FileCode as LucideFileCode,
+  FileCodeCorner as LucideFileCode2,
+  FileCodeCorner as LucideFileCodeCorner,
+  FileCog as LucideFileCog,
+  FileCog as LucideFileCog2,
+  FileDiff as LucideFileDiff,
+  FileDigit as LucideFileDigit,
+  FileDown as LucideFileDown,
+  FilePen as LucideFileEdit,
+  FileExclamationPoint as LucideFileExclamationPoint,
+  FileHeadphone as LucideFileHeadphone,
+  FileHeart as LucideFileHeart,
+  FileImage as LucideFileImage,
+  FileInput as LucideFileInput,
+  FileBraces as LucideFileJson,
+  FileBracesCorner as LucideFileJson2,
+  FileKey as LucideFileKey,
+  FileKey as LucideFileKey2,
+  FileChartLine as LucideFileLineChart,
+  FileLock as LucideFileLock,
+  FileLock as LucideFileLock2,
+  FileMinus as LucideFileMinus,
+  FileMinusCorner as LucideFileMinus2,
+  FileMinusCorner as LucideFileMinusCorner,
+  FileMusic as LucideFileMusic,
+  FileOutput as LucideFileOutput,
+  FilePen as LucideFilePen,
+  FilePenLine as LucideFilePenLine,
+  FileChartPie as LucideFilePieChart,
+  FilePlay as LucideFilePlay,
+  FilePlus as LucideFilePlus,
+  FilePlusCorner as LucideFilePlus2,
+  FilePlusCorner as LucideFilePlusCorner,
+  FileQuestionMark as LucideFileQuestion,
+  FileQuestionMark as LucideFileQuestionMark,
+  FileScan as LucideFileScan,
+  FileSearch as LucideFileSearch,
+  FileSearchCorner as LucideFileSearch2,
+  FileSearchCorner as LucideFileSearchCorner,
+  FileSignal as LucideFileSignal,
+  FilePenLine as LucideFileSignature,
+  FileSliders as LucideFileSliders,
+  FileSpreadsheet as LucideFileSpreadsheet,
+  FileStack as LucideFileStack,
+  FileSymlink as LucideFileSymlink,
+  FileTerminal as LucideFileTerminal,
+  FileText as LucideFileText,
+  FileType as LucideFileType,
+  FileTypeCorner as LucideFileType2,
+  FileTypeCorner as LucideFileTypeCorner,
+  FileUp as LucideFileUp,
+  FileUser as LucideFileUser,
+  FilePlay as LucideFileVideo,
+  FileVideoCamera as LucideFileVideo2,
+  FileVideoCamera as LucideFileVideoCamera,
+  FileVolume as LucideFileVolume,
+  FileSignal as LucideFileVolume2,
+  FileExclamationPoint as LucideFileWarning,
+  FileX as LucideFileX,
+  FileXCorner as LucideFileX2,
+  FileXCorner as LucideFileXCorner,
+  Files as LucideFiles,
+  Film as LucideFilm,
+  Funnel as LucideFilter,
+  FunnelX as LucideFilterX,
+  FingerprintPattern as LucideFingerprint,
+  FingerprintPattern as LucideFingerprintPattern,
+  FireExtinguisher as LucideFireExtinguisher,
+  Fish as LucideFish,
+  FishOff as LucideFishOff,
+  FishSymbol as LucideFishSymbol,
+  FishingHook as LucideFishingHook,
+  FishingRod as LucideFishingRod,
+  Flag as LucideFlag,
+  FlagOff as LucideFlagOff,
+  FlagTriangleLeft as LucideFlagTriangleLeft,
+  FlagTriangleRight as LucideFlagTriangleRight,
+  Flame as LucideFlame,
+  FlameKindling as LucideFlameKindling,
+  Flashlight as LucideFlashlight,
+  FlashlightOff as LucideFlashlightOff,
+  FlaskConical as LucideFlaskConical,
+  FlaskConicalOff as LucideFlaskConicalOff,
+  FlaskRound as LucideFlaskRound,
+  SquareCenterlineDashedHorizontal as LucideFlipHorizontal,
+  FlipHorizontal2 as LucideFlipHorizontal2,
+  SquareCenterlineDashedVertical as LucideFlipVertical,
+  FlipVertical2 as LucideFlipVertical2,
+  Flower as LucideFlower,
+  Flower2 as LucideFlower2,
+  Focus as LucideFocus,
+  FoldHorizontal as LucideFoldHorizontal,
+  FoldVertical as LucideFoldVertical,
+  Folder as LucideFolder,
+  FolderArchive as LucideFolderArchive,
+  FolderCheck as LucideFolderCheck,
+  FolderClock as LucideFolderClock,
+  FolderClosed as LucideFolderClosed,
+  FolderCode as LucideFolderCode,
+  FolderCog as LucideFolderCog,
+  FolderCog as LucideFolderCog2,
+  FolderDot as LucideFolderDot,
+  FolderDown as LucideFolderDown,
+  FolderPen as LucideFolderEdit,
+  FolderGit as LucideFolderGit,
+  FolderGit2 as LucideFolderGit2,
+  FolderHeart as LucideFolderHeart,
+  FolderInput as LucideFolderInput,
+  FolderKanban as LucideFolderKanban,
+  FolderKey as LucideFolderKey,
+  FolderLock as LucideFolderLock,
+  FolderMinus as LucideFolderMinus,
+  FolderOpen as LucideFolderOpen,
+  FolderOpenDot as LucideFolderOpenDot,
+  FolderOutput as LucideFolderOutput,
+  FolderPen as LucideFolderPen,
+  FolderPlus as LucideFolderPlus,
+  FolderRoot as LucideFolderRoot,
+  FolderSearch as LucideFolderSearch,
+  FolderSearch2 as LucideFolderSearch2,
+  FolderSymlink as LucideFolderSymlink,
+  FolderSync as LucideFolderSync,
+  FolderTree as LucideFolderTree,
+  FolderUp as LucideFolderUp,
+  FolderX as LucideFolderX,
+  Folders as LucideFolders,
+  Footprints as LucideFootprints,
+  Utensils as LucideForkKnife,
+  UtensilsCrossed as LucideForkKnifeCrossed,
+  Forklift as LucideForklift,
+  Form as LucideForm,
+  RectangleEllipsis as LucideFormInput,
+  Forward as LucideForward,
+  Frame as LucideFrame,
+  Framer as LucideFramer,
+  Frown as LucideFrown,
+  Fuel as LucideFuel,
+  Fullscreen as LucideFullscreen,
+  SquareFunction as LucideFunctionSquare,
+  Funnel as LucideFunnel,
+  FunnelPlus as LucideFunnelPlus,
+  FunnelX as LucideFunnelX,
+  GalleryHorizontal as LucideGalleryHorizontal,
+  GalleryHorizontalEnd as LucideGalleryHorizontalEnd,
+  GalleryThumbnails as LucideGalleryThumbnails,
+  GalleryVertical as LucideGalleryVertical,
+  GalleryVerticalEnd as LucideGalleryVerticalEnd,
+  Gamepad as LucideGamepad,
+  Gamepad2 as LucideGamepad2,
+  GamepadDirectional as LucideGamepadDirectional,
+  ChartNoAxesGantt as LucideGanttChart,
+  SquareChartGantt as LucideGanttChartSquare,
+  Gauge as LucideGauge,
+  CircleGauge as LucideGaugeCircle,
+  Gavel as LucideGavel,
+  Gem as LucideGem,
+  GeorgianLari as LucideGeorgianLari,
+  Ghost as LucideGhost,
+  Gift as LucideGift,
+  GitBranch as LucideGitBranch,
+  GitBranchMinus as LucideGitBranchMinus,
+  GitBranchPlus as LucideGitBranchPlus,
+  GitCommitHorizontal as LucideGitCommit,
+  GitCommitHorizontal as LucideGitCommitHorizontal,
+  GitCommitVertical as LucideGitCommitVertical,
+  GitCompare as LucideGitCompare,
+  GitCompareArrows as LucideGitCompareArrows,
+  GitFork as LucideGitFork,
+  GitGraph as LucideGitGraph,
+  GitMerge as LucideGitMerge,
+  GitMergeConflict as LucideGitMergeConflict,
+  GitPullRequest as LucideGitPullRequest,
+  GitPullRequestArrow as LucideGitPullRequestArrow,
+  GitPullRequestClosed as LucideGitPullRequestClosed,
+  GitPullRequestCreate as LucideGitPullRequestCreate,
+  GitPullRequestCreateArrow as LucideGitPullRequestCreateArrow,
+  GitPullRequestDraft as LucideGitPullRequestDraft,
+  Github as LucideGithub,
+  Gitlab as LucideGitlab,
+  GlassWater as LucideGlassWater,
+  Glasses as LucideGlasses,
+  Globe as LucideGlobe,
+  Earth as LucideGlobe2,
+  GlobeLock as LucideGlobeLock,
+  GlobeOff as LucideGlobeOff,
+  GlobeX as LucideGlobeX,
+  Goal as LucideGoal,
+  Gpu as LucideGpu,
+  HandGrab as LucideGrab,
+  GraduationCap as LucideGraduationCap,
+  Grape as LucideGrape,
+  Grid3x3 as LucideGrid,
+  Grid2x2 as LucideGrid2X2,
+  Grid2x2Check as LucideGrid2X2Check,
+  Grid2x2Plus as LucideGrid2X2Plus,
+  Grid2x2X as LucideGrid2X2X,
+  Grid2x2 as LucideGrid2x2,
+  Grid2x2Check as LucideGrid2x2Check,
+  Grid2x2Plus as LucideGrid2x2Plus,
+  Grid2x2X as LucideGrid2x2X,
+  Grid3x3 as LucideGrid3X3,
+  Grid3x2 as LucideGrid3x2,
+  Grid3x3 as LucideGrid3x3,
+  Grip as LucideGrip,
+  GripHorizontal as LucideGripHorizontal,
+  GripVertical as LucideGripVertical,
+  Group as LucideGroup,
+  Guitar as LucideGuitar,
+  Ham as LucideHam,
+  Hamburger as LucideHamburger,
+  Hammer as LucideHammer,
+  Hand as LucideHand,
+  HandCoins as LucideHandCoins,
+  HandFist as LucideHandFist,
+  HandGrab as LucideHandGrab,
+  HandHeart as LucideHandHeart,
+  HandHelping as LucideHandHelping,
+  HandMetal as LucideHandMetal,
+  HandPlatter as LucideHandPlatter,
+  Handbag as LucideHandbag,
+  Handshake as LucideHandshake,
+  HardDrive as LucideHardDrive,
+  HardDriveDownload as LucideHardDriveDownload,
+  HardDriveUpload as LucideHardDriveUpload,
+  HardHat as LucideHardHat,
+  Hash as LucideHash,
+  HatGlasses as LucideHatGlasses,
+  Haze as LucideHaze,
+  Hd as LucideHd,
+  HdmiPort as LucideHdmiPort,
+  Heading as LucideHeading,
+  Heading1 as LucideHeading1,
+  Heading2 as LucideHeading2,
+  Heading3 as LucideHeading3,
+  Heading4 as LucideHeading4,
+  Heading5 as LucideHeading5,
+  Heading6 as LucideHeading6,
+  HeadphoneOff as LucideHeadphoneOff,
+  Headphones as LucideHeadphones,
+  Headset as LucideHeadset,
+  Heart as LucideHeart,
+  HeartCrack as LucideHeartCrack,
+  HeartHandshake as LucideHeartHandshake,
+  HeartMinus as LucideHeartMinus,
+  HeartOff as LucideHeartOff,
+  HeartPlus as LucideHeartPlus,
+  HeartPulse as LucideHeartPulse,
+  Heater as LucideHeater,
+  Helicopter as LucideHelicopter,
+  CircleQuestionMark as LucideHelpCircle,
+  HandHelping as LucideHelpingHand,
+  Hexagon as LucideHexagon,
+  Highlighter as LucideHighlighter,
+  History as LucideHistory,
+  House as LucideHome,
+  Hop as LucideHop,
+  HopOff as LucideHopOff,
+  Hospital as LucideHospital,
+  Hotel as LucideHotel,
+  Hourglass as LucideHourglass,
+  House as LucideHouse,
+  HouseHeart as LucideHouseHeart,
+  HousePlug as LucideHousePlug,
+  HousePlus as LucideHousePlus,
+  HouseWifi as LucideHouseWifi,
+  IceCreamCone as LucideIceCream,
+  IceCreamBowl as LucideIceCream2,
+  IceCreamBowl as LucideIceCreamBowl,
+  IceCreamCone as LucideIceCreamCone,
+  IdCard as LucideIdCard,
+  IdCardLanyard as LucideIdCardLanyard,
+  Image as LucideImage,
+  ImageDown as LucideImageDown,
+  ImageMinus as LucideImageMinus,
+  ImageOff as LucideImageOff,
+  ImagePlay as LucideImagePlay,
+  ImagePlus as LucideImagePlus,
+  ImageUp as LucideImageUp,
+  ImageUpscale as LucideImageUpscale,
+  Images as LucideImages,
+  Import as LucideImport,
+  Inbox as LucideInbox,
+  ListIndentIncrease as LucideIndent,
+  ListIndentDecrease as LucideIndentDecrease,
+  ListIndentIncrease as LucideIndentIncrease,
+  IndianRupee as LucideIndianRupee,
+  Infinity as LucideInfinity,
+  Info as LucideInfo,
+  SquareMousePointer as LucideInspect,
+  InspectionPanel as LucideInspectionPanel,
+  Instagram as LucideInstagram,
+  Italic as LucideItalic,
+  IterationCcw as LucideIterationCcw,
+  IterationCw as LucideIterationCw,
+  JapaneseYen as LucideJapaneseYen,
+  Joystick as LucideJoystick,
+  Kanban as LucideKanban,
+  SquareKanban as LucideKanbanSquare,
+  SquareDashedKanban as LucideKanbanSquareDashed,
+  Kayak as LucideKayak,
+  Key as LucideKey,
+  KeyRound as LucideKeyRound,
+  KeySquare as LucideKeySquare,
+  Keyboard as LucideKeyboard,
+  KeyboardMusic as LucideKeyboardMusic,
+  KeyboardOff as LucideKeyboardOff,
+  Lamp as LucideLamp,
+  LampCeiling as LucideLampCeiling,
+  LampDesk as LucideLampDesk,
+  LampFloor as LucideLampFloor,
+  LampWallDown as LucideLampWallDown,
+  LampWallUp as LucideLampWallUp,
+  LandPlot as LucideLandPlot,
+  Landmark as LucideLandmark,
+  Languages as LucideLanguages,
+  Laptop as LucideLaptop,
+  LaptopMinimal as LucideLaptop2,
+  LaptopMinimal as LucideLaptopMinimal,
+  LaptopMinimalCheck as LucideLaptopMinimalCheck,
+  Lasso as LucideLasso,
+  LassoSelect as LucideLassoSelect,
+  Laugh as LucideLaugh,
+  Layers as LucideLayers,
+  Layers2 as LucideLayers2,
+  Layers as LucideLayers3,
+  LayersPlus as LucideLayersPlus,
+  PanelsTopLeft as LucideLayout,
+  LayoutDashboard as LucideLayoutDashboard,
+  LayoutGrid as LucideLayoutGrid,
+  LayoutList as LucideLayoutList,
+  LayoutPanelLeft as LucideLayoutPanelLeft,
+  LayoutPanelTop as LucideLayoutPanelTop,
+  LayoutTemplate as LucideLayoutTemplate,
+  Leaf as LucideLeaf,
+  LeafyGreen as LucideLeafyGreen,
+  Lectern as LucideLectern,
+  LensConcave as LucideLensConcave,
+  LensConvex as LucideLensConvex,
+  TextInitial as LucideLetterText,
+  Library as LucideLibrary,
+  LibraryBig as LucideLibraryBig,
+  SquareLibrary as LucideLibrarySquare,
+  LifeBuoy as LucideLifeBuoy,
+  Ligature as LucideLigature,
+  Lightbulb as LucideLightbulb,
+  LightbulbOff as LucideLightbulbOff,
+  ChartLine as LucideLineChart,
+  LineDotRightHorizontal as LucideLineDotRightHorizontal,
+  LineSquiggle as LucideLineSquiggle,
+  Link as LucideLink,
+  Link2 as LucideLink2,
+  Link2Off as LucideLink2Off,
+  Linkedin as LucideLinkedin,
+  List as LucideList,
+  ListCheck as LucideListCheck,
+  ListChecks as LucideListChecks,
+  ListChevronsDownUp as LucideListChevronsDownUp,
+  ListChevronsUpDown as LucideListChevronsUpDown,
+  ListCollapse as LucideListCollapse,
+  ListEnd as LucideListEnd,
+  ListFilter as LucideListFilter,
+  ListFilterPlus as LucideListFilterPlus,
+  ListIndentDecrease as LucideListIndentDecrease,
+  ListIndentIncrease as LucideListIndentIncrease,
+  ListMinus as LucideListMinus,
+  ListMusic as LucideListMusic,
+  ListOrdered as LucideListOrdered,
+  ListPlus as LucideListPlus,
+  ListRestart as LucideListRestart,
+  ListStart as LucideListStart,
+  ListTodo as LucideListTodo,
+  ListTree as LucideListTree,
+  ListVideo as LucideListVideo,
+  ListX as LucideListX,
+  Loader as LucideLoader,
+  LoaderCircle as LucideLoader2,
+  LoaderCircle as LucideLoaderCircle,
+  LoaderPinwheel as LucideLoaderPinwheel,
+  Locate as LucideLocate,
+  LocateFixed as LucideLocateFixed,
+  LocateOff as LucideLocateOff,
+  MapPinPen as LucideLocationEdit,
+  Lock as LucideLock,
+  LockKeyhole as LucideLockKeyhole,
+  LockKeyholeOpen as LucideLockKeyholeOpen,
+  LockOpen as LucideLockOpen,
+  LogIn as LucideLogIn,
+  LogOut as LucideLogOut,
+  Logs as LucideLogs,
+  Lollipop as LucideLollipop,
+  Luggage as LucideLuggage,
+  SquareM as LucideMSquare,
+  Magnet as LucideMagnet,
+  Mail as LucideMail,
+  MailCheck as LucideMailCheck,
+  MailMinus as LucideMailMinus,
+  MailOpen as LucideMailOpen,
+  MailPlus as LucideMailPlus,
+  MailQuestionMark as LucideMailQuestion,
+  MailQuestionMark as LucideMailQuestionMark,
+  MailSearch as LucideMailSearch,
+  MailWarning as LucideMailWarning,
+  MailX as LucideMailX,
+  Mailbox as LucideMailbox,
+  Mails as LucideMails,
+  Map as LucideMap,
+  MapMinus as LucideMapMinus,
+  MapPin as LucideMapPin,
+  MapPinCheck as LucideMapPinCheck,
+  MapPinCheckInside as LucideMapPinCheckInside,
+  MapPinHouse as LucideMapPinHouse,
+  MapPinMinus as LucideMapPinMinus,
+  MapPinMinusInside as LucideMapPinMinusInside,
+  MapPinOff as LucideMapPinOff,
+  MapPinPen as LucideMapPinPen,
+  MapPinPlus as LucideMapPinPlus,
+  MapPinPlusInside as LucideMapPinPlusInside,
+  MapPinX as LucideMapPinX,
+  MapPinXInside as LucideMapPinXInside,
+  MapPinned as LucideMapPinned,
+  MapPlus as LucideMapPlus,
+  Mars as LucideMars,
+  MarsStroke as LucideMarsStroke,
+  Martini as LucideMartini,
+  Maximize as LucideMaximize,
+  Maximize2 as LucideMaximize2,
+  Medal as LucideMedal,
+  Megaphone as LucideMegaphone,
+  MegaphoneOff as LucideMegaphoneOff,
+  Meh as LucideMeh,
+  MemoryStick as LucideMemoryStick,
+  Menu as LucideMenu,
+  SquareMenu as LucideMenuSquare,
+  Merge as LucideMerge,
+  MessageCircle as LucideMessageCircle,
+  MessageCircleCheck as LucideMessageCircleCheck,
+  MessageCircleCode as LucideMessageCircleCode,
+  MessageCircleDashed as LucideMessageCircleDashed,
+  MessageCircleHeart as LucideMessageCircleHeart,
+  MessageCircleMore as LucideMessageCircleMore,
+  MessageCircleOff as LucideMessageCircleOff,
+  MessageCirclePlus as LucideMessageCirclePlus,
+  MessageCircleQuestionMark as LucideMessageCircleQuestion,
+  MessageCircleQuestionMark as LucideMessageCircleQuestionMark,
+  MessageCircleReply as LucideMessageCircleReply,
+  MessageCircleWarning as LucideMessageCircleWarning,
+  MessageCircleX as LucideMessageCircleX,
+  MessageSquare as LucideMessageSquare,
+  MessageSquareCheck as LucideMessageSquareCheck,
+  MessageSquareCode as LucideMessageSquareCode,
+  MessageSquareDashed as LucideMessageSquareDashed,
+  MessageSquareDiff as LucideMessageSquareDiff,
+  MessageSquareDot as LucideMessageSquareDot,
+  MessageSquareHeart as LucideMessageSquareHeart,
+  MessageSquareLock as LucideMessageSquareLock,
+  MessageSquareMore as LucideMessageSquareMore,
+  MessageSquareOff as LucideMessageSquareOff,
+  MessageSquarePlus as LucideMessageSquarePlus,
+  MessageSquareQuote as LucideMessageSquareQuote,
+  MessageSquareReply as LucideMessageSquareReply,
+  MessageSquareShare as LucideMessageSquareShare,
+  MessageSquareText as LucideMessageSquareText,
+  MessageSquareWarning as LucideMessageSquareWarning,
+  MessageSquareX as LucideMessageSquareX,
+  MessagesSquare as LucideMessagesSquare,
+  Metronome as LucideMetronome,
+  Mic as LucideMic,
+  MicVocal as LucideMic2,
+  MicOff as LucideMicOff,
+  MicVocal as LucideMicVocal,
+  Microchip as LucideMicrochip,
+  Microscope as LucideMicroscope,
+  Microwave as LucideMicrowave,
+  Milestone as LucideMilestone,
+  Milk as LucideMilk,
+  MilkOff as LucideMilkOff,
+  Minimize as LucideMinimize,
+  Minimize2 as LucideMinimize2,
+  Minus as LucideMinus,
+  CircleMinus as LucideMinusCircle,
+  SquareMinus as LucideMinusSquare,
+  MirrorRectangular as LucideMirrorRectangular,
+  MirrorRound as LucideMirrorRound,
+  Monitor as LucideMonitor,
+  MonitorCheck as LucideMonitorCheck,
+  MonitorCloud as LucideMonitorCloud,
+  MonitorCog as LucideMonitorCog,
+  MonitorDot as LucideMonitorDot,
+  MonitorDown as LucideMonitorDown,
+  MonitorOff as LucideMonitorOff,
+  MonitorPause as LucideMonitorPause,
+  MonitorPlay as LucideMonitorPlay,
+  MonitorSmartphone as LucideMonitorSmartphone,
+  MonitorSpeaker as LucideMonitorSpeaker,
+  MonitorStop as LucideMonitorStop,
+  MonitorUp as LucideMonitorUp,
+  MonitorX as LucideMonitorX,
+  Moon as LucideMoon,
+  MoonStar as LucideMoonStar,
+  Ellipsis as LucideMoreHorizontal,
+  EllipsisVertical as LucideMoreVertical,
+  Motorbike as LucideMotorbike,
+  Mountain as LucideMountain,
+  MountainSnow as LucideMountainSnow,
+  Mouse as LucideMouse,
+  MouseLeft as LucideMouseLeft,
+  MouseOff as LucideMouseOff,
+  MousePointer as LucideMousePointer,
+  MousePointer2 as LucideMousePointer2,
+  MousePointer2Off as LucideMousePointer2Off,
+  MousePointerBan as LucideMousePointerBan,
+  MousePointerClick as LucideMousePointerClick,
+  SquareDashedMousePointer as LucideMousePointerSquareDashed,
+  MouseRight as LucideMouseRight,
+  Move as LucideMove,
+  Move3d as LucideMove3D,
+  Move3d as LucideMove3d,
+  MoveDiagonal as LucideMoveDiagonal,
+  MoveDiagonal2 as LucideMoveDiagonal2,
+  MoveDown as LucideMoveDown,
+  MoveDownLeft as LucideMoveDownLeft,
+  MoveDownRight as LucideMoveDownRight,
+  MoveHorizontal as LucideMoveHorizontal,
+  MoveLeft as LucideMoveLeft,
+  MoveRight as LucideMoveRight,
+  MoveUp as LucideMoveUp,
+  MoveUpLeft as LucideMoveUpLeft,
+  MoveUpRight as LucideMoveUpRight,
+  MoveVertical as LucideMoveVertical,
+  Music as LucideMusic,
+  Music2 as LucideMusic2,
+  Music3 as LucideMusic3,
+  Music4 as LucideMusic4,
+  Navigation as LucideNavigation,
+  Navigation2 as LucideNavigation2,
+  Navigation2Off as LucideNavigation2Off,
+  NavigationOff as LucideNavigationOff,
+  Network as LucideNetwork,
+  Newspaper as LucideNewspaper,
+  Nfc as LucideNfc,
+  NonBinary as LucideNonBinary,
+  Notebook as LucideNotebook,
+  NotebookPen as LucideNotebookPen,
+  NotebookTabs as LucideNotebookTabs,
+  NotebookText as LucideNotebookText,
+  NotepadText as LucideNotepadText,
+  NotepadTextDashed as LucideNotepadTextDashed,
+  Nut as LucideNut,
+  NutOff as LucideNutOff,
+  Octagon as LucideOctagon,
+  OctagonAlert as LucideOctagonAlert,
+  OctagonMinus as LucideOctagonMinus,
+  OctagonPause as LucideOctagonPause,
+  OctagonX as LucideOctagonX,
+  Omega as LucideOmega,
+  Option as LucideOption,
+  Orbit as LucideOrbit,
+  Origami as LucideOrigami,
+  ListIndentDecrease as LucideOutdent,
+  Package as LucidePackage,
+  Package2 as LucidePackage2,
+  PackageCheck as LucidePackageCheck,
+  PackageMinus as LucidePackageMinus,
+  PackageOpen as LucidePackageOpen,
+  PackagePlus as LucidePackagePlus,
+  PackageSearch as LucidePackageSearch,
+  PackageX as LucidePackageX,
+  PaintBucket as LucidePaintBucket,
+  PaintRoller as LucidePaintRoller,
+  Paintbrush as LucidePaintbrush,
+  PaintbrushVertical as LucidePaintbrush2,
+  PaintbrushVertical as LucidePaintbrushVertical,
+  Palette as LucidePalette,
+  TreePalm as LucidePalmtree,
+  Panda as LucidePanda,
+  PanelBottom as LucidePanelBottom,
+  PanelBottomClose as LucidePanelBottomClose,
+  PanelBottomDashed as LucidePanelBottomDashed,
+  PanelBottomDashed as LucidePanelBottomInactive,
+  PanelBottomOpen as LucidePanelBottomOpen,
+  PanelLeft as LucidePanelLeft,
+  PanelLeftClose as LucidePanelLeftClose,
+  PanelLeftDashed as LucidePanelLeftDashed,
+  PanelLeftDashed as LucidePanelLeftInactive,
+  PanelLeftOpen as LucidePanelLeftOpen,
+  PanelLeftRightDashed as LucidePanelLeftRightDashed,
+  PanelRight as LucidePanelRight,
+  PanelRightClose as LucidePanelRightClose,
+  PanelRightDashed as LucidePanelRightDashed,
+  PanelRightDashed as LucidePanelRightInactive,
+  PanelRightOpen as LucidePanelRightOpen,
+  PanelTop as LucidePanelTop,
+  PanelTopBottomDashed as LucidePanelTopBottomDashed,
+  PanelTopClose as LucidePanelTopClose,
+  PanelTopDashed as LucidePanelTopDashed,
+  PanelTopDashed as LucidePanelTopInactive,
+  PanelTopOpen as LucidePanelTopOpen,
+  PanelsLeftBottom as LucidePanelsLeftBottom,
+  Columns3 as LucidePanelsLeftRight,
+  PanelsRightBottom as LucidePanelsRightBottom,
+  Rows3 as LucidePanelsTopBottom,
+  PanelsTopLeft as LucidePanelsTopLeft,
+  Paperclip as LucidePaperclip,
+  Parentheses as LucideParentheses,
+  CircleParking as LucideParkingCircle,
+  CircleParkingOff as LucideParkingCircleOff,
+  ParkingMeter as LucideParkingMeter,
+  SquareParking as LucideParkingSquare,
+  SquareParkingOff as LucideParkingSquareOff,
+  PartyPopper as LucidePartyPopper,
+  Pause as LucidePause,
+  CirclePause as LucidePauseCircle,
+  OctagonPause as LucidePauseOctagon,
+  PawPrint as LucidePawPrint,
+  PcCase as LucidePcCase,
+  Pen as LucidePen,
+  SquarePen as LucidePenBox,
+  PenLine as LucidePenLine,
+  PenOff as LucidePenOff,
+  SquarePen as LucidePenSquare,
+  PenTool as LucidePenTool,
+  Pencil as LucidePencil,
+  PencilLine as LucidePencilLine,
+  PencilOff as LucidePencilOff,
+  PencilRuler as LucidePencilRuler,
+  Pentagon as LucidePentagon,
+  Percent as LucidePercent,
+  CirclePercent as LucidePercentCircle,
+  DiamondPercent as LucidePercentDiamond,
+  SquarePercent as LucidePercentSquare,
+  PersonStanding as LucidePersonStanding,
+  PhilippinePeso as LucidePhilippinePeso,
+  Phone as LucidePhone,
+  PhoneCall as LucidePhoneCall,
+  PhoneForwarded as LucidePhoneForwarded,
+  PhoneIncoming as LucidePhoneIncoming,
+  PhoneMissed as LucidePhoneMissed,
+  PhoneOff as LucidePhoneOff,
+  PhoneOutgoing as LucidePhoneOutgoing,
+  Pi as LucidePi,
+  SquarePi as LucidePiSquare,
+  Piano as LucidePiano,
+  Pickaxe as LucidePickaxe,
+  PictureInPicture as LucidePictureInPicture,
+  PictureInPicture2 as LucidePictureInPicture2,
+  ChartPie as LucidePieChart,
+  PiggyBank as LucidePiggyBank,
+  Pilcrow as LucidePilcrow,
+  PilcrowLeft as LucidePilcrowLeft,
+  PilcrowRight as LucidePilcrowRight,
+  SquarePilcrow as LucidePilcrowSquare,
+  Pill as LucidePill,
+  PillBottle as LucidePillBottle,
+  Pin as LucidePin,
+  PinOff as LucidePinOff,
+  Pipette as LucidePipette,
+  Pizza as LucidePizza,
+  Plane as LucidePlane,
+  PlaneLanding as LucidePlaneLanding,
+  PlaneTakeoff as LucidePlaneTakeoff,
+  Play as LucidePlay,
+  CirclePlay as LucidePlayCircle,
+  SquarePlay as LucidePlaySquare,
+  Plug as LucidePlug,
+  Plug2 as LucidePlug2,
+  PlugZap as LucidePlugZap,
+  PlugZap as LucidePlugZap2,
+  Plus as LucidePlus,
+  CirclePlus as LucidePlusCircle,
+  SquarePlus as LucidePlusSquare,
+  Pocket as LucidePocket,
+  PocketKnife as LucidePocketKnife,
+  Podcast as LucidePodcast,
+  Pointer as LucidePointer,
+  PointerOff as LucidePointerOff,
+  Popcorn as LucidePopcorn,
+  Popsicle as LucidePopsicle,
+  PoundSterling as LucidePoundSterling,
+  Power as LucidePower,
+  CirclePower as LucidePowerCircle,
+  PowerOff as LucidePowerOff,
+  SquarePower as LucidePowerSquare,
+  Presentation as LucidePresentation,
+  Printer as LucidePrinter,
+  PrinterCheck as LucidePrinterCheck,
+  PrinterX as LucidePrinterX,
+  Projector as LucideProjector,
+  Proportions as LucideProportions,
+  Puzzle as LucidePuzzle,
+  Pyramid as LucidePyramid,
+  QrCode as LucideQrCode,
+  Quote as LucideQuote,
+  Rabbit as LucideRabbit,
+  Radar as LucideRadar,
+  Radiation as LucideRadiation,
+  Radical as LucideRadical,
+  Radio as LucideRadio,
+  RadioReceiver as LucideRadioReceiver,
+  RadioTower as LucideRadioTower,
+  Radius as LucideRadius,
+  RailSymbol as LucideRailSymbol,
+  Rainbow as LucideRainbow,
+  Rat as LucideRat,
+  Ratio as LucideRatio,
+  Receipt as LucideReceipt,
+  ReceiptCent as LucideReceiptCent,
+  ReceiptEuro as LucideReceiptEuro,
+  ReceiptIndianRupee as LucideReceiptIndianRupee,
+  ReceiptJapaneseYen as LucideReceiptJapaneseYen,
+  ReceiptPoundSterling as LucideReceiptPoundSterling,
+  ReceiptRussianRuble as LucideReceiptRussianRuble,
+  ReceiptSwissFranc as LucideReceiptSwissFranc,
+  ReceiptText as LucideReceiptText,
+  ReceiptTurkishLira as LucideReceiptTurkishLira,
+  RectangleCircle as LucideRectangleCircle,
+  RectangleEllipsis as LucideRectangleEllipsis,
+  RectangleGoggles as LucideRectangleGoggles,
+  RectangleHorizontal as LucideRectangleHorizontal,
+  RectangleVertical as LucideRectangleVertical,
+  Recycle as LucideRecycle,
+  Redo as LucideRedo,
+  Redo2 as LucideRedo2,
+  RedoDot as LucideRedoDot,
+  RefreshCcw as LucideRefreshCcw,
+  RefreshCcwDot as LucideRefreshCcwDot,
+  RefreshCw as LucideRefreshCw,
+  RefreshCwOff as LucideRefreshCwOff,
+  Refrigerator as LucideRefrigerator,
+  Regex as LucideRegex,
+  RemoveFormatting as LucideRemoveFormatting,
+  Repeat as LucideRepeat,
+  Repeat1 as LucideRepeat1,
+  Repeat2 as LucideRepeat2,
+  Replace as LucideReplace,
+  ReplaceAll as LucideReplaceAll,
+  Reply as LucideReply,
+  ReplyAll as LucideReplyAll,
+  Rewind as LucideRewind,
+  Ribbon as LucideRibbon,
+  Rocket as LucideRocket,
+  RockingChair as LucideRockingChair,
+  RollerCoaster as LucideRollerCoaster,
+  Rose as LucideRose,
+  Rotate3d as LucideRotate3D,
+  Rotate3d as LucideRotate3d,
+  RotateCcw as LucideRotateCcw,
+  RotateCcwKey as LucideRotateCcwKey,
+  RotateCcwSquare as LucideRotateCcwSquare,
+  RotateCw as LucideRotateCw,
+  RotateCwSquare as LucideRotateCwSquare,
+  Route as LucideRoute,
+  RouteOff as LucideRouteOff,
+  Router as LucideRouter,
+  Rows2 as LucideRows,
+  Rows2 as LucideRows2,
+  Rows3 as LucideRows3,
+  Rows4 as LucideRows4,
+  Rss as LucideRss,
+  Ruler as LucideRuler,
+  RulerDimensionLine as LucideRulerDimensionLine,
+  RussianRuble as LucideRussianRuble,
+  Sailboat as LucideSailboat,
+  Salad as LucideSalad,
+  Sandwich as LucideSandwich,
+  Satellite as LucideSatellite,
+  SatelliteDish as LucideSatelliteDish,
+  SaudiRiyal as LucideSaudiRiyal,
+  Save as LucideSave,
+  SaveAll as LucideSaveAll,
+  SaveOff as LucideSaveOff,
+  Scale as LucideScale,
+  Scale3d as LucideScale3D,
+  Scale3d as LucideScale3d,
+  Scaling as LucideScaling,
+  Scan as LucideScan,
+  ScanBarcode as LucideScanBarcode,
+  ScanEye as LucideScanEye,
+  ScanFace as LucideScanFace,
+  ScanHeart as LucideScanHeart,
+  ScanLine as LucideScanLine,
+  ScanQrCode as LucideScanQrCode,
+  ScanSearch as LucideScanSearch,
+  ScanText as LucideScanText,
+  ChartScatter as LucideScatterChart,
+  School as LucideSchool,
+  University as LucideSchool2,
+  Scissors as LucideScissors,
+  ScissorsLineDashed as LucideScissorsLineDashed,
+  SquareScissors as LucideScissorsSquare,
+  SquareBottomDashedScissors as LucideScissorsSquareDashedBottom,
+  Scooter as LucideScooter,
+  ScreenShare as LucideScreenShare,
+  ScreenShareOff as LucideScreenShareOff,
+  Scroll as LucideScroll,
+  ScrollText as LucideScrollText,
+  Search as LucideSearch,
+  SearchAlert as LucideSearchAlert,
+  SearchCheck as LucideSearchCheck,
+  SearchCode as LucideSearchCode,
+  SearchSlash as LucideSearchSlash,
+  SearchX as LucideSearchX,
+  Section as LucideSection,
+  Send as LucideSend,
+  SendHorizontal as LucideSendHorizonal,
+  SendHorizontal as LucideSendHorizontal,
+  SendToBack as LucideSendToBack,
+  SeparatorHorizontal as LucideSeparatorHorizontal,
+  SeparatorVertical as LucideSeparatorVertical,
+  Server as LucideServer,
+  ServerCog as LucideServerCog,
+  ServerCrash as LucideServerCrash,
+  ServerOff as LucideServerOff,
+  Settings as LucideSettings,
+  Settings2 as LucideSettings2,
+  Shapes as LucideShapes,
+  Share as LucideShare,
+  Share2 as LucideShare2,
+  Sheet as LucideSheet,
+  Shell as LucideShell,
+  ShelvingUnit as LucideShelvingUnit,
+  Shield as LucideShield,
+  ShieldAlert as LucideShieldAlert,
+  ShieldBan as LucideShieldBan,
+  ShieldCheck as LucideShieldCheck,
+  ShieldX as LucideShieldClose,
+  ShieldEllipsis as LucideShieldEllipsis,
+  ShieldHalf as LucideShieldHalf,
+  ShieldMinus as LucideShieldMinus,
+  ShieldOff as LucideShieldOff,
+  ShieldPlus as LucideShieldPlus,
+  ShieldQuestionMark as LucideShieldQuestion,
+  ShieldQuestionMark as LucideShieldQuestionMark,
+  ShieldUser as LucideShieldUser,
+  ShieldX as LucideShieldX,
+  Ship as LucideShip,
+  ShipWheel as LucideShipWheel,
+  Shirt as LucideShirt,
+  ShoppingBag as LucideShoppingBag,
+  ShoppingBasket as LucideShoppingBasket,
+  ShoppingCart as LucideShoppingCart,
+  Shovel as LucideShovel,
+  ShowerHead as LucideShowerHead,
+  Shredder as LucideShredder,
+  Shrimp as LucideShrimp,
+  Shrink as LucideShrink,
+  Shrub as LucideShrub,
+  Shuffle as LucideShuffle,
+  PanelLeft as LucideSidebar,
+  PanelLeftClose as LucideSidebarClose,
+  PanelLeftOpen as LucideSidebarOpen,
+  Sigma as LucideSigma,
+  SquareSigma as LucideSigmaSquare,
+  Signal as LucideSignal,
+  SignalHigh as LucideSignalHigh,
+  SignalLow as LucideSignalLow,
+  SignalMedium as LucideSignalMedium,
+  SignalZero as LucideSignalZero,
+  Signature as LucideSignature,
+  Signpost as LucideSignpost,
+  SignpostBig as LucideSignpostBig,
+  Siren as LucideSiren,
+  SkipBack as LucideSkipBack,
+  SkipForward as LucideSkipForward,
+  Skull as LucideSkull,
+  Slack as LucideSlack,
+  Slash as LucideSlash,
+  SquareSlash as LucideSlashSquare,
+  Slice as LucideSlice,
+  SlidersVertical as LucideSliders,
+  SlidersHorizontal as LucideSlidersHorizontal,
+  SlidersVertical as LucideSlidersVertical,
+  Smartphone as LucideSmartphone,
+  SmartphoneCharging as LucideSmartphoneCharging,
+  SmartphoneNfc as LucideSmartphoneNfc,
+  Smile as LucideSmile,
+  SmilePlus as LucideSmilePlus,
+  Snail as LucideSnail,
+  Snowflake as LucideSnowflake,
+  SoapDispenserDroplet as LucideSoapDispenserDroplet,
+  Sofa as LucideSofa,
+  SolarPanel as LucideSolarPanel,
+  ArrowUpNarrowWide as LucideSortAsc,
+  ArrowDownWideNarrow as LucideSortDesc,
+  Soup as LucideSoup,
+  Space as LucideSpace,
+  Spade as LucideSpade,
+  Sparkle as LucideSparkle,
+  Sparkles as LucideSparkles,
+  Speaker as LucideSpeaker,
+  Speech as LucideSpeech,
+  SpellCheck as LucideSpellCheck,
+  SpellCheck2 as LucideSpellCheck2,
+  Spline as LucideSpline,
+  SplinePointer as LucideSplinePointer,
+  Split as LucideSplit,
+  SquareSplitHorizontal as LucideSplitSquareHorizontal,
+  SquareSplitVertical as LucideSplitSquareVertical,
+  Spool as LucideSpool,
+  Spotlight as LucideSpotlight,
+  SprayCan as LucideSprayCan,
+  Sprout as LucideSprout,
+  Square as LucideSquare,
+  SquareActivity as LucideSquareActivity,
+  SquareArrowDown as LucideSquareArrowDown,
+  SquareArrowDownLeft as LucideSquareArrowDownLeft,
+  SquareArrowDownRight as LucideSquareArrowDownRight,
+  SquareArrowLeft as LucideSquareArrowLeft,
+  SquareArrowOutDownLeft as LucideSquareArrowOutDownLeft,
+  SquareArrowOutDownRight as LucideSquareArrowOutDownRight,
+  SquareArrowOutUpLeft as LucideSquareArrowOutUpLeft,
+  SquareArrowOutUpRight as LucideSquareArrowOutUpRight,
+  SquareArrowRight as LucideSquareArrowRight,
+  SquareArrowRightEnter as LucideSquareArrowRightEnter,
+  SquareArrowRightExit as LucideSquareArrowRightExit,
+  SquareArrowUp as LucideSquareArrowUp,
+  SquareArrowUpLeft as LucideSquareArrowUpLeft,
+  SquareArrowUpRight as LucideSquareArrowUpRight,
+  SquareAsterisk as LucideSquareAsterisk,
+  SquareBottomDashedScissors as LucideSquareBottomDashedScissors,
+  SquareCenterlineDashedHorizontal as LucideSquareCenterlineDashedHorizontal,
+  SquareCenterlineDashedVertical as LucideSquareCenterlineDashedVertical,
+  SquareChartGantt as LucideSquareChartGantt,
+  SquareCheck as LucideSquareCheck,
+  SquareCheckBig as LucideSquareCheckBig,
+  SquareChevronDown as LucideSquareChevronDown,
+  SquareChevronLeft as LucideSquareChevronLeft,
+  SquareChevronRight as LucideSquareChevronRight,
+  SquareChevronUp as LucideSquareChevronUp,
+  SquareCode as LucideSquareCode,
+  SquareDashed as LucideSquareDashed,
+  SquareDashedBottom as LucideSquareDashedBottom,
+  SquareDashedBottomCode as LucideSquareDashedBottomCode,
+  SquareDashedKanban as LucideSquareDashedKanban,
+  SquareDashedMousePointer as LucideSquareDashedMousePointer,
+  SquareDashedTopSolid as LucideSquareDashedTopSolid,
+  SquareDivide as LucideSquareDivide,
+  SquareDot as LucideSquareDot,
+  SquareEqual as LucideSquareEqual,
+  SquareFunction as LucideSquareFunction,
+  SquareChartGantt as LucideSquareGanttChart,
+  SquareKanban as LucideSquareKanban,
+  SquareLibrary as LucideSquareLibrary,
+  SquareM as LucideSquareM,
+  SquareMenu as LucideSquareMenu,
+  SquareMinus as LucideSquareMinus,
+  SquareMousePointer as LucideSquareMousePointer,
+  SquareParking as LucideSquareParking,
+  SquareParkingOff as LucideSquareParkingOff,
+  SquarePause as LucideSquarePause,
+  SquarePen as LucideSquarePen,
+  SquarePercent as LucideSquarePercent,
+  SquarePi as LucideSquarePi,
+  SquarePilcrow as LucideSquarePilcrow,
+  SquarePlay as LucideSquarePlay,
+  SquarePlus as LucideSquarePlus,
+  SquarePower as LucideSquarePower,
+  SquareRadical as LucideSquareRadical,
+  SquareRoundCorner as LucideSquareRoundCorner,
+  SquareScissors as LucideSquareScissors,
+  SquareSigma as LucideSquareSigma,
+  SquareSlash as LucideSquareSlash,
+  SquareSplitHorizontal as LucideSquareSplitHorizontal,
+  SquareSplitVertical as LucideSquareSplitVertical,
+  SquareSquare as LucideSquareSquare,
+  SquareStack as LucideSquareStack,
+  SquareStar as LucideSquareStar,
+  SquareStop as LucideSquareStop,
+  SquareTerminal as LucideSquareTerminal,
+  SquareUser as LucideSquareUser,
+  SquareUserRound as LucideSquareUserRound,
+  SquareX as LucideSquareX,
+  SquaresExclude as LucideSquaresExclude,
+  SquaresIntersect as LucideSquaresIntersect,
+  SquaresSubtract as LucideSquaresSubtract,
+  SquaresUnite as LucideSquaresUnite,
+  Squircle as LucideSquircle,
+  SquircleDashed as LucideSquircleDashed,
+  Squirrel as LucideSquirrel,
+  Stamp as LucideStamp,
+  Star as LucideStar,
+  StarHalf as LucideStarHalf,
+  StarOff as LucideStarOff,
+  Sparkles as LucideStars,
+  StepBack as LucideStepBack,
+  StepForward as LucideStepForward,
+  Stethoscope as LucideStethoscope,
+  Sticker as LucideSticker,
+  StickyNote as LucideStickyNote,
+  Stone as LucideStone,
+  CircleStop as LucideStopCircle,
+  Store as LucideStore,
+  StretchHorizontal as LucideStretchHorizontal,
+  StretchVertical as LucideStretchVertical,
+  Strikethrough as LucideStrikethrough,
+  Subscript as LucideSubscript,
+  Captions as LucideSubtitles,
+  Sun as LucideSun,
+  SunDim as LucideSunDim,
+  SunMedium as LucideSunMedium,
+  SunMoon as LucideSunMoon,
+  SunSnow as LucideSunSnow,
+  Sunrise as LucideSunrise,
+  Sunset as LucideSunset,
+  Superscript as LucideSuperscript,
+  SwatchBook as LucideSwatchBook,
+  SwissFranc as LucideSwissFranc,
+  SwitchCamera as LucideSwitchCamera,
+  Sword as LucideSword,
+  Swords as LucideSwords,
+  Syringe as LucideSyringe,
+  Table as LucideTable,
+  Table2 as LucideTable2,
+  TableCellsMerge as LucideTableCellsMerge,
+  TableCellsSplit as LucideTableCellsSplit,
+  TableColumnsSplit as LucideTableColumnsSplit,
+  Columns3Cog as LucideTableConfig,
+  TableOfContents as LucideTableOfContents,
+  TableProperties as LucideTableProperties,
+  TableRowsSplit as LucideTableRowsSplit,
+  Tablet as LucideTablet,
+  TabletSmartphone as LucideTabletSmartphone,
+  Tablets as LucideTablets,
+  Tag as LucideTag,
+  Tags as LucideTags,
+  Tally1 as LucideTally1,
+  Tally2 as LucideTally2,
+  Tally3 as LucideTally3,
+  Tally4 as LucideTally4,
+  Tally5 as LucideTally5,
+  Tangent as LucideTangent,
+  Target as LucideTarget,
+  Telescope as LucideTelescope,
+  Tent as LucideTent,
+  TentTree as LucideTentTree,
+  Terminal as LucideTerminal,
+  SquareTerminal as LucideTerminalSquare,
+  TestTube as LucideTestTube,
+  TestTubeDiagonal as LucideTestTube2,
+  TestTubeDiagonal as LucideTestTubeDiagonal,
+  TestTubes as LucideTestTubes,
+  TextAlignStart as LucideText,
+  TextAlignCenter as LucideTextAlignCenter,
+  TextAlignEnd as LucideTextAlignEnd,
+  TextAlignJustify as LucideTextAlignJustify,
+  TextAlignStart as LucideTextAlignStart,
+  TextCursor as LucideTextCursor,
+  TextCursorInput as LucideTextCursorInput,
+  TextInitial as LucideTextInitial,
+  TextQuote as LucideTextQuote,
+  TextSearch as LucideTextSearch,
+  TextSelect as LucideTextSelect,
+  TextSelect as LucideTextSelection,
+  TextWrap as LucideTextWrap,
+  Theater as LucideTheater,
+  Thermometer as LucideThermometer,
+  ThermometerSnowflake as LucideThermometerSnowflake,
+  ThermometerSun as LucideThermometerSun,
+  ThumbsDown as LucideThumbsDown,
+  ThumbsUp as LucideThumbsUp,
+  Ticket as LucideTicket,
+  TicketCheck as LucideTicketCheck,
+  TicketMinus as LucideTicketMinus,
+  TicketPercent as LucideTicketPercent,
+  TicketPlus as LucideTicketPlus,
+  TicketSlash as LucideTicketSlash,
+  TicketX as LucideTicketX,
+  Tickets as LucideTickets,
+  TicketsPlane as LucideTicketsPlane,
+  Timer as LucideTimer,
+  TimerOff as LucideTimerOff,
+  TimerReset as LucideTimerReset,
+  ToggleLeft as LucideToggleLeft,
+  ToggleRight as LucideToggleRight,
+  Toilet as LucideToilet,
+  ToolCase as LucideToolCase,
+  Toolbox as LucideToolbox,
+  Tornado as LucideTornado,
+  Torus as LucideTorus,
+  Touchpad as LucideTouchpad,
+  TouchpadOff as LucideTouchpadOff,
+  TowelRack as LucideTowelRack,
+  TowerControl as LucideTowerControl,
+  ToyBrick as LucideToyBrick,
+  Tractor as LucideTractor,
+  TrafficCone as LucideTrafficCone,
+  TramFront as LucideTrain,
+  TrainFront as LucideTrainFront,
+  TrainFrontTunnel as LucideTrainFrontTunnel,
+  TrainTrack as LucideTrainTrack,
+  TramFront as LucideTramFront,
+  Transgender as LucideTransgender,
+  Trash as LucideTrash,
+  Trash2 as LucideTrash2,
+  TreeDeciduous as LucideTreeDeciduous,
+  TreePalm as LucideTreePalm,
+  TreePine as LucideTreePine,
+  Trees as LucideTrees,
+  Trello as LucideTrello,
+  TrendingDown as LucideTrendingDown,
+  TrendingUp as LucideTrendingUp,
+  TrendingUpDown as LucideTrendingUpDown,
+  Triangle as LucideTriangle,
+  TriangleAlert as LucideTriangleAlert,
+  TriangleDashed as LucideTriangleDashed,
+  TriangleRight as LucideTriangleRight,
+  Trophy as LucideTrophy,
+  Truck as LucideTruck,
+  TruckElectric as LucideTruckElectric,
+  TurkishLira as LucideTurkishLira,
+  Turntable as LucideTurntable,
+  Turtle as LucideTurtle,
+  Tv as LucideTv,
+  TvMinimal as LucideTv2,
+  TvMinimal as LucideTvMinimal,
+  TvMinimalPlay as LucideTvMinimalPlay,
+  Twitch as LucideTwitch,
+  Twitter as LucideTwitter,
+  Type as LucideType,
+  TypeOutline as LucideTypeOutline,
+  Umbrella as LucideUmbrella,
+  UmbrellaOff as LucideUmbrellaOff,
+  Underline as LucideUnderline,
+  Undo as LucideUndo,
+  Undo2 as LucideUndo2,
+  UndoDot as LucideUndoDot,
+  UnfoldHorizontal as LucideUnfoldHorizontal,
+  UnfoldVertical as LucideUnfoldVertical,
+  Ungroup as LucideUngroup,
+  University as LucideUniversity,
+  Unlink as LucideUnlink,
+  Unlink2 as LucideUnlink2,
+  LockOpen as LucideUnlock,
+  LockKeyholeOpen as LucideUnlockKeyhole,
+  Unplug as LucideUnplug,
+  Upload as LucideUpload,
+  CloudUpload as LucideUploadCloud,
+  Usb as LucideUsb,
+  User as LucideUser,
+  UserRound as LucideUser2,
+  UserCheck as LucideUserCheck,
+  UserRoundCheck as LucideUserCheck2,
+  CircleUser as LucideUserCircle,
+  CircleUserRound as LucideUserCircle2,
+  UserCog as LucideUserCog,
+  UserRoundCog as LucideUserCog2,
+  UserKey as LucideUserKey,
+  UserLock as LucideUserLock,
+  UserMinus as LucideUserMinus,
+  UserRoundMinus as LucideUserMinus2,
+  UserPen as LucideUserPen,
+  UserPlus as LucideUserPlus,
+  UserRoundPlus as LucideUserPlus2,
+  UserRound as LucideUserRound,
+  UserRoundCheck as LucideUserRoundCheck,
+  UserRoundCog as LucideUserRoundCog,
+  UserRoundKey as LucideUserRoundKey,
+  UserRoundMinus as LucideUserRoundMinus,
+  UserRoundPen as LucideUserRoundPen,
+  UserRoundPlus as LucideUserRoundPlus,
+  UserRoundSearch as LucideUserRoundSearch,
+  UserRoundX as LucideUserRoundX,
+  UserSearch as LucideUserSearch,
+  SquareUser as LucideUserSquare,
+  SquareUserRound as LucideUserSquare2,
+  UserStar as LucideUserStar,
+  UserX as LucideUserX,
+  UserRoundX as LucideUserX2,
+  Users as LucideUsers,
+  UsersRound as LucideUsers2,
+  UsersRound as LucideUsersRound,
+  Utensils as LucideUtensils,
+  UtensilsCrossed as LucideUtensilsCrossed,
+  UtilityPole as LucideUtilityPole,
+  Van as LucideVan,
+  Variable as LucideVariable,
+  Vault as LucideVault,
+  VectorSquare as LucideVectorSquare,
+  Vegan as LucideVegan,
+  VenetianMask as LucideVenetianMask,
+  Venus as LucideVenus,
+  VenusAndMars as LucideVenusAndMars,
+  BadgeCheck as LucideVerified,
+  Vibrate as LucideVibrate,
+  VibrateOff as LucideVibrateOff,
+  Video as LucideVideo,
+  VideoOff as LucideVideoOff,
+  Videotape as LucideVideotape,
+  View as LucideView,
+  Voicemail as LucideVoicemail,
+  Volleyball as LucideVolleyball,
+  Volume as LucideVolume,
+  Volume1 as LucideVolume1,
+  Volume2 as LucideVolume2,
+  VolumeOff as LucideVolumeOff,
+  VolumeX as LucideVolumeX,
+  Vote as LucideVote,
+  Wallet as LucideWallet,
+  WalletMinimal as LucideWallet2,
+  WalletCards as LucideWalletCards,
+  WalletMinimal as LucideWalletMinimal,
+  Wallpaper as LucideWallpaper,
+  Wand as LucideWand,
+  WandSparkles as LucideWand2,
+  WandSparkles as LucideWandSparkles,
+  Warehouse as LucideWarehouse,
+  WashingMachine as LucideWashingMachine,
+  Watch as LucideWatch,
+  Waves as LucideWaves,
+  WavesArrowDown as LucideWavesArrowDown,
+  WavesArrowUp as LucideWavesArrowUp,
+  WavesLadder as LucideWavesLadder,
+  Waypoints as LucideWaypoints,
+  Webcam as LucideWebcam,
+  Webhook as LucideWebhook,
+  WebhookOff as LucideWebhookOff,
+  Weight as LucideWeight,
+  WeightTilde as LucideWeightTilde,
+  Wheat as LucideWheat,
+  WheatOff as LucideWheatOff,
+  WholeWord as LucideWholeWord,
+  Wifi as LucideWifi,
+  WifiCog as LucideWifiCog,
+  WifiHigh as LucideWifiHigh,
+  WifiLow as LucideWifiLow,
+  WifiOff as LucideWifiOff,
+  WifiPen as LucideWifiPen,
+  WifiSync as LucideWifiSync,
+  WifiZero as LucideWifiZero,
+  Wind as LucideWind,
+  WindArrowDown as LucideWindArrowDown,
+  Wine as LucideWine,
+  WineOff as LucideWineOff,
+  Workflow as LucideWorkflow,
+  Worm as LucideWorm,
+  TextWrap as LucideWrapText,
+  Wrench as LucideWrench,
+  X as LucideX,
+  CircleX as LucideXCircle,
+  XLineTop as LucideXLineTop,
+  OctagonX as LucideXOctagon,
+  SquareX as LucideXSquare,
+  Youtube as LucideYoutube,
+  Zap as LucideZap,
+  ZapOff as LucideZapOff,
+  ZodiacAquarius as LucideZodiacAquarius,
+  ZodiacAries as LucideZodiacAries,
+  ZodiacCancer as LucideZodiacCancer,
+  ZodiacCapricorn as LucideZodiacCapricorn,
+  ZodiacGemini as LucideZodiacGemini,
+  ZodiacLeo as LucideZodiacLeo,
+  ZodiacLibra as LucideZodiacLibra,
+  ZodiacOphiuchus as LucideZodiacOphiuchus,
+  ZodiacPisces as LucideZodiacPisces,
+  ZodiacSagittarius as LucideZodiacSagittarius,
+  ZodiacScorpio as LucideZodiacScorpio,
+  ZodiacTaurus as LucideZodiacTaurus,
+  ZodiacVirgo as LucideZodiacVirgo,
+  ZoomIn as LucideZoomIn,
+  ZoomOut as LucideZoomOut,
+  Luggage,
+  Luggage as LuggageIcon,
+  SquareM as MSquare,
+  SquareM as MSquareIcon,
+  Magnet,
+  Magnet as MagnetIcon,
+  Mail,
+  MailCheck,
+  MailCheck as MailCheckIcon,
+  Mail as MailIcon,
+  MailMinus,
+  MailMinus as MailMinusIcon,
+  MailOpen,
+  MailOpen as MailOpenIcon,
+  MailPlus,
+  MailPlus as MailPlusIcon,
+  MailQuestionMark as MailQuestion,
+  MailQuestionMark as MailQuestionIcon,
+  MailQuestionMark,
+  MailQuestionMark as MailQuestionMarkIcon,
+  MailSearch,
+  MailSearch as MailSearchIcon,
+  MailWarning,
+  MailWarning as MailWarningIcon,
+  MailX,
+  MailX as MailXIcon,
+  Mailbox,
+  Mailbox as MailboxIcon,
+  Mails,
+  Mails as MailsIcon,
+  Map,
+  Map as MapIcon,
+  MapMinus,
+  MapMinus as MapMinusIcon,
+  MapPin,
+  MapPinCheck,
+  MapPinCheck as MapPinCheckIcon,
+  MapPinCheckInside,
+  MapPinCheckInside as MapPinCheckInsideIcon,
+  MapPinHouse,
+  MapPinHouse as MapPinHouseIcon,
+  MapPin as MapPinIcon,
+  MapPinMinus,
+  MapPinMinus as MapPinMinusIcon,
+  MapPinMinusInside,
+  MapPinMinusInside as MapPinMinusInsideIcon,
+  MapPinOff,
+  MapPinOff as MapPinOffIcon,
+  MapPinPen,
+  MapPinPen as MapPinPenIcon,
+  MapPinPlus,
+  MapPinPlus as MapPinPlusIcon,
+  MapPinPlusInside,
+  MapPinPlusInside as MapPinPlusInsideIcon,
+  MapPinX,
+  MapPinX as MapPinXIcon,
+  MapPinXInside,
+  MapPinXInside as MapPinXInsideIcon,
+  MapPinned,
+  MapPinned as MapPinnedIcon,
+  MapPlus,
+  MapPlus as MapPlusIcon,
+  Mars,
+  Mars as MarsIcon,
+  MarsStroke,
+  MarsStroke as MarsStrokeIcon,
+  Martini,
+  Martini as MartiniIcon,
+  Maximize,
+  Maximize2,
+  Maximize2 as Maximize2Icon,
+  Maximize as MaximizeIcon,
+  Medal,
+  Medal as MedalIcon,
+  Megaphone,
+  Megaphone as MegaphoneIcon,
+  MegaphoneOff,
+  MegaphoneOff as MegaphoneOffIcon,
+  Meh,
+  Meh as MehIcon,
+  MemoryStick,
+  MemoryStick as MemoryStickIcon,
+  Menu,
+  Menu as MenuIcon,
+  SquareMenu as MenuSquare,
+  SquareMenu as MenuSquareIcon,
+  Merge,
+  Merge as MergeIcon,
+  MessageCircle,
+  MessageCircleCheck,
+  MessageCircleCheck as MessageCircleCheckIcon,
+  MessageCircleCode,
+  MessageCircleCode as MessageCircleCodeIcon,
+  MessageCircleDashed,
+  MessageCircleDashed as MessageCircleDashedIcon,
+  MessageCircleHeart,
+  MessageCircleHeart as MessageCircleHeartIcon,
+  MessageCircle as MessageCircleIcon,
+  MessageCircleMore,
+  MessageCircleMore as MessageCircleMoreIcon,
+  MessageCircleOff,
+  MessageCircleOff as MessageCircleOffIcon,
+  MessageCirclePlus,
+  MessageCirclePlus as MessageCirclePlusIcon,
+  MessageCircleQuestionMark as MessageCircleQuestion,
+  MessageCircleQuestionMark as MessageCircleQuestionIcon,
+  MessageCircleQuestionMark,
+  MessageCircleQuestionMark as MessageCircleQuestionMarkIcon,
+  MessageCircleReply,
+  MessageCircleReply as MessageCircleReplyIcon,
+  MessageCircleWarning,
+  MessageCircleWarning as MessageCircleWarningIcon,
+  MessageCircleX,
+  MessageCircleX as MessageCircleXIcon,
+  MessageSquare,
+  MessageSquareCheck,
+  MessageSquareCheck as MessageSquareCheckIcon,
+  MessageSquareCode,
+  MessageSquareCode as MessageSquareCodeIcon,
+  MessageSquareDashed,
+  MessageSquareDashed as MessageSquareDashedIcon,
+  MessageSquareDiff,
+  MessageSquareDiff as MessageSquareDiffIcon,
+  MessageSquareDot,
+  MessageSquareDot as MessageSquareDotIcon,
+  MessageSquareHeart,
+  MessageSquareHeart as MessageSquareHeartIcon,
+  MessageSquare as MessageSquareIcon,
+  MessageSquareLock,
+  MessageSquareLock as MessageSquareLockIcon,
+  MessageSquareMore,
+  MessageSquareMore as MessageSquareMoreIcon,
+  MessageSquareOff,
+  MessageSquareOff as MessageSquareOffIcon,
+  MessageSquarePlus,
+  MessageSquarePlus as MessageSquarePlusIcon,
+  MessageSquareQuote,
+  MessageSquareQuote as MessageSquareQuoteIcon,
+  MessageSquareReply,
+  MessageSquareReply as MessageSquareReplyIcon,
+  MessageSquareShare,
+  MessageSquareShare as MessageSquareShareIcon,
+  MessageSquareText,
+  MessageSquareText as MessageSquareTextIcon,
+  MessageSquareWarning,
+  MessageSquareWarning as MessageSquareWarningIcon,
+  MessageSquareX,
+  MessageSquareX as MessageSquareXIcon,
+  MessagesSquare,
+  MessagesSquare as MessagesSquareIcon,
+  Metronome,
+  Metronome as MetronomeIcon,
+  Mic,
+  MicVocal as Mic2,
+  MicVocal as Mic2Icon,
+  Mic as MicIcon,
+  MicOff,
+  MicOff as MicOffIcon,
+  MicVocal,
+  MicVocal as MicVocalIcon,
+  Microchip,
+  Microchip as MicrochipIcon,
+  Microscope,
+  Microscope as MicroscopeIcon,
+  Microwave,
+  Microwave as MicrowaveIcon,
+  Milestone,
+  Milestone as MilestoneIcon,
+  Milk,
+  Milk as MilkIcon,
+  MilkOff,
+  MilkOff as MilkOffIcon,
+  Minimize,
+  Minimize2,
+  Minimize2 as Minimize2Icon,
+  Minimize as MinimizeIcon,
+  Minus,
+  CircleMinus as MinusCircle,
+  CircleMinus as MinusCircleIcon,
+  Minus as MinusIcon,
+  SquareMinus as MinusSquare,
+  SquareMinus as MinusSquareIcon,
+  MirrorRectangular,
+  MirrorRectangular as MirrorRectangularIcon,
+  MirrorRound,
+  MirrorRound as MirrorRoundIcon,
+  Monitor,
+  MonitorCheck,
+  MonitorCheck as MonitorCheckIcon,
+  MonitorCloud,
+  MonitorCloud as MonitorCloudIcon,
+  MonitorCog,
+  MonitorCog as MonitorCogIcon,
+  MonitorDot,
+  MonitorDot as MonitorDotIcon,
+  MonitorDown,
+  MonitorDown as MonitorDownIcon,
+  Monitor as MonitorIcon,
+  MonitorOff,
+  MonitorOff as MonitorOffIcon,
+  MonitorPause,
+  MonitorPause as MonitorPauseIcon,
+  MonitorPlay,
+  MonitorPlay as MonitorPlayIcon,
+  MonitorSmartphone,
+  MonitorSmartphone as MonitorSmartphoneIcon,
+  MonitorSpeaker,
+  MonitorSpeaker as MonitorSpeakerIcon,
+  MonitorStop,
+  MonitorStop as MonitorStopIcon,
+  MonitorUp,
+  MonitorUp as MonitorUpIcon,
+  MonitorX,
+  MonitorX as MonitorXIcon,
+  Moon,
+  Moon as MoonIcon,
+  MoonStar,
+  MoonStar as MoonStarIcon,
+  Ellipsis as MoreHorizontal,
+  Ellipsis as MoreHorizontalIcon,
+  EllipsisVertical as MoreVertical,
+  EllipsisVertical as MoreVerticalIcon,
+  Motorbike,
+  Motorbike as MotorbikeIcon,
+  Mountain,
+  Mountain as MountainIcon,
+  MountainSnow,
+  MountainSnow as MountainSnowIcon,
+  Mouse,
+  Mouse as MouseIcon,
+  MouseLeft,
+  MouseLeft as MouseLeftIcon,
+  MouseOff,
+  MouseOff as MouseOffIcon,
+  MousePointer,
+  MousePointer2,
+  MousePointer2 as MousePointer2Icon,
+  MousePointer2Off,
+  MousePointer2Off as MousePointer2OffIcon,
+  MousePointerBan,
+  MousePointerBan as MousePointerBanIcon,
+  MousePointerClick,
+  MousePointerClick as MousePointerClickIcon,
+  MousePointer as MousePointerIcon,
+  SquareDashedMousePointer as MousePointerSquareDashed,
+  SquareDashedMousePointer as MousePointerSquareDashedIcon,
+  MouseRight,
+  MouseRight as MouseRightIcon,
+  Move,
+  Move3d as Move3D,
+  Move3d as Move3DIcon,
+  Move3d,
+  Move3d as Move3dIcon,
+  MoveDiagonal,
+  MoveDiagonal2,
+  MoveDiagonal2 as MoveDiagonal2Icon,
+  MoveDiagonal as MoveDiagonalIcon,
+  MoveDown,
+  MoveDown as MoveDownIcon,
+  MoveDownLeft,
+  MoveDownLeft as MoveDownLeftIcon,
+  MoveDownRight,
+  MoveDownRight as MoveDownRightIcon,
+  MoveHorizontal,
+  MoveHorizontal as MoveHorizontalIcon,
+  Move as MoveIcon,
+  MoveLeft,
+  MoveLeft as MoveLeftIcon,
+  MoveRight,
+  MoveRight as MoveRightIcon,
+  MoveUp,
+  MoveUp as MoveUpIcon,
+  MoveUpLeft,
+  MoveUpLeft as MoveUpLeftIcon,
+  MoveUpRight,
+  MoveUpRight as MoveUpRightIcon,
+  MoveVertical,
+  MoveVertical as MoveVerticalIcon,
+  Music,
+  Music2,
+  Music2 as Music2Icon,
+  Music3,
+  Music3 as Music3Icon,
+  Music4,
+  Music4 as Music4Icon,
+  Music as MusicIcon,
+  Navigation,
+  Navigation2,
+  Navigation2 as Navigation2Icon,
+  Navigation2Off,
+  Navigation2Off as Navigation2OffIcon,
+  Navigation as NavigationIcon,
+  NavigationOff,
+  NavigationOff as NavigationOffIcon,
+  Network,
+  Network as NetworkIcon,
+  Newspaper,
+  Newspaper as NewspaperIcon,
+  Nfc,
+  Nfc as NfcIcon,
+  NonBinary,
+  NonBinary as NonBinaryIcon,
+  Notebook,
+  Notebook as NotebookIcon,
+  NotebookPen,
+  NotebookPen as NotebookPenIcon,
+  NotebookTabs,
+  NotebookTabs as NotebookTabsIcon,
+  NotebookText,
+  NotebookText as NotebookTextIcon,
+  NotepadText,
+  NotepadTextDashed,
+  NotepadTextDashed as NotepadTextDashedIcon,
+  NotepadText as NotepadTextIcon,
+  Nut,
+  Nut as NutIcon,
+  NutOff,
+  NutOff as NutOffIcon,
+  Octagon,
+  OctagonAlert,
+  OctagonAlert as OctagonAlertIcon,
+  Octagon as OctagonIcon,
+  OctagonMinus,
+  OctagonMinus as OctagonMinusIcon,
+  OctagonPause,
+  OctagonPause as OctagonPauseIcon,
+  OctagonX,
+  OctagonX as OctagonXIcon,
+  Omega,
+  Omega as OmegaIcon,
+  Option,
+  Option as OptionIcon,
+  Orbit,
+  Orbit as OrbitIcon,
+  Origami,
+  Origami as OrigamiIcon,
+  ListIndentDecrease as Outdent,
+  ListIndentDecrease as OutdentIcon,
+  Package,
+  Package2,
+  Package2 as Package2Icon,
+  PackageCheck,
+  PackageCheck as PackageCheckIcon,
+  Package as PackageIcon,
+  PackageMinus,
+  PackageMinus as PackageMinusIcon,
+  PackageOpen,
+  PackageOpen as PackageOpenIcon,
+  PackagePlus,
+  PackagePlus as PackagePlusIcon,
+  PackageSearch,
+  PackageSearch as PackageSearchIcon,
+  PackageX,
+  PackageX as PackageXIcon,
+  PaintBucket,
+  PaintBucket as PaintBucketIcon,
+  PaintRoller,
+  PaintRoller as PaintRollerIcon,
+  Paintbrush,
+  PaintbrushVertical as Paintbrush2,
+  PaintbrushVertical as Paintbrush2Icon,
+  Paintbrush as PaintbrushIcon,
+  PaintbrushVertical,
+  PaintbrushVertical as PaintbrushVerticalIcon,
+  Palette,
+  Palette as PaletteIcon,
+  TreePalm as Palmtree,
+  TreePalm as PalmtreeIcon,
+  Panda,
+  Panda as PandaIcon,
+  PanelBottom,
+  PanelBottomClose,
+  PanelBottomClose as PanelBottomCloseIcon,
+  PanelBottomDashed,
+  PanelBottomDashed as PanelBottomDashedIcon,
+  PanelBottom as PanelBottomIcon,
+  PanelBottomDashed as PanelBottomInactive,
+  PanelBottomDashed as PanelBottomInactiveIcon,
+  PanelBottomOpen,
+  PanelBottomOpen as PanelBottomOpenIcon,
+  PanelLeft,
+  PanelLeftClose,
+  PanelLeftClose as PanelLeftCloseIcon,
+  PanelLeftDashed,
+  PanelLeftDashed as PanelLeftDashedIcon,
+  PanelLeft as PanelLeftIcon,
+  PanelLeftDashed as PanelLeftInactive,
+  PanelLeftDashed as PanelLeftInactiveIcon,
+  PanelLeftOpen,
+  PanelLeftOpen as PanelLeftOpenIcon,
+  PanelLeftRightDashed,
+  PanelLeftRightDashed as PanelLeftRightDashedIcon,
+  PanelRight,
+  PanelRightClose,
+  PanelRightClose as PanelRightCloseIcon,
+  PanelRightDashed,
+  PanelRightDashed as PanelRightDashedIcon,
+  PanelRight as PanelRightIcon,
+  PanelRightDashed as PanelRightInactive,
+  PanelRightDashed as PanelRightInactiveIcon,
+  PanelRightOpen,
+  PanelRightOpen as PanelRightOpenIcon,
+  PanelTop,
+  PanelTopBottomDashed,
+  PanelTopBottomDashed as PanelTopBottomDashedIcon,
+  PanelTopClose,
+  PanelTopClose as PanelTopCloseIcon,
+  PanelTopDashed,
+  PanelTopDashed as PanelTopDashedIcon,
+  PanelTop as PanelTopIcon,
+  PanelTopDashed as PanelTopInactive,
+  PanelTopDashed as PanelTopInactiveIcon,
+  PanelTopOpen,
+  PanelTopOpen as PanelTopOpenIcon,
+  PanelsLeftBottom,
+  PanelsLeftBottom as PanelsLeftBottomIcon,
+  Columns3 as PanelsLeftRight,
+  Columns3 as PanelsLeftRightIcon,
+  PanelsRightBottom,
+  PanelsRightBottom as PanelsRightBottomIcon,
+  Rows3 as PanelsTopBottom,
+  Rows3 as PanelsTopBottomIcon,
+  PanelsTopLeft,
+  PanelsTopLeft as PanelsTopLeftIcon,
+  Paperclip,
+  Paperclip as PaperclipIcon,
+  Parentheses,
+  Parentheses as ParenthesesIcon,
+  CircleParking as ParkingCircle,
+  CircleParking as ParkingCircleIcon,
+  CircleParkingOff as ParkingCircleOff,
+  CircleParkingOff as ParkingCircleOffIcon,
+  ParkingMeter,
+  ParkingMeter as ParkingMeterIcon,
+  SquareParking as ParkingSquare,
+  SquareParking as ParkingSquareIcon,
+  SquareParkingOff as ParkingSquareOff,
+  SquareParkingOff as ParkingSquareOffIcon,
+  PartyPopper,
+  PartyPopper as PartyPopperIcon,
+  Pause,
+  CirclePause as PauseCircle,
+  CirclePause as PauseCircleIcon,
+  Pause as PauseIcon,
+  OctagonPause as PauseOctagon,
+  OctagonPause as PauseOctagonIcon,
+  PawPrint,
+  PawPrint as PawPrintIcon,
+  PcCase,
+  PcCase as PcCaseIcon,
+  Pen,
+  SquarePen as PenBox,
+  SquarePen as PenBoxIcon,
+  Pen as PenIcon,
+  PenLine,
+  PenLine as PenLineIcon,
+  PenOff,
+  PenOff as PenOffIcon,
+  SquarePen as PenSquare,
+  SquarePen as PenSquareIcon,
+  PenTool,
+  PenTool as PenToolIcon,
+  Pencil,
+  Pencil as PencilIcon,
+  PencilLine,
+  PencilLine as PencilLineIcon,
+  PencilOff,
+  PencilOff as PencilOffIcon,
+  PencilRuler,
+  PencilRuler as PencilRulerIcon,
+  Pentagon,
+  Pentagon as PentagonIcon,
+  Percent,
+  CirclePercent as PercentCircle,
+  CirclePercent as PercentCircleIcon,
+  DiamondPercent as PercentDiamond,
+  DiamondPercent as PercentDiamondIcon,
+  Percent as PercentIcon,
+  SquarePercent as PercentSquare,
+  SquarePercent as PercentSquareIcon,
+  PersonStanding,
+  PersonStanding as PersonStandingIcon,
+  PhilippinePeso,
+  PhilippinePeso as PhilippinePesoIcon,
+  Phone,
+  PhoneCall,
+  PhoneCall as PhoneCallIcon,
+  PhoneForwarded,
+  PhoneForwarded as PhoneForwardedIcon,
+  Phone as PhoneIcon,
+  PhoneIncoming,
+  PhoneIncoming as PhoneIncomingIcon,
+  PhoneMissed,
+  PhoneMissed as PhoneMissedIcon,
+  PhoneOff,
+  PhoneOff as PhoneOffIcon,
+  PhoneOutgoing,
+  PhoneOutgoing as PhoneOutgoingIcon,
+  Pi,
+  Pi as PiIcon,
+  SquarePi as PiSquare,
+  SquarePi as PiSquareIcon,
+  Piano,
+  Piano as PianoIcon,
+  Pickaxe,
+  Pickaxe as PickaxeIcon,
+  PictureInPicture,
+  PictureInPicture2,
+  PictureInPicture2 as PictureInPicture2Icon,
+  PictureInPicture as PictureInPictureIcon,
+  ChartPie as PieChart,
+  ChartPie as PieChartIcon,
+  PiggyBank,
+  PiggyBank as PiggyBankIcon,
+  Pilcrow,
+  Pilcrow as PilcrowIcon,
+  PilcrowLeft,
+  PilcrowLeft as PilcrowLeftIcon,
+  PilcrowRight,
+  PilcrowRight as PilcrowRightIcon,
+  SquarePilcrow as PilcrowSquare,
+  SquarePilcrow as PilcrowSquareIcon,
+  Pill,
+  PillBottle,
+  PillBottle as PillBottleIcon,
+  Pill as PillIcon,
+  Pin,
+  Pin as PinIcon,
+  PinOff,
+  PinOff as PinOffIcon,
+  Pipette,
+  Pipette as PipetteIcon,
+  Pizza,
+  Pizza as PizzaIcon,
+  Plane,
+  Plane as PlaneIcon,
+  PlaneLanding,
+  PlaneLanding as PlaneLandingIcon,
+  PlaneTakeoff,
+  PlaneTakeoff as PlaneTakeoffIcon,
+  Play,
+  CirclePlay as PlayCircle,
+  CirclePlay as PlayCircleIcon,
+  Play as PlayIcon,
+  SquarePlay as PlaySquare,
+  SquarePlay as PlaySquareIcon,
+  Plug,
+  Plug2,
+  Plug2 as Plug2Icon,
+  Plug as PlugIcon,
+  PlugZap,
+  PlugZap as PlugZap2,
+  PlugZap as PlugZap2Icon,
+  PlugZap as PlugZapIcon,
+  Plus,
+  CirclePlus as PlusCircle,
+  CirclePlus as PlusCircleIcon,
+  Plus as PlusIcon,
+  SquarePlus as PlusSquare,
+  SquarePlus as PlusSquareIcon,
+  Pocket,
+  Pocket as PocketIcon,
+  PocketKnife,
+  PocketKnife as PocketKnifeIcon,
+  Podcast,
+  Podcast as PodcastIcon,
+  Pointer,
+  Pointer as PointerIcon,
+  PointerOff,
+  PointerOff as PointerOffIcon,
+  Popcorn,
+  Popcorn as PopcornIcon,
+  Popsicle,
+  Popsicle as PopsicleIcon,
+  PoundSterling,
+  PoundSterling as PoundSterlingIcon,
+  Power,
+  CirclePower as PowerCircle,
+  CirclePower as PowerCircleIcon,
+  Power as PowerIcon,
+  PowerOff,
+  PowerOff as PowerOffIcon,
+  SquarePower as PowerSquare,
+  SquarePower as PowerSquareIcon,
+  Presentation,
+  Presentation as PresentationIcon,
+  Printer,
+  PrinterCheck,
+  PrinterCheck as PrinterCheckIcon,
+  Printer as PrinterIcon,
+  PrinterX,
+  PrinterX as PrinterXIcon,
+  Projector,
+  Projector as ProjectorIcon,
+  Proportions,
+  Proportions as ProportionsIcon,
+  Puzzle,
+  Puzzle as PuzzleIcon,
+  Pyramid,
+  Pyramid as PyramidIcon,
+  QrCode,
+  QrCode as QrCodeIcon,
+  Quote,
+  Quote as QuoteIcon,
+  Rabbit,
+  Rabbit as RabbitIcon,
+  Radar,
+  Radar as RadarIcon,
+  Radiation,
+  Radiation as RadiationIcon,
+  Radical,
+  Radical as RadicalIcon,
+  Radio,
+  Radio as RadioIcon,
+  RadioReceiver,
+  RadioReceiver as RadioReceiverIcon,
+  RadioTower,
+  RadioTower as RadioTowerIcon,
+  Radius,
+  Radius as RadiusIcon,
+  RailSymbol,
+  RailSymbol as RailSymbolIcon,
+  Rainbow,
+  Rainbow as RainbowIcon,
+  Rat,
+  Rat as RatIcon,
+  Ratio,
+  Ratio as RatioIcon,
+  Receipt,
+  ReceiptCent,
+  ReceiptCent as ReceiptCentIcon,
+  ReceiptEuro,
+  ReceiptEuro as ReceiptEuroIcon,
+  Receipt as ReceiptIcon,
+  ReceiptIndianRupee,
+  ReceiptIndianRupee as ReceiptIndianRupeeIcon,
+  ReceiptJapaneseYen,
+  ReceiptJapaneseYen as ReceiptJapaneseYenIcon,
+  ReceiptPoundSterling,
+  ReceiptPoundSterling as ReceiptPoundSterlingIcon,
+  ReceiptRussianRuble,
+  ReceiptRussianRuble as ReceiptRussianRubleIcon,
+  ReceiptSwissFranc,
+  ReceiptSwissFranc as ReceiptSwissFrancIcon,
+  ReceiptText,
+  ReceiptText as ReceiptTextIcon,
+  ReceiptTurkishLira,
+  ReceiptTurkishLira as ReceiptTurkishLiraIcon,
+  RectangleCircle,
+  RectangleCircle as RectangleCircleIcon,
+  RectangleEllipsis,
+  RectangleEllipsis as RectangleEllipsisIcon,
+  RectangleGoggles,
+  RectangleGoggles as RectangleGogglesIcon,
+  RectangleHorizontal,
+  RectangleHorizontal as RectangleHorizontalIcon,
+  RectangleVertical,
+  RectangleVertical as RectangleVerticalIcon,
+  Recycle,
+  Recycle as RecycleIcon,
+  Redo,
+  Redo2,
+  Redo2 as Redo2Icon,
+  RedoDot,
+  RedoDot as RedoDotIcon,
+  Redo as RedoIcon,
+  RefreshCcw,
+  RefreshCcwDot,
+  RefreshCcwDot as RefreshCcwDotIcon,
+  RefreshCcw as RefreshCcwIcon,
+  RefreshCw,
+  RefreshCw as RefreshCwIcon,
+  RefreshCwOff,
+  RefreshCwOff as RefreshCwOffIcon,
+  Refrigerator,
+  Refrigerator as RefrigeratorIcon,
+  Regex,
+  Regex as RegexIcon,
+  RemoveFormatting,
+  RemoveFormatting as RemoveFormattingIcon,
+  Repeat,
+  Repeat1,
+  Repeat1 as Repeat1Icon,
+  Repeat2,
+  Repeat2 as Repeat2Icon,
+  Repeat as RepeatIcon,
+  Replace,
+  ReplaceAll,
+  ReplaceAll as ReplaceAllIcon,
+  Replace as ReplaceIcon,
+  Reply,
+  ReplyAll,
+  ReplyAll as ReplyAllIcon,
+  Reply as ReplyIcon,
+  Rewind,
+  Rewind as RewindIcon,
+  Ribbon,
+  Ribbon as RibbonIcon,
+  Rocket,
+  Rocket as RocketIcon,
+  RockingChair,
+  RockingChair as RockingChairIcon,
+  RollerCoaster,
+  RollerCoaster as RollerCoasterIcon,
+  Rose,
+  Rose as RoseIcon,
+  Rotate3d as Rotate3D,
+  Rotate3d as Rotate3DIcon,
+  Rotate3d,
+  Rotate3d as Rotate3dIcon,
+  RotateCcw,
+  RotateCcw as RotateCcwIcon,
+  RotateCcwKey,
+  RotateCcwKey as RotateCcwKeyIcon,
+  RotateCcwSquare,
+  RotateCcwSquare as RotateCcwSquareIcon,
+  RotateCw,
+  RotateCw as RotateCwIcon,
+  RotateCwSquare,
+  RotateCwSquare as RotateCwSquareIcon,
+  Route,
+  Route as RouteIcon,
+  RouteOff,
+  RouteOff as RouteOffIcon,
+  Router,
+  Router as RouterIcon,
+  Rows2 as Rows,
+  Rows2,
+  Rows2 as Rows2Icon,
+  Rows3,
+  Rows3 as Rows3Icon,
+  Rows4,
+  Rows4 as Rows4Icon,
+  Rows2 as RowsIcon,
+  Rss,
+  Rss as RssIcon,
+  Ruler,
+  RulerDimensionLine,
+  RulerDimensionLine as RulerDimensionLineIcon,
+  Ruler as RulerIcon,
+  RussianRuble,
+  RussianRuble as RussianRubleIcon,
+  Sailboat,
+  Sailboat as SailboatIcon,
+  Salad,
+  Salad as SaladIcon,
+  Sandwich,
+  Sandwich as SandwichIcon,
+  Satellite,
+  SatelliteDish,
+  SatelliteDish as SatelliteDishIcon,
+  Satellite as SatelliteIcon,
+  SaudiRiyal,
+  SaudiRiyal as SaudiRiyalIcon,
+  Save,
+  SaveAll,
+  SaveAll as SaveAllIcon,
+  Save as SaveIcon,
+  SaveOff,
+  SaveOff as SaveOffIcon,
+  Scale,
+  Scale3d as Scale3D,
+  Scale3d as Scale3DIcon,
+  Scale3d,
+  Scale3d as Scale3dIcon,
+  Scale as ScaleIcon,
+  Scaling,
+  Scaling as ScalingIcon,
+  Scan,
+  ScanBarcode,
+  ScanBarcode as ScanBarcodeIcon,
+  ScanEye,
+  ScanEye as ScanEyeIcon,
+  ScanFace,
+  ScanFace as ScanFaceIcon,
+  ScanHeart,
+  ScanHeart as ScanHeartIcon,
+  Scan as ScanIcon,
+  ScanLine,
+  ScanLine as ScanLineIcon,
+  ScanQrCode,
+  ScanQrCode as ScanQrCodeIcon,
+  ScanSearch,
+  ScanSearch as ScanSearchIcon,
+  ScanText,
+  ScanText as ScanTextIcon,
+  ChartScatter as ScatterChart,
+  ChartScatter as ScatterChartIcon,
+  School,
+  University as School2,
+  University as School2Icon,
+  School as SchoolIcon,
+  Scissors,
+  Scissors as ScissorsIcon,
+  ScissorsLineDashed,
+  ScissorsLineDashed as ScissorsLineDashedIcon,
+  SquareScissors as ScissorsSquare,
+  SquareBottomDashedScissors as ScissorsSquareDashedBottom,
+  SquareBottomDashedScissors as ScissorsSquareDashedBottomIcon,
+  SquareScissors as ScissorsSquareIcon,
+  Scooter,
+  Scooter as ScooterIcon,
+  ScreenShare,
+  ScreenShare as ScreenShareIcon,
+  ScreenShareOff,
+  ScreenShareOff as ScreenShareOffIcon,
+  Scroll,
+  Scroll as ScrollIcon,
+  ScrollText,
+  ScrollText as ScrollTextIcon,
+  Search,
+  SearchAlert,
+  SearchAlert as SearchAlertIcon,
+  SearchCheck,
+  SearchCheck as SearchCheckIcon,
+  SearchCode,
+  SearchCode as SearchCodeIcon,
+  Search as SearchIcon,
+  SearchSlash,
+  SearchSlash as SearchSlashIcon,
+  SearchX,
+  SearchX as SearchXIcon,
+  Section,
+  Section as SectionIcon,
+  Send,
+  SendHorizontal as SendHorizonal,
+  SendHorizontal as SendHorizonalIcon,
+  SendHorizontal,
+  SendHorizontal as SendHorizontalIcon,
+  Send as SendIcon,
+  SendToBack,
+  SendToBack as SendToBackIcon,
+  SeparatorHorizontal,
+  SeparatorHorizontal as SeparatorHorizontalIcon,
+  SeparatorVertical,
+  SeparatorVertical as SeparatorVerticalIcon,
+  Server,
+  ServerCog,
+  ServerCog as ServerCogIcon,
+  ServerCrash,
+  ServerCrash as ServerCrashIcon,
+  Server as ServerIcon,
+  ServerOff,
+  ServerOff as ServerOffIcon,
+  Settings,
+  Settings2,
+  Settings2 as Settings2Icon,
+  Settings as SettingsIcon,
+  Shapes,
+  Shapes as ShapesIcon,
+  Share,
+  Share2,
+  Share2 as Share2Icon,
+  Share as ShareIcon,
+  Sheet,
+  Sheet as SheetIcon,
+  Shell,
+  Shell as ShellIcon,
+  ShelvingUnit,
+  ShelvingUnit as ShelvingUnitIcon,
+  Shield,
+  ShieldAlert,
+  ShieldAlert as ShieldAlertIcon,
+  ShieldBan,
+  ShieldBan as ShieldBanIcon,
+  ShieldCheck,
+  ShieldCheck as ShieldCheckIcon,
+  ShieldX as ShieldClose,
+  ShieldX as ShieldCloseIcon,
+  ShieldEllipsis,
+  ShieldEllipsis as ShieldEllipsisIcon,
+  ShieldHalf,
+  ShieldHalf as ShieldHalfIcon,
+  Shield as ShieldIcon,
+  ShieldMinus,
+  ShieldMinus as ShieldMinusIcon,
+  ShieldOff,
+  ShieldOff as ShieldOffIcon,
+  ShieldPlus,
+  ShieldPlus as ShieldPlusIcon,
+  ShieldQuestionMark as ShieldQuestion,
+  ShieldQuestionMark as ShieldQuestionIcon,
+  ShieldQuestionMark,
+  ShieldQuestionMark as ShieldQuestionMarkIcon,
+  ShieldUser,
+  ShieldUser as ShieldUserIcon,
+  ShieldX,
+  ShieldX as ShieldXIcon,
+  Ship,
+  Ship as ShipIcon,
+  ShipWheel,
+  ShipWheel as ShipWheelIcon,
+  Shirt,
+  Shirt as ShirtIcon,
+  ShoppingBag,
+  ShoppingBag as ShoppingBagIcon,
+  ShoppingBasket,
+  ShoppingBasket as ShoppingBasketIcon,
+  ShoppingCart,
+  ShoppingCart as ShoppingCartIcon,
+  Shovel,
+  Shovel as ShovelIcon,
+  ShowerHead,
+  ShowerHead as ShowerHeadIcon,
+  Shredder,
+  Shredder as ShredderIcon,
+  Shrimp,
+  Shrimp as ShrimpIcon,
+  Shrink,
+  Shrink as ShrinkIcon,
+  Shrub,
+  Shrub as ShrubIcon,
+  Shuffle,
+  Shuffle as ShuffleIcon,
+  PanelLeft as Sidebar,
+  PanelLeftClose as SidebarClose,
+  PanelLeftClose as SidebarCloseIcon,
+  PanelLeft as SidebarIcon,
+  PanelLeftOpen as SidebarOpen,
+  PanelLeftOpen as SidebarOpenIcon,
+  Sigma,
+  Sigma as SigmaIcon,
+  SquareSigma as SigmaSquare,
+  SquareSigma as SigmaSquareIcon,
+  Signal,
+  SignalHigh,
+  SignalHigh as SignalHighIcon,
+  Signal as SignalIcon,
+  SignalLow,
+  SignalLow as SignalLowIcon,
+  SignalMedium,
+  SignalMedium as SignalMediumIcon,
+  SignalZero,
+  SignalZero as SignalZeroIcon,
+  Signature,
+  Signature as SignatureIcon,
+  Signpost,
+  SignpostBig,
+  SignpostBig as SignpostBigIcon,
+  Signpost as SignpostIcon,
+  Siren,
+  Siren as SirenIcon,
+  SkipBack,
+  SkipBack as SkipBackIcon,
+  SkipForward,
+  SkipForward as SkipForwardIcon,
+  Skull,
+  Skull as SkullIcon,
+  Slack,
+  Slack as SlackIcon,
+  Slash,
+  Slash as SlashIcon,
+  SquareSlash as SlashSquare,
+  SquareSlash as SlashSquareIcon,
+  Slice,
+  Slice as SliceIcon,
+  SlidersVertical as Sliders,
+  SlidersHorizontal,
+  SlidersHorizontal as SlidersHorizontalIcon,
+  SlidersVertical as SlidersIcon,
+  SlidersVertical,
+  SlidersVertical as SlidersVerticalIcon,
+  Smartphone,
+  SmartphoneCharging,
+  SmartphoneCharging as SmartphoneChargingIcon,
+  Smartphone as SmartphoneIcon,
+  SmartphoneNfc,
+  SmartphoneNfc as SmartphoneNfcIcon,
+  Smile,
+  Smile as SmileIcon,
+  SmilePlus,
+  SmilePlus as SmilePlusIcon,
+  Snail,
+  Snail as SnailIcon,
+  Snowflake,
+  Snowflake as SnowflakeIcon,
+  SoapDispenserDroplet,
+  SoapDispenserDroplet as SoapDispenserDropletIcon,
+  Sofa,
+  Sofa as SofaIcon,
+  SolarPanel,
+  SolarPanel as SolarPanelIcon,
+  ArrowUpNarrowWide as SortAsc,
+  ArrowUpNarrowWide as SortAscIcon,
+  ArrowDownWideNarrow as SortDesc,
+  ArrowDownWideNarrow as SortDescIcon,
+  Soup,
+  Soup as SoupIcon,
+  Space,
+  Space as SpaceIcon,
+  Spade,
+  Spade as SpadeIcon,
+  Sparkle,
+  Sparkle as SparkleIcon,
+  Sparkles,
+  Sparkles as SparklesIcon,
+  Speaker,
+  Speaker as SpeakerIcon,
+  Speech,
+  Speech as SpeechIcon,
+  SpellCheck,
+  SpellCheck2,
+  SpellCheck2 as SpellCheck2Icon,
+  SpellCheck as SpellCheckIcon,
+  Spline,
+  Spline as SplineIcon,
+  SplinePointer,
+  SplinePointer as SplinePointerIcon,
+  Split,
+  Split as SplitIcon,
+  SquareSplitHorizontal as SplitSquareHorizontal,
+  SquareSplitHorizontal as SplitSquareHorizontalIcon,
+  SquareSplitVertical as SplitSquareVertical,
+  SquareSplitVertical as SplitSquareVerticalIcon,
+  Spool,
+  Spool as SpoolIcon,
+  Spotlight,
+  Spotlight as SpotlightIcon,
+  SprayCan,
+  SprayCan as SprayCanIcon,
+  Sprout,
+  Sprout as SproutIcon,
+  Square,
+  SquareActivity,
+  SquareActivity as SquareActivityIcon,
+  SquareArrowDown,
+  SquareArrowDown as SquareArrowDownIcon,
+  SquareArrowDownLeft,
+  SquareArrowDownLeft as SquareArrowDownLeftIcon,
+  SquareArrowDownRight,
+  SquareArrowDownRight as SquareArrowDownRightIcon,
+  SquareArrowLeft,
+  SquareArrowLeft as SquareArrowLeftIcon,
+  SquareArrowOutDownLeft,
+  SquareArrowOutDownLeft as SquareArrowOutDownLeftIcon,
+  SquareArrowOutDownRight,
+  SquareArrowOutDownRight as SquareArrowOutDownRightIcon,
+  SquareArrowOutUpLeft,
+  SquareArrowOutUpLeft as SquareArrowOutUpLeftIcon,
+  SquareArrowOutUpRight,
+  SquareArrowOutUpRight as SquareArrowOutUpRightIcon,
+  SquareArrowRight,
+  SquareArrowRightEnter,
+  SquareArrowRightEnter as SquareArrowRightEnterIcon,
+  SquareArrowRightExit,
+  SquareArrowRightExit as SquareArrowRightExitIcon,
+  SquareArrowRight as SquareArrowRightIcon,
+  SquareArrowUp,
+  SquareArrowUp as SquareArrowUpIcon,
+  SquareArrowUpLeft,
+  SquareArrowUpLeft as SquareArrowUpLeftIcon,
+  SquareArrowUpRight,
+  SquareArrowUpRight as SquareArrowUpRightIcon,
+  SquareAsterisk,
+  SquareAsterisk as SquareAsteriskIcon,
+  SquareBottomDashedScissors,
+  SquareBottomDashedScissors as SquareBottomDashedScissorsIcon,
+  SquareCenterlineDashedHorizontal,
+  SquareCenterlineDashedHorizontal as SquareCenterlineDashedHorizontalIcon,
+  SquareCenterlineDashedVertical,
+  SquareCenterlineDashedVertical as SquareCenterlineDashedVerticalIcon,
+  SquareChartGantt,
+  SquareChartGantt as SquareChartGanttIcon,
+  SquareCheck,
+  SquareCheckBig,
+  SquareCheckBig as SquareCheckBigIcon,
+  SquareCheck as SquareCheckIcon,
+  SquareChevronDown,
+  SquareChevronDown as SquareChevronDownIcon,
+  SquareChevronLeft,
+  SquareChevronLeft as SquareChevronLeftIcon,
+  SquareChevronRight,
+  SquareChevronRight as SquareChevronRightIcon,
+  SquareChevronUp,
+  SquareChevronUp as SquareChevronUpIcon,
+  SquareCode,
+  SquareCode as SquareCodeIcon,
+  SquareDashed,
+  SquareDashedBottom,
+  SquareDashedBottomCode,
+  SquareDashedBottomCode as SquareDashedBottomCodeIcon,
+  SquareDashedBottom as SquareDashedBottomIcon,
+  SquareDashed as SquareDashedIcon,
+  SquareDashedKanban,
+  SquareDashedKanban as SquareDashedKanbanIcon,
+  SquareDashedMousePointer,
+  SquareDashedMousePointer as SquareDashedMousePointerIcon,
+  SquareDashedTopSolid,
+  SquareDashedTopSolid as SquareDashedTopSolidIcon,
+  SquareDivide,
+  SquareDivide as SquareDivideIcon,
+  SquareDot,
+  SquareDot as SquareDotIcon,
+  SquareEqual,
+  SquareEqual as SquareEqualIcon,
+  SquareFunction,
+  SquareFunction as SquareFunctionIcon,
+  SquareChartGantt as SquareGanttChart,
+  SquareChartGantt as SquareGanttChartIcon,
+  Square as SquareIcon,
+  SquareKanban,
+  SquareKanban as SquareKanbanIcon,
+  SquareLibrary,
+  SquareLibrary as SquareLibraryIcon,
+  SquareM,
+  SquareM as SquareMIcon,
+  SquareMenu,
+  SquareMenu as SquareMenuIcon,
+  SquareMinus,
+  SquareMinus as SquareMinusIcon,
+  SquareMousePointer,
+  SquareMousePointer as SquareMousePointerIcon,
+  SquareParking,
+  SquareParking as SquareParkingIcon,
+  SquareParkingOff,
+  SquareParkingOff as SquareParkingOffIcon,
+  SquarePause,
+  SquarePause as SquarePauseIcon,
+  SquarePen,
+  SquarePen as SquarePenIcon,
+  SquarePercent,
+  SquarePercent as SquarePercentIcon,
+  SquarePi,
+  SquarePi as SquarePiIcon,
+  SquarePilcrow,
+  SquarePilcrow as SquarePilcrowIcon,
+  SquarePlay,
+  SquarePlay as SquarePlayIcon,
+  SquarePlus,
+  SquarePlus as SquarePlusIcon,
+  SquarePower,
+  SquarePower as SquarePowerIcon,
+  SquareRadical,
+  SquareRadical as SquareRadicalIcon,
+  SquareRoundCorner,
+  SquareRoundCorner as SquareRoundCornerIcon,
+  SquareScissors,
+  SquareScissors as SquareScissorsIcon,
+  SquareSigma,
+  SquareSigma as SquareSigmaIcon,
+  SquareSlash,
+  SquareSlash as SquareSlashIcon,
+  SquareSplitHorizontal,
+  SquareSplitHorizontal as SquareSplitHorizontalIcon,
+  SquareSplitVertical,
+  SquareSplitVertical as SquareSplitVerticalIcon,
+  SquareSquare,
+  SquareSquare as SquareSquareIcon,
+  SquareStack,
+  SquareStack as SquareStackIcon,
+  SquareStar,
+  SquareStar as SquareStarIcon,
+  SquareStop,
+  SquareStop as SquareStopIcon,
+  SquareTerminal,
+  SquareTerminal as SquareTerminalIcon,
+  SquareUser,
+  SquareUser as SquareUserIcon,
+  SquareUserRound,
+  SquareUserRound as SquareUserRoundIcon,
+  SquareX,
+  SquareX as SquareXIcon,
+  SquaresExclude,
+  SquaresExclude as SquaresExcludeIcon,
+  SquaresIntersect,
+  SquaresIntersect as SquaresIntersectIcon,
+  SquaresSubtract,
+  SquaresSubtract as SquaresSubtractIcon,
+  SquaresUnite,
+  SquaresUnite as SquaresUniteIcon,
+  Squircle,
+  SquircleDashed,
+  SquircleDashed as SquircleDashedIcon,
+  Squircle as SquircleIcon,
+  Squirrel,
+  Squirrel as SquirrelIcon,
+  Stamp,
+  Stamp as StampIcon,
+  Star,
+  StarHalf,
+  StarHalf as StarHalfIcon,
+  Star as StarIcon,
+  StarOff,
+  StarOff as StarOffIcon,
+  Sparkles as Stars,
+  Sparkles as StarsIcon,
+  StepBack,
+  StepBack as StepBackIcon,
+  StepForward,
+  StepForward as StepForwardIcon,
+  Stethoscope,
+  Stethoscope as StethoscopeIcon,
+  Sticker,
+  Sticker as StickerIcon,
+  StickyNote,
+  StickyNote as StickyNoteIcon,
+  Stone,
+  Stone as StoneIcon,
+  CircleStop as StopCircle,
+  CircleStop as StopCircleIcon,
+  Store,
+  Store as StoreIcon,
+  StretchHorizontal,
+  StretchHorizontal as StretchHorizontalIcon,
+  StretchVertical,
+  StretchVertical as StretchVerticalIcon,
+  Strikethrough,
+  Strikethrough as StrikethroughIcon,
+  Subscript,
+  Subscript as SubscriptIcon,
+  Captions as Subtitles,
+  Captions as SubtitlesIcon,
+  Sun,
+  SunDim,
+  SunDim as SunDimIcon,
+  Sun as SunIcon,
+  SunMedium,
+  SunMedium as SunMediumIcon,
+  SunMoon,
+  SunMoon as SunMoonIcon,
+  SunSnow,
+  SunSnow as SunSnowIcon,
+  Sunrise,
+  Sunrise as SunriseIcon,
+  Sunset,
+  Sunset as SunsetIcon,
+  Superscript,
+  Superscript as SuperscriptIcon,
+  SwatchBook,
+  SwatchBook as SwatchBookIcon,
+  SwissFranc,
+  SwissFranc as SwissFrancIcon,
+  SwitchCamera,
+  SwitchCamera as SwitchCameraIcon,
+  Sword,
+  Sword as SwordIcon,
+  Swords,
+  Swords as SwordsIcon,
+  Syringe,
+  Syringe as SyringeIcon,
+  Table,
+  Table2,
+  Table2 as Table2Icon,
+  TableCellsMerge,
+  TableCellsMerge as TableCellsMergeIcon,
+  TableCellsSplit,
+  TableCellsSplit as TableCellsSplitIcon,
+  TableColumnsSplit,
+  TableColumnsSplit as TableColumnsSplitIcon,
+  Columns3Cog as TableConfig,
+  Columns3Cog as TableConfigIcon,
+  Table as TableIcon,
+  TableOfContents,
+  TableOfContents as TableOfContentsIcon,
+  TableProperties,
+  TableProperties as TablePropertiesIcon,
+  TableRowsSplit,
+  TableRowsSplit as TableRowsSplitIcon,
+  Tablet,
+  Tablet as TabletIcon,
+  TabletSmartphone,
+  TabletSmartphone as TabletSmartphoneIcon,
+  Tablets,
+  Tablets as TabletsIcon,
+  Tag,
+  Tag as TagIcon,
+  Tags,
+  Tags as TagsIcon,
+  Tally1,
+  Tally1 as Tally1Icon,
+  Tally2,
+  Tally2 as Tally2Icon,
+  Tally3,
+  Tally3 as Tally3Icon,
+  Tally4,
+  Tally4 as Tally4Icon,
+  Tally5,
+  Tally5 as Tally5Icon,
+  Tangent,
+  Tangent as TangentIcon,
+  Target,
+  Target as TargetIcon,
+  Telescope,
+  Telescope as TelescopeIcon,
+  Tent,
+  Tent as TentIcon,
+  TentTree,
+  TentTree as TentTreeIcon,
+  Terminal,
+  Terminal as TerminalIcon,
+  SquareTerminal as TerminalSquare,
+  SquareTerminal as TerminalSquareIcon,
+  TestTube,
+  TestTubeDiagonal as TestTube2,
+  TestTubeDiagonal as TestTube2Icon,
+  TestTubeDiagonal,
+  TestTubeDiagonal as TestTubeDiagonalIcon,
+  TestTube as TestTubeIcon,
+  TestTubes,
+  TestTubes as TestTubesIcon,
+  TextAlignStart as Text,
+  TextAlignCenter,
+  TextAlignCenter as TextAlignCenterIcon,
+  TextAlignEnd,
+  TextAlignEnd as TextAlignEndIcon,
+  TextAlignJustify,
+  TextAlignJustify as TextAlignJustifyIcon,
+  TextAlignStart,
+  TextAlignStart as TextAlignStartIcon,
+  TextCursor,
+  TextCursor as TextCursorIcon,
+  TextCursorInput,
+  TextCursorInput as TextCursorInputIcon,
+  TextAlignStart as TextIcon,
+  TextInitial,
+  TextInitial as TextInitialIcon,
+  TextQuote,
+  TextQuote as TextQuoteIcon,
+  TextSearch,
+  TextSearch as TextSearchIcon,
+  TextSelect,
+  TextSelect as TextSelectIcon,
+  TextSelect as TextSelection,
+  TextSelect as TextSelectionIcon,
+  TextWrap,
+  TextWrap as TextWrapIcon,
+  Theater,
+  Theater as TheaterIcon,
+  Thermometer,
+  Thermometer as ThermometerIcon,
+  ThermometerSnowflake,
+  ThermometerSnowflake as ThermometerSnowflakeIcon,
+  ThermometerSun,
+  ThermometerSun as ThermometerSunIcon,
+  ThumbsDown,
+  ThumbsDown as ThumbsDownIcon,
+  ThumbsUp,
+  ThumbsUp as ThumbsUpIcon,
+  Ticket,
+  TicketCheck,
+  TicketCheck as TicketCheckIcon,
+  Ticket as TicketIcon,
+  TicketMinus,
+  TicketMinus as TicketMinusIcon,
+  TicketPercent,
+  TicketPercent as TicketPercentIcon,
+  TicketPlus,
+  TicketPlus as TicketPlusIcon,
+  TicketSlash,
+  TicketSlash as TicketSlashIcon,
+  TicketX,
+  TicketX as TicketXIcon,
+  Tickets,
+  Tickets as TicketsIcon,
+  TicketsPlane,
+  TicketsPlane as TicketsPlaneIcon,
+  Timer,
+  Timer as TimerIcon,
+  TimerOff,
+  TimerOff as TimerOffIcon,
+  TimerReset,
+  TimerReset as TimerResetIcon,
+  ToggleLeft,
+  ToggleLeft as ToggleLeftIcon,
+  ToggleRight,
+  ToggleRight as ToggleRightIcon,
+  Toilet,
+  Toilet as ToiletIcon,
+  ToolCase,
+  ToolCase as ToolCaseIcon,
+  Toolbox,
+  Toolbox as ToolboxIcon,
+  Tornado,
+  Tornado as TornadoIcon,
+  Torus,
+  Torus as TorusIcon,
+  Touchpad,
+  Touchpad as TouchpadIcon,
+  TouchpadOff,
+  TouchpadOff as TouchpadOffIcon,
+  TowelRack,
+  TowelRack as TowelRackIcon,
+  TowerControl,
+  TowerControl as TowerControlIcon,
+  ToyBrick,
+  ToyBrick as ToyBrickIcon,
+  Tractor,
+  Tractor as TractorIcon,
+  TrafficCone,
+  TrafficCone as TrafficConeIcon,
+  TramFront as Train,
+  TrainFront,
+  TrainFront as TrainFrontIcon,
+  TrainFrontTunnel,
+  TrainFrontTunnel as TrainFrontTunnelIcon,
+  TramFront as TrainIcon,
+  TrainTrack,
+  TrainTrack as TrainTrackIcon,
+  TramFront,
+  TramFront as TramFrontIcon,
+  Transgender,
+  Transgender as TransgenderIcon,
+  Trash,
+  Trash2,
+  Trash2 as Trash2Icon,
+  Trash as TrashIcon,
+  TreeDeciduous,
+  TreeDeciduous as TreeDeciduousIcon,
+  TreePalm,
+  TreePalm as TreePalmIcon,
+  TreePine,
+  TreePine as TreePineIcon,
+  Trees,
+  Trees as TreesIcon,
+  Trello,
+  Trello as TrelloIcon,
+  TrendingDown,
+  TrendingDown as TrendingDownIcon,
+  TrendingUp,
+  TrendingUpDown,
+  TrendingUpDown as TrendingUpDownIcon,
+  TrendingUp as TrendingUpIcon,
+  Triangle,
+  TriangleAlert,
+  TriangleAlert as TriangleAlertIcon,
+  TriangleDashed,
+  TriangleDashed as TriangleDashedIcon,
+  Triangle as TriangleIcon,
+  TriangleRight,
+  TriangleRight as TriangleRightIcon,
+  Trophy,
+  Trophy as TrophyIcon,
+  Truck,
+  TruckElectric,
+  TruckElectric as TruckElectricIcon,
+  Truck as TruckIcon,
+  TurkishLira,
+  TurkishLira as TurkishLiraIcon,
+  Turntable,
+  Turntable as TurntableIcon,
+  Turtle,
+  Turtle as TurtleIcon,
+  Tv,
+  TvMinimal as Tv2,
+  TvMinimal as Tv2Icon,
+  Tv as TvIcon,
+  TvMinimal,
+  TvMinimal as TvMinimalIcon,
+  TvMinimalPlay,
+  TvMinimalPlay as TvMinimalPlayIcon,
+  Twitch,
+  Twitch as TwitchIcon,
+  Twitter,
+  Twitter as TwitterIcon,
+  Type,
+  Type as TypeIcon,
+  TypeOutline,
+  TypeOutline as TypeOutlineIcon,
+  Umbrella,
+  Umbrella as UmbrellaIcon,
+  UmbrellaOff,
+  UmbrellaOff as UmbrellaOffIcon,
+  Underline,
+  Underline as UnderlineIcon,
+  Undo,
+  Undo2,
+  Undo2 as Undo2Icon,
+  UndoDot,
+  UndoDot as UndoDotIcon,
+  Undo as UndoIcon,
+  UnfoldHorizontal,
+  UnfoldHorizontal as UnfoldHorizontalIcon,
+  UnfoldVertical,
+  UnfoldVertical as UnfoldVerticalIcon,
+  Ungroup,
+  Ungroup as UngroupIcon,
+  University,
+  University as UniversityIcon,
+  Unlink,
+  Unlink2,
+  Unlink2 as Unlink2Icon,
+  Unlink as UnlinkIcon,
+  LockOpen as Unlock,
+  LockOpen as UnlockIcon,
+  LockKeyholeOpen as UnlockKeyhole,
+  LockKeyholeOpen as UnlockKeyholeIcon,
+  Unplug,
+  Unplug as UnplugIcon,
+  Upload,
+  CloudUpload as UploadCloud,
+  CloudUpload as UploadCloudIcon,
+  Upload as UploadIcon,
+  Usb,
+  Usb as UsbIcon,
+  User,
+  UserRound as User2,
+  UserRound as User2Icon,
+  UserCheck,
+  UserRoundCheck as UserCheck2,
+  UserRoundCheck as UserCheck2Icon,
+  UserCheck as UserCheckIcon,
+  CircleUser as UserCircle,
+  CircleUserRound as UserCircle2,
+  CircleUserRound as UserCircle2Icon,
+  CircleUser as UserCircleIcon,
+  UserCog,
+  UserRoundCog as UserCog2,
+  UserRoundCog as UserCog2Icon,
+  UserCog as UserCogIcon,
+  User as UserIcon,
+  UserKey,
+  UserKey as UserKeyIcon,
+  UserLock,
+  UserLock as UserLockIcon,
+  UserMinus,
+  UserRoundMinus as UserMinus2,
+  UserRoundMinus as UserMinus2Icon,
+  UserMinus as UserMinusIcon,
+  UserPen,
+  UserPen as UserPenIcon,
+  UserPlus,
+  UserRoundPlus as UserPlus2,
+  UserRoundPlus as UserPlus2Icon,
+  UserPlus as UserPlusIcon,
+  UserRound,
+  UserRoundCheck,
+  UserRoundCheck as UserRoundCheckIcon,
+  UserRoundCog,
+  UserRoundCog as UserRoundCogIcon,
+  UserRound as UserRoundIcon,
+  UserRoundKey,
+  UserRoundKey as UserRoundKeyIcon,
+  UserRoundMinus,
+  UserRoundMinus as UserRoundMinusIcon,
+  UserRoundPen,
+  UserRoundPen as UserRoundPenIcon,
+  UserRoundPlus,
+  UserRoundPlus as UserRoundPlusIcon,
+  UserRoundSearch,
+  UserRoundSearch as UserRoundSearchIcon,
+  UserRoundX,
+  UserRoundX as UserRoundXIcon,
+  UserSearch,
+  UserSearch as UserSearchIcon,
+  SquareUser as UserSquare,
+  SquareUserRound as UserSquare2,
+  SquareUserRound as UserSquare2Icon,
+  SquareUser as UserSquareIcon,
+  UserStar,
+  UserStar as UserStarIcon,
+  UserX,
+  UserRoundX as UserX2,
+  UserRoundX as UserX2Icon,
+  UserX as UserXIcon,
+  Users,
+  UsersRound as Users2,
+  UsersRound as Users2Icon,
+  Users as UsersIcon,
+  UsersRound,
+  UsersRound as UsersRoundIcon,
+  Utensils,
+  UtensilsCrossed,
+  UtensilsCrossed as UtensilsCrossedIcon,
+  Utensils as UtensilsIcon,
+  UtilityPole,
+  UtilityPole as UtilityPoleIcon,
+  Van,
+  Van as VanIcon,
+  Variable,
+  Variable as VariableIcon,
+  Vault,
+  Vault as VaultIcon,
+  VectorSquare,
+  VectorSquare as VectorSquareIcon,
+  Vegan,
+  Vegan as VeganIcon,
+  VenetianMask,
+  VenetianMask as VenetianMaskIcon,
+  Venus,
+  VenusAndMars,
+  VenusAndMars as VenusAndMarsIcon,
+  Venus as VenusIcon,
+  BadgeCheck as Verified,
+  BadgeCheck as VerifiedIcon,
+  Vibrate,
+  Vibrate as VibrateIcon,
+  VibrateOff,
+  VibrateOff as VibrateOffIcon,
+  Video,
+  Video as VideoIcon,
+  VideoOff,
+  VideoOff as VideoOffIcon,
+  Videotape,
+  Videotape as VideotapeIcon,
+  View,
+  View as ViewIcon,
+  Voicemail,
+  Voicemail as VoicemailIcon,
+  Volleyball,
+  Volleyball as VolleyballIcon,
+  Volume,
+  Volume1,
+  Volume1 as Volume1Icon,
+  Volume2,
+  Volume2 as Volume2Icon,
+  Volume as VolumeIcon,
+  VolumeOff,
+  VolumeOff as VolumeOffIcon,
+  VolumeX,
+  VolumeX as VolumeXIcon,
+  Vote,
+  Vote as VoteIcon,
+  Wallet,
+  WalletMinimal as Wallet2,
+  WalletMinimal as Wallet2Icon,
+  WalletCards,
+  WalletCards as WalletCardsIcon,
+  Wallet as WalletIcon,
+  WalletMinimal,
+  WalletMinimal as WalletMinimalIcon,
+  Wallpaper,
+  Wallpaper as WallpaperIcon,
+  Wand,
+  WandSparkles as Wand2,
+  WandSparkles as Wand2Icon,
+  Wand as WandIcon,
+  WandSparkles,
+  WandSparkles as WandSparklesIcon,
+  Warehouse,
+  Warehouse as WarehouseIcon,
+  WashingMachine,
+  WashingMachine as WashingMachineIcon,
+  Watch,
+  Watch as WatchIcon,
+  Waves,
+  WavesArrowDown,
+  WavesArrowDown as WavesArrowDownIcon,
+  WavesArrowUp,
+  WavesArrowUp as WavesArrowUpIcon,
+  Waves as WavesIcon,
+  WavesLadder,
+  WavesLadder as WavesLadderIcon,
+  Waypoints,
+  Waypoints as WaypointsIcon,
+  Webcam,
+  Webcam as WebcamIcon,
+  Webhook,
+  Webhook as WebhookIcon,
+  WebhookOff,
+  WebhookOff as WebhookOffIcon,
+  Weight,
+  Weight as WeightIcon,
+  WeightTilde,
+  WeightTilde as WeightTildeIcon,
+  Wheat,
+  Wheat as WheatIcon,
+  WheatOff,
+  WheatOff as WheatOffIcon,
+  WholeWord,
+  WholeWord as WholeWordIcon,
+  Wifi,
+  WifiCog,
+  WifiCog as WifiCogIcon,
+  WifiHigh,
+  WifiHigh as WifiHighIcon,
+  Wifi as WifiIcon,
+  WifiLow,
+  WifiLow as WifiLowIcon,
+  WifiOff,
+  WifiOff as WifiOffIcon,
+  WifiPen,
+  WifiPen as WifiPenIcon,
+  WifiSync,
+  WifiSync as WifiSyncIcon,
+  WifiZero,
+  WifiZero as WifiZeroIcon,
+  Wind,
+  WindArrowDown,
+  WindArrowDown as WindArrowDownIcon,
+  Wind as WindIcon,
+  Wine,
+  Wine as WineIcon,
+  WineOff,
+  WineOff as WineOffIcon,
+  Workflow,
+  Workflow as WorkflowIcon,
+  Worm,
+  Worm as WormIcon,
+  TextWrap as WrapText,
+  TextWrap as WrapTextIcon,
+  Wrench,
+  Wrench as WrenchIcon,
+  X,
+  CircleX as XCircle,
+  CircleX as XCircleIcon,
+  X as XIcon,
+  XLineTop,
+  XLineTop as XLineTopIcon,
+  OctagonX as XOctagon,
+  OctagonX as XOctagonIcon,
+  SquareX as XSquare,
+  SquareX as XSquareIcon,
+  Youtube,
+  Youtube as YoutubeIcon,
+  Zap,
+  Zap as ZapIcon,
+  ZapOff,
+  ZapOff as ZapOffIcon,
+  ZodiacAquarius,
+  ZodiacAquarius as ZodiacAquariusIcon,
+  ZodiacAries,
+  ZodiacAries as ZodiacAriesIcon,
+  ZodiacCancer,
+  ZodiacCancer as ZodiacCancerIcon,
+  ZodiacCapricorn,
+  ZodiacCapricorn as ZodiacCapricornIcon,
+  ZodiacGemini,
+  ZodiacGemini as ZodiacGeminiIcon,
+  ZodiacLeo,
+  ZodiacLeo as ZodiacLeoIcon,
+  ZodiacLibra,
+  ZodiacLibra as ZodiacLibraIcon,
+  ZodiacOphiuchus,
+  ZodiacOphiuchus as ZodiacOphiuchusIcon,
+  ZodiacPisces,
+  ZodiacPisces as ZodiacPiscesIcon,
+  ZodiacSagittarius,
+  ZodiacSagittarius as ZodiacSagittariusIcon,
+  ZodiacScorpio,
+  ZodiacScorpio as ZodiacScorpioIcon,
+  ZodiacTaurus,
+  ZodiacTaurus as ZodiacTaurusIcon,
+  ZodiacVirgo,
+  ZodiacVirgo as ZodiacVirgoIcon,
+  ZoomIn,
+  ZoomIn as ZoomInIcon,
+  ZoomOut,
+  ZoomOut as ZoomOutIcon,
+  createLucideIcon,
   distLucideReactJs_entry_default as default,
-  icons
+  icons_exports as icons,
+  lucideReactDefault
 };
 //# sourceMappingURL=lucide-react.js.map

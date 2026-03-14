@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>primer-react.min.js</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "../dist/react-all.min.js",
+          "react-dom": "../dist/react-all.min.js",
+          "react-dom/client": "../dist/react-all.min.js",
+          "react/jsx-runtime": "../dist/react-all.min.js",
+          "@primer/react": "../dist/primer-react.min.js"
+        }
+      }
+    </script>
+    <script src="./vendor/tailwindcss-browser.js"></script>
+    <script src="./vendor/babel.min.js"></script>
+    <script type="text/babel" data-type="module">
+      import React, { useState } from "react";
+      import { createRoot } from "react-dom/client";
+      import { BaseStyles, Button, CounterLabel, Flash, Heading, Label, Spinner, Text, TextInput }
+        from "@primer/react";
+
+      const metrics = [
+        { label: "Bundle", value: "primer-react.min.js" },
+        { label: "Peers", value: "react + react-dom" },
+        { label: "Theme CSS", value: "light.css auto injected" }
+      ];
+
+      function MetricCard({ label, value }) {
+        return (
+          <div className="rounded-[24px] border border-slate-200 bg-white/90 p-5 shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">{label}</p>
+            <p className="mt-3 text-lg font-semibold text-slate-900">{value}</p>
+          </div>
+        );
+      }
+
+      function App() {
+        const [query, setQuery] = useState("primer");
+        const [loading, setLoading] = useState(false);
+
+        function handleSimulate() {
+          setLoading(true);
+          window.setTimeout(() => setLoading(false), 700);
+        }
+
+        return (
+          <BaseStyles>
+            <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#dbeafe_0%,_#f8fafc_38%,_#e2e8f0_100%)] px-4 py-10 text-slate-900">
+              <section className="mx-auto max-w-6xl">
+                <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+                  <div className="rounded-[36px] border border-white/70 bg-white/88 p-8 shadow-[0_28px_90px_rgba(15,23,42,0.12)] backdrop-blur">
+                    <div className="flex flex-wrap items-center justify-between gap-4">
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.34em] text-sky-700">
+                          Primer React Bundle
+                        </p>
+                        <Heading as="h1" className="mt-2 !text-4xl !font-semibold !tracking-tight !text-slate-900">
+                          primer-react.min.js
+                        </Heading>
+                      </div>
+                      <CounterLabel scheme="secondary">theme included</CounterLabel>
+                    </div>
+
+                    <Text as="p" className="mt-5 block max-w-2xl !text-sm !leading-7 !text-slate-600">
+                      这个页面直接从浏览器 ESM bundle 导入 Primer React 组件，并验证附加的主题 CSS 会以副作用形式自动注入。
+                    </Text>
+
+                    <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                      {metrics.map((item) => (
+                        <MetricCard key={item.label} {...item} />
+                      ))}
+                    </div>
+
+                    <div className="mt-8 rounded-[28px] border border-slate-200 bg-slate-50 p-6">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <Label variant="accent">Interactive</Label>
+                        <Label variant="success">CSS side effect</Label>
+                        <Label variant="secondary">No extra stylesheet tag</Label>
+                      </div>
+
+                      <div className="mt-5 grid gap-4 sm:grid-cols-[1fr_auto]">
+                        <TextInput
+                          aria-label="Component search"
+                          block
+                          value={query}
+                          onChange={(event) => setQuery(event.target.value)}
+                          placeholder="Search components"
+                        />
+                        <Button variant="primary" onClick={handleSimulate} style={{ minWidth: "7rem" }}>
+                          {loading ? "Loading..." : "Simulate load"}
+                        </Button>
+                      </div>
+
+                      <div className="mt-5">
+                        <Flash variant="success">
+                          当前输入: <strong>{query || "empty"}</strong>
+                        </Flash>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid gap-5">
+                    <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-[0_16px_45px_rgba(15,23,42,0.08)]">
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+                        Runtime status
+                      </p>
+                      <Heading as="h2" className="mt-3 !text-3xl !font-semibold !tracking-tight !text-slate-900">
+                        Bundle imported successfully
+                      </Heading>
+                      <Text as="p" className="mt-4 block !text-sm !leading-7 !text-slate-600">
+                        这里保留了实际交互状态，用来确认主题变量、组件默认样式以及 React peer dependency shim 都已经生效。
+                      </Text>
+                      <div className="mt-6 flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3">
+                        {loading ? (
+                          <div className="inline-flex animate-spin">
+                            <Spinner size="small" />
+                          </div>
+                        ) : (
+                          <div className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                        )}
+                        <span className="text-sm font-medium text-slate-700">
+                          {loading ? "Simulating async state..." : "Idle and ready"}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="rounded-[28px] border border-slate-200 bg-white/90 p-6 shadow-[0_16px_45px_rgba(15,23,42,0.08)]">
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
+                        Imported members
+                      </p>
+                      <div className="mt-5 flex flex-wrap gap-3">
+                        {[
+                          "BaseStyles",
+                          "Button",
+                          "CounterLabel",
+                          "Flash",
+                          "Heading",
+                          "Label",
+                          "Spinner",
+                          "Text",
+                          "TextInput"
+                        ].map((name) => (
+                          <span
+                            key={name}
+                            className="rounded-full border border-slate-200 bg-slate-100 px-3 py-1.5 text-sm font-medium text-slate-700"
+                          >
+                            {name}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </main>
+          </BaseStyles>
+        );
+      }
+
+      createRoot(document.getElementById("app")).render(<App />);
+    </script>
+  </head>
+  <body class="bg-slate-100" data-color-mode="light" data-light-theme="light">
+    <div id="app"></div>
+  </body>
+</html>

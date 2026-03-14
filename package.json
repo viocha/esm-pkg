@@ -1,6 +1,6 @@
 {
   "name": "@viocha/esm-pkg",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Prebuilt browser ESM bundles for React, antd, clsx, lucide-react, htm, and shadcn/ui.",
   "keywords": [
     "esm",
@@ -25,8 +25,12 @@
     "./react-all": "./dist/react-all.min.js",
     "./antd": "./dist/antd.min.js",
     "./ant-design-icons": "./dist/ant-design-icons.min.js",
+    "./mui-icons-material": "./dist/mui-icons-material.min.js",
+    "./primer-octicons-react": "./dist/primer-octicons-react.min.js",
     "./clsx": "./dist/clsx.min.js",
     "./lucide-react": "./dist/lucide-react.min.js",
+    "./mui-material": "./dist/mui-material.min.js",
+    "./primer-react": "./dist/primer-react.min.js",
     "./htm": "./dist/htm.min.js",
     "./shadcn": "./dist/shadcn.min.js"
   },
@@ -44,7 +48,14 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^6.1.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.9",
+    "@mui/material": "^7.3.9",
     "@playwright/test": "^1.58.2",
+    "@primer/octicons-react": "^19.22.0",
+    "@primer/primitives": "11.5.1",
+    "@primer/react": "38.15.0",
     "antd": "^6.3.2",
     "clsx": "^2.1.1",
     "esbuild": "^0.27.4",

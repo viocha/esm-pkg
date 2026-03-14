@@ -25,6 +25,22 @@ export default {
       "title": "lucide-react.min.js"
     },
     {
+      "file": "./mui-icons-material.html",
+      "title": "mui-icons-material.min.js"
+    },
+    {
+      "file": "./mui-material.html",
+      "title": "mui-material.min.js"
+    },
+    {
+      "file": "./primer-octicons-react.html",
+      "title": "primer-octicons-react.min.js"
+    },
+    {
+      "file": "./primer-react.html",
+      "title": "primer-react.min.js"
+    },
+    {
       "file": "./react-all.html",
       "title": "react-all.min.js"
     },
@@ -44,13 +60,13 @@ export default {
       ],
       "esm": {
         "file": "../dist/ant-design-icons.js",
-        "size": 1959421,
-        "sizeText": "1.87 MB"
+        "size": 1828400,
+        "sizeText": "1.74 MB"
       },
       "min": {
         "file": "../dist/ant-design-icons.min.js",
-        "size": 1050808,
-        "sizeText": "1.00 MB"
+        "size": 1019773,
+        "sizeText": "995.87 KB"
       }
     },
     {
@@ -63,13 +79,13 @@ export default {
       ],
       "esm": {
         "file": "../dist/antd.js",
-        "size": 3715704,
-        "sizeText": "3.54 MB"
+        "size": 3731082,
+        "sizeText": "3.56 MB"
       },
       "min": {
         "file": "../dist/antd.min.js",
-        "size": 1513003,
-        "sizeText": "1.44 MB"
+        "size": 1489130,
+        "sizeText": "1.42 MB"
       }
     },
     {
@@ -82,13 +98,13 @@ export default {
       ],
       "esm": {
         "file": "../dist/clsx.js",
-        "size": 2068,
-        "sizeText": "2.02 KB"
+        "size": 1564,
+        "sizeText": "1.53 KB"
       },
       "min": {
         "file": "../dist/clsx.min.js",
-        "size": 972,
-        "sizeText": "972 B"
+        "size": 780,
+        "sizeText": "780 B"
       }
     },
     {
@@ -101,13 +117,13 @@ export default {
       ],
       "esm": {
         "file": "../dist/htm.js",
-        "size": 3372,
-        "sizeText": "3.29 KB"
+        "size": 2900,
+        "sizeText": "2.83 KB"
       },
       "min": {
         "file": "../dist/htm.min.js",
-        "size": 1772,
-        "sizeText": "1.73 KB"
+        "size": 1584,
+        "sizeText": "1.55 KB"
       }
     },
     {
@@ -120,13 +136,89 @@ export default {
       ],
       "esm": {
         "file": "../dist/lucide-react.js",
-        "size": 1447321,
-        "sizeText": "1.38 MB"
+        "size": 1286979,
+        "sizeText": "1.23 MB"
       },
       "min": {
         "file": "../dist/lucide-react.min.js",
-        "size": 795407,
-        "sizeText": "776.76 KB"
+        "size": 748947,
+        "sizeText": "731.39 KB"
+      }
+    },
+    {
+      "name": "mui-icons-material",
+      "packageVersions": [
+        {
+          "name": "@mui/icons-material",
+          "version": "7.3.9"
+        }
+      ],
+      "esm": {
+        "file": "../dist/mui-icons-material.js",
+        "size": 7952729,
+        "sizeText": "7.58 MB"
+      },
+      "min": {
+        "file": "../dist/mui-icons-material.min.js",
+        "size": 4752101,
+        "sizeText": "4.53 MB"
+      }
+    },
+    {
+      "name": "mui-material",
+      "packageVersions": [
+        {
+          "name": "@mui/material",
+          "version": "7.3.9"
+        }
+      ],
+      "esm": {
+        "file": "../dist/mui-material.js",
+        "size": 1920654,
+        "sizeText": "1.83 MB"
+      },
+      "min": {
+        "file": "../dist/mui-material.min.js",
+        "size": 556154,
+        "sizeText": "543.12 KB"
+      }
+    },
+    {
+      "name": "primer-octicons-react",
+      "packageVersions": [
+        {
+          "name": "@primer/octicons-react",
+          "version": "19.22.0"
+        }
+      ],
+      "esm": {
+        "file": "../dist/primer-octicons-react.js",
+        "size": 584196,
+        "sizeText": "570.50 KB"
+      },
+      "min": {
+        "file": "../dist/primer-octicons-react.min.js",
+        "size": 434682,
+        "sizeText": "424.49 KB"
+      }
+    },
+    {
+      "name": "primer-react",
+      "packageVersions": [
+        {
+          "name": "@primer/react",
+          "version": "38.15.0"
+        }
+      ],
+      "esm": {
+        "file": "../dist/primer-react.js",
+        "size": 1763576,
+        "sizeText": "1.68 MB"
+      },
+      "min": {
+        "file": "../dist/primer-react.min.js",
+        "size": 1069678,
+        "sizeText": "1.02 MB"
       }
     },
     {

@@ -54,7 +54,18 @@ function isValidIdentifier(input) {
 }
 
 async function getModuleNamedExports(specifier) {
-  const namespace = await import(specifier);
+  let namespace;
+
+  try {
+    namespace = await import(specifier);
+  } catch (error) {
+    if (error?.code === "ERR_UNKNOWN_FILE_EXTENSION" && /(?:^|[\\/])[^\\/]+\.css$/.test(error.message)) {
+      return null;
+    }
+
+    throw error;
+  }
+
   return Object.keys(namespace)
     .filter((key) => key !== "default" && key !== "__esModule" && isValidIdentifier(key))
     .sort((left, right) => left.localeCompare(right));
@@ -83,6 +94,9 @@ async function getExpectedExports(bundle) {
   }
 
   const exportGroups = await Promise.all(expandModules(bundle.modules).map((specifier) => getModuleNamedExports(specifier)));
+  if (exportGroups.some((value) => value === null)) {
+    return null;
+  }
   return unique(exportGroups.flat()).sort((left, right) => left.localeCompare(right));
 }
 
@@ -129,15 +143,17 @@ for (const bundle of bundleDefinitions) {
           };
         }, filePath);
 
-        const missing = expectedExports.filter((name) => !actual.exportNames.includes(name));
+        const missing = expectedExports?.filter((name) => !actual.exportNames.includes(name)) ?? [];
 
         if (bundle.name !== "shadcn") {
           expect(actual.hasDefault, `${bundle.name} ${label} should expose default export`).toBe(true);
         }
-        expect(
-          missing,
-          `${bundle.name} ${label} is missing exports: ${missing.join(", ")}`
-        ).toEqual([]);
+        if (expectedExports !== null) {
+          expect(
+            missing,
+            `${bundle.name} ${label} is missing exports: ${missing.join(", ")}`
+          ).toEqual([]);
+        }
       });
     }
   });

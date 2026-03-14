@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>mui-icons-material.min.js</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "../dist/react-all.min.js",
+          "react-dom/client": "../dist/react-all.min.js",
+          "react/jsx-runtime": "../dist/react-all.min.js",
+          "react/jsx-dev-runtime": "../dist/react-all.min.js",
+          "@mui/icons-material": "../dist/mui-icons-material.min.js"
+        }
+      }
+    </script>
+    <script src="./vendor/babel.min.js"></script>
+    <script type="text/babel" data-type="module">
+      import React from "react";
+      import { createRoot } from "react-dom/client";
+      import { Favorite, Home, Search, Settings } from "@mui/icons-material";
+
+      const icons = [
+        ["Home", Home],
+        ["Search", Search],
+        ["Favorite", Favorite],
+        ["Settings", Settings]
+      ];
+
+      function App() {
+        return (
+          <main
+            style={{
+              display: "grid",
+              gap: "16px",
+              fontFamily: '"Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif',
+              margin: "24px auto",
+              maxWidth: "620px"
+            }}
+          >
+            <h1>mui-icons-material.min.js</h1>
+            <div
+              style={{
+                color: "#2563eb",
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "20px"
+              }}
+            >
+              {icons.map(([label, Icon]) => (
+                <div
+                  key={label}
+                  style={{
+                    alignItems: "center",
+                    background: "#ffffff",
+                    border: "1px solid #a4b3c7",
+                    borderRadius: "14px",
+                    display: "flex",
+                    gap: "10px",
+                    padding: "12px 16px"
+                  }}
+                >
+                  <Icon sx={{ fontSize: 24 }} />
+                  <span>{label}</span>
+                </div>
+              ))}
+            </div>
+          </main>
+        );
+      }
+
+      createRoot(document.getElementById("app")).render(<App />);
+    </script>
+  </head>
+  <body style={{ background: "#f8fafc" }}>
+    <div id="app"></div>
+  </body>
+</html>

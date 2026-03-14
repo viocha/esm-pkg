@@ -38,21 +38,8 @@ async function inlineCssFileUrls(cssSource, baseDir) {
 }
 
 async function loadTailwindNodeApi(workspaceRoot) {
-	const tailwindNodePath = path.join(
-		workspaceRoot,
-		"node_modules",
-		"@tailwindcss",
-		"node",
-		"dist",
-		"index.mjs"
-	);
-	const tailwindOxidePath = path.join(
-		workspaceRoot,
-		"node_modules",
-		"@tailwindcss",
-		"oxide",
-		"index.js"
-	);
+	const tailwindNodePath = path.join(workspaceRoot, "node_modules", "@tailwindcss", "node", "dist", "index.mjs");
+	const tailwindOxidePath = path.join(workspaceRoot, "node_modules", "@tailwindcss", "oxide", "index.js");
 
 	const [tailwindNodeApi, tailwindOxideApi] = await Promise.all([
 		import(pathToFileURL(tailwindNodePath).href),
@@ -121,21 +108,8 @@ async function ensureShadcnWorkspace(projectRoot) {
   const sentinelComponent = path.join(workspaceRoot, "src", "components", "ui", "sidebar.tsx");
   const workspacePackageLock = path.join(workspaceRoot, "package-lock.json");
   const workspacePnpmLock = path.join(workspaceRoot, "pnpm-lock.yaml");
-  const tailwindNodeModule = path.join(
-    workspaceRoot,
-    "node_modules",
-    "@tailwindcss",
-    "node",
-    "dist",
-    "index.mjs"
-  );
-  const tailwindOxideModule = path.join(
-    workspaceRoot,
-    "node_modules",
-    "@tailwindcss",
-    "oxide",
-    "index.js"
-  );
+  const tailwindNodeModule = path.join(workspaceRoot, "node_modules", "@tailwindcss", "node", "dist", "index.mjs");
+  const tailwindOxideModule = path.join(workspaceRoot, "node_modules", "@tailwindcss", "oxide", "index.js");
 
   await fs.mkdir(workspaceParent, { recursive: true });
 
@@ -143,23 +117,8 @@ async function ensureShadcnWorkspace(projectRoot) {
     await runCommand(
       pnpmCommand,
       [
-        "dlx",
-        "shadcn@latest",
-        "init",
-        "-t",
-        "vite",
-				"-b",
-				"radix",
-				"-p",
-				"nova",
-				"-y",
-				"--no-monorepo",
-				"--css-variables",
-				"--no-rtl",
-				"-n",
-        workspaceProjectName,
-        "--cwd",
-        workspaceParent
+        "dlx", "shadcn@latest", "init", "-t", "vite", "-b", "radix", "-p", "nova", "-y",
+        "--no-monorepo", "--css-variables", "--no-rtl", "-n", workspaceProjectName, "--cwd", workspaceParent
       ],
       projectRoot
     );
@@ -207,12 +166,7 @@ function createShadcnStyleRuntimeSource(inlinedGeistCss, resolvedCss) {
 
 async function createShadcnStyleRuntime(projectRoot, workspaceRoot) {
 	const examplesVendorDir = path.resolve(projectRoot, "examples", "vendor");
-	const geistSourceDir = path.join(
-		workspaceRoot,
-		"node_modules",
-		"@fontsource-variable",
-		"geist"
-	);
+	const geistSourceDir = path.join(workspaceRoot, "node_modules", "@fontsource-variable", "geist");
 	const sourceCssFile = path.join(workspaceRoot, "src", "index.css");
 
 	await fs.mkdir(examplesVendorDir, { recursive: true });
@@ -283,10 +237,7 @@ function extractRuntimeExports(source) {
 async function collectShadcnExports(workspaceRoot) {
 	const sourceRoot = path.join(workspaceRoot, "src");
 	const utilsFile = path.join(sourceRoot, "lib", "utils.ts");
-	const extraExportFiles = [
-		path.join(sourceRoot, "hooks", "use-mobile.ts"),
-		path.join(sourceRoot, "components", "theme-provider.tsx")
-	];
+	const extraExportFiles = [path.join(sourceRoot, "hooks", "use-mobile.ts"), path.join(sourceRoot, "components", "theme-provider.tsx")];
 	const uiDir = path.join(sourceRoot, "components", "ui");
 	const componentFiles = (await fs.readdir(uiDir))
 		.filter((name) => name.endsWith(".ts") || name.endsWith(".tsx"))

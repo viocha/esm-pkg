@@ -19,12 +19,11 @@
     <script src="./vendor/tailwindcss-browser.js"></script>
     <script src="./vendor/babel.min.js"></script>
     <script type="text/babel" data-type="module">
-			import React, { useState } from "react";
+      import React, { useState } from "react";
       import { createRoot } from "react-dom/client";
       import {
-        Alert, AlertDescription, AlertTitle, Badge, Button, Card, CardContent, CardDescription,
-        CardHeader, CardTitle, Checkbox, Input, Label, Separator, Tabs, TabsContent, TabsList,
-        TabsTrigger, Textarea
+        Alert, AlertDescription, AlertTitle, Badge, Button, Card, CardContent, CardDescription, CardHeader,
+        CardTitle, Checkbox, Input, Label, Separator, Tabs, TabsContent, TabsList, TabsTrigger, Textarea
       } from "shadcn";
 			
       createRoot(document.getElementById("app")).render(<App />);
@@ -145,14 +144,18 @@
                   </Card>
 
                   <Card>
-                  <CardHeader>
-                    <CardTitle>导入方式</CardTitle>
-                    <CardDescription>这里展示同一份导入示意文本，便于直接比较视觉结果。</CardDescription>
-                  </CardHeader>
-                    <CardContent>
-                      <pre className="overflow-x-auto rounded-md border bg-muted p-4 text-sm">
-                        <code>{`import { Button, Card, Input, Tabs } from "shadcn";`}</code>
-                      </pre>
+                    <CardHeader>
+                      <CardTitle>覆盖组件</CardTitle>
+                      <CardDescription>这里列出当前页面实际消费的主要 shadcn 组件。</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div className="flex flex-wrap gap-2">
+                        {["Alert", "Badge", "Button", "Card", "Checkbox", "Input", "Tabs", "Textarea"].map((name) => (
+                          <Badge key={name} variant="outline">
+                            {name}
+                          </Badge>
+                        ))}
+                      </div>
                     </CardContent>
                   </Card>
                 </div>
