@@ -3,6 +3,7 @@ import { pathToFileURL } from "node:url";
 import { buildStandardBundle } from "./build-standard-bundle.mjs";
 import { buildShadcnBundle } from "./build-shadcn.mjs";
 import { generateExamplesIndex } from "./generate-examples-index.mjs";
+import { syncExampleVendorFiles } from "./sync-example-vendor.mjs";
 
 const projectRoot = process.cwd();
 const configPath = path.resolve(projectRoot, "esm-pkg.config.mjs");
@@ -28,7 +29,7 @@ async function main() {
   }
 
   results.push(await buildShadcnBundle(projectRoot));
-
+  await syncExampleVendorFiles(projectRoot);
   await generateExamplesIndex(projectRoot);
 
   for (const result of results) {

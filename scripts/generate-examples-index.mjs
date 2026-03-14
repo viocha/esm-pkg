@@ -8,6 +8,7 @@ const shadcnBundle = {
   outFile: "dist/shadcn.js",
   minifiedOutFile: "dist/shadcn.min.js"
 };
+const exampleRuntimePackages = ["@babel/standalone", "@tailwindcss/browser"];
 
 function unique(items) {
   return [...new Set(items)];
@@ -166,6 +167,9 @@ export async function generateExamplesIndex(projectRoot = process.cwd()) {
   }
 
   bundles.sort((left, right) => left.name.localeCompare(right.name));
+  const runtimePackages = await Promise.all(
+    exampleRuntimePackages.map((packageName) => getPackageVersionInfo(packageName))
+  );
 
   const output = `export default ${JSON.stringify(
     {
@@ -173,6 +177,7 @@ export async function generateExamplesIndex(projectRoot = process.cwd()) {
         name: packageJson.name,
         version: packageJson.version
       },
+      exampleRuntimePackages: runtimePackages,
       examples,
       bundles
     },

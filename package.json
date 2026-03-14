@@ -41,6 +41,7 @@
     "build": "node ./scripts/build-all.mjs",
     "build:index": "node ./scripts/generate-examples-index.mjs",
     "build:shadcn": "node ./scripts/build-shadcn.mjs",
+    "build:vendor": "node ./scripts/sync-example-vendor.mjs",
     "test:e2e": "pnpm run build && playwright test"
   },
   "engines": {
@@ -48,6 +49,7 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^6.1.0",
+    "@babel/standalone": "^7.29.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.9",
@@ -56,6 +58,7 @@
     "@primer/octicons-react": "^19.22.0",
     "@primer/primitives": "11.5.1",
     "@primer/react": "38.15.0",
+    "@tailwindcss/browser": "^4.2.1",
     "antd": "^6.3.2",
     "clsx": "^2.1.1",
     "esbuild": "^0.27.4",

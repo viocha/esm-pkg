@@ -7,8 +7,6 @@ import { build } from "esbuild";
 const workspaceParentName = ".shadcn-workdir";
 const workspaceProjectName = "shadcn-bundle";
 const shadcnOutFile = "dist/shadcn.js";
-const packageManager = "pnpm@10.18.0";
-const pnpmCommand = process.platform === "win32" ? "pnpm.cmd" : "pnpm";
 
 function normalizePath(input) {
 	return input.replace(/\\/g, "/");
@@ -70,17 +68,6 @@ async function exists(filePath) {
   }
 }
 
-async function updatePackageManager(packageJsonFile) {
-  const packageJson = JSON.parse(await fs.readFile(packageJsonFile, "utf8"));
-
-  if (packageJson.packageManager === packageManager) {
-    return;
-  }
-
-  packageJson.packageManager = packageManager;
-  await fs.writeFile(`${packageJsonFile}`, `${JSON.stringify(packageJson, null, 2)}\n`);
-}
-
 async function runCommand(command, args, cwd) {
   await new Promise((resolve, reject) => {
     const child = spawn(command, args, {
@@ -106,7 +93,6 @@ async function ensureShadcnWorkspace(projectRoot) {
   const workspaceRoot = path.join(workspaceParent, workspaceProjectName);
   const workspacePackageJson = path.join(workspaceRoot, "package.json");
   const sentinelComponent = path.join(workspaceRoot, "src", "components", "ui", "sidebar.tsx");
-  const workspacePackageLock = path.join(workspaceRoot, "package-lock.json");
   const workspacePnpmLock = path.join(workspaceRoot, "pnpm-lock.yaml");
   const tailwindNodeModule = path.join(workspaceRoot, "node_modules", "@tailwindcss", "node", "dist", "index.mjs");
   const tailwindOxideModule = path.join(workspaceRoot, "node_modules", "@tailwindcss", "oxide", "index.js");
@@ -115,7 +101,7 @@ async function ensureShadcnWorkspace(projectRoot) {
 
   if (!(await exists(workspacePackageJson))) {
     await runCommand(
-      pnpmCommand,
+      "pnpm",
       [
         "dlx", "shadcn@latest", "init", "-t", "vite", "-b", "radix", "-p", "nova", "-y",
         "--no-monorepo", "--css-variables", "--no-rtl", "-n", workspaceProjectName, "--cwd", workspaceParent
@@ -124,29 +110,25 @@ async function ensureShadcnWorkspace(projectRoot) {
     );
   }
 
-  await updatePackageManager(workspacePackageJson);
-
   if (!(await exists(sentinelComponent))) {
     await runCommand(
-      pnpmCommand,
+      "pnpm",
       ["dlx", "shadcn@latest", "add", "--all", "-y", "--cwd", workspaceRoot],
       projectRoot
     );
   }
 
-  if (!(await exists(workspacePnpmLock)) || (await exists(workspacePackageLock))) {
-    await runCommand(pnpmCommand, ["install"], workspaceRoot);
+  if (!(await exists(workspacePnpmLock))) {
+    await runCommand("pnpm", ["install"], workspaceRoot);
   }
 
   if (!(await exists(tailwindNodeModule)) || !(await exists(tailwindOxideModule))) {
     await runCommand(
-      pnpmCommand,
+      "pnpm",
       ["add", "-D", "@tailwindcss/node", "@tailwindcss/oxide"],
       workspaceRoot
     );
   }
-
-  await fs.rm(workspacePackageLock, { force: true });
 
   return workspaceRoot;
 }

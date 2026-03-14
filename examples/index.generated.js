@@ -1,8 +1,18 @@
 export default {
   "package": {
     "name": "@viocha/esm-pkg",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
+  "exampleRuntimePackages": [
+    {
+      "name": "@babel/standalone",
+      "version": "7.29.1"
+    },
+    {
+      "name": "@tailwindcss/browser",
+      "version": "4.2.1"
+    }
+  ],
   "examples": [
     {
       "file": "./ant-design-icons.html",

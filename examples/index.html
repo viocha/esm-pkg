@@ -61,6 +61,21 @@
                   {`${data.package.name}@${data.package.version}`}
                 </span>
               </div>
+              <div className="mt-4">
+                <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
+                  Example runtimes
+                </p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {data.exampleRuntimePackages.map((pkg) => (
+                    <span
+                      key={pkg.name}
+                      className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-700 ring-1 ring-slate-200"
+                    >
+                      {`${pkg.name}@${pkg.version}`}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </header>
 
             <section className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
