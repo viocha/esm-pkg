@@ -1,5 +1,4 @@
 node_modules/
 .esm-pkg/
-.shadcn-workdir/
 test-results/
 playwright-report/

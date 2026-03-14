@@ -1,6 +1,6 @@
 {
   "name": "@viocha/esm-pkg",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Prebuilt browser ESM bundles for React, antd, clsx, lucide-react, htm, and shadcn/ui.",
   "keywords": [
     "esm",
@@ -43,7 +43,9 @@
     "build:index": "node ./scripts/generate-examples-index.mjs",
     "build:shadcn": "node ./scripts/build-shadcn.mjs",
     "build:vendor": "node ./scripts/sync-example-vendor.mjs",
-    "test:e2e": "pnpm run build && playwright test"
+    "shadcn:update": "node ./scripts/update-shadcn-workspace.mjs",
+    "test:e2e": "playwright test",
+    "build+test": "npm run build && npm run test:e2e"
   },
   "engines": {
     "node": ">=18.18.0"

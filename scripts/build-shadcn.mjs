@@ -4,8 +4,7 @@ import { spawn } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { build } from "esbuild";
 
-const workspaceParentName = ".shadcn-workdir";
-const workspaceProjectName = "shadcn-bundle";
+const workspaceDirName = "shadcn-workspace";
 const shadcnOutFile = "dist/shadcn.js";
 
 function normalizePath(input) {
@@ -89,44 +88,31 @@ async function runCommand(command, args, cwd) {
 }
 
 async function ensureShadcnWorkspace(projectRoot) {
-  const workspaceParent = path.resolve(projectRoot, workspaceParentName);
-  const workspaceRoot = path.join(workspaceParent, workspaceProjectName);
+  const workspaceRoot = path.resolve(projectRoot, workspaceDirName);
   const workspacePackageJson = path.join(workspaceRoot, "package.json");
-  const sentinelComponent = path.join(workspaceRoot, "src", "components", "ui", "sidebar.tsx");
   const workspacePnpmLock = path.join(workspaceRoot, "pnpm-lock.yaml");
   const tailwindNodeModule = path.join(workspaceRoot, "node_modules", "@tailwindcss", "node", "dist", "index.mjs");
   const tailwindOxideModule = path.join(workspaceRoot, "node_modules", "@tailwindcss", "oxide", "index.js");
 
-  await fs.mkdir(workspaceParent, { recursive: true });
-
   if (!(await exists(workspacePackageJson))) {
-    await runCommand(
-      "pnpm",
-      [
-        "dlx", "shadcn@latest", "init", "-t", "vite", "-b", "radix", "-p", "nova", "-y",
-        "--no-monorepo", "--css-variables", "--no-rtl", "-n", workspaceProjectName, "--cwd", workspaceParent
-      ],
-      projectRoot
-    );
-  }
-
-  if (!(await exists(sentinelComponent))) {
-    await runCommand(
-      "pnpm",
-      ["dlx", "shadcn@latest", "add", "--all", "-y", "--cwd", workspaceRoot],
-      projectRoot
+    throw new Error(
+      `Missing ${workspaceDirName}/package.json. Run "pnpm run shadcn:update" to initialize or refresh the committed shadcn workspace.`
     );
   }
 
   if (!(await exists(workspacePnpmLock))) {
-    await runCommand("pnpm", ["install"], workspaceRoot);
+    throw new Error(
+      `Missing ${workspaceDirName}/pnpm-lock.yaml. Commit the workspace lockfile so shadcn builds stay reproducible.`
+    );
   }
 
   if (!(await exists(tailwindNodeModule)) || !(await exists(tailwindOxideModule))) {
-    await runCommand(
-      "pnpm",
-      ["add", "-D", "@tailwindcss/node", "@tailwindcss/oxide"],
-      workspaceRoot
+    await runCommand("pnpm", ["install", "--frozen-lockfile"], workspaceRoot);
+  }
+
+  if (!(await exists(tailwindNodeModule)) || !(await exists(tailwindOxideModule))) {
+    throw new Error(
+      `Missing Tailwind build dependencies in ${workspaceDirName}. Run "pnpm run shadcn:update" to refresh the committed shadcn workspace.`
     );
   }
 

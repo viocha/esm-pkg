@@ -1,7 +1,7 @@
 export default {
   "package": {
     "name": "@viocha/esm-pkg",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "exampleRuntimePackages": [
     {
@@ -263,7 +263,7 @@ export default {
       ],
       "esm": {
         "file": "../dist/shadcn.js",
-        "size": 2104508,
+        "size": 2104499,
         "sizeText": "2.01 MB"
       },
       "min": {

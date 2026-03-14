@@ -6,6 +6,7 @@ import { build } from "esbuild";
 const reactDomExtras = ["react-dom/client"];
 const reactRuntimeExtras = ["react/jsx-runtime", "react/jsx-dev-runtime"];
 const require = createRequire(import.meta.url);
+const transientWriteErrorCodes = new Set(["UNKNOWN", "EBUSY", "EPERM"]);
 
 function unique(items) {
   return [...new Set(items)];
@@ -77,6 +78,31 @@ function getCssSidecarFiles(outFile) {
 
 function normalizePath(input) {
   return input.replace(/\\/g, "/");
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function writeFileWithRetry(filePath, contents, maxAttempts = 5) {
+  let lastError;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      await fs.writeFile(filePath, contents);
+      return;
+    } catch (error) {
+      lastError = error;
+
+      if (!transientWriteErrorCodes.has(error?.code) || attempt === maxAttempts) {
+        throw error;
+      }
+
+      await sleep(50 * attempt);
+    }
+  }
+
+  throw lastError;
 }
 
 function createCssRuntimeSource(cssSource, runtimeId) {
@@ -326,12 +352,10 @@ async function writeNonCssOutputs(buildResult) {
     (outputFile) => !outputFile.path.endsWith(".css") && !outputFile.path.endsWith(".css.map")
   );
 
-  await Promise.all(
-    outputFiles.map(async (outputFile) => {
-      await fs.mkdir(path.dirname(outputFile.path), { recursive: true });
-      await fs.writeFile(outputFile.path, outputFile.contents);
-    })
-  );
+  for (const outputFile of outputFiles) {
+    await fs.mkdir(path.dirname(outputFile.path), { recursive: true });
+    await writeFileWithRetry(outputFile.path, outputFile.contents);
+  }
 }
 
 async function removeFilesIfPresent(projectRoot, files) {

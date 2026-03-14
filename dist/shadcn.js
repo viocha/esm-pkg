@@ -42,7 +42,7 @@ var __privateGet = (obj, member, getter) => (__accessCheck(obj, member, "read fr
 var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot add the same private member more than once") : member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
 var __privateSet = (obj, member, value, setter) => (__accessCheck(obj, member, "write to private field"), setter ? setter.call(obj, value) : member.set(obj, value), value);
 
-// ../../.esm-pkg/shadcn.react-shim.mjs
+// ../.esm-pkg/shadcn.react-shim.mjs
 var shadcn_react_shim_exports = {};
 __export(shadcn_react_shim_exports, {
   default: () => shadcn_react_shim_default
@@ -51,7 +51,7 @@ import React from "react";
 import * as react_star from "react";
 var shadcn_react_shim_default;
 var init_shadcn_react_shim = __esm({
-  "../../.esm-pkg/shadcn.react-shim.mjs"() {
+  "../.esm-pkg/shadcn.react-shim.mjs"() {
     __reExport(shadcn_react_shim_exports, react_star);
     shadcn_react_shim_default = React;
   }
@@ -3334,7 +3334,7 @@ var require_with_selector = __commonJS({
   }
 });
 
-// ../../.esm-pkg/shadcn.style-runtime.mjs
+// ../.esm-pkg/shadcn.style-runtime.mjs
 if (typeof document !== "undefined" && !document.querySelector('style[data-shadcn-tailwind-runtime="true"]')) {
   const style = document.createElement("style");
   style.type = "text/css";

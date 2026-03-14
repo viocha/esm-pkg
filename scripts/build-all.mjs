@@ -1,3 +1,4 @@
+import os from "node:os";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { buildStandardBundle } from "./build-standard-bundle.mjs";
@@ -8,6 +9,30 @@ import { syncExampleVendorFiles } from "./sync-example-vendor.mjs";
 
 const projectRoot = process.cwd();
 const configPath = path.resolve(projectRoot, "esm-pkg.config.mjs");
+const defaultBuildConcurrency = Math.max(1, os.availableParallelism() - 1);
+
+function getBuildConcurrency() {
+  const rawValue = process.env.BUILD_CONCURRENCY;
+  const parsedValue = Number.parseInt(rawValue ?? "", 10);
+  return Number.isInteger(parsedValue) && parsedValue > 0 ? parsedValue : defaultBuildConcurrency;
+}
+
+async function mapWithConcurrency(items, concurrency, worker) {
+  const results = new Array(items.length);
+  let nextIndex = 0;
+
+  async function runNext() {
+    while (nextIndex < items.length) {
+      const currentIndex = nextIndex;
+      nextIndex += 1;
+      results[currentIndex] = await worker(items[currentIndex], currentIndex);
+    }
+  }
+
+  const taskCount = Math.min(concurrency, items.length);
+  await Promise.all(Array.from({ length: taskCount }, () => runNext()));
+  return results;
+}
 
 async function loadConfig() {
   const loaded = await import(pathToFileURL(configPath).href);
@@ -22,22 +47,19 @@ async function loadConfig() {
 
 async function main() {
   const config = await loadConfig();
-  const results = [];
-
-  for (const bundleConfig of config) {
+  const results = await mapWithConcurrency(config, getBuildConcurrency(), async (bundleConfig) => {
     const result = await buildStandardBundle(projectRoot, bundleConfig);
-    results.push(result);
-  }
-
-  results.push(await buildShadcnBundle(projectRoot));
+    console.log(`built ${result.outFile} <- ${result.modules.join(", ")}`);
+    console.log(`built ${result.minifiedOutFile} <- ${result.modules.join(", ")} (min)`);
+    return result;
+  });
+  const shadcnResult = await buildShadcnBundle(projectRoot);
+  console.log(`built ${shadcnResult.outFile} <- ${shadcnResult.modules.join(", ")}`);
+  console.log(`built ${shadcnResult.minifiedOutFile} <- ${shadcnResult.modules.join(", ")} (min)`);
+  results.push(shadcnResult);
   await syncExampleVendorFiles(projectRoot);
   await generatePackageExports(projectRoot);
   await generateExamplesIndex(projectRoot);
-
-  for (const result of results) {
-    console.log(`built ${result.outFile} <- ${result.modules.join(", ")}`);
-    console.log(`built ${result.minifiedOutFile} <- ${result.modules.join(", ")} (min)`);
-  }
 }
 
 main().catch((error) => {
